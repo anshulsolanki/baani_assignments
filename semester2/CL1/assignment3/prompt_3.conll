@@ -1,33 +1,13 @@
-```
-TOKEN POS CHUNK NER  
-बंद  NNP   N         
-पिंजरे  NNP    N        
-से  IN      N     
-पूरा  JJ   N       
-शेर  NNP    N       
-पिघल  VBG   N   
-कर  VB    N    
-बाहर  DT   N       
-निकल  VBZ    N     
- गया  VBP    N        
- 
-```
-
-**Explanation of the annotations:**
-
-* **TOKEN:** This is the individual word or phrase in the sentence.
-* **POS (Part-of-Speech):**  This tells us what grammatical role each token plays in the sentence (e.g., noun, verb, adjective). For this specific task, we use a predefined tagset for BIS (Bureau of Indian Standards) 
-
-* **CHUNK:** This tells us the start and end of a chunk in the sentence that can be identified as a unit or phrase.
-
-* **NER (Named Entity Recognition):**  This helps us identify and classify entities like locations, organizations, people, and others.
-
-
-
-
-**Notes:**
-
-1. **BIS Tagset:** I'm assuming you are interested in a BIS (Bureau of Indian Standards) tagset for NLP tasks. 
-
-
-Let me know if you have any specific aspects or rules you want to apply when annotating the sentences!
+# sentence 1
+बंद	NNP	N
+पिंजरे	NNP	N
+से	IN	N
+पूरा	JJ	N
+शेर	NNP	N
+पिघल	VBG	N
+कर	VB	N
+बाहर	DT	N
+निकल	VBZ	N
+गया	VBP	N
+1.	**BIS	Tagset:**
+Let	me	know
