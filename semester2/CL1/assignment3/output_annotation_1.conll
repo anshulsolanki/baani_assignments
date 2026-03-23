@@ -1,0 +1,1554 @@
+# sentence 1
+Marshall	PROPN	B-PER	O
+sat	VERB	B-VBP	O
+in	ADP	O	O
+one	ADJ	O	O
+of	ADP	O	O
+the	DET	O	O
+several	ADJ	O	O
+leather	ADJ	O	O
+chairs	NNS	O	O
+
+# sentence 2
+Outside	DET	B-LOC	O
+the	DT	I-LOC	O
+office	NOUN	O	O
+windows	NNS	O	O
+,	PUNCT	O	O
+twenty-four	ADJ	O	O
+stories	NUM	O	O
+above	IN	O	O
+Wall	PROPN	O	O
+Street	PROPN	O	O
+,	PUNCT	O	O
+a	DT	I-PRON	O
+light	ADJ	O	O
+rain	NOUN	O	O
+was	AUX	O	O
+falling	ADJ	O	O
+
+# sentence 3
+Mr	PROPN	O	O
+Gross	PROPN	O	O
+,	PUNCT	O	O
+your	ADJ	O	O
+report	NOUN	O	O
+says	VERB	O	O
+that	ADP	O	O
+'	INDEF	O	O
+our	DET	O	O
+function	NOUN	O	O
+is	AUX	O	O
+investigative	ADJ	O	O
+and	CONJ	O	O
+advisory	ADJ	O	O
+and	CONJ	O	O
+does	AUX	O	O
+not	ADP	O	O
+in	INDEF	O	O
+any	DET	O	O
+way	ADV	O	O
+derogate	VERB	O	O
+from	ADP	O	O
+or	CONJ	O	O
+prejudice	ADJ	O	O
+Mr	PROPN	O	O
+Bang-Jensen's	NOUN	O	O
+rights	NOUN	O	O
+as	ADP	O	O
+a	DET	O	O
+staff	NOUN	O	O
+member	NOUN	O	O
+.	PUNCT	O	O
+
+# sentence 4
+You	PRON	B-WP	O
+know	VERB	O	O
+,	PUNCT	O	O
+Bang-Jensen	PROPN	O	O
+characterized	VERB	O	O
+your	DET	O	O
+Committee	NOUN	O	O
+as	CONJ	O	O
+having	ADJ	O	O
+prejudged	VERB	O	O
+his	PRON	O	O
+case	NOUN	O	O
+''	PUNCT	O	O
+
+# sentence 5
+Gross	PER	O	O
+swung	VERB	O	O
+his	DT	O	O
+swivel	NOUN	O	O
+chair	NOUN	O	O
+.	PUNCT	O	O
+
+# sentence 6
+Well	DET	B-PRON	O
+how	AUX	O	O
+could	VERB	O	O
+that	DT	O	O
+have	VBP	O	O
+been	VBZ	O	O
+??	INCL	O	O
+
+# sentence 7
+I	PRP	O	O
+don	VBZ	O	O
+t	TO	O	O
+that	IN	O	O
+he	PRON	O	O
+was	VBD	O	O
+prejudged	NNP	O	O
+.	PUNCT	O	O
+
+# sentence 8
+We	AUX	B-ROOT	O
+were	VERB	B-ROOT	O
+given	VERB	O	O
+a	DET	O	O
+job	NOUN	O	O
+and	CC	O	O
+we	PRP	O	O
+carried	VERB	O	O
+it	PROPN	O	O
+out	VERB	O	O
+,	PUNCT	O	O
+and	CONJ	O	O
+later	ADJ	O	O
+,	PUNCT	O	O
+his	PRON	O	O
+case	NOUN	O	O
+was	AUX	O	O
+taken	VERB	O	O
+up	AUX	O	O
+by	IN	O	O
+the	DET	O	O
+Disciplinary	NOUN	O	O
+Committee	NNP	O	O
+
+# sentence 9
+We	ADP	O	O
+have	AUX	O	O
+nothing	DET	O	O
+to	ADP	O	O
+hide	VERB	O	O
+under	IN	O	O
+a	DET	O	O
+bushel.	NOUN	O	O
+
+# sentence 10
+We	ADP	B-VP	O
+did	VERB	O	O
+our	DET	O	O
+job	NNP	O	O
+,	PUNCT	O	O
+Mr	PER	O	O
+.	PUNCT	O	O
+Stavropoulos	PROPN	O	O
+and	ADP	O	O
+Mr	PER	O	O
+De	DET	O	O
+Seynes	PROPN	O	O
+and	ADP	O	O
+myself	PRP	O	O
+,	PUNCT	O	O
+taking	VERB	O	O
+evidence	NOUN	O	O
+from	TO	O	O
+a	DET	O	O
+number	NN	O	O
+of	IN	O	O
+people	NOUN	O	O
+''.	PUNCT	O	O
+
+# sentence 11
+What	DET	O	O
+did	AUX	O	O
+you	PRP	O	O
+think	VERB	O	O
+about	ADP	O	O
+his	PRON	O	O
+mental	ADJ	O	O
+state	NOUN	O	O
+''??	PUNCT	O	O
+
+# sentence 12
+I	VERB	B-VP	O
+think	VERB	O	O
+our	DET	O	O
+report	NOUN	O	O
+sums	AUX	O	O
+up	ADP	O	O
+our	DET	O	O
+finding	NOUN	O	O
+,	PUNCT	O	O
+Gross	PROPN	O	O
+answered	VERB	O	O
+.	PUNCT	O	O
+
+# sentence 13
+Don't	ADP	O	O
+forget	VERB	O	O
+was	AUX	O	O
+a	DT	O	O
+man	NOUN	O	O
+who	IN	O	O
+had	AUX	O	O
+been	AUX	O	O
+accusing	VERB	O	O
+his	DET	O	O
+colleagues	NOUN	O	O
+for	ADP	O	O
+almost	ADJ	O	O
+a	DT	O	O
+year	NUM	O	O
+of	IN	O	O
+willfully	ADV	O	O
+attempting	VERB	O	O
+to	TO	O	O
+present	VERB	O	O
+an	DET	O	O
+incorrect	ADJ	O	O
+report	NOUN	O	O
+.	PUNCT	O	O
+
+# sentence 14
+was	AUX	O	O
+not	ADP	O	O
+merely	ADJ	O	O
+alleging	VERB	O	O
+errors	NOUN	O	O
+,	PUNCT	O	O
+but	CONJ	O	O
+was	AUX	O	O
+carried	VERB	O	O
+out	AUX	O	O
+by	ADP	O	O
+day-after-day	ADJ	O	O
+allegations	NOUN	O	O
+in	IN	O	O
+memos	NOUN	O	O
+,	PUNCT	O	O
+written	ADJ	O	O
+charges	NOUN	O	O
+of	ADP	O	O
+serious	ADJ	O	O
+consequence	NOUN	O	O
+.	PUNCT	O	O
+
+# sentence 15
+is	AUX	O	O
+a	DT	O	O
+distressing	ADJ	O	O
+thing	NOUN	O	O
+.`	PUNCT	O	O
+
+# sentence 16
+Supposing	ADP	O	O
+you	PRON	O	O
+or	CONJ	O	O
+I	PROPN	O	O
+were	AUX	O	O
+being	VBP	O	O
+accused	NN	O	O
+in	IN	O	O
+manner	NN	O	O
+,	PUNCT	O	O
+and	CC	O	O
+yet	RB	O	O
+we	PRP	O	O
+were	AUX	O	O
+doing	VBP	O	O
+our	DT	O	O
+level	ADJ	O	O
+best	JJ	O	O
+to	TO	O	O
+carry	VBP	O	O
+on	IN	O	O
+our	DT	O	O
+work	NN	O	O.
+
+# sentence 17
+No	DET	O	O
+organization	NOUN	O	O
+can	AUX	O	O
+carry	VERB	O	O
+on	ADP	O	O
+like	ADJ	O	O
+that	DET	O	O
+
+# sentence 18
+I'	PROPN	O	O
+have	VERB	O	O
+been	AUX	O	O
+in	ADP	O	O
+government	PROPN	O	O
+and	CONJ	O	O
+I	PRON	O	O
+can	AUX	O	O
+tell	VERB	O	O
+some	DET	O	O
+pretty	ADJ	O	O
+hairy	ADJ	O	O
+stories	NOUN	O	O
+about	ADP	O	O
+personnel	NOUN	O	O
+difficulties	NOUN	O	O
+,	PUNCT	O	O
+so	CONJ	O	O
+I	PRON	O	O
+know	VERB	O	O
+what	ADP	O	O
+a	DET	O	O
+problem	NOUN	O	O
+he	PRON	O	O
+was	AUX	O	O
+.	PUNCT	O	O
+
+# sentence 19
+What	DET	B-NP	O
+I'd	PROPN	O	O
+like	VB	O	O
+you	PRP	O	O
+to	TO	O	O
+comment	VBP	O	O
+on	IN	O	O
+is	VBZ	O	O
+the	DT	O	O
+criticism	NNS	O	O
+leveled	VBN	O	O
+at	IN	O	O
+your	PRP	O	O
+Committee	NNP	B-NP	B-MISC
+''.	PUNCT	O	O
+
+# sentence 20
+What	DET	O	O
+do	AUX	O	O
+you	PRON	O	O
+mean	VERB	O	O
+''	''	O	O
+??	CCONJ	O	O
+
+# sentence 21
+For	ADP	O	O
+instance	NOUN	O	O
+regarding	ADJ	O	O
+the	DET	O	O
+fact	NOUN	O	O
+that	IN	O	O
+the	DET	O	O
+Gross	NNP	O	O
+Committee	NNP	O	O
+issued	VERB	O	O
+two	ADP	O	O
+interim	ADJ	O	O
+announcements	NOUN	O	O
+to	ADP	O	O
+the	DET	O	O
+press	NOUN	O	O
+during	IN	O	O
+its	PRP	O	O
+investigation	NOUN	O	O.
+
+# sentence 22
+You	PER	O	O
+know	VERB	O	O
+Bang-Jensen	PROPN	O	O
+was	AUX	O	O
+told	VBN	O	O
+the	DET	O	O
+Committee	NOUN	B-NP	O
+was	AUX	O	O
+'	PRON	O	O
+to	ADP	O	O
+convey	VERB	O	O
+its	PROPN	O	O
+views	NOUN	O	O
+suggestions	NOUN	O	O
+and	ADP	O	O
+recommendations	NOUN	O	O
+to	ADP	O	O
+the	DET	O	O
+Secretary	PERSON	O	O
+General.	PROPN	O	O
+
+# sentence 23
+In	DET	O	O
+his	PRON	B-PER	O
+own	ADJ	O	O
+,	PUNCT	O	O
+Bang-Jensen	PROPN	O	O
+'	DET	O	O
+took	VERB	O	O
+it	ART	O	O
+for	ADP	O	O
+granted	ADJ	O	O
+that	CONJ	O	O
+the	DT	O	O
+Group	NOUN	O	O
+would	AUX	O	O
+report	VERB	O	O
+to	TO	O	O
+the	DT	O	O
+Secretary	NN	O	O
+General	NN	O	O
+privately	ADV	O	O
+and	CC	O	O
+not	RB	O	O
+in	IN	O	O
+public.	ADP	O	O
+
+# sentence 24
+He	PRP	B-PER	O
+claimed	VBZ	O	O
+that	IN	O	O
+the	DT	O	O
+release	NN	O	O
+of	IN	O	O
+the	DT	O	O
+preliminary	JJ	O	O
+findings	NNS	O	O
+was	VBZ	O	O
+'	''	O	O
+prejudicial	JJ	O	O
+to	TO	O	O
+his	PRP	O	O
+''	''	O	O
+
+# sentence 25
+Gross	ADJ	O	O
+bristled	VBD	O	O
+
+# sentence 26
+For	ADP	B-PP	O
+an	DT	O	O
+instant	ADJ	O	O
+he	PRP	O	O
+glared	VERB	O	O
+speechless	JJ	O	O
+at	IN	O	O
+Marshall	PROPN	O	O
+.	PUNCT	O	O
+
+# sentence 27
+Listen	VERB	O	O
+''	PUNCT	O	O
+he	PROPN	O	O
+said	VERB	O	O
+
+# sentence 28
+I	AUX	B-PER	O
+thought	VERB	O	O
+the	DT	O	O
+entire	JJ	O	O
+report	NOUN	O	O
+was	VBZ	O	O
+going	VBP	O	O
+to	TO	O	O
+be	VB	O	O
+confidential	ADJ	O	O
+from	IN	O	O
+beginning	JJ	O	O
+to	TO	O	O
+end	NNP	O	O
+.	PUNCT	O	O
+
+# sentence 29
+But	ADP	B-PP	O
+you	PRON	O	O
+know	VERB	O	O
+Bang-Jensen	PERSON	O	O
+launched	VERB	O	O
+an	DET	O	O
+active	ADJ	O	O
+campaign	NOUN	O	O
+against	ADP	O	O
+us	PRON	O	O
+in	IN	O	O
+the	DET	O	O
+press	NOUN	O	O
+.	PUNCT	O	O
+
+# sentence 30
+It	DET	B-MISC	O
+was	AUX	O	O
+getting	ADV	O	O
+so	ADV	O	O
+that	CONJ	O	O
+we	PRP	O	O
+the	DT	O	O
+Committee	NNP	O	O
+were	VBP	O	O
+being	AUX	O	O
+tried	VBZ	O	O
+.	PUNCT	O	O
+
+# sentence 31
+You	PRON	O	O
+can	VERB	O	O
+find	VERB	O	O
+it	DET	O	O
+in	ADP	O	O
+the	DET	O	O
+papers	NOUN	O	O
+''	PUNCT	O	O
+
+# sentence 32
+Well	ADP	O	O
+as	DET	O	O
+a	DT	O	O
+matter	NOUN	O	O
+of	IN	O	O
+fact	ADJ	O	O
+I've	AUX	O	O
+looked	VERB	O	O
+through	ADP	O	O
+back-issue	NOUN	O	O
+files	NOUN	O	O
+of	IN	O	O
+New	DET	O	O
+York	PROPN	O	O
+papers	NOUN	O	O
+for	ADP	O	O
+December	ADJ	O	O
+,	PUNCT	O	O
+1957	DATE	O	O
+and	ADP	O	O
+haven't	AUX	O	O
+found	VERB	O	O
+a	DT	O	O
+great	ADJ	O	O
+deal	NOUN	O	O
+''--	PUNCT	O	O
+Gross	PROPN	O	O
+shot	VERB	O	O
+another	ADP	O	O
+look	VERB	O	O
+at	IN	O	O
+Marshall	PROPN	O	O
+
+# sentence 33
+It	DET	O	O
+wasn't	AUX	O	O
+necessarily	ADJ	O	O
+all	ADJ	O	O
+in	IN	O	O
+New	PROPN	O	O
+York	PROPN	O	O
+.	PUNCT	O	O
+
+# sentence 34
+Don't	ADV	O	O
+forget	VERB	O	O
+the	DET	O	O
+foreign	PROPN	O	O
+press	NOUN	O	O
+''	PUNCT	O	O
+
+# sentence 35
+Then	ADV	O	O
+what	ADP	O	O
+about	ADP	O	O
+the	DET	O	O
+second	ADJ	O	O
+interim	JJ	O	O
+public	JJ	O	O
+announcement	NOUN	O	O
+??	PUNCT	O	O
+
+# sentence 36
+cited	VERB	O	O
+Bang-Jensen's	PROPN	O	B-PERSON
+'	'	O	O
+aberrant	ADJ	O	O
+conduct	NOUN	O	O
+''	PUNCT	O	O
+
+# sentence 37
+The	DET	B-MISC	O
+reason	NOUN	O	O
+for	ADP	O	O
+that	DT	O	O
+report	NOUN	O	O
+was	AUX	O	O
+to	ADP	O	O
+settle	VERB	O	O
+the	DT	O	O
+matter	NOUN	O	O
+of	IN	O	O
+the	DT	O	O
+list	NN	O	O
+.	PUNCT	O	O
+
+# sentence 38
+As	ADP	O	O
+far	ADJ	O	O
+as	ADP	O	O
+I'm	PRON	O	O
+concerned	ADJP	O	O
+,	PUNCT	O	O
+it	pron	O	O
+was	AUX	O	O
+a	DET	O	O
+separate	ADJ	O	O
+matter	NOUN	O	O
+from	IN	O	O
+the	DET	O	O
+general	ADJ	O	O
+Committee	NOUN	O	O
+study	NOUN	O	O
+of	PREP	O	O
+Bang-Jensen's	NOUN	O	O
+conduct	NOUN	O	O
+.	PUNCT	O	O
+
+# sentence 39
+The	DET	O	B-LOC
+January	ADJ	O	O
+fifteen	ADJ	O	O
+report	NOUN	O	O
+recommended	VERB	O	O
+that	CONJ	O	O
+Bang-Jensen	PROPN	O	O
+be	VERB	O	O
+instructed	VERB	O	O
+to	ADP	O	O
+burn	VERB	O	O
+the	DET	O	O
+list	NOUN	O	O
+the	DET	O	O
+papers	NOUN	O	O
+in	IN	O	O
+the	DET	O	O
+presence	ADJ	O	O
+of	ADP	O	O
+a	DET	O	O
+U.N.	ORG	O	O
+Security	ADJ	O	O
+Officer	PERSON	O	O
+''	PUNCT	O	O
+
+# sentence 40
+How	VERB	O	O
+about	ADP	O	O
+your	PRON	O	O
+press	NOUN	O	O
+conference	NOUN	O	O
+three	NUM	O	O
+days	NUM	O	O
+later	ADV	O	O
+what	DET	O	O
+was	AUX	O	O
+the	DT	O	O
+reason	NOUN	O	O
+for	IN	O	O
+that	PRON	O	O
+??	PUNCT	O	O
+
+# sentence 41
+Bang-Jensen	NNP	O	O
+said	VBZ	O	O
+you	PRP	O	O
+told	VBD	O	O
+correspondents	NNS	O	O
+that	IN	O	O
+you	PRP	O	O
+had	AUX	O	O
+checked	VBN	O	O
+in	TO	O	O
+advance	ADV	O	O
+to	TO	O	O
+make	VB	O	O
+sure	MD	O	O
+the	DT	O	O
+term	NN	O	O
+'	''	O	O
+aberrant	ADJ	O	O
+conduct	NN	O	O
+was	VBD	O	O
+not	RB	O	O
+libelous	JJ	O	O
+
+# sentence 42
+He	PRP	O	O
+claimed	VBZ	O	O
+you	PRP	O	O
+made	VBP	O	O
+other	DT	O	O
+slanderous	ADJ	O	O
+allegations	NNS	O	O
+''	.	PUNCT	O
+
+# sentence 43
+Gross	PER	O	O
+paused	VERB	B-VROOT	O
+and	ADP	O	O
+repeated	VERB	O	O
+himself	PRON	O	O
+.	PUNCT	O	O
+
+# sentence 44
+The	DET	B-NP	O
+entire	ADP	O	O
+object	NOUN	O	O
+of	IN	O	O
+the	DT	O	O
+press	NN	O	O
+conference	NN	O	O
+was	AUX	O	O
+to	TO	O	O
+clarify	VERB	O	O
+the	DET	O	O
+problem	NOUN	O	O
+of	IN	O	O
+the	DT	O	O
+list	NNS	O	O
+,	PUNCT	O	O
+since	CONJ	O	O
+many	NUM	O	O
+in	DT	O	O
+the	DT	O	O
+press	NN	O	O
+were	AUX	O	O
+querying	VERB	O	O
+the	DT	O	O
+U.N	NNP	O	O
+about	TO	O	O
+it	PRON	O	O
+.	PUNCT	O	O
+
+# sentence 45
+What	DET	O	O
+was	AUX	O	O
+the	DT	O	O
+list	NNP	O	O
+??	IN	O	O
+
+# sentence 46
+I	ADP	O	O
+don	VERB	O	O
+t	ADP	O	O
+know	AUX	O	O
+.	PUNCT	O	O
+
+# sentence 47
+Bang-Jensen	NNS	B-PER	O
+never	VBZ	O	O
+explained	VBP	O	O
+what	DT	O	O
+the	DT	O	O
+documents	NNS	B-MISC	O
+or	CC	O	O
+papers	NNS	O	O
+were	MD	O	O
+that	IN	O	O
+he	PRP	O	O
+had	VBD	O	O
+in	IN	O	O
+his	PRP	O	O
+.	PUNCT	O	O
+
+# sentence 48
+It	DET	B-NP	O
+was	AUX	O	O
+foolish	ADJ	O	O
+of	IN	O	O
+him	PRON	O	O
+to	TO	O	O
+keep	VERB	O	O
+them	NNS	O	O
+,	PUNCT	O	O
+whatever	ADP	O	O
+they	PRP	O	O
+were	AUX	O	O
+.	PUNCT	O	O
+
+# sentence 49
+He	PRP	B-PER	O
+could	AUX	O	O
+have	VBZ	O	O
+been	VBP	O	O
+blackmailed	VERB	O	O
+,	PUNCT	O	O
+or	CC	O	O
+his	PRP	O	O
+family	NNS	O	O
+might	MD	O	O
+have	AUX	O	O
+been	VBP	O	O
+threatened	VERB	O	O
+.	PUNCT	O	O
+
+# sentence 50
+Of	DET	O	O
+course	ADJ	O	O
+the	DT	O	O
+matter	NOUN	O	O
+caught	AUX	O	O
+the	DT	O	O
+public's	NNS	O	O
+attention	NOUN	O	O
+
+# sentence 51
+We	PRP	O	O
+attempted	VERB	O	O
+to	ADP	O	O
+conclude	VERB	O	O
+and	CONJ	O	O
+did	AUX	O	O
+so	ADP	O	O
+by	IN	O	O
+having	AUX	O	O
+the	DT	O	O
+papers	NOUN	O	O
+burned	VERB	O	O
+.	PUNCT	O	O
+
+# sentence 52
+Hammarskjold	PROPN	B-PER	O
+didn't	AUX	O	O
+like	VERB	O	O
+the	DET	O	O
+way	ADP	O	O
+it	PRON	O	O
+was	VBP	O	O
+carried	VBP	O	O
+out	VBP	O	O
+.	PUNCT	O	O
+
+# sentence 53
+It	DET	B-MISC	O
+was	AUX	O	O
+a	ADP	O	O
+sort	ADJ	O	O
+of	ADP	O	O
+Gotterdammerung	NOUN	O	O
+affair	NOUN	O	O
+.	PUNCT	O	O
+
+# sentence 54
+Hammarskjold	PER	O	B-PERSON
+believes	VERB	O	O
+the	DET	O	O
+U.N	ORG	O	O
+is	VBZ	O	O
+an	DT	O	O
+organization	NOUN	O	O
+that	TO	O	O
+sets	AUX	O	O
+tles	VBP	O	O
+matters	NOUN	O	O
+in	IN	O	O
+a	DT	O	O
+procedural	ADJ	O	O
+way	ADJ	O	O
+.	PUNCT	O	O
+''	PRON	O	O
+
+# sentence 55
+Peter	PROPN	O	O
+Marshall	PROPN	O	O
+reflected	VERB	O	O
+.	PUNCT	O	O
+
+# sentence 56
+If	DET	O	O
+Hammarskjold	PROPN	O	O
+had	AUX	O	O
+not	ADP	O	O
+wanted	VERB	O	O
+the	DT	O	O
+list	NNP	O	O
+disposed	VBP	O	O
+of	IN	O	O
+in	TO	O	O
+manner	JJ	O	O
+,	CC	O	O
+and	CC	O	O
+if	CONJ	O	O
+Bang-Jensen	PROPN	O	O
+had	AUX	O	O
+not	ADP	O	O
+wanted	VERB	O	O
+it	PRP	O	O
+who	PRON	O	O
+had	AUX	O	O
+ordered	VBP	O	O
+it	PRP	O	O
+??	PUNCT	O	O
+
+# sentence 57
+Mr	PROPN	O	O
+Gross	PERSON	B-PER	O
+,	PUNCT	O	O
+concerning	ADP	O	O
+the	DET	O	O
+formation	NOUN	O	O
+of	ADP	O	O
+your	PRON	O	O
+Committee,	NOUN	O	O
+there's	AUX	O	O
+the	DET	O	O
+fact	ADJ	O	O
+that	CONJ	O	O
+you	PRON	O	O
+have	AUX	O	O
+been	VERB	O	O
+a	ADP	O	O
+legal	ADJ	O	O
+adviser	NOUN	O	O
+to	ADP	O	O
+the	DET	O	O
+U.N.	ORG	O	O
+in	ADP	O	O
+the	DET	O	O
+past;	AUX	O	O
+as	CONJ	O	O
+I	PRON	O	O
+understand	VERB	O	O
+it,	ADP	O	O
+Mr.	PROPN	O	O
+Hammarskjold	PERSON	B-PER	O
+wanted	AUX	O	O
+outside	ADJ	O	O
+advice.	NOUN	O	O
+
+# sentence 58
+Could	VBZ	O	O
+you	PRP	O	O
+comment	NN	O	O
+on	TO	O	O
+that	DT	O	O
+''	''	O	O
+??	INQ	O	O
+
+# sentence 59
+I've	AUX	O	O
+served	VERB	O	O
+as	ADP	O	O
+a	DET	O	O
+counsel	NOUN	O	O
+for	ADP	O	O
+the	DT	O	O
+U.N.	ORG	O	O
+for	ADP	O	O
+some	ADJ	O	O
+years	NUM	O	O
+,	PUNCT	O	O
+specializing	VERB	O	O
+particularly	ADP	O	O
+in	IN	O	O
+real	ADJ	O	O
+estate	NOUN	O	O
+matters	NOUN	O	O
+or	CC	O	O
+other	ADJ	O	O
+problems	NOUN	O	O
+that	CONJ	O	O
+the	DT	O	O
+regular	ADJ	O	O
+U.N.	ORG	O	O
+legal	ADJ	O	O
+staff	NOUN	O	O
+might	AUX	O	O
+not	ADP	O	O
+be	VERB	O	O
+equipped	VERB	O	O
+to	TO	O	O
+handle	VERB	O	O
+.	PUNCT	O	O
+
+# sentence 60
+Mr	PROPN	O	O
+Stavropoulos	PERSON	O	O
+is	AUX	O	O
+the	DET	O	O
+U.N	ORG	O	O
+legal	ADJ	O	O
+chief	NOUN	O	O
+and	CONJ	O	O
+a	DET	O	O
+very	ADV	O	O
+good	ADJ	O	O
+man	PERSON	O	O
+but	CONJ	O	O
+he	PRP	O	O
+is	AUX	O	O
+not	ADP	O	O
+fully	ADJ	O	O
+versed	VERB	O	O
+on	IN	O	O
+some	DET	O	O
+technical	ADJ	O	O
+points	NOUN	O	O
+of	IN	O	O
+American	ADJ	O	O
+law	NOUN	O	O
+''.	PUNCT	O	O
+
+# sentence 61
+What	DET	O	O
+did	AUX	O	O
+you	PRON	O	O
+think	VERB	O	O
+about	ADP	O	O
+Bang-Jenson's	PROPN	B-NP	B-PER
+conteniton	NOUN	O	O
+of	IN	O	O
+errors	NOUN	O	O
+and	CONJUNCTION	O	O
+omissions	NOUN	O	O
+in	IN	O	O
+the	DET	O	O
+Hungarian	PROPN	B-NP	B-LOC
+report	NOUN	O	O
+''??	punct	O	O
+
+# sentence 62
+Marshall	PER	O	O
+asked	VERB	O	O
+.	PUNCT	O	O
+
+# sentence 63
+Those	DET	O	O
+''	ADP	O	O
+!!	PROPN	O	O
+
+# sentence 64
+Gross	ADJ	O	O
+answered	VERB	O	O
+.	PUNCT	O	O
+
+# sentence 65
+Why	ADP	O	O
+Mick	PROPN	O	O
+Shann	PROPN	O	O
+went	VERB	O	O
+over	ADP	O	O
+and	ADP	O	O
+over	ADP	O	O
+the	DET	O	O
+report	NOUN	O	O
+with	ADP	O	O
+Alsing	PROPN	O	O
+Andersen	PROPN	O	O
+,	PUNCT	O	O
+trying	VERB	O	O
+to	ADP	O	O
+check	VERB	O	O
+them	PRON	O	O
+out	VERB	O	O.
+
+# sentence 66
+Even	ADP	O	O
+after	ADV	O	O
+the	DET	O	O
+incident	NOUN	O	O
+between	PREP	O	O
+Bang-Jensen	PROPN	O	O
+and	CONJ	O	O
+Shann	PROPN	O	O
+in	IN	O	O
+the	DET	O	O
+Delegates'	ADJ	O	O
+Lounge	LOC	O	O
+and	ADP	O	O
+was	AUX	O	O
+not	ADV	O	O
+the	DET	O	O
+way	JJ	O	O
+the	DET	O	O
+Chicago	PROPN	O	O
+Tribune	PROPN	O	O
+presented	AUX	O	O
+it	PRP	O	O
+''.	PUNCT	O	O
+
+# sentence 67
+Gross	PROPN	B-PER	O
+reached	VERB	O	O
+in	ADP	O	O
+his	DET	O	O
+desk	NN	O	O
+and	CCONJ	O	O
+pulled	VERB	O	O
+out	VBP	O	O
+two	CD	O	O
+newspaper	NOUN	O	O
+clippings	NNS	O	O
+.	PUNCT	O	O
+
+# sentence 68
+One	DET	B-NP	O
+was	AUX	O	O
+an	DET	O	O
+article	NOUN	O	O
+on	IN	O	O
+the	DT	O	O
+U.N	ORG	O	O
+by	ADP	O	O
+Alice	PERSON	O	O
+Widener	PROPN	O	O
+from	IN	O	O
+the	DT	O	O
+Cincinnati	LOC	O	O
+Enquirer	PROPN	O	O
+.	PUNCT	O	O
+
+# sentence 69
+# [NO PARSEABLE OUTPUT] raw: The\tDET\tB-MISC\tO other\tNOUN\tS-MISC\tO was\tAUX\tO\tO by\tADP\tO\tO Chesly\tPROPN\tB-PER\tO Manley\tPROPN\tB-PER\tO in\tIN\tO\tO the\tDET\tO\tO Chicago\tPROPN\tB-LOC\tO Daily\tNOUN\tO\tO Tribune.\
+
+# sentence 70
+Gross	PROPN	O	O
+pointed	VERB	O	O
+to	ADP	O	O
+the	DET	O	O
+Manley	NNP	O	PER
+story	NOUN	O	O
+.	PUNCT	O	O
+
+# sentence 71
+I	PROPN	O	O
+know	VERB	O	O
+Ches	PER	B-MISC	O
+,	PUNCT	O	O
+he	PRON	O	O
+is	AUX	O	O
+a	DET	O	O
+friend	NOUN	O	O
+of	ADP	O	O
+mine	PROPN	O	O
+.	PUNCT	O	O
+
+# sentence 72
+He	PRON	B-PER	O
+probably	ADVP	O	O
+didn't	AUX	O	O
+mean	VERB	O	O
+to	ADP	O	O
+write	AUX	O	O
+it	PRP	O	O
+way	ADJ	O	O
+,	PUNCT	O	O
+or	CONJ	O	O
+maybe	ADVP	O	O
+he	PRON	O	O
+did	AUX	O	O
+.	PUNCT	O	O
+
+# sentence 73
+There	DET	O	O
+wasn't	AUX	O	O
+any	ADJ	O	O
+'	''	O	O
+violent	ADJ	O	O
+argument	NOUN	B-NP	B-MISC
+between	ADP	O	O
+Bang-Jensen	PROPN	O	O
+and	CONJ	O	O
+Shann	PROPN	O	O
+,	PUNCT	O	O
+as	ADP	O	O
+the	DET	O	O
+Tribune	PROPN	O	O
+puts	VERB	O	O
+it.	PUNCT	O	O
+
+# sentence 74
+That	DET	O	O
+implies	AUX	O	O
+that	ADP	O	O
+Shann	PROPN	O	O
+was	VERB	O	O
+on	ADP	O	O
+the	DT	O	O
+enemy	ADJ	O	O
+side	NOUN	O	O
+.	PUNCT	O	O
+
+# sentence 75
+You	DET	O	O
+see	VERB	O	O
+what	Deter	O	O
+I	PRON	O	O
+mean	VERB	O	O
+??	PUNCT	O	O
+
+# sentence 76
+How	DET	B-NP	O
+it's	AUX	O	O
+phrased	VERB	O	O
+there	DT	O	O
+the	DT	O	O
+violent	ADJ	O	O
+
+# sentence 77
+The	DET	O	O
+case	NOUN	O	O
+was	VERB	O	O
+that	ADP	O	O
+Bang-Jensen	PROPN	O	O
+came	VERB	O	O
+up	AUX	O	O
+to	ADP	O	O
+Shann	NAME	O	O
+claiming	VERB	O	O
+he	PRON	O	O
+had	AUX	O	O
+found	VERB	O	O
+further	ADJ	O	O
+errors	NOUN	O	O
+in	ADP	O	O
+the	DET	O	O
+report.	NOUN	O	O
+'	PUNCT	O	O
+
+# sentence 78
+I've	VERB	B-VP	O
+found	ADJ	O	O
+errors	NOUN	O	O
+and	ADP	O	O
+I	PRP	O	O
+want	AUX	O	O
+you	PRP	O	O
+to	TO	O	O
+look	VERB	O	O
+them	NNS	O	O
+over	ADV	O	O
+.	PUNCT	O	O
+
+# sentence 79
+So	DET	B-SBAR	O
+once	ADV	O	O
+again	ADV	O	O
+Shann	NNP	O	O
+had	VBD	O	O
+to	TO	O	O
+argue	VERB	O	O
+with	IN	O	O
+him	PRP	O	O
+about	PREP	O	O
+.	PUNCT	O	O
+
+# sentence 80
+But	ADP	O	O
+it	PRON	O	O
+wasn	VERB	O	O
+'t	DET	O	O
+a	DET	O	O
+violent	ADJ	O	O
+discussion	NOUN	O	O
+.	PUNCT	O	O
+
+# sentence 81
+And	ADP	O	O
+after	VERB	O	O
+all	ADP	O	O
+Shann	PER	B-NP	B-PER
+went	VERB	O	O
+over	ADP	O	O
+all	DET	O	O
+that	DET	O	O
+Bang-Jensen	PERSON	O	O
+had	AUX	O	O
+brought	AUX	O	O
+up	AUX	O	O
+''	PUNCT	O	O
+
+# sentence 82
+Shann's	PROPN	B-NP	O
+own	ADJ	O	O
+report	NOUN	O	O
+,	PUNCT	O	O
+Peter	PER	O	O
+Marshall	PERSON	O	O
+reflected	VERB	O	O
+,	PUNCT	O	O
+describes	VERB	O	O
+the	DET	O	O
+encounter	NOUN	O	O
+as	CONJ	O	O
+immoderate	ADJ	O	O
+''.	PUNCT	O	O
+
+# sentence 83
+Bang-Jensen	PER	B-MISC	O
+was	VERB	O	O
+in	ADP	O	O
+hysterical	ADJ	O	O
+condition	NOUN	O	O
+''	PUNCT	O	O
+)	PUNCT	O	O
+
+# sentence 84
+Gross	ADJ	O	O
+stopped	VERB	O	O
+briefly	ADP	O	O
+then	CONJ	O	O
+went	VERB	O	O
+on	IN	O	O
+
+# sentence 85
+Shann	PROPN	B-PER	O
+was	AUX	O	O
+responsible	ADJ	O	O
+for	ADP	O	O
+the	DET	O	O
+report	NOUN	O	O
+
+# sentence 86
+He	PER	O	O
+has	AUX	O	O
+felt	VERB	O	O
+terrible	ADJ	O	O
+about	ADP	O	O
+all	DET	O	O
+.	PUNCT	O	O
+
+# sentence 87
+It	DET	B-NP	O
+was	VBP	O	O
+a	DT	O	O
+good	ADJ	O	O
+report	NOUN	O	O
+,	PUNCT	O	O
+he	PRON	O	O
+did	AUX	O	O
+all	ADJ	O	O
+he	PRON	O	O
+could	VERB	O	O
+to	TO	O	O
+make	VBZ	O	O
+it	PRP	O	O
+a	DT	O	O
+good	ADJ	O	O
+report	NOUN	O	O
+.	PUNCT	O	O
+
+# sentence 88
+When	ADV	O	O
+I	PRON	B-PER	O
+speak	VERB	O	O
+of	ADP	O	O
+how	DET	O	O
+Shann	PERSON	O	O
+felt	VERB	O	O
+,	PUNCT	O	O
+I	PRON	O	O
+know	AUX	O	O
+well.	ADJ	O	O
+
+# sentence 89
+Don't	ADP	O	O
+forget	VERB	O	O
+I	PROPN	O	O
+am	AUX	O	O
+an	DET	O	O
+old	ADJ	O	O
+member	NOUN	O	O
+of	IN	O	O
+the	DT	O	O
+club	NNP	O	O
+,	PUNCT	O	O
+a	DT	O	O
+former	ADJ	O	O
+delegate	NOUN	O	O
+.	PUNCT	O	O
+
+# sentence 90
+I	PRON	B-NP	O
+think	VERB	O	O
+you	PRON	O	O
+are	AUX	O	O
+being	ADJ	O	O
+unfair	ADJ	O	O
+to	ADP	O	O
+take	VERB	O	O
+these	DET	O	O
+things	NOUN	O	O
+up	VERB	O	O
+now.	PUNCT	O	O
+
+# sentence 91
+You	PRON	B-PER	O
+know	VERB	O	O
+hits	VERB	O	O
+in	ADP	O	O
+many	ADJ	O	O
+areas	NOUN	O	O
+
+# sentence 92
+It	ADP	B-PP	O
+appeals	VERB	O	O
+to	ADP	O	O
+those	PROPN	O	O
+who	PRON	O	O
+were	AUX	O	O
+frustrated	ADJ	O	O
+in	IN	O	O
+the	DET	O	O
+outcome	NOUN	O	O
+of	ADP	O	O
+the	DET	O	O
+Hungarian	PROPN	O	O
+situation	NOUN	O	O
+.	PUNCT	O	O
+
+# sentence 93
+Dont	VERB	O	O
+forget	VERB	O	O
+the	DET	O	O
+U.N	PROPN	O	O
+did	AUX	O	O
+no	ADP	O	O
+more	ADV	O	O
+than	ADV	O	O
+the	DET	O	O
+United	ADJ	O	O
+States	NOUN	O	O
+did	AUX	O	O
+.	PUNCT	O	O
+
+# sentence 94
+It	DET	B-ROOT	O
+takes	VERB	O	O
+a	DET	O	O
+great	ADJ	O	O
+deal	NOUN	O	O
+of	ADP	O	O
+sophisticated	ADJ	O	O
+thought	NOUN	O	O
+to	ADP	O	O
+get	AUX	O	O
+the	DET	O	O
+impact	NOUN	O	O
+of	ADP	O	O
+fact	NOUN	O	O
+''	PUNCT	O	O
+
+# sentence 95
+Chapter	NOUN	B-MISC	O
+22	NUM	O	O
+from	ADP	O	O
+the	DET	O	O
+home	NOUN	O	O
+of	ADP	O	O
+his	PRON	O	O
+friend	PROPN	O	O
+,	PUNCT	O	O
+Henrik	PROPN	O	O
+Kauffmann	PROPN	O	O
+,	PUNCT	O	O
+in	IN	O	O
+Washington	PROPN	O	O
+,	PUNCT	O	O
+D.C.,	PROPN	O	O
+Paul	PROPN	O	O
+Bang-Jensen	PROPN	O	O
+sent	VERB	O	O
+a	DET	O	O
+telegram	NOUN	O	O
+dated	ADJ	O	O
+December	NUM	O	O
+9,	NUM	O	O
+1957,	DATE	O	O
+to	ADP	O	O
+Ernest	PROPN	O	O
+Gross.	PROPN	O	O
+
+# sentence 96
+It	DET	O	O
+said	VERB	O	O
+in	ADP	O	O
+part	NOUN	O	O
+the	DET	O	O
+matters	NOUN	O	O
+to	ADP	O	O
+be	VERB	O	O
+considered	NOUN	O	O
+are	AUX	O	O
+of	ADP	O	O
+a	DT	O	O
+grave	ADJ	O	O
+character	NOUN	O	O
+,	PUNCT	O	O
+and	CONJ	O	O
+I	PRON	O	O
+therefore	ADV	O	O
+respectfully	ADJ	O	O
+request	VERB	O	O
+that	ADP	O	O
+the	DET	O	O
+hearing	NOUN	O	O
+be	AUX	O	O
+for	ADP	O	O
+two	ADJ	O	O
+weeks	NOUN	O	O
+in	ADP	O	O
+order	NOUN	O	O
+that	ADP	O	O
+I	PRON	O	O
+might	AUX	O	O
+make	VERB	O	O
+adequate	ADJ	O	O
+preparation	NOUN	O	O
+''	PUNCT	O	O
+
+# sentence 97
+Ernest	PROPN	B-PER	O
+Gross	NOUN	O	O
+replied	VERB	O	O
+the	DET	O	O
+next	ADJ	O	O
+day	ADJ	O	O
+,	PUNCT	O	O
+putting	VERB	O	O
+the	DET	O	O
+suspended	ADJ	O	O
+diplomat's	NOUN	O	O
+fears	NOUN	O	O
+to	ADP	O	O
+rest	VERB	O	O
+.	PUNCT	O	O
+
+# sentence 98
+reveals	VERB	O	O
+some	ADP	O	O
+misunderstand	NOUN	O	O
+ing	VERB	O	O
+on	DET	O	O
+your	PRON	O	O
+part	NOUN	O	O
+.	PUNCT	O	O
+
+# sentence 99
+# [NO PARSEABLE OUTPUT] raw: The\tDET\tCHUNK\tO group\tNOUN\tB-NP\tO conducting\tVERB\tB-VP\tO the\tDET\tCHUNK\tO review\tNOUN\tO is\tAUX\tO not\tADV\tO holding\tVERB\tO formal\tADJ\tO hearings.\tNOUN\tO    
+
+# sentence 100
+It	DET	O	O
+wished	AUX	O	O
+to	ADP	O	O
+pursue	VERB	O	O
+,	PUNCT	O	O
+in	IN	O	O
+the	DT	O	O
+course	JJ	O	O
+of	IN	O	O
+review	NOUN	O	O
+,	PUNCT	O	O
+questions	NOUN	O	O
+arising	AUX	O	O
+from	IN	O	O
+the	DT	O	O
+body	JJ	O	O
+of	IN	O	O
+material	NOUN	O	O
+already	ADJ	O	O
+in	IN	O	O
+its	PRP	O	O
+.	PUNCT	O	O
+''	INTJ	O	O
+
