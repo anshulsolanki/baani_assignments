@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+pymongo
+mysql-connector-python
+requests
+face-recognition
+numpy
+Pillow

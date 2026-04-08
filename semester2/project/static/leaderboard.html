@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard - Multiplayer Arena</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        .leaderboard-container {
+            width: 90vw;
+            max-width: 800px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 3rem;
+            margin: 2rem auto;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+        }
+        
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        
+        th {
+            font-weight: 800;
+            color: var(--accent-primary);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+        }
+        
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+        
+        .rank {
+            font-weight: 800;
+            color: var(--accent-secondary);
+        }
+        
+        .back-btn {
+            margin-top: 2rem;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="leaderboard-container">
+        <h1>Global Leaderboard</h1>
+        <p style="color: var(--text-muted);">Top players in the arena</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>UID</th>
+                    <th>Elo Rating</th>
+                </tr>
+            </thead>
+            <tbody id="leaderboard-body">
+                <!-- Dynamic rows -->
+                <tr>
+                    <td colspan="4" style="text-align: center; color: var(--text-muted);">Loading...</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <a href="/arena.html" class="btn back-btn">Back to Arena</a>
+    </div>
+
+    <script>
+        function loadLeaderboard() {
+            fetch('/api/leaderboard')
+                .then(response => response.json())
+                .then(data => {
+                    const tbody = document.getElementById('leaderboard-body');
+                    tbody.innerHTML = '';
+                    
+                    if (data.length === 0) {
+                        tbody.innerHTML = '<tr><td colspan="4" style="text-align: center; color: var(--text-muted);">No players found.</td></tr>';
+                        return;
+                    }
+                    
+                    data.forEach((player, index) => {
+                        const tr = document.createElement('tr');
+                        tr.innerHTML = `
+                            <td class="rank">#${index + 1}</td>
+                            <td>${player.name}</td>
+                            <td>${player.uid}</td>
+                            <td style="font-weight: 600;">${player.elo_rating}</td>
+                        `;
+                        tbody.appendChild(tr);
+                    });
+                })
+                .catch(err => {
+                    console.error("Error loading leaderboard:", err);
+                    const tbody = document.getElementById('leaderboard-body');
+                    tbody.innerHTML = '<tr><td colspan="4" style="text-align: center; color: #f87171;">Failed to load leaderboard.</td></tr>';
+                });
+        }
+        
+        // Load on init
+        loadLeaderboard();
+    </script>
+</body>
+</html>

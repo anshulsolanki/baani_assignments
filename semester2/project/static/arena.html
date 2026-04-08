@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arena - Multiplayer Arena</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        .arena-layout {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+            width: 90vw;
+            max-width: 1200px;
+            height: 80vh;
+        }
+        
+        .lobby-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .game-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .user-list {
+            list-style: none;
+            padding: 0;
+            overflow-y: auto;
+            flex-grow: 1;
+        }
+        
+        .user-item {
+            padding: 0.75rem;
+            border-bottom: 1px solid var(--glass-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+        
+        .user-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .challenge-btn {
+            background: linear-gradient(to right, #10b981, #3b82f6);
+            font-size: 0.8rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            width: auto;
+        }
+        
+        .ttt-board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 10px;
+            margin-top: 2rem;
+        }
+        
+        .ttt-cell {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .ttt-cell:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
+        }
+        
+        .ttt-cell.taken {
+            cursor: not-allowed;
+        }
+        
+        .ttt-cell.x { color: var(--accent-primary); }
+        .ttt-cell.o { color: var(--accent-secondary); }
+        
+        #game-status {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        /* Modal for challenge */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 2rem;
+            z-index: 1000;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        
+        .modal-btns {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+        
+        .btn-accept { background: #10b981; }
+        .btn-decline { background: #ef4444; }
+    </style>
+</head>
+<body>
+    <div class="arena-layout">
+        <div class="lobby-panel">
+            <h2>Live Lobby</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Challenge online players</p>
+            <ul class="user-list" id="user-list">
+                <!-- Dynamic user list -->
+            </ul>
+            <button id="leaderboard-btn" class="btn" style="margin-top: auto;">View Leaderboard</button>
+        </div>
+        
+        <div class="game-panel">
+            <div id="game-status">Select a player to challenge or wait for a match.</div>
+            
+            <div class="ttt-board" id="board" style="display: none;">
+                <div class="ttt-cell" data-index="0"></div>
+                <div class="ttt-cell" data-index="1"></div>
+                <div class="ttt-cell" data-index="2"></div>
+                <div class="ttt-cell" data-index="3"></div>
+                <div class="ttt-cell" data-index="4"></div>
+                <div class="ttt-cell" data-index="5"></div>
+                <div class="ttt-cell" data-index="6"></div>
+                <div class="ttt-cell" data-index="7"></div>
+                <div class="ttt-cell" data-index="8"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Challenge Modal -->
+    <div id="challenge-modal" class="modal">
+        <div id="challenge-text">User X challenged you!</div>
+        <div class="modal-btns">
+            <button id="accept-btn" class="btn btn-accept">Accept</button>
+            <button id="decline-btn" class="btn btn-decline">Decline</button>
+        </div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        // #TODO: In real app, get this from session/cookie securely
+        const myUid = localStorage.getItem('uid') || 'guest_' + Math.random().toString(36).substr(2, 9);
+        
+        const statusDiv = document.getElementById('game-status');
+        const userList = document.getElementById('user-list');
+        const boardDiv = document.getElementById('board');
+        const modal = document.getElementById('challenge-modal');
+        const challengeText = document.getElementById('challenge-text');
+        
+        let ws;
+        let currentGameRoom = null;
+        let mySymbol = null;
+        let isMyTurn = false;
+        
+        function connectWebSocket() {
+            const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+            ws = new WebSocket(`${protocol}//${window.location.host}/ws/arena/${myUid}`);
+            
+            ws.onopen = () => {
+                console.log("Connected to Arena WebSocket");
+                statusDiv.innerText = "Connected to lobby. Waiting for action.";
+            };
+            
+            ws.onmessage = (event) => {
+                const data = JSON.parse(event.data);
+                console.log("Received:", data);
+                
+                switch(data.type) {
+                    case 'lobby_update':
+                        updateLobby(data.users);
+                        break;
+                    case 'challenge_received':
+                        showChallenge(data.from_uid, data.from_name);
+                        break;
+                    case 'challenge_rejected':
+                        alert(`Challenge rejected by ${data.by_name}`);
+                        statusDiv.innerText = "Challenge rejected.";
+                        break;
+                    case 'game_start':
+                        modal.style.display = 'none';
+                        boardDiv.style.display = 'grid';
+                        currentGameRoom = data.room_id;
+                        mySymbol = data.symbol;
+                        isMyTurn = (mySymbol === 'X');
+                        statusDiv.innerText = `Game started! You are ${mySymbol}. ${isMyTurn ? 'Your turn.' : "Opponent's turn."}`;
+                        resetBoardUI();
+                        break;
+                    case 'game_update':
+                        updateBoard(data.board);
+                        isMyTurn = data.turn === mySymbol;
+                        statusDiv.innerText = isMyTurn ? "Your turn." : "Opponent's turn.";
+                        if (data.winner) {
+                            if (data.winner === 'Draw') {
+                                statusDiv.innerText = "Game ended in a Draw!";
+                            } else {
+                                statusDiv.innerText = data.winner === mySymbol ? "You Won!" : "You Lost!";
+                            }
+                            // #TODO: Verification point - Check Elo update in leaderboard
+                        }
+                        break;
+                    case 'opponent_disconnected':
+                        statusDiv.innerText = "Opponent disconnected. You win by forfeit!";
+                        // #TODO: Verification point - Check Elo update for forfeit
+                        break;
+                }
+            };
+            
+            ws.onclose = () => {
+                console.log("Disconnected from WebSocket");
+                statusDiv.innerText = "Disconnected. Reconnecting...";
+                setTimeout(connectWebSocket, 3000);
+            };
+        }
+        
+        function updateLobby(users) {
+            userList.innerHTML = '';
+            users.forEach(user => {
+                if (user.uid !== myUid) {
+                    const li = document.createElement('li');
+                    li.className = 'user-item';
+                    li.innerHTML = `
+                        <span>${user.name} (${user.elo_rating})</span>
+                        <button class="btn challenge-btn" onclick="sendChallenge('${user.uid}')">Challenge</button>
+                    `;
+                    userList.appendChild(li);
+                }
+            });
+        }
+        
+        window.sendChallenge = (targetUid) => {
+            statusDiv.innerText = "Sending challenge...";
+            ws.send(JSON.stringify({
+                type: 'send_challenge',
+                target_uid: targetUid
+            }));
+        };
+        
+        function showChallenge(fromUid, fromName) {
+            challengeText.innerText = `${fromName} challenged you to a match!`;
+            modal.style.display = 'block';
+            
+            document.getElementById('accept-btn').onclick = () => {
+                ws.send(JSON.stringify({
+                    type: 'accept_challenge',
+                    challenger_uid: fromUid
+                }));
+            };
+            
+            document.getElementById('decline-btn').onclick = () => {
+                modal.style.display = 'none';
+                ws.send(JSON.stringify({
+                    type: 'decline_challenge',
+                    challenger_uid: fromUid
+                }));
+            };
+        }
+        
+        function resetBoardUI() {
+            document.querySelectorAll('.ttt-cell').forEach(cell => {
+                cell.innerText = '';
+                cell.className = 'ttt-cell';
+            });
+        }
+        
+        function updateBoard(board) {
+            document.querySelectorAll('.ttt-cell').forEach(cell => {
+                const idx = cell.getAttribute('data-index');
+                cell.innerText = board[idx] || '';
+                cell.className = 'ttt-cell' + (board[idx] ? ` taken ${board[idx].toLowerCase()}` : '');
+            });
+        }
+        
+        document.querySelectorAll('.ttt-cell').forEach(cell => {
+            cell.addEventListener('click', () => {
+                if (!isMyTurn || cell.classList.contains('taken') || !currentGameRoom) return;
+                
+                const idx = cell.getAttribute('data-index');
+                ws.send(JSON.stringify({
+                    type: 'make_move',
+                    room_id: currentGameRoom,
+                    index: parseInt(idx)
+                }));
+            });
+        });
+        
+        document.getElementById('leaderboard-btn').addEventListener('click', () => {
+            window.location.href = '/leaderboard.html';
+        });
+        
+        // Initialize
+        const storedUid = localStorage.getItem('uid');
+        if (!storedUid) {
+             // If not logged in via facial auth (Phase 2), we just use a random one for testing Phase 3
+             localStorage.setItem('uid', myUid);
+        }
+        connectWebSocket();
+    </script>
+</body>
+</html>

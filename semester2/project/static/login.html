@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Multiplayer Arena</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Arena Login</h1>
+        <p class="subtitle">Verify your identity to enter the arena</p>
+        
+        <div class="webcam-area" id="webcam-container">
+            <video id="webcam" autoplay playsinline></video>
+            <canvas id="canvas" style="display:none;"></canvas>
+        </div>
+        
+        <button id="capture-btn" class="btn" disabled>Scan Face</button>
+        
+        <div id="status">Initializing camera...</div>
+    </div>
+
+    <script>
+        const video = document.getElementById('webcam');
+        const canvas = document.getElementById('canvas');
+        const captureBtn = document.getElementById('capture-btn');
+        const statusDiv = document.getElementById('status');
+        const webcamContainer = document.getElementById('webcam-container');
+
+        // Access webcam
+        navigator.mediaDevices.getUserMedia({ video: { width: 640, height: 480 } })
+            .then(stream => {
+                video.srcObject = stream;
+                captureBtn.disabled = false;
+                statusDiv.innerText = "Camera ready. Align your face.";
+                webcamContainer.classList.add('active');
+            })
+            .catch(err => {
+                console.error("Error accessing webcam: ", err);
+                statusDiv.innerText = "Error accessing camera. Please ensure permissions are granted.";
+                statusDiv.className = "error";
+            });
+
+        captureBtn.addEventListener('click', () => {
+            statusDiv.innerText = "Capturing and verifying...";
+            statusDiv.className = "";
+            
+            const context = canvas.getContext('2d');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            
+            // Convert to base64
+            const imageData = canvas.toDataURL('image/jpeg');
+            
+            // Send to backend
+            fetch('/api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ image_data: imageData })
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                return response.json().then(err => { throw new Error(err.detail || "Login failed"); });
+            })
+            .then(data => {
+                statusDiv.innerText = `Welcome, ${data.name}! Redirecting...`;
+                statusDiv.className = "success";
+                // Redirect to arena (Phase 3)
+                setTimeout(() => {
+                     window.location.href = "/arena.html";
+                }, 1500);
+            })
+            .catch(err => {
+                statusDiv.innerText = `Error: ${err.message}`;
+                statusDiv.className = "error";
+            });
+        });
+    </script>
+</body>
+</html>

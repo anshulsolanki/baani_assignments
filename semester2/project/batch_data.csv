@@ -1,0 +1,4 @@
+uid,name,website_url
+u001,Alice,https://mock-api.com/user/u001
+u002,Bob,https://mock-api.com/user/u002
+u003,Charlie,https://mock-api.com/user/u003
