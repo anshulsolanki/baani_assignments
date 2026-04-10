@@ -1,0 +1,6956 @@
+#llm generated dataset for english on zero shot prompting
+
+# sentence 1
+Marshall	PROPN	B-PER	O
+sat	VERB	B-VBP	O
+in	ADP	O	O
+one	ADJ	O	O
+of	ADP	O	O
+the	DET	O	O
+several	ADJ	O	O
+leather	ADJ	O	O
+chairs	NNS	O	O
+
+# sentence 2
+Outside	DET	B-LOC	O
+the	DT	I-LOC	O
+office	NOUN	O	O
+windows	NNS	O	O
+,	PUNCT	O	O
+twenty-four	ADJ	O	O
+stories	NUM	O	O
+above	IN	O	O
+Wall	PROPN	O	O
+Street	PROPN	O	O
+,	PUNCT	O	O
+a	DT	I-PRON	O
+light	ADJ	O	O
+rain	NOUN	O	O
+was	AUX	O	O
+falling	ADJ	O	O
+
+# sentence 3
+Mr	PROPN	O	O
+Gross	PROPN	O	O
+,	PUNCT	O	O
+your	ADJ	O	O
+report	NOUN	O	O
+says	VERB	O	O
+that	ADP	O	O
+'	INDEF	O	O
+our	DET	O	O
+function	NOUN	O	O
+is	AUX	O	O
+investigative	ADJ	O	O
+and	CONJ	O	O
+advisory	ADJ	O	O
+and	CONJ	O	O
+does	AUX	O	O
+not	ADP	O	O
+in	INDEF	O	O
+any	DET	O	O
+way	ADV	O	O
+derogate	VERB	O	O
+from	ADP	O	O
+or	CONJ	O	O
+prejudice	ADJ	O	O
+Mr	PROPN	O	O
+Bang-Jensen's	NOUN	O	O
+rights	NOUN	O	O
+as	ADP	O	O
+a	DET	O	O
+staff	NOUN	O	O
+member	NOUN	O	O
+.	PUNCT	O	O
+
+# sentence 4
+You	PRON	B-WP	O
+know	VERB	O	O
+,	PUNCT	O	O
+Bang-Jensen	PROPN	O	O
+characterized	VERB	O	O
+your	DET	O	O
+Committee	NOUN	O	O
+as	CONJ	O	O
+having	ADJ	O	O
+prejudged	VERB	O	O
+his	PRON	O	O
+case	NOUN	O	O
+''	PUNCT	O	O
+
+# sentence 5
+Gross	PER	O	O
+swung	VERB	O	O
+his	DT	O	O
+swivel	NOUN	O	O
+chair	NOUN	O	O
+.	PUNCT	O	O
+
+# sentence 6
+Well	DET	B-PRON	O
+how	AUX	O	O
+could	VERB	O	O
+that	DT	O	O
+have	VBP	O	O
+been	VBZ	O	O
+??	INCL	O	O
+
+# sentence 7
+I	PRP	O	O
+don	VBZ	O	O
+t	TO	O	O
+that	IN	O	O
+he	PRON	O	O
+was	VBD	O	O
+prejudged	NNP	O	O
+.	PUNCT	O	O
+
+# sentence 8
+We	AUX	B-ROOT	O
+were	VERB	B-ROOT	O
+given	VERB	O	O
+a	DET	O	O
+job	NOUN	O	O
+and	CC	O	O
+we	PRP	O	O
+carried	VERB	O	O
+it	PROPN	O	O
+out	VERB	O	O
+,	PUNCT	O	O
+and	CONJ	O	O
+later	ADJ	O	O
+,	PUNCT	O	O
+his	PRON	O	O
+case	NOUN	O	O
+was	AUX	O	O
+taken	VERB	O	O
+up	AUX	O	O
+by	IN	O	O
+the	DET	O	O
+Disciplinary	NOUN	O	O
+Committee	NNP	O	O
+
+# sentence 9
+We	ADP	O	O
+have	AUX	O	O
+nothing	DET	O	O
+to	ADP	O	O
+hide	VERB	O	O
+under	IN	O	O
+a	DET	O	O
+bushel.	NOUN	O	O
+
+# sentence 10
+We	ADP	B-VP	O
+did	VERB	O	O
+our	DET	O	O
+job	NNP	O	O
+,	PUNCT	O	O
+Mr	PER	O	O
+.	PUNCT	O	O
+Stavropoulos	PROPN	O	O
+and	ADP	O	O
+Mr	PER	O	O
+De	DET	O	O
+Seynes	PROPN	O	O
+and	ADP	O	O
+myself	PRP	O	O
+,	PUNCT	O	O
+taking	VERB	O	O
+evidence	NOUN	O	O
+from	TO	O	O
+a	DET	O	O
+number	NN	O	O
+of	IN	O	O
+people	NOUN	O	O
+''.	PUNCT	O	O
+
+# sentence 11
+What	DET	O	O
+did	AUX	O	O
+you	PRP	O	O
+think	VERB	O	O
+about	ADP	O	O
+his	PRON	O	O
+mental	ADJ	O	O
+state	NOUN	O	O
+''??	PUNCT	O	O
+
+# sentence 12
+I	VERB	B-VP	O
+think	VERB	O	O
+our	DET	O	O
+report	NOUN	O	O
+sums	AUX	O	O
+up	ADP	O	O
+our	DET	O	O
+finding	NOUN	O	O
+,	PUNCT	O	O
+Gross	PROPN	O	O
+answered	VERB	O	O
+.	PUNCT	O	O
+
+# sentence 13
+Don't	ADP	O	O
+forget	VERB	O	O
+was	AUX	O	O
+a	DT	O	O
+man	NOUN	O	O
+who	IN	O	O
+had	AUX	O	O
+been	AUX	O	O
+accusing	VERB	O	O
+his	DET	O	O
+colleagues	NOUN	O	O
+for	ADP	O	O
+almost	ADJ	O	O
+a	DT	O	O
+year	NUM	O	O
+of	IN	O	O
+willfully	ADV	O	O
+attempting	VERB	O	O
+to	TO	O	O
+present	VERB	O	O
+an	DET	O	O
+incorrect	ADJ	O	O
+report	NOUN	O	O
+.	PUNCT	O	O
+
+# sentence 14
+was	AUX	O	O
+not	ADP	O	O
+merely	ADJ	O	O
+alleging	VERB	O	O
+errors	NOUN	O	O
+,	PUNCT	O	O
+but	CONJ	O	O
+was	AUX	O	O
+carried	VERB	O	O
+out	AUX	O	O
+by	ADP	O	O
+day-after-day	ADJ	O	O
+allegations	NOUN	O	O
+in	IN	O	O
+memos	NOUN	O	O
+,	PUNCT	O	O
+written	ADJ	O	O
+charges	NOUN	O	O
+of	ADP	O	O
+serious	ADJ	O	O
+consequence	NOUN	O	O
+.	PUNCT	O	O
+
+# sentence 15
+is	AUX	O	O
+a	DT	O	O
+distressing	ADJ	O	O
+thing	NOUN	O	O
+.`	PUNCT	O	O
+
+# sentence 16
+Supposing	ADP	O	O
+you	PRON	O	O
+or	CONJ	O	O
+I	PROPN	O	O
+were	AUX	O	O
+being	VBP	O	O
+accused	NN	O	O
+in	IN	O	O
+manner	NN	O	O
+,	PUNCT	O	O
+and	CC	O	O
+yet	RB	O	O
+we	PRP	O	O
+were	AUX	O	O
+doing	VBP	O	O
+our	DT	O	O
+level	ADJ	O	O
+best	JJ	O	O
+to	TO	O	O
+carry	VBP	O	O
+on	IN	O	O
+our	DT	O	O
+work	NN	O	O.
+
+# sentence 17
+No	DET	O	O
+organization	NOUN	O	O
+can	AUX	O	O
+carry	VERB	O	O
+on	ADP	O	O
+like	ADJ	O	O
+that	DET	O	O
+
+# sentence 18
+I'	PROPN	O	O
+have	VERB	O	O
+been	AUX	O	O
+in	ADP	O	O
+government	PROPN	O	O
+and	CONJ	O	O
+I	PRON	O	O
+can	AUX	O	O
+tell	VERB	O	O
+some	DET	O	O
+pretty	ADJ	O	O
+hairy	ADJ	O	O
+stories	NOUN	O	O
+about	ADP	O	O
+personnel	NOUN	O	O
+difficulties	NOUN	O	O
+,	PUNCT	O	O
+so	CONJ	O	O
+I	PRON	O	O
+know	VERB	O	O
+what	ADP	O	O
+a	DET	O	O
+problem	NOUN	O	O
+he	PRON	O	O
+was	AUX	O	O
+.	PUNCT	O	O
+
+# sentence 19
+What	DET	B-NP	O
+I'd	PROPN	O	O
+like	VB	O	O
+you	PRP	O	O
+to	TO	O	O
+comment	VBP	O	O
+on	IN	O	O
+is	VBZ	O	O
+the	DT	O	O
+criticism	NNS	O	O
+leveled	VBN	O	O
+at	IN	O	O
+your	PRP	O	O
+Committee	NNP	B-NP	B-MISC
+''.	PUNCT	O	O
+
+# sentence 20
+What	DET	O	O
+do	AUX	O	O
+you	PRON	O	O
+mean	VERB	O	O
+''	''	O	O
+??	CCONJ	O	O
+
+# sentence 21
+For	ADP	O	O
+instance	NOUN	O	O
+regarding	ADJ	O	O
+the	DET	O	O
+fact	NOUN	O	O
+that	IN	O	O
+the	DET	O	O
+Gross	NNP	O	O
+Committee	NNP	O	O
+issued	VERB	O	O
+two	ADP	O	O
+interim	ADJ	O	O
+announcements	NOUN	O	O
+to	ADP	O	O
+the	DET	O	O
+press	NOUN	O	O
+during	IN	O	O
+its	PRP	O	O
+investigation	NOUN	O	O.
+
+# sentence 22
+You	PER	O	O
+know	VERB	O	O
+Bang-Jensen	PROPN	O	O
+was	AUX	O	O
+told	VBN	O	O
+the	DET	O	O
+Committee	NOUN	B-NP	O
+was	AUX	O	O
+'	PRON	O	O
+to	ADP	O	O
+convey	VERB	O	O
+its	PROPN	O	O
+views	NOUN	O	O
+suggestions	NOUN	O	O
+and	ADP	O	O
+recommendations	NOUN	O	O
+to	ADP	O	O
+the	DET	O	O
+Secretary	PERSON	O	O
+General.	PROPN	O	O
+
+# sentence 23
+In	DET	O	O
+his	PRON	B-PER	O
+own	ADJ	O	O
+,	PUNCT	O	O
+Bang-Jensen	PROPN	O	O
+'	DET	O	O
+took	VERB	O	O
+it	ART	O	O
+for	ADP	O	O
+granted	ADJ	O	O
+that	CONJ	O	O
+the	DT	O	O
+Group	NOUN	O	O
+would	AUX	O	O
+report	VERB	O	O
+to	TO	O	O
+the	DT	O	O
+Secretary	NN	O	O
+General	NN	O	O
+privately	ADV	O	O
+and	CC	O	O
+not	RB	O	O
+in	IN	O	O
+public.	ADP	O	O
+
+# sentence 24
+He	PRP	B-PER	O
+claimed	VBZ	O	O
+that	IN	O	O
+the	DT	O	O
+release	NN	O	O
+of	IN	O	O
+the	DT	O	O
+preliminary	JJ	O	O
+findings	NNS	O	O
+was	VBZ	O	O
+'	''	O	O
+prejudicial	JJ	O	O
+to	TO	O	O
+his	PRP	O	O
+''	''	O	O
+
+# sentence 25
+Gross	ADJ	O	O
+bristled	VBD	O	O
+
+# sentence 26
+For	ADP	B-PP	O
+an	DT	O	O
+instant	ADJ	O	O
+he	PRP	O	O
+glared	VERB	O	O
+speechless	JJ	O	O
+at	IN	O	O
+Marshall	PROPN	O	O
+.	PUNCT	O	O
+
+# sentence 27
+Listen	VERB	O	O
+''	PUNCT	O	O
+he	PROPN	O	O
+said	VERB	O	O
+
+# sentence 28
+I	AUX	B-PER	O
+thought	VERB	O	O
+the	DT	O	O
+entire	JJ	O	O
+report	NOUN	O	O
+was	VBZ	O	O
+going	VBP	O	O
+to	TO	O	O
+be	VB	O	O
+confidential	ADJ	O	O
+from	IN	O	O
+beginning	JJ	O	O
+to	TO	O	O
+end	NNP	O	O
+.	PUNCT	O	O
+
+# sentence 29
+But	ADP	B-PP	O
+you	PRON	O	O
+know	VERB	O	O
+Bang-Jensen	PERSON	O	O
+launched	VERB	O	O
+an	DET	O	O
+active	ADJ	O	O
+campaign	NOUN	O	O
+against	ADP	O	O
+us	PRON	O	O
+in	IN	O	O
+the	DET	O	O
+press	NOUN	O	O
+.	PUNCT	O	O
+
+# sentence 30
+It	DET	B-MISC	O
+was	AUX	O	O
+getting	ADV	O	O
+so	ADV	O	O
+that	CONJ	O	O
+we	PRP	O	O
+the	DT	O	O
+Committee	NNP	O	O
+were	VBP	O	O
+being	AUX	O	O
+tried	VBZ	O	O
+.	PUNCT	O	O
+
+# sentence 31
+You	PRON	O	O
+can	VERB	O	O
+find	VERB	O	O
+it	DET	O	O
+in	ADP	O	O
+the	DET	O	O
+papers	NOUN	O	O
+''	PUNCT	O	O
+
+# sentence 32
+Well	ADP	O	O
+as	DET	O	O
+a	DT	O	O
+matter	NOUN	O	O
+of	IN	O	O
+fact	ADJ	O	O
+I've	AUX	O	O
+looked	VERB	O	O
+through	ADP	O	O
+back-issue	NOUN	O	O
+files	NOUN	O	O
+of	IN	O	O
+New	DET	O	O
+York	PROPN	O	O
+papers	NOUN	O	O
+for	ADP	O	O
+December	ADJ	O	O
+,	PUNCT	O	O
+1957	DATE	O	O
+and	ADP	O	O
+haven't	AUX	O	O
+found	VERB	O	O
+a	DT	O	O
+great	ADJ	O	O
+deal	NOUN	O	O
+''--	PUNCT	O	O
+Gross	PROPN	O	O
+shot	VERB	O	O
+another	ADP	O	O
+look	VERB	O	O
+at	IN	O	O
+Marshall	PROPN	O	O
+
+# sentence 33
+It	DET	O	O
+wasn't	AUX	O	O
+necessarily	ADJ	O	O
+all	ADJ	O	O
+in	IN	O	O
+New	PROPN	O	O
+York	PROPN	O	O
+.	PUNCT	O	O
+
+# sentence 34
+Don't	ADV	O	O
+forget	VERB	O	O
+the	DET	O	O
+foreign	PROPN	O	O
+press	NOUN	O	O
+''	PUNCT	O	O
+
+# sentence 35
+Then	ADV	O	O
+what	ADP	O	O
+about	ADP	O	O
+the	DET	O	O
+second	ADJ	O	O
+interim	JJ	O	O
+public	JJ	O	O
+announcement	NOUN	O	O
+??	PUNCT	O	O
+
+# sentence 36
+cited	VERB	O	O
+Bang-Jensen's	PROPN	O	B-PERSON
+'	'	O	O
+aberrant	ADJ	O	O
+conduct	NOUN	O	O
+''	PUNCT	O	O
+
+# sentence 37
+The	DET	B-MISC	O
+reason	NOUN	O	O
+for	ADP	O	O
+that	DT	O	O
+report	NOUN	O	O
+was	AUX	O	O
+to	ADP	O	O
+settle	VERB	O	O
+the	DT	O	O
+matter	NOUN	O	O
+of	IN	O	O
+the	DT	O	O
+list	NN	O	O
+.	PUNCT	O	O
+
+# sentence 38
+As	ADP	O	O
+far	ADJ	O	O
+as	ADP	O	O
+I'm	PRON	O	O
+concerned	ADJP	O	O
+,	PUNCT	O	O
+it	pron	O	O
+was	AUX	O	O
+a	DET	O	O
+separate	ADJ	O	O
+matter	NOUN	O	O
+from	IN	O	O
+the	DET	O	O
+general	ADJ	O	O
+Committee	NOUN	O	O
+study	NOUN	O	O
+of	PREP	O	O
+Bang-Jensen's	NOUN	O	O
+conduct	NOUN	O	O
+.	PUNCT	O	O
+
+# sentence 39
+The	DET	O	B-LOC
+January	ADJ	O	O
+fifteen	ADJ	O	O
+report	NOUN	O	O
+recommended	VERB	O	O
+that	CONJ	O	O
+Bang-Jensen	PROPN	O	O
+be	VERB	O	O
+instructed	VERB	O	O
+to	ADP	O	O
+burn	VERB	O	O
+the	DET	O	O
+list	NOUN	O	O
+the	DET	O	O
+papers	NOUN	O	O
+in	IN	O	O
+the	DET	O	O
+presence	ADJ	O	O
+of	ADP	O	O
+a	DET	O	O
+U.N.	ORG	O	O
+Security	ADJ	O	O
+Officer	PERSON	O	O
+''	PUNCT	O	O
+
+# sentence 40
+How	VERB	O	O
+about	ADP	O	O
+your	PRON	O	O
+press	NOUN	O	O
+conference	NOUN	O	O
+three	NUM	O	O
+days	NUM	O	O
+later	ADV	O	O
+what	DET	O	O
+was	AUX	O	O
+the	DT	O	O
+reason	NOUN	O	O
+for	IN	O	O
+that	PRON	O	O
+??	PUNCT	O	O
+
+# sentence 41
+Bang-Jensen	NNP	O	O
+said	VBZ	O	O
+you	PRP	O	O
+told	VBD	O	O
+correspondents	NNS	O	O
+that	IN	O	O
+you	PRP	O	O
+had	AUX	O	O
+checked	VBN	O	O
+in	TO	O	O
+advance	ADV	O	O
+to	TO	O	O
+make	VB	O	O
+sure	MD	O	O
+the	DT	O	O
+term	NN	O	O
+'	''	O	O
+aberrant	ADJ	O	O
+conduct	NN	O	O
+was	VBD	O	O
+not	RB	O	O
+libelous	JJ	O	O
+
+# sentence 42
+He	PRP	O	O
+claimed	VBZ	O	O
+you	PRP	O	O
+made	VBP	O	O
+other	DT	O	O
+slanderous	ADJ	O	O
+allegations	NNS	O	O
+''	.	PUNCT	O
+
+# sentence 43
+Gross	PER	O	O
+paused	VERB	B-VROOT	O
+and	ADP	O	O
+repeated	VERB	O	O
+himself	PRON	O	O
+.	PUNCT	O	O
+
+# sentence 44
+The	DET	B-NP	O
+entire	ADP	O	O
+object	NOUN	O	O
+of	IN	O	O
+the	DT	O	O
+press	NN	O	O
+conference	NN	O	O
+was	AUX	O	O
+to	TO	O	O
+clarify	VERB	O	O
+the	DET	O	O
+problem	NOUN	O	O
+of	IN	O	O
+the	DT	O	O
+list	NNS	O	O
+,	PUNCT	O	O
+since	CONJ	O	O
+many	NUM	O	O
+in	DT	O	O
+the	DT	O	O
+press	NN	O	O
+were	AUX	O	O
+querying	VERB	O	O
+the	DT	O	O
+U.N	NNP	O	O
+about	TO	O	O
+it	PRON	O	O
+.	PUNCT	O	O
+
+# sentence 45
+What	DET	O	O
+was	AUX	O	O
+the	DT	O	O
+list	NNP	O	O
+??	IN	O	O
+
+# sentence 46
+I	ADP	O	O
+don	VERB	O	O
+t	ADP	O	O
+know	AUX	O	O
+.	PUNCT	O	O
+
+# sentence 47
+Bang-Jensen	NNS	B-PER	O
+never	VBZ	O	O
+explained	VBP	O	O
+what	DT	O	O
+the	DT	O	O
+documents	NNS	B-MISC	O
+or	CC	O	O
+papers	NNS	O	O
+were	MD	O	O
+that	IN	O	O
+he	PRP	O	O
+had	VBD	O	O
+in	IN	O	O
+his	PRP	O	O
+.	PUNCT	O	O
+
+# sentence 48
+It	DET	B-NP	O
+was	AUX	O	O
+foolish	ADJ	O	O
+of	IN	O	O
+him	PRON	O	O
+to	TO	O	O
+keep	VERB	O	O
+them	NNS	O	O
+,	PUNCT	O	O
+whatever	ADP	O	O
+they	PRP	O	O
+were	AUX	O	O
+.	PUNCT	O	O
+
+# sentence 49
+He	PRP	B-PER	O
+could	AUX	O	O
+have	VBZ	O	O
+been	VBP	O	O
+blackmailed	VERB	O	O
+,	PUNCT	O	O
+or	CC	O	O
+his	PRP	O	O
+family	NNS	O	O
+might	MD	O	O
+have	AUX	O	O
+been	VBP	O	O
+threatened	VERB	O	O
+.	PUNCT	O	O
+
+# sentence 50
+Of	DET	O	O
+course	ADJ	O	O
+the	DT	O	O
+matter	NOUN	O	O
+caught	AUX	O	O
+the	DT	O	O
+public's	NNS	O	O
+attention	NOUN	O	O
+
+# sentence 51
+We	PRP	O	O
+attempted	VERB	O	O
+to	ADP	O	O
+conclude	VERB	O	O
+and	CONJ	O	O
+did	AUX	O	O
+so	ADP	O	O
+by	IN	O	O
+having	AUX	O	O
+the	DT	O	O
+papers	NOUN	O	O
+burned	VERB	O	O
+.	PUNCT	O	O
+
+# sentence 52
+Hammarskjold	PROPN	B-PER	O
+didn't	AUX	O	O
+like	VERB	O	O
+the	DET	O	O
+way	ADP	O	O
+it	PRON	O	O
+was	VBP	O	O
+carried	VBP	O	O
+out	VBP	O	O
+.	PUNCT	O	O
+
+# sentence 53
+It	DET	B-MISC	O
+was	AUX	O	O
+a	ADP	O	O
+sort	ADJ	O	O
+of	ADP	O	O
+Gotterdammerung	NOUN	O	O
+affair	NOUN	O	O
+.	PUNCT	O	O
+
+# sentence 54
+Hammarskjold	PER	O	B-PERSON
+believes	VERB	O	O
+the	DET	O	O
+U.N	ORG	O	O
+is	VBZ	O	O
+an	DT	O	O
+organization	NOUN	O	O
+that	TO	O	O
+sets	AUX	O	O
+tles	VBP	O	O
+matters	NOUN	O	O
+in	IN	O	O
+a	DT	O	O
+procedural	ADJ	O	O
+way	ADJ	O	O
+.	PUNCT	O	O
+''	PRON	O	O
+
+# sentence 55
+Peter	PROPN	O	O
+Marshall	PROPN	O	O
+reflected	VERB	O	O
+.	PUNCT	O	O
+
+# sentence 56
+If	DET	O	O
+Hammarskjold	PROPN	O	O
+had	AUX	O	O
+not	ADP	O	O
+wanted	VERB	O	O
+the	DT	O	O
+list	NNP	O	O
+disposed	VBP	O	O
+of	IN	O	O
+in	TO	O	O
+manner	JJ	O	O
+,	CC	O	O
+and	CC	O	O
+if	CONJ	O	O
+Bang-Jensen	PROPN	O	O
+had	AUX	O	O
+not	ADP	O	O
+wanted	VERB	O	O
+it	PRP	O	O
+who	PRON	O	O
+had	AUX	O	O
+ordered	VBP	O	O
+it	PRP	O	O
+??	PUNCT	O	O
+
+# sentence 57
+Mr	PROPN	O	O
+Gross	PERSON	B-PER	O
+,	PUNCT	O	O
+concerning	ADP	O	O
+the	DET	O	O
+formation	NOUN	O	O
+of	ADP	O	O
+your	PRON	O	O
+Committee,	NOUN	O	O
+there's	AUX	O	O
+the	DET	O	O
+fact	ADJ	O	O
+that	CONJ	O	O
+you	PRON	O	O
+have	AUX	O	O
+been	VERB	O	O
+a	ADP	O	O
+legal	ADJ	O	O
+adviser	NOUN	O	O
+to	ADP	O	O
+the	DET	O	O
+U.N.	ORG	O	O
+in	ADP	O	O
+the	DET	O	O
+past;	AUX	O	O
+as	CONJ	O	O
+I	PRON	O	O
+understand	VERB	O	O
+it,	ADP	O	O
+Mr.	PROPN	O	O
+Hammarskjold	PERSON	B-PER	O
+wanted	AUX	O	O
+outside	ADJ	O	O
+advice.	NOUN	O	O
+
+# sentence 58
+Could	VBZ	O	O
+you	PRP	O	O
+comment	NN	O	O
+on	TO	O	O
+that	DT	O	O
+''	''	O	O
+??	INQ	O	O
+
+# sentence 59
+I've	AUX	O	O
+served	VERB	O	O
+as	ADP	O	O
+a	DET	O	O
+counsel	NOUN	O	O
+for	ADP	O	O
+the	DT	O	O
+U.N.	ORG	O	O
+for	ADP	O	O
+some	ADJ	O	O
+years	NUM	O	O
+,	PUNCT	O	O
+specializing	VERB	O	O
+particularly	ADP	O	O
+in	IN	O	O
+real	ADJ	O	O
+estate	NOUN	O	O
+matters	NOUN	O	O
+or	CC	O	O
+other	ADJ	O	O
+problems	NOUN	O	O
+that	CONJ	O	O
+the	DT	O	O
+regular	ADJ	O	O
+U.N.	ORG	O	O
+legal	ADJ	O	O
+staff	NOUN	O	O
+might	AUX	O	O
+not	ADP	O	O
+be	VERB	O	O
+equipped	VERB	O	O
+to	TO	O	O
+handle	VERB	O	O
+.	PUNCT	O	O
+
+# sentence 60
+Mr	PROPN	O	O
+Stavropoulos	PERSON	O	O
+is	AUX	O	O
+the	DET	O	O
+U.N	ORG	O	O
+legal	ADJ	O	O
+chief	NOUN	O	O
+and	CONJ	O	O
+a	DET	O	O
+very	ADV	O	O
+good	ADJ	O	O
+man	PERSON	O	O
+but	CONJ	O	O
+he	PRP	O	O
+is	AUX	O	O
+not	ADP	O	O
+fully	ADJ	O	O
+versed	VERB	O	O
+on	IN	O	O
+some	DET	O	O
+technical	ADJ	O	O
+points	NOUN	O	O
+of	IN	O	O
+American	ADJ	O	O
+law	NOUN	O	O
+''.	PUNCT	O	O
+
+# sentence 61
+What	DET	O	O
+did	AUX	O	O
+you	PRON	O	O
+think	VERB	O	O
+about	ADP	O	O
+Bang-Jenson's	PROPN	B-NP	B-PER
+conteniton	NOUN	O	O
+of	IN	O	O
+errors	NOUN	O	O
+and	CONJUNCTION	O	O
+omissions	NOUN	O	O
+in	IN	O	O
+the	DET	O	O
+Hungarian	PROPN	B-NP	B-LOC
+report	NOUN	O	O
+''??	punct	O	O
+
+# sentence 62
+Marshall	PER	O	O
+asked	VERB	O	O
+.	PUNCT	O	O
+
+# sentence 63
+Those	DET	O	O
+''	ADP	O	O
+!!	PROPN	O	O
+
+# sentence 64
+Gross	ADJ	O	O
+answered	VERB	O	O
+.	PUNCT	O	O
+
+# sentence 65
+Why	ADP	O	O
+Mick	PROPN	O	O
+Shann	PROPN	O	O
+went	VERB	O	O
+over	ADP	O	O
+and	ADP	O	O
+over	ADP	O	O
+the	DET	O	O
+report	NOUN	O	O
+with	ADP	O	O
+Alsing	PROPN	O	O
+Andersen	PROPN	O	O
+,	PUNCT	O	O
+trying	VERB	O	O
+to	ADP	O	O
+check	VERB	O	O
+them	PRON	O	O
+out	VERB	O	O.
+
+# sentence 66
+Even	ADP	O	O
+after	ADV	O	O
+the	DET	O	O
+incident	NOUN	O	O
+between	PREP	O	O
+Bang-Jensen	PROPN	O	O
+and	CONJ	O	O
+Shann	PROPN	O	O
+in	IN	O	O
+the	DET	O	O
+Delegates'	ADJ	O	O
+Lounge	LOC	O	O
+and	ADP	O	O
+was	AUX	O	O
+not	ADV	O	O
+the	DET	O	O
+way	JJ	O	O
+the	DET	O	O
+Chicago	PROPN	O	O
+Tribune	PROPN	O	O
+presented	AUX	O	O
+it	PRP	O	O
+''.	PUNCT	O	O
+
+# sentence 67
+Gross	PROPN	B-PER	O
+reached	VERB	O	O
+in	ADP	O	O
+his	DET	O	O
+desk	NN	O	O
+and	CCONJ	O	O
+pulled	VERB	O	O
+out	VBP	O	O
+two	CD	O	O
+newspaper	NOUN	O	O
+clippings	NNS	O	O
+.	PUNCT	O	O
+
+# sentence 68
+One	DET	B-NP	O
+was	AUX	O	O
+an	DET	O	O
+article	NOUN	O	O
+on	IN	O	O
+the	DT	O	O
+U.N	ORG	O	O
+by	ADP	O	O
+Alice	PERSON	O	O
+Widener	PROPN	O	O
+from	IN	O	O
+the	DT	O	O
+Cincinnati	LOC	O	O
+Enquirer	PROPN	O	O
+.	PUNCT	O	O
+
+# sentence 69
+# [NO PARSEABLE OUTPUT] raw: The\tDET\tB-MISC\tO other\tNOUN\tS-MISC\tO was\tAUX\tO\tO by\tADP\tO\tO Chesly\tPROPN\tB-PER\tO Manley\tPROPN\tB-PER\tO in\tIN\tO\tO the\tDET\tO\tO Chicago\tPROPN\tB-LOC\tO Daily\tNOUN\tO\tO Tribune.\
+
+# sentence 70
+Gross	PROPN	O	O
+pointed	VERB	O	O
+to	ADP	O	O
+the	DET	O	O
+Manley	NNP	O	PER
+story	NOUN	O	O
+.	PUNCT	O	O
+
+# sentence 71
+I	PROPN	O	O
+know	VERB	O	O
+Ches	PER	B-MISC	O
+,	PUNCT	O	O
+he	PRON	O	O
+is	AUX	O	O
+a	DET	O	O
+friend	NOUN	O	O
+of	ADP	O	O
+mine	PROPN	O	O
+.	PUNCT	O	O
+
+# sentence 72
+He	PRON	B-PER	O
+probably	ADVP	O	O
+didn't	AUX	O	O
+mean	VERB	O	O
+to	ADP	O	O
+write	AUX	O	O
+it	PRP	O	O
+way	ADJ	O	O
+,	PUNCT	O	O
+or	CONJ	O	O
+maybe	ADVP	O	O
+he	PRON	O	O
+did	AUX	O	O
+.	PUNCT	O	O
+
+# sentence 73
+There	DET	O	O
+wasn't	AUX	O	O
+any	ADJ	O	O
+'	''	O	O
+violent	ADJ	O	O
+argument	NOUN	B-NP	B-MISC
+between	ADP	O	O
+Bang-Jensen	PROPN	O	O
+and	CONJ	O	O
+Shann	PROPN	O	O
+,	PUNCT	O	O
+as	ADP	O	O
+the	DET	O	O
+Tribune	PROPN	O	O
+puts	VERB	O	O
+it.	PUNCT	O	O
+
+# sentence 74
+That	DET	O	O
+implies	AUX	O	O
+that	ADP	O	O
+Shann	PROPN	O	O
+was	VERB	O	O
+on	ADP	O	O
+the	DT	O	O
+enemy	ADJ	O	O
+side	NOUN	O	O
+.	PUNCT	O	O
+
+# sentence 75
+You	DET	O	O
+see	VERB	O	O
+what	Deter	O	O
+I	PRON	O	O
+mean	VERB	O	O
+??	PUNCT	O	O
+
+# sentence 76
+How	DET	B-NP	O
+it's	AUX	O	O
+phrased	VERB	O	O
+there	DT	O	O
+the	DT	O	O
+violent	ADJ	O	O
+
+# sentence 77
+The	DET	O	O
+case	NOUN	O	O
+was	VERB	O	O
+that	ADP	O	O
+Bang-Jensen	PROPN	O	O
+came	VERB	O	O
+up	AUX	O	O
+to	ADP	O	O
+Shann	NAME	O	O
+claiming	VERB	O	O
+he	PRON	O	O
+had	AUX	O	O
+found	VERB	O	O
+further	ADJ	O	O
+errors	NOUN	O	O
+in	ADP	O	O
+the	DET	O	O
+report.	NOUN	O	O
+'	PUNCT	O	O
+
+# sentence 78
+I've	VERB	B-VP	O
+found	ADJ	O	O
+errors	NOUN	O	O
+and	ADP	O	O
+I	PRP	O	O
+want	AUX	O	O
+you	PRP	O	O
+to	TO	O	O
+look	VERB	O	O
+them	NNS	O	O
+over	ADV	O	O
+.	PUNCT	O	O
+
+# sentence 79
+So	DET	B-SBAR	O
+once	ADV	O	O
+again	ADV	O	O
+Shann	NNP	O	O
+had	VBD	O	O
+to	TO	O	O
+argue	VERB	O	O
+with	IN	O	O
+him	PRP	O	O
+about	PREP	O	O
+.	PUNCT	O	O
+
+# sentence 80
+But	ADP	O	O
+it	PRON	O	O
+wasn	VERB	O	O
+'t	DET	O	O
+a	DET	O	O
+violent	ADJ	O	O
+discussion	NOUN	O	O
+.	PUNCT	O	O
+
+# sentence 81
+And	ADP	O	O
+after	VERB	O	O
+all	ADP	O	O
+Shann	PER	B-NP	B-PER
+went	VERB	O	O
+over	ADP	O	O
+all	DET	O	O
+that	DET	O	O
+Bang-Jensen	PERSON	O	O
+had	AUX	O	O
+brought	AUX	O	O
+up	AUX	O	O
+''	PUNCT	O	O
+
+# sentence 82
+Shann's	PROPN	B-NP	O
+own	ADJ	O	O
+report	NOUN	O	O
+,	PUNCT	O	O
+Peter	PER	O	O
+Marshall	PERSON	O	O
+reflected	VERB	O	O
+,	PUNCT	O	O
+describes	VERB	O	O
+the	DET	O	O
+encounter	NOUN	O	O
+as	CONJ	O	O
+immoderate	ADJ	O	O
+''.	PUNCT	O	O
+
+# sentence 83
+Bang-Jensen	PER	B-MISC	O
+was	VERB	O	O
+in	ADP	O	O
+hysterical	ADJ	O	O
+condition	NOUN	O	O
+''	PUNCT	O	O
+)	PUNCT	O	O
+
+# sentence 84
+Gross	ADJ	O	O
+stopped	VERB	O	O
+briefly	ADP	O	O
+then	CONJ	O	O
+went	VERB	O	O
+on	IN	O	O
+
+# sentence 85
+Shann	PROPN	B-PER	O
+was	AUX	O	O
+responsible	ADJ	O	O
+for	ADP	O	O
+the	DET	O	O
+report	NOUN	O	O
+
+# sentence 86
+He	PER	O	O
+has	AUX	O	O
+felt	VERB	O	O
+terrible	ADJ	O	O
+about	ADP	O	O
+all	DET	O	O
+.	PUNCT	O	O
+
+# sentence 87
+It	DET	B-NP	O
+was	VBP	O	O
+a	DT	O	O
+good	ADJ	O	O
+report	NOUN	O	O
+,	PUNCT	O	O
+he	PRON	O	O
+did	AUX	O	O
+all	ADJ	O	O
+he	PRON	O	O
+could	VERB	O	O
+to	TO	O	O
+make	VBZ	O	O
+it	PRP	O	O
+a	DT	O	O
+good	ADJ	O	O
+report	NOUN	O	O
+.	PUNCT	O	O
+
+# sentence 88
+When	ADV	O	O
+I	PRON	B-PER	O
+speak	VERB	O	O
+of	ADP	O	O
+how	DET	O	O
+Shann	PERSON	O	O
+felt	VERB	O	O
+,	PUNCT	O	O
+I	PRON	O	O
+know	AUX	O	O
+well.	ADJ	O	O
+
+# sentence 89
+Don't	ADP	O	O
+forget	VERB	O	O
+I	PROPN	O	O
+am	AUX	O	O
+an	DET	O	O
+old	ADJ	O	O
+member	NOUN	O	O
+of	IN	O	O
+the	DT	O	O
+club	NNP	O	O
+,	PUNCT	O	O
+a	DT	O	O
+former	ADJ	O	O
+delegate	NOUN	O	O
+.	PUNCT	O	O
+
+# sentence 90
+I	PRON	B-NP	O
+think	VERB	O	O
+you	PRON	O	O
+are	AUX	O	O
+being	ADJ	O	O
+unfair	ADJ	O	O
+to	ADP	O	O
+take	VERB	O	O
+these	DET	O	O
+things	NOUN	O	O
+up	VERB	O	O
+now.	PUNCT	O	O
+
+# sentence 91
+You	PRON	B-PER	O
+know	VERB	O	O
+hits	VERB	O	O
+in	ADP	O	O
+many	ADJ	O	O
+areas	NOUN	O	O
+
+# sentence 92
+It	ADP	B-PP	O
+appeals	VERB	O	O
+to	ADP	O	O
+those	PROPN	O	O
+who	PRON	O	O
+were	AUX	O	O
+frustrated	ADJ	O	O
+in	IN	O	O
+the	DET	O	O
+outcome	NOUN	O	O
+of	ADP	O	O
+the	DET	O	O
+Hungarian	PROPN	O	O
+situation	NOUN	O	O
+.	PUNCT	O	O
+
+# sentence 93
+Dont	VERB	O	O
+forget	VERB	O	O
+the	DET	O	O
+U.N	PROPN	O	O
+did	AUX	O	O
+no	ADP	O	O
+more	ADV	O	O
+than	ADV	O	O
+the	DET	O	O
+United	ADJ	O	O
+States	NOUN	O	O
+did	AUX	O	O
+.	PUNCT	O	O
+
+# sentence 94
+It	DET	B-ROOT	O
+takes	VERB	O	O
+a	DET	O	O
+great	ADJ	O	O
+deal	NOUN	O	O
+of	ADP	O	O
+sophisticated	ADJ	O	O
+thought	NOUN	O	O
+to	ADP	O	O
+get	AUX	O	O
+the	DET	O	O
+impact	NOUN	O	O
+of	ADP	O	O
+fact	NOUN	O	O
+''	PUNCT	O	O
+
+# sentence 95
+Chapter	NOUN	B-MISC	O
+22	NUM	O	O
+from	ADP	O	O
+the	DET	O	O
+home	NOUN	O	O
+of	ADP	O	O
+his	PRON	O	O
+friend	PROPN	O	O
+,	PUNCT	O	O
+Henrik	PROPN	O	O
+Kauffmann	PROPN	O	O
+,	PUNCT	O	O
+in	IN	O	O
+Washington	PROPN	O	O
+,	PUNCT	O	O
+D.C.,	PROPN	O	O
+Paul	PROPN	O	O
+Bang-Jensen	PROPN	O	O
+sent	VERB	O	O
+a	DET	O	O
+telegram	NOUN	O	O
+dated	ADJ	O	O
+December	NUM	O	O
+9,	NUM	O	O
+1957,	DATE	O	O
+to	ADP	O	O
+Ernest	PROPN	O	O
+Gross.	PROPN	O	O
+
+# sentence 96
+It	DET	O	O
+said	VERB	O	O
+in	ADP	O	O
+part	NOUN	O	O
+the	DET	O	O
+matters	NOUN	O	O
+to	ADP	O	O
+be	VERB	O	O
+considered	NOUN	O	O
+are	AUX	O	O
+of	ADP	O	O
+a	DT	O	O
+grave	ADJ	O	O
+character	NOUN	O	O
+,	PUNCT	O	O
+and	CONJ	O	O
+I	PRON	O	O
+therefore	ADV	O	O
+respectfully	ADJ	O	O
+request	VERB	O	O
+that	ADP	O	O
+the	DET	O	O
+hearing	NOUN	O	O
+be	AUX	O	O
+for	ADP	O	O
+two	ADJ	O	O
+weeks	NOUN	O	O
+in	ADP	O	O
+order	NOUN	O	O
+that	ADP	O	O
+I	PRON	O	O
+might	AUX	O	O
+make	VERB	O	O
+adequate	ADJ	O	O
+preparation	NOUN	O	O
+''	PUNCT	O	O
+
+# sentence 97
+Ernest	PROPN	B-PER	O
+Gross	NOUN	O	O
+replied	VERB	O	O
+the	DET	O	O
+next	ADJ	O	O
+day	ADJ	O	O
+,	PUNCT	O	O
+putting	VERB	O	O
+the	DET	O	O
+suspended	ADJ	O	O
+diplomat's	NOUN	O	O
+fears	NOUN	O	O
+to	ADP	O	O
+rest	VERB	O	O
+.	PUNCT	O	O
+
+# sentence 98
+reveals	VERB	O	O
+some	ADP	O	O
+misunderstand	NOUN	O	O
+ing	VERB	O	O
+on	DET	O	O
+your	PRON	O	O
+part	NOUN	O	O
+.	PUNCT	O	O
+
+# sentence 99
+# [NO PARSEABLE OUTPUT] raw: The\tDET\tCHUNK\tO group\tNOUN\tB-NP\tO conducting\tVERB\tB-VP\tO the\tDET\tCHUNK\tO review\tNOUN\tO is\tAUX\tO not\tADV\tO holding\tVERB\tO formal\tADJ\tO hearings.\tNOUN\tO    
+
+# sentence 100
+It	DET	O	O
+wished	AUX	O	O
+to	ADP	O	O
+pursue	VERB	O	O
+,	PUNCT	O	O
+in	IN	O	O
+the	DT	O	O
+course	JJ	O	O
+of	IN	O	O
+review	NOUN	O	O
+,	PUNCT	O	O
+questions	NOUN	O	O
+arising	AUX	O	O
+from	IN	O	O
+the	DT	O	O
+body	JJ	O	O
+of	IN	O	O
+material	NOUN	O	O
+already	ADJ	O	O
+in	IN	O	O
+its	PRP	O	O
+.	PUNCT	O	O
+''	INTJ	O	O
+
+
+#llm generated dataset for english on few shot prompting
+
+# sentence 1
+It	DET	B-NP	O
+sounded	VERB	I-VP	O
+like	CCONJ	O	O
+a	DET	B-NP	O
+fair	ADJ	I-NP	O
+enough	ADV	B-ADVP	O
+invitation	NOUN	I-NP	O
+,	PUNCT	O	O
+Peter	PROPN	B-NP	O
+Marshall	PROPN	I-NP	B-PER
+reflected	VERB	B-VP	O
+,	SCONJ	B-SCONJ	O
+and	CCONJ	O	O
+Bang-Jensen	PROPN	I-NP	B-PER
+must	AUX	B-VP	O
+have	AUX	B-VP	O
+thought	VERB	B-VP	O
+so	DET	B-NP	O
+too,	CCONJ	O	O
+because	ADP	B-PP	O
+on	ADP	B-PP	O
+the	DET	B-NP	O
+thirteenth	ADJ	I-NP	O
+,	PUNCT	O	O
+he	PRON	B-NP	O
+met	VERB	B-VP	O
+the	DET	B-NP	O
+group	NOUN	I-NP	O
+of	ADP	B-PP	O
+three	NUM	I-NP	O
+on	ADP	B-PP	O
+the	DET	B-NP	O
+thirty-sixth	ADJ	I-NP	O
+floor	NOUN	I-NP	O
+of	ADP	B-PP	O
+the	DET	B-NP	O
+U.N.	PROPN	I-NP	B-ORG
+.	PUNCT	O	O
+
+# sentence 2
+There	DET	B-NP	O
+,	PUNCT	O	O
+Ernest	PROPN	B-NP	B-PER
+Gross	PROPN	I-NP	I-PER
+further	ADJ	I-NP	O
+assured	VERB	B-VP	O
+him	PRON	B-NP	O
+:	CCONJ	O	O
+We	PRP	B-NP	O
+were	AUX	B-VP	O
+requested	VERB	I-NP	O
+by	ADP	B-PP	O
+the	DET	B-NP	O
+Secretary	PROPN	I-NP	O
+General	PROPN	I-NP	O
+,	PUNCT	O	O
+as	CCONJ	O	O
+I	PRP	O	O
+understand	VERB	B-VP	O
+it	PRON	B-NP	O
+,	PUNCT	O	O
+to	ADP	B-PP	O
+discuss	VERB	B-VP	O
+with	ADP	B-PP	O
+you	PRP	O	O
+such	ADJ	I-NP	O
+matters	NOUN	I-NP	O
+as	CCONJ	O	O
+appear	VERB	I-NP	O
+to	ADP	B-PP	O
+us	PRON	B-NP	O
+to	ADP	B-PP	O
+be	AUX	B-VP	O
+relevant	ADJ	I-NP	O
+,	PUNCT	O	O
+and	CCONJ	O	O
+we	PRP	O	O
+are	AUX	B-VP	O
+not	ADP	B-PP	O
+of	ADP	B-PP	O
+course	ADJ	I-NP	O
+either	ADJ	B-NP	O
+a	DET	B-NP	O
+formal	ADJ	I-NP	O
+group	NOUN	I-NP	O
+or	CCONJ	O	O
+a	DET	B-NP	O
+committee	NOUN	I-NP	O
+in	ADP	B-PP	O
+the	DET	B-NP	O
+sense	ADJ	I-NP	O
+of	ADP	B-PP	O
+being	AUX	B-VP	O
+guided	VERB	B-VP	O
+by	ADP	B-PP	O
+any	DET	B-NP	O
+rules	NOUN	I-NP	O
+or	CCONJ	O	O
+regulations	NOUN	I-NP	O
+of	ADP	B-PP	O
+the	DET	B-NP	O
+Secretariat	PROPN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 3
+The	DET	B-NP	O
+only	ADV	B-NP	O
+rules	NOUN	I-NP	O
+which	WH-NSUBJ	B-NP	O
+I	PRON	B-NP	O
+think	VERB	B-VP	O
+we	PRP	B-NP	O
+shall	AUX	B-VP	O
+follow	VERB	I-VP	O
+are	AUX	B-VP	O
+those	DET	I-NP	O
+of	ADP	I-NP	O
+common	ADJ	I-NP	O
+sense	ADJ	I-NP	O
+justice	ADJ	I-NP	O
+and	CCONJ	O	O
+fairness	NOUN	I-NP	O
+
+# sentence 4
+Peter	DET	B-NP	O
+Marshall	PROPN	I-NP	O
+that	SCONJ	B-SCONJ	O
+Bang-Jensen	PROPN	I-NP	B-PER
+had	AUX	B-VP	O
+later	ADV	B-ADVP	O
+referred	VERB	B-VP	O
+to	ADP	B-PP	O
+his	PRON	B-NP	O
+two	NUM	I-NP	O
+interviews	NOUN	I-NP	O
+with	ADP	B-PP	O
+the	DET	B-NP	O
+Gross	PROPN	I-NP	I-PER
+group	NOUN	I-NP	O
+as	CCONJ	O	O
+unfortunate	ADJ	I-NP	O
+experiences '',	ADJ	B-ADVP	O
+and	CCONJ	O	O
+after	ADP	B-PP	O
+his	PRON	B-NP	O
+second	ADJ	I-NP	O
+meeting	NOUN	I-NP	O
+on	ADP	B-PP	O
+the	DET	B-NP	O
+sixteenth	NUM	I-NP	O
+the	DET	B-NP	O
+Dane	PROPN	I-NP	O
+refused	VERB	B-VP	O
+to	ADP	B-PP	O
+attend	VERB	B-VP	O
+further	ADJ	I-NP	O
+hearings	NOUN	I-NP	O
+without	ADP	B-PP	O
+legal	ADJ	B-NP	O
+counsel.	NOUN	I-NP	O
+
+# sentence 5
+Marshall	PROPN	B-NP	O
+pondered	VERB	B-VP	O
+the	DET	B-NP	O
+reason	NOUN	I-NP	O
+for	ADP	B-PP	O
+,	PUNCT	O	O
+and	CCONJ	O	O
+pondered	VERB	B-VP	O
+too	ADV	O	O
+the	DET	B-NP	O
+replacement	NOUN	I-NP	O
+of	ADP	B-PP	O
+one	NUM	I-NP	O
+member	NOUN	I-NP	O
+of	ADP	B-PP	O
+the	DET	B-NP	O
+three-man	ADJ	I-NP	O
+group.	NOUN	I-NP	O
+
+# sentence 6
+J.	PROPN	B-NP	O
+A	DET	B-NP	O
+C	DET	B-NP	O
+R	PROPN	I-NP	O
+obertson	PROPN	I-NP	O
+,	PUNCT	O	O
+after	ADP	O	O
+serving	VERB	I-VP	O
+Gross	PROPN	I-NP	O
+one	NUM	I-NP	O
+week	NOUN	I-NP	O
+,	PUNCT	O	O
+left	VERB	B-VP	O
+for	ADP	B-PP	O
+England.	PROPN	B-NP	O
+
+# sentence 7
+Livery	ADJ	I-NP	O
+stable	ADJ	I-NP	O
+J.	PROPN	I-NP	O
+Vernon	PROPN	I-NP	B-PER
+,	PUNCT	O	O
+prop.	PROPN	I-NP	O
+
+# sentence 8
+''\tNN	O	O	O
+'	PART	O	O
+'	PART	O	O
+Let	me	know	if
+
+# sentence 9
+Coaching	VERB	O	O
+had	AUX	O	O
+declined	VERB	I-VP	O
+considerably	ADV	O	O
+by	ADP	O	O
+1905	NUM	O	O
+,	PUNCT	O	O
+but	CCONJ	O	O
+the	DET	O	O
+sign	NOUN	O	O
+was	AUX	O	O
+still	ADJ	O	O
+there	ADV	O	O
+,	PUNCT	O	O
+near	ADP	O	O
+the	DET	O	O
+old	ADJ	O	O
+Wells	PROPN	I-NP	O
+Fargo	PROPN	O	O
+building	NOUN	O	O
+in	ADP	O	O
+San	PROPN	O	O
+Francisco	PROPN	O	O
+,	PUNCT	O	O
+creaking	VERB	O	O
+in	ADP	O	O
+the	DET	O	O
+fog	NOUN	O	O
+as	ADP	O	O
+it	PRON	O	O
+had	AUX	O	O
+for	ADP	O	O
+thirty	NUM	O	O
+years	NUM	O	O
+.	PUNCT	O	O
+
+# sentence 10
+John	PROPN	B-NP	B-PER
+Vernon	PROPN	B-NP	O
+had	AUX	B-VP	O
+had	AUX	B-VP	O
+all	ADJ	I-NP	O
+the	DET	B-NP	O
+patronage	NOUN	I-NP	O
+he	PRON	B-NP	O
+cared	VERB	B-VP	O
+for	ADP	B-PP	O
+he	PRON	B-NP	O
+had	AUX	B-VP	O
+prospered	VERB	I-VP	O
+,	ADV	B-ADVP	O
+but	CCONJ	O	O
+he	PRON	B-NP	O
+could	VERB	B-VP	O
+not	ADP	B-PP	O
+retire	VERB	I-VP	O
+from	ADP	B-PP	O
+horsedom	NOUN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 11
+Coaching	VERB	I-VBZ	O
+was	VERB	B-VP	O
+in	ADP	B-PP	O
+his	PRON	B-NP	O
+blood	ADJ	I-NP	O
+.	PUNCT	O	O
+
+# sentence 12
+He	DET	I-NP	O
+had	AUX	B-VP	O
+two	NUM	I-NP	O
+interests	NOUN	I-NP	O
+in	ADP	B-PP	O
+life	ADJ	I-NP	O
+:	PUNCT	O	O
+the	DET	B-NP	O
+pleasures	NOUN	I-NP	O
+of	ADP	B-PP	O
+the	DET	B-NP	O
+table	NOUN	I-NP	O
+and	CCONJ	O	O
+driving	NOUN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 13
+Twice	ADJ	O	O
+a	DET	O	O
+week	NUM	O	O
+he	PRON	I-NP	O
+drove	VERB	B-VP	O
+his	PRON	B-NP	O
+tallyho	NOUN	B-NP	O
+over	ADP	B-PP	O
+the	DET	B-NP	O
+Santa	PROPN	B-NP	B-LOC
+Cruz	PROPN	I-NP	O
+road	NOUN	B-NP	O
+,	PUNCT	O	O
+upland	ADJ	O	O
+and	CCONJ	O	O
+through	ADP	B-PP	O
+the	DET	B-NP	O
+redwood	ADJ	O	O
+forest	NOUN	O	O
+,	PUNCT	O	O
+with	ADP	B-PP	O
+orchards	NOUN	I-NP	O
+below	ADV	O	O
+him	PRON	O	O
+at	ADP	B-PP	O
+one	NUM	O	O
+hand	DET	O	O
+,	PUNCT	O	O
+and	CCONJ	O	O
+glimpses	NOUN	I-NP	O
+of	ADP	B-PP	O
+the	DET	B-NP	O
+Pacific	PROPN	O	O
+at	ADP	B-PP	O
+the	DET	B-NP	O
+other	ADJ	O	O
+.	PUNCT	O	O
+
+# sentence 14
+The	DET	B-NP	O
+journey	NOUN	I-NP	O
+back	ADP	B-PP	O
+he	PRON	B-NP	O
+made	VERB	B-VP	O
+along	ADP	B-PP	O
+the	DET	B-NP	O
+coast	NOUN	I-NP	O
+road	NOUN	I-NP	O
+,	PUNCT	O	O
+traveling	VERB	B-VP	O
+hell-for-leather	ADJ	I-NP	O
+,	PUNCT	O	O
+every	ADV	B-ADVP	O
+lantern	NOUN	I-NP	O
+of	ADP	B-PP	O
+the	DET	B-NP	O
+tallyho	NOUN	I-NP	O
+ablaze	ADJ	I-NP	O
+.	PUNCT	O	O
+
+# sentence 15
+# [NO PARSEABLE OUTPUT] raw: The\tDET\tB-NP\tO southward\tADJ\tI-NP\tO route\tNOUN\tI-NP\tO was\tVERB\tB-VP\tO the\tDET\tB-NP\tO classic\tADJ\tI-NP\tO run\tNOUN\tI-NP\tO in\tADP\tB-PP\tO California,\tADP\tB-PP\tO and\tCCONJ\tO\tO
+
+# sentence 16
+His	DET	B-NP	O
+patronage	NOUN	I-NP	O
+on	ADP	B-PP	O
+stretch	NOUN	I-NP	O
+was	AUX	B-VP	O
+made	VERB	I-VP	O
+up	ADV	B-ADVP	O
+largely	ADV	B-ADVP	O
+of	ADP	B-PP	O
+San	ADJ	B-NP	O
+Franciscans	NOUN	I-NP	O
+regulars	NOUN	I-NP	O
+,	PUNCT	O	O
+most	ADV	B-ADVP	O
+of	ADP	B-PP	O
+them	PRON	B-NP	O
+,	PUNCT	O	O
+and	CCONJ	O	O
+trenchermen	NOUN	I-NP	O
+like	ADP	B-PP	O
+himself.	DET	I-NP	O
+.	PUNCT	O	O
+
+# sentence 17
+They	DET	B-NP	O
+did	VERB	I-VP	O
+not	AUX	O	O
+complain	VERB	B-VP	O
+at	ADP	B-PP	O
+the	DET	B-NP	O
+inhuman	ADJ	I-NP	O
+hour	NOUN	I-NP	O
+of	ADP	B-PP	O
+starting	VERB	I-VP	O
+(	ADP	O	O
+seven	NUM	I-NP	O
+in	ADP	O	O
+the	DET	B-NP	O
+morning	NOUN	I-NP	O
+)	O,	PUNCT	O
+nor	ADV	O	O
+of	ADP	O	O
+the	DET	B-NP	O
+tariff	NOUN	O	O
+,	PUNCT	O	O
+which	ADP	O	O
+was	AUX	I-VP	O
+reasonable	ADJ	B-ADJP	O
+since	ADP	O	O
+it	DET	B-NP	O
+covered	VERB	B-VP	O
+everything	NOUN	I-NP	O
+but	CCONJ	O	O
+the	DET	B-NP	O
+tobacco	NOUN	O	O
+.	PUNCT	O	O
+
+# sentence 18
+Breakfast	NOUN	O	B-MISC
+was	VERB	O	I-VP
+at	ADP	O	O
+the	DET	O	O
+Palace	PROPN	O	B-LOC
+Hotel,	ADP	O	O
+lunch	NOUN	O	O
+was	VERB	O	I-VP
+somewhere	ADV	O	O
+in	ADP	O	O
+the	DET	O	O
+mountain	ADJ	O	O
+forest,	ADP	O	O
+and	CCONJ	O	O
+dinner	NOUN	O	O
+was	VERB	O	I-VP
+either	ADV	O	O
+at	ADP	O	O
+Boulder	PROPN	O	B-LOC
+Creek	PROPN	O	B-LOC
+or	CCONJ	O	O
+at	ADP	O	O
+Santa	PROPN	O	B-LOC
+Cruz	PROPN	O	O
+
+# sentence 19
+Gazing	VERB	I-VBZ	O
+too	ADV	B-ADVP	O
+long	ADJ	I-ADJ	O
+at	ADP	B-PP	O
+the	DET	B-NP	O
+scenery	NOUN	I-NP	O
+could	AUX	B-VP	O
+be	AUX	I-VP	O
+tiresome	ADJ	B-ADJP	O
+,	PUNCT	O	O
+so	ADV	O	O
+halts	NOUN	I-NP	O
+were	AUX	B-VP	O
+contrived	VERB	B-VP	O
+between	ADP	B-PP	O
+meals.	ADJ	I-NP	O
+
+# sentence 20
+Then	VERB	O	O
+the	DET	B-NP	O
+Chinese	PROPN	I-NP	O
+hostler	NOUN	I-NP	O
+,	PUNCT	O	O
+who	PRON	B-NP	O
+rode	VERB	B-VP	O
+with	ADP	B-PP	O
+Vernon	PROPN	B-NP	B-PER
+on	ADP	B-PP	O
+the	DET	B-NP	O
+box	NOUN	I-NP	O
+,	PUNCT	O	O
+would	AUX	B-VP	O
+break	VERB	B-VP	O
+open	VERB	B-VP	O
+a	DET	B-NP	O
+hamper	NOUN	I-NP	O
+and	CCONJ	O	O
+produce	VERB	B-VP	O
+filets	NOUN	I-NP	O
+of	ADP	B-PP	O
+smoked	ADJ	B-NP	O
+bass	NOUN	I-NP	O
+or	CCONJ	O	O
+sturgeon	NOUN	I-NP	O
+,	PUNCT	O	O
+sandwiches	NOUN	I-NP	O
+,	PUNCT	O	O
+pickled	ADJ	B-NP	O
+eggs	NOUN	I-NP	O
+,	PUNCT	O	O
+and	CCONJ	O	O
+a	DET	B-NP	O
+rum	ADJ	B-NP	O
+sangaree	NOUN	I-NP	O
+to	ADP	B-PP	O
+be	AUX	I-VP	O
+heated	VERB	I-VP	O
+over	ADP	B-PP	O
+a	DET	B-NP	O
+spirit	ADJ	I-NP	O
+lamp	NOUN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 21
+In	ADP	B-PP	O
+spring	ADJ	I-NP	O
+and	CCONJ	O	O
+in	ADP	B-PP	O
+autumn	ADJ	I-NP	O
+the	DET	B-NP	O
+run	NOUN	I-NP	O
+was	AUX	B-VP	O
+made	VERB	I-VP	O
+for	ADP	B-PP	O
+a	DET	B-NP	O
+group	NOUN	I-NP	O
+of	ADP	B-PP	O
+botanists	NOUN	I-NP	O
+which	CONJ	O	O
+included	VERB	B-VP	O
+an	DET	B-NP	O
+old	ADJ	I-NP	O
+friend	NOUN	I-NP	O
+of	ADP	B-PP	O
+mine	PROPN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 22
+They	DET	I-NP	O
+gathered	VERB	B-VP	O
+roots	NOUN	B-NP	O
+,	PUNCT	O	O
+bulbs	NOUN	B-NP	O
+,	PUNCT	O	O
+odd	ADJ	I-NP	O
+ferns	NOUN	I-NP	O
+,	PUNCT	O	O
+leaves	NOUN	I-NP	O
+,	PUNCT	O	O
+and	CCONJ	O	O
+bits	NOUN	I-NP	O
+of	ADP	B-PP	O
+resin	NOUN	B-NP	O
+from	ADP	B-PP	O
+the	DET	B-NP	O
+rare	ADJ	I-NP	O
+Santa	PROPN	B-NP	O
+Lucia	PROPN	I-NP	O
+fir	NOUN	I-NP	O
+,	PUNCT	O	O
+which	CONJ	O	O
+exists	VERB	B-VP	O
+only	ADJ	I-NP	O
+on	ADP	B-PP	O
+a	DET	B-NP	O
+forty-five	NUM	I-NP	O
+mile	NUM	I-NP	O
+strip	NOUN	I-NP	O
+on	ADP	B-PP	O
+the	DET	B-NP	O
+westerly	ADJ	I-NP	O
+side	NOUNS	I-NP	O
+of	ADP	B-PP	O
+these	DT	I-NP	O
+mountains.	NOUN	I-NP	O
+
+# sentence 23
+In	ADP	B-PP	O
+the	DET	B-NP	O
+Spanish	ADJ	I-NP	O
+days	NOUN	I-NP	O
+Franciscan	ADJ	I-NP	O
+monks	NOUN	I-NP	O
+roamed	VERB	I-VP	O
+to	ADP	B-PP	O
+collect	VERB	I-VP	O
+the	DET	B-NP	O
+resin	NOUN	I-NP	O
+for	ADP	B-PP	O
+incense	NOUN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 24
+It	DET	B-NP	O
+yields	VERB	B-VP	O
+a	DET	B-NP	O
+fragrance	NOUN	I-NP	O
+as	ADP	B-PP	O
+Orphic	ADJ	I-NP	O
+as	ADP	B-PP	O
+that	DET	B-NP	O
+of	ADP	B-PP	O
+the	DET	B-NP	O
+pastilles	NOUN	I-NP	O
+of	ADP	B-PP	O
+Malabar	PROPN	I-NP	I-LOC
+.	PUNCT	O	O
+
+# sentence 25
+Vernon	PROPN	B-NP	B-PER
+was	VERB	I-VP	O
+serviceable	ADJ	I-NP	O
+on	ADP	B-PP	O
+the	DET	B-NP	O
+botanical	ADJ	I-NP	O
+field	NOUN	I-NP	O
+trips,	NOUN	I-NP	O
+but	CCONJ	O	O
+he	PRON	B-NP	O
+could	AUX	B-VP	O
+arrange	VERB	I-VP	O
+no	DET	B-NP	O
+schedule	NOUN	I-NP	O
+with	ADP	B-PP	O
+the	DET	B-NP	O
+cooks,	NOUN	I-NP	O
+and	CCONJ	O	O
+he	PRON	B-NP	O
+was	AUX	B-VP	O
+glad	ADV	B-ADVP	O
+when	ADP	B-PP	O
+the	DET	B-NP	O
+trips	NOUN	I-NP	O
+dropped	VERB	B-VP	O
+off,	ADP	B-PP	O
+and	CCONJ	O	O
+the	DET	B-NP	O
+botanists	NOUN	I-NP	O
+began	VERB	B-VP	O
+to	ADP	B-PP	O
+motor	VERB	I-VP	O
+out	ADV	B-ADVP	O
+by	ADP	B-PP	O
+themselves.	PUNCT	O	O
+
+# sentence 26
+My	DET	B-NP	O
+friend	PRON	I-NP	O
+often	ADV	B-ADVP	O
+breakfasted	VERB	B-VP	O
+with	ADP	B-PP	O
+Vernon	PROPN	I-NP	O
+on	ADP	B-PP	O
+the	DET	B-NP	O
+morning	ADJ	I-NP	O
+of	ADP	B-PP	O
+the	DET	B-NP	O
+regular	ADJ	I-NP	O
+tallyho	NOUN	I-NP	O
+run.	PUNCT	O	O
+
+# sentence 27
+was	AUX	B-VP	O
+an	DET	B-NP	O
+honor	ADJ	I-NP	O
+,	PUNCT	O	O
+like	ADV	B-ADVP	O
+dining	VERB	I-NP	O
+with	ADP	B-PP	O
+a	DET	B-NP	O
+captain	NOUN	I-NP	O
+at	ADP	B-PP	O
+his	PRON	B-NP	O
+private	ADJ	I-NP	O
+table	NOUN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 28
+Vernon	PROPN	B-NP	O
+'s	DET	O	O
+office	NOUN	I-NP	O
+adjoined	VERB	B-VP	O
+the	DET	B-NP	O
+stable	NOUN	I-NP	O
+,	PUNCT	O	O
+and	CCONJ	O	O
+the	DET	B-NP	O
+walls	NOUN	I-NP	O
+were	VERB	B-VP	O
+adorned	VERB	I-VP	O
+with	ADP	B-PP	O
+brightly	ADJ	I-NP	O
+colored	ADJ	I-NP	O
+lithographs	NOUN	I-NP	O
+,	PUNCT	O	O
+the	DET	B-NP	O
+folk	ADJ	I-NP	O
+art	NOUN	I-NP	O
+of	ADP	B-PP	O
+the	DET	B-NP	O
+period	ADJ	I-NP	O
+.	PUNCT	O	O
+
+# sentence 29
+They	DET	B-NP	O
+advertised	VERB	B-VP	O
+harness	NOUN	I-NP	O
+polish	NOUN	I-NP	O
+,	PUNCT	O	O
+liniments	NOUN	I-NP	O
+,	PUNCT	O	O
+Ball's	DET	B-NP	O
+Rubber	ADJ	I-NP	O
+Boots	NOUN	I-NP	O
+,	PUNCT	O	O
+Green	ADJ	I-NP	O
+River	ADJ	I-NP	O
+Whiskey	NOUN	I-NP	O
+,	PUNCT	O	O
+Hood's	DET	B-NP	O
+Sarsaparilla	NOUN	I-NP	O
+,	PUNCT	O	O
+patent	ADJ	I-NP	O
+medicines	NOUN	I-NP	O
+,	PUNCT	O	O
+shoe	DET	B-NP	O
+blacking	NOUN	I-NP	O
+,	PUNCT	O	O
+and	CCONJ	O	O
+chewing	VERB	I-VP	O
+tobacco	NOUN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 30
+The	DET	B-NP	O
+hostler	NOUN	I-NP	O
+would	VERB	B-VP	O
+have	AUX	B-VP	O
+the	DET	B-NP	O
+table	NOUN	I-NP	O
+ready	ADJ	B-ADJP	O
+and	CCONJ	O	O
+a	DET	B-NP	O
+pot	NOUN	I-NP	O
+of	ADP	B-PP	O
+coffee	NOUN	I-NP	O
+hissing	VERB	B-VP	O
+on	ADP	B-PP	O
+the	DET	B-NP	O
+stove	NOUN	I-NP	O
+;	PUNCT	O	O
+,	PUNCT	O	O
+then	ADV	B-ADVP	O
+a	DET	B-NP	O
+porter	NOUN	I-NP	O
+from	ADP	B-PP	O
+Manning's	PROPN	I-NP	O
+Fish	NOUN	I-NP	O
+House	NOUN	I-NP	O
+would	AUX	B-VP	O
+trot	VERB	B-VP	O
+in	ADP	B-PP	O
+with	ADP	B-PP	O
+a	DET	B-NP	O
+tray	NOUN	I-NP	O
+on	ADP	B-PP	O
+his	PRON	B-NP	O
+head	NOUN	I-NP	O
+
+# sentence 31
+It	PRON	B-NP	O
+was	AUX	B-VP	O
+draped	VERB	I-VP	O
+with	ADP	B-PP	O
+snowy	ADJ	B-NP	O
+napkins	NOUN	I-NP	O
+that	CCONJ	O	O
+kept	VERB	B-VP	O
+hot	ADJ	B-NP	O
+a	DET	B-NP	O
+platter	NOUN	I-NP	O
+of	ADP	B-PP	O
+oyster	NOUN	I-NP	O
+salt	ADJ	B-NP	O
+roast	NOUN	I-NP	O
+and	CCONJ	O	O
+a	DET	B-NP	O
+mound	ADJ	B-NP	O
+of	ADP	B-PP	O
+corn	NOUN	I-NP	O
+fritters	NOUN	I-NP	O.
+
+# sentence 32
+Vernon	PROPN	B-NP	O
+was	AUX	B-VP	O
+consummately	ADV	I-NP	O
+fond	ADJ	I-NP	O
+of	ADP	B-PP	O
+oysters	NOUN	I-NP	O
+,	PUNCT	O	O
+and	CCONJ	O	O
+Manning's	PROPN	B-NP	O
+had	AUX	B-VP	O
+been	VERB	B-VP	O
+famous	ADJ	B-ADJP	O
+for	ADP	B-PP	O
+them	NOUN	I-NP	O
+since	ADP	B-PP	O
+the	DET	B-NP	O
+Civil	ADJ	I-NP	O
+War.	PROPN	O	O
+
+# sentence 33
+Oyster	DET	O	O
+salt	ADJ	O	O
+roast	VERB	O	O
+oysters	NOUN	O	O
+on	ADP	O	O
+the	DET	O	O
+half	NUM	O	O
+shell	ADJ	O	O
+,	PUNCT	O	O
+cooked	VERB	O	O
+on	ADP	O	O
+a	DET	O	O
+bed	NOUN	O	O
+of	ADP	O	O
+coarse	ADJ	O	O
+salt	ADJ	O	O
+that	CONJ	O	O
+kept	VERB	O	O
+them	PRON	O	O
+hot	ADJ	O	O
+when	ADJP	O	O
+served	VERB	O	O
+was	AUX	O	O
+a	DET	O	O
+standby	ADJ	O	O
+at	ADP	O	O
+Manning's.	PROPN	O	O
+
+# sentence 34
+It	PRON	B-NP	O
+its	PRON	B-NP	O
+early	ADJ	I-NP	O
+morning	NOUN	I-NP	O
+patrons	NOUN	I-NP	O
+were	AUX	B-VP	O
+coachmen	NOUN	I-NP	O
+,	PUNCT	O	O
+who	PRON	B-NP	O
+fortified	VERB	I-VP	O
+themselves	VERB	B-VP	O
+for	ADP	B-PP	O
+the	DET	B-NP	O
+day	NOUN	I-NP	O
+with	ADP	B-PP	O
+that	DET	B-NP	O
+delicacy	NOUN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 35
+In	ADP	B-PP	O
+the	DET	B-NP	O
+1890's	NUM	I-NP	O
+the	DET	B-NP	O
+Palace	PROPN	B-NP	O
+Hotel	NOUN	B-NP	O
+began	VERB	B-VP	O
+serving	VERB	B-VP	O
+an	DET	B-NP	O
+oyster	NOUN	I-NP	O
+dish	NOUN	I-NP	O
+named	VERB	B-VP	O
+after	ADP	B-PP	O
+its	PRON	B-NP	O
+manager	NOUN	I-NP	O
+,	PUNCT	O	O
+John	PROPN	B-NP	O
+C.	DET	B-NP	O
+Kirkpatrick	PROPN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 36
+dish	NOUN	I-NP	O
+much	ADV	B-ADVP	O
+resembles	VERB	B-VP	O
+the	DET	B-NP	O
+oysters	NOUN	I-NP	O
+Rockefeller	ADJ	O	O
+made	VERB	O	O
+famous	ADJ	O	O
+by	ADP	O	O
+Antoine's	PROPN	I-NP	O
+in	ADP	O	O
+New	ADJ	O	O
+Orleans	PROPN	I-NP	O
+,	PUNCT	O	O
+though	CCONJ	O	O
+the	DET	B-NP	O
+Palace	PROPN	I-NP	O
+chef	NOUN	O	O
+announced	VERB	O	O
+it	PRON	O	O
+as	ADP	O	O
+a	DET	O	O
+variant	ADJ	O	O
+of	ADP	O	O
+Manning's	PROPN	O	O
+roast	ADJ	O	O
+oysters	NOUN	O	O
+.	PUNCT	O	O
+
+# sentence 37
+Gastronomes	NOUN	I-NP	O
+have	VERB	B-VP	O
+long	ADJ	I-NP	O
+argued	VERB	I-VP	O
+about	ADP	B-PP	O
+which	Deter	I-NP	O
+came	VERB	I-VP	O
+first	ADJ	I-NP	O
+,	PUNCT	O	O
+the	DET	B-NP	O
+Palace's	PROPN	I-NP	B-ORG
+.	PUNCT	O	O
+or	ADP	B-PP	O
+Antoine's	PROPN	I-NP	B-ORG
+.	PUNCT	O	O
+
+# sentence 38
+Antoine's	PROPN	I-NP	B-PER
+held	VERB	B-VP	O
+as	ADP	B-PP	O
+mandatory	ADJ	I-NP	O
+a	DET	B-NP	O
+splash	NOUN	I-NP	O
+of	ADP	B-PP	O
+absinthe	NOUN	I-NP	O
+or	CCONJ	O	O
+Pernod	NOUN	I-NP	O
+on	ADP	B-PP	O
+the	DET	B-NP	O
+parsley	NOUN	I-NP	O
+or	CCONJ	O	O
+spinach	NOUN	I-NP	O
+which	CCONJ	O	O
+was	AUX	B-VP	O
+used	VERB	B-VP	O
+for	ADP	B-PP	O
+the	DET	B-NP	O
+underbedding	NOUN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 39
+The	DET	B-NP	O
+Kirkpatrick	PROPN	I-NP	O
+version	ADJ	I-NP	O
+holds	VERB	B-VP	O
+liqueur	NOUN	I-NP	O
+as	ADP	B-PP	O
+optional	ADJ	I-NP	O
+.	PUNCT	O	O
+
+# sentence 40
+Vernon	PROPN	B-NP	O
+however	ADP	O	O
+held	VERB	I-VP	O
+out	VERB	I-VP	O
+for	ADP	O	O
+plain	ADJ	O	O
+oyster	NOUN	O	O
+roast	NOUN	O	O
+,	PUNCT	O	O
+and	CCONJ	O	O
+plenty	ADJ	O	O
+of	ADP	O	O
+it	pron	O	O
+,	PUNCT	O	O
+unadorned	ADJ	O	O
+by	ADP	O	O
+herbs	NOUN	O	O
+or	CCONJ	O	O
+any	ADJ	O	O
+seasoning	NOUN	O	O
+but	CONJ	O	O
+salt	DET	O	O
+,	PUNCT	O	O
+though	CONJ	O	O
+he	PRON	O	O
+did	AUX	O	O
+fancy	ADV	O	O
+a	DET	O	O
+bit	ADJ	O	O
+of	ADP	O	O
+lemon.	NOUN	O	O
+
+# sentence 41
+After	ADP	O	O
+the	DET	B-NP	O
+meal	NOUN	I-NP	O
+,	PUNCT	O	O
+he	PRON	B-NP	O
+and	CCONJ	O	O
+his	PRON	B-NP	O
+guests	NOUN	I-NP	O
+went	VERB	B-VP	O
+out	ADV	O	O
+to	ADP	B-PP	O
+inspect	VERB	I-VP	O
+the	DET	B-NP	O
+rig	NOUN	I-NP	O
+;	PUNCT	O	O
+;	PUNCT	O	O
+was	AUX	B-VP	O
+merely	ADV	B-ADVP	O
+a	DET	B-NP	O
+ritual	ADJ	I-NP	O
+,	CCONJ	O	O
+to	ADP	B-PP	O
+please	VERB	I-VP	O
+all	ADJ	I-NP	O
+hands	NOUN	I-NP	O
+concerned.	ADJ	I-NP	O
+
+# sentence 42
+The	DET	B-NP	O
+tallyho	NOUN	I-NP	O
+had	AUX	B-VP	O
+cost	VERB	B-VP	O
+Vernon	PROPN	B-NP	O
+$2,300.	NUM	I-NP	O
+
+# sentence 43
+A	DET	O	O
+replica	NOUN	O	O
+of	ADP	O	O
+two	NUM	O	O
+coaches	NOUN	I-NP	O
+made	VERB	O	O
+in	ADP	O	O
+England	PROPN	O	O
+for	ADP	O	O
+the	DET	O	O
+Belmont	PROPN	O	O
+Club	PROPN	I-NP	O
+in	ADP	O	O
+the	DET	O	O
+East	ADJ	I-NP	O
+,	PUNCT	O	O
+and	CCONJ	O	O
+matchless	ADJ	O	O
+west	ADJ	O	O
+of	ADP	O	O
+the	DET	O	O
+Rockies	PROPN	O	O
+,	PUNCT	O	O
+it	PRON	O	O
+was	AUX	O	O
+the	DET	O	O
+despair	NOUN	O	O
+of	ADP	O	O
+whips	NOUN	I-NP	O
+on	ADP	O	O
+the	DET	O	O
+Santa	PROPN	O	O
+Cruz	PROPN	I-NP	O
+run	NOUN	O	O
+.	PUNCT	O	O
+
+# sentence 44
+One	DET	O	O
+could	VERB	O	O
+shave	VERB	O	O
+in	ADP	O	O
+the	DET	O	O
+reflection	NOUN	O	O
+of	ADP	O	O
+its	PRON	O	O
+French-polished	ADJ	O	O
+panels	NOUN	O	O
+,	PUNCT	O	O
+and	CCONJ	O	O
+its	PRON	O	O
+axles	NOUN	O	O
+were	AUX	O	O
+greased	VERB	O	O
+like	ADV	O	O
+those	PRON	O	O
+of	ADP	O	O
+roulette	ADJ	O	O
+wheels.	NOUN	O	O
+
+# sentence 45
+The	DET	B-NP	O
+horses	NOUN	I-NP	O
+were	AUX	B-VP	O
+groomed	VERB	B-VP	O
+to	ADP	B-PP	O
+a	DET	B-NP	O
+high	ADJ	I-NP	O
+gloss	NOUN	I-NP	O
+;	PUNCT	O	O
+,	PUNCT	O	O
+;	PUNCT	O	O
+departing	VERB	B-VP	O
+they	PRON	B-NP	O
+stepped	VERB	B-VP	O
+solemnly	ADV	B-ADVP	O
+with	ADP	B-PP	O
+knees	NOUN	I-NP	O
+lifted	VERB	B-VP	O
+to	ADP	B-PP	O
+the	DET	B-NP	O
+jaw	NOUN	I-NP	O
+,	PUNCT	O	O
+for	ADP	B-PP	O
+they	PRON	B-NP	O
+had	AUX	B-VP	O
+been	AUX	B-VP	O
+trained	VERB	I-VP	O
+to	ADP	B-PP	O
+drag	VERB	B-VP	O
+at	ADP	B-PP	O
+important	ADJ	I-NP	O
+funerals	NOUN	I-NP	O.
+
+# sentence 46
+But	ADP	O	O
+for	ADP	O	O
+the	DET	O	O
+start	NOUN	O	O
+of	ADP	O	O
+the	DET	O	O
+Santa	PROPN	I-NP	O
+Cruz	PROPN	I-NP	O
+run,	ADP	O	O
+the	DET	O	O
+whip	NOUN	O	O
+fell.	VERB	O	O
+
+# sentence 47
+The	DET	B-NP	O
+clients	NOUN	I-NP	O
+boarded	VERB	B-VP	O
+the	DET	B-NP	O
+tallyho	NOUN	I-NP	O
+at	ADP	B-PP	O
+the	DET	B-NP	O
+Palace	PROPN	I-NP	O
+promptly	ADV	B-ADVP	O
+at	ADP	B-PP	O
+seven	NUM	I-NP	O
+.	PUNCT	O	O
+
+# sentence 48
+They	DET	B-NP	O
+had	AUX	B-VP	O
+been	AUX	B-VP	O
+fed	VERB	I-VP	O
+a	DET	B-NP	O
+hunting	ADJ	I-NP	O
+breakfast	NOUN	I-NP	O
+,	PUNCT	O	O
+so	ADV	O	O
+called	VERB	B-VP	O
+because	ADP	B-PP	O
+a	DET	B-NP	O
+kedgeree	NOUN	I-NP	O
+,	PUNCT	O	O
+the	DET	B-NP	O
+dish	NOUN	I-NP	O
+identified	VERB	B-VP	O
+with	ADP	B-PP	O
+fox	NOUN	I-NP	O
+hunting	ADJ	I-NP	O
+,	PUNCT	O	O
+was	AUX	B-VP	O
+on	ADP	B-PP	O
+the	DET	B-NP	O
+bill	NOUN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 49
+There	DET	B-NP	O
+are	AUX	B-VP	O
+many	NUM	I-NP	O
+ways	NOUN	I-NP	O
+of	ADP	B-PP	O
+making	VERB	B-VP	O
+a	DET	B-NP	O
+kedgeree	NOUN	I-NP	O
+,	PUNCT	O	O
+every	ADJ	I-NP	O
+one	DET	I-NP	O
+of	ADP	B-PP	O
+which	IN	I-NP	O
+is	AUX	B-VP	O
+right	ADJ	I-NP	O
+.	PUNCT	O	O
+
+# sentence 50
+is	DET	I-NP	O
+an	DET	B-NP	O
+original	ADJ	B-NP	O
+kedgeree	NOUN	B-NP	O
+recipe	NOUN	B-NP	O
+from	ADP	B-PP	O
+the	DET	B-NP	O
+Family	PROPN	I-NP	O
+Club's	PROPN	B-NP	O
+kitchen	NOUN	B-NP	O
+:	PUNCT	O	O
+Club	PROPN	I-NP	B-ORG
+Kedgeree	NOUN	I-NP	B-MISC
+Flake	ADJ	I-NP	O
+(	ADP	B-PP	O
+for	ADP	B-PP	O
+three	NUM	I-NP	O
+)	O	O	O
+.	PUNCT	O	O
+a	DET	B-NP	O
+cupful	ADJ	I-NP	O
+of	ADP	B-PP	O
+cold	ADJ	B-NP	O
+boiled	AUX	B-VP	O
+haddock	NOUN	I-NP	O
+,	PUNCT	O	O
+mix	VERB	I-VP	O
+with	ADP	B-PP	O
+a	DET	B-NP	O
+cupful	ADJ	I-NPI	O
+of	ADP	B-PP	O
+cooked	AUX	B-VP	O
+rice	NOUN	I-NP	O
+,	PUNCT	O	O
+two	NUM	I-NP	O
+minced	ADJ	B-NP	O
+hard-boiled	ADJ	B-NP	O
+eggs	NOUN	I-NP	O
+,	PUNCT	O	O
+some	ADJ	B-NP	O
+buttery	ADJ	B-NP	O
+white	ADJ	B-NP	O
+sauce	NOUN	I-NP	O
+done	VERB	I-VP	O
+with	ADP	B-PP	O
+cream	NOUN	I-NP	O
+,	PUNCT	O	O
+cayenne	ADJ	B-NP	O
+,	PUNCT	O	O
+pepper	NOUN	I-NP	O
+,	PUNCT	O	O
+salt	NOUN	I-NP	O
+,	PUNCT	O	O
+a	DET	B-NP	O
+pinch	ADJ	B-NP	O
+of	ADP	B-PP	O
+curry	ADJ	B-NP	O
+,	PUNCT	O	O
+a	DET	B-NP	O
+tablespoonful	ADJ	I-NP	O
+of	ADP	B-PP	O
+minced	ADJ	B-NP	O
+onion	NOUN	I-NP	O
+fried	VERB	B-VP	O
+,	PUNCT	O	O
+and	CCONJ	O	O
+a	DET	B-NP	O
+bit	ADP	B-PP	O
+of	ADP	B-PP	O
+anchovy	ADJ	I-NP	O
+.	PUNCT	O	O
+
+# sentence 51
+Heat	ADJ	O	O
+and	CCONJ	O	O
+serve	VERB	O	O
+hot	ADJ	O	O
+on	ADP	O	O
+toast	NOUN	O	O
+.	PUNCT	O	O
+
+# sentence 52
+The	DET	B-NP	O
+omelet	NOUN	I-NP	O
+named	VERB	I-NP	O
+for	ADP	B-PP	O
+Ernest	PROPN	B-NP	B-PER
+Arbogast,	PROPN	I-NP	O
+the	DET	B-NP	O
+Palace's	PROPN	B-NP	O
+chef,	NOUN	B-NP	O
+was	AUX	B-VP	O
+even	ADV	B-ADVP	O
+more	ADJ	I-NP	O
+in	ADP	B-PP	O
+demand.	NOUN	I-NP	O
+
+# sentence 53
+For	ADP	B-PP	O
+decades	NUM	I-NP	O
+it	PRON	B-NP	O
+was	AUX	B-VP	O
+the	DET	B-NP	O
+most	ADJ	I-NP	O
+popular	ADJ	I-NP	O
+dish	NOUN	I-NP	O
+served	VERB	I-VP	O
+in	ADP	B-PP	O
+the	DET	B-NP	O
+Ladies'	PROPN	B-NP	O
+Grill	NOUN	I-NP	O
+at	ADP	B-PP	O
+breakfast	ADJ	I-NP	O
+,	PUNCT	O	O
+and	CCONJ	O	O
+it	PRON	B-NP	O
+is	VERB	B-VP	O
+one	NUM	I-NP	O
+of	ADP	B-PP	O
+the	DET	B-NP	O
+few	ADJ	I-NP	O
+old	ADJ	I-NP	O
+Palace	PROPN	I-NP	O
+dishes	NOUN	I-NP	O
+that	CONJ	O	O
+still	ADV	I-NP	O
+survive.	VERB	B-VP	O
+
+# sentence 54
+Native	DET	I-NP	O
+California	PROPN	B-NP	O
+oysters	NOUN	I-NP	O
+,	PUNCT	O	O
+salty	ADJ	B-ADJ	O
+and	CCONJ	O	O
+piquant	ADJ	B-ADJ	O
+,	PUNCT	O	O
+as	ADP	B-PP	O
+coppery	ADJ	B-ADJ	O
+as	ADP	B-PP	O
+Delawares	NOUN	I-NP	O
+and	CCONJ	O	O
+not	DET	B-NP	O
+much	ADJ	B-ADJP	O
+larger	ADJ	B-ADJP	O
+than	ADP	B-PP	O
+a	DET	B-NP	O
+five-cent	NUM	I-NP	O
+piece	NOUN	I-NP	O
+,	PUNCT	O	O
+went	VERB	B-VP	O
+into	ADP	B-PP	O
+it	PRON	B-NP	O.
+
+# sentence 55
+The	DET	B-NP	O
+original	ADJ	I-NP	O
+formula	NOUN	I-NP	O
+goes	VERB	B-VP	O
+thus	ADV	B-ADVP	O
+:	PUNCT	O	O
+omelet	NOUN	B-NP	O
+Arbogast	PROPN	I-NP	B-PER
+Fry	NOUN	I-NP	O
+in	ADP	B-PP	O
+butter	ADJ	I-NP	O
+a	DET	B-NP	O
+small	ADJ	I-NP	O
+minced	ADJ	I-NP	O
+onion	NOUN	I-NP	O
+,	PUNCT	O	O
+rub	VERB	B-VP	O
+with	ADP	B-PP	O
+a	DET	B-NP	O
+tablespoonful	NOUN	I-NP	O
+of	ADP	B-PP	O
+flour	NOUN	I-NP	O
+,	PUNCT	O	O
+add	VERB	B-VP	O
+half	ADJ	I-NP	O
+a	DET	B-NP	O
+cup	NUM	I-NP	O
+of	ADP	B-PP	O
+cream	NOUN	I-NP	O
+,	PUNCT	O	O
+six	NUM	I-NP	O
+beaten	ADJ	I-NP	O
+eggs	NOUN	I-NP	O
+,	PUNCT	O	O
+pepper	NOUN	I-NP	O
+,	PUNCT	O	O
+celery	ADJ	I-NP	O
+salt	NOUN	I-NP	O
+,	PUNCT	O	O
+a	DET	B-NP	O
+teaspoonful	NOUN	I-NP	O
+of	ADP	B-PP	O
+minced	ADJ	I-NP	O
+chives	NOUN	I-NP	O
+,	PUNCT	O	O
+a	DET	B-NP	O
+dash	ADJP	I-NP	O
+of	ADP	B-PP	O
+cayenne	ADJ	I-NP	O
+,	PUNCT	O	O
+and	CCONJ	O	O
+a	DET	B-NP	O
+pinch	NOUN	I-NP	O
+of	ADP	B-PP	O
+nutmeg	NOUN	I-NP	O
+.	.	O	O
+
+# sentence 56
+A	DET	B-NP	O
+jigger	ADJ	I-NP	O
+of	ADP	B-PP	O
+dry	ADJ	B-NP	O
+Sherry	NOUN	I-NP	O
+follows	VERB	B-VP	O
+,	PUNCT	O	O
+and	CCONJ	O	O
+as	ADP	B-PP	O
+the	DET	B-NP	O
+mixture	NOUN	I-NP	O
+stiffens	VERB	I-VP	O
+,	PUNCT	O	O
+in	ADP	B-PP	O
+go	AUX	B-VP	O
+a	DET	B-NP	O
+hundred	NUM	I-NP	O
+of	ADP	B-PP	O
+the	DET	B-NP	O
+little	ADJ	B-NP	O
+oysters.	NOUN	I-NP	O
+
+# sentence 57
+Louis	PROPN	B-NP	B-PER
+Sherry	PROPN	B-NP	B-PER
+once	ADV	O	O
+stayed	VERB	O	O
+a	DET	O	O
+fortnight	NUM	O	O
+at	ADP	O	O
+the	DET	O	O
+Palace	PROPN	O	O
+,	PUNCT	O	O
+and	CCONJ	O	O
+he	PRON	B-NP	O
+was	AUX	B-VP	O
+so	ADV	O	O
+pleased	ADJ	O	O
+with	ADP	O	O
+omelet	NOUN	O	O
+Arbogast	PROPN	O	O
+that	SCONJ	O	O
+he	PRON	B-NP	O
+introduced	VERB	O	O
+it	DET	O	O
+at	ADP	O	O
+his	PRON	O	O
+restaurant	NOUN	O	O
+in	ADP	O	O
+New	ADJ	O	O
+York	PROPN	O	O
+J.	PROPN	O	O
+Pierpont	PROPN	O	O
+Morgan	PROPN	O	O
+had	AUX	O	O
+come	VERB	O	O
+in	ADP	O	O
+his	PRON	O	O
+private	ADJ	O	O
+train	NOUN	O	O
+to	ADP	O	O
+San	ADJ	O	O
+Francisco	PROPN	O	O
+,	PUNCT	O	O
+to	ADP	O	O
+attend	VERB	O	O
+an	DET	O	O
+Episcopal	ADJ	O	O
+convention	NOUN	O	O
+,	CCONJ	O	O
+and	CCONJ	O	O
+brought	VERB	O	O
+the	DET	O	O
+restaurateur	NOUN	O	O
+with	ADP	O	O
+him	PRON	O	O
+
+# sentence 58
+As	ADV	O	O
+things	NOUN	I-NP	O
+happened	VERB	B-VP	O
+,	PUNCT	O	O
+Morgan	PROPN	B-NP	B-PER
+was	AUX	B-VP	O
+installed	VERB	B-VP	O
+in	ADP	B-PP	O
+the	DET	B-NP	O
+Nob	ADJ	I-NP	O
+Hill	PROPN	B-NP	B-LOC
+residence	NOUN	I-NP	O
+of	ADP	B-PP	O
+a	DET	B-NP	O
+magnate	NOUN	I-NP	O
+friend	NOUN	I-NP	O
+,	PUNCT	O	O
+whose	PRON	B-NP	O
+kitchen	NOUN	I-NP	O
+swarmed	VERB	B-VP	O
+with	ADP	B-PP	O
+cooks	NOUN	I-NP	O
+of	ADP	B-PP	O
+approved	ADJ	B-NP	O
+talent	NOUN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 59
+Sherry	PROPN	B-NP	B-PER
+remained	VERB	I-VP	O
+in	ADP	B-PP	O
+his	PRON	B-NP	O
+hotel	NOUN	B-NP	O
+suite,	PUNCT	O	O
+where	ADP	B-PP	O
+he	PRON	B-NP	O
+amused	VERB	B-VP	O
+himself	ADJ	I-NP	O
+as	CCONJ	O	O
+best	ADV	I-NP	O
+he	PRON	B-NP	O
+could	AUX	I-VP	O
+.	PUNCT	O	O
+
+# sentence 60
+Twice	NUM	O	O
+he	PRON	B-NP	O
+left	VERB	B-VP	O
+everything	NOUN	I-NP	O
+to	ADP	B-PP	O
+his	PRON	B-NP	O
+entourage,	ADP	B-PP	O
+and	CCONJ	O	O
+fled	VERB	B-VP	O
+to	ADP	B-PP	O
+make	VERB	I-NP	O
+the	DET	B-NP	O
+Santa	ADJ	B-NP	O
+Cruz	NOUN	I-NP	O
+tour	NOUN	I-NP	O
+under	ADV	B-ADVP	O
+Vernon's	PROPN	I-NP	O
+guidance.	ADJ	I-NP	O
+.	PUNCT	O	O
+
+# sentence 61
+In	ADP	B-PP	O
+the	DET	B-NP	O
+grand	ADJ	I-NP	O
+court	NOUN	I-NP	O
+of	ADP	B-PP	O
+the	DET	B-NP	O
+Palace,	PROPN	I-NP	O
+notable	ADJ	I-NP	O
+for	ADP	B-PP	O
+its	PRON	B-NP	O
+tiers	NOUN	I-NP	O
+of	ADP	B-PP	O
+Moorish	ADJ	I-NP	O
+galleries	NOUN	I-NP	O
+that	CCONJ	O	O
+looked	VERB	B-VP	O
+down	ADV	B-ADVP	O
+on	ADP	B-PP	O
+the	DET	B-NP	O
+maelstrom	ADJ	I-NP	O
+of	ADP	B-PP	O
+vehicles	NOUN	I-NP	O
+below,	ADP	O	O
+Vernon's	PROPN	I-NP	O
+station	NOUN	I-NP	O
+was	AUX	B-VP	O
+at	ADP	B-PP	O
+the	DET	B-NP	O
+entrance.	NOUN	I-NP	O
+
+# sentence 62
+It	DET	B-NP	O
+was	AUX	B-VP	O
+a	DET	B-NP	O
+of	ADP	B-PP	O
+honor	ADJ	I-NP	O
+,	PUNCT	O	O
+held	VERB	I-VP	O
+inviolate	ADJ	I-NP	O
+for	ADP	B-PP	O
+him	PRON	B-NP	O
+;	PUNCT	O	O
+;	PUNCT	O	O
+he	PRON	B-NP	O
+had	AUX	B-VP	O
+the	DET	B-NP	O
+primacy	NOUN	I-NP	O
+among	ADP	B-PP	O
+the	DET	B-NP	O
+coachmen	NOUN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 63
+Of	ADP	B-PP	O
+majestic	ADJ	I-NP	O
+build	NOUN	I-NP	O
+,	PUNCT	O	O
+rubicund	ADJ	I-NP	O
+and	CCONJ	O	O
+slash-mouthed	ADJ	I-NP	O
+,	PUNCT	O	O
+he	PRON	B-NP	O
+resembled	VERB	I-VP	O
+the	DET	B-NP	O
+late	ADJ	I-NP	O
+General	PROPN	I-NP	O
+Winfield	PROPN	I-NP	O
+Scott	PROPN	I-NP	O
+,	PUNCT	O	O
+who	PRON	B-NP	O
+was	AUX	B-VP	O
+said	VERB	I-VP	O
+to	ADP	B-PP	O
+be	AUX	B-VP	O
+the	DET	B-NP	O
+most	ADJ	I-NP	O
+imposing	ADJ	B-ADJP	O
+general	NOUN	I-NP	O
+of	ADP	B-PP	O
+his	PRON	B-NP	O
+century	NUM	I-NP	O
+,	PUNCT	O	O
+if	CONJ	O	O
+not	ADV	O	O
+of	ADP	B-PP	O
+all	ADJ	I-NP	O
+centuries	NOUN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 64
+Vernon	DET	B-NP	O
+wore	VERB	B-VP	O
+a	DET	B-NP	O
+gray	ADJ	I-NP	O
+tall	ADJ	I-NP	O
+hat	NOUN	I-NP	O
+,	PUNCT	O	O
+a	DET	B-NP	O
+gardenia	NOUN	I-NP	O
+,	PUNCT	O	O
+and	CCONJ	O	O
+maroon	ADJ	I-NP	O
+Wellington	ADJ	I-NP	O
+boots	NOUN	I-NP	O
+that	ADP	B-PP	O
+glistened	VERB	B-VP	O
+like	ADV	B-ADVP	O
+currant	ADJ	I-NP	O
+jelly	ADJ	I-NP	O
+.	PUNCT	O	O
+
+# sentence 65
+Promptly	ADV	B-ADVP	O
+at	ADP	B-PP	O
+seven	NUM	I-NP	O
+he	PRON	B-NP	O
+would	AUX	B-VP	O
+clatter	VERB	B-VP	O
+out	ADP	B-PP	O
+of	ADP	B-PP	O
+the	DET	B-NP	O
+court	NOUN	I-NP	O
+with	ADP	B-PP	O
+twelve	NUM	I-NP	O
+in	ADP	B-PP	O
+the	DET	B-NP	O
+tallyho	ADJ	I-NP	O
+
+# sentence 66
+He	PRP	B-PER	O
+had	VBZ	I-VP	O
+style	JJ	O	O
+:	:	O	O
+he	PRP	B-NP	O
+held	VBP	B-VP	O
+his	PRP	B-NP	O
+reins	NNS	O	O
+in	IN	O	O
+a	DT	O	O
+loose	JJ	O	O
+bunch	NN	O	O
+at	IN	O	O
+the	DT	O	O
+third	CD	O	O
+button	NN	O	O
+of	TO	O	O
+his	PRP	B-NP	O
+checked	JJ	O	O
+Epsom	ADJ	O	O
+surplus	NN	O	O
+,	,	O	O
+and	CCONJ	O	O
+when	CONJ	O	O
+the	DT	O	O
+horses	NNS	O	O
+leaned	VBP	O	O
+at	IN	O	O
+a	DT	O	O
+curve	NN	O	O
+,	CCONJ	O	O
+as	IN	O	O
+if	IN	O	O
+bent	VBN	O	O
+by	TO	O	O
+the	DT	O	O
+force	NN	O	O
+of	IN	O	O
+a	DT	O	O
+gale	NN	O	O
+,	CCONJ	O	O
+he	PRP	B-NP	O
+leaned	VBP	B-VP	O
+with	IN	O	O
+them	PRP	I-NP	O
+.	.	O	O
+
+# sentence 67
+They	PRON	B-NP	O
+cantered	VERB	I-VP	O
+down	ADP	B-PP	O
+the	DET	B-NP	O
+peninsula,	NOUN	I-NP	O
+not	ADV	O	O
+slackening	VERB	B-VP	O
+until	ADP	B-PP	O
+the	DET	B-NP	O
+coach	NOUN	I-NP	O
+reached	VERB	I-VP	O
+Woodside	PROPN	B-NP	B-LOC
+where	ADP	B-PP	O
+the	DET	B-NP	O
+Santa	ADJ	I-NP	O
+Cruz	NOUN	I-NP	O
+uphands	NOUN	I-NP	O
+begin.	PUNCT	O	O
+
+# sentence 68
+The	DET	B-NP	O
+road	NOUN	I-NP	O
+maps	NOUN	I-NP	O
+of	ADP	B-PP	O
+the	DET	B-NP	O
+region	NOUN	I-NP	O
+have	VERB	B-VP	O
+changed	VERB	B-VP	O
+since	ADV	B-ADVP	O
+1905	NUM	I-NP	I-DATE
+;	PUNCT	O	O
+;	PUNCT	O	O
+inns	NOUN	I-NP	O
+have	VERB	B-VP	O
+burned	VERB	B-VP	O
+down	VERB	B-VP	O
+,	PUNCT	O	O
+moved	VERB	B-VP	O
+elsewhere	ADV	B-ADVP	O
+,	PUNCT	O	O
+or	CCONJ	O	O
+taken	VERB	B-VP	O
+other	ADJ	B-NP	O
+names	NOUN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 69
+Once	DET	B-NP	O
+on	ADP	B-PP	O
+the	DET	B-NP	O
+road	NOUN	I-NP	O
+(	ADP	B-PP	O
+and	CCONJ	O	O
+especially	ADV	B-ADVP	O
+if	ADP	B-PP	O
+the	DET	B-NP	O
+passengers	NOUN	I-NP	O
+were	AUX	B-VP	O
+all	DET	I-NP	O
+regulart	ADJ	I-NP	O
+and	CCONJ	O	O
+masculine	ADJ	I-NP	O
+)	,	PUNCT	O
+the	DET	B-NP	O
+schedule	NOUN	I-NP	O
+meant	VERB	B-VP	O
+nothing	PRON	B-NP	O
+.	PUNCT	O	O
+
+# sentence 70
+An	DET	B-NP	O
+agreeable	ADJ	I-NP	O
+ease	NOUN	I-NP	O
+suffused	VERB	B-VP	O
+Vernon	PROPN	B-NP	B-PER
+and	CCONJ	O	O
+the	DET	B-NP	O
+passengers	NOUN	I-NP	O
+of	ADP	B-PP	O
+the	DET	B-NP	O
+tallyho,	ADP	B-PP	O
+from	ADP	B-PP	O
+which	CONJ	O	O
+there	ADV	B-ADVP	O
+issued	VERB	I-VP	O
+clouds	NOUN	I-NP	O
+of	ADP	B-PP	O
+smoke.	NOUN	O	O
+
+# sentence 71
+Vernon	PROPN	B-NP	O
+would	AUX	B-VP	O
+tilt	VERB	I-NP	O
+his	PRON	B-NP	O
+hat	NOUN	I-NP	O
+over	ADP	B-PP	O
+one	NUM	I-NP	O
+ear	DET	B-NP	O
+as	CCONJ	O	O
+he	PRON	B-NP	O
+lounged	VERB	I-VP	O
+with	ADP	B-PP	O
+his	PRON	B-NP	O
+feet	NOUN	I-NP	O
+on	ADP	B-PP	O
+the	DET	B-NP	O
+dashboard	NOUN	I-NP	O
+,	PUNCT	O	O
+indulging	VERB	I-VP	O
+in	ADP	B-PP	O
+a	DET	B-NP	O
+huge	ADJ	I-NP	O
+cigar	NOUN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 72
+The	DET	B-NP	O
+horses	NOUN	I-NP	O
+moved	VERB	I-VP	O
+at	ADP	B-PP	O
+a	DET	B-NP	O
+clump	ADJ	I-NP	O
+;	PUNCT	O	O
+;	PUNCT	O	O
+they	PRON	B-NP	O
+were	AUX	B-VP	O
+no	ADV	O	O
+more	ADV	O	O
+on	ADP	B-PP	O
+parade	NOUN	I-NP	O
+than	CONJ	O	O
+was	AUX	B-VP	O
+their	PRON	B-NP	O
+driver	NOUN	I-NP	O
+;	PUNCT	O	O
+;	PUNCT	O	O
+one	NUM	O	O
+fork	ADJ	O	O
+of	ADP	B-PP	O
+the	DET	B-NP	O
+road	NOUN	I-NP	O
+was	AUX	B-VP	O
+as	CONJ	O	O
+good	ADJ	O	O
+as	CONJ	O	O
+another	ADJ	O	O
+
+# sentence 73
+The	DET	B-NP	O
+Santa	PROPN	I-NP	O
+Cruz	PROPN	I-NP	O
+mountains	NOUN	I-NP	O
+sprawl	VERB	I-VP	O
+over	ADP	I-NP	O
+three	NUM	I-NP	O
+counties,	ADJ	I-NP	O
+and	CCONJ	O	O
+the	DET	B-NP	O
+roads	NOUN	I-NP	O
+twist	VERB	B-VP	O
+through	ADP	B-PP	O
+sky-tapping	ADJ	I-NP	O
+redwoods	NOUN	I-NP	O
+down	ADP	B-PP	O
+whose	WSH	I-NP	O
+furrowed	ADJ	I-NP	O
+columns	NOUN	I-NP	O
+ripple	VERB	B-VP	O
+streams	NOUN	I-NP	O
+of	ADP	B-PP	O
+rain,	ADJ	I-NP	O
+even	ADV	B-ADVP	O
+when	ADP	B-PP	O
+heat	ADJ	I-NP	O
+bakes	VERB	B-VP	O
+the	DET	B-NP	O
+Santa	PROPN	I-NP	O
+Clara	ADJ	I-NP	O
+valley	NOUN	I-NP	O
+below	ADP	B-PP	O
+at	ADP	B-PP	O
+the	DET	B-NP	O
+left.	PUNCT	O	O
+
+# sentence 74
+The	DET	B-NP	O
+water	NOUN	I-NP	O
+splashes	VERB	I-NP	O
+into	ADP	B-PP	O
+shoulder-high	ADJ	I-NP	O
+tracts	NOUN	I-NP	O
+of	ADP	B-PP	O
+fernery	NOUN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 75
+You	PROPN	I-NP	O
+arrive	VERB	B-VP	O
+there	ADP	B-PP	O
+in	ADP	B-PP	O
+seersucker,	PUNCT	O	O
+and	CCONJ	O	O
+feel	VERB	B-VP	O
+you	PRON	B-NP	O
+were	AUX	B-VP	O
+half-witted	ADJ	I-NP	O
+not	ADP	B-PP	O
+to	AUX	B-VP	O
+bring	VERB	B-VP	O
+a	DET	B-NP	O
+mackintosh.	PUNCT	O	O
+
+# sentence 76
+Vernon	PROPN	B-NP	O
+kept	VERB	I-VP	O
+an	DET	B-NP	O
+account	NOUN	I-NP	O
+book	NOUN	I-NP	O
+with	ADP	B-PP	O
+a	DET	B-NP	O
+list	NOUN	I-NP	O
+of	ADP	B-PP	O
+all	ADJ	B-NP	O
+the	DET	B-NP	O
+establishments	NOUN	I-NP	O
+that	CONJ	O	O
+he	PRON	B-NP	O
+thought	VERB	B-VP	O
+worthy	ADJ	I-NP	O
+of	ADP	B-PP	O
+patronage	NOUN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 77
+A	DET	B-NP	O
+number	NUM	I-NP	O
+of	ADP	B-PP	O
+them	PRON	I-NP	O
+must	AUX	B-VP	O
+have	AUX	B-VP	O
+fallen	VERB	B-VP	O
+into	ADP	B-PP	O
+disfavor	ADJ	B-ADJP	O
+;	PUNCT	O	O
+,	PUNCT	O	O
+they	PRON	I-NP	O
+were	AUX	B-VP	O
+struck	VERB	B-VP	O
+out	ADV	B-ADVP	O
+with	ADP	B-PP	O
+remarks	NOUN	I-NP	O
+in	ADP	B-PP	O
+red	ADJ	I-NP	O
+ink,	ADP	B-PP	O
+denouncing	VERB	B-VP	O
+both	PRON	I-NP	O
+the	DET	B-NP	O
+cooks	NOUN	I-NP	O
+and	CCONJ	O	O
+the	DET	B-NP	O
+management	NOUN	I-NP	O
+
+# sentence 78
+He	PRON	B-NP	O
+was	VERB	I-VP	O
+copious	ADJ	I-NP	O
+in	ADP	B-PP	O
+his	PRON	B-NP	O
+praise	NOUN	I-NP	O
+of	ADP	B-PP	O
+those	PRON	B-NP	O
+that	DET	B-NP	O
+served	VERB	I-VP	O
+food	NOUN	I-NP	O
+that	DET	B-NP	O
+was	AUX	I-VP	O
+good	ADJ	I-NP	O
+to	ADP	B-PP	O
+eat	VERB	I-NP	O
+.	PUNCT	O	O
+
+# sentence 79
+The	DET	B-NP	O
+horses	NOUN	I-NP	O
+seemed	VERB	B-VP	O
+to	ADP	B-PP	O
+know	VERB	I-VP	O
+these	PRON	B-NP	O
+by	ADP	B-PP	O
+instinct	ADJ	I-NP	O
+,	PUNCT	O	O
+he	PRON	B-NP	O
+used	VERB	I-VP	O
+to	ADP	B-PP	O
+say	VERB	I-VP	O
+:	PUNCT	O	O
+such	ADJ	I-NP	O
+places	NOUN	I-NP	O
+invariably	ADV	I-ADJP	O
+had	AUX	B-VP	O
+stables	NOUN	I-NP	O
+with	ADP	B-PP	O
+superior	ADJ	I-NP	O
+feed	NOUN	I-NP	O
+bins	NOUN	I-NP	O
+
+# sentence 80
+There	DET	B-NP	O
+was	AUX	B-VP	O
+Wright's	PROPN	I-NP	O
+,	PUNCT	O	O
+for	ADP	B-PP	O
+one	NUM	I-NP	O
+,	PUNCT	O	O
+lost	VERB	B-VP	O
+amongst	ADP	B-PP	O
+trees	NOUN	I-NP	O
+,	PUNCT	O	O
+its	PRON	B-NP	O
+wide	ADJ	I-NP	O
+verandas	NOUN	I-NP	O
+strewn	VERB	B-VP	O
+with	ADP	B-PP	O
+rocker	NOUN	I-NP	O
+s.	PUNCT	O	O
+
+# sentence 81
+Many	DET	O	O
+of	ADP	O	O
+its	PRON	O	I-NP
+sojourners	NOUN	O	I-NP
+were	AUX	O	O
+devoted	ADJ	O	O
+to	ADP	O	O
+seclusion	NOUN	O	O
+and	CCONJ	O	O
+quiet	ADJ	O	O
+,	PUNCT	O	O
+and	CCONJ	O	O
+lived	VERB	O	O
+there	DET	O	O
+to	ADP	O	O
+the	DET	O	O
+end	NOUN	O	O
+of	ADP	O	O
+their	PRON	O	O
+days.	NOUN	O	O
+
+# sentence 82
+It	DET	B-NP	O
+was	VERB	I-VP	O
+the	DET	B-NP	O
+haunt	NOUN	I-NP	O
+of	ADP	B-PP	O
+writer	PROPN	B-NP	O
+Ambrose	PROPN	I-NP	O
+Bierce,	PROPN	I-NP	O
+who	PRON	B-NP	O
+admired	VERB	I-VP	O
+its	PRON	B-NP	O
+redwoods.	NOUN	I-NP	O
+
+# sentence 83
+Acorns	NOUN	B-MISC	O
+from	ADP	B-PP	O
+the	DET	B-NP	O
+great	ADJ	I-NP	O
+oaks	NOUN	I-NP	O
+fed	VERB	B-VP	O
+the	DET	B-NP	O
+small	ADJ	I-NP	O
+black	ADJ	I-NP	O
+pigs	NOUN	I-NP	O
+(	ADP	O	O
+akin	ADJ	I-NP	O
+to	ADP	B-PP	O
+Berkshires	PROPN	I-NP	B-LOC
+)	PART	O	O
+whose	PRON	B-NP	O
+carcass	NOUN	I-NP	O
+sweepstakes	NOUN	I-NP	O
+''	PUNCT	O	O
+were	AUX	B-VP	O
+renowned.	ADJ	I-NP	O
+
+# sentence 84
+Their	DET	B-NP	O
+ham	NOUN	B-NP	O
+butts	NOUN	B-NP	O
+,	PUNCT	O	O
+cured	VERB	B-VP	O
+in	ADP	B-PP	O
+oak-log	ADJ	I-NP	O
+smoke	NOUN	I-NP	O
+,	PUNCT	O	O
+were	AUX	B-VP	O
+also	ADV	B-ADVP	O
+esteemed	VERB	B-VP	O
+when	ADP	B-PP	O
+roasted	VERB	B-VP	O
+or	CCONJ	O	O
+boiled	VERB	I-NP	O
+,	PUNCT	O	O
+and	CCONJ	O	O
+served	VERB	I-NP	O
+with	ADP	B-PP	O
+original	ADJ	I-NP	O
+sauce	NOUN	I-NP	O
+;	PUNCT	O	O
+.	PUNCT	O	O
+
+# sentence 85
+Contribute	VERB	B-VP	O
+also	ADV	B-ADVP	O
+an	DET	B-NP	O
+onion	NOUN	I-NP	O
+,	PUNCT	O	O
+a	DET	B-NP	O
+peeled	ADJ	I-NP	O
+tomato	NOUN	I-NP	O
+and	CCONJ	O	O
+two	NUM	I-NP	O
+pickled	ADJ	I-NP	O
+gherkins	NOUN	I-NP	O
+,	PUNCT	O	O
+and	CCONJ	O	O
+a	DET	B-NP	O
+mashed	ADJ	I-NP	O
+lime	NOUN	I-NP	O.
+
+# sentence 86
+After	ADP	O	O
+has	AUX	B-VP	O
+simmmered	VERB	I-VP	O
+an	DET	B-NP	O
+hour	NOUN	I-NP	O
+,	PUNCT	O	O
+add	VERB	B-VP	O
+two	NUM	I-NP	O
+table spoons	NUM	I-NP	O
+each	ADP	B-PP	O
+of	ADP	B-PP	O
+Worcestershire	PROPN	B-NP	O
+,	PUNCT	O	O
+catsup	PROPN	B-NP	O
+,	PUNCT	O	O
+and	CCONJ	O	O
+chutney	NOUN	I-NP	O
+,	PUNCT	O	O
+two	NUM	I-NP	O
+pickled	AUX	B-VP	O
+walnuts	NOUN	I-NP	O
+,	PUNCT	O	O
+and	CCONJ	O	O
+a	DET	B-NP	O
+pint	NOUN	I-NP	O
+of	ADP	B-PP	O
+Sherry	PROPN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 87
+Then	ADV	O	O
+siimmer	VERB	I-VP	O
+fifteen	NUM	O	O
+minutes	NOUN	O	O
+longer	ADJ	O	O
+.	PUNCT	O	O
+
+# sentence 88
+Every	DET	B-NP	O
+winter	ADJ	I-NP	O
+a	DET	B-NP	O
+kegful	NOUN	I-NP	O
+of	ADP	B-PP	O
+sauce	NOUN	I-NP	O
+was	AUX	B-VP	O
+made	VERB	I-NP	O
+and	CCONJ	O	O
+placed	VERB	B-VP	O
+at	ADP	B-PP	O
+the	DET	B-NP	O
+end	NOUN	I-NP	O
+of	ADP	B-PP	O
+a	DET	B-NP	O
+row	NOUN	I-NP	O
+of	ADP	B-PP	O
+four	NUM	I-NP	O
+other	ADJ	I-NP	O
+kegs	NOUN	I-NP	O
+in	ADP	B-PP	O
+the	DET	B-NP	O
+cellar,	ADV	B-ADVP	O
+so	CCONJ	O	O
+that	CONJ	O	O
+when	AUX	B-VP	O
+its	PRON	I-NP	O
+turn	NOUN	I-NP	O
+came	VERB	I-NP	O
+,	PUNCT	O	O
+it	PRON	B-NP	O
+was	AUX	B-VP	O
+properly	ADV	B-ADVP	O
+mellowed	VERB	I-NP	O
+
+# sentence 89
+Vineyards	NOUN	O	O
+and	ADP	O	O
+orchards	NOUN	O	O
+also	ADV	O	O
+grew	VERB	O	O
+around	ADP	O	O
+Wright's,	PROPN	O	O
+and	CCONJ	O	O
+deer	NOUN	O	O
+were	AUX	O	O
+rather	ADV	O	O
+a	DET	O	O
+nuisance;	PUNCT	O	O
+;	PUNCT	O	O
+they	PRON	O	O
+leaped	VERB	O	O
+six-foot	ADJ	O	O
+fences	NOUN	O	O
+with	ADP	O	O
+the	DET	O	O
+agility	ADJ	O	O
+of	ADP	O	O
+panthers.	PROPN	O	O
+
+# sentence 90
+But	ADP	O	O
+no	DET	O	O
+one	PRON	O	O
+complained	VERB	O	O
+when	ADP	O	O
+they	PRP	O	O
+wound	VERB	O	O
+up	AUX	O	O
+,	PUNCT	O	O
+regardless	ADV	O	O
+of	ADP	O	O
+season	ADJ	O	O
+,	PUNCT	O	O
+in	ADP	O	O
+venison	NOUN	O	O
+pies	NOUN	O	O.
+
+# sentence 91
+No	DET	O	O
+one	PRON	I-NP	O
+complained	VERB	B-VP	O
+of	ADP	O	O
+the	DET	B-NP	O
+white	ADJ	I-NP	O
+wine	NOUN	I-NP	O
+either	ADV	O	O
+:	PUNCT	O	O
+at	ADP	B-PP	O
+altitude	NOUN	I-NP	O
+of	ADP	O	O
+two	NUM	I-NP	O
+thousand	ADJ	I-NP	O
+feet,	ADV	O	O
+grapes	NOUN	I-NP	O
+acquire	VERB	B-VP	O
+a	DET	B-NP	O
+dryness	NOUN	I-NP	O
+and	CCONJ	O	O
+the	DET	B-NP	O
+tang	ADJ	I-NP	O
+of	ADP	O	O
+gunflint	NOUN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 92
+The	DET	B-NP	O
+Almaden	PROPN	B-NP	O
+vineyards	NOUN	I-NP	O
+have	VERB	B-VP	O
+climbed	VERB	B-VP	O
+to	ADP	B-PP	O
+height	ADJ	I-NP	O
+.	PUNCT	O	O
+
+# sentence 93
+Apple	DET	B-NP	O
+trees	NOUN	I-NP	O
+grew	VERB	B-VP	O
+there	ADP	B-PP	O
+also	ADV	B-ADVP	O
+.	PUNCT	O	O
+
+# sentence 94
+Though	ADP	B-PP	O
+creeks	NOUN	I-NP	O
+in	ADP	B-PP	O
+the	DET	B-NP	O
+Santa	PROPN	B-NP	B-LOC
+Cruz	PROPN	I-NP	I-LOC
+mountains	NOUN	I-NP	O
+flow	VERB	B-VP	O
+brimful	ADJ	I-NP	O
+the	DET	B-NP	O
+year	NOUN	I-NP	O
+round	ADJ	I-NP	O
+and	CCONJ	O	O
+it	PRON	B-NP	O
+is	AUX	B-VP	O
+forever	ADV	B-ADVP	O
+spring	ADJ	I-NP	O
+,	PUNCT	O	O
+the	DET	B-NP	O
+apples	NOUN	I-NP	O
+that	CONJ	O	O
+grow	VERB	B-VP	O
+there	ADP	O	O
+have	AUX	B-VP	O
+a	DET	B-NP	O
+wintry	ADJ	I-NP	O
+crackle	NOUN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 95
+Dwellers	DET	O	O
+thereabout	ADJ	O	O
+s	DET	O	O
+preferred	VERB	O	O
+to	ADP	O	O
+get	VERB	O	O
+their	PRON	O	O
+apple	NOUN	O	O
+pies	NOUN	O	O
+at	ADP	O	O
+the	DET	O	O
+local	ADJ	O	O
+bakery	NOUN	O	O
+,	PUNCT	O	O
+which	DET	O	O
+had	VERB	O	O
+a	DET	O	O
+brick	ADJ	O	O
+oven	NOUN	O	O
+fired	VERB	O	O
+with	ADP	O	O
+redwood	ADJ	O	O
+billets	NOUN	O	O
+.	PUNCT	O	O
+
+# sentence 96
+The	DET	B-NP	O
+merit	NOUN	I-NP	O
+of	ADP	B-PP	O
+the	DET	B-NP	O
+pie	NOUN	I-NP	O
+,	PUNCT	O	O
+Vernon	PROPN	I-NP	O
+believed	VERB	I-VP	O
+,	CONJ	O	O
+was	AUX	I-VP	O
+due	VERB	B-VP	O
+more	ADV	B-ADVP	O
+to	ADP	B-PP	O
+its	PRON	B-NP	O
+making	NOUN	I-NP	O
+than	CONJ	O	O
+to	ADP	B-PP	O
+the	DET	B-NP	O
+waning	ADJ	B-VP	O
+heat	NOUN	I-NP	O
+of	ADP	B-PP	O
+the	DET	B-NP	O
+oven	NOUN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 97
+The	DET	B-NP	O
+recipe	NOUN	I-NP	O
+,	PUNCT	O	O
+which	ADP	B-PP	O
+he	PRON	B-NP	O
+got	VERB	I-VP	O
+from	ADP	B-PP	O
+the	DET	B-NP	O
+baker,	ADJ	B-NP	O
+and	CCONJ	O	O
+wrote	VERB	B-VP	O
+down	VERB	I-VP	O
+in	ADP	B-PP	O
+his	PRON	B-NP	O
+ledger,	NOUN	I-NP	O
+is	AUX	B-VP	O
+basically	ADV	B-ADVP	O
+:	PUNCT	O	O
+Wright's	PROPN	I-NP	O
+apple	NOUN	I-NP	O
+pie	NOUN	I-NP	O
+;	CCONJ	O	O
+.	PUNCT	O	O
+
+# sentence 98
+In	ADP	O	O
+a	DET	O	O
+pan	NOUN	O	O
+saucepan	NOUN	O	O
+put	VERB	O	O
+sufficient	ADJ	O	O
+water	NOUN	O	O
+to	ADP	O	O
+cover	VERB	O	O
+them	PRON	O	O
+,	PUNCT	O	O
+an	DET	O	O
+equal	ADJ	O	O
+amount	NOUN	O	O
+of	ADP	O	O
+sugar	NOUN	O	O
+,	PUNCT	O	O
+a	DET	O	O
+sliced	ADJ	O	O
+lemon	NOUN	O	O
+,	PUNCT	O	O
+a	DET	O	O
+tablespoonful	ADJ	O	O
+of	ADP	O	O
+apricot	NOUN	O	O
+preserve	NOUN	O	O
+or	CCONJ	O	O
+jam	NOUN	O	O
+,	PUNCT	O	O
+a	DET	O	O
+pinch	NOUN	O	O
+each	ADJ	O	O
+of	ADP	O	O
+clove	NOUN	O	O
+and	CCONJ	O	O
+nutmeg	NOUN	O	O
+,	PUNCT	O	O
+and	CCONJ	O	O
+a	DET	O	O
+large	ADJ	O	O
+bay	NOUN	O	O
+leaf	NOUN	O	O
+.	PUNCT	O	O
+
+# sentence 99
+Let	DET	B-NP	O
+boil	VERB	I-VP	O
+gently	ADJ	B-ADVP	O
+for	ADP	B-PP	O
+twenty	NUM	I-NP	O
+minutes,	ADV	B-ADVP	O
+then	CCONJ	O	O
+strain.	VERB	O	O
+
+# sentence 100
+Poach	VERB	B-VP	O
+the	DET	B-NP	O
+apples	NOUN	I-NP	O
+in	ADP	B-PP	O
+syrup	NOUN	I-NP	O
+for	AUX	B-VP	O
+twelve	NUM	I-NP	O
+minutes,	ADV	B-ADVP	O
+drain	VERB	B-VP	O
+them	PRON	B-NP	O
+,	PUNCT	O	O
+and	CCONJ	O	O
+cool.	VERB	O	O
+
+
+#llm generated dataset for hindi on zero shot prompting
+
+# sentence 1
+बंद	NN	B-MISC	O
+पिंजरे	NNS	I-MISC	B-LOC
+से	IN	O	O
+पूरा	JJ	O	O
+शेर	NN	B-PER	O
+पिघल	VBP	O	O
+कर	VB	O	O
+बाहर	DT	O	O
+निकल	VBP	O	O
+गया	VBN	O	O
+
+# sentence 2
+बीरबल	NN	B-PER	O
+की	IN	I-PP	O
+चतुराई	JJ	I-ADJ	O
+पर	RB	I-ADP	O
+बादशाह	NNP	B-NP	B-PER
+अति	RB	I-ADP	O
+प्रसन्न	VBD	O	O
+हुए	VBZ	O	O
+और	CC	I-CC	O
+पूछा	VM	B-VP	O
+की	PSP	O	O
+बीरबल	NN	O	O
+तुमको	PRP	O	O
+कैसे	RB	O	O
+पता	VB	O	O
+चला	VBP	O	O
+कि	IN	O	O
+के	DET	O	O
+इसमें	DT	O	O
+लाख	JJ	O	O
+का	DT	O	O
+शेर	NN	O	O
+हैं	VBZ	O	O
+
+# sentence 3
+जहापनाह	DT	B-DET	O
+इस	DT	I-DET	O
+पत्र	NN	I-NP	O
+ने	PSP	B-PP	O
+सफ	JJ	O	O
+साफ	JJ	O	O
+लिख	V	O	O
+रखा	VB	O	O
+है	RB	O	O
+की	DT	O	O
+इस	DT	I-DET	O
+शेर	NN	O	O
+को	IN	O	O
+पिंजरे	NN	O	O
+से	IN	O	O
+निकालना	VB	O	O
+हैं	RB	O	O
+वो	DT	O	O
+भी	RB	O	O
+बिन	RB	O	O
+इसको	PRP	O	O
+खोलें	VBP	O	O
+तो	TO	O	O
+का	DT	O	O
+मतलब	NN	O	O
+है	RB	O	O
+की	DT	O	O
+जरूर	RB	O	O
+शेर	NN	O	O
+किस	DT	O	O
+धातु	NN	O	O
+का	DT	O	O
+नहीं	JJ	O	O
+हैं	RB	O	O
+हमने	PRP	O	O
+तो	TO	O	O
+क्योंकि	RB	O	O
+देखने	VB	O	O
+के	IN	O	O
+लिए	RB	O	O
+सरिया	NN	O	O
+मंगाया	VBP	O	O
+था	VB	O	O
+क्या	Q	O	O
+वाकई	RB	O	O
+शेर	NN	O	O
+पिघलता	VB	O	O
+हैं	RB	O	O
+की	DT	O	O
+नहीं	JJ	O	O
+
+# sentence 4
+हमने	NNP	B-PER	O
+सही	JJ	B-ADJ	O
+अंदाजा	N	B-MISC	O
+लागया	VM	B-VP	O
+और	CC	B-CC	O
+शेर	NN	B-NSG	O
+पिघल	V	B-VB	O
+गया	V	O	O
+
+# sentence 5
+बादशाह	NNP	B-PER	O
+एक	DT	O	O
+बार	N	O	O
+और	RB	O	O
+बीरबल	NN	I-NP	O
+की	IN	O	O
+चतुराई	NN	O	O
+से	IN	O	O
+प्रसन्न	ADJ	O	O
+हो गए	VBP	O	O
+और	RB	O	O
+किया	VBP	O	O
+जब	RB	O	O
+तुल	VB	O	O
+कि	IN	O	O
+तुम	PRP	O	O
+मेरे	PRP	O	O
+सथ	RB	O	O
+हो	VBP	O	O
+मुझे	PRP	O	O
+फ़ारसी	NN	O	O
+क्या	VB	O	O
+कि	IN	O	O
+से	IN	O	O
+डरने	VBG	O	O
+की	IN	O	O
+जरुरत	JJ	O	O
+नहीं	RB	O	O
+हैं	VBP	O	O
+
+# sentence 6
+फिर	VB	B-AUX	O
+क्या	RB	O	O
+था	VBG	O	O
+फ़ारसी	NN	O	O
+का	DT	O	O
+दूत	NNS	O	O
+एक	DT	O	O
+और	RR	O	O
+पत्र	NN	O	O
+लेकर	VBZ	O	O
+गया	VBP	O	O
+और	RR	O	O
+राजा	NNS	O	O
+को	TO	O	O
+एक	DT	O	O
+और	RR	O	O
+बीरबल	NN	O	O
+की	RB	O	O
+बुद्दिमानी	JJ	O	O
+की	RB	O	O
+कहानी	NN	O	O
+सुनाई	VBP	O	O
+
+# sentence 7
+फ़ारसी	NN	B-MISC	O
+का	IN	I-PP	O
+राज	NNS	B-PRON	O
+अ	A	I-PRP	O
+भी	RB	O	O
+बीरबल	NNP	B-PER	O
+की	IN	O	O
+चतुराई	JJ	O	O
+से	RB	O	O
+प्रस्सनन	NN	O	O
+उसके	PRP	I-PRON	O
+का	IN	O	O
+अगला	ADJ	O	O
+तोहफा	NN	O	O
+बीरबल	NNP	B-PER	O
+के	IN	O	O
+लिए	TO	O	O
+भेजा	VM	O	O
+।	PUNC	O	O
+
+# sentence 8
+मुगल	NNP	B-PER	O
+अबदेशाह	NNP	I-PER	B-NP
+उदारतावादी	NNS	O	B-ADV
+था	VBD	O	O
+
+# sentence 9
+इसलिए	RB	B-AUX	O
+बादशाह	NNP	B-PER	O
+अकबर	NNP	I-PER	O
+समय	NNS	I-NP	O
+समय	NNS	O	O
+पर	ADP	O	O
+अपनी	DT	O	O
+प्रजा	NNS	O	O
+से	IN	O	O
+मीलने	VBZ	O	O
+के	TO	O	O
+लिए	RB	O	O
+प्रजा	NNS	O	O
+मिलन	NN	B-MISC	O
+दरबार	NN	O	O
+लगाया	VBD	O	O
+ते	PRP	O	O
+करते	VBG	O	O
+थे	VBZ	O	O
+
+# sentence 10
+दरबार	NNP	B-LOC	O
+में	TO	O	O
+बादशाह	NNP	I-PER	B-NP
+अकबर	NNP	O	O
+लोगो	NNS	O	O
+से	IN	O	O
+मी	PRP	O	O
+ते	VBZ	O	O
+और	RB	O	O
+जिनसे	DT	O	O
+प्रसन्न	JJ	O	O
+होते	VBN	O	O
+उनको	TO	O	O
+उपहार	NN	O	O
+देते	VBZ	O	O
+
+# sentence 11
+एक	AD	B-PRON	O
+बार	ADP	I-PP	O
+इस	DET	I-DET	O
+ही	DET	I-DET	O
+तक	ADV	I-ADV	O
+का	DET	I-DET	O
+दरबार	NOUN	O	O
+लागया	VBD	O	O
+था	VBN	O	O
+
+# sentence 12
+दूर	ADV	O	O
+दूरी	ADJ	O	O
+से	PUNC	O	O
+भी	RB	O	O
+लोग	NOUN	O	O
+मिले	VBG	O	O
+आ रहे	AUX	O	O
+थे	VB	O	O
+।	PUNC	O	O
+
+# sentence 13
+एक	DET	B-DT	O
+दूर	ADP	I-DT	O
+गांव	NN	B-LOC	O
+में	IN	O	O
+महेशदास	NNP	B-PER	O
+नाम	NNS	O	O
+का	PRP	O	O
+आदमी	NN	O	O
+रहता	VBD	O	O
+था	PVS	O	O
+।	PUNC	O	O
+
+# sentence 14
+महेशदास	NNP	B-NP	O
+ने	PSP	I-NP	B-PP
+भी	RB	O	O
+मन	NN	O	O
+बनाया	VBD	O	O
+की	IN	O	O
+ये	PRP	O	O
+बादशाह	NNP	B-PER	O
+लोग	NNS	I-NP	O
+किस	DT	O	O
+प्रकार	JJ	O	O
+रहते	VBZ	O	O
+हैं	VBN	O	O
+,	PUNCT	O	O
+की	IN	O	O
+जीवनशैली	NN	O	O
+कैसे	RB	O	O
+है	VBP	O	O
+।	PUNC	O	O
+
+# sentence 15
+चलो	VB	B-AUX	O
+एक	DET	O	O
+बार	NN	O	O
+देखें	VB	O	O
+कारण	NN	O	O
+आते	VB	O	O
+हैं	VB	O	O
+
+# sentence 16
+यह	NN	B-DET	O
+विचार	NN	I-DET	O
+बना	VBP	O	O
+कर	VB	O	O
+महेेशदास	NNP	B-PER	O
+निकल	VBP	O	O
+पड़े	VBP	O	O
+
+# sentence 17
+महेश	NNP	B-NP	O
+दास	NNP	I-NP	B-PER
+जब	VBZ	B-VP	O
+महल	NN	O	B-LOC
+के	TO	O	O
+बाह	DT	O	O
+रहें	VBP	O	O
+तक	RB	O	O
+देखा	VM	O	O
+कि	IN	O	O
+बहुत	JJ	O	O
+सारे	PRP	O	O
+लोग	NNS	O	O
+बादशाह	NNP	I-NP	B-PER
+से	IN	O	O
+मी	PRP	O	O
+लोग	NNS	O	O
+पंक्ति	NN	O	O
+बनाकर	VB	O	O
+खड़े	VBP	O	O
+थे	VBP	O	O
+
+# sentence 18
+पहरेदार	NNP	B-PER	O
+एक	DT	I-NP	O
+एक	DT	I-NP	O
+के	IN	I-PP	O
+बाद	VBZ	I-VP	O
+सभी	NS	O	O
+से	IN	O	O
+एक	DT	I-NP	O
+एक	DT	I-NP	O
+स्वर्ण	JJ	O	O
+मुद्रा	NN	O	O
+ले	VBP	O	O
+रह	VBN	O	O
+था	VBN	O	O
+
+# sentence 19
+लेकिन	DT	B-IN	O
+महेशदास	NNP	I-PER	O
+तो	TO	B-CC	O
+खाली	ADJ	O	O
+हाथ	N	O	O
+आये	V	O	O
+थे	V	O	O
+
+# sentence 20
+फिर	VB	B-INVC	O
+भी	RB	O	O
+मेहरश	NNP	O	O
+दास	NN	O	O
+पंक्ति	DT	O	O
+में	TO	O	O
+लगे	VBN	O	O
+रहे	VBN	O	O
+
+# sentence 21
+जब	DT	B-ROOT	O
+महेश	NN	I-NP	O
+दास	NN	O	O
+की	VBZ	O	O
+बारी	NNS	O	O
+आयी	VBP	O	O
+और	CC	O	O
+पीहरदार	NN	O	O
+ने	PSP	O	O
+मुद्रा	NN	O	O
+मांगी	VBN	O	O
+तो	TO	O	O
+,	PUNCT	O	O
+भाई	PRP	O	O
+मेरे	PRP	O	O
+पास	RB	O	O
+को	IN	O	O
+कुछ	JJ	O	O
+नहीं	JJ	O	O
+है	VBZ	O	O
+मैं	PRP	O	O
+थो	TO	O	O
+बस	RB	O	O
+एसे	RB	O	O
+ही	RB	O	O
+बादशाह	NNP	B-PER	O
+से	IN	O	O
+मिले	VBP	O	O
+आया	VBN	O	O
+
+# sentence 22
+पहरेदार	NNP	B-PER	O
+ने	PSP	B-PP	O
+मना	VB	B-VP	O
+कर	VB	B-VP	O
+दिया	VBN	O	O
+,	PUNC	O	O
+एसे	DT	O	O
+तो	RB	O	O
+हम	PRP	O	O
+नही	RB	O	O
+जाने	VBZ	O	O
+देंगे	VB	O	O
+
+# sentence 23
+महेश	NNP	B-NP	O
+दास	NNP	I-NP	O
+के	PSP	B-PP	O
+निवेदन	VBN	B-VP	O
+के	PSP	B-PP	O
+बाद	IN	I-NP	O
+,	PUNC	O	O
+एक	DT	O	O
+शर्त	NN	O	O
+पर	ADP	O	O
+ने	PSP	B-PP	O
+जाने	VBP	O	O
+की	RB	O	O
+मंजूरी	NN	O	O
+दी	VBN	O	O
+
+# sentence 24
+महेश	NN	B-PER	O
+दास	NNP	I-PER	O
+ने	PSP	B-PP	O
+भी	VB	O	O
+ही	PRP	O	O
+भर	JJ	O	O
+दी	VBP	O	O
+
+# sentence 25
+और	DT	O	O
+शर्त	NN	B-NP	O
+को	TO	B-PP	O
+पूरा	VBP	O	O
+करने	VBP	O	O
+का	DT	O	O
+वादा	NNP	I-NP	O
+या	CC	B-ADP	O
+।	PUNC	O	O
+में	PRP	O	O
+प्रवेश	VBZ	O	O
+करना	VBZ	O	O
+गया	VBD	O	O
+
+# sentence 26
+माहेश	NNP	B-PER	O
+दास	NNP	I-PER	O
+महल	NN	B-LOC	O
+में	IN	B-PP	O
+प्रवेश	VBP	B-VP	O
+करते	VBZ	B-VP	O
+ही	TO	O	O
+पूरे	DT	O	O
+महल	NN	B-LOC	O
+को	PRP	O	O
+देखने	VBG	O	O
+का	PUNC	O	O
+लगा	VBP	O	O
+
+# sentence 27
+महल	DT	B-MISC	O
+की	IN	I-DET	O
+नक्काशी	JJ	O	O
+और	CC	O	O
+बारीक़	ADJ	O	O
+कारीगरी	NNP	O	O
+देखखर	VBN	O	O
+महेशदास	NNP	O	O
+चौंक	VB	O	O
+गया	VB	O	O
+
+# sentence 28
+घूमते	VBP	B-VP	O
+फिरते	VBP	B-VP	O
+महेशदास	NNP	I-PER	O
+वहां	DT	O	O
+पहुँच	VBP	O	O
+गया	VBZ	O	O
+
+# sentence 29
+जहाँ	PRP	B-LOC	O
+बादशाह	NNP	I-NP	B-PER
+अकबर	NNP	I-NP	B-PER
+प्रजा	NNS	O	O
+से	TO	O	O
+मी	PRP	O	O
+रहे	VBP	O	O
+ते	PRON	O	O
+
+# sentence 30
+एक	DT	B-DET	O
+एक	DT	I-DET	O
+के	DT	I-DET	O
+बादशाह	NNP	I-NP	B-PER
+के	DT	I-DET	O
+सामने	IN	B-PP	O
+उनकी	PRP	O	O
+हाजिरी	VBN	O	O
+दे रहे	VBN	O	O
+थे	VBZ	O	O
+,	PUNCT	O	O
+अपनी	DT	O	O
+समस्या	NN	I-LOC	O
+,	PUNCT	O	O
+अपनी	DT	O	O
+इच्छा	NN	I-LOC	O
+बादशाह	NNP	I-NP	B-PER
+के	DT	O	O
+सामने	IN	B-PP	O
+पेश	VB	O	O
+ते	AUX	O	O
+और	CC	O	O
+बादशाह	NNP	O	O
+उनको	PRP	O	O
+सुलझाने	VBN	O	O
+की	TO	O	O
+तरीका	NN	I-LOC	O
+तेरी	DT	O	O
+कोशिश	VB	O	O
+कर रहे	VBN	O	O
+
+# sentence 31
+महेशदास	NNP	B-PER	O
+खड़े	ADP	I-VBZ	O
+खड़े	ADP	I-VBZ	O
+सोच	VBP	O	O
+रहे	VBP	O	O
+थे	VBZ	O	O
+की	TO	O	O
+मैं	PRP	B-PER	O
+तो	CONJ	O	O
+सकता	VVN	O	O
+हैं	VBZ	O	O
+कि	IN	O	O
+नहीं	RB	O	O
+क्या	Q	O	O
+मांगना	VBN	O	O
+हैं	VBZ	O	O
+
+# sentence 32
+सोचते	VB	B-VP	O
+सोचते	VB	I-VP	O
+महेशदास	NNP	I-NP	B-PER
+की	IN	O	O
+बारी	JJ	O	O
+आ	RB	O	O
+गयी	VBD	O	O
+और	CC	O	O
+महेशदास	NNP	I-NP	B-PER
+के	DT	O	O
+सामने	JJ	O	O
+पेश	VB	O	O
+हुआ	VB	O	O
+
+# sentence 33
+बोलो	VB	B-VP	O
+क्या	Q	O	O
+नाम	NN	O	O
+है	VBP	O	O
+तुम्हारा	PRP	I-PRON	B-NP
+
+# sentence 34
+और	DT	O	O
+कहीं	PRP	I-NP	B-LOC
+से	IN	O	O
+आये	VB	O	O
+हुआ	VB	O	O
+तुम	PRP	I-PER	O
+
+# sentence 35
+जी	NN	O	O
+
+# sentence 36
+जहापनाह	NN	O	O
+मेरा	PRP	O	O
+नाम	NN	O	O
+है	VBZ	O	O
+Maheshdas	NNP	O	O
+हैं	VBZ	O	O
+और	CC	O	O
+मैं	PRP	O	O
+आपके	PRP	O	O
+ही	DT	O	O
+सल्तनत	NN	O	O
+के	IN	O	O
+दूर	RB	O	O
+गाव	NNS	O	O
+का	DT	O	O
+आम	JJ	O	O
+नागरिक	JJ	O	O
+हूँ	VBZ	O	O
+बोलो	VB	O	O
+क्या	RB	O	O
+फरिहाद	NN	O	O
+लें	VB	O	O
+आये	VBP	O	O
+हो	VBN	O	O
+
+# sentence 37
+जहापनाह	NNP	I-NP	O
+मुझे	PSP	B-PP	O
+कोई	NN	O	O
+नही	JJ	O	O
+चाहिए	VBP	O	O
+कुछ	DT	O	O
+नही	JJ	O	O
+कहें	VB	O	O
+।	PUNC	O	O
+
+# sentence 38
+मैं	NN	B-PER	O
+तो	TO	B-ADP	O
+बस	JJ	O	O
+आपसे	PRP	O	O
+ही	DT	O	O
+मिलने	VBP	O	O
+आयूँ	VBN	O	O
+
+# sentence 39
+तुमने	VBZ	B-NP	O
+अपना	DT	B-DET	O
+नाम	NN	B-NOM	O
+क्या	RB	I-Q	O
+बताया	VBN	I-VP	O
+तक		IN	I-PP
+
+# sentence 40
+जी	NN	O	O
+महेशदास	NNP	B-PER	O
+हा	VB	O	O
+
+# sentence 41
+महेशदास	NNS	O	O
+
+# sentence 42
+हम	PRP	B-PER	O
+तुम्हारी	DT	I-PRON	O
+उदारता	NN	O	O
+से	IN	O	O
+अति	ADJ	O	O
+प्रसन्न	VBZ	O	O
+हुए	VBD	O	O
+।	PUNC	O	O
+
+# sentence 43
+तुम	NN	B-PRP	O
+बादशाह	NNP	I-NP	B-PER
+अकबर	NNP	I-NP	B-PER
+के	DT	I-PRON	O
+दरबार	N	I-PP	O
+में	IN	I-ADV	O
+खडे	VB	O	O
+हो	VBP	O	O
+
+# sentence 44
+हम	NNP	B-PER	O
+तुमको	PRP	I-NP	O
+एसे	ADJB	O	O
+ही	ADP	O	O
+खाली	JJ	O	O
+नहीं	RB	O	O
+जाने	VB	O	O
+देंगे	VB	O	O
+
+# sentence 45
+और	ADP	O	O
+तुम	PRP	I-NP	B-PER
+यहाँ	PRON	O	O
+से	PUNC	O	O
+खाली	ADJ	O	O
+हाथ	NNS	O	O
+जाओ	VBP	O	O
+,	PUNCT	O	O
+हमारी	DT	O	O
+शानो	NN	O	O
+शौकत	NN	O	O
+को	IN	O	O
+शोभा	NN	O	O
+नही	ADP	O	O
+देता	VBP	O	O
+।	PUNC	O	O
+
+# sentence 46
+तुम	NNP	B-PER	O
+को	PSP	I-VB	O
+भी	VB	O	O
+मांगो	VM	O	O
+।	PUNC	O	O
+
+# sentence 47
+बादशाह	NNP	B-PER	O
+के	PP	I-PP	O
+इस	NN	I-NP	O
+आग्रह	NN	I-NP	O
+पर	IN	I-PP	O
+मेशदास	NNP	I-PER	B-PER
+ने	PSP	B-PP	O
+अपनी	PRP	B-NP	O
+फरमाइश	NN	B-MISC	O
+पेश	VM	B-VP	O
+की	IN	I-PP	O
+।	PUNC	O	O
+
+# sentence 48
+जहापनाह	DT	B-PER	O
+मेरे	PRP	I-PER	O
+कोड़े	NN	O	O
+में	IN	O	O
+एक	RB	O	O
+सौ	CD	O	O
+कोड़े	NN	O	O
+चाहिए	VBD	O	O
+।	PUNC	O	O
+
+# sentence 49
+बादशाह	NNP	B-PER	O
+एसी	JJ	I-ADP	O
+फरमाइश	NN	I-NP	O
+सुनकर	VB	B-VP	O
+चोंक	VBD	O	O
+गये	VBN	O	O
+
+# sentence 50
+बादशाह	NNP	B-PER	B-NP
+ने	PSP	B-PP	O
+कौन	VB	I-NP	O
+पुछा	VM	B-VP	O
+
+# sentence 51
+तो	VB	O	O
+महेशदास	NNP	I-NP	B-PER
+ने	PSP	B-PP	O
+आगे	RB	O	O
+जो	DT	O	O
+आपका	PRP	O	O
+प्रमुखदार	NN	O	O
+खड़ा	VB	O	O
+हैं	VB	O	O
+,	PUNCT	O	O
+के	DET	O	O
+साथ	RB	O	O
+हमरी	PRON	O	O
+एक	DT	O	O
+शर्त	NOUN	O	O
+लगी	VBN	O	O
+हैं	VB	O	O
+की	IN	O	O
+दरबार	NN	O	O
+से	CONJ	O	O
+हमको	PRP	O	O
+जो	DT	O	O
+कुछ	DET	O	O
+भी	RB	O	O
+लिया	VBN	O	O
+उसका	DT	O	O
+आधा	JJ	O	O
+हिस्सा,	JJ	O	O
+उसे	PRP	O	O
+देना	VB	O	O
+पड़ेगा	VB	O	O
+
+# sentence 52
+बादशाह	NNP	B-PER	O
+ये	PRP	I-PRO	O
+सुनकर	VBP	B-VP	O
+थोड़े	JJ	O	O
+बौखला	ADJ	O	O
+गे	VBP	O	O
+और	CONJ	O	O
+हैं	VBZ	O	O
+ने	PSP	B-PP	O
+मुह	NN	O	O
+बनाकर	VBN	O	O
+
+# sentence 53
+पहरेदार	NNP	B-PER	O
+को	PSP	I-PP	O
+बुलाने	VM	I-VP	O
+को	PUNC	O	O
+भेजा	VBP	O	O
+
+# sentence 54
+पहरेदार	NNP	B-PER	O
+ने	PSP	I-NP	O
+बादशाह	NNP	B-NP	O
+को	IN	B-PP	O
+झुककर	VBG	B-VP	O
+सलाम	VBP	O	O
+किया	VBP	O	O
+
+# sentence 55
+बादशाह	NNP	B-NP	O
+ने	PSP	B-PP	O
+व्यंग्य	NN	I-NP	B-VP
+में	IN	I-ADJP	O
+उससे	PRP	B-NP	O
+किया	VM	B-VP	O
+हम	PRP	O	O
+तुम्हारी	DT	O	O
+प्रसन्न	ADJ	O	O
+वहें	PRP	O	O
+सकिया	VM	O	O
+
+# sentence 56
+हमने	NNP	B-NP	O
+निश्चय	VBD	B-VP	O
+के	TO	O	O
+हैं	VB	O	O
+महेेश	NNP	I-NP	O
+दास	NNP	I-PER	O
+ने	PSP	O	O
+जो	DT	O	O
+भी	RB	O	O
+मांग	VBN	B-VP	O
+का	TO	O	O
+सौ	NUM	O	O
+फीसदी	NNS	O	O
+तुमको	PRP	O	O
+देंगे	VB	O	O
+।	PUNC	O	O
+
+# sentence 57
+पहरेदार	NN	B-PER	O
+खुस	ADJ	O	O
+हुआ	VBD	O	O
+
+# sentence 58
+जी	JJ	O	O
+जहापनाह	NNP	O	O
+
+# sentence 59
+जैसा	JJ	O	O
+आप	PRP	O	O
+उच	VB	O	O
+सम्मझ	VBP	O	O
+ये	DT	O	O
+।	PUNC	O	O
+
+# sentence 60
+क्या	VB	B-FRAG	O
+तुम	PRP	I-PER	O
+सुनना	VBP	I-VP	O
+नही	RB	O	O
+चाहोंगे	VBZ	O	O
+कि	TO	O	O
+इसने	PRP	O	B-PER
+फरियाद	NN	O	O
+की	VB	O	O
+
+# sentence 61
+बादशाह	NNP	B-PER	B-NP
+अकबर	NNP	I-NP	B-PER
+बोलें	VBP	O	O
+
+# sentence 62
+जी	ADP	B-NP	O
+जहापनाह	NN	B-NP	O
+जरूर-	ADV	O	B-ADV
+पहरेदार	ADJ	I-ADJ	O
+बोला	VBD	O	O
+
+# sentence 63
+इसने	NNP	B-NP	O
+(महेशदास)	NNS	O	I-PER
+सौ	NUM	O	O
+कौड़े	NM	O	O
+मांगे	VBD	O	O
+और	CC	O	O
+हमने	PRP	O	O
+की	VBZ	O	O
+मंजूरी	NN	O	O
+भी	RB	O	O
+दे	VBP	O	O
+दी	VBP	O	O
+बादशाह	NNP	B-PER	B-PER
+ने	PRP	O	O
+गुस्से	JJ	O	O
+में	IN	O	O
+आकर	VBP	O	O
+सैनिको	NNS	O	O
+से	TO	O	O
+किया	VBD	O	O
+इसे	PRP	O	O
+जिरफ्तार	VBN	O	O
+कर	VBP	O	O
+लो	VB	O	O
+और	CC	O	O
+इसकी	DT	O	O
+अच्छे	JJ	O	O
+से	TO	O	O
+फरियाद	NN	O	O
+पूर्ण	JJ	O	O
+कर	VBP	O	O
+ो	PUNC	O	O
+
+# sentence 64
+हा	NN	B-MISC	O
+तो	TO	I-ADV	O
+मेशदास	NNP	B-PER	O
+तुम	PRP	I-NP	O
+हम	PRP	I-NP	O
+को	IN	B-PP	O
+बहुत	RB	B-ADJ	O
+पसंद	VBZ	O-VP	O
+आये	VBP	O-VP	O
+
+# sentence 65
+क्या	VB	B-Q	O
+तुम	PRP	I-PER	O
+हमारी	DT	I-DET	O
+दरबारी	N	O	O
+में	TO	O	O
+कोई	DT	O	O
+काम	VBP	O	O
+नाचना	VBN	O	O
+चाहोगे	VB	O	O
+।	PUNC	O	O
+
+# sentence 66
+मुल्ला	NNP	B-PER	O
+दो	DT	B-NUM	O
+प्‍याजा	NNS	I-NOUN	O
+बोले	VB	O	O
+जहापनाह	JJ	O	O
+एसे	IN	O	O
+कैसे	RB	O	O
+किसी	PRP	O	O
+को	IN	O	O
+भी	IN	O	O
+आप	PRP	O	O
+दरबारी	NN	O	O
+में	IN	O	O
+रख	VB	O	O
+सकते	VB	O	O
+हैं	VB	O	O
+।	PUNC	O	O
+
+# sentence 67
+मेरा	DT	B-PER	O
+तुलना	NN	O	O
+नहीं	RB	O	O
+जाना	VB	O	O
+काहना	VB	O	O
+।	PUNC	O	O
+
+# sentence 68
+लेना	V	O	O
+देना	V	O	O
+
+# sentence 69
+मुल्ला	NNP	O	O
+दो	NNS	O	O
+प्याजा	NN	O	O
+अपनी	PRP	O	O
+जबान	NN	O	O
+को	TO	O	O
+सँभालते	VBP	O	O
+हुए	VBZ	O	O
+बोलें	VBP	O	O
+
+# sentence 70
+मुल्ला	NNP	O	O
+तुम	NP	I-PER	O
+भी	ADP	B-PP	O
+ठीक	JJ	O	O
+ही	PRP	O	O
+कहते	VBP	O	O
+हो	VB	O	O
+,	PUNC	O	O
+अच्छा	RB	O	O
+तुम	NP	I-PER	O
+ही	PRP	O	O
+तबॅाओ	NN	O	O
+की	IN	O	O
+इसको	DT	O	O
+कैसे	VB	O	O
+परखा	VBN	O	O
+जाये	VB	O	O
+।	PUNC	O	O
+
+# sentence 71
+बादशाह	NN	B-PER	B-NP
+बोले	VB	O	O
+
+# sentence 72
+मुल्ला	NNP	B-PER	O
+दो	DT	O	O
+प्याजा	NNS	O	O
+सोचकर	VBG	O	O
+बोलते	VBZ	O	O
+हैं	VB	O	O
+अगर	RB	O	O
+ये	DT	O	O
+यह	PRP	O	O
+बता	MD	O	O
+दे	VBP	O	O
+की	PRP	O	O
+मेरे	PRP	O	O
+दिमाग	NN	O	O
+में	RB	O	O
+क्या	VB	O	O
+चल	VV	O	O
+रहे	VBN	O	O
+हैं	VBZ	O	O
+तो	TO	O	O
+बात	JJ	O	O
+बन	VB	O	O
+जाे	VB	O	O
+
+# sentence 73
+महेशदास	NNP	B-PER	O
+क्या	VBZ	I-VB	O
+तुम्	PRP	O	O
+इस	DT	O	O
+प्रश्न	NNS	O	O
+का	IN	O	O
+जवाब	VBN	O	O
+देना	VBN	O	O
+चाहोंगे	VBZ	O	O
+।	PUNC	O	O
+
+# sentence 74
+जी	JJ	B-MISC	O
+जहापनाह	NNP	I-NP	O
+जरूर	VB	O	O
+
+# sentence 75
+मुल्लाजी	NNP	B-PER	O
+आपके	DT	B-PRON	O
+दिया	VBP	O	O
+हैं	VBZ	O	O
+कि	IN	O	O
+बादशाह	NNP	I-NP	B-NP
+अच्छे	JJ	O	O
+हैं	VBZ	O	O
+और	CC	O	O
+वो	PRP	O	O
+हम	PRP	O	O
+सभी	DT	O	O
+का	DT	O	O
+कल्याण	NN	O	O
+करते	VBP	O	O
+हैं	VBZ	O	O
+।	PUNC	O	O
+
+# sentence 76
+हमे	PRP	B-PER	O
+बादशाह	NNP	I-NP	B-NP
+से	IN	B-PP	O
+कई	DT	B-DT	O
+शिकायत	NN	B-VP	O
+नही	RB	B-ADJP	O
+हैं	VB	O	O
+
+# sentence 77
+क्या	VBP	O	O
+मुल्लाजी	NNS	I-PER	B-NP
+हम	VB	O	O
+सही	RB	O	O
+कह रहे	VBP	O	O
+न	PUNC	O	O
+
+# sentence 78
+मल्लाजी	NNP	B-PER	O
+बनावट	JJ	I-ADJ	O
+की	DT	I-ADP	O
+मुस्‍कान	NN	O	O
+के	IN	O	O
+जहापनाह	NNP	I-NP	B-NP
+ये	PRP	O	O
+बिलकुल	JJ	O	O
+ठीक	ADJ	O	O
+कह रहा	VBP	O	O
+है	VBP	O	O
+
+# sentence 79
+क्या	JJ	B-AUX	O
+मुल्ला	NNP	I-NP	O
+अभी	RB	I-ADV	O
+तुम	PRP	I-PRON	O
+हैं	VBZ	O	O
+कया	VBP	O	O
+क्या	JJ	O	O
+नहीं	VB	O	O
+प्रश्न	NN	B-NOUN	O
+पूछना	VB	O	O
+है	VBZ	O	O
+क्या	JJ	O	O
+
+# sentence 80
+नहीं	JJ	O	O
+जहापनाह	NNP	O	O
+
+# sentence 81
+तो	NNP	B-AUX	O
+महेशदास	NNP	I-NP	B-PER
+हम	PRP	B-PRON	O
+तुम्हे	PRP	I-PP	O
+अपनी	DT	B-DET	O
+दरबारी	NN	B-LOC	O
+में	IN	B-ADP	O
+काम	NN	B-VBP	O
+करने	VBZ	B-VP	O
+को	TO	B-TO	O
+आ आमंत्रित	VB	I-VBP	O
+ते	RB	O	O
+हैं	VB	O	O
+
+# sentence 82
+लेकिन	ADP	B-CONJ	O
+हम	PRP	I-PRON	O
+तुमको	NOM	I-PER	O
+एक	DT	O	O
+नाम	NN	O	O
+देना	VBP	O	O
+चाहेंगे	VBP	O	O
+
+# sentence 83
+जी	ADJ	B-PER	O
+जहापनाह	NNP	I-NP	O
+आपका	PRP	I-PP	O
+हुक्म	JJ	O	O
+सर	PRON	O	O
+आँखों	NOM	O	O
+पर	PUNCT	O	O
+
+# sentence 84
+हमारा	DT	B-DET	O
+दरबार	NN	I-NP	O
+और	CC	B-CC	O
+पहली	JJ	B-ADJ	O
+मुगलिया	NN	B-MISC	O
+सल्तनत	NNP	I-MISC	B-NP
+तुमको	PRP	I-TMP	O
+बीरबल	NNP	I-PER	B-PRON
+के	DT	B-DET	O
+नाम	NN	O	O
+
+# sentence 85
+अकबर	NNP	B-NP	B-PER
+और	CC	I-CC	O
+बीरबल	NNP	I-NP	O
+दोनों	DT	B-NP	O
+का	DT	B-PP	O
+रिश्ता	JJ	B-AP	O
+राज	NN	B-PRON	O
+और	CC	I-CC	O
+मंत्री	NNP	I-NP	O
+से	IN	B-PP	O
+बढकर	RB	B-ADV	O
+था	VBD	O	O
+
+# sentence 86
+दोनों	DT	B-DET	O
+के	IN	I-DET	O
+बीच	DT	B-PREP	O
+किसी	PRP	O	O
+नहीं	RB	O	O
+छाँ	PRON	O	O
+ते	VBZ	O	O
+रहते	VBP	O	O
+
+# sentence 87
+अकबर	NNP	B-PER	B-PER
+और	RB	B-CC	O
+बीरबल	NNP	I-NP	O
+के	IN	B-PP	O
+बच	VB	B-VP	O
+भी	RB	B-ADV	O
+ते	PRP	B-PP	O
+होती	VB	B-VBP	O
+हैं	VB	B-VB	O
+जब	WDT	I-PP	O
+क्यों	IN	I-PP	O
+किसी	PRP	I-NP	O
+को	TO	O	O
+परखने	VB	O-VP	O
+में	RB	O-PP	O
+जान	NN	O-NP	O
+का	DT	O-NP	O
+खतरा	NN	O-NP	O
+भी	RB	O-ADV	O
+होगा	VB	B-VBP	O
+।	PUNC	O	O
+
+# sentence 88
+एक	DT	B-DET	O
+बार	ADP	I-PRD	O
+अकबर	NNP	I-PER	B-NP
+ने	PSP	B-PP	O
+बीरबल	NN	I-PER	O
+से	IN	B-PP	O
+पुछा	VM	B-VP	O
+संसार	NN	B-DET	O
+में	ADP	B-PRD	O
+सबसे	JJ	O	O
+बड़ा	ADJ	O	O
+हथियार	NN	O	O
+कोनसा	NN	O	O
+हैं	VB	O	O
+
+# sentence 89
+बादशाह	NNP	B-PER	O
+संसार	NN	O	O
+में	IN	O	O
+सबसे	DT	O	O
+बड़ा	JJ	O	O
+हथियार	NNS	O	O
+हैं	VBP	O	O
+आत्म-विश्वास	NNP	O	O
+
+# sentence 90
+बीरबल	NN	B-PER	O
+ने	PSP	B-PP	O
+जवाब	V	B-VB	O
+दिया	V	B-VP	O
+।	PUNC	O	O
+
+# sentence 91
+बादशाह	NNP	B-PER	O
+अकबर	NNP	I-NP	B-PER
+ने	PSP	B-PP	O
+इस	DT	B-DT	O
+बात	NNS	B-MISC	O
+को	TO	B-TO	O
+अपने	PRP	B-PRON	O
+दिल	NN	O	O
+में	RB	O	O
+रख	VT	O	O
+ला    VBZ	O	O	O
+और	RB	O	O
+किसी	DT	O	O
+दिन	NN	O	O
+की	TO	O	O
+परख	VBG	O	O
+करने	VBN	O	O
+का	PRP	O	O
+निश्चय	NN	O	O
+किया	VBP	O	O
+।	PUNC	O	O
+
+# sentence 92
+देवयोग	NN	B-NP	O
+से	IN	I-PP	O
+एक	DT	I-PRON	O
+दिन	N	O	O
+एक	DT	I-PRON	O
+हाथी	NN	O	O
+पागल	JJ	O	O
+हो	VBP	O	O
+गया	VBN	O	O
+
+# sentence 93
+हाथी	NN	O	O
+को	ADP	O	O
+काबू	VBP	O	O
+ने	PSP	B-PP	O
+उसके	PRP	B-NP	O
+लिए	IN	O	O
+जंजीरों	NN	I-NP	O
+में	IN	O	O
+जकड़ा	VBD	O	O
+गया	VBN	O	O
+।	PUNC	O	O
+
+# sentence 94
+अकबर	NNP	B-PER	B-NP
+ने	PSP	I-PP	O
+आज	JJ	I-DT	O
+बीरबल	NN	I-N	O
+के	IN	I-PRON	O
+आत्मविश्वास	NN	I-ADJ	O
+को	TO	B-PNP	O
+परखने	VBP	B-VP	O
+की	VBP	O	O
+सोची	VB	O	O
+
+# sentence 95
+अकबर	NNP	B-PER	B-NP
+ने	PSP	B-PP	O
+बीरबल	NNP	I-NP	O
+के	DT	B-PP	O
+आत्म	JJ	O	O
+विस्वाश	JJ	O	O
+की	PRP	O	O
+परख	V	O	O
+ने	PSP	B-PP	O
+सूचीत	VBZ	O	O
+एक	DT	O	O
+तरफ	TO	O	O
+बीरबल	NNP	I-NP	O
+को	TO	O	O
+बुलावा	V	O	O
+भेजा	V	O	O
+।	PUNC	O	O
+
+# sentence 96
+दूसरी	DT	B-NP	O
+तरफ	RB	O	O
+महावत	ADJ	O	O
+को	TO	O	O
+hand	NN	O	O
+की	JJ	O	O
+जंजीरों	NNS	O	O
+को	TO	O	O
+खोलने	VBZ	O	O
+का	IN	O	O
+आदेश	NNP	O	O
+दिया	VBD	O	O
+
+# sentence 97
+बीरबल	NN	B-PER	O
+को	TO	B-PP	O
+इस	DT	B-DET	O
+बात	N	B-MISC	O
+का	RB	O	O
+पता	V	O	O
+नही	VBZ	O	O
+था	PNP	O	O
+
+# sentence 98
+जब	DT	B-AUX	O
+बीरबल	NN	B-PER	O
+,	,	O	O
+अकबर	NNP	I-NP	B-PER
+से	CC	O	O
+मीलने	VBZ	O	O
+के	TO	O	O
+दर्बार	NN	B-LOC	O
+जा रहे	VBP	O	O
+थे	VBD	O	O
+तो	TO	O	O
+पागल	JJ	O	O
+हाथी	NN	O	O
+की	DT	O	O
+जंजीरों	NNS	O	O
+को	IN	O	O
+खोल	VBP	O	O
+दीजा	VBD	O	O
+गया	VBN	O	O
+।	PUNC	O	O
+
+# sentence 99
+बीरबल	NNP	B-PER	O
+अपनी	DT	B-ADP	O
+मस्ती	NN	I-NP	O
+में	IN	I-PP	O
+ही	RB	O	O
+चले	VB	B-VP	O
+जा रहे	VBZ	I-VP	O
+थे	VBN	I-VP	O
+,	PUNCT	O	O
+की	DT	O	O
+नज़र	NN	O	O
+पड़ी	VBP	O	O
+।	PUNC	O	O
+
+# sentence 100
+हाथी	NN	B-NP	O
+चिंघाड़ता	VBD	I-VP	O
+हुआ	VB	O	O
+था	VB	O	O
+तकनी	JJ	O	O
+।	PUNC	O	O
+
+
+#llm generated dataset for hindi on few shot prompting
+
+# sentence 1
+बादशाह	NN	B-NP	O
+अकबर	NNP	I-NP	B-PER
+अपने	PRP	B-NP	O
+पड़ोसी	JJ	I-NP	O
+मुल्को	NN	I-NP	O
+से	PSP	B-PP	O
+अच्छी	JJ	B-NP	O
+मित्रता	NN	I-NP	O
+रखते	VM	B-VP	O
+थे	VAUX	I-VP	O
+।	PUNC	O	O
+
+# sentence 2
+एसे	DEM	B-NP	O
+ही	RP	I-NP	O
+एक	QF	B-NP	O
+फारसी	JJ	I-NP	B-LOC
+मित्र	NN	I-NP	O
+थे	VM	B-VP	O
+जो	PRP	B-NP	O
+की	CC	O	O
+बहुत	INTF	B-ADJP	O
+ही	RP	I-ADJP	O
+विशाल	JJ	I-ADJP	O
+साम्राज्य	NN	B-NP	O
+के	PSP	B-PP	O
+राजा	NN	B-NP	O
+थे	VM	B-VP	O
+।	PUNC	O	O
+
+# sentence 3
+बादशाह	NN	B-NP	O
+और	CC	O	O
+उनका	PRP	B-NP	O
+मित्र	NN	I-NP	O
+दोनों	NN	I-NP	O
+एक	QF	B-NP	O
+दुसरे	NN	I-NP	O
+को	PSP	B-PP	O
+अक्सर	RB	B-ADVP	O
+पत्र	NN	B-NP	O
+लिखा	VM	B-VP	O
+करते	VAUX	I-VP	O
+और	CC	O	O
+एक	QF	B-NP	O
+दुसरे	NN	I-NP	O
+से	PSP	B-PP	O
+मजाक	NN	B-NP	O
+चलती	VM	B-VP	O
+रहती	VAUX	I-VP	O
+।	PUNC	O	O
+
+# sentence 4
+बादशाह	NN	B-NP	O
+अक्सर	RB	B-ADVP	O
+चुटकले	NN	B-NP	O
+और	CC	O	O
+शायरिया	NN	B-NP	O
+लिखकर	VM	B-VP	O
+भेजते	VM	I-VP	O
+।	PUNC	O	O
+
+# sentence 5
+और	CC	O	O
+फारसी	PROPN	B-NP	B-LOC
+का	PSP	B-PP	O
+राजा	NN	B-NP	O
+उनको	PRON	B-NP	O
+अक्सर	RB	B-ADVP	O
+तोहफे	NN	B-NP	O
+भेजा	VM	B-VP	O
+करता	VAUX	I-VP	O
+।	PUNC	O	O
+
+# sentence 6
+एक	QF	B-NP	O
+दिन	NN	I-NP	O
+फारसी	PROPN	B-NP	B-LOC
+के	PSP	B-PP	O
+राजा	NN	B-NP	O
+ने	PSP	B-PP	O
+एक	QF	B-NP	O
+ऐसा	DEM	I-NP	O
+तोह्फा	NN	I-NP	O
+और	CC	O	O
+पत्र	NN	B-NP	O
+भेजा	VM	B-VP	O
+जिसको	PRP	B-NP	O
+देखकर	VM	B-VP	O
+बादशाह	NN	B-NP	O
+चौंक	VM	B-VP	O
+गये	VAUX	I-VP	O
+।	PUNC	O	O
+
+# sentence 7
+तोहफे	NN	B-NP	O
+के	PSP	B-PP	O
+अन्दर	NST	B-NP	O
+से	PSP	B-PP	O
+एक	QF	B-NP	O
+पिंजरा	NN	I-NP	O
+और	CC	O	O
+एक	QF	B-NP	O
+पत्र	NN	I-NP	O
+निकला	VM	B-VP	O
+।	PUNC	O	O
+
+# sentence 8
+पिंजरे	NN	B-NP	O
+के	PSP	B-PP	O
+अन्दर	NST	B-NP	O
+एक	QF	B-NP	O
+शेर	NN	I-NP	O
+था	VM	B-VP	O
+।	PUNC	O	O
+
+# sentence 9
+बादशाह	NN	B-NP	O
+ने	PSP	B-PP	O
+पत्र	NN	B-NP	O
+खोलकर	VM	B-VP	O
+देखा	VM	B-VP	O
+तो	CC	O	O
+उसके	PRP	B-NP	O
+अन्दर	NST	B-NP	O
+लिखा	VM	B-VP	O
+था	VAUX	I-VP	O
+की	CC	O	O
+इस	DEM	B-NP	O
+शेर	NN	I-NP	O
+को	PSP	B-PP	O
+कैसे	WQ	B-ADVP	O
+भी	RP	I-ADVP	O
+करके	VM	B-VP	O
+बाहर	NST	B-ADVP	O
+निकालना	VM	B-VP	O
+हैं	VAUX	I-VP	O
+और	CC	O	O
+इस	DEM	B-NP	O
+पिंजरे	NN	I-NP	O
+को	PSP	B-PP	O
+खोलना	VM	B-VP	O
+भी	RP	O	O
+नहीं	NEG	B-VP	O
+हैं	VM	I-VP	O
+।	PUNC	O	O
+
+# sentence 10
+और	CC	O	O
+अगर	SCONJ	O	O
+ऐसा	DEM	B-NP	O
+नहीं	NEG	B-VP	O
+किया	VM	I-VP	O
+तो	CC	O	O
+हम	PRP	B-NP	O
+आपकी	PRP	B-NP	O
+सल्तनत	NN	I-NP	O
+पर	PSP	B-PP	O
+हमला	NN	B-NP	O
+करेंगे	VM	B-VP	O
+।	PUNC	O	O
+
+# sentence 11
+बीरबल	NNP	B-PER	O
+बेहद	ADJF	O	O
+बुद्धिमान	ADJ	O	O
+,	,	O	O
+हाजिर	JJ	O	O
+जवाब	JJ	O	O
+और	CC	O	O
+शातिर	JJ	O	O
+दिमाग	NN	O	O
+के	DT	O	O
+थे	VBD	O	O
+।	.	O	O
+
+# sentence 12
+बीरबल	NNP	B-PER	O
+तुरंत	RB	O	O
+समझ	VB	O	O
+गये	VB	O	O
+की	IN	O	O
+बादशाह	NNP	O	O
+ने	PSP	O	O
+आत्मविश्वास	NN	O	O
+की	IN	O	O
+परख	NN	O	O
+के	IN	O	O
+लिए	RB	O	O
+इस	DT	O	O
+हाथी	NN	O	O
+की	IN	O	O
+जंजीरे	JJ	O	O
+खोल	VB	O	O
+दी	VB	O	O
+गयी	VBD	O	O
+हैं	AUX	O	O
+।	PUNC	O	O
+
+# sentence 13
+हैती	NN	B-NP	O
+दौड़कर	VBP	B-ADJP	O
+सुन्ड	JJ	B-ADJ	O
+ऊँच	JJ	B-ADJ	O
+के	IN	B-PREP	O
+बीरबल	NN	I-PER	O
+की	IN	B-PRON	O
+तरफ	RB	B-ADP	O
+आ रहा था	VBZ	B-VP	O
+।	.	O	O
+
+# sentence 14
+बीरबल	NNP	I-PER	B-LOC
+इसे	RB	O	B-AUX
+स्थान	NN	O	B-LOC
+पर	IN	O	B-ADP
+खड़े	VBD	O	B-VERB
+थे	VBZ	O	B-VB
+कि	CONJ	O	B-C
+भागकर	VBP	O	B-AUX
+भी	RB	O	B-AUX
+नही	ADV	O	B-ADV
+बच सकते थे	VBZ	O	B-VERB
+।	PUNC	O	O
+
+# sentence 15
+ठीक	ADJ	B-MISC	O
+उसी	ADP	B-TIME	O
+समय	NOUN	O	O
+बीरबल	NNP	O	O
+को	IN	O	O
+कुत्ता	NOUN	O	O
+दिखायी	VERB	O	O
+दीया	VERB	O	O
+।	PUNC	O	O
+
+# sentence 16
+हाथी	NNP	B-LOC	O
+इतना	RB	B-ADV	O
+कर		VBZ	B-AUX
+ई	PRP	B-PER	O
+के	DT	B-PRON	O
+बकड़े	NNS	B-MISC	O
+स	IN	B-ADP	O
+को	TO	B-TO	O
+सुन्‍ड	NN	B-LOC	O
+में	IN	B-ADP	O
+लपेट	VB	B-VERB	O
+लेता	VBZ	B-AUX	O
+।	PUNC	O	O
+
+# sentence 17
+तभी	DT	O	B-INVC
+बीरबल	NNP	O	O
+ने	PSP	O	O
+कुत्ते	NN	O	O
+की	PRP	O	O
+पिछली	JJ	O	O
+दोनों	CD	O	O
+टांगो	NNS	O	O
+को	TO	O	O
+पकडकर	VBP	O	O
+तेजी	ADJ	O	O
+से	RB	O	O
+हाथी	NN	O	O
+पर	IN	O	O
+फेंका	VBP	O	O
+।	.	O	O
+
+# sentence 18
+कुत्ते	NN	O	O
+की	IN	O	O
+भयानक	JJ	O	O
+चिके	JJ	O	O
+सुनकर	RB	O	O
+हैंडी	DT	O	O
+गा	VBP	O	O
+गबरा	VBZ	O	O
+गया	VBZ	O	O
+और	CC	O	O
+भागने	VBN	O	O
+ला	VB	O	O
+।	.	O	O
+
+# sentence 19
+अकबर	NNP	B-PER	O
+को	TO	B-PP	O
+इस	DT	B-DET	O
+बात	N	O	O
+की	RB	O	O
+खबर	N	O	O
+गयी	VBZ	O	O
+,	,	O	O
+और	CC	O	O
+उन	PRP	O	O
+को	IN	O	O
+यह	RB	O	O
+मानना	VB	O	O
+पड़ा	VBN	O	O
+कि	IN	O	O
+वाकई	RB	O	O
+सबसे	DT	O	O
+बड़ा	ADJ	O	O
+हथियार	N	O	O
+“आत्मविश्वास”	NN	O	O
+है	VBZ	O	O
+।	.	O	O
+
+# sentence 20
+और	CC	B-CC	O
+बीरबल	NNP	I-PER	O
+ने	PSP	B-PP	O
+को	PRP	O	O
+क्या	RB	O	O
+है	VB	O	O
+कहा	VBP	O	O
+वो	WP	O	O
+सच	JJ	O	O
+हैं	VB	O	O
+।	PUNC	O	O
+
+# sentence 21
+एक	DT	N	O
+दिन	NN	B-DATE	O
+अकबर	NNP	I-NP	B-PER
+और	CC	B-CC	O
+के	PRP	B-PRON	O
+दरबारी	NN	B-MISC	O
+दरबार	NN	B-LOC	O
+में	IN	B-ADP	O
+बेहत	NNP	I-NP	B-LOC
+भी	PRP	B-PRP	O
+बैठे	VBP	B-VP	O
+थे	VBZ	B-MISC	O
+।	.	.	O
+
+# sentence 22
+तभी	DT	B-PER	O
+राज	N	B-PER	O
+का	DT	B-DET	O
+दूत	N	B-PER	O
+वहां	IN	B-LOC	O
+आ	VBZ	B-AUX	O
+रहचा	V	B-LOC	O
+पास	TO	B-TO	O
+आ पहुंचा	VBP	O	O
+।	.	O	O
+
+# sentence 23
+वो	DET	B-LOC	O
+किसी	DT	B-NP	O
+विशेष	JJ	B-ADJ	O
+काम	NNS	B-NNP	O
+के	IN	B-ADP	O
+लिए	PRP	B-PP	O
+यहाँ	RB	B-ADV	O
+पर	TO	B-TO	O
+आया	VBZ	B-VP	O
+था	VB	B-NP	O
+।	.	O	O
+
+# sentence 24
+सलाम	NN	O	B-PER
+बादशाह	NNP	O	B-PER
+
+# sentence 25
+किंवदंती	NNP	I-NP	O
+में	RB	O	O
+राज	NN	B-PER	O
+अकबर	NNP	O	O
+के	DT	O	O
+दरबार	NN	O	O
+से	IN	O	O
+आया	VBP	O	O
+हूँ	PRP	O	O
+।	.	O	O
+
+# sentence 26
+हमारा	NNP	B-PER	O
+सल्तनत	NN	B-MISC	O
+में	RB	B-ADP	O
+आपका	PRP	I-NP	O
+स्वागत	NN	B-LOC	O
+हैं	VBZ	B-VP	O
+।	PUNC	O	O
+
+# sentence 27
+आपके	DT	B-PRON	O
+तारबार	NN	I-LOC	O
+में	IN	B-ADP	O
+बहुत	RB	B-ADJ	O
+सारे	PRP	B-DET	O
+बुद्धिमान	JJ	B-ADJ	O
+दरबारी	NNS	B-NOUN	O
+हैं	VBP	B-AUX	O
+और	CC	B-CC	O
+हमारा	PRP	B-PRON	O
+राजा	NN	B-NP	O
+ने	PSP	B-PP	O
+समझदारी	JJ	B-ADJ	O
+से	IN	B-ADP	O
+भरे	VBP	B-AUX	O
+घड़े	NNS	B-NOUN	O
+की	PRP	B-DET	O
+गुजारिश	NN	B-NOUN	O
+की	PRP	B-DET	O
+हैं	VBP	B-AUX	O
+।	PUNC	O	O
+
+# sentence 28
+कुछ	DT	NP	O
+बारबर	NN	PER	O
+भी	RB	ADV	O
+बोले	VB	VP	O
+समुझदारी	ADJ	O	O
+से	IN	O	O
+भरा	ADJ	O	O
+हुआ	VBP	O	O
+घड़ा	NNS	O	O
+.	.	O	O
+
+# sentence 29
+अब	ADP	B-PRON	O
+ये	DET	B-DET	O
+कहाँ	IN	B-LOC	O
+से	IN	B-PRON	O
+भरकर	VBP	B-V	O
+लायेंगे	VBP	B-V	O
+।	.	O	O
+
+# sentence 30
+ये	DT	NOUN	O
+तो	TO	ADP	O
+भी	RB	ADV	O
+बहुत	ADJ	ADV	O
+गुजारिश	NOUN	NNP	O
+हैं	VBZ	AUX	O
+।	.	PUNCT	O
+
+# sentence 31
+(fUssufusAting)	PART.P	PER	O
+किसी	PRO	PER	O
+ने	PSP	B-PP	O
+सलाह	VB	O	O
+दी	VB	O	O
+की	IN	O	O
+बादशाह	NN	B-NP	O
+सिलोन	NNS	O	O
+के	DT	O	O
+राजा	NNS	O	O
+हम	PRP	O	O
+े	PRCP	O	O
+मे	PRP	O	O
+मात	VB	O	O
+देना	VBP	O	O
+चाहते	VBZ	O	O
+हैं	TO	O	O
+का	IN	O	O
+मेट	NOM	O	O
+के	DT	O	O
+बादशाह	NN	B-NP	O
+सिलोन	NNS	O	O
+के	DT	O	O
+राजा	NNS	O	O
+हम	PRP	O	O
+े	PRCP	O	O
+में	IN	O	O
+को	TO	O	O
+मेट	VBZ	O	O
+देना	VBP	O	O
+चाहते	VBZ	O	O
+हैं	TO	O	O
+
+# sentence 32
+और	CC	B-CC	O
+वो	PRP	I-NP	O
+सफल	ADJ	I-ADJ	O
+भी	CONJ	B-CONJ	O
+हो	VB	B-VP	O
+जा	VB	B-VP	O
+लिए	RB	B-ADV	O
+गे	VBP	O	O
+।	PUNC	O	O
+
+# sentence 33
+किसी	NNP	I-NP	O
+भी	PRP	O	O
+हम	PRP	O	O
+में	DT	O	O
+नहीं	RB	O	O
+बचा	VBP	O	O
+पायेंग	VB	O	O
+
+# sentence 34
+hither	PRP	PER	B-LOC
+till	IN	PP	O
+be	VB	O	O
+also	RB	O	O
+be	VB	O	O
+BeRbal	NNP	O	O
+
+# sentence 35
+ये	DT	B-PER	O
+तो	RB	B-ADV	O
+बहुत	ADJ	B-ADJ	O
+मुश्किल	ADJ	B-ADJ	O
+गुजारिश	NOUN	B-NOUN	O
+की	IN	B-IN	O
+हैं	V	B-VB	O
+सीलोन	NNP	I-PRON	O
+के	DT	B-DET	O
+राजा	NNS	B-PROPN	O
+ने	PSP	B-PP	O
+अकबर	NNP	I-NP	B-PER
+ने	PSP	B-PP	O
+पूछा	VM	B-VP	O
+।	PUNC	O	O
+
+# sentence 36
+खैर	DT	O	B-PER
+तुम्हारा	RB	O	O
+इसके	DT	O	O
+आवश्यक   ADJ	O	O	O
+के  PRP	O	O	O
+कैसे  MD	O	O	O
+क्या	VB	O	O
+कायम	NNP	O	O
+कहना	VBP	O	O
+है	VB	O	O
+बीरबल	NNP	O	O
+
+# sentence 37
+बीरबल	NN	PER	B-NP
+बोले	VB	ROOT	O
+हैं	VB	AUX	O
+।	.	.	O
+
+# sentence 38
+हम	PRP	I-NP	O
+थोड़ी	JJ	O	O
+तो	TO	O	O
+समुद्दीयारी	NN	O	O
+तो	TO	O	O
+बेल ही	VB	O	O
+कर सकते	VBZ	O	O
+है	VBP	O	O
+सीलोन	DT	O	O
+के	DT	O	O
+राजा	NN	O	O
+के	DT	O	O
+लिए	IN	O	O
+।	PUNC	O	O
+
+# sentence 39
+आख़िरकार	RB	O	O
+हमें	PRP	O	O
+उमकी	JJ	O	O
+गुजारिश	NNS	O	O
+को	TO	O	O
+पूरी	VBP	O	O
+करनी	VB	O	O
+कहो	IN	O	O
+हम	PRP	O	O
+को	TO	O	O
+उमकी	JJ	O	O
+गुजारिश	NNS	O	O
+पूरी	VBP	O	O
+करनी	VB	O	O
+कहो	IN	O	O
+है	AUX	O	O
+
+# sentence 40
+अकबर	NNP	B-PER	O
+बोले	VBZ	O	O
+जरूरी	RB	O	O
+हो	VBP	O	O
+तो	CC	O	O
+ठीक	RB	O	O
+है	VB	O	O
+तुम्हें	PRP	O	O
+जो	DT	O	O
+भी	RB	O	O
+करोगे	VB	O	O
+ठीक	RB	O	O
+ही	RB	O	O
+करोगे	VB	O	O
+ठीक	RB	O	O
+ही	RB	O	O
+।	.	O	O
+
+# sentence 41
+मेझे	DET	B-PER	O
+तुम्हें	PRON	B-PRON	O
+पर	ADP	B-PP	O
+पूरी	ADJ	B-ADJ	O
+यकीन	ADJ	B-ADJ	O
+है	VBZ	B-VP	O
+।	PUNCT	O	O
+
+# sentence 42
+शुक्रिया	NNP	B-PER	O
+जहापनाह	NNP	I-PER	O
+।	PUNC	O	O
+
+# sentence 43
+मुझे	ADP	O	B-PER
+घड़े	NOUN	O	B-MISC
+को	IN	O	O
+भरने	VERB	O	B-MISC
+के	DT	O	O
+लिए	PRON	O	O
+कुछ	DET	O	O
+हफ्तों	NUM	O	O
+की	ADP	O	O
+जुऱ्री	ADJ	O	O
+पड़ी	VERB	O	O
+गी	VERB	O	O
+।	.	O	O
+
+# sentence 44
+आप	DT	PRO	O
+जितना	RB	ADJ	O
+चाहे	RB	ADJ	O
+वक्त	NN	NOUN	O
+ले	VB	VERB	O
+सकते	VBP	VERB	O
+हैं	VBZ	AUX	O
+दूत	NNP	PERSON	O
+ने	PSP	VERB	O
+का	PRP	PRON	O
+कहा	VB	VERB	O
+।	.	PUNCT	O
+
+# sentence 45
+अकबर	NNP	B-PER	O
+ने	PSP	B-PP	O
+किया	VBP	B-VP	O
+बीरबल	NNP	I-NP	O
+जरा	RB	O	O
+ध्यान	NN	O	O
+से	IN	O	O
+क्योंकि	RB	O	O
+तुमने	PRP	O	O
+चुनावती	NN	O	O
+को	TO	O	O
+स्वीकार	VBP	O	O
+की	VBZ	O	O
+हैं	VBP	O	O
+।	PUNC	O	O
+
+# sentence 46
+उस	DT	PER	O
+पर	IN	ADP	O
+हमारी	PRP	NNS	O
+भी	RB	ADVP	O
+इज्जत	NN	O	O
+दाव	NN	O	O
+पर	IN	ADP	O
+लगी	VBD	O	O
+हैं	VB	O	O
+।	.	O	O
+
+# sentence 47
+बीरबल	NNP	O	B-PER
+ने	PSP	O	O
+किया	VBP	O	O
+जहापनाह	NNP	O	O
+सब्र	JJ	O	O
+रखिये	VB	O	O
+,	,	O	O
+सीलोन	NNP	O	O
+के	DT	O	O
+राजा	NNP	O	O
+को	TO	O	O
+संग्रह	VBP	O	O
+भरे	VBP	O	O
+घड़ा	NNS	O	O
+जरूर	RB	O	O
+लेगेगा	VBZ	O	O
+।	PUNC	O	O
+
+# sentence 48
+उस	NN	O	B-LOC
+से	IN	O	O
+बीरबल	NNP	O	O
+को	DT	O	O
+बुलाया	VBP	O	O
+।	.	O	O
+
+# sentence 49
+बीरबल	NNP	I-NP	O
+के	DT	B-PRON	O
+दिमाग	NN	O	O
+में	IN	O	O
+एक	DT	O	O
+गजब	ADJ	O	O
+की	DT	O	O
+योजना	NOUN	O	O
+चल रही	VBG	O	O
+थी	VBZ	O	O
+।	PUNC	O	O
+
+# sentence 50
+बीरबल	NNP	B-NP	O
+ने	PSP	B-PP	O
+अपने	DT	B-DET	O
+सहायक	NNP	I-NP	B-PER
+से	IN	B-CC	O
+कई	JJ	B-ADJ	O
+माट्टी	NN	B-NOUN	O
+के	DT	B-DET	O
+घड़े	NNS	B-NOUN	O
+चुड़ा	VBZ	B-VERB	O
+की चाहिए	RB	B-ADV	O
+कई	JJ	B-ADJ	O
+
+# sentence 51
+और	ADP	I-PRON	O
+ध्यान	ADJ	O	O
+रहे	VERB	O	O
+उन	DET	O	O
+घडो	NOUN	O	O
+की	ADP	O	O
+गर्दन	NOUN	O	O
+कुछ	ADP	O	O
+पतली	ADJ	O	O
+रहे	VERB	O	O
+
+# sentence 52
+इतना	ADV	O	O
+कहकर	ADP	O	O
+बीरबल	NNP	O	O
+बगीचे	NN	O	O
+में	IN	O	O
+चले	VBP	O	O
+गये	VBP	O	O
+,	PUNCT	O	O
+और	CONJ	O	O
+कुछ	DET	O	O
+समय	NOUN	O	O
+में	IN	O	O
+सहायक	NNP	O	O
+भी	ADP	O	O
+मिट्टी	NOUN	O	O
+के	DT	O	O
+गड़े	NOUN	O	O
+भी	ADP	O	O
+बढ़ा	VBP	O	O
+आ गया	VBP	O	O
+।	PUNCT	O	O
+
+# sentence 53
+बीरबल	NNP	B-PER	O
+ने	PSP	B-PP	O
+उसको	PRP	O	O
+उन	DT	O	O
+घडो	NNS	O	O
+को	IN	O	O
+करके	VBP	O	O
+आने	VBZ	O	O
+को	TO	O	O
+कया	NNP	O	O
+क्यारी	NNP	O	O
+में	TO	O	O
+आने	VBZ	O	O
+को	TO	O	O
+कह्द	NN	O	O
+के	DT	O	O
+क्यारी	NNP	O	O
+में	TO	O	O
+आने	VBZ	O	O
+को	TO	O	O
+किया	VBD	O	O
+।	.	O	O
+
+# sentence 54
+बीरबल	NNP	O	O
+ने	PSP	O	O
+एक	DT	O	O
+घड़ा	NNS	O	O
+माँगा	VBP	O	O
+और	CC	O	O
+घड़े	NNS	O	O
+के	DT	O	O
+चारों	DT	O	O
+और	CC	O	O
+लकड़ीयां	NMS	O	O
+को	TO	O	O
+रस्सी	NN	O	O
+से	IN	O	O
+लपेटकर	VBP	O	O
+बांध	VB	O	O
+दी	VBN	O	O
+।	PUNC	O	O
+
+# sentence 55
+बीरबल	NNP	PER	B-LOC
+ने	PSP	B-PP	O
+उन	DT	PRON	B-NP
+घडो	N	LOC	B-MISC
+को	IN	PP	B-PRON
+उल्टा	RB	ADV	B-ADV
+बदकू	NN	LOC	B-MISC
+के	DT	ADP	B-DET
+फूल	N	LOC	B-MISC
+पर	IN	ADP	B-PART
+रख	VB	VERB	B-VERB
+दी	VBD	AUX	B-AUX
+।	PUNC	O	O
+
+# sentence 56
+इस तरह	DT	MISC	O
+सभी	DT	MISC	O
+घडो	NNS	MISC	O
+को	TO	MISC	O
+बांध	VBP	MISC	O
+कर	VBP	MISC	O
+उल्टा	RB	MISC	O
+रख	VBZ	MISC	O
+देई	VBZ	MISC	O
+।	.	MISC	O
+
+# sentence 57
+सभी	DET	O	B-MISC
+घडो	N	O	B-MISC
+को	IN	O	B-MISC
+रखने	V	O	B-VERB
+के	DT	O	B-PRON
+बाद	RB	O	B-ADV
+बीरबल	NNP	I-PER	O
+ने	PSP	O	B-PER
+सहायक	N	O	B-MISC
+से	IN	O	B-PUNCT
+बोला	V	O	B-VERB
+इन	DT	O	B-PRON
+कह्द्‌	NN	O	B-MISC
+के	DT	O	B-PRON
+बेलों	N	O	B-MISC
+को	IN	O	B-MISC
+खाद	JJ	O	B-ADJ
+पानी	V	O	B-VERB
+देते	V	O	B-VERB
+रहना	VB	O	B-ADV
+।	.	O	B-PUNCT
+
+# sentence 58
+और	CCONJ	O	O
+इसको	NN	O	O
+किसी	PRP	O	O
+को	IN	O	O
+छूने	VBP	O	O
+मट	TO	O	O
+देना	VB	O	O
+।	PUNC	O	O
+
+# sentence 59
+और	RB	B-ADV	O
+को	IN	B-ADP	O
+किसी	NNS	B-NP	O
+को	TO	B-VP	O
+तयना	VBP	O	O
+बताना	VB	O	O
+भी	UH	O	O
+मत	RB	O	O
+
+# sentence 60
+इतना	VERB	O	O
+कहकर	VERB	O	O
+बीरबल	NNP	O	O
+वहां	PRON	O	O
+से	IN	O	O
+चल	VERB	O	O
+दे गए	VERB	O	O
+।	PUNC	O	O
+
+# sentence 61
+माली	NNP	O	PER
+सहायक	NNP	O	PER
+ने	PSP	O	PP
+उन	DT	O	DET
+के	DT	O	DET
+हुओ	VBZ	O	VBZ
+और	CC	O	CC
+घडो	NNS	O	NNS
+का	IN	O	IN
+खूब	RB	O	RB
+क्या	UH	O	UH
+ख्याल	NN	O	NN
+रखा	VBD	O	VBD
+।	.	O	PUNCT
+
+# sentence 62
+कुछ	ADJ	U	O
+हफ्ते	NNS	O	O
+बाद	IN	O	O
+अकबर	NNP	B-PER	O
+ने	PSP	O	O
+बीरबल	NNP	O	O
+से	IN	O	O
+पूछा	VM	O	O
+।	PUNC	O	O
+
+# sentence 63
+बीरबल	NNP	O	PER
+को	TO	O	PP
+के	DT	O	DET
+कहाँ	RB	O	ADP
+कम	RB	O	ADV
+बढाया	VBP	O	VERB
+की	IN	O	CONJ
+नही	RB	O	ADV
+।	.	O	PUNCT
+
+# sentence 64
+तुम	DT	B-PER	O
+हैं	VBZ	O	O
+तरफ	RP	O	O
+से	IN	O	O
+का	PRP	O	O
+नहीं	RB	O	O
+आया	VBP	O	O
+।	.	O	O
+
+# sentence 65
+जहापनाh	DT	O	B-PER
+काम	NN	O	B-MISC
+लगभग	RB	O	B-ADV
+समाप्त	ADJ	O	B-MISC
+हो	VB	O	B-VERB
+ही	RB	O	B-ADV
+गा	VBP	O	B-VERB
+असा	ADP	O	B-ADJP
+बीरबल	NNP	I-NP	O
+ने	PSP	B-PP	O
+किया	VBZ	O	B-VERB
+है	VB	O	B-VERB
+।	.	O	B-PUNCT
+
+# sentence 66
+मेन	PRP	O	B-PER
+ये	DT	O	O
+देखने	VBP	O	O
+के	IN	O	O
+लिए	TO	O	O
+बहुत	RB	O	O
+ही	RB	O	O
+उत्साहित	JJ	O	O
+हूँ	VBZ	O	O
+ऐसा	DT	O	O
+बादशाह	NNP	I-PER	O
+ने	PSP	B-PP	O
+कहा	VBP	O	O
+।	PUNC	O	O
+
+# sentence 67
+लेकिन	CC	B-PAR	O
+तुम	PRP	I-NP	O
+घड़े	NN	O	O
+को	IN	O	O
+उसमें	PRON	O	O
+समझदारी	JJ	O	O
+से	TO	O	O
+कैसे	RB	O	O
+भोगो	VB	O	O
+ते	TO	O	O
+।	.	O	O
+
+# sentence 68
+अब	DT	B-PER	O
+मे	PRP	I-PER	O
+कोई	RB	O	O
+दू	VBZ	O	O
+हफ्ते	NN	O	O
+और	IN	O	O
+चाहिये	VBP	O	O
+करना	VB	O	O
+है	VB	O	O
+मुझे	PRP	O	O
+दो	CD	O	O
+।	.	O	O
+
+# sentence 69
+फिर	VB	B-VERB	O
+काम	NN	B-NOUN	O
+पूरा	JJ	B-ADJ	O
+हो	VB	B-VERB	O
+जायेंगा	VB	B-VERB	O
+।	.	PUNCT	O
+
+# sentence 70
+फीर	DET	B-LOC	O
+हम	PRP	I-PER	O
+सीलोन	NNP	B-MISC	O
+के	DT	B-PRON	O
+दूत	NNS	O	O
+को	IN	B-ADP	O
+बुला	VBZ	B-VP	O
+कर	VB	B-AUX	O
+संबंधित	ADJ	O	O
+घड़े	NOUN	B-MISC	O
+दे	VBP	O	O
+सकते हैं	VB	O	O
+।	.	O	O
+
+# sentence 71
+उम्मीद	NN	B-PER	O
+करता	VBZ	O	O
+हूँ	PRON	O	O
+हमारी	DT	O	O
+इज्जत	NN	O	O
+पर	IN	O	O
+कोई	JJ	O	O
+दाग	NN	O	O
+नहीं	RB	O	O
+लगेगा	VB	O	O
+ने	PSP	O	O
+किया	VBD	O	O
+हुआ	AUX	O	O
+है	VB	O	O
+।	PUNC	O	O
+
+# sentence 72
+ऐसा	ADJ	B-MISC	O
+बिकुल	ADJ	B-MISC	O
+नहीं	ADJ	B-MISC	O
+हो	VBZ	B-MISC	O
+।	.	O	O
+बीरबल	NNP	O	O
+ने	PSP	O	O
+कहा	VB	O	O
+।	.	O	O
+
+# sentence 73
+नज़र	ADJ	B-MISC	O
+बीरबल	NNP	I-PER	B-MISC
+पर	IN	B-ADP	O
+थी	VBP	B-AUX	O
+।	.	.	O
+
+# sentence 74
+सभी	DT	B-PER	O
+ये	PRP	I-PRON	O
+सोच रहे	VBP	B-VP	O
+थे	VBZ	B-VP	O
+कि	IN	B-PRON	O
+आखिर	RB	B-ADV	O
+बीरबल	NNP	B-PER	O
+ने	PSP	B-PP	O
+क्या	Q	B-WP	O
+की	PRP	I-PRON	O
+किया	VBP	B-VP	O
+होगा	VBZ	B-VP	O
+।	.	B-PUNCT	O
+
+# sentence 75
+समझदारी	ADJ	B-MISC	O
+के	DET	B-AUX	O
+घड़े	NOUN	B-MISC	O
+को	ADP	B-ADV	O
+भरने	VERB	B-AUX	O
+के	DET	B-PREP	O
+लिए	PARTICLE	B-ADP	O
+
+# sentence 76
+क़ी	NNP	B-NP	O
+मन्त्री	NNP	I-NP	O
+बोल	VB	O	O
+राह रहा	VBG	O	O
+था	TO	O	O
+की	PRP	O	O
+मुझे	PRON	O	O
+नही	JJ	O	O
+लगता	VBZ	O	O
+की	PRP	O	O
+बीरबल	NNP	O	O
+इस	DT	O	O
+चुनौती	NNS	O	O
+को	IN	O	O
+पूरे	VBP	O	O
+कर	VB	O	O
+पाया	VBN	O	O
+हूँ	PRP	O	O
+लागता	VBZ	O	O
+है	TO	O	O
+क्या	WDT	O	O
+बीरबल	NNP	O	O
+हैं	PRP	O	O
+चुनौती	NNS	O	O
+को	IN	O	O
+क़िया	VBP	O	O
+है	TO	O	O
+
+# sentence 77
+मुझे	PRP	I-PER	O
+भी	RB	ADVP	O
+ऐसा	JJ	ADJP	O
+ही	PRP	PRON	O
+लगता	VBP	VBZ	O
+है	VBZ	AUX	O
+।	.	PUNCT	O
+
+# sentence 78
+ऐसा	NN	B-MISC	O
+कर	VB	B-AUX	O
+पाना	VB	B-AUX	O
+किसी	NNS	O	O
+के	DT	O	O
+लिए	IN	O	O
+भी	RB	O	O
+नमूमकिन	JJ	O	O
+हैं	VB	B-ADV	O
+।	.	O	O
+
+# sentence 79
+अरे	DT	O	PERSON
+वो	PRP	O	PRON
+बीरबल	NNP	B-PER	O
+हैं	VBZ	O	AUX
+।	.	O	PUNCT
+
+# sentence 80
+ज़रूर	DT	O	B-PER
+हैं	RB	O	B-PER
+ने	PSP	O	B-PER
+निकल	VBN	O	B-PER
+ही	PRP	O	B-PER
+डिया	IN	O	B-LOC
+होना	VBZ	O	B-PER
+बोला	VB	O	B-PER
+बुढा	DT	O	B-PER
+मंत्री	NNP	O	B-PER
+बोला	VB	O	B-PER
+
+# sentence 81
+सभी	NNP	B-PER	O
+इस	DT	D-DET	O
+चुनौती	NN	B-MISC	O
+और	IN	I-PRON	O
+के	DT	D-DET	O
+परिणाम	NN	B-MISC	O
+के	DT	D-DET	O
+बारे	NNS	B-MISC	O
+में	RB	R-ADV	O
+बातें	VBP	B-MISC	O
+कर रहे	VBG	B-MISC	O
+थाए	VBZ	B-MISC	O
+।	.	.	O
+
+# sentence 82
+बीरबल	NNP	B-PER	O
+और	CC	B-COORD	O
+दूत	NNP	I-NP	O
+दोनों	DT	B-DET	O
+रहते	VBZ	B-VBP	O
+हैं	VBZ	B-VP	O
+।	.	O	O
+
+# sentence 83
+समझदारी	NN	B-NP	O
+से	IN	B-PP	O
+भरे	JJ	O	O
+घड़े	N	O	O
+को	TO	O	O
+ढाखाने	V	O	O
+के	DT	O	O
+लिए	RB	O	O
+तुम	PRP	O	O
+है	VBZ	O	O
+,	,	O	O
+बीरबल	NNP	O	O
+अकबर	NNP	O	O
+ने	VB	O	O
+पूछा	VM	O	O
+।	PUNC	O	O
+
+# sentence 84
+जी	NNP	B-PER	O
+हा	JJ	O	O
+नहीं	JJ	O	O
+अन्य	ADJ	O	O
+जहां	DT	O	O
+पैसों	NNS	O	O
+का	IN	O	O
+हुआ	VBZ	O	O
+।	.	O	O
+अकबर	NNP	B-PER	O
+ने	PSP	B-PP	O
+कहा	VBP	O	O
+।	.	O	O
+
+# sentence 85
+बीरबल	NNP	B-PER	O
+ने	PSP	B-PP	O
+दो	CD	O	O
+तली	NN	O	O
+बाजाई	VB	O	O
+,	,	O	O
+असल	ADJ	O	O
+के	DT	O	O
+दरवाजे	NN	O	O
+की	IN	O	O
+तरफ	TO	O	O
+देखते	VBP	O	O
+हैं	VB	O	O
+।	.	O	O
+
+# sentence 86
+बीरबल	NN	O	B-PER
+का	IN	O	O
+सहायक	NNS	O	O
+घड़े	NN	O	O
+को	TO	O	O
+थाली	NN	O	O
+में	PREP	O	O
+रखकर	ADV	O	O
+हाजिर	VBP	O	O
+होता	VBP	O	O
+है	VB	O	O
+।	.	O	O
+
+# sentence 87
+ये	ADP	O	J
+लीजिये	VERB	O	S
+जहापनाह	NNP	O	P
+तुम्हारे	PRP	O	P
+सामने	DT	O	P
+उसमें	PRON	O	S
+भरा	ADJ	O	S
+घड़ा	NOUN	O	S
+हासिर	NOUN	O	S
+है	VBZ	O	S
+हाजिर	ADJ	O	S
+हमारे	PRP	O	P
+साथ	DT	O	P
+।	PUNCT	O	P
+
+# sentence 88
+घड़े	DT	O	ORG
+को	TO	O	ROOT
+ऊपर	IN	O	ADV
+से	RB	O	AUX
+कपडे	NN	O	MISC
+से	IN	O	ADP
+ढका	VBP	O	VERB
+हटा	VBP	O	VERB
+था	VBZ	O	ADJP
+ताकि	TO	O	ADV
+कोई	PRP	O	PRON
+अन्दर	IN	O	ADP
+से	RB	O	AUX
+देख	VB	O	VERB
+न	RB	O	ADV
+सके	VBZ	O	VERB
+की	DT	O	DET
+अन्दर	IN	O	ADP
+क्या	PRON	O	PROPN
+भरा	VBP	O	VERB
+हुआ	VBP	O	VERB
+था	VBZ	O	ADJP
+
+# sentence 89
+दरबारी	NNS	O	B-MISC
+चिल्लाने	VBP	O	B-MISC
+लगे	VBZ	O	B-MISC
+ऐसा	RB	O	B-MISC
+कैसे	TO	O	B-MISC
+हो	VBD	O	B-MISC
+सकता	VBZ	O	B-MISC
+हैं	VBZ	O	B-MISC
+,	.	O	O
+ऐसा	RB	O	B-MISC
+हो	VBD	O	B-MISC
+ही	PRP	O	B-MISC
+नही	JJ	O	B-MISC
+सकता	VBZ	O	B-MISC
+हैं	VBZ	O	B-MISC
+,	.	O	O
+
+# sentence 90
+शांत	ADJ	B-MISC	O
+हो	VBZ	B-VERB	O
+जाओ	VB	B-ADV	O
+अकबर	NNP	I-PER	O
+ने	PSP	B-PP	O
+का	DT	B-DET	O
+कहा	VB	B-VERB	O
+।	.	O	O
+
+# sentence 91
+इस	DT	O	N
+घड़े	NN	O	DET
+को	IN	O	VB
+तुम	PRP	O	PRON
+अपने	DT	O	PRON
+राजा	NN	O	PRON
+के	DT	O	PRON
+पास	TO	O	TO
+ले	VBP	O	VB
+जाओ	VBP	O	VERB
+।	.	O	PUNCT
+
+# sentence 92
+किताब	NNP	O	O
+के	DT	O	O
+लेकिन	RB	O	O
+याद	VB	O	O
+रहे	VB	O	O
+तुम्हें	PRP	O	O
+ये	DT	O	O
+सारे	DT	O	O
+पड़े	JJ	O	O
+खाली	JJ	O	O
+करें	VB	O	O
+लौटाने	VBP	O	O
+होगे	VBZ	O	O
+,	,	O	O
+वो	PRP	O	O
+भी	RB	O	O
+बिना	IN	O	O
+कोई	DT	O	O
+नुकसान	NN	O	O
+चुके	O	O	O
+होगे	VBZ	O	O
+
+# sentence 93
+और	CC	B-OR	O
+आप	PRP	I-PER	O
+ओह	UH	O	O
+समझदारी	NN	O	O
+के	DT	O	O
+फल	NN	O	O
+को	IN	O	O
+बाहरी	RB	O	O
+निकालने	VBZ	O	O
+नाते	AUX	O	O
+होते	VBP	O	O
+की	TO	O	O
+खरोच	NN	O	O
+नही	RB	O	O
+आनी	ADV	O	O
+चाहिए	VB	O	O
+।	.	O	O
+
+# sentence 94
+क्या	Q	B-WH	O
+मे	PRP	I-PRON	O
+को	RB	B-ADP	O
+मैं	PRP	I-PRON	O
+इस	DT	B-DET	O
+का	IN	B-DET	O
+सामना	NOUN	O	O
+खड़ा	ADJ	O	O
+हो सकता	ADJ	O	O
+है	VBZ	O	O
+अकबर	NNP	I-NP	O
+ने	PSP	B-PP	O
+पूछा	VM	B-VP	O
+।	PUNC	O	O
+
+# sentence 95
+हा	PRP	O	PER
+जरूर	RB	O	ADJP
+अब	TO	O	ADP
+ये	DT	O	DET
+आपका	PRP	O	PRON
+हैं	VBZ	O	AUX
+बीरबल	NNP	O	PER
+ने	PSP	O	VBZ
+किया	VB	O	VBP
+है	VBZ	O	VBZ
+।	.	O	PUNCT
+
+# sentence 96
+दूत	NNP	B-PER	O
+उस	DT	B-DET	O
+घड़े	NOUN	O	O
+के	IN	B-PRON	O
+अन्दर	ADP	O	O
+देखता	VBZ	O	O
+हैं	VBP	O	O
+और	CC	O	O
+चोंक	VB	O	O
+जाता	VB	O	O
+हैं	VBP	O	O
+।	PUNC	O	O
+
+# sentence 97
+उसने	DT	NP	O
+घड़े	NN	PRP	O
+के	DT	PRON	O
+अन्दर	IN	ADP	O
+एक	DET	NSUBJ	O
+कह्दू	NNS	NN	O
+डिया	VBP	O	O
+सूर	RB	ADJ	O
+
+# sentence 98
+दूत	NNP	O	O
+किसी	NNS	O	O
+के	DT	O	O
+लिए	RB	O	O
+बीरबल	NNP	B-PER	O
+बोलते	VBZ	O	O
+हैं	VB	O	O
+एसे	DT	O	O
+हमारे	PRP	O	O
+पांच	CD	O	O
+घड़े	NNS	O	O
+है	VBP	O	O
+।	.	O	O
+
+# sentence 99
+अगर	ADP	B-PP	O
+तुम्हारे	PRP	I-PRON	O
+रजा	NN	O	O
+को	IN	O	O
+और	RB	O	O
+संग	VB	O	O
+दृजन	NNP	O	O
+की	TO	O	O
+चाहे	RB	O	O
+तुम्हें	PRP	O	O
+क्यो	QNS	O	O
+है	VB	O	O
+तो	CONJ	O	O
+हम	PRP	O	O
+और	CONJ	O	O
+दे	VB	O	O
+देंगे	VB	O	O
+।	PUNC	O	O
+
+# sentence 100
+तुम्हारा	NNS	DT	O
+सामने	NNS	PRP	O
+कोई	JJ	DET	O
+खड़ा	ADJ	RB	O
+हो	VBZ	VBP	O
+सकता	ADJ	PRP	O
+है	VB	VB	O
+भला	ADV	Adv	O
+।	.	.	O
+
+# sentence 101
+तुम	NN	B-PER	O
+लाखों	NNP	O	O
+में	IN	O	O
+एक	DT	O	O
+हो	VB	O	O
+बीरबल	NNP	O	O
+
+# sentence 102
+दूत	NNP	B-PER	O
+घड़ा	DT	O	O
+लेकर	RB	O	O
+चला	VBP	O	O	O
+जाता	VBZ	O	O
+हैं	VB	O	O
+।	PUNC	O	O
+
+# sentence 103
+बीरबल	NNP	B-PER	O
+मैं	PRP	I-PRON	O
+बहुत	RB	ADJ	O
+चुड़ा	CC	ADV	O
+हूँ	VBZ	VBP	O
+।	.	PUNCT	O
+
+# sentence 104
+तुम	NNP	B-PER	O
+ने	PSP	B-PP	O
+आ	ADV	O	O	O
+के	DT	O	O
+पहले	RB	O	O
+घड़े	N	O	O	O
+हम	PRP	O	O
+दे	V	O	O	O
+देंगे	VBZ	O	O
+।	PUNC	O	O
+अकबर	NNP	I-NP	O
+ने	PSP	B-PP	O
+पुछा	VM	B-VP	O
+।	PUNC	O	O
+
+# sentence 105
+बीरबल	NN	B-PER	O
+ने	PSP	B-PP	O
+दूसरा	DT	O	O
+घड़ा	NN	O	O
+मंगाया	VBD	O	O
+।	PUNC	O	O
+
+# sentence 106
+सहायक	NNP	I-NP	B-PER
+दूसरा	DT	DET	O
+घड़ा	NOUN	O	O
+भी	RB	ADJP	O
+ले	VBP	O	O
+आया	VBP	O	O
+
+# sentence 107
+अकबर	NNP	I-NP	B-PER
+देखकर	RB	O	O
+जोर	JJ	O	O
+जोर	JJ	O	O
+से	CC	O	O
+हंसने	VB	O	O
+लागा	VB	O	O
+।	.	O	O
+
+# sentence 108
+बिलकुल	DT	U	O
+
+# sentence 109
+यही	NN	B-MISC	O
+हैं	VBZ	B-ADV	O
+समान्यार	NNP	I-NP	O
+का	DT	B-PRON	O
+फल	NOUN	O	O
+।	.	O	O
+
+# sentence 110
+सीलोन	NNP	B-LOC	O
+के	DT	I-PRON	O
+राज	NN	B-PER	O
+जा	VBZ	B-VBG	O
+कै	RB	I-PRON	O
+रहेंगे	VBZ	B-VBD	O
+ज़रूर	RB	I-PRON	O
+।	.	O	O

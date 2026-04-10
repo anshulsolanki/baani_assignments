@@ -1,0 +1,1335 @@
+#manually annotated dataset for english
+
+# sentence 1
+The	DET	B-NP	O
+group	NOUN	I-NP	O
+,	PUNCT	O	O
+upon	ADP	B-PP	O
+the	DET	B-NP	O
+issuance	NOUN	I-NP	O
+of	ADP	B-PP	O
+its	PRON	B-NP	O
+first	ADJ	I-NP	O
+press	NOUN	I-NP	O
+release	NOUN	I-NP	O
+on	ADP	B-PP	O
+December	PROPN	B-NP	B-DATE
+21	NUM	I-NP	I-DATE
+,	PUNCT	O	I-DATE
+1957	NUM	B-NP	I-DATE
+,	PUNCT	O	O
+designated	VERB	B-VP	O
+itself	PRON	B-NP	O
+a	DET	B-NP	O
+``	PUNCT	I-NP	O
+Committee	PROPN	I-NP	B-ORG
+of	ADP	I-NP	I-ORG
+Investigation	PROPN	I-NP	I-ORG
+``	PUNCT	O	O
+.	PUNCT	O	O
+
+# sentence 2
+In	ADP	B-PP	O
+the	DET	B-NP	O
+course	NOUN	I-NP	O
+of	ADP	B-PP	O
+its	PRON	B-NP	O
+inquiry	NOUN	I-NP	O
+,	PUNCT	O	O
+it	PRON	B-NP	O
+took	VERB	B-VP	O
+testimony	NOUN	B-NP	O
+from	ADP	B-PP	O
+only	ADV	B-NP	O
+seven	NUM	I-NP	O
+witnesses	NOUN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 3
+It	PRON	B-NP	O
+heard	VERB	B-VP	O
+Bang-Jensen	PROPN	B-NP	B-PER
+twice	ADV	B-ADVP	O
+and	CCONJ	O	O
+his	PRON	B-NP	O
+lawyer	NOUN	I-NP	O
+,	PUNCT	O	O
+Adolf	PROPN	B-NP	B-PER
+A.	PROPN	I-NP	I-PER
+Berle	PROPN	I-NP	I-PER
+,	PUNCT	O	I-PER
+Jr.	PROPN	B-NP	I-PER
+,	PUNCT	O	O
+once	ADV	O	O
+.	PUNCT	O	O
+
+# sentence 4
+Its	PRON	B-NP	O
+second	ADJ	I-NP	O
+press	NOUN	I-NP	O
+release	NOUN	I-NP	O
+was	AUX	B-VP	O
+on	ADP	B-PP	O
+January	PROPN	B-NP	B-DATE
+15	NUM	I-NP	I-DATE
+,	PUNCT	O	I-DATE
+1958	NUM	B-NP	I-DATE
+,	PUNCT	O	O
+and	CCONJ	O	O
+it	PRON	B-NP	O
+recommended	VERB	B-VP	O
+that	SCONJ	B-SCONJ	O
+the	DET	B-NP	O
+secret	ADJ	I-NP	O
+papers	NOUN	I-NP	O
+be	AUX	B-VP	O
+destroyed	VERB	I-VP	O
+.	PUNCT	O	O
+
+# sentence 5
+It	PRON	B-NP	O
+also	ADV	B-ADVP	O
+implied	VERB	B-VP	O
+that	SCONJ	B-SCONJ	O
+Paul	PROPN	B-NP	O
+Bang-Jensen	PROPN	I-NP	B-PER
+had	AUX	B-VP	O
+been	AUX	I-VP	O
+irresponsible	ADJ	B-ADJP	O
+.	PUNCT	O	O
+
+# sentence 6
+On	ADP	B-PP	O
+January	PROPN	B-NP	B-DATE
+18	NUM	I-NP	I-DATE
+,	PUNCT	O	O
+Ernest	PROPN	B-NP	B-PER
+Gross	PROPN	I-NP	I-PER
+conducted	VERB	B-VP	O
+a	DET	B-NP	O
+press	NOUN	I-NP	O
+conference	NOUN	I-NP	O
+at	ADP	B-PP	O
+the	DET	B-NP	O
+U.N.	PROPN	I-NP	B-ORG
+lasting	VERB	B-VP	O
+an	DET	B-NP	O
+hour	NOUN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 7
+Here	ADV	B-ADVP	O
+,	PUNCT	O	O
+he	PRON	B-NP	O
+openly	ADV	B-ADVP	O
+attacked	VERB	B-VP	O
+Bang-Jensen	PROPN	B-NP	B-PER
+and	CCONJ	O	O
+referred	VERB	B-VP	O
+to	ADP	B-PP	O
+his	PRON	B-NP	O
+``	PUNCT	I-NP	O
+aberrant	ADJ	I-NP	O
+conduct	NOUN	I-NP	O
+``	PUNCT	O	O
+.	PUNCT	O	O
+
+# sentence 8
+This	DET	B-NP	O
+conference	NOUN	I-NP	O
+was	AUX	B-VP	O
+held	VERB	I-VP	O
+despite	ADP	B-PP	O
+Stavropoulos	PROPN	B-NP	B-PER
+'	PART	B-NP	O
+assurance	NOUN	I-NP	O
+to	ADP	B-PP	O
+Adolf	PROPN	B-NP	B-PER
+Berle	PROPN	I-NP	I-PER
+,	PUNCT	O	O
+who	PRON	B-NP	O
+was	AUX	B-VP	O
+leaving	VERB	I-VP	O
+the	DET	B-NP	O
+same	ADJ	I-NP	O
+day	NOUN	I-NP	O
+for	ADP	B-PP	O
+Puerto	PROPN	B-NP	B-LOC
+Rico	PROPN	I-NP	I-LOC
+,	PUNCT	O	O
+that	SCONJ	B-SCONJ	O
+nothing	PRON	B-NP	O
+would	AUX	B-VP	O
+be	AUX	I-VP	O
+done	VERB	I-VP	O
+until	ADP	B-PP	O
+his	PRON	B-NP	O
+return	NOUN	I-NP	O
+on	ADP	B-PP	O
+January	PROPN	B-NP	B-DATE
+22	NUM	I-NP	I-DATE
+,	PUNCT	O	O
+except	SCONJ	B-PP	O
+that	SCONJ	B-SCONJ	O
+the	DET	B-NP	O
+Secretary	PROPN	I-NP	O
+General	PROPN	I-NP	O
+would	AUX	B-VP	O
+probably	ADV	B-ADVP	O
+order	VERB	B-VP	O
+the	DET	B-NP	O
+list	NOUN	I-NP	O
+destroyed	VERB	B-VP	O
+.	PUNCT	O	O
+
+# sentence 9
+On	ADP	B-PP	O
+January	PROPN	B-NP	B-DATE
+24	NUM	I-NP	I-DATE
+Paul	PROPN	B-NP	O
+Bang-Jensen	PROPN	I-NP	B-PER
+,	PUNCT	O	O
+accompanied	VERB	B-VP	O
+by	ADP	B-PP	O
+Adolf	PROPN	B-NP	B-PER
+Berle	PROPN	I-NP	I-PER
+,	PUNCT	O	O
+was	AUX	B-VP	O
+met	VERB	I-VP	O
+by	ADP	B-PP	O
+Dragoslav	PROPN	B-NP	B-PER
+Protitch	PROPN	I-NP	I-PER
+and	CCONJ	O	O
+Colonel	PROPN	B-NP	O
+Frank	PROPN	I-NP	B-PER
+Begley	PROPN	I-NP	I-PER
+,	PUNCT	O	O
+former	ADJ	B-NP	O
+Police	PROPN	I-NP	O
+Chief	PROPN	I-NP	O
+of	ADP	I-NP	O
+Farmington	PROPN	I-NP	B-LOC
+,	PUNCT	O	I-LOC
+Conn.	PROPN	B-NP	I-LOC
+,	PUNCT	O	O
+and	CCONJ	O	O
+now	ADV	B-ADVP	O
+head	NOUN	B-NP	O
+of	ADP	B-PP	O
+U.N.	PROPN	B-NP	B-ORG
+special	ADJ	I-NP	O
+police	NOUN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 10
+The	DET	B-NP	O
+four	NUM	I-NP	O
+,	PUNCT	O	O
+bundled	VERB	B-VP	O
+in	ADP	B-PP	O
+overcoats	NOUN	B-NP	O
+,	PUNCT	O	O
+mounted	VERB	B-VP	O
+to	ADP	B-PP	O
+the	DET	B-NP	O
+wind-swept	ADJ	I-NP	O
+roof	NOUN	I-NP	O
+of	ADP	B-PP	O
+the	DET	B-NP	O
+U.N	PROPN	I-NP	O
+.	PUNCT	O	O
+There	ADV	B-ADVP	O
+,	PUNCT	O	O
+Begley	PROPN	B-NP	O
+lit	VERB	B-VP	O
+a	DET	B-NP	O
+fire	NOUN	I-NP	O
+in	ADP	B-PP	O
+a	DET	B-NP	O
+wire	NOUN	I-NP	O
+basket	NOUN	I-NP	O
+,	PUNCT	O	O
+and	CCONJ	O	O
+Bang-Jensen	PROPN	B-NP	B-PER
+dropped	VERB	B-VP	O
+four	NUM	B-NP	O
+sealed	ADJ	I-NP	O
+envelopes	NOUN	I-NP	O
+into	ADP	B-PP	O
+the	DET	B-NP	O
+flames	NOUN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 11
+In	ADP	B-PP	O
+one	NUM	B-NP	O
+of	ADP	B-PP	O
+these	PRON	B-NP	O
+he	PRON	B-NP	O
+said	VERB	B-VP	O
+were	AUX	I-VP	O
+notes	NOUN	B-NP	O
+on	ADP	B-PP	O
+the	DET	B-NP	O
+identities	NOUN	I-NP	O
+of	ADP	B-PP	O
+the	DET	B-NP	O
+eighty-one	NUM	I-NP	O
+refugees	NOUN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 12
+The	DET	B-NP	O
+method	NOUN	I-NP	O
+of	ADP	B-PP	O
+destroying	VERB	B-VP	O
+the	DET	B-NP	O
+evidence	NOUN	I-NP	O
+embarrassed	VERB	B-VP	O
+Paul	PROPN	B-NP	O
+Bang-Jensen	PROPN	I-NP	B-PER
+.	PUNCT	O	O
+
+# sentence 13
+He	PRON	B-NP	O
+knew	VERB	B-VP	O
+it	PRON	B-NP	O
+would	AUX	B-VP	O
+be	AUX	I-VP	O
+implied	VERB	I-VP	O
+that	SCONJ	B-SCONJ	O
+it	PRON	B-NP	O
+was	AUX	B-VP	O
+done	VERB	I-VP	O
+in	ADP	B-PP	O
+this	DET	B-NP	O
+way	NOUN	I-NP	O
+at	ADP	B-PP	O
+his	PRON	B-NP	O
+insistence	NOUN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 14
+He	PRON	B-NP	O
+was	AUX	B-VP	O
+right	ADJ	B-ADJP	O
+,	PUNCT	O	O
+and	CCONJ	O	O
+Peter	PROPN	B-NP	B-PER
+Marshall	PROPN	I-NP	I-PER
+could	AUX	B-VP	O
+not	ADV	B-ADVP	O
+help	VERB	I-VP	O
+but	CCONJ	O	O
+recall	VERB	B-VP	O
+Andrew	PROPN	B-NP	B-PER
+Cordier	PROPN	I-NP	I-PER
+'s	PART	B-NP	O
+words	NOUN	I-NP	O
+on	ADP	B-PP	O
+the	DET	B-NP	O
+subject	NOUN	I-NP	O
+,	PUNCT	O	O
+``	PUNCT	I-NP	O
+Well	INTJ	I-NP	O
+,	PUNCT	O	O
+it	PRON	B-NP	O
+seemed	VERB	B-VP	O
+as	ADV	B-ADJP	O
+good	ADJ	I-ADJP	O
+a	DET	B-NP	O
+place	NOUN	I-NP	O
+as	ADP	B-PP	O
+any	DET	B-NP	O
+to	PART	B-VP	O
+do	VERB	I-VP	O
+the	DET	B-NP	O
+job	NOUN	I-NP	O
+``	PUNCT	O	O
+.	PUNCT	O	O
+
+# sentence 15
+The	DET	B-NP	O
+Gross	PROPN	I-NP	B-PER
+group	NOUN	I-NP	O
+had	AUX	B-VP	O
+been	AUX	I-VP	O
+formed	VERB	I-VP	O
+for	ADP	B-PP	O
+the	DET	B-NP	O
+express	ADJ	I-NP	O
+purpose	NOUN	I-NP	O
+of	ADP	B-PP	O
+advising	VERB	B-VP	O
+the	DET	B-NP	O
+Secretary	PROPN	I-NP	O
+General	PROPN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 16
+Hammarskjold	PROPN	B-NP	B-PER
+'s	PART	B-NP	O
+supposed	ADJ	I-NP	O
+desire	NOUN	I-NP	O
+to	PART	B-VP	O
+seek	VERB	I-VP	O
+outside	ADJ	B-NP	O
+legal	ADJ	I-NP	O
+advice	NOUN	I-NP	O
+in	ADP	B-PP	O
+the	DET	B-NP	O
+guise	NOUN	I-NP	O
+of	ADP	B-PP	O
+Ernest	PROPN	B-NP	B-PER
+Gross	PROPN	I-NP	I-PER
+is	AUX	B-VP	O
+illusion	NOUN	B-NP	O
+,	PUNCT	O	O
+at	ADP	B-PP	O
+best	ADJ	B-NP	O
+.	PUNCT	O	O
+
+# sentence 17
+Gross	PROPN	B-NP	B-PER
+'s	PART	B-NP	O
+,	PUNCT	O	O
+being	AUX	B-VP	O
+``	PUNCT	B-PP	O
+outside	SCONJ	I-PP	O
+``	PUNCT	I-PP	O
+the	DET	B-NP	O
+U.N.	PROPN	I-NP	B-ORG
+applied	VERB	B-VP	O
+only	ADV	B-ADVP	O
+to	ADP	B-PP	O
+a	DET	B-NP	O
+physical	ADJ	I-NP	O
+state	NOUN	I-NP	O
+,	PUNCT	O	O
+not	ADV	B-NP	O
+an	DET	I-NP	O
+objective	ADJ	I-NP	O
+one	NOUN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 18
+But	CCONJ	O	O
+by	ADP	B-PP	O
+the	DET	B-NP	O
+time	NOUN	I-NP	O
+the	DET	B-NP	O
+papers	NOUN	I-NP	O
+were	AUX	B-VP	O
+finally	ADV	B-ADVP	O
+disposed	VERB	I-VP	O
+of	ADP	B-PP	O
+,	PUNCT	O	O
+the	DET	B-NP	O
+group	NOUN	I-NP	O
+had	AUX	B-VP	O
+informed	VERB	I-VP	O
+the	DET	B-NP	O
+world	NOUN	I-NP	O
+of	ADP	B-PP	O
+its	PRON	B-NP	O
+purpose	NOUN	I-NP	O
+,	PUNCT	O	O
+its	PRON	B-NP	O
+recommendations	NOUN	I-NP	O
+,	PUNCT	O	O
+and	CCONJ	O	O
+its	PRON	B-NP	O
+belief	NOUN	I-NP	O
+that	SCONJ	B-SCONJ	O
+Paul	PROPN	B-NP	O
+Bang-Jensen	PROPN	I-NP	B-PER
+was	AUX	B-VP	O
+not	ADV	B-ADVP	O
+of	ADP	B-PP	O
+sound	ADJ	B-NP	O
+mind	NOUN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 19
+Shortly	ADV	B-ADVP	O
+the	DET	B-NP	O
+group	NOUN	I-NP	O
+would	AUX	B-VP	O
+issue	VERB	I-VP	O
+its	PRON	B-NP	O
+report	NOUN	I-NP	O
+to	ADP	B-PP	O
+the	DET	B-NP	O
+Secretary	PROPN	I-NP	O
+General	PROPN	I-NP	O
+,	PUNCT	O	O
+recommending	VERB	B-VP	O
+Paul	PROPN	B-NP	O
+Bang-Jensen	PROPN	I-NP	B-PER
+'s	PART	B-NP	O
+dismissal	NOUN	I-NP	O
+from	ADP	B-PP	O
+the	DET	B-NP	O
+United	PROPN	I-NP	O
+Nations	PROPN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 20
+The	DET	B-NP	O
+contents	NOUN	I-NP	O
+of	ADP	B-PP	O
+this	DET	B-NP	O
+195-page	ADJ	I-NP	O
+document	NOUN	I-NP	O
+would	AUX	B-VP	O
+become	VERB	I-VP	O
+known	ADJ	B-ADJP	O
+to	ADP	B-PP	O
+many	PRON	B-NP	O
+before	SCONJ	B-SCONJ	O
+it	PRON	B-NP	O
+would	AUX	B-VP	O
+become	VERB	I-VP	O
+known	ADJ	B-ADJP	O
+to	ADP	B-PP	O
+the	DET	B-NP	O
+man	NOUN	I-NP	O
+it	PRON	B-NP	O
+was	AUX	B-VP	O
+written	VERB	I-VP	O
+about	ADP	B-PP	O
+.	PUNCT	O	O
+
+# sentence 21
+``	PUNCT	O	O
+Until	ADP	B-PP	O
+this	DET	B-NP	O
+Hungarian	ADJ	I-NP	B-ORG
+Committee	PROPN	I-NP	I-ORG
+matter	NOUN	I-NP	O
+came	VERB	B-VP	O
+up	ADP	B-ADVP	O
+,	PUNCT	O	O
+Bang-Jensen	PROPN	B-NP	B-PER
+was	AUX	B-VP	O
+a	DET	B-NP	O
+fine	ADJ	I-NP	O
+and	CCONJ	I-NP	O
+devoted	ADJ	I-NP	O
+individual	NOUN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 22
+I	PRON	B-NP	O
+had	AUX	B-VP	O
+known	VERB	I-VP	O
+him	PRON	B-NP	O
+for	ADP	B-PP	O
+some	DET	B-NP	O
+years	NOUN	I-NP	O
+,	PUNCT	O	O
+when	ADV	B-ADVP	O
+I	PRON	B-NP	O
+was	AUX	B-VP	O
+a	DET	B-NP	O
+delegate	NOUN	I-NP	O
+and	CCONJ	O	O
+before	ADP	B-ADVP	O
+,	PUNCT	O	O
+and	CCONJ	O	O
+this	DET	B-NP	O
+manner	NOUN	I-NP	O
+had	AUX	B-VP	O
+never	ADV	B-ADVP	O
+been	AUX	B-VP	O
+his	PRON	B-NP	O
+``	PUNCT	O	O
+.	PUNCT	O	O
+
+# sentence 23
+Ernest	PROPN	B-NP	B-PER
+A	PROPN	I-NP	I-PER
+.	PUNCT	O	I-PER
+Gross	PROPN	B-NP	I-PER
+leaned	VERB	B-VP	O
+back	ADV	B-ADVP	O
+in	ADP	B-PP	O
+his	PRON	B-NP	O
+chair	NOUN	I-NP	O
+and	CCONJ	O	O
+told	VERB	B-VP	O
+Peter	PROPN	B-NP	B-PER
+Marshall	PROPN	I-NP	I-PER
+how	ADV	B-ADVP	O
+Secretary	PROPN	B-NP	O
+General	PROPN	I-NP	O
+Dag	PROPN	I-NP	B-PER
+Hammarskjold	PROPN	I-NP	I-PER
+had	AUX	B-VP	O
+,	PUNCT	O	O
+on	ADP	B-PP	O
+December	PROPN	B-NP	B-DATE
+4	NUM	I-NP	I-DATE
+,	PUNCT	O	I-DATE
+1957	NUM	B-NP	I-DATE
+,	PUNCT	O	O
+called	VERB	B-VP	O
+him	PRON	B-NP	O
+in	ADP	B-ADVP	O
+as	ADP	B-PP	O
+a	DET	B-NP	O
+private	ADJ	I-NP	O
+lawyer	NOUN	I-NP	O
+to	PART	B-VP	O
+review	VERB	I-VP	O
+Bang-Jensen	PROPN	B-NP	B-PER
+'s	PART	B-NP	O
+conduct	NOUN	I-NP	O
+``	PUNCT	O	O
+relating	VERB	B-VP	O
+to	ADP	B-PP	O
+his	PRON	B-NP	O
+association	NOUN	I-NP	O
+with	ADP	B-PP	O
+the	DET	B-NP	O
+Special	PROPN	I-NP	O
+Committee	PROPN	I-NP	O
+on	ADP	B-PP	O
+the	DET	B-NP	O
+problem	NOUN	I-NP	O
+of	ADP	B-PP	O
+Hungary	PROPN	B-NP	O
+``	PUNCT	O	O
+.	PUNCT	O	O
+
+# sentence 24
+The	DET	B-NP	O
+result	NOUN	I-NP	O
+was	AUX	B-VP	O
+the	DET	B-NP	O
+``	PUNCT	I-NP	O
+Gross	PROPN	I-NP	B-PER
+Report	PROPN	I-NP	O
+``	PUNCT	O	O
+,	PUNCT	O	O
+prepared	VERB	B-VP	O
+by	ADP	B-PP	O
+Gross	PROPN	B-NP	B-PER
+,	PUNCT	O	O
+as	ADP	B-PP	O
+chairman	NOUN	B-NP	O
+,	PUNCT	O	O
+with	ADP	B-PP	O
+the	DET	B-NP	O
+assistance	NOUN	I-NP	O
+of	ADP	B-PP	O
+two	NUM	B-NP	O
+U.N	PROPN	I-NP	O
+.	PUNCT	O	O
+Under	ADP	B-NP	O
+Secretaries	PROPN	I-NP	O
+,	PUNCT	O	O
+Constantin	PROPN	B-NP	O
+Stavropoulos	PROPN	I-NP	B-PER
+and	CCONJ	O	O
+Philippe	PROPN	B-NP	B-PER
+De	PROPN	I-NP	I-PER
+Seynes	PROPN	I-NP	I-PER
+.	PUNCT	O	O
+
+# sentence 25
+``	PUNCT	O	O
+Yes	INTJ	B-NP	O
+``	PUNCT	I-NP	O
+,	PUNCT	O	O
+Gross	PROPN	B-NP	B-PER
+went	VERB	B-VP	O
+on	ADP	B-ADVP	O
+,	PUNCT	O	O
+``	PUNCT	O	O
+Bang-Jensen	PROPN	B-NP	B-PER
+was	AUX	B-VP	O
+an	DET	B-NP	O
+up-and-coming	ADJ	I-NP	O
+young	ADJ	I-NP	O
+man	NOUN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 26
+He	PRON	B-NP	O
+had	AUX	B-VP	O
+always	ADV	B-ADVP	O
+done	VERB	I-VP	O
+well	ADV	B-ADVP	O
+.	PUNCT	O	O
+
+# sentence 27
+Never	ADV	B-ADVP	O
+well	ADV	I-ADVP	O
+known	ADJ	B-ADJP	O
+,	PUNCT	O	O
+but	CCONJ	O	O
+he	PRON	B-NP	O
+had	AUX	B-VP	O
+done	VERB	I-VP	O
+his	PRON	B-NP	O
+work	NOUN	I-NP	O
+competently.	ADV	B-ADVP	O
+``	PUNCT	O	O
+
+# sentence 28
+Gross	PROPN	B-NP	B-PER
+had	AUX	B-VP	O
+received	VERB	I-VP	O
+Marshall	PROPN	B-NP	B-PER
+courteously	ADV	B-ADVP	O
+and	CCONJ	O	O
+they	PRON	B-NP	O
+were	AUX	B-VP	O
+discussing	VERB	I-VP	O
+the	DET	B-NP	O
+case	NOUN	I-NP	O
+.	PUNCT	O	O
+
+# sentence 29
+``	PUNCT	O	O
+You	PRON	B-NP	O
+know	VERB	B-VP	O
+``	PUNCT	O	O
+,	PUNCT	O	O
+the	DET	B-NP	O
+lawyer	NOUN	I-NP	O
+said	VERB	B-VP	O
+,	PUNCT	O	O
+``	PUNCT	O	O
+it	PRON	B-NP	O
+'s	AUX	B-VP	O
+difficult	ADJ	B-ADJP	O
+to	PART	B-VP	O
+talk	VERB	I-VP	O
+like	ADP	B-PP	O
+this	PRON	B-NP	O
+about	ADP	B-PP	O
+a	DET	B-NP	O
+man	NOUN	I-NP	O
+who	PRON	B-NP	O
+ca	AUX	B-VP	O
+n't	ADV	B-ADVP	O
+answer	VERB	B-VP	O
+back	ADV	B-ADVP	O
+``	PUNCT	O	O
+.	PUNCT	O	O
+
+# sentence 30
+Gross	PROPN	B-NP	B-PER
+was	AUX	B-VP	O
+behind	ADP	B-PP	O
+a	DET	B-NP	O
+clean-top	ADJ	I-NP	O
+desk	NOUN	I-NP	O
+,	PUNCT	O	O
+only	ADV	B-NP	O
+a	DET	I-NP	O
+manila	NOUN	I-NP	O
+folder	NOUN	I-NP	O
+before	ADP	B-PP	O
+him	PRON	B-NP	O
+.	PUNCT	O	O
+
+
+#Manually annotated dataset for hindi data
+
+# sentence 1
+बादशाह	NN	B-NP	O
+अकबर	NNP	I-NP	B-PER
+अपने	PRP	B-NP	O
+पड़ोसी	JJ	I-NP	O
+मुल्को	NN	I-NP	O
+से	PSP	B-PP	O
+अच्छी	JJ	B-NP	O
+मित्रता	NN	I-NP	O
+रखते	VM	B-VP	O
+थे	VAUX	I-VP	O
+।	PUNC	O	O
+
+# sentence 2
+एसे	DEM	B-NP	O
+ही	RP	I-NP	O
+एक	QF	B-NP	O
+फारसी	JJ	I-NP	B-LOC
+मित्र	NN	I-NP	O
+थे	VM	B-VP	O
+जो	PRP	B-NP	O
+की	CC	O	O
+बहुत	INTF	B-ADJP	O
+ही	RP	I-ADJP	O
+विशाल	JJ	I-ADJP	O
+साम्राज्य	NN	B-NP	O
+के	PSP	B-PP	O
+राजा	NN	B-NP	O
+थे	VM	B-VP	O
+।	PUNC	O	O
+
+# sentence 3
+बादशाह	NN	B-NP	O
+और	CC	O	O
+उनका	PRP	B-NP	O
+मित्र	NN	I-NP	O
+दोनों	NN	I-NP	O
+एक	QF	B-NP	O
+दुसरे	NN	I-NP	O
+को	PSP	B-PP	O
+अक्सर	RB	B-ADVP	O
+पत्र	NN	B-NP	O
+लिखा	VM	B-VP	O
+करते	VAUX	I-VP	O
+और	CC	O	O
+एक	QF	B-NP	O
+दुसरे	NN	I-NP	O
+से	PSP	B-PP	O
+मजाक	NN	B-NP	O
+चलती	VM	B-VP	O
+रहती	VAUX	I-VP	O
+।	PUNC	O	O
+
+# sentence 4
+बादशाह	NN	B-NP	O
+अक्सर	RB	B-ADVP	O
+चुटकले	NN	B-NP	O
+और	CC	O	O
+शायरिया	NN	B-NP	O
+लिखकर	VM	B-VP	O
+भेजते	VM	I-VP	O
+।	PUNC	O	O
+
+# sentence 5
+और	CC	O	O
+फारसी	PROPN	B-NP	B-LOC
+का	PSP	B-PP	O
+राजा	NN	B-NP	O
+उनको	PRON	B-NP	O
+अक्सर	RB	B-ADVP	O
+तोहफे	NN	B-NP	O
+भेजा	VM	B-VP	O
+करता	VAUX	I-VP	O
+।	PUNC	O	O
+
+# sentence 6
+एक	QF	B-NP	O
+दिन	NN	I-NP	O
+फारसी	PROPN	B-NP	B-LOC
+के	PSP	B-PP	O
+राजा	NN	B-NP	O
+ने	PSP	B-PP	O
+एक	QF	B-NP	O
+ऐसा	DEM	I-NP	O
+तोह्फा	NN	I-NP	O
+और	CC	O	O
+पत्र	NN	B-NP	O
+भेजा	VM	B-VP	O
+जिसको	PRP	B-NP	O
+देखकर	VM	B-VP	O
+बादशाह	NN	B-NP	O
+चौंक	VM	B-VP	O
+गये	VAUX	I-VP	O
+।	PUNC	O	O
+
+# sentence 7
+तोहफे	NN	B-NP	O
+के	PSP	B-PP	O
+अन्दर	NST	B-NP	O
+से	PSP	B-PP	O
+एक	QF	B-NP	O
+पिंजरा	NN	I-NP	O
+और	CC	O	O
+एक	QF	B-NP	O
+पत्र	NN	I-NP	O
+निकला	VM	B-VP	O
+।	PUNC	O	O
+
+# sentence 8
+पिंजरे	NN	B-NP	O
+के	PSP	B-PP	O
+अन्दर	NST	B-NP	O
+एक	QF	B-NP	O
+शेर	NN	I-NP	O
+था	VM	B-VP	O
+।	PUNC	O	O
+
+# sentence 9
+बादशाह	NN	B-NP	O
+ने	PSP	B-PP	O
+पत्र	NN	B-NP	O
+खोलकर	VM	B-VP	O
+देखा	VM	B-VP	O
+तो	CC	O	O
+उसके	PRP	B-NP	O
+अन्दर	NST	B-NP	O
+लिखा	VM	B-VP	O
+था	VAUX	I-VP	O
+की	CC	O	O
+इस	DEM	B-NP	O
+शेर	NN	I-NP	O
+को	PSP	B-PP	O
+कैसे	WQ	B-ADVP	O
+भी	RP	I-ADVP	O
+करके	VM	B-VP	O
+बाहर	NST	B-ADVP	O
+निकालना	VM	B-VP	O
+हैं	VAUX	I-VP	O
+और	CC	O	O
+इस	DEM	B-NP	O
+पिंजरे	NN	I-NP	O
+को	PSP	B-PP	O
+खोलना	VM	B-VP	O
+भी	RP	O	O
+नहीं	NEG	B-VP	O
+हैं	VM	I-VP	O
+।	PUNC	O	O
+
+# sentence 10
+और	CC	O	O
+अगर	SCONJ	O	O
+ऐसा	DEM	B-NP	O
+नहीं	NEG	B-VP	O
+किया	VM	I-VP	O
+तो	CC	O	O
+हम	PRP	B-NP	O
+आपकी	PRP	B-NP	O
+सल्तनत	NN	I-NP	O
+पर	PSP	B-PP	O
+हमला	NN	B-NP	O
+करेंगे	VM	B-VP	O
+।	PUNC	O	O
+
+# sentence 11
+बादशाह	NN	B-NP	O
+पत्र	NN	I-NP	O
+पढ़कर	VM	B-VP	O
+सोच	NN	B-NP	O
+मे	PSP	B-PP	O
+पड़	VM	B-VP	O
+गये	VAUX	I-VP	O
+।	PUNC	O	O
+
+# sentence 12
+बादशाह	NN	B-NP	O
+ने	PSP	B-PP	O
+तुरंत	RB	B-ADVP	O
+सभा	NN	B-NP	O
+बुलाई	VM	B-VP	O
+और	CC	O	O
+उस	DEM	B-NP	O
+पिंजरे	NN	I-NP	O
+और	CC	O	O
+पत्र	NN	B-NP	O
+को	PSP	B-PP	O
+सभी	NN	B-NP	O
+के	PSP	B-PP	O
+सामने	NST	B-NP	O
+पेश	JJ	B-NP	O
+किया	VM	B-VP	O
+।	PUNC	O	O
+
+# sentence 13
+सभी	NN	B-NP	O
+को	PSP	B-PP	O
+पत्र	NN	B-NP	O
+सुनाकर	VM	B-VP	O
+सभी	NN	B-NP	O
+से	PSP	B-PP	O
+एक	NN	B-ADVP	O
+एक	NN	I-ADVP	O
+करके	VM	B-VP	O
+राय	NN	B-NP	O
+मांगी	VM	B-VP	O
+।	PUNC	O	O
+
+# sentence 14
+उस	DEM	B-NP	O
+दिन	NN	I-NP	O
+बीरबल	PROPN	B-NP	B-PER
+किसी	PRP	B-NP	O
+सरकारी	JJ	I-NP	O
+काम	NN	I-NP	O
+से	PSP	B-PP	O
+बाहर	NST	B-ADVP	O
+गए	VM	B-VP	O
+हुए	VAUX	I-VP	O
+थे	VAUX	I-VP	O
+।	PUNC	O	O
+
+# sentence 15
+अकबर	PROPN	B-NP	B-PER
+को	PSP	B-PP	O
+इस	DEM	B-NP	O
+बात	NN	I-NP	O
+का	PSP	B-PP	O
+अफ़सोस	NN	B-NP	O
+था	VM	B-VP	O
+की	CC	O	O
+बीरबल	PROPN	B-NP	B-PER
+इस	DEM	B-NP	O
+मुसीबत	NN	I-NP	O
+बला	NN	I-NP	O
+में	PSP	B-PP	O
+उनके	PRP	B-NP	O
+साथ	NST	I-NP	O
+क्	O	O	O
+‍	O	O	O
+यों	O	O	O
+नहीं	NEG	B-VP	O
+हैं	VM	I-VP	O
+।	PUNC	O	O
+
+# sentence 16
+पूरे	JJ	B-NP	O
+दरबार	NN	I-NP	O
+में	PSP	B-PP	O
+सभी	NN	B-NP	O
+एक	NN	B-NP	O
+दुसरे	NN	I-NP	O
+का	PSP	B-PP	O
+मुहं	NN	B-NP	O
+देखने	VM	B-VP	O
+लगे	VAUX	I-VP	O
+।	PUNC	O	O
+
+# sentence 17
+अकबर	NNP	B-NP	B-PER
+ने	PSP	B-PP	O
+पुछा	VM	B-VP	O
+कि	CC	O	O
+किसी	PRP	B-NP	O
+के	PSP	B-PP	O
+पास	NST	B-NP	O
+इस	DEM	B-NP	O
+पहेली	NN	I-NP	O
+का	PSP	B-PP	O
+कोई	PRP	B-NP	O
+हल	NN	B-NP	O
+हैं	VM	B-VP	O
+क्या	WQ	B-ADVP	O
+?	PUNC	O	O
+
+# sentence 18
+बादशाह	NN	B-NP	O
+समझ	VM	B-VP	O
+गये	VAUX	I-VP	O
+की	CC	O	O
+विषय	NN	B-NP	O
+जरा	INTF	B-ADJP	O
+गंभीर	JJ	I-ADJP	O
+हैं	VM	B-VP	O
+।	PUNC	O	O
+
+# sentence 19
+फ़ौरन	RB	B-ADVP	O
+बीरबल	NNP	B-NP	B-PER
+को	PSP	B-PP	O
+बुलाने	VM	B-VP	O
+को	PSP	B-PP	O
+कहा	VM	B-VP	O
+।	PUNC	O	O
+
+# sentence 20
+दुसरे	NN	B-NP	O
+ही	RP	I-NP	O
+दिन	NN	I-NP	O
+बीरबल	NNP	B-NP	B-PER
+दरबार	NN	I-NP	O
+में	PSP	B-PP	O
+हाजिर	JJ	B-NP	O
+हो	VM	B-VP	O
+गये	VAUX	I-VP	O
+।	PUNC	O	O
+
+# sentence 21
+बीरबल	NNP	B-NP	B-PER
+ने	PSP	B-PP	O
+झुककर	VM	B-VP	O
+अकबर	NNP	B-NP	B-PER
+का	PSP	B-PP	O
+अभिवादन	NN	B-NP	O
+किया	VM	B-VP	O
+।	PUNC	O	O
+
+# sentence 22
+अकबर	NNP	B-NP	B-PER
+ने	PSP	B-PP	O
+बीरबल	NNP	B-NP	B-PER
+के	PSP	B-PP	O
+हाथ	NN	B-NP	O
+में	PSP	B-PP	O
+उस	DEM	B-NP	O
+पत्र	NN	I-NP	O
+को	PSP	B-PP	O
+थमवा	VM	B-VP	O
+दिया	VAUX	I-VP	O
+।	PUNC	O	O
+
+# sentence 23
+बीरबल	NNP	B-NP	B-PER
+ने	PSP	B-PP	O
+पत्र	NN	B-NP	O
+को	PSP	B-PP	O
+ध्यान	NN	B-NP	O
+से	PSP	B-PP	O
+पढ़कर	VM	B-VP	O
+,	PUNC	O	O
+आग	NN	B-NP	O
+और	CC	O	O
+लोहे	NN	B-NP	O
+के	PSP	B-PP	O
+सरिये	NN	B-NP	O
+की	PSP	B-PP	O
+व्यवस्था	NN	B-NP	O
+करने	VM	B-VP	O
+को	PSP	B-PP	O
+कहा	VM	B-VP	O
+।	PUNC	O	O
+
+# sentence 24
+बादशाह	NN	B-NP	O
+के	PSP	B-PP	O
+हुक्म	NN	B-NP	O
+पर	PSP	B-PP	O
+तुरंत	RB	B-ADVP	O
+सरिये	NN	B-NP	O
+और	CC	O	O
+आग	NN	B-NP	O
+की	PSP	B-PP	O
+व्यवस्था	NN	B-NP	O
+की	VM	B-VP	O
+गई	VAUX	I-VP	O
+।	PUNC	O	O
+
+# sentence 25
+बीरबल	NNP	B-NP	B-PER
+ने	PSP	B-PP	O
+सरिये	NN	B-NP	O
+को	PSP	B-PP	O
+गर्म	JJ	B-ADJP	O
+किया	VM	B-VP	O
+और	CC	O	O
+पिंजरे	NN	B-NP	O
+में	PSP	B-PP	O
+शेर	NN	B-NP	O
+को	PSP	B-PP	O
+चिपका	VM	B-VP	O
+दिया	VAUX	I-VP	O
+।	PUNC	O	O
+
+# sentence 26
+जहाँ	PRP	B-ADVP	O
+से	PSP	B-PP	O
+शेर	NN	B-NP	O
+को	PSP	B-PP	O
+सरिया	NN	B-NP	O
+लगा	VM	B-VP	O
+वहां	PRP	B-ADVP	O
+से	PSP	B-PP	O
+शेर	NN	B-NP	O
+खंडित	JJ	B-ADJP	O
+हो	VM	B-VP	O
+गया	VAUX	I-VP	O
+।	PUNC	O	O
+
+# sentence 27
+बीरबल	NNP	B-NP	B-PER
+ने	PSP	B-PP	O
+राहत	NN	B-NP	O
+भरी	JJ	I-NP	O
+सांस	NN	I-NP	O
+ली	VM	B-VP	O
+और	CC	O	O
+बोले	VM	B-VP	O
+जहापनाह	NNP	B-NP	O
+मसला	NN	B-NP	O
+सुलझ	VM	B-VP	O
+जायेंगा	VAUX	I-VP	O
+।	PUNC	O	O
+
+# sentence 28
+बीरबल	NNP	B-NP	B-PER
+ने	PSP	B-PP	O
+अकबर	NNP	B-NP	B-PER
+से	PSP	B-PP	O
+एक	QF	B-NP	O
+बड़े	ADJ	I-NP	O
+अग्नि	NN	I-NP	O
+कुण्ड	NN	I-NP	O
+की	PSP	B-PP	O
+व्यवस्था	NN	B-NP	O
+करने	VM	B-VP	O
+को	PSP	B-PP	O
+कहा	VM	B-VP	O
+।	PUNC	O	O
+
+# sentence 29
+अकबर	NNP	B-NP	B-PER
+ने	PSP	B-PP	O
+दास	NN	B-NP	O
+लोगो	NN	I-NP	O
+से	PSP	B-PP	O
+कहकर	VM	B-VP	O
+इसकी	PRP	B-NP	O
+व्यवस्था	NN	B-NP	O
+करवा	VM	B-VP	O
+दी	VAUX	I-VP	O
+।	PUNC	O	O
+
+# sentence 30
+बीरबल	NNP	B-NP	B-PER
+के	PSP	B-PP	O
+कहने	VM	B-VP	O
+पर	PSP	B-PP	O
+उस	DEM	B-NP	O
+पूरे	JJ	I-NP	O
+पिंजरे	NN	I-NP	O
+को	PSP	B-PP	O
+अग्नि	NN	B-NP	O
+कुण्ड	NN	I-NP	O
+में	PSP	B-PP	O
+रखवा	VM	B-VP	O
+दिया	VAUX	I-VP	O
+।	PUNC	O	O
+
+# sentence 31
+बंद	JJ	B-ADJP	O
+पिंजरे	NN	B-NP	O
+से	PSP	B-PP	O
+पूरा	JJ	B-NP	O
+शेर	NN	I-NP	O
+पिघल	VM	B-VP	O
+कर	VAUX	I-VP	O
+बाहर	NST	B-ADVP	O
+निकल	VM	B-VP	O
+गया	VAUX	I-VP	O
+।	PUNC	O	O
+
+# sentence 32
+बीरबल	NNP	B-NP	B-PER
+की	PSP	B-PP	O
+चतुराई	NN	B-NP	O
+पर	PSP	B-PP	O
+बादशाह	NN	B-NP	O
+अति	INTF	B-ADJP	O
+प्रसन्न	JJ	I-ADJP	O
+हुए	VM	B-VP	O
+और	CC	O	O
+पूछा	VM	B-VP	O
+की	CC	O	O
+बीरबल	NNP	B-NP	B-PER
+तुमको	PRP	B-NP	O
+कैसे	WQ	B-ADVP	O
+पता	NN	B-NP	O
+चला	VM	B-VP	O
+की	CC	O	O
+इसके	PRP	B-NP	O
+अन्दर	NST	B-NP	O
+लाख	NN	B-NP	O
+का	PSP	B-PP	O
+शेर	NN	B-NP	O
+हैं	VM	B-VP	O
+।	PUNC	O	O
+
+# sentence 33
+जहापनाह	NNP	B-NP	O
+इस	DEM	B-NP	O
+पत्र	NN	I-NP	O
+ने	PSP	B-PP	O
+साफ	JJ	B-ADVP	O
+साफ	JJ	I-ADVP	O
+लिख	VM	B-VP	O
+रखा	VAUX	I-VP	O
+हैं	VAUX	I-VP	O
+की	CC	O	O
+इस	DEM	B-NP	O
+शेर	NN	I-NP	O
+को	PSP	B-PP	O
+पिंजरे	NN	B-NP	O
+से	PSP	B-PP	O
+निकालना	VM	B-VP	O
+हैं	VAUX	I-VP	O
+वो	PRP	B-NP	O
+भी	RP	O	O
+बिना	NEG	B-NP	O
+इसको	PRP	I-NP	O
+खोले	VM	B-VP	O
+तो	CC	O	O
+इसका	PRP	B-NP	O
+मतलब	NN	I-NP	O
+हैं	VM	B-VP	O
+की	CC	O	O
+जरूर	RB	B-ADVP	O
+शेर	NN	B-NP	O
+किसी	PRP	B-NP	O
+धातु	NN	I-NP	O
+का	PSP	B-PP	O
+नही	NEG	B-VP	O
+हैं	VM	I-VP	O
+,	PUNC	O	O
+हमने	PRP	B-NP	O
+तो	RP	O	O
+केवल	RP	B-NP	O
+देखने	VM	B-VP	O
+के	PSP	B-PP	O
+लिए	PSP	I-PP	O
+सरिया	NN	B-NP	O
+मंगाया	VM	B-VP	O
+था	VAUX	I-VP	O
+की	CC	O	O
+क्या	WQ	B-ADVP	O
+वाकई	RB	B-ADVP	O
+शेर	NN	B-NP	O
+पिघालता	VM	B-VP	O
+हैं	VAUX	I-VP	O
+की	CC	O	O
+नहीं	NEG	B-VP	O
+।	PUNC	O	O
+
+# sentence 34
+हमने	PRON	B-NP	O
+सही	JJ	B-ADJP	O
+अंदाजा	NN	B-NP	O
+लगाया	VM	B-VP	O
+और	CC	O	O
+शेर	NN	B-NP	O
+पिघल	VM	B-VP	O
+गया	VAUX	I-VP	O
+।	PUNC	O	O
+
+# sentence 35
+बादशाह	NN	B-NP	O
+एक	QF	B-NP	O
+बार	NN	I-NP	O
+और	CC	O	O
+बीरबल	NNP	B-NP	B-PER
+की	PSP	B-PP	O
+चतुराई	NN	B-NP	O
+से	PSP	B-PP	O
+प्रसन्न	JJ	B-ADJP	O
+हो	VM	B-VP	O
+गए	VAUX	I-VP	O
+और	CC	O	O
+कहा	VM	B-VP	O
+-	PUNC	O	O
+जब	PRP	B-ADVP	O
+तक	PSP	B-PP	O
+तुम	PRP	B-NP	O
+मेरे	PRP	B-NP	O
+साथ	NST	B-NP	O
+हो	VM	B-VP	O
+मुझे	PRP	B-NP	O
+फ़ारसी	NNP	B-NP	O
+क्या	WQ	B-ADVP	O
+किसी	PRP	B-NP	O
+से	PSP	B-PP	O
+भी	RP	O	O
+डरने	VM	B-VP	O
+की	PSP	B-PP	O
+जरुरत	NN	B-NP	O
+नहीं	NEG	B-VP	O
+हैं	VM	I-VP	O
+।	PUNC	O	O
