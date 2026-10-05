@@ -487,3 +487,38 @@ ismapped(pagetable_t pagetable, uint64 va)
   }
   return 0;
 }
+
+// Resolve a Copy-on-Write fault at virtual address va in pagetable.
+// Allocates a new physical page, copies the contents of the shared CoW
+// page, updates the PTE to be writable (clearing PTE_COW), and decrements
+// the reference count of the old physical page via kfree().
+// Returns 0 on success, -1 if va is not a valid user CoW page or out of memory.
+int
+cowfault(pagetable_t pagetable, uint64 va)
+{
+  pte_t *pte;
+  uint64 pa;
+  uint flags;
+  char *mem;
+
+  if (va >= MAXVA)
+    return -1;
+
+  pte = walk(pagetable, va, 0);
+  if (pte == 0)
+    return -1;
+  if ((*pte & PTE_V) == 0 || (*pte & PTE_U) == 0 || (*pte & PTE_COW) == 0)
+    return -1;
+
+  pa = PTE2PA(*pte);
+  flags = (PTE_FLAGS(*pte) & ~PTE_COW) | PTE_W;
+
+  if ((mem = kalloc()) == 0)
+    return -1;
+
+  memmove(mem, (char *)pa, PGSIZE);
+  *pte = PA2PTE(mem) | flags;
+  kfree((void *)pa);
+
+  return 0;
+}
