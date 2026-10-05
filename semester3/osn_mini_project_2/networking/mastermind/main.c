@@ -105,6 +105,11 @@ main(int argc, char *argv[])
   memset(peers, 0, sizeof(peers));
   int next_peer_id = 1;
 
+  enum app_phase phase = PHASE_LOBBY;
+  struct tcp_session tcp;
+  tcp_session_init(&tcp);
+  char opponent_name[MM_MAX_NAME_LEN] = {0};
+
   uint64_t last_broadcast_ms = 0;
   uint64_t last_lobby_render_ms = 0;
 
@@ -114,13 +119,38 @@ main(int argc, char *argv[])
   last_lobby_render_ms = last_broadcast_ms;
 
   for (;;) {
-    struct pollfd pfds[2];
-    pfds[0].fd = STDIN_FILENO;
-    pfds[0].events = POLLIN;
-    pfds[1].fd = disc_fd;
-    pfds[1].events = POLLIN;
+    struct pollfd pfds[4];
+    nfds_t nfds = 0;
 
-    int ready = poll(pfds, 2, 200);
+    pfds[nfds].fd = STDIN_FILENO;
+    pfds[nfds].events = POLLIN;
+    pfds[nfds].revents = 0;
+    nfds++;
+
+    pfds[nfds].fd = disc_fd;
+    pfds[nfds].events = POLLIN;
+    pfds[nfds].revents = 0;
+    nfds++;
+
+    int listen_idx = -1;
+    if (!cost_cutting && phase == PHASE_LOBBY) {
+      listen_idx = (int)nfds;
+      pfds[nfds].fd = listen_fd;
+      pfds[nfds].events = POLLIN;
+      pfds[nfds].revents = 0;
+      nfds++;
+    }
+
+    int session_idx = -1;
+    if (!cost_cutting && tcp.fd >= 0) {
+      session_idx = (int)nfds;
+      pfds[nfds].fd = tcp.fd;
+      pfds[nfds].events = POLLIN;
+      pfds[nfds].revents = 0;
+      nfds++;
+    }
+
+    int ready = poll(pfds, nfds, 200);
     if (ready < 0) {
       continue;
     }
@@ -140,24 +170,115 @@ main(int argc, char *argv[])
       }
     }
 
-    if (updated || (now - last_lobby_render_ms >= 1000)) {
+    if (phase == PHASE_LOBBY &&
+        (updated || (now - last_lobby_render_ms >= 1000))) {
       discovery_render_lobby(peers);
       last_lobby_render_ms = now;
     }
 
+    /* Handle incoming TCP challenge connection */
+    if (listen_idx >= 0 && (pfds[listen_idx].revents & POLLIN)) {
+      struct sockaddr_in cli_addr;
+      socklen_t cli_len = sizeof(cli_addr);
+      int cfd = accept(listen_fd, (struct sockaddr *)&cli_addr, &cli_len);
+      if (cfd >= 0) {
+        tcp_session_init(&tcp);
+        tcp.fd = cfd;
+        phase = PHASE_PROMPT_CHALLENGE_REQ;
+      }
+    }
+
+    /* Handle incoming TCP session messages */
+    if (session_idx >= 0 &&
+        (pfds[session_idx].revents & (POLLIN | POLLHUP | POLLERR))) {
+      char msg[256];
+      int rc = tcp_recv_line(&tcp, true, msg, sizeof(msg));
+      while (rc == 1) {
+        if (phase == PHASE_PROMPT_CHALLENGE_REQ &&
+            strncmp(msg, VERB_CHALLENGE " ", strlen(VERB_CHALLENGE) + 1) == 0) {
+          snprintf(opponent_name, sizeof(opponent_name), "%s",
+                   msg + strlen(VERB_CHALLENGE) + 1);
+          printf("\n%s has challenged you! Accept challenge? (yes/no): ",
+                 opponent_name);
+          fflush(stdout);
+        } else if (phase == PHASE_WAIT_CHALLENGE_RESP) {
+          if (strcmp(msg, VERB_ACCEPT) == 0) {
+            printf("%s accepted the challenge!\n", opponent_name);
+            phase = PHASE_MASTER_ENTER_SECRET;
+          } else if (strcmp(msg, VERB_REJECT) == 0) {
+            printf("%s rejected the challenge.\n", opponent_name);
+            tcp_session_close(&tcp);
+            phase = PHASE_LOBBY;
+            discovery_render_lobby(peers);
+          }
+        }
+        rc = tcp_recv_line(&tcp, false, msg, sizeof(msg));
+      }
+
+      if (rc < 0) {
+        tcp_session_close(&tcp);
+        phase = PHASE_LOBBY;
+        discovery_render_lobby(peers);
+      }
+    }
+
+    /* Handle user stdin input */
     if (pfds[0].revents & POLLIN) {
       char line[128];
       if (fgets(line, sizeof(line), stdin) == nullptr) {
         break;
       }
       trim_newline(line);
-      if (strcmp(line, "quit") == 0 || strcmp(line, "exit") == 0) {
-        break;
+
+      if (phase == PHASE_LOBBY) {
+        if (strcmp(line, "quit") == 0 || strcmp(line, "exit") == 0) {
+          break;
+        }
+        if (strncmp(line, "challenge ", 10) == 0) {
+          int target_id = atoi(line + 10);
+          const struct peer_entry *p = discovery_find_peer(peers, target_id);
+          if (p == nullptr) {
+            printf("Invalid player ID: %d\n> ", target_id);
+            fflush(stdout);
+          } else {
+            int cfd = tcp_connect_peer(p->ip, p->port);
+            if (cfd < 0) {
+              printf("Failed to connect to %s.\n> ", p->name);
+              fflush(stdout);
+            } else {
+              tcp_session_init(&tcp);
+              tcp.fd = cfd;
+              snprintf(opponent_name, sizeof(opponent_name), "%s", p->name);
+              char out[128];
+              snprintf(out, sizeof(out), "%s %s", VERB_CHALLENGE, my_name);
+              tcp_send_msg(&tcp, out);
+              phase = PHASE_WAIT_CHALLENGE_RESP;
+              printf("Waiting for %s to respond to challenge...\n",
+                     opponent_name);
+              fflush(stdout);
+            }
+          }
+        } else {
+          discovery_render_lobby(peers);
+        }
+      } else if (phase == PHASE_PROMPT_CHALLENGE_REQ) {
+        if (strcmp(line, "yes") == 0) {
+          tcp_send_msg(&tcp, VERB_ACCEPT);
+          phase = PHASE_WAIT_MASTER_READY;
+        } else if (strcmp(line, "no") == 0) {
+          tcp_send_msg(&tcp, VERB_REJECT);
+          tcp_session_close(&tcp);
+          phase = PHASE_LOBBY;
+          discovery_render_lobby(peers);
+        } else {
+          printf("Please type 'yes' or 'no': ");
+          fflush(stdout);
+        }
       }
-      discovery_render_lobby(peers);
     }
   }
 
+  tcp_session_close(&tcp);
   close(disc_fd);
   close(listen_fd);
   return 0;

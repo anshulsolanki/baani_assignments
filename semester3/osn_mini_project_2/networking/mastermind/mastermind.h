@@ -127,4 +127,20 @@ const struct peer_entry *discovery_find_peer(
     const struct peer_entry peers[MM_MAX_PEERS], int id);
 void discovery_render_lobby(const struct peer_entry peers[MM_MAX_PEERS]);
 
+/* Persistent TCP session state and helpers (net_tcp.c) */
+struct tcp_session {
+  int fd;
+  char rx_buf[1024];
+  size_t rx_len;
+};
+
+void tcp_session_init(struct tcp_session *s);
+void tcp_session_close(struct tcp_session *s);
+int tcp_connect_peer(const char *ip, uint16_t port);
+int tcp_send_msg(struct tcp_session *s, const char *msg);
+/* Returns 1 if a complete line was extracted into out_line, 0 if more bytes
+ * are needed, or -1 on EOF / disconnection. */
+int tcp_recv_line(struct tcp_session *s, bool do_read, char *out_line,
+                  size_t max_len);
+
 #endif /* MASTERMIND_H */
