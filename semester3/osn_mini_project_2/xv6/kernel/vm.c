@@ -508,6 +508,7 @@ cowfault(pagetable_t pagetable, uint64 va)
 
   if (va >= MAXVA)
     return -1;
+  va = PGROUNDDOWN(va);
 
   pte = walk(pagetable, va, 0);
   if (pte == 0)
@@ -517,6 +518,11 @@ cowfault(pagetable_t pagetable, uint64 va)
 
   pa = PTE2PA(*pte);
   flags = (PTE_FLAGS(*pte) & ~PTE_COW) | PTE_W;
+
+  if (krefcnt((void *)pa) == 1) {
+    *pte = PA2PTE(pa) | flags;
+    return 0;
+  }
 
   if ((mem = kalloc()) == 0)
     return -1;

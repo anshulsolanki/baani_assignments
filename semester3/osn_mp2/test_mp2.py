@@ -373,8 +373,8 @@ def test_mastermind():
             sock_b.bind(("127.0.0.1", 0))
             port_b = sock_b.getsockname()[1]
 
-            sess_a = ctypes.create_string_buffer(4096)
-            sess_b = ctypes.create_string_buffer(4096)
+            sess_a = ctypes.create_string_buffer(16384)
+            sess_b = ctypes.create_string_buffer(16384)
 
             lib.rudp_session_init.argtypes = [ctypes.c_void_p, ctypes.c_int]
             lib.rudp_session_set_peer.argtypes = [ctypes.c_void_p, ctypes.c_char_p, ctypes.c_uint16]
@@ -382,6 +382,8 @@ def test_mastermind():
             lib.rudp_send_msg.restype = ctypes.c_int
             lib.rudp_recv_packet.argtypes = [ctypes.c_void_p, ctypes.c_char_p, ctypes.c_size_t]
             lib.rudp_recv_packet.restype = ctypes.c_int
+            lib.rudp_pop_ready_msg.argtypes = [ctypes.c_void_p, ctypes.c_char_p, ctypes.c_size_t]
+            lib.rudp_pop_ready_msg.restype = ctypes.c_int
             lib.rudp_tick.argtypes = [ctypes.c_void_p]
             lib.rudp_tick.restype = ctypes.c_int
 
@@ -424,10 +426,29 @@ def test_mastermind():
             lib.rudp_tick(sess_a)
 
             rc = lib.rudp_recv_packet(sess_b, out_buf, 256)
+            # Drain ACK for chunk #1 on sess_a
+            lib.rudp_recv_packet(sess_a, out_buf, 256)
             report(
                 "RUDP: 0.1s retransmission of dropped chunk #1 + out-of-order reassembly",
                 rc == 1 and out_buf.value == b"CHALLENGE Baani",
                 f"reassembled={out_buf.value.decode()!r}",
+            )
+
+            # Test back-to-back pipelined RUDP messages ("FEEDBACK xxxxx" + "GAMEOVER 12345")
+            lib.rudp_send_msg(sess_a, b"FEEDBACK xxxxx")
+            lib.rudp_send_msg(sess_a, b"GAMEOVER 12345")
+            delivered_msgs = []
+            for _ in range(8):
+                rc = lib.rudp_recv_packet(sess_b, out_buf, 256)
+                while rc == 1:
+                    delivered_msgs.append(out_buf.value.decode())
+                    rc = lib.rudp_pop_ready_msg(sess_b, out_buf, 256)
+                lib.rudp_recv_packet(sess_a, out_buf, 256)
+
+            report(
+                "RUDP: back-to-back pipelined messages ('FEEDBACK xxxxx' + 'GAMEOVER 12345') delivered in order",
+                delivered_msgs == ["FEEDBACK xxxxx", "GAMEOVER 12345"],
+                f"delivered={delivered_msgs}",
             )
 
             log_contents = Path("log.txt").read_text() if Path("log.txt").exists() else ""

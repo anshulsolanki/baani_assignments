@@ -65,6 +65,21 @@ krefinc(void *pa)
   release(&pageref.lock);
 }
 
+// Return the current reference count for physical page pa.
+int
+krefcnt(void *pa)
+{
+  int cnt;
+
+  if (((uint64)pa % PGSIZE) != 0 || (char *)pa < end || (uint64)pa >= PHYSTOP)
+    panic("krefcnt");
+
+  acquire(&pageref.lock);
+  cnt = pageref.count[PA2IDX(pa)];
+  release(&pageref.lock);
+  return cnt;
+}
+
 // Free the page of physical memory pointed at by pa,
 // which normally should have been returned by a
 // call to kalloc().  (The exception is when

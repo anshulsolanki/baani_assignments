@@ -359,11 +359,15 @@ main(int argc, char *argv[])
       if (cost_cutting) {
         char msg[256];
         int rc = rudp_recv_packet(&rudp, msg, sizeof(msg));
-        if (rc == 1) {
+        while (rc == 1) {
           process_session_message(msg, cost_cutting, &phase, &board, &tcp,
                                   &rudp, opponent_name, peers);
-        } else if (rc < 0 && phase != PHASE_GAME_OVER &&
-                   phase != PHASE_LOBBY) {
+          if (!rudp.peer_known) {
+            break;
+          }
+          rc = rudp_pop_ready_msg(&rudp, msg, sizeof(msg));
+        }
+        if (rc < 0 && phase != PHASE_GAME_OVER && phase != PHASE_LOBBY) {
           rudp_session_reset(&rudp);
           phase = PHASE_PEER_DISCONNECTED;
           printf("\n%s disconnected. Press enter to go home.\n", opponent_name);

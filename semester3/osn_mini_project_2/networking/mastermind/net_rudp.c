@@ -11,6 +11,7 @@ rudp_session_init(struct rudp_session *r, int udp_fd)
   memset(r, 0, sizeof(*r));
   r->udp_fd = udp_fd;
   r->next_tx_msg_id = 1;
+  r->next_rx_deliver_id = 1;
 }
 
 void
@@ -29,10 +30,22 @@ void
 rudp_session_reset(struct rudp_session *r)
 {
   int fd = r->udp_fd;
-  uint16_t next_id = r->next_tx_msg_id;
   memset(r, 0, sizeof(*r));
   r->udp_fd = fd;
-  r->next_tx_msg_id = next_id;
+  r->next_tx_msg_id = 1;
+  r->next_rx_deliver_id = 1;
+}
+
+static struct rudp_tx_chunk *
+alloc_tx_slot(struct rudp_session *r)
+{
+  /* Prefer a completely unused or already-acknowledged slot */
+  for (size_t i = 0; i < MM_RUDP_WINDOW_SLOTS; i++) {
+    if (!r->tx_window[i].in_use || r->tx_window[i].acked) {
+      return &r->tx_window[i];
+    }
+  }
+  return &r->tx_window[0];
 }
 
 /* Split msg into fixed-size struct rudp_pkt chunks and transmit all chunks
@@ -66,7 +79,7 @@ rudp_send_msg(struct rudp_session *r, const char *msg)
     uint16_t dlen =
         (uint16_t)(rem > MM_CHUNK_DATA_SIZE ? MM_CHUNK_DATA_SIZE : rem);
 
-    struct rudp_tx_chunk *slot = &r->tx_window[seq];
+    struct rudp_tx_chunk *slot = alloc_tx_slot(r);
     memset(slot, 0, sizeof(*slot));
     slot->in_use = true;
     slot->acked = false;
@@ -89,11 +102,6 @@ rudp_send_msg(struct rudp_session *r, const char *msg)
     log_event("RUDP_CHUNK_TX msg_id=%u seq=%u/%u len=%u data=\"%.*s\"",
               (unsigned)msg_id, (unsigned)seq, (unsigned)total_chunks,
               (unsigned)dlen, (int)dlen, slot->pkt.data);
-  }
-
-  /* Clear any older slot entries beyond total_chunks */
-  for (uint16_t seq = total_chunks; seq < MM_MAX_CHUNKS; seq++) {
-    r->tx_window[seq].in_use = false;
   }
 
   return 0;
@@ -121,12 +129,12 @@ static struct rudp_rx_msg *
 find_or_alloc_rx_slot(struct rudp_session *r, uint16_t msg_id,
                       uint16_t total_chunks)
 {
-  for (size_t i = 0; i < 8; i++) {
+  for (size_t i = 0; i < 16; i++) {
     if (r->rx_slots[i].active && r->rx_slots[i].msg_id == msg_id) {
       return &r->rx_slots[i];
     }
   }
-  size_t idx = msg_id % 8;
+  size_t idx = msg_id % 16;
   struct rudp_rx_msg *slot = &r->rx_slots[idx];
   memset(slot, 0, sizeof(*slot));
   slot->active = true;
@@ -134,6 +142,41 @@ find_or_alloc_rx_slot(struct rudp_session *r, uint16_t msg_id,
   slot->msg_id = msg_id;
   slot->total_chunks = total_chunks;
   return slot;
+}
+
+int
+rudp_pop_ready_msg(struct rudp_session *r, char *out_msg, size_t max_len)
+{
+  if (r == nullptr) {
+    return 0;
+  }
+
+  for (size_t i = 0; i < 16; i++) {
+    struct rudp_rx_msg *slot = &r->rx_slots[i];
+    if (slot->active && !slot->delivered &&
+        slot->msg_id == r->next_rx_deliver_id &&
+        slot->received_count == slot->total_chunks) {
+      slot->delivered = true;
+      r->next_rx_deliver_id++;
+
+      size_t pos = 0;
+      for (uint16_t c = 0; c < slot->total_chunks; c++) {
+        uint16_t clen = slot->chunk_len[c];
+        if (pos + clen >= max_len) {
+          clen = (uint16_t)(max_len - 1 - pos);
+        }
+        if (clen > 0) {
+          memcpy(out_msg + pos, slot->chunk_data[c], clen);
+          pos += clen;
+        }
+      }
+      out_msg[pos] = '\0';
+      log_event("RUDP_MSG_REASSEMBLED msg_id=%u msg=\"%s\"",
+                (unsigned)slot->msg_id, out_msg);
+      return 1;
+    }
+  }
+  return 0;
 }
 
 int
@@ -193,31 +236,16 @@ rudp_recv_packet(struct rudp_session *r, char *out_msg, size_t max_len)
       slot->received_count++;
     }
 
-    /* Reassemble in sequence order once all chunks have arrived */
-    if (!slot->delivered && slot->received_count == slot->total_chunks) {
-      slot->delivered = true;
-      size_t pos = 0;
-      for (uint16_t i = 0; i < slot->total_chunks; i++) {
-        uint16_t clen = slot->chunk_len[i];
-        if (pos + clen >= max_len) {
-          clen = (uint16_t)(max_len - 1 - pos);
-        }
-        if (clen > 0) {
-          memcpy(out_msg + pos, slot->chunk_data[i], clen);
-          pos += clen;
-        }
-      }
-      out_msg[pos] = '\0';
-      log_event("RUDP_MSG_REASSEMBLED msg_id=%u msg=\"%s\"", (unsigned)msg_id,
-                out_msg);
-      return 1;
-    }
+    return rudp_pop_ready_msg(r, out_msg, max_len);
   } else if (pkt.type == RUDP_PKT_ACK) {
     log_event("RUDP_ACK_RX msg_id=%u seq=%u/%u", (unsigned)msg_id,
               (unsigned)seq, (unsigned)total);
-    if (seq < MM_MAX_CHUNKS && r->tx_window[seq].in_use &&
-        ntohs(r->tx_window[seq].pkt.msg_id) == msg_id) {
-      r->tx_window[seq].acked = true;
+    for (size_t i = 0; i < MM_RUDP_WINDOW_SLOTS; i++) {
+      if (r->tx_window[i].in_use &&
+          ntohs(r->tx_window[i].pkt.msg_id) == msg_id &&
+          ntohs(r->tx_window[i].pkt.seq_num) == seq) {
+        r->tx_window[i].acked = true;
+      }
     }
   } else if (pkt.type == RUDP_PKT_PING) {
     send_control_pkt(r, &src_addr, RUDP_PKT_PONG, 0, 0, 0);
@@ -241,21 +269,23 @@ rudp_tick(struct rudp_session *r)
   uint64_t now = now_ms();
 
   /* Retransmit any unacknowledged chunk after 0.1s (100 ms) */
-  for (uint16_t seq = 0; seq < MM_MAX_CHUNKS; seq++) {
-    struct rudp_tx_chunk *slot = &r->tx_window[seq];
+  for (size_t i = 0; i < MM_RUDP_WINDOW_SLOTS; i++) {
+    struct rudp_tx_chunk *slot = &r->tx_window[i];
     if (slot->in_use && !slot->acked &&
         (now - slot->last_sent_ms) >= MM_RETRANSMIT_MS) {
       slot->retries++;
       if (slot->retries > 35) {
-        log_event("RUDP_TIMEOUT max retries exceeded on seq=%u", (unsigned)seq);
+        log_event("RUDP_TIMEOUT max retries exceeded on msg_id=%u seq=%u",
+                  (unsigned)ntohs(slot->pkt.msg_id),
+                  (unsigned)ntohs(slot->pkt.seq_num));
         return -1;
       }
       slot->last_sent_ms = now;
       sendto(r->udp_fd, &slot->pkt, sizeof(slot->pkt), 0,
              (struct sockaddr *)&r->peer_addr, sizeof(r->peer_addr));
       log_event("RUDP_CHUNK_RETX msg_id=%u seq=%u retry=%d",
-                (unsigned)ntohs(slot->pkt.msg_id), (unsigned)seq,
-                slot->retries);
+                (unsigned)ntohs(slot->pkt.msg_id),
+                (unsigned)ntohs(slot->pkt.seq_num), slot->retries);
     }
   }
 
