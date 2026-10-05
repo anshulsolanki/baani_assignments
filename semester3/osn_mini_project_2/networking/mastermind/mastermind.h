@@ -114,4 +114,17 @@ void log_init(bool enabled);
 void log_event(const char *fmt, ...) __attribute__((format(printf, 1, 2)));
 uint64_t now_ms(void);
 
+/* Discovery helpers (discovery.c) */
+int discovery_init_socket(uint16_t discovery_port);
+int discovery_send_broadcast(int udp_fd, uint16_t discovery_port,
+                             uint16_t my_game_port, const char *my_name);
+bool discovery_handle_packet(int udp_fd, uint16_t my_game_port,
+                             const char *my_name,
+                             struct peer_entry peers[MM_MAX_PEERS],
+                             int *next_peer_id);
+bool discovery_expire_peers(struct peer_entry peers[MM_MAX_PEERS]);
+const struct peer_entry *discovery_find_peer(
+    const struct peer_entry peers[MM_MAX_PEERS], int id);
+void discovery_render_lobby(const struct peer_entry peers[MM_MAX_PEERS]);
+
 #endif /* MASTERMIND_H */
