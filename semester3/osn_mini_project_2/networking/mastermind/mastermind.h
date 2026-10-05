@@ -143,4 +143,13 @@ int tcp_send_msg(struct tcp_session *s, const char *msg);
 int tcp_recv_line(struct tcp_session *s, bool do_read, char *out_line,
                   size_t max_len);
 
+/* Game logic & ANSI board rendering (game.c) */
+void game_init_board(struct board_state *b, enum player_role role);
+bool game_validate_sequence(const char *seq);
+bool game_validate_feedback(const char *fb);
+void game_compute_expected_feedback(const char *master_seq, const char *guess,
+                                    char out_fb[MM_SEQ_LEN + 1]);
+void game_render_board(const struct board_state *b, const char *opponent_name,
+                       const char *status_line);
+
 #endif /* MASTERMIND_H */
