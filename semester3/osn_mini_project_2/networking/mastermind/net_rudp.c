@@ -1,0 +1,203 @@
+#include "mastermind.h"
+
+#include <arpa/inet.h>
+#include <stdio.h>
+#include <string.h>
+#include <sys/socket.h>
+
+void
+rudp_session_init(struct rudp_session *r, int udp_fd)
+{
+  memset(r, 0, sizeof(*r));
+  r->udp_fd = udp_fd;
+  r->next_tx_msg_id = 1;
+}
+
+void
+rudp_session_set_peer(struct rudp_session *r, const char *ip, uint16_t port)
+{
+  memset(&r->peer_addr, 0, sizeof(r->peer_addr));
+  r->peer_addr.sin_family = AF_INET;
+  r->peer_addr.sin_port = htons(port);
+  inet_pton(AF_INET, ip, &r->peer_addr.sin_addr);
+  r->peer_known = true;
+  r->last_rx_ms = now_ms();
+  r->last_ping_ms = r->last_rx_ms;
+}
+
+void
+rudp_session_reset(struct rudp_session *r)
+{
+  int fd = r->udp_fd;
+  uint16_t next_id = r->next_tx_msg_id;
+  memset(r, 0, sizeof(*r));
+  r->udp_fd = fd;
+  r->next_tx_msg_id = next_id;
+}
+
+/* Split msg into fixed-size struct rudp_pkt chunks and transmit all chunks
+ * immediately without waiting for ACKs (pipelined transmission). */
+int
+rudp_send_msg(struct rudp_session *r, const char *msg)
+{
+  if (r == nullptr || r->udp_fd < 0 || !r->peer_known || msg == nullptr) {
+    return -1;
+  }
+
+  size_t len = strlen(msg);
+  uint16_t total_chunks =
+      (uint16_t)((len + MM_CHUNK_DATA_SIZE - 1) / MM_CHUNK_DATA_SIZE);
+  if (total_chunks == 0) {
+    total_chunks = 1;
+  }
+  if (total_chunks > MM_MAX_CHUNKS) {
+    return -1;
+  }
+
+  uint16_t msg_id = r->next_tx_msg_id++;
+  uint64_t now = now_ms();
+
+  log_event("RUDP_MSG_SPLIT msg_id=%u total_chunks=%u msg=\"%s\"",
+            (unsigned)msg_id, (unsigned)total_chunks, msg);
+
+  for (uint16_t seq = 0; seq < total_chunks; seq++) {
+    size_t offset = (size_t)seq * MM_CHUNK_DATA_SIZE;
+    size_t rem = (offset < len) ? (len - offset) : 0;
+    uint16_t dlen =
+        (uint16_t)(rem > MM_CHUNK_DATA_SIZE ? MM_CHUNK_DATA_SIZE : rem);
+
+    struct rudp_tx_chunk *slot = &r->tx_window[seq];
+    memset(slot, 0, sizeof(*slot));
+    slot->in_use = true;
+    slot->acked = false;
+    slot->last_sent_ms = now;
+    slot->retries = 0;
+
+    slot->pkt.magic = htonl(MM_MAGIC);
+    slot->pkt.type = RUDP_PKT_DATA;
+    slot->pkt.msg_id = htons(msg_id);
+    slot->pkt.seq_num = htons(seq);
+    slot->pkt.total_chunks = htons(total_chunks);
+    slot->pkt.data_len = htons(dlen);
+    if (dlen > 0) {
+      memcpy(slot->pkt.data, msg + offset, dlen);
+    }
+
+    sendto(r->udp_fd, &slot->pkt, sizeof(slot->pkt), 0,
+           (struct sockaddr *)&r->peer_addr, sizeof(r->peer_addr));
+
+    log_event("RUDP_CHUNK_TX msg_id=%u seq=%u/%u len=%u data=\"%.*s\"",
+              (unsigned)msg_id, (unsigned)seq, (unsigned)total_chunks,
+              (unsigned)dlen, (int)dlen, slot->pkt.data);
+  }
+
+  return 0;
+}
+
+static struct rudp_rx_msg *
+find_or_alloc_rx_slot(struct rudp_session *r, uint16_t msg_id,
+                      uint16_t total_chunks)
+{
+  for (size_t i = 0; i < 8; i++) {
+    if (r->rx_slots[i].active && r->rx_slots[i].msg_id == msg_id) {
+      return &r->rx_slots[i];
+    }
+  }
+  size_t idx = msg_id % 8;
+  struct rudp_rx_msg *slot = &r->rx_slots[idx];
+  memset(slot, 0, sizeof(*slot));
+  slot->active = true;
+  slot->delivered = false;
+  slot->msg_id = msg_id;
+  slot->total_chunks = total_chunks;
+  return slot;
+}
+
+int
+rudp_recv_packet(struct rudp_session *r, char *out_msg, size_t max_len)
+{
+  if (r == nullptr || r->udp_fd < 0) {
+    return -1;
+  }
+
+  struct rudp_pkt pkt;
+  struct sockaddr_in src_addr;
+  socklen_t addr_len = sizeof(src_addr);
+
+  ssize_t n = recvfrom(r->udp_fd, &pkt, sizeof(pkt), 0,
+                       (struct sockaddr *)&src_addr, &addr_len);
+  if (n != (ssize_t)sizeof(pkt)) {
+    return 0;
+  }
+
+  if (ntohl(pkt.magic) != MM_MAGIC) {
+    return 0;
+  }
+
+  if (!r->peer_known) {
+    r->peer_addr = src_addr;
+    r->peer_known = true;
+  }
+  r->last_rx_ms = now_ms();
+
+  if (pkt.type == RUDP_PKT_DATA) {
+    uint16_t msg_id = ntohs(pkt.msg_id);
+    uint16_t seq = ntohs(pkt.seq_num);
+    uint16_t total = ntohs(pkt.total_chunks);
+    uint16_t dlen = ntohs(pkt.data_len);
+
+    if (total == 0 || total > MM_MAX_CHUNKS || seq >= total ||
+        dlen > MM_CHUNK_DATA_SIZE) {
+      return 0;
+    }
+
+    log_event("RUDP_CHUNK_RX msg_id=%u seq=%u/%u len=%u data=\"%.*s\"",
+              (unsigned)msg_id, (unsigned)seq, (unsigned)total, (unsigned)dlen,
+              (int)dlen, pkt.data);
+
+    struct rudp_rx_msg *slot = find_or_alloc_rx_slot(r, msg_id, total);
+    if (!slot->chunk_received[seq]) {
+      slot->chunk_received[seq] = true;
+      slot->chunk_len[seq] = dlen;
+      if (dlen > 0) {
+        memcpy(slot->chunk_data[seq], pkt.data, dlen);
+      }
+      slot->received_count++;
+    }
+
+    /* Reassemble in sequence order once all chunks have arrived */
+    if (!slot->delivered && slot->received_count == slot->total_chunks) {
+      slot->delivered = true;
+      size_t pos = 0;
+      for (uint16_t i = 0; i < slot->total_chunks; i++) {
+        uint16_t clen = slot->chunk_len[i];
+        if (pos + clen >= max_len) {
+          clen = (uint16_t)(max_len - 1 - pos);
+        }
+        if (clen > 0) {
+          memcpy(out_msg + pos, slot->chunk_data[i], clen);
+          pos += clen;
+        }
+      }
+      out_msg[pos] = '\0';
+      log_event("RUDP_MSG_REASSEMBLED msg_id=%u msg=\"%s\"", (unsigned)msg_id,
+                out_msg);
+      return 1;
+    }
+  }
+
+  return 0;
+}
+
+int
+rudp_tick(struct rudp_session *r)
+{
+  (void)r;
+  return 0;
+}
+
+void
+rudp_send_fin(struct rudp_session *r)
+{
+  (void)r;
+}

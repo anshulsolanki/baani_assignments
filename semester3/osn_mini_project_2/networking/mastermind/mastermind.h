@@ -152,4 +152,49 @@ void game_compute_expected_feedback(const char *master_seq, const char *guess,
 void game_render_board(const struct board_state *b, const char *opponent_name,
                        const char *status_line);
 
+/* Outgoing chunk state for reliable UDP (--cost-cutting) */
+struct rudp_tx_chunk {
+  bool in_use;
+  bool acked;
+  uint64_t last_sent_ms;
+  int retries;
+  struct rudp_pkt pkt;
+};
+
+/* Incoming message reassembly buffer for reliable UDP (--cost-cutting) */
+struct rudp_rx_msg {
+  bool active;
+  bool delivered;
+  uint16_t msg_id;
+  uint16_t total_chunks;
+  uint16_t received_count;
+  bool chunk_received[MM_MAX_CHUNKS];
+  uint16_t chunk_len[MM_MAX_CHUNKS];
+  char chunk_data[MM_MAX_CHUNKS][MM_CHUNK_DATA_SIZE];
+};
+
+struct rudp_session {
+  int udp_fd;
+  bool peer_known;
+  struct sockaddr_in peer_addr;
+  uint16_t next_tx_msg_id;
+  uint64_t last_rx_ms;
+  uint64_t last_ping_ms;
+  struct rudp_tx_chunk tx_window[MM_MAX_CHUNKS];
+  struct rudp_rx_msg rx_slots[8];
+};
+
+void rudp_session_init(struct rudp_session *r, int udp_fd);
+void rudp_session_set_peer(struct rudp_session *r, const char *ip,
+                           uint16_t port);
+void rudp_session_reset(struct rudp_session *r);
+int rudp_send_msg(struct rudp_session *r, const char *msg);
+/* Returns 1 if a reassembled message was written to out_msg, 0 if no complete
+ * message yet, or -1 if peer disconnected. */
+int rudp_recv_packet(struct rudp_session *r, char *out_msg, size_t max_len);
+/* Checks 0.1s per-chunk retransmission timers and UDP peer liveness.
+ * Returns 0 normally, or -1 if peer timed out / disconnected. */
+int rudp_tick(struct rudp_session *r);
+void rudp_send_fin(struct rudp_session *r);
+
 #endif /* MASTERMIND_H */
