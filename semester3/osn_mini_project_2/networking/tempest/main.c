@@ -27,14 +27,13 @@ main(int argc, char *argv[])
     return 1;
   }
 
-  /* Disallow --raw as the city name when a second argument is missing/present */
   char *encoded_city = url_encode(city);
   if (encoded_city == nullptr) {
     fprintf(stderr, "tempest: memory allocation failed\n");
     return 1;
   }
 
-  (void)raw_mode;
+  int rc = fetch_weather(encoded_city, raw_mode);
   free(encoded_city);
-  return 0;
+  return rc;
 }
