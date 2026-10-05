@@ -91,7 +91,30 @@ rudp_send_msg(struct rudp_session *r, const char *msg)
               (unsigned)dlen, (int)dlen, slot->pkt.data);
   }
 
+  /* Clear any older slot entries beyond total_chunks */
+  for (uint16_t seq = total_chunks; seq < MM_MAX_CHUNKS; seq++) {
+    r->tx_window[seq].in_use = false;
+  }
+
   return 0;
+}
+
+static void
+send_control_pkt(struct rudp_session *r, const struct sockaddr_in *dst,
+                 uint8_t type, uint16_t msg_id, uint16_t seq_num,
+                 uint16_t total_chunks)
+{
+  struct rudp_pkt pkt;
+  memset(&pkt, 0, sizeof(pkt));
+  pkt.magic = htonl(MM_MAGIC);
+  pkt.type = type;
+  pkt.msg_id = htons(msg_id);
+  pkt.seq_num = htons(seq_num);
+  pkt.total_chunks = htons(total_chunks);
+  pkt.data_len = htons(0);
+
+  sendto(r->udp_fd, &pkt, sizeof(pkt), 0, (const struct sockaddr *)dst,
+         sizeof(*dst));
 }
 
 static struct rudp_rx_msg *
@@ -140,12 +163,12 @@ rudp_recv_packet(struct rudp_session *r, char *out_msg, size_t max_len)
   }
   r->last_rx_ms = now_ms();
 
-  if (pkt.type == RUDP_PKT_DATA) {
-    uint16_t msg_id = ntohs(pkt.msg_id);
-    uint16_t seq = ntohs(pkt.seq_num);
-    uint16_t total = ntohs(pkt.total_chunks);
-    uint16_t dlen = ntohs(pkt.data_len);
+  uint16_t msg_id = ntohs(pkt.msg_id);
+  uint16_t seq = ntohs(pkt.seq_num);
+  uint16_t total = ntohs(pkt.total_chunks);
+  uint16_t dlen = ntohs(pkt.data_len);
 
+  if (pkt.type == RUDP_PKT_DATA) {
     if (total == 0 || total > MM_MAX_CHUNKS || seq >= total ||
         dlen > MM_CHUNK_DATA_SIZE) {
       return 0;
@@ -154,6 +177,11 @@ rudp_recv_packet(struct rudp_session *r, char *out_msg, size_t max_len)
     log_event("RUDP_CHUNK_RX msg_id=%u seq=%u/%u len=%u data=\"%.*s\"",
               (unsigned)msg_id, (unsigned)seq, (unsigned)total, (unsigned)dlen,
               (int)dlen, pkt.data);
+
+    /* Immediately send per-chunk ACK */
+    send_control_pkt(r, &src_addr, RUDP_PKT_ACK, msg_id, seq, total);
+    log_event("RUDP_ACK_TX msg_id=%u seq=%u/%u", (unsigned)msg_id,
+              (unsigned)seq, (unsigned)total);
 
     struct rudp_rx_msg *slot = find_or_alloc_rx_slot(r, msg_id, total);
     if (!slot->chunk_received[seq]) {
@@ -184,6 +212,20 @@ rudp_recv_packet(struct rudp_session *r, char *out_msg, size_t max_len)
                 out_msg);
       return 1;
     }
+  } else if (pkt.type == RUDP_PKT_ACK) {
+    log_event("RUDP_ACK_RX msg_id=%u seq=%u/%u", (unsigned)msg_id,
+              (unsigned)seq, (unsigned)total);
+    if (seq < MM_MAX_CHUNKS && r->tx_window[seq].in_use &&
+        ntohs(r->tx_window[seq].pkt.msg_id) == msg_id) {
+      r->tx_window[seq].acked = true;
+    }
+  } else if (pkt.type == RUDP_PKT_PING) {
+    send_control_pkt(r, &src_addr, RUDP_PKT_PONG, 0, 0, 0);
+  } else if (pkt.type == RUDP_PKT_PONG) {
+    /* Liveness already updated via r->last_rx_ms */
+  } else if (pkt.type == RUDP_PKT_FIN) {
+    log_event("RUDP_FIN_RX peer disconnected");
+    return -1;
   }
 
   return 0;
@@ -192,12 +234,51 @@ rudp_recv_packet(struct rudp_session *r, char *out_msg, size_t max_len)
 int
 rudp_tick(struct rudp_session *r)
 {
-  (void)r;
+  if (r == nullptr || !r->peer_known || r->udp_fd < 0) {
+    return 0;
+  }
+
+  uint64_t now = now_ms();
+
+  /* Retransmit any unacknowledged chunk after 0.1s (100 ms) */
+  for (uint16_t seq = 0; seq < MM_MAX_CHUNKS; seq++) {
+    struct rudp_tx_chunk *slot = &r->tx_window[seq];
+    if (slot->in_use && !slot->acked &&
+        (now - slot->last_sent_ms) >= MM_RETRANSMIT_MS) {
+      slot->retries++;
+      if (slot->retries > 35) {
+        log_event("RUDP_TIMEOUT max retries exceeded on seq=%u", (unsigned)seq);
+        return -1;
+      }
+      slot->last_sent_ms = now;
+      sendto(r->udp_fd, &slot->pkt, sizeof(slot->pkt), 0,
+             (struct sockaddr *)&r->peer_addr, sizeof(r->peer_addr));
+      log_event("RUDP_CHUNK_RETX msg_id=%u seq=%u retry=%d",
+                (unsigned)ntohs(slot->pkt.msg_id), (unsigned)seq,
+                slot->retries);
+    }
+  }
+
+  /* Send periodic UDP heartbeat PING to detect silent peer disconnection */
+  if (now - r->last_ping_ms >= MM_RUDP_PING_MS) {
+    send_control_pkt(r, &r->peer_addr, RUDP_PKT_PING, 0, 0, 0);
+    r->last_ping_ms = now;
+  }
+
+  if (now - r->last_rx_ms >= MM_RUDP_TIMEOUT_MS) {
+    log_event("RUDP_TIMEOUT no packets from peer for %llu ms",
+              (unsigned long long)(now - r->last_rx_ms));
+    return -1;
+  }
+
   return 0;
 }
 
 void
 rudp_send_fin(struct rudp_session *r)
 {
-  (void)r;
+  if (r != nullptr && r->peer_known && r->udp_fd >= 0) {
+    send_control_pkt(r, &r->peer_addr, RUDP_PKT_FIN, 0, 0, 0);
+    log_event("RUDP_FIN_TX");
+  }
 }
