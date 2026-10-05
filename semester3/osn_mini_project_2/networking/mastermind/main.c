@@ -54,6 +54,121 @@ trim_newline(char *s)
   }
 }
 
+static void
+process_session_message(const char *msg, enum app_phase *phase,
+                        struct board_state *board, struct tcp_session *tcp,
+                        const char *opponent_name,
+                        const struct peer_entry peers[MM_MAX_PEERS])
+{
+  if (*phase == PHASE_PROMPT_CHALLENGE_REQ &&
+      strncmp(msg, VERB_CHALLENGE " ", strlen(VERB_CHALLENGE) + 1) == 0) {
+    printf("\n%s has challenged you! Accept challenge? (yes/no): ",
+           opponent_name);
+    fflush(stdout);
+    return;
+  }
+
+  if (*phase == PHASE_WAIT_CHALLENGE_RESP) {
+    if (strcmp(msg, VERB_ACCEPT) == 0) {
+      game_init_board(board, ROLE_MASTERMIND);
+      *phase = PHASE_MASTER_ENTER_SECRET;
+      game_render_board(board, opponent_name,
+                        "Enter 5-digit master sequence (0-9): ");
+    } else if (strcmp(msg, VERB_REJECT) == 0) {
+      tcp_session_close(tcp);
+      *phase = PHASE_LOBBY;
+      discovery_render_lobby(peers);
+      printf("%s declined your challenge.\n> ", opponent_name);
+      fflush(stdout);
+    }
+    return;
+  }
+
+  if (*phase == PHASE_WAIT_MASTER_READY && strcmp(msg, VERB_READY) == 0) {
+    *phase = PHASE_BREAKER_ENTER_GUESS;
+    game_render_board(board, opponent_name,
+                      "Your turn! Enter 5-digit guess (0-9): ");
+    return;
+  }
+
+  if (*phase == PHASE_WAIT_BREAKER_GUESS &&
+      strncmp(msg, VERB_GUESS " ", strlen(VERB_GUESS) + 1) == 0) {
+    const char *guess = msg + strlen(VERB_GUESS) + 1;
+    if (board->num_attempts < MM_MAX_ATTEMPTS &&
+        game_validate_sequence(guess)) {
+      int idx = board->num_attempts;
+      snprintf(board->guesses[idx], sizeof(board->guesses[idx]), "%s", guess);
+      board->feedback_ready[idx] = false;
+      board->num_attempts++;
+      *phase = PHASE_MASTER_ENTER_FEEDBACK;
+
+      char exp_fb[MM_SEQ_LEN + 1];
+      game_compute_expected_feedback(board->master_seq, guess, exp_fb);
+      char prompt[160];
+      snprintf(prompt, sizeof(prompt),
+               "Codebreaker guessed %s. Enter 5-char feedback [x/o/-] "
+               "(expected %s): ",
+               guess, exp_fb);
+      game_render_board(board, opponent_name, prompt);
+    }
+    return;
+  }
+
+  if (*phase == PHASE_WAIT_MASTER_FEEDBACK &&
+      strncmp(msg, VERB_FEEDBACK " ", strlen(VERB_FEEDBACK) + 1) == 0) {
+    const char *fb = msg + strlen(VERB_FEEDBACK) + 1;
+    if (board->num_attempts > 0 && game_validate_feedback(fb)) {
+      int idx = board->num_attempts - 1;
+      snprintf(board->feedbacks[idx], sizeof(board->feedbacks[idx]), "%s", fb);
+      board->feedback_ready[idx] = true;
+
+      if (strcmp(fb, "xxxxx") == 0) {
+        board->breaker_won = true;
+      } else if (board->num_attempts < MM_MAX_ATTEMPTS) {
+        *phase = PHASE_BREAKER_ENTER_GUESS;
+        game_render_board(board, opponent_name,
+                          "Your turn! Enter 5-digit guess (0-9): ");
+      }
+    }
+    return;
+  }
+
+  if (strncmp(msg, VERB_GAMEOVER " ", strlen(VERB_GAMEOVER) + 1) == 0) {
+    const char *secret = msg + strlen(VERB_GAMEOVER) + 1;
+    if (game_validate_sequence(secret)) {
+      snprintf(board->master_seq, sizeof(board->master_seq), "%s", secret);
+      board->master_seq_known = true;
+    }
+    if (board->num_attempts > 0 &&
+        strcmp(board->feedbacks[board->num_attempts - 1], "xxxxx") == 0) {
+      board->breaker_won = true;
+    }
+    tcp_session_close(tcp);
+    *phase = PHASE_GAME_OVER;
+    char status[160];
+    if (board->breaker_won) {
+      snprintf(status, sizeof(status),
+               "You cracked the code (%s) in %d attempts! Press Enter to "
+               "return to lobby.",
+               board->master_seq, board->num_attempts);
+    } else {
+      snprintf(status, sizeof(status),
+               "Out of attempts! Master sequence was %s. Press Enter to "
+               "return to lobby.",
+               board->master_seq);
+    }
+    game_render_board(board, opponent_name, status);
+    return;
+  }
+
+  if (strcmp(msg, VERB_DISCONNECT) == 0) {
+    tcp_session_close(tcp);
+    *phase = PHASE_PEER_DISCONNECTED;
+    printf("\n%s disconnected. Press enter to go home.\n", opponent_name);
+    fflush(stdout);
+  }
+}
+
 int
 main(int argc, char *argv[])
 {
@@ -108,6 +223,8 @@ main(int argc, char *argv[])
   enum app_phase phase = PHASE_LOBBY;
   struct tcp_session tcp;
   tcp_session_init(&tcp);
+  struct board_state board;
+  game_init_board(&board, ROLE_NONE);
   char opponent_name[MM_MAX_NAME_LEN] = {0};
 
   uint64_t last_broadcast_ms = 0;
@@ -188,7 +305,7 @@ main(int argc, char *argv[])
       }
     }
 
-    /* Handle incoming TCP session messages */
+    /* Handle incoming TCP session messages & peer disconnect */
     if (session_idx >= 0 &&
         (pfds[session_idx].revents & (POLLIN | POLLHUP | POLLERR))) {
       char msg[256];
@@ -198,27 +315,20 @@ main(int argc, char *argv[])
             strncmp(msg, VERB_CHALLENGE " ", strlen(VERB_CHALLENGE) + 1) == 0) {
           snprintf(opponent_name, sizeof(opponent_name), "%s",
                    msg + strlen(VERB_CHALLENGE) + 1);
-          printf("\n%s has challenged you! Accept challenge? (yes/no): ",
-                 opponent_name);
-          fflush(stdout);
-        } else if (phase == PHASE_WAIT_CHALLENGE_RESP) {
-          if (strcmp(msg, VERB_ACCEPT) == 0) {
-            printf("%s accepted the challenge!\n", opponent_name);
-            phase = PHASE_MASTER_ENTER_SECRET;
-          } else if (strcmp(msg, VERB_REJECT) == 0) {
-            printf("%s rejected the challenge.\n", opponent_name);
-            tcp_session_close(&tcp);
-            phase = PHASE_LOBBY;
-            discovery_render_lobby(peers);
-          }
+        }
+        process_session_message(msg, &phase, &board, &tcp, opponent_name,
+                                peers);
+        if (tcp.fd < 0) {
+          break;
         }
         rc = tcp_recv_line(&tcp, false, msg, sizeof(msg));
       }
 
-      if (rc < 0) {
+      if (rc < 0 && phase != PHASE_GAME_OVER && phase != PHASE_LOBBY) {
         tcp_session_close(&tcp);
-        phase = PHASE_LOBBY;
-        discovery_render_lobby(peers);
+        phase = PHASE_PEER_DISCONNECTED;
+        printf("\n%s disconnected. Press enter to go home.\n", opponent_name);
+        fflush(stdout);
       }
     }
 
@@ -264,7 +374,11 @@ main(int argc, char *argv[])
       } else if (phase == PHASE_PROMPT_CHALLENGE_REQ) {
         if (strcmp(line, "yes") == 0) {
           tcp_send_msg(&tcp, VERB_ACCEPT);
+          game_init_board(&board, ROLE_CODEBREAKER);
           phase = PHASE_WAIT_MASTER_READY;
+          game_render_board(&board, opponent_name,
+                            "Waiting for Mastermind to set the secret "
+                            "sequence...\n");
         } else if (strcmp(line, "no") == 0) {
           tcp_send_msg(&tcp, VERB_REJECT);
           tcp_session_close(&tcp);
@@ -274,6 +388,90 @@ main(int argc, char *argv[])
           printf("Please type 'yes' or 'no': ");
           fflush(stdout);
         }
+      } else if (phase == PHASE_MASTER_ENTER_SECRET) {
+        if (!game_validate_sequence(line)) {
+          game_render_board(&board, opponent_name,
+                            "Invalid sequence! Enter exactly 5 digits (0-9): ");
+        } else {
+          snprintf(board.master_seq, sizeof(board.master_seq), "%s", line);
+          board.master_seq_known = true;
+          tcp_send_msg(&tcp, VERB_READY);
+          phase = PHASE_WAIT_BREAKER_GUESS;
+          game_render_board(&board, opponent_name,
+                            "Waiting for Codebreaker's guess...\n");
+        }
+      } else if (phase == PHASE_BREAKER_ENTER_GUESS) {
+        if (!game_validate_sequence(line)) {
+          game_render_board(&board, opponent_name,
+                            "Invalid guess! Enter exactly 5 digits (0-9): ");
+        } else {
+          int idx = board.num_attempts;
+          snprintf(board.guesses[idx], sizeof(board.guesses[idx]), "%s", line);
+          board.feedback_ready[idx] = false;
+          board.num_attempts++;
+
+          char out[64];
+          snprintf(out, sizeof(out), "%s %s", VERB_GUESS, line);
+          tcp_send_msg(&tcp, out);
+          phase = PHASE_WAIT_MASTER_FEEDBACK;
+          game_render_board(&board, opponent_name,
+                            "Waiting for Mastermind's feedback...\n");
+        }
+      } else if (phase == PHASE_MASTER_ENTER_FEEDBACK) {
+        int idx = board.num_attempts - 1;
+        char exp_fb[MM_SEQ_LEN + 1];
+        game_compute_expected_feedback(board.master_seq, board.guesses[idx],
+                                       exp_fb);
+
+        if (!game_validate_feedback(line) || strcmp(line, exp_fb) != 0) {
+          char prompt[160];
+          snprintf(prompt, sizeof(prompt),
+                   "Invalid feedback! Must be 5 chars [x/o/-] matching rules "
+                   "(%s): ",
+                   exp_fb);
+          game_render_board(&board, opponent_name, prompt);
+        } else {
+          snprintf(board.feedbacks[idx], sizeof(board.feedbacks[idx]), "%s",
+                   line);
+          board.feedback_ready[idx] = true;
+
+          char out[64];
+          snprintf(out, sizeof(out), "%s %s", VERB_FEEDBACK, line);
+          tcp_send_msg(&tcp, out);
+
+          bool won = (strcmp(line, "xxxxx") == 0);
+          bool done = won || (board.num_attempts >= MM_MAX_ATTEMPTS);
+
+          if (done) {
+            board.breaker_won = won;
+            snprintf(out, sizeof(out), "%s %s", VERB_GAMEOVER,
+                     board.master_seq);
+            tcp_send_msg(&tcp, out);
+            tcp_session_close(&tcp);
+            phase = PHASE_GAME_OVER;
+
+            char status[160];
+            if (won) {
+              snprintf(status, sizeof(status),
+                       "Codebreaker cracked your sequence in %d attempts! "
+                       "Press Enter to return to lobby.",
+                       board.num_attempts);
+            } else {
+              snprintf(status, sizeof(status),
+                       "Codebreaker exhausted all 12 attempts! You win! Press "
+                       "Enter to return to lobby.");
+            }
+            game_render_board(&board, opponent_name, status);
+          } else {
+            phase = PHASE_WAIT_BREAKER_GUESS;
+            game_render_board(&board, opponent_name,
+                              "Waiting for Codebreaker's next guess...\n");
+          }
+        }
+      } else if (phase == PHASE_GAME_OVER || phase == PHASE_PEER_DISCONNECTED) {
+        tcp_session_close(&tcp);
+        phase = PHASE_LOBBY;
+        discovery_render_lobby(peers);
       }
     }
   }
