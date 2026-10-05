@@ -1,3 +1,4 @@
+#define _DARWIN_C_SOURCE
 #include "mastermind.h"
 
 #include <arpa/inet.h>

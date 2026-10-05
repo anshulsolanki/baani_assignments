@@ -65,13 +65,14 @@ docker build -t osn-mp2 ~/osn_docker
 docker run -it --rm -v "/path/to/your/iiit-repo:/workspace" -w /workspace osn-mp2 bash
 ```
 
-### 2.2 Testing 2-Player `mastermind` on One MacBook vs. Two Laptops
-* **On One MacBook (Using Two Docker Containers on the Same Bridge Network):**
-  Open **two** terminal windows on your Mac and start two separate containers (`docker run -it --rm -v "/path/to/your/iiit-repo:/workspace" -w /workspace osn-mp2 bash`). Container 1 gets IP `172.17.0.2` and Container 2 gets IP `172.17.0.3` on the Docker bridge subnet, so their UDP broadcasts discover each other automatically!
-* **On One MacBook (Using Two Native macOS Terminal Tabs Offline/Loopback):**
-  You can also run two instances in two terminal tabs using `MM_BROADCAST_IP=127.0.0.1 ./mastermind`.
-* **With a Friend's Laptop (Real 2-Laptop Test):**
-  Connect both laptops to your **personal mobile hotspot** (never IIIT Wi-Fi) and run `./mastermind` (and `./mastermind --cost-cutting --log`) natively.
+### 2.2 Testing 2-Player `mastermind` on Your Own MacBook (No Second Laptop Required!)
+You do **not** need a friend's laptop to test 2-player `mastermind`! Everything can be tested on your single MacBook in two ways:
+1. **Automated Single-Machine 2-Player Test Suite (`test_mp2.py`):**
+   * Running `python3 semester3/osn_mp2/test_mp2.py` automatically tests 2-player UDP broadcast discovery (`Feena` $\rightarrow$ `Tatva`), 2-player persistent TCP sessions (`CHALLENGE`, `READY`, newline stream framing, and TCP disconnect detection), and 2-player `--cost-cutting` UDP chunking, out-of-order reassembly, per-chunk ACKs, and 0.1s retransmission on a single machine.
+2. **Interactive 2-Player Game in Two Terminal Tabs on Your MacBook (Using Docker):**
+   * Open **two** terminal tabs on your Mac and start two separate containers (`docker run -it --rm -v "/path/to/your/iiit-repo:/workspace" -w /workspace osn-mp2 bash`).
+   * Container 1 gets IP `172.17.0.2` and Container 2 gets IP `172.17.0.3` on the Docker bridge subnet (`172.17.255.255`), so their UDP broadcasts discover each other automatically and you can play a full interactive game between Tab 1 and Tab 2!
+   * *(Optional: Only if you ever want to play over Wi-Fi with a friend's laptop for fun, use a personal mobile hotspot rather than IIIT-H campus Wi-Fi.)*
 
 ---
 

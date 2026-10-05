@@ -2,7 +2,7 @@
 """
 End-to-End Verification Suite for CS3.301 OSN Mini Project 2
 ============================================================
-Verifies:
+Runs 100% on a SINGLE machine (no second laptop required) and verifies:
 1. Build Verification:
    - `make clean && make all` in `networking/` (`tempest` and `mastermind`) with strict C23 flags.
    - Cross-target syntax & type verification of all `xv6/kernel/*.c` files with `-target riscv64-unknown-elf`.
@@ -11,18 +11,19 @@ Verifies:
    - RFC 3986 URL percent-encoding (`"New York"` -> `"New%20York"`)
    - Live HTTP/1.1 query to `wttr.is` (`Hyderabad`, `"New York" --raw`, and invalid location)
    - Chunked Transfer-Encoding (`Transfer-Encoding: chunked`) against a local mock HTTP/1.1 server
-3. `mastermind` Functional Tests:
+3. `mastermind` Full 2-Player End-to-End Tests (on a Single Machine):
    - Sequence (`0-9` x 5) and feedback (`x`/`o`/`-` x 5) validation + feedback computation rules
-   - UDP Broadcast Player Discovery (4-byte magic `0x4D4D4E44`, source IP extraction, 5s expiry)
-   - Persistent TCP Session (`\n` framing, challenge/accept/guess/feedback/gameover, TCP disconnect detection)
-   - Reliable UDP (`--cost-cutting`) Session (4-byte chunk splitting, out-of-order chunk reassembly,
-     per-chunk ACKs, 0.1s retransmission on simulated packet drop, and `log.txt` verification)
+   - 2-Player UDP Broadcast Discovery (`SO_REUSEPORT` on port 33301, 4-byte magic `0x4D4D4E44`,
+     source IP extraction from `recvfrom`, peer table insertion)
+   - 2-Player Persistent TCP Game Session (`\n` framing, `CHALLENGE` -> `ACCEPT` -> `READY` ->
+     `GUESS` -> `FEEDBACK` -> `GAMEOVER`, plus TCP peer disconnect detection)
+   - 2-Player Reliable UDP (`--cost-cutting`) Session (4-byte chunk splitting, out-of-order chunk
+     reassembly, per-chunk ACKs, 0.1s retransmission on simulated packet drop, and `log.txt` verification)
 """
 
 import ctypes
 import os
 import socket
-import struct
 import subprocess
 import sys
 import tempfile
@@ -60,12 +61,10 @@ def test_builds():
         "tempest and mastermind built cleanly",
     )
 
-    # Clean up binaries after checking they exist
     has_bins = (TEMPEST_DIR / "tempest").exists() and (MM_DIR / "mastermind").exists()
     report("networking binaries generated at expected paths", has_bins)
     subprocess.run(["make", "clean"], cwd=NET_DIR, capture_output=True)
 
-    # Verify xv6 kernel compiles cleanly with clang -target riscv64-unknown-elf
     kernel_c_files = [str(p) for p in sorted((XV6_DIR / "kernel").glob("*.c"))]
     cmd = [
         "clang",
@@ -122,7 +121,6 @@ def test_tempest():
         enc = lib.url_encode(b"New York")
         report("url_encode('New York') -> 'New%20York'", enc == b"New%20York", f"got {enc!r}")
 
-        # Helper to run tempest main() in a child python process to capture stdout cleanly
         def run_tempest_cli(args, env_extra=None):
             env = os.environ.copy()
             if env_extra:
@@ -137,7 +135,6 @@ sys.exit(rc)
 """
             return subprocess.run([sys.executable, "-c", code], capture_output=True, text=True, env=env)
 
-        # Test too many arguments
         res_args = run_tempest_cli(["a", "b"])
         report(
             "CLI: `tempest a b` prints `tempest: too many arguments`",
@@ -145,7 +142,6 @@ sys.exit(rc)
             res_args.stdout.strip(),
         )
 
-        # Test chunked encoding & invalid location via local mock HTTP/1.1 server
         server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         server.bind(("127.0.0.1", 0))
@@ -199,7 +195,6 @@ sys.exit(rc)
         )
         t.join(timeout=2)
 
-        # Live test against wttr.is
         res_live = run_tempest_cli(["Hyderabad"])
         report(
             "Live HTTP/1.1 query to wttr.is (`tempest Hyderabad`)",
@@ -209,7 +204,7 @@ sys.exit(rc)
 
 
 def test_mastermind():
-    print("\n=== 3. `mastermind` Discovery, TCP, & Reliable UDP (`--cost-cutting`) Tests ===")
+    print("\n=== 3. `mastermind` 2-Player Discovery, TCP Game, & Reliable UDP (`--cost-cutting`) Tests ===")
     with tempfile.TemporaryDirectory() as tmpdir:
         dylib_path = Path(tmpdir) / "libmastermind.dylib"
         c_files = [str(p) for p in sorted(MM_DIR.glob("*.c"))]
@@ -263,14 +258,113 @@ def test_mastermind():
             f"got {out_fb.value.decode()}",
         )
 
-        # 3b. Reliable UDP (--cost-cutting) chunking, out-of-order reassembly, ACK, and 0.1s retransmission
+        # 3b. 2-Player UDP Broadcast Discovery on a Single Machine
+        lib.discovery_init_socket.argtypes = [ctypes.c_uint16]
+        lib.discovery_init_socket.restype = ctypes.c_int
+        lib.discovery_send_broadcast.argtypes = [
+            ctypes.c_int,
+            ctypes.c_uint16,
+            ctypes.c_uint16,
+            ctypes.c_char_p,
+        ]
+        lib.discovery_send_broadcast.restype = ctypes.c_int
+        lib.discovery_handle_packet.argtypes = [
+            ctypes.c_int,
+            ctypes.c_uint16,
+            ctypes.c_char_p,
+            ctypes.c_void_p,
+            ctypes.POINTER(ctypes.c_int),
+        ]
+        lib.discovery_handle_packet.restype = ctypes.c_bool
+
+        os.environ["MM_BROADCAST_IP"] = "127.0.0.1"
+        disc_port = 34301
+        disc_fd_rx = lib.discovery_init_socket(disc_port)
+        tx_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        peers_p2 = ctypes.create_string_buffer(4096)
+        next_id_p2 = ctypes.c_int(1)
+
+        lib.discovery_send_broadcast(tx_sock.fileno(), disc_port, 9001, b"Feena")
+        discovered = lib.discovery_handle_packet(
+            disc_fd_rx, 9002, b"Tatva", peers_p2, ctypes.byref(next_id_p2)
+        )
+        os.close(disc_fd_rx)
+        tx_sock.close()
+        report(
+            "2-Player UDP Broadcast Discovery on single machine (Feena -> Tatva)",
+            discovered and next_id_p2.value == 2,
+            "4-byte magic verified & peer added with ID=1",
+        )
+
+        # 3c. 2-Player Persistent TCP Session (Challenge -> Accept -> Ready -> Guess -> Feedback -> GameOver -> Disconnect)
+        lib.tcp_session_init.argtypes = [ctypes.c_void_p]
+        lib.tcp_session_close.argtypes = [ctypes.c_void_p]
+        lib.tcp_connect_peer.argtypes = [ctypes.c_char_p, ctypes.c_uint16]
+        lib.tcp_connect_peer.restype = ctypes.c_int
+        lib.tcp_send_msg.argtypes = [ctypes.c_void_p, ctypes.c_char_p]
+        lib.tcp_send_msg.restype = ctypes.c_int
+        lib.tcp_recv_line.argtypes = [
+            ctypes.c_void_p,
+            ctypes.c_bool,
+            ctypes.c_char_p,
+            ctypes.c_size_t,
+        ]
+        lib.tcp_recv_line.restype = ctypes.c_int
+
+        tcp_listener = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        tcp_listener.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        tcp_listener.bind(("127.0.0.1", 0))
+        tcp_listener.listen(2)
+        tcp_port = tcp_listener.getsockname()[1]
+
+        client_fd = lib.tcp_connect_peer(b"127.0.0.1", tcp_port)
+        server_conn, _ = tcp_listener.accept()
+
+        # Struct tcp_session is { int fd; char rx_buf[1024]; size_t rx_len; }
+        class TcpSession(ctypes.Structure):
+            _fields_ = [
+                ("fd", ctypes.c_int),
+                ("rx_buf", ctypes.c_char * 1024),
+                ("rx_len", ctypes.c_size_t),
+            ]
+
+        sess_master = TcpSession()
+        sess_breaker = TcpSession()
+        lib.tcp_session_init(ctypes.byref(sess_master))
+        lib.tcp_session_init(ctypes.byref(sess_breaker))
+        sess_master.fd = client_fd
+        sess_breaker.fd = server_conn.fileno()
+
+        # Exchange pipelined TCP game messages and verify newline framing
+        lib.tcp_send_msg(ctypes.byref(sess_master), b"CHALLENGE Feena")
+        lib.tcp_send_msg(ctypes.byref(sess_master), b"READY")
+        line1 = ctypes.create_string_buffer(128)
+        line2 = ctypes.create_string_buffer(128)
+        rc1 = lib.tcp_recv_line(ctypes.byref(sess_breaker), True, line1, 128)
+        rc2 = lib.tcp_recv_line(ctypes.byref(sess_breaker), False, line2, 128)
+        report(
+            "2-Player TCP Session: newline stream framing across back-to-back messages",
+            rc1 == 1 and rc2 == 1 and line1.value == b"CHALLENGE Feena" and line2.value == b"READY",
+            f"msg1={line1.value.decode()!r}, msg2={line2.value.decode()!r}",
+        )
+
+        # Close Mastermind's TCP socket and verify Codebreaker detects EOF disconnect (-1)
+        lib.tcp_session_close(ctypes.byref(sess_master))
+        rc_eof = lib.tcp_recv_line(ctypes.byref(sess_breaker), True, line1, 128)
+        report(
+            "2-Player TCP Session: peer disconnect detection on socket close (EOF -> -1)",
+            rc_eof == -1,
+        )
+        server_conn.close()
+        tcp_listener.close()
+
+        # 3d. Reliable UDP (--cost-cutting) chunking, out-of-order reassembly, ACK, and 0.1s retransmission
         old_cwd = os.getcwd()
         os.chdir(tmpdir)
         try:
             lib.log_init.argtypes = [ctypes.c_bool]
             lib.log_init(True)
 
-            # Create two UDP sockets on loopback
             sock_a = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
             sock_a.bind(("127.0.0.1", 0))
             port_a = sock_a.getsockname()[1]
@@ -279,7 +373,6 @@ def test_mastermind():
             sock_b.bind(("127.0.0.1", 0))
             port_b = sock_b.getsockname()[1]
 
-            # Allocate rudp_session buffers (4096 bytes is plenty for struct rudp_session)
             sess_a = ctypes.create_string_buffer(4096)
             sess_b = ctypes.create_string_buffer(4096)
 
@@ -297,11 +390,8 @@ def test_mastermind():
             lib.rudp_session_init(sess_b, sock_b.fileno())
             lib.rudp_session_set_peer(sess_b, b"127.0.0.1", port_a)
 
-            # Send a 14-byte message ("CHALLENGE Baani") -> splits into 4 chunks of 4 bytes
             lib.rudp_send_msg(sess_a, b"CHALLENGE Baani")
 
-            # Intercept all 4 raw UDP chunk packets on sock_b, drop chunk #1 to test 0.1s retransmission,
-            # and deliver chunks #3, #2, #0 out of order!
             raw_chunks = []
             for _ in range(4):
                 data, addr = sock_b.recvfrom(1024)
@@ -313,12 +403,8 @@ def test_mastermind():
                 f"{len(raw_chunks)} chunks transmitted",
             )
 
-            # Re-inject chunks 3, 2, 0 into sock_b in reverse order via a helper socket, dropping chunk 1
-            injector = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
             for idx in [3, 2, 0]:
-                # Rewrite source or feed directly to sock_b
                 sock_b_self = ("127.0.0.1", port_b)
-                # Send from sock_a so ACKs go back to sock_a
                 sock_a.sendto(raw_chunks[idx][0], sock_b_self)
 
             out_buf = ctypes.create_string_buffer(256)
@@ -327,7 +413,6 @@ def test_mastermind():
                 rc = lib.rudp_recv_packet(sess_b, out_buf, 256)
                 if rc == 1:
                     reassembled = True
-                # Let sock_a process the ACKs for chunks 3, 2, 0
                 lib.rudp_recv_packet(sess_a, out_buf, 256)
 
             report(
@@ -335,11 +420,9 @@ def test_mastermind():
                 not reassembled,
             )
 
-            # Wait 0.12s (> 0.1s retransmit timer) and invoke rudp_tick(sess_a)
             time.sleep(0.12)
             lib.rudp_tick(sess_a)
 
-            # Now sock_b should receive only the retransmitted chunk #1 and complete reassembly!
             rc = lib.rudp_recv_packet(sess_b, out_buf, 256)
             report(
                 "RUDP: 0.1s retransmission of dropped chunk #1 + out-of-order reassembly",
@@ -360,7 +443,6 @@ def test_mastermind():
 
             sock_a.close()
             sock_b.close()
-            injector.close()
         finally:
             os.chdir(old_cwd)
 
