@@ -1,0 +1,413 @@
+================================================================================
+PART A: Prepositional Phrase Attachment & Top-Down Tree Traversal
+================================================================================
+
+Sentence: a joke about the woman with the umbrella on the street
+Total parses emitted by BottomUpChartParser: 5
+
+--------------------------------------------------------------------------------
+Part A - Parse Tree 1:
+Interpretation: PP1 ('about the woman'), PP2 ('with the umbrella'), and PP3 ('on the street') all attach to 'a joke'
+--------------------------------------------------------------------------------
+                                  NP                                     
+                     _____________|_________________________              
+                    NP                                      |            
+                ____|__________________                     |             
+               NP                      |                    |            
+      _________|____                   |                    |             
+     |              PP                 PP                   PP           
+     |          ____|___           ____|___              ___|___          
+     NP        |        NP        |        NP           |       NP       
+  ___|___      |     ___|____     |     ___|_____       |    ___|____     
+Det      N     P   Det       N    P   Det        N      P  Det       N   
+ |       |     |    |        |    |    |         |      |   |        |    
+ a      joke about the     woman with the     umbrella  on the     street
+
+[Part A.2 Output for Tree 1]
+  -> Top-down recursive traversal starting from root node:
+     Words with numerical index indicating position in the sentence:
+       Word [ 0] (Position  1): a
+       Word [ 1] (Position  2): joke
+       Word [ 2] (Position  3): about
+       Word [ 3] (Position  4): the
+       Word [ 4] (Position  5): woman
+       Word [ 5] (Position  6): with
+       Word [ 6] (Position  7): the
+       Word [ 7] (Position  8): umbrella
+       Word [ 8] (Position  9): on
+       Word [ 9] (Position 10): the
+       Word [10] (Position 11): street
+     Number of non-terminal nodes (nodes which aren't words): 21 (10 phrasal nodes [NP, PP] + 11 POS-tag nodes [Det, N, P])
+
+--------------------------------------------------------------------------------
+Part A - Parse Tree 2:
+Interpretation: PP2 ('with the umbrella') attaches to 'the woman'; PP3 ('on the street') attaches to 'a joke...'
+--------------------------------------------------------------------------------
+                                  NP                                     
+                     _____________|_________________________              
+                    NP                                      |            
+      ______________|________                               |             
+     |                       PP                             |            
+     |          _____________|____                          |             
+     |         |                  NP                        |            
+     |         |         _________|____                     |             
+     |         |        |              PP                   PP           
+     |         |        |          ____|___              ___|___          
+     NP        |        NP        |        NP           |       NP       
+  ___|___      |     ___|____     |     ___|_____       |    ___|____     
+Det      N     P   Det       N    P   Det        N      P  Det       N   
+ |       |     |    |        |    |    |         |      |   |        |    
+ a      joke about the     woman with the     umbrella  on the     street
+
+[Part A.2 Output for Tree 2]
+  -> Top-down recursive traversal starting from root node:
+     Words with numerical index indicating position in the sentence:
+       Word [ 0] (Position  1): a
+       Word [ 1] (Position  2): joke
+       Word [ 2] (Position  3): about
+       Word [ 3] (Position  4): the
+       Word [ 4] (Position  5): woman
+       Word [ 5] (Position  6): with
+       Word [ 6] (Position  7): the
+       Word [ 7] (Position  8): umbrella
+       Word [ 8] (Position  9): on
+       Word [ 9] (Position 10): the
+       Word [10] (Position 11): street
+     Number of non-terminal nodes (nodes which aren't words): 21 (10 phrasal nodes [NP, PP] + 11 POS-tag nodes [Det, N, P])
+
+--------------------------------------------------------------------------------
+Part A - Parse Tree 3:
+Interpretation: PP2 ('with the umbrella') and PP3 ('on the street') both attach to 'the woman'
+--------------------------------------------------------------------------------
+               NP                                                        
+      _________|_____________                                             
+     |                       PP                                          
+     |          _____________|_________                                   
+     |         |                       NP                                
+     |         |                   ____|____________________              
+     |         |                  NP                        |            
+     |         |         _________|____                     |             
+     |         |        |              PP                   PP           
+     |         |        |          ____|___              ___|___          
+     NP        |        NP        |        NP           |       NP       
+  ___|___      |     ___|____     |     ___|_____       |    ___|____     
+Det      N     P   Det       N    P   Det        N      P  Det       N   
+ |       |     |    |        |    |    |         |      |   |        |    
+ a      joke about the     woman with the     umbrella  on the     street
+
+[Part A.2 Output for Tree 3]
+  -> Top-down recursive traversal starting from root node:
+     Words with numerical index indicating position in the sentence:
+       Word [ 0] (Position  1): a
+       Word [ 1] (Position  2): joke
+       Word [ 2] (Position  3): about
+       Word [ 3] (Position  4): the
+       Word [ 4] (Position  5): woman
+       Word [ 5] (Position  6): with
+       Word [ 6] (Position  7): the
+       Word [ 7] (Position  8): umbrella
+       Word [ 8] (Position  9): on
+       Word [ 9] (Position 10): the
+       Word [10] (Position 11): street
+     Number of non-terminal nodes (nodes which aren't words): 21 (10 phrasal nodes [NP, PP] + 11 POS-tag nodes [Det, N, P])
+
+--------------------------------------------------------------------------------
+Part A - Parse Tree 4:
+Interpretation: PP3 ('on the street') attaches to 'the umbrella', which attaches to 'the woman', which attaches to 'a joke'
+--------------------------------------------------------------------------------
+               NP                                                        
+      _________|_____________                                             
+     |                       PP                                          
+     |          _____________|_________                                   
+     |         |                       NP                                
+     |         |         ______________|_________                         
+     |         |        |                        PP                      
+     |         |        |          ______________|______                  
+     |         |        |         |                     NP               
+     |         |        |         |         ____________|___              
+     |         |        |         |        |                PP           
+     |         |        |         |        |             ___|___          
+     NP        |        NP        |        NP           |       NP       
+  ___|___      |     ___|____     |     ___|_____       |    ___|____     
+Det      N     P   Det       N    P   Det        N      P  Det       N   
+ |       |     |    |        |    |    |         |      |   |        |    
+ a      joke about the     woman with the     umbrella  on the     street
+
+[Part A.2 Output for Tree 4]
+  -> Top-down recursive traversal starting from root node:
+     Words with numerical index indicating position in the sentence:
+       Word [ 0] (Position  1): a
+       Word [ 1] (Position  2): joke
+       Word [ 2] (Position  3): about
+       Word [ 3] (Position  4): the
+       Word [ 4] (Position  5): woman
+       Word [ 5] (Position  6): with
+       Word [ 6] (Position  7): the
+       Word [ 7] (Position  8): umbrella
+       Word [ 8] (Position  9): on
+       Word [ 9] (Position 10): the
+       Word [10] (Position 11): street
+     Number of non-terminal nodes (nodes which aren't words): 21 (10 phrasal nodes [NP, PP] + 11 POS-tag nodes [Det, N, P])
+
+--------------------------------------------------------------------------------
+Part A - Parse Tree 5:
+Interpretation: PP1 ('about the woman') attaches to 'a joke'; PP3 ('on the street') attaches to 'the umbrella', which attaches to 'a joke...'
+--------------------------------------------------------------------------------
+                                  NP                                     
+                __________________|______________                         
+               |                                 PP                      
+               |                   ______________|______                  
+               NP                 |                     NP               
+      _________|____              |         ____________|___              
+     |              PP            |        |                PP           
+     |          ____|___          |        |             ___|___          
+     NP        |        NP        |        NP           |       NP       
+  ___|___      |     ___|____     |     ___|_____       |    ___|____     
+Det      N     P   Det       N    P   Det        N      P  Det       N   
+ |       |     |    |        |    |    |         |      |   |        |    
+ a      joke about the     woman with the     umbrella  on the     street
+
+[Part A.2 Output for Tree 5]
+  -> Top-down recursive traversal starting from root node:
+     Words with numerical index indicating position in the sentence:
+       Word [ 0] (Position  1): a
+       Word [ 1] (Position  2): joke
+       Word [ 2] (Position  3): about
+       Word [ 3] (Position  4): the
+       Word [ 4] (Position  5): woman
+       Word [ 5] (Position  6): with
+       Word [ 6] (Position  7): the
+       Word [ 7] (Position  8): umbrella
+       Word [ 8] (Position  9): on
+       Word [ 9] (Position 10): the
+       Word [10] (Position 11): street
+     Number of non-terminal nodes (nodes which aren't words): 21 (10 phrasal nodes [NP, PP] + 11 POS-tag nodes [Det, N, P])
+
+Saved Part A.1 PDF visualization to: /Users/solankianshul/Documents/projects/temp_work/baani_work/assignments/semester3/Context-Free-Grammars-assignment/Part_A_Parse_Trees.pdf
+
+================================================================================
+PART B: Structural Ambiguity in 'They are flying planes'
+================================================================================
+
+Part B Grammar:
+Grammar with 13 productions (start state = S)
+    S -> NP VP
+    VP -> Aux VP
+    VP -> V NP
+    NP -> Pro
+    NP -> N
+    NP -> Adj N
+    Pro -> 'They'
+    Pro -> 'they'
+    Aux -> 'are'
+    V -> 'are'
+    V -> 'flying'
+    Adj -> 'flying'
+    N -> 'planes'
+
+Sentence: They are flying planes
+Total parses emitted: 2
+
+--- Part B Parse Tree 1: Reading 1 (Progressive Action): 'are' is an Auxiliary + [VP [V flying] [NP planes]] ('They are piloting planes') ---
+          S                   
+  ________|____                
+ |             VP             
+ |     ________|_____          
+ |    |              VP       
+ |    |         _____|____     
+ NP   |        |          NP  
+ |    |        |          |    
+Pro  Aux       V          N   
+ |    |        |          |    
+They are     flying     planes
+
+--- Part B Parse Tree 2: Reading 2 (Copular Description): 'are' is a main/copular Verb + [NP [Adj flying] [N planes]] ('Those objects are planes that fly') ---
+          S                   
+  ________|____                
+ |             VP             
+ |     ________|_____          
+ NP   |              NP       
+ |    |         _____|____     
+Pro   V       Adj         N   
+ |    |        |          |    
+They are     flying     planes
+
+================================================================================
+PART C: Structural Ambiguity in 'Flying planes can be dangerous'
+================================================================================
+
+Part C Extended Grammar:
+Grammar with 23 productions (start state = S)
+    S -> NP VP
+    VP -> Aux VP_nf
+    VP -> Modal VP
+    VP -> V NP
+    VP -> V AdjP
+    VP_nf -> V_nf NP
+    NP -> Pro
+    NP -> N
+    NP -> Adj N
+    NP -> VP_nf
+    AdjP -> Adj
+    Pro -> 'They'
+    Pro -> 'they'
+    Aux -> 'are'
+    Modal -> 'can'
+    V -> 'are'
+    V -> 'be'
+    V_nf -> 'flying'
+    V_nf -> 'Flying'
+    Adj -> 'flying'
+    Adj -> 'Flying'
+    Adj -> 'dangerous'
+    N -> 'planes'
+
+Sentence: Flying planes can be dangerous
+Total parses emitted: 2
+
+--- Part C Parse Tree 1: Reading 1 (Gerundive / Non-Finite VP Subject): [NP [VP_nf [V_nf Flying] [NP planes]]] ('The act of flying planes can be dangerous') ---
+                      S                    
+          ____________|____                 
+         NP                VP              
+         |             ____|___             
+       VP_nf          |        VP          
+   ______|_____       |     ___|______      
+  |            NP     |    |         AdjP  
+  |            |      |    |          |     
+ V_nf          N    Modal  V         Adj   
+  |            |      |    |          |     
+Flying       planes  can   be     dangerous
+
+--- Part C Parse Tree 2: Reading 2 (Modified Noun Phrase Subject): [NP [Adj Flying] [N planes]] ('Planes that are flying can be dangerous') ---
+                    S                    
+         ___________|____                 
+        |                VP              
+        |            ____|___             
+        |           |        VP          
+        |           |     ___|______      
+        NP          |    |         AdjP  
+   _____|____       |    |          |     
+ Adj         N    Modal  V         Adj   
+  |          |      |    |          |     
+Flying     planes  can   be     dangerous
+
+================================================================================
+PART D: Disambiguation with 'is' vs. 'are' (Number Agreement)
+================================================================================
+
+Part D Disambiguated Grammar:
+Grammar with 31 productions (start state = S)
+    S -> NP_sg VP_sg
+    S -> NP_pl VP_pl
+    NP_sg -> VP_nf
+    NP_pl -> Pro_pl
+    NP_pl -> N_pl
+    NP_pl -> Adj N_pl
+    VP_nf -> V_nf NP_pl
+    VP_sg -> V_sg AdjP
+    VP_sg -> V_sg NP_sg
+    VP_sg -> Aux_sg VP_nf
+    VP_sg -> Modal VP_inf
+    VP_pl -> V_pl AdjP
+    VP_pl -> V_pl NP_pl
+    VP_pl -> Aux_pl VP_nf
+    VP_pl -> Modal VP_inf
+    VP_inf -> V_inf AdjP
+    AdjP -> Adj
+    Pro_pl -> 'They'
+    Pro_pl -> 'they'
+    Aux_sg -> 'is'
+    Aux_pl -> 'are'
+    V_sg -> 'is'
+    V_pl -> 'are'
+    V_inf -> 'be'
+    V_nf -> 'flying'
+    V_nf -> 'Flying'
+    Modal -> 'can'
+    Adj -> 'flying'
+    Adj -> 'Flying'
+    Adj -> 'dangerous'
+    N_pl -> 'planes'
+
+Sentence: 'Flying planes is dangerous' -> Number of parses: 1
+  [Parse 1 of 1]
+                     S                      
+          ___________|_________              
+       NP_sg                   |            
+         |                     |             
+       VP_nf                 VP_sg          
+   ______|_____           _____|_______      
+  |          NP_pl       |            AdjP  
+  |            |         |             |     
+ V_nf         N_pl      V_sg          Adj   
+  |            |         |             |     
+Flying       planes      is        dangerous
+
+
+Sentence: 'Flying planes are dangerous' -> Number of parses: 1
+  [Parse 1 of 1]
+                     S                      
+          ___________|_________              
+         |                   VP_pl          
+         |                _____|_______      
+       NP_pl             |            AdjP  
+   ______|_____          |             |     
+ Adj          N_pl      V_pl          Adj   
+  |            |         |             |     
+Flying       planes     are        dangerous
+
+
+Sentence: 'Flying planes can be dangerous' -> Number of parses: 2
+  [Parse 1 of 2]
+                      S                         
+          ____________|_____                     
+         |                VP_pl                 
+         |             _____|_____               
+         |            |         VP_inf          
+         |            |      _____|________      
+       NP_pl          |     |             AdjP  
+   ______|_____       |     |              |     
+ Adj          N_pl  Modal V_inf           Adj   
+  |            |      |     |              |     
+Flying       planes  can    be         dangerous
+
+  [Parse 2 of 2]
+                      S                         
+          ____________|_____                     
+       NP_sg              VP_sg                 
+         |             _____|_____               
+       VP_nf          |         VP_inf          
+   ______|_____       |      _____|________      
+  |          NP_pl    |     |             AdjP  
+  |            |      |     |              |     
+ V_nf         N_pl  Modal V_inf           Adj   
+  |            |      |     |              |     
+Flying       planes  can    be         dangerous
+
+
+Sentence: 'They are flying planes' -> Number of parses: 2
+  [Parse 1 of 2]
+               S                     
+   ____________|____                  
+  |               VP_pl              
+  |       __________|______           
+  |      |               VP_nf       
+  |      |           ______|_____     
+NP_pl    |          |          NP_pl 
+  |      |          |            |    
+Pro_pl Aux_pl      V_nf         N_pl 
+  |      |          |            |    
+ They   are       flying       planes
+
+  [Parse 2 of 2]
+             S                     
+   __________|____                  
+  |             VP_pl              
+  |      _________|______           
+NP_pl   |              NP_pl       
+  |     |          ______|_____     
+Pro_pl V_pl      Adj          N_pl 
+  |     |         |            |    
+ They  are      flying       planes
+
+Saved combined parse trees PDF to: /Users/solankianshul/Documents/projects/temp_work/baani_work/assignments/semester3/Context-Free-Grammars-assignment/All_Assignment_Parse_Trees.pdf
