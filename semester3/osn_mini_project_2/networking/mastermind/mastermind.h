@@ -2,205 +2,174 @@
 #define MASTERMIND_H
 
 #include <netinet/in.h>
-#include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
 
-/* 4-byte protocol magic ("MMND") */
+/* 4-byte magic identifier ("MMND" = 0x4D4D4E44) */
 #define MM_MAGIC              0x4D4D4E44U
 
-/* Discovery configuration */
+/* Discovery settings */
 #define MM_DISCOVERY_PORT     33301
-#define MM_BROADCAST_INT_MS   2000
-#define MM_PEER_EXPIRY_MS     5000
+#define MM_BROADCAST_MS       2000
+#define MM_EXPIRY_MS          5000
 #define MM_MAX_PEERS          32
-#define MM_MAX_NAME_LEN       32
+#define MM_NAME_LEN           32
+#define MM_DISC_PKT_SIZE      38
 
-/* Game configuration */
+/* Game settings */
 #define MM_SEQ_LEN            5
 #define MM_MAX_ATTEMPTS       12
 
-/* Reliable UDP (--cost-cutting) configuration */
+/* Cost-cutting (Reliable UDP) settings */
 #define MM_CHUNK_DATA_SIZE    4
+#define MM_CHUNK_PKT_SIZE     20
 #define MM_MAX_CHUNKS         64
 #define MM_RETRANSMIT_MS      100
-#define MM_RUDP_PING_MS       1500
-#define MM_RUDP_TIMEOUT_MS    5000
+#define MM_PING_MS            1500
+#define MM_UDP_TIMEOUT_MS     5000
 
-/* Message verbs for game session (newline-delimited over TCP or reassembled RUDP) */
-#define VERB_CHALLENGE        "CHALLENGE"
-#define VERB_ACCEPT           "ACCEPT"
-#define VERB_REJECT           "REJECT"
-#define VERB_READY            "READY"
-#define VERB_GUESS            "GUESS"
-#define VERB_FEEDBACK         "FEEDBACK"
-#define VERB_GAMEOVER         "GAMEOVER"
-#define VERB_DISCONNECT       "DISCONNECT"
+/* Packet types for --cost-cutting UDP state transfer */
+#define PKT_TYPE_DATA         1
+#define PKT_TYPE_ACK          2
+#define PKT_TYPE_PING         3
+#define PKT_TYPE_PONG         4
+#define PKT_TYPE_FIN          5
 
-/* UDP broadcast discovery payload (sender IP comes from packet source, not payload) */
-struct discovery_pkt {
-  uint32_t magic;                  /* htonl(MM_MAGIC) */
-  uint16_t listen_port;            /* htons(game_listen_port) */
-  char name[MM_MAX_NAME_LEN];      /* Null-terminated player name */
-};
+/* Player roles */
+#define ROLE_NONE             0
+#define ROLE_MASTERMIND       1
+#define ROLE_CODEBREAKER      2
 
-/* Reliable UDP packet types (--cost-cutting) */
-enum rudp_pkt_type {
-  RUDP_PKT_DATA = 1,
-  RUDP_PKT_ACK  = 2,
-  RUDP_PKT_PING = 3,
-  RUDP_PKT_PONG = 4,
-  RUDP_PKT_FIN  = 5
-};
+/* Game phases */
+#define PHASE_LOBBY                 0
+#define PHASE_WAIT_CHALLENGE_REPLY  1
+#define PHASE_ASK_CHALLENGE_ACCEPT  2
+#define PHASE_MASTER_SET_SECRET     3
+#define PHASE_WAIT_MASTER_SECRET    4
+#define PHASE_BREAKER_GUESS         5
+#define PHASE_WAIT_BREAKER_GUESS    6
+#define PHASE_MASTER_FEEDBACK       7
+#define PHASE_WAIT_MASTER_FEEDBACK  8
+#define PHASE_GAME_OVER             9
+#define PHASE_DISCONNECTED          10
 
-/* Fixed-size chunk packet for --cost-cutting mode */
-struct rudp_pkt {
-  uint32_t magic;                  /* htonl(MM_MAGIC) */
-  uint8_t type;                    /* enum rudp_pkt_type */
-  uint8_t reserved;
-  uint16_t msg_id;                 /* htons(message ID) */
-  uint16_t seq_num;                /* htons(0 .. total_chunks - 1) */
-  uint16_t total_chunks;           /* htons(total chunks in message) */
-  uint16_t data_len;               /* htons(valid bytes in data[]) */
-  char data[MM_CHUNK_DATA_SIZE];   /* Chunk payload bytes */
-};
-
-/* Online peer entry in discovery table */
+/* Entry in the online players table */
 struct peer_entry {
-  bool active;
+  int active;
   int id;
-  char name[MM_MAX_NAME_LEN];
+  char name[MM_NAME_LEN];
   char ip[INET_ADDRSTRLEN];
-  uint16_t port;
-  uint64_t last_seen_ms;
+  int port;
+  long last_seen_ms;
 };
 
-/* Player role during a game */
-enum player_role {
-  ROLE_NONE = 0,
-  ROLE_MASTERMIND,
-  ROLE_CODEBREAKER
-};
-
-/* Application state machine */
-enum app_phase {
-  PHASE_LOBBY = 0,
-  PHASE_WAIT_CHALLENGE_RESP,
-  PHASE_PROMPT_CHALLENGE_REQ,
-  PHASE_MASTER_ENTER_SECRET,
-  PHASE_WAIT_MASTER_READY,
-  PHASE_BREAKER_ENTER_GUESS,
-  PHASE_WAIT_BREAKER_GUESS,
-  PHASE_MASTER_ENTER_FEEDBACK,
-  PHASE_WAIT_MASTER_FEEDBACK,
-  PHASE_GAME_OVER,
-  PHASE_PEER_DISCONNECTED
-};
-
-/* 12x5 Mastermind board state */
+/* Board state for the 12-round Mastermind game */
 struct board_state {
-  enum player_role role;
+  int role;
   char master_seq[MM_SEQ_LEN + 1];
-  bool master_seq_known;
+  int show_master_seq;
   int num_attempts;
   char guesses[MM_MAX_ATTEMPTS][MM_SEQ_LEN + 1];
   char feedbacks[MM_MAX_ATTEMPTS][MM_SEQ_LEN + 1];
-  bool feedback_ready[MM_MAX_ATTEMPTS];
-  bool breaker_won;
+  int has_feedback[MM_MAX_ATTEMPTS];
 };
 
-/* Logging & time helpers (log.c) */
-void log_init(bool enabled);
-void log_event(const char *fmt, ...) __attribute__((format(printf, 1, 2)));
-uint64_t now_ms(void);
-
-/* Discovery helpers (discovery.c) */
-int discovery_init_socket(uint16_t discovery_port);
-int discovery_send_broadcast(int udp_fd, uint16_t discovery_port,
-                             uint16_t my_game_port, const char *my_name);
-bool discovery_handle_packet(int udp_fd, uint16_t my_game_port,
-                             const char *my_name,
-                             struct peer_entry peers[MM_MAX_PEERS],
-                             int *next_peer_id);
-bool discovery_expire_peers(struct peer_entry peers[MM_MAX_PEERS]);
-const struct peer_entry *discovery_find_peer(
-    const struct peer_entry peers[MM_MAX_PEERS], int id);
-void discovery_render_lobby(const struct peer_entry peers[MM_MAX_PEERS]);
-
-/* Persistent TCP session state and helpers (net_tcp.c) */
+/* Persistent TCP session state */
 struct tcp_session {
   int fd;
-  char rx_buf[1024];
-  size_t rx_len;
+  char buf[1024];
+  int buf_len;
 };
 
-void tcp_session_init(struct tcp_session *s);
-void tcp_session_close(struct tcp_session *s);
-int tcp_connect_peer(const char *ip, uint16_t port);
-int tcp_send_msg(struct tcp_session *s, const char *msg);
-/* Returns 1 if a complete line was extracted into out_line, 0 if more bytes
- * are needed, or -1 on EOF / disconnection. */
-int tcp_recv_line(struct tcp_session *s, bool do_read, char *out_line,
-                  size_t max_len);
+/* Struct representing a single fixed-size chunk in --cost-cutting mode.
+ * Before sending over UDP, fields are packed into a 20-byte buffer. */
+struct chunk_pkt {
+  uint32_t magic;
+  int type;
+  int msg_id;
+  int seq_num;
+  int total_chunks;
+  int data_len;
+  char data[MM_CHUNK_DATA_SIZE];
+};
 
-/* Game logic & ANSI board rendering (game.c) */
-void game_init_board(struct board_state *b, enum player_role role);
-bool game_validate_sequence(const char *seq);
-bool game_validate_feedback(const char *fb);
-void game_compute_expected_feedback(const char *master_seq, const char *guess,
-                                    char out_fb[MM_SEQ_LEN + 1]);
-void game_render_board(const struct board_state *b, const char *opponent_name,
-                       const char *status_line);
-
-/* Outgoing chunk state for reliable UDP (--cost-cutting) */
-#define MM_RUDP_WINDOW_SLOTS  128
-
-struct rudp_tx_chunk {
-  bool in_use;
-  bool acked;
-  uint64_t last_sent_ms;
+/* Outgoing chunk waiting for ACK in --cost-cutting mode */
+struct sent_chunk {
+  int active;
+  int acked;
+  long last_sent_ms;
   int retries;
-  struct rudp_pkt pkt;
+  struct chunk_pkt pkt;
 };
 
-/* Incoming message reassembly buffer for reliable UDP (--cost-cutting) */
-struct rudp_rx_msg {
-  bool active;
-  bool delivered;
-  uint16_t msg_id;
-  uint16_t total_chunks;
-  uint16_t received_count;
-  bool chunk_received[MM_MAX_CHUNKS];
-  uint16_t chunk_len[MM_MAX_CHUNKS];
+/* Incoming message being reassembled from chunks in --cost-cutting mode */
+struct recv_msg_buf {
+  int active;
+  int delivered;
+  int msg_id;
+  int total_chunks;
+  int received_count;
+  int got_chunk[MM_MAX_CHUNKS];
+  int chunk_len[MM_MAX_CHUNKS];
   char chunk_data[MM_MAX_CHUNKS][MM_CHUNK_DATA_SIZE];
 };
 
+/* Reliable UDP state for --cost-cutting mode */
 struct rudp_session {
   int udp_fd;
-  bool peer_known;
+  int has_peer;
   struct sockaddr_in peer_addr;
-  uint16_t next_tx_msg_id;
-  uint16_t next_rx_deliver_id;
-  uint64_t last_rx_ms;
-  uint64_t last_ping_ms;
-  struct rudp_tx_chunk tx_window[MM_RUDP_WINDOW_SLOTS];
-  struct rudp_rx_msg rx_slots[16];
+  int next_send_msg_id;
+  int next_deliver_msg_id;
+  long last_recv_ms;
+  long last_ping_ms;
+  struct sent_chunk sent_list[128];
+  struct recv_msg_buf recv_list[16];
 };
 
-void rudp_session_init(struct rudp_session *r, int udp_fd);
-void rudp_session_set_peer(struct rudp_session *r, const char *ip,
-                           uint16_t port);
-void rudp_session_reset(struct rudp_session *r);
-int rudp_send_msg(struct rudp_session *r, const char *msg);
-/* Returns 1 if a reassembled message was written to out_msg, 0 if no complete
- * message yet, or -1 if peer disconnected. */
-int rudp_recv_packet(struct rudp_session *r, char *out_msg, size_t max_len);
-/* Pop any additional already-reassembled in-order message without reading
- * from the socket. Returns 1 if a message was written to out_msg, 0 otherwise. */
-int rudp_pop_ready_msg(struct rudp_session *r, char *out_msg, size_t max_len);
-/* Checks 0.1s per-chunk retransmission timers and UDP peer liveness.
- * Returns 0 normally, or -1 if peer timed out / disconnected. */
-int rudp_tick(struct rudp_session *r);
-void rudp_send_fin(struct rudp_session *r);
+/* log.c */
+void init_logging(int enabled);
+void write_log(const char *message);
+long get_current_ms(void);
 
-#endif /* MASTERMIND_H */
+/* discovery.c */
+int create_discovery_socket(int port);
+int send_discovery_broadcast(int udp_fd, int discovery_port, int my_game_port,
+                             const char *my_name);
+int receive_discovery_packet(int udp_fd, int my_game_port, const char *my_name,
+                             struct peer_entry peers[MM_MAX_PEERS],
+                             int *next_id);
+int remove_expired_peers(struct peer_entry peers[MM_MAX_PEERS]);
+struct peer_entry *find_peer_by_id(struct peer_entry peers[MM_MAX_PEERS],
+                                   int id);
+void print_online_players(struct peer_entry peers[MM_MAX_PEERS]);
+
+/* game.c */
+void init_board(struct board_state *b, int role);
+int is_valid_sequence(const char *s);
+int is_valid_feedback(const char *s);
+void calculate_feedback(const char *master_seq, const char *guess,
+                        char out_fb[MM_SEQ_LEN + 1]);
+void print_board(const struct board_state *b);
+
+/* net_tcp.c */
+void tcp_init(struct tcp_session *s);
+void tcp_close(struct tcp_session *s);
+int tcp_connect_to_peer(const char *ip, int port);
+int tcp_send_line(struct tcp_session *s, const char *line);
+int tcp_read_line(struct tcp_session *s, int do_recv, char *out_line,
+                  int max_len);
+
+/* net_rudp.c */
+void rudp_init(struct rudp_session *r, int udp_fd);
+void rudp_set_peer(struct rudp_session *r, const char *ip, int port);
+void rudp_reset(struct rudp_session *r);
+void pack_chunk(const struct chunk_pkt *pkt, char buf[MM_CHUNK_PKT_SIZE]);
+int unpack_chunk(const char *buf, int len, struct chunk_pkt *pkt);
+int rudp_send_message(struct rudp_session *r, const char *msg);
+int rudp_handle_incoming(struct rudp_session *r, char *out_msg, int max_len);
+int rudp_get_ready_message(struct rudp_session *r, char *out_msg, int max_len);
+int rudp_check_timers(struct rudp_session *r);
+void rudp_send_disconnect(struct rudp_session *r);
+
+#endif

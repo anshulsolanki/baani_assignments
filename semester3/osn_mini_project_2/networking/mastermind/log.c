@@ -1,50 +1,51 @@
 #include "mastermind.h"
 
-#include <stdarg.h>
 #include <stdio.h>
 #include <sys/time.h>
 #include <time.h>
 
-static bool g_log_enabled = false;
+static int g_log_enabled = 0;
 
 void
-log_init(bool enabled)
+init_logging(int enabled)
 {
   g_log_enabled = enabled;
 }
 
-uint64_t
-now_ms(void)
+long
+get_current_ms(void)
 {
   struct timeval tv;
-  gettimeofday(&tv, nullptr);
-  return (uint64_t)tv.tv_sec * 1000ULL + (uint64_t)(tv.tv_usec / 1000);
+  gettimeofday(&tv, NULL);
+  return (long)tv.tv_sec * 1000L + (long)(tv.tv_usec / 1000L);
 }
 
 void
-log_event(const char *fmt, ...)
+write_log(const char *message)
 {
   if (!g_log_enabled) {
     return;
   }
 
-  FILE *fp = fopen("log.txt", "a");
-  if (fp == nullptr) {
+  FILE *log_file = fopen("log.txt", "a");
+  if (log_file == NULL) {
     return;
   }
 
+  // Inside your logging function
+  char time_buffer[30];
   struct timeval tv;
-  gettimeofday(&tv, nullptr);
+  time_t curtime;
 
-  char buf[64];
-  strftime(buf, sizeof(buf), "%Y-%m-%d %H:%M:%S", localtime(&tv.tv_sec));
-  fprintf(fp, "[%s.%06ld] ", buf, (long)tv.tv_usec);
+  gettimeofday(&tv, NULL);
+  curtime = tv.tv_sec;
 
-  va_list ap;
-  va_start(ap, fmt);
-  vfprintf(fp, fmt, ap);
-  va_end(ap);
+  // Format the time part
+  strftime(time_buffer, 30, "%Y-%m-%d %H:%M:%S", localtime(&curtime));
 
-  fprintf(fp, "\n");
-  fclose(fp);
+  // Add microseconds and print to the log file
+  fprintf(log_file, "[%s.%06ld] [LOG] %s\n", time_buffer, (long)tv.tv_usec,
+          message);
+
+  fclose(log_file);
 }

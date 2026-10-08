@@ -8,25 +8,25 @@
 #include <unistd.h>
 
 void
-tcp_session_init(struct tcp_session *s)
+tcp_init(struct tcp_session *s)
 {
   s->fd = -1;
-  s->rx_len = 0;
-  memset(s->rx_buf, 0, sizeof(s->rx_buf));
+  s->buf_len = 0;
+  memset(s->buf, 0, sizeof(s->buf));
 }
 
 void
-tcp_session_close(struct tcp_session *s)
+tcp_close(struct tcp_session *s)
 {
   if (s->fd >= 0) {
     close(s->fd);
     s->fd = -1;
   }
-  s->rx_len = 0;
+  s->buf_len = 0;
 }
 
 int
-tcp_connect_peer(const char *ip, uint16_t port)
+tcp_connect_to_peer(const char *ip, int port)
 {
   int fd = socket(AF_INET, SOCK_STREAM, 0);
   if (fd < 0) {
@@ -36,7 +36,7 @@ tcp_connect_peer(const char *ip, uint16_t port)
   struct sockaddr_in addr;
   memset(&addr, 0, sizeof(addr));
   addr.sin_family = AF_INET;
-  addr.sin_port = htons(port);
+  addr.sin_port = htons((uint16_t)port);
   if (inet_pton(AF_INET, ip, &addr.sin_addr) <= 0) {
     close(fd);
     return -1;
@@ -51,21 +51,22 @@ tcp_connect_peer(const char *ip, uint16_t port)
 }
 
 int
-tcp_send_msg(struct tcp_session *s, const char *msg)
+tcp_send_line(struct tcp_session *s, const char *line)
 {
-  if (s == nullptr || s->fd < 0 || msg == nullptr) {
+  if (s == NULL || s->fd < 0 || line == NULL) {
     return -1;
   }
 
-  char line[512];
-  int len = snprintf(line, sizeof(line), "%s\n", msg);
-  if (len < 0 || (size_t)len >= sizeof(line)) {
+  char out_buf[512];
+  int len = snprintf(out_buf, sizeof(out_buf), "%s\n", line);
+  if (len < 0 || len >= (int)sizeof(out_buf)) {
     return -1;
   }
 
-  size_t total = 0;
-  while (total < (size_t)len) {
-    ssize_t n = send(s->fd, line + total, (size_t)len - total, 0);
+  int total_sent = 0;
+  while (total_sent < len) {
+    ssize_t n = send(s->fd, out_buf + total_sent,
+                     (size_t)(len - total_sent), 0);
     if (n < 0) {
       if (errno == EINTR) {
         continue;
@@ -75,62 +76,68 @@ tcp_send_msg(struct tcp_session *s, const char *msg)
     if (n == 0) {
       return -1;
     }
-    total += (size_t)n;
+    total_sent += (int)n;
   }
 
-  log_event("TCP_TX fd=%d msg=\"%s\"", s->fd, msg);
+  char log_msg[300];
+  snprintf(log_msg, sizeof(log_msg), "TCP sent: %s", line);
+  write_log(log_msg);
   return 0;
 }
 
-static bool
-extract_buffered_line(struct tcp_session *s, char *out_line, size_t max_len)
+/* Check if s->buf already contains a newline-terminated message */
+static int
+pop_line_from_buffer(struct tcp_session *s, char *out_line, int max_len)
 {
-  for (size_t i = 0; i < s->rx_len; i++) {
-    if (s->rx_buf[i] == '\n') {
-      size_t copy_len = i;
-      if (copy_len > 0 && s->rx_buf[copy_len - 1] == '\r') {
+  for (int i = 0; i < s->buf_len; i++) {
+    if (s->buf[i] == '\n') {
+      int copy_len = i;
+      if (copy_len > 0 && s->buf[copy_len - 1] == '\r') {
         copy_len--;
       }
       if (copy_len >= max_len) {
         copy_len = max_len - 1;
       }
-      memcpy(out_line, s->rx_buf, copy_len);
+
+      memcpy(out_line, s->buf, (size_t)copy_len);
       out_line[copy_len] = '\0';
 
-      size_t consumed = i + 1;
-      memmove(s->rx_buf, s->rx_buf + consumed, s->rx_len - consumed);
-      s->rx_len -= consumed;
+      int remaining = s->buf_len - (i + 1);
+      if (remaining > 0) {
+        memmove(s->buf, s->buf + i + 1, (size_t)remaining);
+      }
+      s->buf_len = remaining;
 
-      log_event("TCP_RX fd=%d msg=\"%s\"", s->fd, out_line);
-      return true;
+      char log_msg[300];
+      snprintf(log_msg, sizeof(log_msg), "TCP received: %s", out_line);
+      write_log(log_msg);
+      return 1;
     }
   }
-  return false;
+  return 0;
 }
 
 int
-tcp_recv_line(struct tcp_session *s, bool do_read, char *out_line,
-              size_t max_len)
+tcp_read_line(struct tcp_session *s, int do_recv, char *out_line, int max_len)
 {
-  if (s == nullptr || s->fd < 0) {
+  if (s == NULL || s->fd < 0) {
     return -1;
   }
 
-  /* First check if a full line is already buffered from an earlier recv() */
-  if (extract_buffered_line(s, out_line, max_len)) {
+  if (pop_line_from_buffer(s, out_line, max_len)) {
     return 1;
   }
 
-  if (!do_read) {
+  if (!do_recv) {
     return 0;
   }
 
-  if (s->rx_len >= sizeof(s->rx_buf) - 1) {
-    s->rx_len = 0;
+  if (s->buf_len >= (int)sizeof(s->buf) - 1) {
+    s->buf_len = 0;
   }
 
-  ssize_t n = recv(s->fd, s->rx_buf + s->rx_len,
-                   sizeof(s->rx_buf) - s->rx_len - 1, 0);
+  ssize_t n = recv(s->fd, s->buf + s->buf_len,
+                   sizeof(s->buf) - (size_t)s->buf_len - 1, 0);
   if (n < 0) {
     if (errno == EINTR || errno == EAGAIN || errno == EWOULDBLOCK) {
       return 0;
@@ -138,12 +145,12 @@ tcp_recv_line(struct tcp_session *s, bool do_read, char *out_line,
     return -1;
   }
   if (n == 0) {
-    /* Peer closed TCP connection (EOF) */
+    /* Peer closed the TCP socket */
     return -1;
   }
 
-  s->rx_len += (size_t)n;
-  if (extract_buffered_line(s, out_line, max_len)) {
+  s->buf_len += (int)n;
+  if (pop_line_from_buffer(s, out_line, max_len)) {
     return 1;
   }
   return 0;

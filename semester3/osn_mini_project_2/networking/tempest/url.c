@@ -1,37 +1,50 @@
 #include "tempest.h"
 
-#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-static bool
-is_unreserved(unsigned char c)
+/* Check if character is safe to keep unencoded in a URL */
+static int
+is_safe_url_char(char c)
 {
-  return isalnum(c) || c == '-' || c == '_' || c == '.' || c == '~';
+  if (c >= 'a' && c <= 'z') {
+    return 1;
+  }
+  if (c >= 'A' && c <= 'Z') {
+    return 1;
+  }
+  if (c >= '0' && c <= '9') {
+    return 1;
+  }
+  if (c == '-' || c == '_' || c == '.' || c == '~') {
+    return 1;
+  }
+  return 0;
 }
 
 char *
-url_encode(const char *str)
+url_encode(const char *city)
 {
-  if (str == nullptr) {
-    return nullptr;
+  if (city == NULL) {
+    return NULL;
   }
 
-  size_t len = strlen(str);
-  /* Worst case: every character expands to %XX (3 bytes) + null terminator */
-  char *encoded = malloc(len * 3 + 1);
-  if (encoded == nullptr) {
-    return nullptr;
+  int len = (int)strlen(city);
+  /* Each character takes at most 3 bytes (%XX) plus 1 byte for '\0' */
+  char *encoded = (char *)malloc((size_t)(len * 3 + 1));
+  if (encoded == NULL) {
+    return NULL;
   }
 
-  size_t j = 0;
-  for (size_t i = 0; i < len; i++) {
-    unsigned char c = (unsigned char)str[i];
-    if (is_unreserved(c)) {
-      encoded[j++] = (char)c;
+  int j = 0;
+  for (int i = 0; i < len; i++) {
+    unsigned char c = (unsigned char)city[i];
+    if (is_safe_url_char((char)c)) {
+      encoded[j] = (char)c;
+      j++;
     } else {
-      snprintf(&encoded[j], 4, "%%%02X", c);
+      sprintf(&encoded[j], "%%%02X", c);
       j += 3;
     }
   }

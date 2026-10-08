@@ -9,10 +9,13 @@
 #include <sys/socket.h>
 #include <unistd.h>
 
+/* Bind a listening TCP socket (or UDP socket in --cost-cutting mode) on an
+ * available port and return the port number via *out_port. */
 static int
-bind_ephemeral_tcp_or_udp(bool use_udp, uint16_t *out_port)
+create_game_socket(int cost_cutting, int *out_port)
 {
-  int fd = socket(AF_INET, use_udp ? SOCK_DGRAM : SOCK_STREAM, 0);
+  int type = cost_cutting ? SOCK_DGRAM : SOCK_STREAM;
+  int fd = socket(AF_INET, type, 0);
   if (fd < 0) {
     return -1;
   }
@@ -31,9 +34,11 @@ bind_ephemeral_tcp_or_udp(bool use_udp, uint16_t *out_port)
     return -1;
   }
 
-  if (!use_udp && listen(fd, 8) < 0) {
-    close(fd);
-    return -1;
+  if (!cost_cutting) {
+    if (listen(fd, 5) < 0) {
+      close(fd);
+      return -1;
+    }
   }
 
   socklen_t len = sizeof(addr);
@@ -42,544 +47,490 @@ bind_ephemeral_tcp_or_udp(bool use_udp, uint16_t *out_port)
     return -1;
   }
 
-  *out_port = ntohs(addr.sin_port);
+  *out_port = (int)ntohs(addr.sin_port);
   return fd;
 }
 
 static void
-trim_newline(char *s)
+strip_newline(char *s)
 {
-  size_t len = strlen(s);
+  int len = (int)strlen(s);
   while (len > 0 && (s[len - 1] == '\n' || s[len - 1] == '\r')) {
-    s[--len] = '\0';
+    s[len - 1] = '\0';
+    len--;
   }
 }
 
 static int
-session_send(bool cost_cutting, struct tcp_session *tcp,
-             struct rudp_session *rudp, const char *msg)
+send_game_msg(int cost_cutting, struct tcp_session *tcp,
+              struct rudp_session *rudp, const char *msg)
 {
   if (cost_cutting) {
-    return rudp_send_msg(rudp, msg);
+    return rudp_send_message(rudp, msg);
   }
-  return tcp_send_msg(tcp, msg);
+  return tcp_send_line(tcp, msg);
 }
 
 static void
-session_close_or_reset(bool cost_cutting, struct tcp_session *tcp,
-                       struct rudp_session *rudp)
+close_game_session(int cost_cutting, struct tcp_session *tcp,
+                   struct rudp_session *rudp)
 {
   if (cost_cutting) {
-    rudp_session_reset(rudp);
+    rudp_reset(rudp);
   } else {
-    tcp_session_close(tcp);
+    tcp_close(tcp);
   }
 }
 
 static void
-process_session_message(const char *msg, bool cost_cutting,
-                        enum app_phase *phase, struct board_state *board,
-                        struct tcp_session *tcp, struct rudp_session *rudp,
-                        char opponent_name[MM_MAX_NAME_LEN],
-                        const struct peer_entry peers[MM_MAX_PEERS])
+handle_game_message(const char *msg, int cost_cutting, int *phase,
+                    struct board_state *board, struct tcp_session *tcp,
+                    struct rudp_session *rudp, char opponent_name[MM_NAME_LEN],
+                    struct peer_entry peers[MM_MAX_PEERS])
 {
-  if (*phase == PHASE_LOBBY && cost_cutting &&
-      strncmp(msg, VERB_CHALLENGE " ", strlen(VERB_CHALLENGE) + 1) == 0) {
-    snprintf(opponent_name, MM_MAX_NAME_LEN, "%s",
-             msg + strlen(VERB_CHALLENGE) + 1);
-    *phase = PHASE_PROMPT_CHALLENGE_REQ;
-    printf("\n%s has challenged you! Accept challenge? (yes/no): ",
-           opponent_name);
-    fflush(stdout);
-    return;
-  }
-
-  if (*phase == PHASE_PROMPT_CHALLENGE_REQ &&
-      strncmp(msg, VERB_CHALLENGE " ", strlen(VERB_CHALLENGE) + 1) == 0) {
-    printf("\n%s has challenged you! Accept challenge? (yes/no): ",
-           opponent_name);
-    fflush(stdout);
-    return;
-  }
-
-  if (*phase == PHASE_WAIT_CHALLENGE_RESP) {
-    if (strcmp(msg, VERB_ACCEPT) == 0) {
-      game_init_board(board, ROLE_MASTERMIND);
-      *phase = PHASE_MASTER_ENTER_SECRET;
-      game_render_board(board, opponent_name,
-                        "Enter 5-digit master sequence (0-9): ");
-    } else if (strcmp(msg, VERB_REJECT) == 0) {
-      session_close_or_reset(cost_cutting, tcp, rudp);
-      *phase = PHASE_LOBBY;
-      discovery_render_lobby(peers);
-      printf("%s declined your challenge.\n> ", opponent_name);
+  /* Incoming CHALLENGE <name> */
+  if (strncmp(msg, "CHALLENGE ", 10) == 0) {
+    if (*phase == PHASE_LOBBY || *phase == PHASE_ASK_CHALLENGE_ACCEPT) {
+      strncpy(opponent_name, msg + 10, MM_NAME_LEN - 1);
+      opponent_name[MM_NAME_LEN - 1] = '\0';
+      *phase = PHASE_ASK_CHALLENGE_ACCEPT;
+      printf("\nChallenge from %s! Type 'yes' to accept or 'no' to reject: ",
+             opponent_name);
       fflush(stdout);
     }
     return;
   }
 
-  if (*phase == PHASE_WAIT_MASTER_READY && strcmp(msg, VERB_READY) == 0) {
-    *phase = PHASE_BREAKER_ENTER_GUESS;
-    game_render_board(board, opponent_name,
-                      "Your turn! Enter 5-digit guess (0-9): ");
-    return;
-  }
-
-  if (*phase == PHASE_WAIT_BREAKER_GUESS &&
-      strncmp(msg, VERB_GUESS " ", strlen(VERB_GUESS) + 1) == 0) {
-    const char *guess = msg + strlen(VERB_GUESS) + 1;
-    if (board->num_attempts < MM_MAX_ATTEMPTS &&
-        game_validate_sequence(guess)) {
-      int idx = board->num_attempts;
-      snprintf(board->guesses[idx], sizeof(board->guesses[idx]), "%s", guess);
-      board->feedback_ready[idx] = false;
-      board->num_attempts++;
-      *phase = PHASE_MASTER_ENTER_FEEDBACK;
-
-      char exp_fb[MM_SEQ_LEN + 1];
-      game_compute_expected_feedback(board->master_seq, guess, exp_fb);
-      char prompt[160];
-      snprintf(prompt, sizeof(prompt),
-               "Codebreaker guessed %s. Enter 5-char feedback [x/o/-] "
-               "(expected %s): ",
-               guess, exp_fb);
-      game_render_board(board, opponent_name, prompt);
+  /* Response to our challenge: ACCEPT or REJECT */
+  if (*phase == PHASE_WAIT_CHALLENGE_REPLY) {
+    if (strcmp(msg, "ACCEPT") == 0) {
+      init_board(board, ROLE_MASTERMIND);
+      *phase = PHASE_MASTER_SET_SECRET;
+      print_board(board);
+      printf("Enter 5-digit master sequence: ");
+      fflush(stdout);
+    } else if (strcmp(msg, "REJECT") == 0) {
+      close_game_session(cost_cutting, tcp, rudp);
+      *phase = PHASE_LOBBY;
+      print_online_players(peers);
     }
     return;
   }
 
-  if (*phase == PHASE_WAIT_MASTER_FEEDBACK &&
-      strncmp(msg, VERB_FEEDBACK " ", strlen(VERB_FEEDBACK) + 1) == 0) {
-    const char *fb = msg + strlen(VERB_FEEDBACK) + 1;
-    if (board->num_attempts > 0 && game_validate_feedback(fb)) {
-      int idx = board->num_attempts - 1;
-      snprintf(board->feedbacks[idx], sizeof(board->feedbacks[idx]), "%s", fb);
-      board->feedback_ready[idx] = true;
+  /* Mastermind has set the secret sequence: READY */
+  if (*phase == PHASE_WAIT_MASTER_SECRET && strcmp(msg, "READY") == 0) {
+    *phase = PHASE_BREAKER_GUESS;
+    print_board(board);
+    printf("Enter 5-digit attempt: ");
+    fflush(stdout);
+    return;
+  }
 
-      if (strcmp(fb, "xxxxx") == 0) {
-        board->breaker_won = true;
-      } else if (board->num_attempts < MM_MAX_ATTEMPTS) {
-        *phase = PHASE_BREAKER_ENTER_GUESS;
-        game_render_board(board, opponent_name,
-                          "Your turn! Enter 5-digit guess (0-9): ");
+  /* Codebreaker sent an attempt: GUESS <5digits> */
+  if (*phase == PHASE_WAIT_BREAKER_GUESS && strncmp(msg, "GUESS ", 6) == 0) {
+    const char *guess = msg + 6;
+    if (board->num_attempts < MM_MAX_ATTEMPTS && is_valid_sequence(guess)) {
+      int idx = board->num_attempts;
+      strcpy(board->guesses[idx], guess);
+      board->has_feedback[idx] = 0;
+      board->num_attempts++;
+      *phase = PHASE_MASTER_FEEDBACK;
+
+      char expected[MM_SEQ_LEN + 1];
+      calculate_feedback(board->master_seq, guess, expected);
+      print_board(board);
+      printf("Enter feedback for %s (expected %s): ", guess, expected);
+      fflush(stdout);
+    }
+    return;
+  }
+
+  /* Mastermind sent feedback: FEEDBACK <5chars> */
+  if (*phase == PHASE_WAIT_MASTER_FEEDBACK &&
+      strncmp(msg, "FEEDBACK ", 9) == 0) {
+    const char *fb = msg + 9;
+    if (board->num_attempts > 0 && is_valid_feedback(fb)) {
+      int idx = board->num_attempts - 1;
+      strcpy(board->feedbacks[idx], fb);
+      board->has_feedback[idx] = 1;
+
+      if (strcmp(fb, "xxxxx") != 0 && board->num_attempts < MM_MAX_ATTEMPTS) {
+        *phase = PHASE_BREAKER_GUESS;
+        print_board(board);
+        printf("Enter 5-digit attempt: ");
+        fflush(stdout);
+      } else {
+        print_board(board);
       }
     }
     return;
   }
 
-  if (strncmp(msg, VERB_GAMEOVER " ", strlen(VERB_GAMEOVER) + 1) == 0) {
-    const char *secret = msg + strlen(VERB_GAMEOVER) + 1;
-    if (game_validate_sequence(secret)) {
-      snprintf(board->master_seq, sizeof(board->master_seq), "%s", secret);
-      board->master_seq_known = true;
+  /* Game ended: GAMEOVER <master_seq> */
+  if (strncmp(msg, "GAMEOVER ", 9) == 0) {
+    const char *secret = msg + 9;
+    if (is_valid_sequence(secret)) {
+      strcpy(board->master_seq, secret);
+      board->show_master_seq = 1;
     }
-    if (board->num_attempts > 0 &&
-        strcmp(board->feedbacks[board->num_attempts - 1], "xxxxx") == 0) {
-      board->breaker_won = true;
-    }
-    session_close_or_reset(cost_cutting, tcp, rudp);
+    close_game_session(cost_cutting, tcp, rudp);
     *phase = PHASE_GAME_OVER;
-    char status[160];
-    if (board->breaker_won) {
-      snprintf(status, sizeof(status),
-               "You cracked the code (%s) in %d attempts! Press Enter to "
-               "return to lobby.",
-               board->master_seq, board->num_attempts);
-    } else {
-      snprintf(status, sizeof(status),
-               "Out of attempts! Master sequence was %s. Press Enter to "
-               "return to lobby.",
-               board->master_seq);
-    }
-    game_render_board(board, opponent_name, status);
-    return;
-  }
-
-  if (strcmp(msg, VERB_DISCONNECT) == 0) {
-    session_close_or_reset(cost_cutting, tcp, rudp);
-    *phase = PHASE_PEER_DISCONNECTED;
-    printf("\n%s disconnected. Press enter to go home.\n", opponent_name);
+    print_board(board);
+    printf("Game over! Press Enter to return to homepage.\n");
     fflush(stdout);
+    return;
   }
 }
 
 int
 main(int argc, char *argv[])
 {
-  bool cost_cutting = false;
-  bool log_enabled = false;
+  int cost_cutting = 0;
+  int log_enabled = 0;
 
   for (int i = 1; i < argc; i++) {
     if (strcmp(argv[i], "--cost-cutting") == 0) {
-      cost_cutting = true;
+      cost_cutting = 1;
     } else if (strcmp(argv[i], "--log") == 0) {
-      log_enabled = true;
+      log_enabled = 1;
     } else {
-      fprintf(stderr, "Usage: %s [--cost-cutting] [--log]\n", argv[0]);
+      printf("Usage: %s [--cost-cutting] [--log]\n", argv[0]);
       return 1;
     }
   }
 
   signal(SIGPIPE, SIG_IGN);
-  log_init(log_enabled);
+  init_logging(log_enabled);
 
-  char my_name[MM_MAX_NAME_LEN];
-  printf("Enter your player name: ");
+  char my_name[MM_NAME_LEN];
+  printf("Enter your name: ");
   fflush(stdout);
-  if (fgets(my_name, sizeof(my_name), stdin) == nullptr) {
+  if (fgets(my_name, sizeof(my_name), stdin) == NULL) {
     return 0;
   }
-  trim_newline(my_name);
+  strip_newline(my_name);
   if (my_name[0] == '\0') {
-    snprintf(my_name, sizeof(my_name), "Player");
+    strcpy(my_name, "Player");
   }
 
-  uint16_t my_game_port = 0;
-  int listen_fd = bind_ephemeral_tcp_or_udp(cost_cutting, &my_game_port);
-  if (listen_fd < 0) {
-    perror("bind game socket");
+  int my_game_port = 0;
+  int game_listen_fd = create_game_socket(cost_cutting, &my_game_port);
+  if (game_listen_fd < 0) {
+    perror("create_game_socket");
     return 1;
   }
 
-  int disc_fd = discovery_init_socket(MM_DISCOVERY_PORT);
+  int disc_fd = create_discovery_socket(MM_DISCOVERY_PORT);
   if (disc_fd < 0) {
-    perror("bind discovery socket");
-    close(listen_fd);
+    perror("create_discovery_socket");
+    close(game_listen_fd);
     return 1;
   }
 
-  log_event("STARTUP name=\"%s\" game_port=%u mode=%s", my_name,
-            (unsigned)my_game_port,
-            cost_cutting ? "UDP(--cost-cutting)" : "TCP");
+  char start_log[128];
+  snprintf(start_log, sizeof(start_log),
+           "Started mastermind as %s on port %d", my_name, my_game_port);
+  write_log(start_log);
 
   struct peer_entry peers[MM_MAX_PEERS];
   memset(peers, 0, sizeof(peers));
   int next_peer_id = 1;
 
-  enum app_phase phase = PHASE_LOBBY;
+  int phase = PHASE_LOBBY;
   struct tcp_session tcp;
-  tcp_session_init(&tcp);
+  tcp_init(&tcp);
   struct rudp_session rudp;
-  rudp_session_init(&rudp, listen_fd);
+  rudp_init(&rudp, game_listen_fd);
   struct board_state board;
-  game_init_board(&board, ROLE_NONE);
-  char opponent_name[MM_MAX_NAME_LEN] = {0};
+  init_board(&board, ROLE_NONE);
+  char opponent_name[MM_NAME_LEN] = "";
 
-  uint64_t last_broadcast_ms = 0;
-  uint64_t last_lobby_render_ms = 0;
+  long last_bcast_ms = get_current_ms();
+  send_discovery_broadcast(disc_fd, MM_DISCOVERY_PORT, my_game_port, my_name);
+  print_online_players(peers);
 
-  discovery_send_broadcast(disc_fd, MM_DISCOVERY_PORT, my_game_port, my_name);
-  last_broadcast_ms = now_ms();
-  discovery_render_lobby(peers);
-  last_lobby_render_ms = last_broadcast_ms;
-
-  for (;;) {
+  while (1) {
     struct pollfd pfds[4];
-    nfds_t nfds = 0;
+    int nfds = 0;
 
+    /* 0: Standard input */
     pfds[nfds].fd = STDIN_FILENO;
     pfds[nfds].events = POLLIN;
     pfds[nfds].revents = 0;
     nfds++;
 
+    /* 1: UDP broadcast discovery socket */
     pfds[nfds].fd = disc_fd;
     pfds[nfds].events = POLLIN;
     pfds[nfds].revents = 0;
     nfds++;
 
+    /* 2: Listening TCP socket (when in lobby and not in --cost-cutting mode) */
     int listen_idx = -1;
     if (!cost_cutting && phase == PHASE_LOBBY) {
-      listen_idx = (int)nfds;
-      pfds[nfds].fd = listen_fd;
+      listen_idx = nfds;
+      pfds[nfds].fd = game_listen_fd;
       pfds[nfds].events = POLLIN;
       pfds[nfds].revents = 0;
       nfds++;
     }
 
+    /* 3: Active game session socket (TCP or UDP --cost-cutting) */
     int session_idx = -1;
     if (cost_cutting) {
-      session_idx = (int)nfds;
-      pfds[nfds].fd = listen_fd;
+      session_idx = nfds;
+      pfds[nfds].fd = game_listen_fd;
       pfds[nfds].events = POLLIN;
       pfds[nfds].revents = 0;
       nfds++;
     } else if (tcp.fd >= 0) {
-      session_idx = (int)nfds;
+      session_idx = nfds;
       pfds[nfds].fd = tcp.fd;
       pfds[nfds].events = POLLIN;
       pfds[nfds].revents = 0;
       nfds++;
     }
 
-    /* Poll every 25 ms in --cost-cutting mode so 0.1s (100 ms) chunk
-     * retransmissions fire accurately. */
     int timeout_ms = cost_cutting ? 25 : 200;
-    int ready = poll(pfds, nfds, timeout_ms);
+    int ready = poll(pfds, (nfds_t)nfds, timeout_ms);
     if (ready < 0) {
       continue;
     }
 
-    uint64_t now = now_ms();
-    if (now - last_broadcast_ms >= MM_BROADCAST_INT_MS) {
-      discovery_send_broadcast(disc_fd, MM_DISCOVERY_PORT, my_game_port,
+    long now = get_current_ms();
+
+    /* Broadcast our presence every 2 seconds */
+    if (now - last_bcast_ms >= MM_BROADCAST_MS) {
+      send_discovery_broadcast(disc_fd, MM_DISCOVERY_PORT, my_game_port,
                                my_name);
-      last_broadcast_ms = now;
+      last_bcast_ms = now;
     }
 
-    bool updated = discovery_expire_peers(peers);
+    /* Expire peers not seen for 5 seconds and process incoming broadcasts */
+    int list_changed = remove_expired_peers(peers);
     if (pfds[1].revents & POLLIN) {
-      if (discovery_handle_packet(disc_fd, my_game_port, my_name, peers,
-                                  &next_peer_id)) {
-        updated = true;
+      if (receive_discovery_packet(disc_fd, my_game_port, my_name, peers,
+                                   &next_peer_id)) {
+        list_changed = 1;
       }
     }
 
-    if (phase == PHASE_LOBBY &&
-        (updated || (now - last_lobby_render_ms >= 1000))) {
-      discovery_render_lobby(peers);
-      last_lobby_render_ms = now;
+    /* Clear and reprint the discovery list whenever a broadcast arrives or expires */
+    if (phase == PHASE_LOBBY && list_changed) {
+      print_online_players(peers);
     }
 
-    /* Handle incoming TCP challenge connection */
+    /* Accept incoming TCP connection for a challenge */
     if (!cost_cutting && listen_idx >= 0 &&
         (pfds[listen_idx].revents & POLLIN)) {
       struct sockaddr_in cli_addr;
       socklen_t cli_len = sizeof(cli_addr);
-      int cfd = accept(listen_fd, (struct sockaddr *)&cli_addr, &cli_len);
+      int cfd = accept(game_listen_fd, (struct sockaddr *)&cli_addr, &cli_len);
       if (cfd >= 0) {
-        tcp_session_init(&tcp);
+        tcp_init(&tcp);
         tcp.fd = cfd;
-        phase = PHASE_PROMPT_CHALLENGE_REQ;
+        phase = PHASE_ASK_CHALLENGE_ACCEPT;
       }
     }
 
-    /* Handle incoming session traffic (TCP or RUDP --cost-cutting) */
+    /* Read incoming game messages over TCP or Reliable UDP */
     if (session_idx >= 0 &&
         (pfds[session_idx].revents & (POLLIN | POLLHUP | POLLERR))) {
       if (cost_cutting) {
         char msg[256];
-        int rc = rudp_recv_packet(&rudp, msg, sizeof(msg));
+        int rc = rudp_handle_incoming(&rudp, msg, sizeof(msg));
         while (rc == 1) {
-          process_session_message(msg, cost_cutting, &phase, &board, &tcp,
-                                  &rudp, opponent_name, peers);
-          if (!rudp.peer_known) {
+          handle_game_message(msg, cost_cutting, &phase, &board, &tcp, &rudp,
+                              opponent_name, peers);
+          if (!rudp.has_peer) {
             break;
           }
-          rc = rudp_pop_ready_msg(&rudp, msg, sizeof(msg));
+          rc = rudp_get_ready_message(&rudp, msg, sizeof(msg));
         }
-        if (rc < 0 && phase != PHASE_GAME_OVER && phase != PHASE_LOBBY) {
-          rudp_session_reset(&rudp);
-          phase = PHASE_PEER_DISCONNECTED;
+        if (rc < 0 && phase != PHASE_LOBBY && phase != PHASE_GAME_OVER) {
+          rudp_reset(&rudp);
+          phase = PHASE_DISCONNECTED;
           printf("\n%s disconnected. Press enter to go home.\n", opponent_name);
           fflush(stdout);
         }
       } else {
         char msg[256];
-        int rc = tcp_recv_line(&tcp, true, msg, sizeof(msg));
+        int rc = tcp_read_line(&tcp, 1, msg, sizeof(msg));
         while (rc == 1) {
-          if (phase == PHASE_PROMPT_CHALLENGE_REQ &&
-              strncmp(msg, VERB_CHALLENGE " ", strlen(VERB_CHALLENGE) + 1) ==
-                  0) {
-            snprintf(opponent_name, sizeof(opponent_name), "%s",
-                     msg + strlen(VERB_CHALLENGE) + 1);
-          }
-          process_session_message(msg, cost_cutting, &phase, &board, &tcp,
-                                  &rudp, opponent_name, peers);
+          handle_game_message(msg, cost_cutting, &phase, &board, &tcp, &rudp,
+                              opponent_name, peers);
           if (tcp.fd < 0) {
             break;
           }
-          rc = tcp_recv_line(&tcp, false, msg, sizeof(msg));
+          rc = tcp_read_line(&tcp, 0, msg, sizeof(msg));
         }
-
-        if (rc < 0 && phase != PHASE_GAME_OVER && phase != PHASE_LOBBY) {
-          tcp_session_close(&tcp);
-          phase = PHASE_PEER_DISCONNECTED;
+        if (rc < 0 && phase != PHASE_LOBBY && phase != PHASE_GAME_OVER) {
+          tcp_close(&tcp);
+          phase = PHASE_DISCONNECTED;
           printf("\n%s disconnected. Press enter to go home.\n", opponent_name);
           fflush(stdout);
         }
       }
     }
 
-    /* Check RUDP 0.1s retransmission timers and UDP peer liveness */
-    if (cost_cutting && rudp.peer_known && phase != PHASE_LOBBY &&
-        phase != PHASE_GAME_OVER && phase != PHASE_PEER_DISCONNECTED) {
-      if (rudp_tick(&rudp) < 0) {
-        rudp_session_reset(&rudp);
-        phase = PHASE_PEER_DISCONNECTED;
+    /* Check 0.1s chunk retransmission timer and peer timeout in --cost-cutting mode */
+    if (cost_cutting && rudp.has_peer && phase != PHASE_LOBBY &&
+        phase != PHASE_GAME_OVER && phase != PHASE_DISCONNECTED) {
+      if (rudp_check_timers(&rudp) < 0) {
+        rudp_reset(&rudp);
+        phase = PHASE_DISCONNECTED;
         printf("\n%s disconnected. Press enter to go home.\n", opponent_name);
         fflush(stdout);
       }
     }
 
-    /* Handle user stdin input */
+    /* Handle keyboard input from player */
     if (pfds[0].revents & POLLIN) {
       char line[128];
-      if (fgets(line, sizeof(line), stdin) == nullptr) {
-        if (cost_cutting && rudp.peer_known) {
-          rudp_send_fin(&rudp);
+      if (fgets(line, sizeof(line), stdin) == NULL) {
+        if (cost_cutting && rudp.has_peer) {
+          rudp_send_disconnect(&rudp);
         }
         break;
       }
-      trim_newline(line);
+      strip_newline(line);
 
       if (phase == PHASE_LOBBY) {
-        if (strcmp(line, "quit") == 0 || strcmp(line, "exit") == 0) {
-          break;
-        }
         if (strncmp(line, "challenge ", 10) == 0) {
-          int target_id = atoi(line + 10);
-          const struct peer_entry *p = discovery_find_peer(peers, target_id);
-          if (p == nullptr) {
-            printf("Invalid player ID: %d\n> ", target_id);
-            fflush(stdout);
-          } else if (cost_cutting) {
-            rudp_session_reset(&rudp);
-            rudp_session_set_peer(&rudp, p->ip, p->port);
-            snprintf(opponent_name, sizeof(opponent_name), "%s", p->name);
-            char out[128];
-            snprintf(out, sizeof(out), "%s %s", VERB_CHALLENGE, my_name);
-            session_send(cost_cutting, &tcp, &rudp, out);
-            phase = PHASE_WAIT_CHALLENGE_RESP;
-            printf("Waiting for %s to respond to challenge...\n",
-                   opponent_name);
+          int id = atoi(line + 10);
+          struct peer_entry *p = find_peer_by_id(peers, id);
+          if (p == NULL) {
+            printf("Player ID %d not found.\n> ", id);
             fflush(stdout);
           } else {
-            int cfd = tcp_connect_peer(p->ip, p->port);
-            if (cfd < 0) {
-              printf("Failed to connect to %s.\n> ", p->name);
-              fflush(stdout);
-            } else {
-              tcp_session_init(&tcp);
-              tcp.fd = cfd;
-              snprintf(opponent_name, sizeof(opponent_name), "%s", p->name);
-              char out[128];
-              snprintf(out, sizeof(out), "%s %s", VERB_CHALLENGE, my_name);
-              session_send(cost_cutting, &tcp, &rudp, out);
-              phase = PHASE_WAIT_CHALLENGE_RESP;
-              printf("Waiting for %s to respond to challenge...\n",
+            strncpy(opponent_name, p->name, MM_NAME_LEN - 1);
+            opponent_name[MM_NAME_LEN - 1] = '\0';
+
+            char req_msg[64];
+            snprintf(req_msg, sizeof(req_msg), "CHALLENGE %s", my_name);
+
+            if (cost_cutting) {
+              rudp_reset(&rudp);
+              rudp_set_peer(&rudp, p->ip, p->port);
+              send_game_msg(cost_cutting, &tcp, &rudp, req_msg);
+              phase = PHASE_WAIT_CHALLENGE_REPLY;
+              printf("Challenge sent to %s. Waiting for response...\n",
                      opponent_name);
               fflush(stdout);
+            } else {
+              int cfd = tcp_connect_to_peer(p->ip, p->port);
+              if (cfd < 0) {
+                printf("Could not connect to %s.\n> ", opponent_name);
+                fflush(stdout);
+              } else {
+                tcp_init(&tcp);
+                tcp.fd = cfd;
+                send_game_msg(cost_cutting, &tcp, &rudp, req_msg);
+                phase = PHASE_WAIT_CHALLENGE_REPLY;
+                printf("Challenge sent to %s. Waiting for response...\n",
+                       opponent_name);
+                fflush(stdout);
+              }
             }
           }
         } else {
-          discovery_render_lobby(peers);
+          print_online_players(peers);
         }
-      } else if (phase == PHASE_PROMPT_CHALLENGE_REQ) {
+      } else if (phase == PHASE_ASK_CHALLENGE_ACCEPT) {
         if (strcmp(line, "yes") == 0) {
-          session_send(cost_cutting, &tcp, &rudp, VERB_ACCEPT);
-          game_init_board(&board, ROLE_CODEBREAKER);
-          phase = PHASE_WAIT_MASTER_READY;
-          game_render_board(&board, opponent_name,
-                            "Waiting for Mastermind to set the secret "
-                            "sequence...\n");
+          send_game_msg(cost_cutting, &tcp, &rudp, "ACCEPT");
+          init_board(&board, ROLE_CODEBREAKER);
+          phase = PHASE_WAIT_MASTER_SECRET;
+          print_board(&board);
+          printf("Waiting for %s to set the master sequence...\n",
+                 opponent_name);
+          fflush(stdout);
         } else if (strcmp(line, "no") == 0) {
-          session_send(cost_cutting, &tcp, &rudp, VERB_REJECT);
-          if (!cost_cutting) {
-            tcp_session_close(&tcp);
-          } else {
-            rudp_session_reset(&rudp);
-          }
+          send_game_msg(cost_cutting, &tcp, &rudp, "REJECT");
+          close_game_session(cost_cutting, &tcp, &rudp);
           phase = PHASE_LOBBY;
-          discovery_render_lobby(peers);
+          print_online_players(peers);
         } else {
           printf("Please type 'yes' or 'no': ");
           fflush(stdout);
         }
-      } else if (phase == PHASE_MASTER_ENTER_SECRET) {
-        if (!game_validate_sequence(line)) {
-          game_render_board(&board, opponent_name,
-                            "Invalid sequence! Enter exactly 5 digits (0-9): ");
+      } else if (phase == PHASE_MASTER_SET_SECRET) {
+        if (!is_valid_sequence(line)) {
+          printf("Invalid sequence! Enter 5 digits (0-9): ");
+          fflush(stdout);
         } else {
-          snprintf(board.master_seq, sizeof(board.master_seq), "%s", line);
-          board.master_seq_known = true;
-          session_send(cost_cutting, &tcp, &rudp, VERB_READY);
+          strcpy(board.master_seq, line);
+          board.show_master_seq = 1;
+          send_game_msg(cost_cutting, &tcp, &rudp, "READY");
           phase = PHASE_WAIT_BREAKER_GUESS;
-          game_render_board(&board, opponent_name,
-                            "Waiting for Codebreaker's guess...\n");
+          print_board(&board);
+          printf("Waiting for %s's attempt...\n", opponent_name);
+          fflush(stdout);
         }
-      } else if (phase == PHASE_BREAKER_ENTER_GUESS) {
-        if (!game_validate_sequence(line)) {
-          game_render_board(&board, opponent_name,
-                            "Invalid guess! Enter exactly 5 digits (0-9): ");
+      } else if (phase == PHASE_BREAKER_GUESS) {
+        if (!is_valid_sequence(line)) {
+          printf("Invalid sequence! Enter 5 digits (0-9): ");
+          fflush(stdout);
         } else {
           int idx = board.num_attempts;
-          snprintf(board.guesses[idx], sizeof(board.guesses[idx]), "%s", line);
-          board.feedback_ready[idx] = false;
+          strcpy(board.guesses[idx], line);
+          board.has_feedback[idx] = 0;
           board.num_attempts++;
 
-          char out[64];
-          snprintf(out, sizeof(out), "%s %s", VERB_GUESS, line);
-          session_send(cost_cutting, &tcp, &rudp, out);
+          char out_msg[32];
+          snprintf(out_msg, sizeof(out_msg), "GUESS %s", line);
+          send_game_msg(cost_cutting, &tcp, &rudp, out_msg);
           phase = PHASE_WAIT_MASTER_FEEDBACK;
-          game_render_board(&board, opponent_name,
-                            "Waiting for Mastermind's feedback...\n");
+          print_board(&board);
+          printf("Waiting for %s's feedback...\n", opponent_name);
+          fflush(stdout);
         }
-      } else if (phase == PHASE_MASTER_ENTER_FEEDBACK) {
+      } else if (phase == PHASE_MASTER_FEEDBACK) {
         int idx = board.num_attempts - 1;
-        char exp_fb[MM_SEQ_LEN + 1];
-        game_compute_expected_feedback(board.master_seq, board.guesses[idx],
-                                       exp_fb);
+        char expected[MM_SEQ_LEN + 1];
+        calculate_feedback(board.master_seq, board.guesses[idx], expected);
 
-        if (!game_validate_feedback(line) || strcmp(line, exp_fb) != 0) {
-          char prompt[160];
-          snprintf(prompt, sizeof(prompt),
-                   "Invalid feedback! Must be 5 chars [x/o/-] matching rules "
-                   "(%s): ",
-                   exp_fb);
-          game_render_board(&board, opponent_name, prompt);
+        if (!is_valid_feedback(line)) {
+          printf("Invalid feedback! Use 5 chars from {x, o, -} (expected %s): ",
+                 expected);
+          fflush(stdout);
         } else {
-          snprintf(board.feedbacks[idx], sizeof(board.feedbacks[idx]), "%s",
-                   line);
-          board.feedback_ready[idx] = true;
+          strcpy(board.feedbacks[idx], line);
+          board.has_feedback[idx] = 1;
 
-          char out[64];
-          snprintf(out, sizeof(out), "%s %s", VERB_FEEDBACK, line);
-          session_send(cost_cutting, &tcp, &rudp, out);
+          char fb_msg[32];
+          snprintf(fb_msg, sizeof(fb_msg), "FEEDBACK %s", line);
+          send_game_msg(cost_cutting, &tcp, &rudp, fb_msg);
 
-          bool won = (strcmp(line, "xxxxx") == 0);
-          bool done = won || (board.num_attempts >= MM_MAX_ATTEMPTS);
-
-          if (done) {
-            board.breaker_won = won;
-            snprintf(out, sizeof(out), "%s %s", VERB_GAMEOVER,
-                     board.master_seq);
-            session_send(cost_cutting, &tcp, &rudp, out);
+          if (strcmp(line, "xxxxx") == 0 ||
+              board.num_attempts >= MM_MAX_ATTEMPTS) {
+            char end_msg[32];
+            snprintf(end_msg, sizeof(end_msg), "GAMEOVER %s", board.master_seq);
+            send_game_msg(cost_cutting, &tcp, &rudp, end_msg);
             if (!cost_cutting) {
-              tcp_session_close(&tcp);
+              tcp_close(&tcp);
             }
             phase = PHASE_GAME_OVER;
-
-            char status[160];
-            if (won) {
-              snprintf(status, sizeof(status),
-                       "Codebreaker cracked your sequence in %d attempts! "
-                       "Press Enter to return to lobby.",
-                       board.num_attempts);
-            } else {
-              snprintf(status, sizeof(status),
-                       "Codebreaker exhausted all 12 attempts! You win! Press "
-                       "Enter to return to lobby.");
-            }
-            game_render_board(&board, opponent_name, status);
+            print_board(&board);
+            printf("Game over! Press Enter to return to homepage.\n");
+            fflush(stdout);
           } else {
             phase = PHASE_WAIT_BREAKER_GUESS;
-            game_render_board(&board, opponent_name,
-                              "Waiting for Codebreaker's next guess...\n");
+            print_board(&board);
+            printf("Waiting for %s's next attempt...\n", opponent_name);
+            fflush(stdout);
           }
         }
-      } else if (phase == PHASE_GAME_OVER || phase == PHASE_PEER_DISCONNECTED) {
-        session_close_or_reset(cost_cutting, &tcp, &rudp);
+      } else if (phase == PHASE_GAME_OVER || phase == PHASE_DISCONNECTED) {
+        close_game_session(cost_cutting, &tcp, &rudp);
         phase = PHASE_LOBBY;
-        discovery_render_lobby(peers);
+        print_online_players(peers);
       }
     }
   }
 
-  if (cost_cutting && rudp.peer_known) {
-    rudp_send_fin(&rudp);
-  }
-  tcp_session_close(&tcp);
+  tcp_close(&tcp);
+  close(game_listen_fd);
   close(disc_fd);
-  close(listen_fd);
   return 0;
 }
