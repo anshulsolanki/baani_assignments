@@ -1,0 +1,211 @@
+Loading GAP Coreference Dataset splits (train, dev, test)...
+Running POS Tagger, CFG Parser, and Candidate NP Extraction...
+Extracting features (including Hobbs CFG tree features) for all segments...
+
+================================================================================
+PROBLEM 1 (10 marks): Candidate Noun Phrase Extraction using POS Tagger
+================================================================================
+Total discourse segments in test set: 2000
+Total candidate NPs extracted:        42597
+Average candidate NPs per segment:    21.30
+
+Sample Extracted Candidate NPs from First 3 Test Discourse Segments:
+--------------------------------------------------------------------------------
+Segment ID: test-1 | Target Pronoun: 'His' (offset 383)
+Gold A: 'Bob Suter' (coref=False) | Gold B: 'Dehner' (coref=True)
+Extracted Candidate NPs (26): 'acceptance' [11:21], 'the Kontinental Hockey League' [27:56], 'Dehner' [58:64], 'Finland' [70:77], 'a contract' [86:96], 'Germany' [100:107], 'EHC M*' [113:119], 'nchen' [119:124], 'the DEL' [128:135], 'June' [139:143], 'the German championship' [170:193], 'the M*' [199:205], 'nchen team' [205:215], 'the club' [233:241], 'fellow DEL' [263:273], 'side' [274:278], 'EHC Wolfsburg' [279:292], 'July' [296:300], 'Former NHLer Gary Suter' [307:330], 'Olympic-medalist Bob Suter' [335:361], 'Dehner' [366:372], 'uncles' [375:381], 'cousin' [387:393], 'Minnesota Wild' [397:411], 'alternate captain' [414:431], 'Ryan Suter' [432:442]
+--------------------------------------------------------------------------------
+Segment ID: test-2 | Target Pronoun: 'him' (offset 430)
+Gold A: 'Alonso' (coref=True) | Gold B: 'Alfredo Di St*fano' (coref=False)
+Extracted Candidate NPs (27): 'the years' [8:17], 'River' [29:34], 'local titles' [44:56], 'expensive teams' [85:100], 'the world' [104:113], 'a first team' [120:132], 'Alonso- Luque' [134:147], 'playing' [149:156], 'league games' [160:172], 'prestigious second team' [188:211], 'Carrasco- Ram*' [213:227], 'D*' [229:231], 'az' [231:233], 'Copa Libertadores' [250:267], 'matches' [268:275], 'Nacional' [295:303], 'tournament' [306:316], 'River' [324:329], 'Alonso' [353:359], 'coach' [384:389], 'Alfredo Di St*' [390:404], 'fano' [404:408], 'the first team' [438:452], 'younger players' [469:484], 'Carlos Daniel Tapia' [493:512], 'Jose Maria Vieta' [517:533], 'position' [541:549]
+--------------------------------------------------------------------------------
+Segment ID: test-3 | Target Pronoun: 'He' (offset 312)
+Gold A: 'Ali Aladhadh' (coref=True) | Gold B: 'Saddam' (coref=False)
+Extracted Candidate NPs (24): 'emigration' [11:21], 'the country' [27:38], 'leadership status' [56:73], 'Kamel' [75:80], 'a respected elder' [90:107], 'the clan' [111:119], 'the fall' [127:135], 'Hussien' [139:146], 'regime' [149:155], 'Dr. Ali Aladhadh' [173:189], 'a candidate' [190:201], 'the clan' [210:218], 'A contributor' [220:233], 'Iraq' [237:241], 'liberation' [244:254], 'Ali Aladhadh' [256:268], 'a long time' [273:284], 'Saddam' [295:301], 'regime' [304:310], 'pregnant wife' [337:350], 'way' [358:361], 'the hospital' [365:377], 'Iraqi' [389:394], 'insurgents' [395:405]
+
+================================================================================
+PROBLEM 2 (5 marks): Random Antecedent Assignment (100 Runs)
+================================================================================
+Number of random assignment runs: 100
+Average Accuracy (sampling across ALL POS-extracted candidate NPs): 7.13%
+Average Accuracy (sampling between GAP candidate NPs A and B):      44.07%
+
+================================================================================
+PROBLEM 3 (5 marks): Most Recent Antecedent Baseline
+================================================================================
+Most Recent Candidate NP Accuracy (across ALL POS-extracted NPs): 12.85% (257/2000)
+Most Recent Candidate NP Accuracy (among GAP candidates A & B):   40.15% (803/2000)
+
+================================================================================
+PROBLEM 4 (10 marks): Custom Logistic Regression Classifier
+================================================================================
+Hyperparameter Tuning on Development Set (gap-validation.tsv, 454 segments):
+    LR |   L2_Reg | Pos_Weight | Dev F1 (All NPs) | Dev F1 (A/B NPs)
+--------------------------------------------------------------------
+  0.01 |   0.0000 |        2.0 |           44.64% |           54.68%
+  0.01 |   0.0000 |        4.0 |           44.76% |           60.54%
+  0.01 |   0.0001 |        2.0 |           45.47% |           55.46%
+  0.01 |   0.0001 |        4.0 |           45.00% |           60.79%
+  0.01 |   0.0010 |        2.0 |           45.20% |           55.06%
+  0.01 |   0.0010 |        4.0 |           45.66% |           61.32%
+  0.05 |   0.0000 |        2.0 |           43.45% |           57.72%
+  0.05 |   0.0000 |        4.0 |           43.36% |           62.13%
+  0.05 |   0.0001 |        2.0 |           43.20% |           57.37%
+  0.05 |   0.0001 |        4.0 |           43.60% |           62.13%
+  0.05 |   0.0010 |        2.0 |           44.52% |           57.45%
+  0.05 |   0.0010 |        4.0 |           43.36% |           60.34%
+  0.10 |   0.0000 |        2.0 |           43.83% |           58.09%
+  0.10 |   0.0000 |        4.0 |           44.55% |           62.28%
+  0.10 |   0.0001 |        2.0 |           44.07% |           58.09%
+  0.10 |   0.0001 |        4.0 |           44.79% |           62.53%
+  0.10 |   0.0010 |        2.0 |           46.17% |           59.97%
+  0.10 |   0.0010 |        4.0 |           45.26% |           62.39%
+--------------------------------------------------------------------
+Best Hyperparameters on Dev Set: learning_rate=0.1, l2_reg=0.001, pos_weight=4.0
+
+Test Set Evaluation (gap-test.tsv, 2000 segments):
+  1. Full Candidate NP Pool Resolution (All POS-Extracted Candidate NPs):
+       Precision: 40.58% | Recall: 45.57% | F1-Score: 42.93%
+  2. GAP Candidate NP Resolution (Evaluating on Candidate Entities A vs B):
+       Precision: 56.65% | Recall: 58.60% | F1-Score: 57.61%
+
+================================================================================
+PROBLEM 5 (5 marks): Learned Feature Weights & Top-5 Features
+================================================================================
+Learned Intercept (Bias): -6.6300
+
+Rank | Feature Name               | Learned Weight |   |Weight|
+----------------------------------------------------------------
+   1 | entity_frequency           |        +4.5121 |     4.5121
+   2 | is_proper_noun             |        +2.5635 |     2.5635
+   3 | grammatical_role_subj      |        +1.0527 |     1.0527
+   4 | gender_mismatch            |        -0.9855 |     0.9855
+   5 | is_hobbs_top1              |        +0.6018 |     0.6018
+   6 | recency_inv_rank           |        +0.5994 |     0.5994
+   7 | same_sentence              |        +0.5968 |     0.5968
+   8 | char_distance_closeness    |        +0.5918 |     0.5918
+   9 | in_hobbs_top3              |        +0.5723 |     0.5723
+  10 | parallel_role              |        +0.1476 |     0.1476
+  11 | gender_match               |        +0.0762 |     0.0762
+  12 | number_agreement           |        -0.0315 |     0.0315
+
+Top-5 Features (by Weight Magnitude):
+  1. entity_frequency (weight = +4.5121) -> Positive (increases antecedent likelihood)
+  2. is_proper_noun (weight = +2.5635) -> Positive (increases antecedent likelihood)
+  3. grammatical_role_subj (weight = +1.0527) -> Positive (increases antecedent likelihood)
+  4. gender_mismatch (weight = -0.9855) -> Negative (penalizes candidate)
+  5. is_hobbs_top1 (weight = +0.6018) -> Positive (increases antecedent likelihood)
+
+================================================================================
+PROBLEM 6 (5 marks): Error Analysis of Logistic Regression Implementation
+================================================================================
+Total errors on gold-annotated test segments: 960
+Representative Error Examples from Test Set:
+--------------------------------------------------------------------------------
+Segment ID: test-1 | Pronoun: 'His'
+Predicted Antecedent: 'Former NHLer Gary Suter' (prob=0.530) | True Gold Antecedent: 'Dehner'
+Snippet: Upon their acceptance into the Kontinental Hockey League, Dehner left Finland to sign a contract in Germany with EHC M*nchen of the DEL on June 18, 2014. After capturing the German championship with the M*nchen team in 2...
+--------------------------------------------------------------------------------
+Segment ID: test-4 | Pronoun: 'his'
+Predicted Antecedent: 'Marchesano' (prob=0.823) | True Gold Antecedent: 'Pisciotta'
+Snippet: At the trial, Pisciotta said: ``Those who have made promises to us are called Bernardo Mattarella, Prince Alliata, the monarchist MP Marchesano and also Signor Scelba, Minister for Home Affairs ... it was Marchesano, Pri...
+--------------------------------------------------------------------------------
+Segment ID: test-5 | Pronoun: 'his'
+Predicted Antecedent: 'William McNamara' (prob=0.575) | True Gold Antecedent: 'Eddie'
+Snippet: It is about a pair of United States Navy shore patrollers (SPs) (Tom Berenger and William McNamara) who must escort a beautiful prisoner (Erika Eleniak), and the troubles they encounter. Eddie Devane (William McNamara) i...
+--------------------------------------------------------------------------------
+Segment ID: test-6 | Pronoun: 'her'
+Predicted Antecedent: 'Keller' (prob=0.509) | True Gold Antecedent: 'Jewel Staite'
+Snippet: The others were Adam Baldwin (Jayne Cobb in Firefly) who played Colonel Dave Dixon, and Morena Baccarin (Inara Serra in Firefly) who played Adria. Executive producer Martin Gero created the character of Jennifer Keller w...
+--------------------------------------------------------------------------------
+Segment ID: test-8 | Pronoun: 'her'
+Predicted Antecedent: 'Sophie' (prob=0.636) | True Gold Antecedent: 'Jeni'
+Snippet: The monster arrives and bites Jeni's tongue, but David manages to break free and releases the other three, though at the cost of his own life. The remaining trio head back to the cottage to set a trap to kill the monster...
+--------------------------------------------------------------------------------
+
+Summary of Error Categories & How the Algorithm Can Be Improved:
+  1. Kinship & Relational Semantics (e.g., test-1: 'Dehner's uncles. His cousin...'):
+     -> Improvement: Add dependency-parse grammatical roles and relational/kinship
+        semantics features rather than relying solely on shallow CFG chunk rules.
+  2. Quoted Speech vs. Narrative Frame (e.g., test-4: 'Pisciotta said: ... Marchesano'):
+     -> Improvement: Track quotation boundaries and speaker attribution so mentions
+        inside direct quotes do not override the main narrative speaker.
+  3. Actor vs. Character Parenthetical Apposition (e.g., test-5: 'Eddie (William McNamara)'):
+     -> Improvement: Detect parenthetical appositives and down-weight parenthetical
+        actor aliases when the main clause predicate describes the character.
+  4. Event Structure & Selectional Restrictions (e.g., test-8: 'pulls her in'):
+     -> Improvement: Incorporate verb-argument selectional preferences and
+        entity-grid coreference chains across the entire passage.
+
+================================================================================
+PROBLEM 7 (10 marks): Rule-Based Hobbs' Algorithm on CFG Parse Trees
+================================================================================
+Hobbs' Algorithm Performance on Test Set (gap-test.tsv, 2000 segments):
+  1. Full Candidate NP Pool (All POS-Extracted Candidate NPs):
+       Precision: 30.42% | Recall: 34.29% | F1-Score: 32.24%
+  2. GAP Candidate Entities (Evaluating on Candidates A vs B):
+       Precision: 43.46% | Recall: 42.36% | F1-Score: 42.90%
+
+================================================================================
+PROBLEM 8 (5 marks): Quantitative & Qualitative Comparison (LR vs. Hobbs)
+================================================================================
+Method                             |   All-NPs F1 | GAP (A/B) Prec | GAP (A/B) Rec | GAP (A/B) F1
+----------------------------------------------------------------------------------------------
+Random Assignment (100 runs)       |        7.13% |         44.07% |        44.07% |       44.07%
+Most Recent Antecedent             |       12.85% |         40.15% |        40.15% |       40.15%
+Rule-Based Hobbs Algorithm         |       32.24% |         43.46% |        42.36% |       42.90%
+Custom Logistic Regression (Ours)  |       42.93% |         56.65% |        58.60% |       57.61%
+
+================================================================================
+EXTRA CREDIT (10 marks): Scikit-Learn Logistic Regression Implementation
+================================================================================
+1. Hyperparameter Tuning on Development Set (gap-validation.tsv):
+     C | Pos_Weight | Dev F1 (All NPs) | Dev F1 (A/B NPs)
+--------------------------------------------------------
+  0.01 |        2.0 |           46.48% |           60.13%
+  0.01 |        3.0 |           45.39% |           60.84%
+  0.01 |        4.0 |           45.63% |           61.26%
+  0.10 |        2.0 |           45.99% |           59.45%
+  0.10 |        3.0 |           45.97% |           62.03%
+  0.10 |        4.0 |           46.34% |           62.53%
+  1.00 |        2.0 |           46.23% |           58.82%
+  1.00 |        3.0 |           45.97% |           62.19%
+  1.00 |        4.0 |           46.10% |           62.61%
+ 10.00 |        2.0 |           46.23% |           59.08%
+ 10.00 |        3.0 |           45.73% |           61.94%
+ 10.00 |        4.0 |           46.10% |           62.50%
+--------------------------------------------------------
+Best scikit-learn Hyperparameters on Dev Set: C = 0.1, pos_weight = 4.0
+
+2. Test Set Performance (scikit-learn LogisticRegression on gap-test.tsv):
+  - Full Candidate NP Pool: Precision=39.99% | Recall=44.95% | F1=42.33%
+  - GAP Candidates (A/B):   Precision=55.61% | Recall=59.22% | F1=57.36%
+
+3. Scikit-Learn Learned Feature Weights (Intercept = -6.7603):
+Rank | Feature Name               | Learned Weight |   |Weight|
+----------------------------------------------------------------
+   1 | entity_frequency           |        +4.2958 |     4.2958
+   2 | is_proper_noun             |        +2.9008 |     2.9008
+   3 | grammatical_role_subj      |        +1.1571 |     1.1571
+   4 | recency_inv_rank           |        +0.9065 |     0.9065
+   5 | gender_mismatch            |        -0.7172 |     0.7172
+   6 | in_hobbs_top3              |        +0.6831 |     0.6831
+   7 | gender_match               |        +0.5676 |     0.5676
+   8 | same_sentence              |        +0.5577 |     0.5577
+   9 | char_distance_closeness    |        +0.4231 |     0.4231
+  10 | number_agreement           |        -0.2889 |     0.2889
+  11 | is_hobbs_top1              |        +0.2835 |     0.2835
+  12 | parallel_role              |        +0.1875 |     0.1875
+
+Scikit-Learn Top-5 Feature Weights:
+  1. entity_frequency          : +4.2958
+  2. is_proper_noun            : +2.9008
+  3. grammatical_role_subj     : +1.1571
+  4. recency_inv_rank          : +0.9065
+  5. gender_mismatch           : -0.7172
+
+4. Scikit-Learn Error Analysis & Comparison:
+  - Total errors on gold-annotated test segments: 971 (exhibits the same 4 error patterns as Custom LR)
+  - Comparison vs. Hobbs' Algorithm: Scikit-Learn LR improves Full-Pool F1 from 32.24% to 42.33%
+    and GAP (A/B) F1 from 42.90% to 57.36%.
+
