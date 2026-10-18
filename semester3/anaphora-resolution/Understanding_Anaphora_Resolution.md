@@ -6,6 +6,26 @@ Everything in **Problems 1–8** is written in **plain, straightforward Python**
 
 ---
 
+## 0. How the Code in `anaphora_resolution.py` is Modularized (1-to-1 Problem Mapping)
+
+To make the code easy to read and grade, [anaphora_resolution.py](file:///Users/solankianshul/Documents/projects/temp_work/baani_work/assignments/semester3/anaphora-resolution/anaphora_resolution.py) is organized into sequential sections with a docstring above each problem and a dedicated function for each problem, called in order by `main()`:
+
+| Section in `anaphora_resolution.py` | Main Function & Helper Functions |
+| :--- | :--- |
+| **Common Helper Functions** | `load_gap_tsv()`, `get_pronoun_gender()`, `get_np_gender()`, `check_span_matches_gold()`, `calc_prf()` |
+| **Problem 1 (10 Marks)** | `problem_1(test_segments)`, `extract_candidates_from_dataset()`, `find_base_nps_in_tree()`, `get_token_char_spans()` |
+| **Problem 2 (5 Marks)** | `problem_2(test_segments)` |
+| **Problem 3 (5 Marks)** | `problem_3(test_segments)` |
+| **Problem 4 (10 Marks)** | `problem_4(train_segments, dev_segments, test_segments)`, `SimpleLogisticRegression`, `extract_features_for_segment()`, `pick_best_candidate()`, `evaluate_model_predictions()` |
+| **Problem 5 (5 Marks)** | `problem_5(model)` |
+| **Problem 6 (5 Marks)** | `problem_6(test_segments, model)` |
+| **Problem 7 (10 Marks)** | `problem_7(test_segments)`, `hobbs_rank_candidates_for_segment()`, `hobbs_search_current_sentence()`, `bfs_collect_nps()` |
+| **Problem 8 (5 Marks)** | `problem_8(lr_res, hobbs_res, rand_res, recent_res)` |
+| **Extra Credit (10 Marks)** | `extra_credit(train_segments, dev_segments, test_segments, hobbs_res)` |
+| **Main Runner** | `main()` — calls `problem_1` $\rightarrow$ `problem_2` $\rightarrow$ `problem_3` $\rightarrow$ `problem_4` $\rightarrow$ `problem_5` $\rightarrow$ `problem_6` $\rightarrow$ `problem_7` $\rightarrow$ `problem_8` $\rightarrow$ `extra_credit` |
+
+---
+
 ## 1. What is Anaphora Resolution & The GAP Dataset?
 
 ### What is Anaphora?
@@ -41,10 +61,10 @@ Each row in the `.tsv` file gives us:
 #### Goal
 For each discourse segment in the test set, extract all the candidate noun phrases (NPs) that can potentially serve as the antecedent of the given pronoun using a standard POS tagger.
 
-#### How We Implemented It (`process_dataset` and `run_problem_1`)
+#### How We Implemented It (`extract_candidates_from_dataset`, `find_base_nps_in_tree`, and `problem_1`)
 1. **Sentence & Word Tokenization with Character Offsets**:
    - In GAP, the pronoun and gold antecedents are identified by their **character offset** (e.g., character position `383`).
-   - In `process_dataset(rows, split_name)`, we use `nltk.sent_tokenize(text)` to split the passage into sentences and `nltk.word_tokenize(s)` to split each sentence into words, while tracking the exact `(start_char, end_char)` index of every word in the original passage (`tok_spans`).
+   - In `extract_candidates_from_dataset(rows)`, we use `nltk.sent_tokenize(text)` to split the passage into sentences and `nltk.word_tokenize(s)` to split each sentence into words, while `get_token_char_spans(...)` tracks the exact `(start_char, end_char)` index of every word in the original passage.
 2. **POS Tagging**:
    - We run `nltk.pos_tag_sents(all_tokenized_sents)` across all tokenized sentences. Every word receives a Penn Treebank POS tag:
      - `NNP` / `NNPS`: Proper nouns (e.g., *Dehner*, *Jennifer Keller*)
@@ -68,9 +88,9 @@ For each discourse segment in the test set, extract all the candidate noun phras
        SBAR: {<IN|WDT|WP|WRB><S>}
      """
      ```
-   - Notice the recursive `NP` rule `{<NP><POS><NP>}`. Why is this important? Because in English, a possessive phrase like *"Dehner's uncles"* has an inner base NP (*"Dehner"*) and another base NP (*"uncles"*), grouped under an outer `NP` (*"Dehner's uncles"*). Our tree walker `annotate_tree(node)` labels every base NP with a unique ID (`NP#0`, `NP#1`, ...) and records whether it appears in a **Subject** position (outside `VP`/`PP`) or a **Non-Subject** position (inside `VP`/`PP`).
+   - Notice the recursive `NP` rule `{<NP><POS><NP>}`. Why is this important? Because in English, a possessive phrase like *"Dehner's uncles"* has an inner base NP (*"Dehner"*) and another base NP (*"uncles"*), grouped under an outer `NP` (*"Dehner's uncles"*). Our helper `find_base_nps_in_tree(node, tok_idx, in_vp_or_pp, base_np_list)` walks the tree, labels every base NP with a unique ID (`NP#0`, `NP#1`, ...), and records whether it appears in a **Subject** position (outside `VP`/`PP`) or a **Non-Subject** position (inside `VP`/`PP`).
 4. **Filtering Non-Pronominal Candidate NPs**:
-   - Every non-pronominal `NP` in the segment is added to `candidate_nps` along with its character span, words, POS tags, sentence index, and grammatical role (`is_subject`).
+   - Every non-pronominal `NP` in the segment is added to `candidate_nps` along with its character span, words, POS tags, sentence index, and grammatical role (`is_subject`), and `problem_1(test_segments)` prints the summary and sample segments.
 
 #### Problem 1 Results
 - Across the 2,000 test segments (`gap-test.tsv`), our POS tagger + CFG parser extracted **42,597 candidate NPs**, or an average of **21.30 candidate NPs per segment**.
@@ -82,10 +102,10 @@ For each discourse segment in the test set, extract all the candidate noun phras
 #### Goal
 Randomly assign an antecedent to the pronoun from the candidate NPs extracted in Problem 1, repeat for 100 runs, and calculate the average accuracy on the test set (`gap-test.tsv`).
 
-#### How We Implemented It (`run_problem_2`)
+#### How We Implemented It (`problem_2`)
 - We loop `for _ in range(100):` (using `random.Random(12345)` for exact reproducibility).
 - In each run, for every test segment:
-  1. We use `rng.choice(cands)` to pick one random NP from all POS-extracted candidate NPs, and check if `chosen["is_antecedent"]` is `True`.
+  1. We use `rng.choice(cands)` to pick one random NP from all POS-extracted candidate NPs, and check if `is_antecedent` is `True`.
   2. We also pick randomly between the candidate NPs matching GAP entities `A` and `B` (`ab_cands`).
 - Finally, we average the accuracy across all 100 runs.
 
@@ -100,8 +120,8 @@ Randomly assign an antecedent to the pronoun from the candidate NPs extracted in
 #### Goal
 Select the **most recent candidate NP** preceding the pronoun and compute accuracy on the test set.
 
-#### How We Implemented It (`run_problem_3`)
-- Since `seg["candidates"]` is sorted in order of appearance in the text, we filter for candidates preceding the pronoun (`preceding = [c for c in seg["candidates"] if c["start"] < p_off]`) and select the last element: `most_recent = preceding[-1]`.
+#### How We Implemented It (`problem_3`)
+- Since `seg["candidates"]` is sorted in order of appearance in the text, we filter for candidates preceding the pronoun (`preceding = [c for c in seg["candidates"] if c["start"] < p_off]`) and select the last element: `preceding[-1]`.
 - Similarly, for the GAP `A` vs. `B` evaluation, we pick the most recent candidate among `A` and `B` preceding the pronoun (`preceding_ab[-1]`).
 
 #### Problem 3 Results
@@ -136,7 +156,7 @@ For every `(pronoun, candidate_NP)` pair, we extract **12 interpretable linguist
 | 12 | `entity_frequency` | $\min(\frac{\text{count}}{4.0}, 1.0)$. How many times the candidate NP string is mentioned in the passage. Captures **Discourse Topicality / Salience**. |
 
 #### Step 4B: How Our Custom `SimpleLogisticRegression` Works From Scratch
-Instead of importing an external ML library, we wrote `class SimpleLogisticRegression` in ~55 lines of plain Python:
+Instead of importing an external ML library, we wrote `class SimpleLogisticRegression` in ~35 lines of plain Python:
 
 1. **Linear Score (`predict_proba_one`)**:
    For a feature vector $x = [x_1, x_2, \dots, x_{12}]$, we compute the dot product with learned weights $w = [w_1, w_2, \dots, w_{12}]$ plus bias $b$:
@@ -156,8 +176,8 @@ Instead of importing an external ML library, we wrote `class SimpleLogisticRegre
      $$w_j \leftarrow w_j - \eta \cdot \left(\text{weighted\_err} \cdot x_j^{(i)} + \lambda w_j\right)$$
      $$b \leftarrow b - \eta \cdot \text{weighted\_err}$$
 
-4. **Inference & Evaluation (`evaluate_model_predictions`)**:
-   During evaluation, for a given pronoun, our classifier computes $P(y=1 \mid x)$ for every candidate NP and selects the candidate NP with the **highest probability** (above threshold `0.25`).
+4. **Inference & Evaluation (`pick_best_candidate`, `evaluate_model_predictions`, `problem_4`)**:
+   During evaluation, for a given pronoun, `pick_best_candidate` computes $P(y=1 \mid x)$ for every candidate NP and selects the candidate NP with the **highest probability** (above threshold `0.25`).
    - **Precision ($P$)**: $\frac{TP}{TP + FP}$ (fraction of predicted antecedents that are correct).
    - **Recall ($R$)**: $\frac{TP}{TP + FN}$ (fraction of gold-annotated pronouns that are resolved to the correct antecedent).
    - **F1-Score ($F_1$)**: $\frac{2 \cdot P \cdot R}{P + R}$ (harmonic mean of Precision and Recall).
@@ -173,31 +193,31 @@ Instead of importing an external ML library, we wrote `class SimpleLogisticRegre
 ### Problem 5 (5 Marks): Top-5 Features Learned by Logistic Regression
 
 #### Goal
-Print all features and their weights learned by the Logistic Regression model, and write a short note on the **Top-5 features** (in terms of weight magnitude $|w_j|$) and how they can be interpreted.
+Print all features and their weights learned by the Logistic Regression model (`problem_5`), and write a short note on the **Top-5 features** (in terms of weight magnitude $|w_j|$) and how they can be interpreted.
 
 #### All 12 Learned Weights (Ranked by Magnitude $|w_j|$)
 
 | Rank | Feature Name | Learned Weight ($w_j$) | Direction & Linguistic Explanation |
 | :---: | :--- | :---: | :--- |
-| **1** | **`entity_frequency`** | **`+4.5121`** | **Strongest Positive Signal**: In Wikipedia articles, the central person (discourse topic) is mentioned repeatedly across sentences. According to **Centering Theory**, frequently mentioned entities are the most salient backward-looking centers. |
+| **1** | **`entity_frequency`** | **`+4.5122`** | **Strongest Positive Signal**: In Wikipedia articles, the central person (discourse topic) is mentioned repeatedly across sentences. According to **Centering Theory**, frequently mentioned entities are the most salient backward-looking centers. |
 | **2** | **`is_proper_noun`** | **`+2.5635`** | **2nd Strongest Positive Signal**: Every target pronoun in GAP (`he, she, him, her, his`) is an animate human pronoun. Out of ~21 NPs in a passage, most are inanimate common nouns (*"the country"*, *"a contract"*). Checking for `NNP`/`NNPS` filters out inanimate objects and focuses on human names. |
-| **3** | **`grammatical_role_subj`** | **`+1.0527`** | **3rd Strongest Signal**: Validates the **Grammatical Role Hierarchy** ($\text{Subject} > \text{Direct Object} > \text{Indirect Object} > \text{Oblique}$). Syntactic subjects are much more likely to be referred to by subsequent pronouns than objects. |
-| **4** | **`gender_mismatch`** | **`-0.9855`** | **Strongest Negative Signal**: When a candidate NP has an identifiable gender that conflicts with the pronoun (e.g., *feminine* name *"Erika"* for pronoun *"his"*), the negative weight sharply penalizes its log-odds. |
-| **5** | **`is_hobbs_top1`** | **`+0.6018`** | **5th Strongest Signal**: Rewards the #1 candidate proposed by Hobbs' syntactic CFG tree search (combining structural prominence, Binding Condition B, and left-to-right breadth-first order). |
-| 6 | `recency_inv_rank` | `+0.5994` | Surface recency rank boost ($1/\text{rank}$). |
-| 7 | `same_sentence` | `+0.5968` | Intra-sentential candidates are closer in working memory. |
+| **3** | **`grammatical_role_subj`** | **`+1.0529`** | **3rd Strongest Signal**: Validates the **Grammatical Role Hierarchy** ($\text{Subject} > \text{Direct Object} > \text{Indirect Object} > \text{Oblique}$). Syntactic subjects are much more likely to be referred to by subsequent pronouns than objects. |
+| **4** | **`gender_mismatch`** | **`-0.9860`** | **Strongest Negative Signal**: When a candidate NP has an identifiable gender that conflicts with the pronoun (e.g., *feminine* name *"Erika"* for pronoun *"his"*), the negative weight sharply penalizes its log-odds. |
+| **5** | **`is_hobbs_top1`** | **`+0.6022`** | **5th Strongest Signal**: Rewards the #1 candidate proposed by Hobbs' syntactic CFG tree search (combining structural prominence, Binding Condition B, and left-to-right breadth-first order). |
+| 6 | `recency_inv_rank` | `+0.5995` | Surface recency rank boost ($1/\text{rank}$). |
+| 7 | `same_sentence` | `+0.5969` | Intra-sentential candidates are closer in working memory. |
 | 8 | `char_distance_closeness` | `+0.5918` | Linear character proximity boost. |
-| 9 | `in_hobbs_top3` | `+0.5723` | Top-3 candidate in Hobbs' CFG tree search. |
-| 10 | `parallel_role` | `+0.1476` | Syntactic parallelism preference (Subject $\rightarrow$ Subject). |
-| 11 | `gender_match` | `+0.0762` | Small positive weight because in GAP, both `A` and `B` are explicitly selected to have the **same gender** (Gender-Balanced Coreference), so matching gender does not distinguish `A` from `B`, whereas `gender_mismatch` (`-0.9855`) actively rules out opposite-gender distractors in the full NP pool! |
-| 12 | `number_agreement` | `-0.0315` | Near zero because almost all proper noun candidates (`A` and `B`) are already singular (`NNP`), providing little discriminative variance. |
+| 9 | `in_hobbs_top3` | `+0.5721` | Top-3 candidate in Hobbs' CFG tree search. |
+| 10 | `parallel_role` | `+0.1477` | Syntactic parallelism preference (Subject $\rightarrow$ Subject). |
+| 11 | `gender_match` | `+0.0761` | Small positive weight because in GAP, both `A` and `B` are explicitly selected to have the **same gender** (Gender-Balanced Coreference), so matching gender does not distinguish `A` from `B`, whereas `gender_mismatch` (`-0.9860`) actively rules out opposite-gender distractors in the full NP pool! |
+| 12 | `number_agreement` | `-0.0314` | Near zero because almost all proper noun candidates (`A` and `B`) are already singular (`NNP`), providing little discriminative variance. |
 
 ---
 
 ### Problem 6 (5 Marks): Error Analysis & How the Algorithm Can Be Improved
 
 #### Goal
-Describe the errors made by our Logistic Regression implementation on the test set and explain how the algorithm can be improved.
+Describe the errors made by our Logistic Regression implementation on the test set (`problem_6`) and explain how the algorithm can be improved.
 
 #### Part A: Major Error Categories Found (with Real Examples from `gap-test.tsv`)
 
@@ -229,24 +249,24 @@ Describe the errors made by our Logistic Regression implementation on the test s
 3. **Appositive & Parenthetical Detection**:
    - Detect parenthetical appositions like `Character Name (Actor Name)` and link or down-weight parenthetical actor names when resolving narrative pronouns.
 4. **Entity-Centric / Cluster-Level Features**:
-   - Group partial name mentions (e.g., *"Dr. Ali Aladhadh"* and *"Ali Aladhadh"*, or *"Eddie Devane"* and *"Eddie"*) into a single **entity cluster** before computing mention frequency and grammatical salience, and add verb selectional preference features (e.g., matching verbs like *sailor / killed / played* with their semantic agent/patient).
+   - Group partial name mentions (e.g., *"Dr. Ali Aladhadh"* and *"Ali Aladhadh"*, or *"Eddie Devane"* and *"Eddie"*) into a single **entity cluster** before computing mention frequency and grammatical salience, and add verb selectional preference features.
 
 ---
 
 ### Problem 7 (10 Marks): Rule-Based Hobbs' Algorithm on CFG Trees
 
 #### Goal
-Implement the classic **Rule-Based Hobbs' Algorithm** (Jurafsky & Martin, Section 21.6.1) using Context-Free Grammar (CFG) parse trees and report its performance in terms of Precision, Recall, and F-scores.
+Implement the classic **Rule-Based Hobbs' Algorithm** (Jurafsky & Martin, Section 21.6.1) using Context-Free Grammar (CFG) parse trees (`problem_7`) and report its performance in terms of Precision, Recall, and F-scores.
 
-#### How Hobbs' Algorithm Works Step-by-Step (`hobbs_rank_candidates_for_segment`)
-We convert each sentence's `nltk.Tree` into a `ParentedTree` (`cfg_trees`) where every node has a `.parent()` pointer and `.subtrees()`, allowing us to climb **up** parent links and search **down** child subtrees in left-to-right Breadth-First Search (`_bfs_collect_nps`).
+#### How Hobbs' Algorithm Works Step-by-Step (`hobbs_search_current_sentence` & `hobbs_rank_candidates_for_segment`)
+We convert each sentence's `nltk.Tree` into a `ParentedTree` (`cfg_trees`) where every node has a `.parent()` pointer and `.subtrees()`, allowing us to climb **up** parent links and search **down** child subtrees in left-to-right Breadth-First Search (`bfs_collect_nps`).
 
 Then we follow Hobbs' 9-step tree traversal:
 - **Step 1**: Start at the `NP#id` node immediately dominating the target pronoun (`start_node`).
 - **Step 2**: Climb **up** the tree to the first `NP` or `S` node encountered. Call this node $X$, and call the path we climbed $p$.
-- **Step 3**: Traverse all branches below $X$ to the **left** of path $p$ in a **left-to-right, breadth-first** manner (`_bfs_collect_nps(left_siblings, require_intervening_np_or_s=True)`). Propose any `NP` node encountered that has an `NP` or `S` node between it and $X$.
+- **Step 3**: Traverse all branches below $X$ to the **left** of path $p$ in a **left-to-right, breadth-first** manner (`bfs_collect_nps(left_siblings, require_intervening_np_or_s=True)`). Propose any `NP` node encountered that has an `NP` or `S` node between it and $X$.
   - *Linguistic reason*: This enforces **Binding Theory Condition B**! In *"Dehner helped him"*, *"him"* is inside `VP`, so the first `NP`/`S` node above *"him"* is `S`. Because there is no intervening `NP` or `S` node between `S` and the subject *"Dehner"*, Step 3 blocks *"Dehner"* as the antecedent of *"him"*. By contrast, in *"Dehner's mother helped him"*, *"Dehner"* is inside `NP("Dehner's mother")`, so there **is** an intervening `NP` node and Step 3 proposes *"Dehner"*!
-- **Step 4 (Prior Sentences)**: When $X$ reaches the root `S` node of the current sentence, iterate backwards through the preceding sentences $s_{t-1}, s_{t-2}, \dots, s_0$. For each preceding sentence, perform a **left-to-right, breadth-first search** (`_bfs_collect_nps([prev_tree])`) and propose every compatible `NP` encountered.
+- **Step 4 (Prior Sentences)**: When $X$ reaches the root `S` node of the current sentence, iterate backwards through the preceding sentences $s_{t-1}, s_{t-2}, \dots, s_0$. For each preceding sentence, perform a **left-to-right, breadth-first search** (`bfs_collect_nps([trees[prev_s_idx]])`) and propose every compatible `NP` encountered.
 - **Steps 5–8 (Higher Clauses in the Current Sentence)**: Before reaching the root of the current sentence, climb up from $X$ to the next enclosing `NP` or `S` node:
   - **Step 6**: If $X$ is an `NP` node, propose $X$.
   - **Step 7**: Traverse all branches below $X$ to the **left** of path $p$ in a left-to-right, breadth-first manner (without requiring an intervening `NP`/`S` node, so a possessive pronoun like *"his"* in *"Dehner helped his club"*—which stopped at `NP("his club")` in Step 2—now climbs to `S` in Step 5 and proposes the subject *"Dehner"* in Step 7!).
@@ -263,7 +283,7 @@ Then we follow Hobbs' 9-step tree traversal:
 
 ### Problem 8 (5 Marks): Comparing Logistic Regression vs. Hobbs' Algorithm
 
-#### Quantitative Comparison Table on `gap-test.tsv` (2,000 Segments)
+#### Quantitative Comparison Table on `gap-test.tsv` (2,000 Segments) (`problem_8`)
 
 | Method | Full Candidate NP Pool F1 | GAP (`A`/`B`) Precision | GAP (`A`/`B`) Recall | GAP (`A`/`B`) F1 |
 | :--- | :---: | :---: | :---: | :---: |
@@ -276,31 +296,31 @@ Then we follow Hobbs' 9-step tree traversal:
 #### Qualitative Comparison: Why Does Logistic Regression Outperform Hobbs' Algorithm?
 1. **Global Discourse Topicality vs. Single-Sentence Tree Search**:
    - Hobbs' algorithm processes sentences one by one backwards ($s_{t}, s_{t-1}, s_{t-2}$) and picks the **first** compatible NP in left-to-right breadth-first order. If sentence $s_{t-1}$ begins with a minor character in subject position, Hobbs' algorithm blindly picks that minor character.
-   - Logistic Regression combines local syntax with **discourse-wide salience** (`entity_frequency`, weight `+4.5121`). Even if the main protagonist is not the subject of the immediately preceding clause, their high mention frequency across the passage allows Logistic Regression to identify them as the discourse topic.
+   - Logistic Regression combines local syntax with **discourse-wide salience** (`entity_frequency`, weight `+4.5122`). Even if the main protagonist is not the subject of the immediately preceding clause, their high mention frequency across the passage allows Logistic Regression to identify them as the discourse topic.
 2. **Soft Probabilistic Trade-offs vs. Hard Deterministic Rules**:
    - Hobbs' algorithm uses a rigid, fixed traversal order. If a lexicon does not know the gender of an unfamiliar foreign surname (e.g., *"Dehner"* or *"Pisciotta"*), Hobbs treats all unknown names as equally compatible and relies purely on tree position.
    - Logistic Regression **weights and sums 12 complementary cues simultaneously** (Entity Frequency, Proper Noun status, Subject role, Gender mismatch, Hobbs' Top-1/Top-3 rank, Recency, Same Sentence, and Parallelism), yielding a **+10.69%** F1 boost on the full NP pool and a **+14.71%** F1 boost on GAP (`A` vs. `B`).
 3. **Why Hobbs Still Helps Inside Logistic Regression**:
-   - Notice that our Logistic Regression model includes `is_hobbs_top1` (`+0.6018`, #5 feature overall!) and `in_hobbs_top3` (`+0.5723`) among its features. Thus, our statistical model absorbs the syntactic tree wisdom of Hobbs' algorithm while overcoming its brittleness.
+   - Notice that our Logistic Regression model includes `is_hobbs_top1` (`+0.6022`, #5 feature overall!) and `in_hobbs_top3` (`+0.5721`) among its features. Thus, our statistical model absorbs the syntactic tree wisdom of Hobbs' algorithm while overcoming its brittleness.
 
 ---
 
 ### Extra Credit (10 Marks): Scikit-Learn Logistic Regression Implementation
 
-#### How We Implemented It (`run_extra_credit_sklearn`)
+#### How We Implemented It (`extra_credit`)
 - Kept completely separate at the bottom of `anaphora_resolution.py` so Problems 1–8 remain 100% basic Python + NLTK.
-- Uses `sklearn.linear_model.LogisticRegression(C=c_val, class_weight={0: 1.0, 1: pw}, max_iter=500, random_state=42)` on the exact same 12 features, and answers all questions above:
+- Uses `sklearn.linear_model.LogisticRegression(C=c_val, class_weight={0: 1.0, 1: pw}, max_iter=500, random_state=42)` on the exact same 12 features, copies the learned `coef_[0]` and `intercept_[0]` into `SimpleLogisticRegression`, and answers all questions above:
   1. **Hyperparameter Tuning (Problem 4)**: Tuned $C \in \{0.01, 0.1, 1.0, 10.0\}$ and `pos_weight` $\in \{2.0, 3.0, 4.0\}$ on `gap-validation.tsv`, selecting $C = 0.1, \text{pos\_weight} = 4.0$.
   2. **Test Set Evaluation (Problem 4)**:
      - **Full Candidate NP Pool**: Precision = **39.99%**, Recall = **44.95%**, F1 = **42.33%** (vs. **42.93%** for our custom implementation).
      - **GAP Candidates (`A` vs. `B`)**: Precision = **55.61%**, Recall = **59.22%**, F1 = **57.36%** (vs. **57.61%** for our custom implementation).
   3. **Learned Feature Weights & Top-5 Features (Problem 5)**:
-     - #1 `entity_frequency` (`+4.2958`)
-     - #2 `is_proper_noun` (`+2.9008`)
+     - #1 `entity_frequency` (`+4.2959`)
+     - #2 `is_proper_noun` (`+2.9009`)
      - #3 `grammatical_role_subj` (`+1.1571`)
-     - #4 `recency_inv_rank` (`+0.9065`)
+     - #4 `recency_inv_rank` (`+0.9067`)
      - #5 `gender_mismatch` (`-0.7172`)
-     - *(Followed by #6 `in_hobbs_top3` at `+0.6831`)*. Both `scikit-learn` and our from-scratch SGD classifier learn nearly identical weights and top features!
+     - *(Followed by #6 `in_hobbs_top3` at `+0.6834`)*. Both `scikit-learn` and our from-scratch SGD classifier learn nearly identical weights and top features!
   4. **Error Analysis & Comparison with Hobbs (Problems 6 & 8)**:
      - Makes 971 errors on gold-annotated test segments (vs. 960 for our custom LR) with the exact same 4 linguistic error patterns, and outperforms Hobbs' algorithm by **+10.09%** F1 on the full NP pool and **+14.46%** F1 on GAP (`A`/`B`).
 

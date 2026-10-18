@@ -46,7 +46,7 @@ Hyperparameter Tuning on Development Set (gap-validation.tsv, 454 segments):
   0.01 |   0.0000 |        4.0 |           44.76% |           60.54%
   0.01 |   0.0001 |        2.0 |           45.47% |           55.46%
   0.01 |   0.0001 |        4.0 |           45.00% |           60.79%
-  0.01 |   0.0010 |        2.0 |           45.20% |           55.06%
+  0.01 |   0.0010 |        2.0 |           45.20% |           55.27%
   0.01 |   0.0010 |        4.0 |           45.66% |           61.32%
   0.05 |   0.0000 |        2.0 |           43.45% |           57.72%
   0.05 |   0.0000 |        4.0 |           43.36% |           62.13%
@@ -72,29 +72,29 @@ Test Set Evaluation (gap-test.tsv, 2000 segments):
 ================================================================================
 PROBLEM 5 (5 marks): Learned Feature Weights & Top-5 Features
 ================================================================================
-Learned Intercept (Bias): -6.6300
+Learned Intercept (Bias): -6.6303
 
 Rank | Feature Name               | Learned Weight |   |Weight|
 ----------------------------------------------------------------
-   1 | entity_frequency           |        +4.5121 |     4.5121
+   1 | entity_frequency           |        +4.5122 |     4.5122
    2 | is_proper_noun             |        +2.5635 |     2.5635
-   3 | grammatical_role_subj      |        +1.0527 |     1.0527
-   4 | gender_mismatch            |        -0.9855 |     0.9855
-   5 | is_hobbs_top1              |        +0.6018 |     0.6018
-   6 | recency_inv_rank           |        +0.5994 |     0.5994
-   7 | same_sentence              |        +0.5968 |     0.5968
+   3 | grammatical_role_subj      |        +1.0529 |     1.0529
+   4 | gender_mismatch            |        -0.9860 |     0.9860
+   5 | is_hobbs_top1              |        +0.6022 |     0.6022
+   6 | recency_inv_rank           |        +0.5995 |     0.5995
+   7 | same_sentence              |        +0.5969 |     0.5969
    8 | char_distance_closeness    |        +0.5918 |     0.5918
-   9 | in_hobbs_top3              |        +0.5723 |     0.5723
-  10 | parallel_role              |        +0.1476 |     0.1476
-  11 | gender_match               |        +0.0762 |     0.0762
-  12 | number_agreement           |        -0.0315 |     0.0315
+   9 | in_hobbs_top3              |        +0.5721 |     0.5721
+  10 | parallel_role              |        +0.1477 |     0.1477
+  11 | gender_match               |        +0.0761 |     0.0761
+  12 | number_agreement           |        -0.0314 |     0.0314
 
 Top-5 Features (by Weight Magnitude):
-  1. entity_frequency (weight = +4.5121) -> Positive (increases antecedent likelihood)
+  1. entity_frequency (weight = +4.5122) -> Positive (increases antecedent likelihood)
   2. is_proper_noun (weight = +2.5635) -> Positive (increases antecedent likelihood)
-  3. grammatical_role_subj (weight = +1.0527) -> Positive (increases antecedent likelihood)
-  4. gender_mismatch (weight = -0.9855) -> Negative (penalizes candidate)
-  5. is_hobbs_top1 (weight = +0.6018) -> Positive (increases antecedent likelihood)
+  3. grammatical_role_subj (weight = +1.0529) -> Positive (increases antecedent likelihood)
+  4. gender_mismatch (weight = -0.9860) -> Negative (penalizes candidate)
+  5. is_hobbs_top1 (weight = +0.6022) -> Positive (increases antecedent likelihood)
 
 ================================================================================
 PROBLEM 6 (5 marks): Error Analysis of Logistic Regression Implementation
@@ -168,10 +168,10 @@ EXTRA CREDIT (10 marks): Scikit-Learn Logistic Regression Implementation
   0.10 |        2.0 |           45.99% |           59.45%
   0.10 |        3.0 |           45.97% |           62.03%
   0.10 |        4.0 |           46.34% |           62.53%
-  1.00 |        2.0 |           46.23% |           58.82%
+  1.00 |        2.0 |           46.23% |           59.35%
   1.00 |        3.0 |           45.97% |           62.19%
   1.00 |        4.0 |           46.10% |           62.61%
- 10.00 |        2.0 |           46.23% |           59.08%
+ 10.00 |        2.0 |           46.23% |           58.82%
  10.00 |        3.0 |           45.73% |           61.94%
  10.00 |        4.0 |           46.10% |           62.50%
 --------------------------------------------------------
@@ -181,27 +181,27 @@ Best scikit-learn Hyperparameters on Dev Set: C = 0.1, pos_weight = 4.0
   - Full Candidate NP Pool: Precision=39.99% | Recall=44.95% | F1=42.33%
   - GAP Candidates (A/B):   Precision=55.61% | Recall=59.22% | F1=57.36%
 
-3. Scikit-Learn Learned Feature Weights (Intercept = -6.7603):
+3. Scikit-Learn Learned Feature Weights (Intercept = -6.7606):
 Rank | Feature Name               | Learned Weight |   |Weight|
 ----------------------------------------------------------------
-   1 | entity_frequency           |        +4.2958 |     4.2958
-   2 | is_proper_noun             |        +2.9008 |     2.9008
+   1 | entity_frequency           |        +4.2959 |     4.2959
+   2 | is_proper_noun             |        +2.9009 |     2.9009
    3 | grammatical_role_subj      |        +1.1571 |     1.1571
-   4 | recency_inv_rank           |        +0.9065 |     0.9065
+   4 | recency_inv_rank           |        +0.9067 |     0.9067
    5 | gender_mismatch            |        -0.7172 |     0.7172
-   6 | in_hobbs_top3              |        +0.6831 |     0.6831
-   7 | gender_match               |        +0.5676 |     0.5676
-   8 | same_sentence              |        +0.5577 |     0.5577
-   9 | char_distance_closeness    |        +0.4231 |     0.4231
-  10 | number_agreement           |        -0.2889 |     0.2889
-  11 | is_hobbs_top1              |        +0.2835 |     0.2835
+   6 | in_hobbs_top3              |        +0.6834 |     0.6834
+   7 | gender_match               |        +0.5673 |     0.5673
+   8 | same_sentence              |        +0.5578 |     0.5578
+   9 | char_distance_closeness    |        +0.4230 |     0.4230
+  10 | number_agreement           |        -0.2888 |     0.2888
+  11 | is_hobbs_top1              |        +0.2833 |     0.2833
   12 | parallel_role              |        +0.1875 |     0.1875
 
 Scikit-Learn Top-5 Feature Weights:
-  1. entity_frequency          : +4.2958
-  2. is_proper_noun            : +2.9008
+  1. entity_frequency          : +4.2959
+  2. is_proper_noun            : +2.9009
   3. grammatical_role_subj     : +1.1571
-  4. recency_inv_rank          : +0.9065
+  4. recency_inv_rank          : +0.9067
   5. gender_mismatch           : -0.7172
 
 4. Scikit-Learn Error Analysis & Comparison:
