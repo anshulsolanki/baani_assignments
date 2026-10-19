@@ -1,0 +1,472 @@
+CFG Parse Trees - Anaphora Resolution Assignment
+Generated from gap-test.tsv (first 5 discourse segments)
+======================================================================
+
+Segment 1: ID = test-1
+Pronoun: 'His' | Entity A: 'Bob Suter' (coref=False) | Entity B: 'Dehner' (coref=True)
+----------------------------------------------------------------------
+  Sentence 1: Upon their acceptance into the Kontinental Hockey League, Dehner left Finland to sign a contract in 
+  CFG Parse Tree (ASCII):
+    (S
+      (PP Upon/IN (NP (NP#0 their/PRP$) (NP#1 acceptance/NN)))
+      (PP
+        into/IN
+        (NP#2 the/DT Kontinental/NNP Hockey/NNP League/NNP))
+      ,/,
+      (S (NP#3 Dehner/NNP) (VP left/VBD (NP#4 Finland/NNP)))
+      to/TO
+      (VP
+        sign/VB
+        (NP#5 a/DT contract/NN)
+        (PP in/IN (NP#6 Germany/NNP))
+        (PP
+          with/IN
+          (NP (NP#7 EHC/NNP M/NNP */NNP) (NP#8 nchen/NN)))
+        (PP of/IN (NP#9 the/DT DEL/NNP))
+        (PP on/IN (NP#10 June/NNP)))
+      18/CD
+      ,/,
+      2014/CD
+      ./.)
+
+  Sentence 2: After capturing the German championship with the M*nchen team in 2016, he left the club and was pick
+  CFG Parse Tree (ASCII):
+    (S
+      After/IN
+      (VP
+        capturing/VBG
+        (NP#11 the/DT German/JJ championship/NN)
+        (PP
+          with/IN
+          (NP
+            (NP#12 the/DT M/NNP */NNP)
+            (NP#13 nchen/NN team/NN))))
+      in/IN
+      2016/CD
+      ,/,
+      (S (NP#14 he/PRP) (VP left/VBD (NP#15 the/DT club/NN)))
+      and/CC
+      (VP was/VBD picked/VBN)
+      up/RP
+      (PP by/IN (NP (NP#16 fellow/JJ DEL/NNP) (NP#17 side/NN)))
+      (NP#18 EHC/NNP Wolfsburg/NNP)
+      (PP in/IN (NP#19 July/NNP))
+      2016/CD
+      ./.)
+
+  Sentence 3: Former NHLer Gary Suter and Olympic-medalist Bob Suter are Dehner's uncles.
+  CFG Parse Tree (ASCII):
+    (S
+      (S
+        (NP#20 Former/NNP NHLer/NNP Gary/NNP Suter/NNP)
+        and/CC
+        (NP#21 Olympic-medalist/NNP Bob/NNP Suter/NNP)
+        (VP
+          are/VBP
+          (NP (NP#22 Dehner/NNP) 's/POS (NP#23 uncles/NNS))))
+      ./.)
+
+  Sentence 4: His cousin is Minnesota Wild's alternate captain Ryan Suter.
+  CFG Parse Tree (ASCII):
+    (S
+      (S
+        (NP (NP#24 His/PRP$) (NP#25 cousin/NN))
+        (VP
+          is/VBZ
+          (NP
+            (NP#26 Minnesota/NNP Wild/NNP)
+            's/POS
+            (NP#27 alternate/NN captain/NN))
+          (NP#28 Ryan/NNP Suter/NNP)))
+      ./.)
+
+
+Segment 2: ID = test-2
+Pronoun: 'him' | Entity A: 'Alonso' (coref=True) | Entity B: 'Alfredo Di St*fano' (coref=False)
+----------------------------------------------------------------------
+  Sentence 1: Between the years 1979-1981, River won four local titles, and became one of the most expensive teams
+  CFG Parse Tree (ASCII):
+    (S
+      (PP Between/IN (NP#0 the/DT years/NNS))
+      1979-1981/CD
+      ,/,
+      (S (NP#1 River/NNP) (VP won/VBD))
+      four/CD
+      (NP#2 local/JJ titles/NNS)
+      ,/,
+      and/CC
+      (VP became/VBD)
+      one/CD
+      of/IN
+      the/DT
+      most/RBS
+      (NP#3 expensive/JJ teams/NNS)
+      (PP in/IN (NP#4 the/DT world/NN))
+      ,/,
+      (PP with/IN (NP#5 a/DT first/JJ team/NN))
+      (/(
+      (NP#6 Alonso-/NNP Luque/NNP)
+      )/)
+      (NP#7 playing/NN)
+      (PP in/IN (NP#8 league/NN games/NNS))
+      and/CC
+      an/DT
+      equally/RB
+      (NP#9 prestigious/JJ second/JJ team/NN)
+      (/(
+      (NP#10 Carrasco-/NNP Ram/NNP */NNP)
+      n/MD
+      (NP (NP#11 D/NNP */NNP) (NP#12 az/NN))
+      )/)
+      (VP
+        used/VBD
+        mostly/RB
+        (PP
+          in/IN
+          (NP
+            (NP#13 Copa/NNP Libertadores/NNP)
+            (NP#14 matches/NNS))))
+      ./.)
+
+  Sentence 2: During the 1981 ``Nacional'' tournament (which River would eventually win), Alonso often clashed wit
+  CFG Parse Tree (ASCII):
+    (S
+      During/IN
+      the/DT
+      1981/CD
+      ``/``
+      (NP#15 Nacional/NNP)
+      ''/''
+      (NP#16 tournament/NN)
+      (/(
+      (SBAR
+        which/WDT
+        (S
+          (NP#17 River/NNP)
+          (VP would/MD eventually/RB win/VB)))
+      )/)
+      ,/,
+      (S (NP#18 Alonso/NNP) (VP often/RB clashed/VBD))
+      with/IN
+      then/RB
+      (NP
+        (NP#19 coach/NN)
+        (NP#20 Alfredo/NNP Di/NNP St/NNP */NNP))
+      (NP#21 fano/NN)
+      (/(
+      who/WP
+      (VP
+        seldom/RB
+        selected/VBD
+        (NP#22 him/PRP)
+        (PP for/IN (NP#23 the/DT first/JJ team/NN)))
+      and/CC
+      (VP instead/RB put/VBD (NP#24 younger/JJR players/NNS))
+      such/JJ
+      (PP as/IN (NP#25 Carlos/NNP Daniel/NNP Tapia/NNP))
+      and/CC
+      (NP#26 Jose/NNP Maria/NNP Vieta/NNP)
+      (PP in/IN (NP (NP#27 his/PRP$) (NP#28 position/NN)))
+      )/)
+      ./.)
+
+
+Segment 3: ID = test-3
+Pronoun: 'He' | Entity A: 'Ali Aladhadh' (coref=True) | Entity B: 'Saddam' (coref=False)
+----------------------------------------------------------------------
+  Sentence 1: Though his emigration from the country has affected his leadership status, Kamel is still a respecte
+  CFG Parse Tree (ASCII):
+    (S
+      (PP Though/IN (NP (NP#0 his/PRP$) (NP#1 emigration/NN)))
+      (PP from/IN (NP#2 the/DT country/NN))
+      (VP
+        has/VBZ
+        affected/VBN
+        (NP (NP#3 his/PRP$) (NP#4 leadership/NN status/NN)))
+      ,/,
+      (S
+        (NP#5 Kamel/NNP)
+        (VP
+          is/VBZ
+          still/RB
+          (NP#6 a/DT respected/JJ elder/NN)
+          (PP of/IN (NP#7 the/DT clan/NN))))
+      ./.)
+
+  Sentence 2: After the fall of Hussien's regime, many considered Dr. Ali Aladhadh a candidate to lead the clan.
+  CFG Parse Tree (ASCII):
+    (S
+      (PP After/IN (NP#8 the/DT fall/NN))
+      (PP
+        of/IN
+        (NP (NP#9 Hussien/NNP) 's/POS (NP#10 regime/NN)))
+      ,/,
+      many/JJ
+      (VP
+        considered/VBN
+        (NP
+          (NP#11 Dr./NNP Ali/NNP Aladhadh/NNP)
+          (NP#12 a/DT candidate/NN)))
+      to/TO
+      (VP lead/VB (NP#13 the/DT clan/NN))
+      ./.)
+
+  Sentence 3: A contributor to Iraq's liberation, Ali Aladhadh and a long time oppose to Saddam's regime.
+  CFG Parse Tree (ASCII):
+    (S
+      (NP#14 A/DT contributor/NN)
+      (PP
+        to/TO
+        (NP (NP#15 Iraq/NNP) 's/POS (NP#16 liberation/NN)))
+      ,/,
+      (S
+        (NP#17 Ali/NNP Aladhadh/NNP)
+        and/CC
+        (NP#18 a/DT long/JJ time/NN)
+        (VP
+          oppose/VBP
+          (PP
+            to/TO
+            (NP (NP#19 Saddam/NNP) 's/POS (NP#20 regime/NN)))))
+      ./.)
+
+  Sentence 4: He was ambushed with his pregnant wife on his way to the hospital in 2006 by Iraqi insurgents.
+  CFG Parse Tree (ASCII):
+    (S
+      (S
+        (NP#21 He/PRP)
+        (VP
+          was/VBD
+          ambushed/VBN
+          (PP
+            with/IN
+            (NP (NP#22 his/PRP$) (NP#23 pregnant/JJ wife/NN)))
+          (PP on/IN (NP (NP#24 his/PRP$) (NP#25 way/NN)))
+          (PP to/TO (NP#26 the/DT hospital/NN))))
+      in/IN
+      2006/CD
+      (PP by/IN (NP (NP#27 Iraqi/NNP) (NP#28 insurgents/NNS)))
+      ./.)
+
+
+Segment 4: ID = test-4
+Pronoun: 'his' | Entity A: 'Alliata' (coref=False) | Entity B: 'Pisciotta' (coref=True)
+----------------------------------------------------------------------
+  Sentence 1: At the trial, Pisciotta said: ``Those who have made promises to us are called Bernardo Mattarella, P
+  CFG Parse Tree (ASCII):
+    (S
+      (PP At/IN (NP#0 the/DT trial/NN))
+      ,/,
+      (S (NP#1 Pisciotta/NNP) (VP said/VBD))
+      :/:
+      ``/``
+      Those/DT
+      who/WP
+      (VP
+        have/VBP
+        made/VBN
+        (NP#2 promises/NNS)
+        (PP to/TO (NP#3 us/PRP)))
+      (VP
+        are/VBP
+        called/VBN
+        (NP#4 Bernardo/NNP Mattarella/NNP))
+      ,/,
+      (NP#5 Prince/NNP Alliata/NNP)
+      ,/,
+      (NP
+        (NP#6 the/DT monarchist/NN)
+        (NP#7 MP/NNP Marchesano/NNP))
+      and/CC
+      also/RB
+      (NP#8 Signor/NNP Scelba/NNP)
+      ,/,
+      (NP#9 Minister/NNP)
+      (PP for/IN (NP#10 Home/NNP Affairs/NNPS))
+      .../:
+      (S (NP#11 it/PRP) (VP was/VBD (NP#12 Marchesano/NNP)))
+      ,/,
+      (NP#13 Prince/NNP Alliata/NNP)
+      and/CC
+      (NP#14 Bernardo/NNP Mattarella/NNP)
+      who/WP
+      (VP
+        ordered/VBD
+        (NP#15 the/DT massacre/NN)
+        (PP of/IN (NP#16 Portella/NNP)))
+      di/FW
+      (NP#17 Ginestra/NNP)
+      ./.)
+
+  Sentence 2: Before the massacre they met Giuliano...'' However the MPs Mattarella, Alliata and Marchesano were d
+  CFG Parse Tree (ASCII):
+    (S
+      (PP
+        Before/IN
+        (NP (NP#18 the/DT massacre/NN) (NP#19 they/PRP)))
+      (VP met/VBD (NP#20 Giuliano/NNP))
+      .../:
+      ''/''
+      However/RB
+      (NP#21 the/DT MPs/NNP Mattarella/NNP)
+      ,/,
+      (S
+        (NP#22 Alliata/NNP)
+        and/CC
+        (NP#23 Marchesano/NNP)
+        (VP were/VBD declared/VBN))
+      innocent/JJ
+      (PP by/IN (NP#24 the/DT Court/NNP))
+      (PP of/IN (NP#25 Appeal/NNP))
+      (PP of/IN (NP#26 Palermo/NNP))
+      ,/,
+      (PP at/IN (NP#27 a/DT trial/NN))
+      which/WDT
+      (NP#28 dealt/NN)
+      (PP
+        with/IN
+        (NP (NP#29 their/PRP$) (NP#30 alleged/JJ role/NN)))
+      (PP in/IN (NP#31 the/DT event/NN))
+      ./.)
+
+  Sentence 3: During his trial Pisciotta could not account for Giuliano's documents in which he named the high-ran
+  CFG Parse Tree (ASCII):
+    (S
+      (PP During/IN (NP (NP#32 his/PRP$) (NP#33 trial/NN)))
+      (S
+        (NP#34 Pisciotta/NNP)
+        (VP
+          could/MD
+          not/RB
+          account/VB
+          (PP
+            for/IN
+            (NP
+              (NP#35 Giuliano/NNP)
+              's/POS
+              (NP#36 documents/NNS)))))
+      in/IN
+      (SBAR
+        which/WDT
+        (S
+          (NP#37 he/PRP)
+          (VP
+            named/VBD
+            (NP#38
+              the/DT
+              high-ranking/JJ
+              government/NN
+              officials/NNS))))
+      and/CC
+      (S
+        (NP#39 mafiosi/NNS)
+        (VP
+          involved/VBN
+          (PP
+            with/IN
+            (NP (NP#40 Giuliano/NNP) 's/POS (NP#41 band/NN)))))
+      ./.)
+
+
+Segment 5: ID = test-5
+Pronoun: 'his' | Entity A: 'Eddie' (coref=True) | Entity B: 'Rock Reilly' (coref=False)
+----------------------------------------------------------------------
+  Sentence 1: It is about a pair of United States Navy shore patrollers (SPs) (Tom Berenger and William McNamara) 
+  CFG Parse Tree (ASCII):
+    (S
+      (S
+        (NP#0 It/PRP)
+        (VP
+          is/VBZ
+          (PP about/IN (NP#1 a/DT pair/NN))
+          (PP
+            of/IN
+            (NP
+              (NP#2 United/NNP States/NNPS Navy/NNP)
+              (NP#3 shore/NN patrollers/NNS)))))
+      (/(
+      (NP#4 SPs/NNP)
+      )/)
+      (/(
+      (NP#5 Tom/NNP Berenger/NNP)
+      and/CC
+      (NP#6 William/NNP McNamara/NNP)
+      )/)
+      who/WP
+      (VP
+        must/MD
+        escort/VB
+        (NP#7 a/DT beautiful/JJ prisoner/NN))
+      (/(
+      (NP#8 Erika/NNP Eleniak/NNP)
+      )/)
+      ,/,
+      and/CC
+      (S
+        (NP (NP#9 the/DT troubles/NNS) (NP#10 they/PRP))
+        (VP encounter/VBP))
+      ./.)
+
+  Sentence 2: Eddie Devane (William McNamara) is a young sailor who has carried out a number of inventory-related 
+  CFG Parse Tree (ASCII):
+    (S
+      (NP#11 Eddie/NNP Devane/NNP)
+      (/(
+      (NP#12 William/NNP McNamara/NNP)
+      )/)
+      (VP is/VBZ (NP#13 a/DT young/JJ sailor/NN))
+      who/WP
+      (VP has/VBZ carried/VBN)
+      out/RP
+      (NP#14 a/DT number/NN)
+      (PP of/IN (NP#15 inventory-related/JJ scams/NNS))
+      along/IN
+      (PP
+        with/IN
+        (NP
+          (NP#16 his/PRP$)
+          (NP#17 partner-in-crime/JJ Howard/NNP)))
+      (/(
+      (NP#18 Crispin/NNP Glover/NNP)
+      )/)
+      and/CC
+      (VP
+        made/VBD
+        (NP#19 a/DT lot/NN)
+        (PP of/IN (NP#20 money/NN))
+        (PP during/IN (NP (NP#21 his/PRP$) (NP#22 service/NN))))
+      ./.)
+
+  Sentence 3: A day before his discharge, Eddie is assigned to escort a prisoner from the Marine base at Camp Leje
+  CFG Parse Tree (ASCII):
+    (S
+      (NP#23 A/DT day/NN)
+      (PP before/IN (NP (NP#24 his/PRP$) (NP#25 discharge/NN)))
+      ,/,
+      (S (NP#26 Eddie/NNP) (VP is/VBZ assigned/VBN))
+      to/TO
+      (VP
+        escort/VB
+        (NP#27 a/DT prisoner/NN)
+        (PP
+          from/IN
+          (NP (NP#28 the/DT Marine/NNP) (NP#29 base/NN)))
+        (PP at/IN (NP#30 Camp/NNP Lejeune/NNP)))
+      along/IN
+      with/IN
+      the/DT
+      authoritarian/JJ
+      ,/,
+      (NP#31
+        no-nonsense/JJ
+        Chief/NNP
+        Petty/NNP
+        Officer/NNP
+        Rock/NNP
+        Reilly/NNP)
+      (/(
+      (NP#32 Tom/NNP Berenger/NNP)
+      )/)
+      ./.)
+
+
