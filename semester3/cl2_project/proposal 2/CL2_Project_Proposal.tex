@@ -1,0 +1,77 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.72in]{geometry}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue
+}
+
+\titlespacing*{\section}{0pt}{7pt}{3pt}
+\titlespacing*{\subsection}{0pt}{5pt}{2pt}
+\setlist[itemize]{noitemsep, topsep=2pt, leftmargin=1.5em}
+\setlist[enumerate]{noitemsep, topsep=2pt, leftmargin=1.5em}
+
+\title{\vspace{-1.2cm}\textbf{\Large Disambiguating Meaning Across Sentences: Hybrid Knowledge-Based and Supervised Word Sense Disambiguation Using WordNet Selectional Preferences, Anaphora Resolution, and Discourse Structure}\vspace{-0.3cm}}
+\author{
+    Yashaswi Priya (2025114007) \quad \& \quad Baani Solanki (2025114016) \\
+    \small Computational Linguistics 2 --- IIIT Hyderabad
+}
+\date{\vspace{-0.5cm}}
+
+\begin{document}
+\maketitle
+
+\section{Goal of the Project \& Research Question}
+Word Sense Disambiguation (WSD)---identifying which sense of a polysemous word is activated in context---is a core problem in computational semantics (Topics \textbf{P1, P2, P9, P10}). However, standard non-neural WSD methods suffer from three linguistic bottlenecks when used in isolation:
+\begin{enumerate}
+    \item \textbf{The Dictionary Sparsity Bottleneck in Classical Lesk:} Simplified Lesk relies on exact surface word overlap between a dictionary gloss and the local sentence. Because glosses are short, exact overlap often fails without \textbf{WordNet taxonomic expansion} (hypernyms, hyponyms, meronyms) and \textbf{Verb--Argument Selectional Preferences} (e.g., \textit{drink} selects for a \texttt{[+LIQUID]} object; \textit{deposit} selects for a \texttt{[+FINANCIAL]} object).
+    \item \textbf{Cross-Sentence Pronominal Anaphora Hiding Context Clues:} Standard WSD restricts context to the target sentence. Yet in multi-sentence discourse, the decisive semantic clue frequently modifies an \textbf{anaphoric pronoun} (\textit{it, they, its}) in the next sentence (e.g., \textit{``The customer walked toward the \textbf{bank} at dusk. \textbf{It} had already locked its vault''} vs.\ \textit{``\textbf{It} was muddy and eroding into the river''}). Without \textbf{Anaphora Resolution}, sentence-bound WSD completely misses the predicate attached to \textit{``It''}.
+    \item \textbf{Discourse Coherence \& Rhetorical Relations (RST):} Naive multi-sentence windows pull in noisy words from unrelated clauses. Under \textbf{Rhetorical Structure Theory (RST)}, clauses linked via \textbf{Cause/Explanation} (\textit{because, since}), \textbf{Elaboration}, or \textbf{Contrast} (\textit{although, whereas}) directly constrain the target word's sense, while \textbf{Yarowsky's (1995) ``One Sense Per Discourse''} principle enforces sense consistency across coreferent mentions.
+\end{enumerate}
+\textbf{Research Question:} \textit{To what extent does integrating (1) Extended WordNet Taxonomic Lesk and Verb--Argument Selectional Preferences, (2) Pronominal Anaphora Context Projection, and (3) RST Discourse Clause Weighting \& One-Sense-Per-Discourse improve both knowledge-based WSD and supervised statistical WSD (Naive Bayes vs.\ Logistic Regression) across multi-sentence texts?}
+
+\section{Scope of the Project \& Methodology (Strictly Non-Neural)}
+\begin{itemize}
+    \item \textbf{In-Scope:} We implement a modular, 100\% non-neural WSD pipeline from scratch in Python and evaluate six progressive configurations (\texttt{B0}, \texttt{K1}--\texttt{K3}, \texttt{S1}--\texttt{S3}) in a controlled ablation study:
+    \begin{enumerate}
+        \item \textbf{Knowledge-Based Lexical \& Compositional Semantics (\texttt{K1} \& \texttt{K2} --- Yashaswi):} Implement \textbf{Simplified Lesk (\texttt{K1})} and \textbf{Extended Taxonomic Lesk (\texttt{K2})} by expanding candidate WordNet synsets with 1-hop hypernym, hyponym, meronym, and troponym glosses weighted by \textbf{Inverse Gloss Frequency (IGF)} and $n^2$ phrasal overlap, combined with \textbf{Wu--Palmer / Information Content Verb--Argument Selectional Preference} scores.
+        \item \textbf{Anaphora Context Projection \& RST Discourse Weighting (\texttt{K3} --- Baani):} Apply \textbf{Binding Theory} intra-sentential filters and \textbf{Hobbs'/feature-based anaphora resolution} over a 2-sentence window to resolve pronouns (\textit{it, they, its, them}). When a pronoun resolves to the target ambiguous NP, project its governing verb and modifiers into the target word's context. Segment clauses into \textbf{Elementary Discourse Units (EDUs)} via explicit connectives to weight \textit{Cause}, \textit{Elaboration}, and \textit{Contrast} clauses and enforce \textbf{One-Sense-Per-Discourse}.
+        \item \textbf{Supervised Statistical WSD Classifiers (\texttt{S1}--\texttt{S3}):} Implement multiclass \textbf{Multinomial Naive Bayes} (add-$k$ smoothing, Yashaswi) and \textbf{L2-Regularized Multinomial Logistic Regression / MaxEnt} (Baani) combining collocational n-grams ($w_{-2..+2}$, POS $t_{-2..+2}$), syntactic relations, knowledge scores (\texttt{K2}), and discourse-anaphoric features (\texttt{K3}).
+    \end{enumerate}
+    \item \textbf{Out-of-Scope:} Neural networks, pre-trained embeddings/LLMs, unconstrained all-words WSD, and human evaluation.
+\end{itemize}
+
+\section{Datasets, Tools \& Objective Evaluation Metrics}
+\begin{itemize}
+    \item \textbf{Datasets \& Lexical Resources:} (1) \textbf{Senseval-2 English Lexical Sample (\texttt{nltk.corpus.senseval})} --- 4,328 gold-labeled multi-sentence instances across \texttt{interest.pos} (N), \texttt{line.pos} (N), \texttt{serve.pos} (V), and \texttt{hard.pos} (Adj) (80/10/10 split); (2) \textbf{SemCor Multi-Sentence Discourse Benchmark (\texttt{nltk.corpus.semcor})} --- $\sim$1,500 gold WordNet-annotated instances across 15 polysemous words plus a \textbf{Hard Anaphoric \& Discourse Subset}; (3) \textbf{WordNet 3.0 \& WordNet IC (\texttt{nltk.corpus.wordnet})}.
+    \item \textbf{Tools Used:} Python 3 standard library, \texttt{nltk} (POS tagger, \texttt{RegexpParser} CFG chunker, WordNet interface), custom Naive Bayes and Logistic Regression implementations, and \texttt{scikit-learn}/\texttt{matplotlib} for verification and confusion matrix plots.
+    \item \textbf{Evaluation Metrics:} Fine-grained Sense Accuracy, Macro-Precision, Macro-Recall, Macro-F1 (to account for Zipfian sense skew), Per-Word Confusion Matrices, and Ablation Analysis (\texttt{B0}, \texttt{K1}--\texttt{K3}, \texttt{S1}--\texttt{S3}).
+\end{itemize}
+
+\section{Expected Challenges \& Mitigation Plan}
+\begin{itemize}
+    \item \textbf{Zipfian sense skew (Most Frequent Sense dominance):} Evaluate with both \textbf{Macro-F1} and \textbf{Micro-F1}, tune smoothing/class weights, and integrate knowledge-based \texttt{K2/K3} scores that are independent of training sense frequency.
+    \item \textbf{Gloss noise in Extended Lesk:} Restrict WordNet graph expansion to 1-hop taxonomic neighbors and weight overlaps by \textbf{Inverse Gloss Frequency (IGF)} and $n^2$ phrasal match length.
+    \item \textbf{Cascading anaphora errors:} Enforce strict number/animacy agreement (\texttt{it/its} $\to$ singular inanimate NP) and only project anaphoric predicates when resolution confidence $\tau \ge 0.60$.
+\end{itemize}
+
+\section{Exact Deliverables \& Key Research Paper References}
+\textbf{Deliverables:} (1) GitHub repository with modular Python code (\texttt{wsd\_corpus\_loader.py}, \texttt{knowledge\_wsd.py}, \texttt{anaphora\_wsd\_context.py}, \texttt{discourse\_rst\_wsd.py}, \texttt{naive\_bayes\_wsd.py}, \texttt{logistic\_regression\_wsd.py}, \texttt{run\_ablation.py}) and \texttt{README.md} with balanced 50/50 commits; (2) Final PDF Report (\texttt{Report.pdf}) with ablation tables, Zipfian plots, confusion matrices, and linguistic error analysis.
+\begin{enumerate}
+    \item \textbf{Banerjee, S., \& Pedersen, T. (2002).} An Adapted Lesk Algorithm for Word Sense Disambiguation Using WordNet. \textit{Proceedings of CICLing 2002}, 136--145.
+    \item \textbf{Yarowsky, D. (1995).} Unsupervised Word Sense Disambiguation Rivaling Supervised Methods. \textit{Proceedings of ACL 1995}, 189--196.
+    \item \textbf{Resnik, P. (1997).} Selectional Preference and Sense Disambiguation. \textit{Proceedings of ACL SIGLEX Workshop}, 52--57.
+    \item \textbf{Lee, Y. K., \& Ng, H. T. (2002).} An Empirical Evaluation of Knowledge Sources and Learning Algorithms for Word Sense Disambiguation. \textit{Proceedings of EMNLP 2002}, 41--48.
+    \item \textbf{Mann, W. C., \& Thompson, S. A. (1988).} Rhetorical Structure Theory: Toward a Functional Theory of Text Organization. \textit{Text}, 8(3), 243--281.
+\end{enumerate}
+
+\end{document}

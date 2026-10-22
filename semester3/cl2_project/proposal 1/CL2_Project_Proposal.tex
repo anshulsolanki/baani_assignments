@@ -1,0 +1,78 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue
+}
+
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+\titlespacing*{\subsection}{0pt}{6pt}{3pt}
+\setlist[itemize]{noitemsep, topsep=2pt, leftmargin=1.5em}
+\setlist[enumerate]{noitemsep, topsep=2pt, leftmargin=1.5em}
+
+\title{\vspace{-1.2cm}\textbf{\Large Beyond Bag-of-Words: Discourse- and Anaphora-Aware Sentiment Classification Using Rhetorical Structure Theory (RST) and Compositional Semantics}\vspace{-0.3cm}}
+\author{
+    Yashaswi Priya (2025114007) \quad \& \quad Baani Solanki (2025114016) \\
+    \small Computational Linguistics 2 --- IIIT Hyderabad
+}
+\date{\vspace{-0.5cm}}
+
+\begin{document}
+\maketitle
+
+\section{Goal of the Project \& Research Question}
+Standard Bag-of-Words (BoW) and surface lexicon sentiment classifiers treat every clause and entity mention in a document as equally salient and independent. Consequently, they systematically fail on multi-sentence texts that exhibit:
+\begin{enumerate}
+    \item \textbf{Rhetorical Discourse Asymmetry (RST):} In concessive or contrastive sentences (e.g., \textit{``Although the cinematography was breathtaking [Satellite], the plot was predictable and tedious [Nucleus]''}), the author's true stance resides in the \textbf{Nucleus} clause rather than the conceded \textbf{Satellite} clause.
+    \item \textbf{Cross-Sentence Pronominal Anaphora:} Sentiment predicates frequently modify third-person pronouns (\textit{he, she, it, they}) rather than explicit noun phrases (e.g., \textit{``The director adapted a classic novel. While it was a masterpiece, his screenplay was shallow''}). Without anaphora resolution, opinion words lose their target entity anchor.
+    \item \textbf{Compositional Semantic Shifters:} Syntactic \textbf{negation scope} (\textit{not, never, barely}), \textbf{intensifiers/downtoners} (\textit{utterly, slightly}), and \textbf{irrealis modals} (\textit{would, could, should}) invert or scale lexical polarity within clause boundaries.
+\end{enumerate}
+\textbf{Research Question:} \textit{To what extent does integrating (1) Compositional Lexical Semantics, (2) Pronominal Anaphora Resolution for topical entity salience, and (3) Rhetorical Structure Theory (RST) Nucleus--Satellite discourse weighting improve non-neural sentiment classification (Naive Bayes and Logistic Regression) over surface Bag-of-Words baselines?}
+
+\section{Scope of the Project \& Methodology (Strictly Non-Neural)}
+\begin{itemize}
+    \item \textbf{In-Scope:} We design and implement a modular linguistic pipeline from scratch in Python and evaluate five progressive configurations (\texttt{M0} $\to$ \texttt{M4}) in a controlled ablation study:
+    \begin{enumerate}
+        \item \textbf{Compositional Lexical Semantics (\texttt{M1} \& \texttt{M2}):} Map POS-tagged lemmas to prior polarity scores using the \textbf{MPQA Subjectivity Lexicon} and \textbf{Hu \& Liu Opinion Lexicon}. Implement syntactic clause-bounded \textbf{Negation Scope}, multiplicative \textbf{Intensifiers/Downtoners}, and \textbf{Irrealis Modal Dampening} (following Taboada et al.'s SO-CAL framework).
+        \item \textbf{Pronominal Anaphora \& Topical Salience (\texttt{M3}):} Apply \textbf{Binding Theory} intra-sentential constraints and \textbf{Hobbs'/feature-based anaphora resolution} across a 2-sentence window to resolve pronouns (\textit{he, she, it, they}) to antecedent NPs, weighting sentiment predicates attached to high-frequency topical entities (discourse centers).
+        \item \textbf{Rule-Based RST Discourse Segmentation \& Weighting (\texttt{M4}):} Segment sentences into \textbf{Elementary Discourse Units (EDUs)} using NLTK CFG clause boundaries (\texttt{S}, \texttt{SBAR}) and classify $\sim$45 explicit discourse connectives into \textit{Concession} (\textit{although, despite, while}), \textit{Contrast} (\textit{however, but, yet}), \textit{Cause} (\textit{because, therefore}), and \textit{Condition} (\textit{if, unless}) to upweight \textbf{Nucleus} EDUs ($w_N > 1$) and downweight \textbf{Satellite} EDUs ($w_S < 1$).
+        \item \textbf{Statistical Classification:} Compare custom \textbf{Multinomial Naive Bayes} (add-$k$ smoothing) and \textbf{L2-Regularized Logistic Regression} classifiers alongside a pure rule-based SO-CAL aggregation scorer.
+    \end{enumerate}
+    \item \textbf{Out-of-Scope:} Neural networks, pre-trained embeddings/LLMs, implicit (connective-less) discourse parsing, and human evaluation.
+\end{itemize}
+
+\section{Datasets, Tools \& Objective Evaluation Metrics}
+\begin{itemize}
+    \item \textbf{Datasets \& Lexicons:} (1) \textbf{Cornell Movie Review Polarity Dataset v2.0 (Pang \& Lee, 2004)} --- 2,000 full-length reviews (1,000 Positive, 1,000 Negative; 80/10/10 stratified split via \texttt{nltk.corpus.movie\_reviews}), plus a \textbf{Hard Contrastive-Discourse \& Anaphoric Subset}; (2) \textbf{MPQA Subjectivity Lexicon} ($\sim$8,200 words) \& \textbf{Hu--Liu Opinion Lexicon} ($\sim$6,800 words).
+    \item \textbf{Tools Used:} Python 3 standard library, \texttt{nltk} (POS tagger, \texttt{RegexpParser} CFG chunker, WordNet lemmatizer), custom Naive Bayes and Logistic Regression implementations, and \texttt{scikit-learn}/\texttt{matplotlib} for verification and confusion matrix plots.
+    \item \textbf{Evaluation Metrics:} Precision, Recall, Macro-F1, Accuracy, Confusion Matrices, and Ablation Analysis across \texttt{M0}--\texttt{M4}, paired with qualitative linguistic inspection of learned Logistic Regression weights.
+\end{itemize}
+
+\section{Expected Challenges \& Mitigation Plan}
+\begin{itemize}
+    \item \textbf{Full RST tree ambiguity:} Restrict RST analysis to intra-sentential and adjacent-sentence EDUs anchored by explicit lexical connectives where Nucleus/Satellite directionality is deterministic.
+    \item \textbf{Discourse marker polysemy} (e.g., temporal vs.\ concessive \textit{``while''}): Disambiguate via POS/CFG subcategorization rules (e.g., \texttt{while + VBG} = Temporal vs.\ \texttt{while + finite S} with contrasting polarity = Concession).
+    \item \textbf{Cascading anaphora errors:} Enforce gender/number agreement and Binding Theory Principles A \& B within a 2-sentence window.
+\end{itemize}
+
+\section{Exact Deliverables \& Key Research Paper References}
+\textbf{Deliverables:} (1) GitHub repository with modular Python code (\texttt{lexicon\_semantics.py}, \texttt{compositional\_rules.py}, \texttt{rst\_discourse.py}, \texttt{anaphora\_salience.py}, \texttt{naive\_bayes\_model.py}, \texttt{logistic\_regression\_model.py}, \texttt{run\_ablation.py}) and \texttt{README.md}; (2) Final PDF Report (\texttt{Report.pdf}) with ablation tables, confusion matrices, and linguistic error analysis.
+\begin{enumerate}
+    \item \textbf{Taboada, M., Brooke, J., Tofiloski, M., Voll, K., \& Stede, M. (2011).} Lexicon-Based Methods for Sentiment Analysis. \textit{Computational Linguistics}, 37(2), 267--307.
+    \item \textbf{Bhatia, P., Ji, Y., \& Eisenstein, J. (2015).} Better Document-Level Sentiment Analysis from RST Discourse Parsing. \textit{Proceedings of EMNLP 2015}, 2212--2218.
+    \item \textbf{Mann, W. C., \& Thompson, S. A. (1988).} Rhetorical Structure Theory: Toward a Functional Theory of Text Organization. \textit{Text}, 8(3), 243--281.
+    \item \textbf{Jakob, N., \& Gurevych, I. (2010).} Using Anaphora Resolution to Improve Opinion Target Identification in Movie Reviews. \textit{Proceedings of ACL 2010 Short Papers}, 263--268.
+    \item \textbf{Pang, B., \& Lee, L. (2004).} A Sentimental Education: Sentiment Analysis Using Subjectivity Summarization Based on Minimum Cuts. \textit{Proceedings of ACL 2004}, 271--278.
+\end{enumerate}
+
+\end{document}
