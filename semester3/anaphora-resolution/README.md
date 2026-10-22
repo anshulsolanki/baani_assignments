@@ -1,35 +1,68 @@
-# Anaphora Resolution Assignment
+to run:
+source .venv/bin/activate
+python anaphora_resolution.py
 
-This repository contains the complete Python implementation and documentation for the **Anaphora Resolution** assignment on the Google GAP Coreference Dataset (based on Jurafsky & Martin, *Speech and Language Processing*, 2nd Edition, Chapter 21).
+assumptions:
+1. cataphora aren't counted
+2. using nltk.RegexpParser and nltk.tree.ParentedTree to generate standard CFG trees and not penn treebank parser
+3. defualting to neutrl/unknown when gender not known
 
-## Files in This Directory
 
-- `anaphora_resolution.py`: Main Python script implementing **Problems 1 through 8** (using only Python's standard library and `nltk`, including a from-scratch implementation of Logistic Regression `SimpleLogisticRegression` and Rule-Based Hobbs' Algorithm on CFG trees) plus the **Extra Credit** comparison using `scikit-learn`.
-- `Understanding_Anaphora_Resolution.md`: Detailed step-by-step study guide explaining the linguistic concepts, mathematical formulation, and implementation details for each problem.
-- `Report.pdf` / `Report.md`: Formal assignment report presenting all quantitative results, feature weight rankings, error analyses, and method comparisons.
-- `output_log.txt`: Complete execution output of `anaphora_resolution.py` on the GAP dataset.
-- `data/`: Directory containing the official GAP dataset splits:
-  - `gap-development.tsv` (2,000 segments - Training set)
-  - `gap-validation.tsv` (454 segments - Development/Validation set)
-  - `gap-test.tsv` (2,000 segments - Test set)
+load_gap_tsv(path): Reads the GAP TSV files (gap-train.tsv, gap-validation.tsv, gap-test.tsv) using the standard csv module. Converts offsets to integers and coreference flags to booleans.
 
-## Requirements
+gender_of_pronoun(pronoun): Maps pronouns (he, his, him, she, her, hers) to a standard 'male' or 'female' label.
 
-- Python 3.8+
-- `nltk` (with `punkt`, `punkt_tab`, `averaged_perceptron_tagger`, and `averaged_perceptron_tagger_eng` resources)
-- *(Optional, for Extra Credit only)*: `scikit-learn` (if `scikit-learn` is not installed, Problems 1-8 still run completely and the script gracefully skips the Extra Credit section).
+Problem 1
 
-To install NLTK data if not already present:
-```bash
-python3 -c "import nltk; nltk.download('punkt'); nltk.download('punkt_tab'); nltk.download('averaged_perceptron_tagger'); nltk.download('averaged_perceptron_tagger_eng')"
-```
+build_cfg_parser(): Builds the regex chunk parser (RegexpParser) that groups noun phrases and prepositional phrases into valid CFG chunk trees.
 
-## How to Run the Code
+extract_candidate_nps_from_text(text, target_pronoun_offset): Tokenizes the text into sentences and POS tagged words, generates chunk trees, and finds all candidate NPs that end before target_pronoun_offset. Returns character spans, sentence indices and head tokens.
 
-From the `anaphora-resolution` directory, run:
+matches_entity(candidate_text, entity_text): Checks whether a candidate NP span matches named entity A or B using case-insensitive substring matching.
 
-```bash
-python3 anaphora_resolution.py
-```
+Problem 2 & 3
 
-The script automatically loads the GAP dataset from `./data/`, executes **Problems 1 to 8** and the **Extra Credit** experiment, and prints all evaluation metrics (Accuracy, Precision, Recall, F1-score, Top-5 Feature Weights, Error Analysis examples, and Method Comparison Tables) to standard output.
+problem_2(test_data): Runs 100 trials of random antecedent assignment on both the full candidate NP pool and the binary A/B choice, then calculates the average accuracy.
+
+problem_3(test_data): Selects the candidate NP with the highest character offset before the pronoun and calculates accuracy.
+
+Hobbs' Algorithm (Problem 7)
+
+build_sentence_trees(text): Creates an nltk.tree.ParentedTree for each sentence in the discourse segment.
+
+find_pronoun_node(trees, pronoun_text): Finds the target pronoun's leaf node in the list of parented sentence trees.
+
+hobbs_algorithm(trees, pronoun_node, gender): Implements Hobbs' 9-step search:
+  Step 1: Finds the first NP above the pronoun.
+  Steps 2-3: Traverses left to right through intermediate S/NP nodes.
+  Steps 4-9: Moves up through clause roots and searches previous sentences in reverse order using breadth-first traversal. Returns candidate NPs in the order they are found.
+
+Problem 4 & 5
+
+extract_features(cand, segment, all_cands, hobbs_order): Calculates the 12 dimensional feature vector for a candidate NP.
+
+CustomLogisticRegression:
+
+__init__(learning_rate, l2_reg, epochs, pos_weight): Intializes the model parameters and weights.
+  sigmoid(z): Calculates the numerically stable sigmoid function, 1 / (1 + exp(-z)).
+
+ fit(X, y): Trains the weights using batch gradient descent with L2 regularization.
+
+predict_proba(X): Returns the predicted coreference probabilities.
+
+
+evaluate_lr_model(model, data): Calculates precision, recall and F1 on both the full candidate NP pool and the GAP A/B subset.
+
+problem_4(...): Performs grid search using the validation set and evaluates the best model on the test set.
+
+problem_5(model): Prints the feature weights in sorted order and shows the top 5 features with explanations.
+
+Problem 6 & 8
+
+problem_6(model, test_data): Identifies false positive and false negative predictions, prints the total number of errors and some examples to the console, and refers to the full analysis in Report.pdf.
+
+problem_8(rand_acc, rec_acc, hobbs_f1, lr_f1): Generates a comparison table summarising all the approaches.
+
+save_parse_trees_txt(data, out_path): Saves ASCII versions of the CFG trees for the first 5 test segments, with numbered NP chunk annotations, to parse_trees.txt.
+
+convert_trees_txt_to_pdf(txt_path): Converts parse_trees.txt into parse_trees.pdf using macOS cupsfilter.

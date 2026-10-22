@@ -1,6 +1,6 @@
-import os #os modul for paths and dir
-import csv #reading tsv files row by row
-import math #math funcs like exp
+import os 
+import csv 
+import math
 import random #randm choices and shufle
 import nltk #nltk for pos tag and tokenize
 from nltk.tree import Tree,ParentedTree #trees and parnt pointer for cfg
@@ -81,8 +81,8 @@ def load_gap_tsv(filepath): #loads tsv rows into list
     with open(filepath,"r",encoding="utf-8") as f: #open file with utf8 encoding
         reader=csv.DictReader(f,delimiter="\t") #tsv uses tab delimiter
         for row in reader: #itrate each row in tsv
-            rows.append(row) #append row to list
-    return rows #return row list
+            rows.append(row) 
+    return rows 
 
 
 #finds if pronun is masculine or fem or unknown
@@ -120,7 +120,7 @@ def check_span_matches_gold(np_start,np_end,np_text,gold_start,gold_text): #chek
         return True #spans overlap so true
     if np_text.lower().strip()==gold_text.lower().strip(): #exact text match fallback
         return True #spans overlap so true
-    return False #no match found
+    return False 
 
 
 #precison recall f1 calcuatin
@@ -151,7 +151,7 @@ CFG_PARSER=nltk.RegexpParser(CFG_GRAMMAR,loop=1) #regex parser for cfg chunks
 #collecting base np nodes from parsed tree recursively
 def find_base_nps_in_tree(node,tok_idx,in_vp_or_pp,base_np_list): #recurse tree to collect base nps
     if not isinstance(node,Tree): #leaf reached
-        return tok_idx+1 #advance tok index by 1
+        return tok_idx+1 
 
     label=node.label() #node grammatical label
     if label in ("VP","PP"): #inside vp or pp branch
@@ -165,7 +165,7 @@ def find_base_nps_in_tree(node,tok_idx,in_vp_or_pp,base_np_list): #recurse tree 
 
     for child in node: #visit childrn left to rght
         tok_idx=find_base_nps_in_tree(child,tok_idx,in_vp_or_pp,base_np_list) #recurse on child
-    return tok_idx #return final tok index
+    return tok_idx 
 
 
 #maps token index to character offset in text
@@ -178,7 +178,7 @@ def get_token_char_spans(text,tagged_tokens,sent_char_start): #maps token index 
             idx=cur #fallback to cur
         tok_spans.append((idx,idx+len(tok))) #add (start, end) span
         cur=idx+len(tok) #move cur pointer forward
-    return tok_spans #return all spans
+    return tok_spans 
 
 
 #makes sure gold entities a and b are inside canddate list if chunker missed them
@@ -275,7 +275,7 @@ def extract_candidates_from_dataset(rows): #main fn extratng nps from data
                                 "np_id":sub_id,"text":sub_t,"start":sub_o,"end":sub_o+len(sub_t),
                                 "words":nltk.word_tokenize(sub_t),"tags":tags,"sent_idx":s_i,"is_subject":is_subj,
                             })
-                    else: #pred was wrng
+                    else: 
                         candidate_nps.append({
                             "np_id":this_np_id,"text":text[c_start:c_end],"start":c_start,"end":c_end,
                             "words":words,"tags":tags,"sent_idx":s_i,"is_subject":is_subj,
@@ -287,7 +287,7 @@ def extract_candidates_from_dataset(rows): #main fn extratng nps from data
                 for cand in candidate_nps: #loop cands to set labels
                     if cand["sent_idx"]==s_i and cand["start"]<=p_off<cand["end"]:
                         pronoun_np_id,pronoun_is_subject=cand["np_id"],cand["is_subject"]
-                        break #break loop
+                        break 
 
             cfg_trees.append(ParentedTree.convert(parsed_tree))
 
@@ -315,30 +315,30 @@ def extract_candidates_from_dataset(rows): #main fn extratng nps from data
 
 #prob 1: printng canddate nps for test segments
 def problem_1(test_segments): #problem 1 canddate extration
-    print("="*80) #printng stats out
-    print("PROBLEM 1 (10 marks): Candidate Noun Phrase Extraction using POS Tagger") #printng stats out
-    print("="*80) #printng stats out
+    print("="*80) 
+    print("PROBLEM 1 Candidate Noun Phrase Extraction using POS Tagger") 
+    print("="*80) 
     total_cands=sum(len(s["candidates"]) for s in test_segments)
     avg_cands=float(total_cands)/float(len(test_segments))
-    print(f"Total discourse segments in test set: {len(test_segments)}") #printng stats out
-    print(f"Total candidate NPs extracted:        {total_cands}") #printng stats out
-    print(f"Average candidate NPs per segment:    {avg_cands:.2f}\n") #printng stats out
+    print(f"Total discourse segments in test set: {len(test_segments)}") 
+    print(f"Total candidate NPs extracted:        {total_cands}") 
+    print(f"Average candidate NPs per segment:    {avg_cands:.2f}\n") 
 
-    print("Sample Extracted Candidate NPs from First 3 Test Discourse Segments:") #printng stats out
+    print("Sample Extracted Candidate NPs from First 3 Test Discourse Segments:") 
     for seg in test_segments[:3]:
-        print("-"*80) #printng stats out
-        print(f"Segment ID: {seg['id']} | Target Pronoun: '{seg['pronoun']}' (offset {seg['pronoun_offset']})") #printng stats out
-        print(f"Gold A: '{seg['A']}' (coref={seg['A_coref']}) | Gold B: '{seg['B']}' (coref={seg['B_coref']})") #printng stats out
+        print("-"*80) 
+        print(f"Segment ID: {seg['id']} | Target Pronoun: '{seg['pronoun']}' (offset {seg['pronoun_offset']})") 
+        print(f"Gold A: '{seg['A']}' (coref={seg['A_coref']}) | Gold B: '{seg['B']}' (coref={seg['B_coref']})") 
         c_texts=[f"'{c['text']}' [{c['start']}:{c['end']}]" for c in seg["candidates"]]
-        print(f"Extracted Candidate NPs ({len(c_texts)}): {', '.join(c_texts)}") #printng stats out
-    print() #printng stats out
+        print(f"Extracted Candidate NPs ({len(c_texts)}): {', '.join(c_texts)}") 
+    print() 
 
 
 #prob 2: randm choice basline 100 runs
 def problem_2(test_segments): #problem 2 randm basline
-    print("="*80) #printng stats out
-    print("PROBLEM 2 (5 marks): Random Antecedent Assignment (100 Runs)") #printng stats out
-    print("="*80) #printng stats out
+    print("="*80) 
+    print("PROBLEM 2 Random Antecedent Assignment (100 Runs)") 
+    print("="*80) 
     rng=random.Random(12345)
     runs=100
     acc_all_runs,acc_ab_runs=[],[]
@@ -357,17 +357,17 @@ def problem_2(test_segments): #problem 2 randm basline
 
     avg_acc_all=sum(acc_all_runs)/float(runs)
     avg_acc_ab=sum(acc_ab_runs)/float(runs)
-    print(f"Number of random assignment runs: {runs}") #printng stats out
-    print(f"Average Accuracy (sampling across ALL POS-extracted candidate NPs): {avg_acc_all*100:.2f}%") #printng stats out
-    print(f"Average Accuracy (sampling between GAP candidate NPs A and B):      {avg_acc_ab*100:.2f}%\n") #printng stats out
+    print(f"Number of random assignment runs: {runs}") 
+    print(f"Average Accuracy (sampling across ALL POS-extracted candidate NPs): {avg_acc_all*100:.2f}%") 
+    print(f"Average Accuracy (sampling between GAP candidate NPs A and B):      {avg_acc_ab*100:.2f}%\n") 
     return avg_acc_all,avg_acc_ab
 
 
 #prob 3: picks most recent np bfore pronun
 def problem_3(test_segments): #problem 3 most recent basline
-    print("="*80) #printng stats out
-    print("PROBLEM 3 (5 marks): Most Recent Antecedent Baseline") #printng stats out
-    print("="*80) #printng stats out
+    print("="*80) 
+    print("PROBLEM 3 Most Recent Antecedent Baseline") 
+    print("="*80) 
     correct_all,correct_ab=0,0
 
     for seg in test_segments: #loop test passages
@@ -385,8 +385,8 @@ def problem_3(test_segments): #problem 3 most recent basline
 
     acc_all=float(correct_all)/float(len(test_segments))
     acc_ab=float(correct_ab)/float(len(test_segments))
-    print(f"Most Recent Candidate NP Accuracy (across ALL POS-extracted NPs): {acc_all*100:.2f}% ({correct_all}/{len(test_segments)})") #printng stats out
-    print(f"Most Recent Candidate NP Accuracy (among GAP candidates A & B):   {acc_ab*100:.2f}% ({correct_ab}/{len(test_segments)})\n") #printng stats out
+    print(f"Most Recent Candidate NP Accuracy (across ALL POS-extracted NPs): {acc_all*100:.2f}% ({correct_all}/{len(test_segments)})") 
+    print(f"Most Recent Candidate NP Accuracy (among GAP candidates A & B):   {acc_ab*100:.2f}% ({correct_ab}/{len(test_segments)})\n") 
     return acc_all,acc_ab
 
 
@@ -449,7 +449,7 @@ def extract_features_for_segment(seg):
             f_num_agree,f_proper,f_subj,f_parallel,
             f_recency,f_same_sent,f_closeness,f_freq,
         ])
-    return features_list #ret all featuer vecs
+    return features_list 
 
 
 #simple binary logistic regression from scratch with sgd
@@ -501,7 +501,7 @@ def build_Xy_pairs(segments): #build featuer matrix and labels arr
         for feat_vec,cand in zip(seg["features"],seg["candidates"]): #pair featuer vec with cand
             X.append(feat_vec) #add featuer vector
             y.append(1 if cand["is_antecedent"] else 0) #1 if antecednt else 0
-    return X,y #ret X and y arrs
+    return X,y 
 
 
 #find canddate with max prob
@@ -511,9 +511,9 @@ def pick_best_candidate(cands,feats,model,only_ab=False): #find canddate with ma
         if only_ab and not (cand["matches_A"] or cand["matches_B"]): #restrict search to a or b
             continue #skip non ab cand
         prob=model.predict_proba_one(feat_vec) #model probablty
-        if prob>best_prob: #chek if new maxmum
-            best_prob,best_cand=prob,cand #update best canddate
-    return best_prob,best_cand #ret best cand with max prob
+        if prob>best_prob:
+            best_prob,best_cand=prob,cand 
+    return best_prob,best_cand 
 
 
 #evaluate precison recall and f1
@@ -528,7 +528,7 @@ def evaluate_model_predictions(segments,model,threshold=0.25): #evaluate prec re
         if best_all_cand is not None and best_all_prob>=threshold: #only predict if prob >= threshold
             if best_all_cand["is_antecedent"]: #correct pred (tp)
                 tp_all+=1 #got it rght
-            else: #pred was wrng
+            else: 
                 fp_all+=1 #pred wrng cand
                 if has_gold: #chek if gold existed
                     fn_all+=1 #missed true referent
@@ -539,7 +539,7 @@ def evaluate_model_predictions(segments,model,threshold=0.25): #evaluate prec re
         if best_ab_cand is not None and best_ab_prob>=threshold: #chek thresh for ab
             if best_ab_cand["is_antecedent"]: #correct ab pick
                 tp_ab+=1 #correct betwen a and b
-            else: #pred was wrng
+            else: 
                 fp_ab+=1 #picked wrng betwen a and b
                 if has_gold: #chek if gold existed
                     fn_ab+=1 #missed true a/b antecednt
@@ -554,14 +554,14 @@ def evaluate_model_predictions(segments,model,threshold=0.25): #evaluate prec re
 
 #prob 4: logistic regression classifier trainng and dev set tuning
 def problem_4(train_segments,dev_segments,test_segments): #problem 4 custom logistic regression
-    print("="*80) #printng stats out
-    print("PROBLEM 4 (10 marks): Custom Logistic Regression Classifier") #printng stats out
-    print("="*80) #printng stats out
+    print("="*80) 
+    print("PROBLEM 4 Custom Logistic Regression Classifier") 
+    print("="*80) 
 
     X_train,y_train=build_Xy_pairs(train_segments) #convrt train segs to feat matrix
-    print("Hyperparameter Tuning on Development Set (gap-validation.tsv, 454 segments):") #printng stats out
-    print(f"{'LR':>6} | {'L2_Reg':>8} | {'Pos_Weight':>10} | {'Dev F1 (All NPs)':>16} | {'Dev F1 (A/B NPs)':>16}") #printng stats out
-    print("-"*68) #printng stats out
+    print("Hyperparameter Tuning on Development Set (gap-validation.tsv, 454 segments):") 
+    print(f"{'LR':>6} | {'L2_Reg':>8} | {'Pos_Weight':>10} | {'Dev F1 (All NPs)':>16} | {'Dev F1 (A/B NPs)':>16}") 
+    print("-"*68) 
 
     best_score,best_params,best_model=-1.0,None,None #track best dev params
     for lr in [0.01,0.05,0.1]: #grid search learnng rate
@@ -571,35 +571,34 @@ def problem_4(train_segments,dev_segments,test_segments): #problem 4 custom logi
                 model.fit(X_train,y_train,pos_weight=pw) #fit model on X_train with poswt
                 dev_res=evaluate_model_predictions(dev_segments,model,threshold=0.25) #test on dev/validation set
                 f1_all,f1_ab=dev_res["all_nps"][2],dev_res["ab_nps"][2] #get f1 on all nps and ab
-                print(f"{lr:6.2f} | {l2:8.4f} | {pw:10.1f} | {f1_all*100:15.2f}% | {f1_ab*100:15.2f}%") #printng stats out
+                print(f"{lr:6.2f} | {l2:8.4f} | {pw:10.1f} | {f1_all*100:15.2f}% | {f1_ab*100:15.2f}%") 
                 if 0.5*(f1_all+f1_ab)>best_score: #chek if avg dev f1 is new best
                     best_score=0.5*(f1_all+f1_ab) #updated best dev score
                     best_params=(lr,l2,pw) #save best lr, l2, pw config
                     best_model=model #save best model instance
 
-    print("-"*68) #printng stats out
-    print(f"Best Hyperparameters on Dev Set: learning_rate={best_params[0]}, l2_reg={best_params[1]}, pos_weight={best_params[2]}") #printng stats out
+    print("-"*68) 
+    print(f"Best Hyperparameters on Dev Set: learning_rate={best_params[0]}, l2_reg={best_params[1]}, pos_weight={best_params[2]}") 
 
     test_res=evaluate_model_predictions(test_segments,best_model,threshold=0.25) #evaluate on test set with best hp
     p_all,r_all,f1_all=test_res["all_nps"] #test metrics for full cand pool
     p_ab,r_ab,f1_ab=test_res["ab_nps"] #test metrics for a vs b
 
-    print("\nTest Set Evaluation (gap-test.tsv, 2000 segments):") #printng stats out
-    print("  1. Full Candidate NP Pool Resolution (All POS-Extracted Candidate NPs):") #printng stats out
-    print(f"       Precision: {p_all*100:.2f}% | Recall: {r_all*100:.2f}% | F1-Score: {f1_all*100:.2f}%") #printng stats out
-    print("  2. GAP Candidate NP Resolution (Evaluating on Candidate Entities A vs B):") #printng stats out
-    print(f"       Precision: {p_ab*100:.2f}% | Recall: {r_ab*100:.2f}% | F1-Score: {f1_ab*100:.2f}%\n") #printng stats out
-    return best_model,test_res #ret model and test results
-
+    print("\nTest Set Evaluation (gap-test.tsv, 2000 segments):") 
+    print("  1. Full Candidate NP Pool Resolution (All POS-Extracted Candidate NPs):") 
+    print(f"       Precision: {p_all*100:.2f}% | Recall: {r_all*100:.2f}% | F1-Score: {f1_all*100:.2f}%") 
+    print("  2. GAP Candidate NP Resolution (Evaluating on Candidate Entities A vs B):") 
+    print(f"       Precision: {p_ab*100:.2f}% | Recall: {r_ab*100:.2f}% | F1-Score: {f1_ab*100:.2f}%\n") 
+    return best_model,test_res 
 
 #prob 5: learned featuer wghts and ranking top 5
 def problem_5(model): #problem 5 featuer wghts and top 5
-    print("="*80) #printng stats out
-    print("PROBLEM 5 (5 marks): Learned Feature Weights & Top-5 Features") #printng stats out
-    print("="*80) #printng stats out
-    print(f"Learned Intercept (Bias): {model.bias:+.4f}\n") #printng stats out
-    print(f"{'Rank':>4} | {'Feature Name':<26} | {'Learned Weight':>14} | {'|Weight|':>10}") #printng stats out
-    print("-"*64) #printng stats out
+    print("="*80) 
+    print("PROBLEM 5 Learned Feature Weights & Top-5 Features") 
+    print("="*80) 
+    print(f"Learned Intercept (Bias): {model.bias:+.4f}\n") 
+    print(f"{'Rank':>4} | {'Feature Name':<26} | {'Learned Weight':>14} | {'|Weight|':>10}") 
+    print("-"*64) 
 
     ranked_feats=sorted( #rank featuers by magnitude
         [(name,w,abs(w)) for name,w in zip(FEATURE_NAMES,model.weights)],
@@ -607,20 +606,20 @@ def problem_5(model): #problem 5 featuer wghts and top 5
         reverse=True,
     )
     for idx,(name,w,abs_w) in enumerate(ranked_feats,start=1): #loop ranked featuers
-        print(f"{idx:4d} | {name:<26} | {w:+14.4f} | {abs_w:10.4f}") #printng stats out
+        print(f"{idx:4d} | {name:<26} | {w:+14.4f} | {abs_w:10.4f}") 
 
-    print("\nTop-5 Features (by Weight Magnitude):") #printng stats out
+    print("\nTop-5 Features (by Weight Magnitude):") 
     for idx,(name,w,_) in enumerate(ranked_feats[:5],start=1): #loop top 5 featuers
         direction="Positive (increases antecedent likelihood)" if w>0 else "Negative (penalizes candidate)" #determine directionality
-        print(f"  {idx}. {name} (weight = {w:+.4f}) -> {direction}") #printng stats out
-    print() #printng stats out
-    return ranked_feats #ret ranked featuers
+        print(f"  {idx}. {name} (weight = {w:+.4f}) -> {direction}") 
+    print() 
+    return ranked_feats 
 
 
 #prob 6: error analysis - analysis is in the report pdf, we just count errors here
 def problem_6(test_segments,model): #problem 6 error analysis
     print("="*80)
-    print("PROBLEM 6 (5 marks): Error Analysis of Logistic Regression Implementation")
+    print("PROBLEM 6 Error Analysis of Logistic Regression Implementation")
     print("="*80)
 
     errors=[] #list of error instances
@@ -672,7 +671,7 @@ def save_parse_trees_txt(test_segments,base_dir): #save parse trees as txt file
             f.write("\n") #blank line betwen segs
 
     print(f"[Parse trees written to: {out_path}]") #confirm written
-    return out_path #ret path for pdf conversion
+    return out_path 
 
 
 #convrts parse_trees.txt to parse_trees.pdf using macOS cupsfilter
@@ -732,7 +731,7 @@ def hobbs_search_current_sentence(sent_tree,p_np_id): #hobbs algorthm inside sen
     for sub in sent_tree.subtrees(): #search subtrees for pronun
         if extract_np_id(sub.label())==p_np_id: #found target pronun node
             start_node=sub #set start node
-            break #break loop
+            break 
     if start_node is None: #pronun not found
         return proposed_ids #return collected np ids
 
@@ -747,7 +746,7 @@ def hobbs_search_current_sentence(sent_tree,p_np_id): #hobbs algorthm inside sen
     left_siblings=[] #collect left sibling branches
     for child in X: #itrate childrn under X
         if child is curr: #reached path node curr
-            break #break loop
+            break 
         left_siblings.append(child) #store left subtree branch
     proposed_ids.extend(bfs_collect_nps(left_siblings,require_intervening_np_or_s=True)) #step 3: search left of path with cond b
 
@@ -757,19 +756,19 @@ def hobbs_search_current_sentence(sent_tree,p_np_id): #hobbs algorthm inside sen
         while X is not None and not is_np_or_s(X.label()): #find ancstr tht is np or s
             curr,X=X,X.parent() #move up tree parnt pointer
         if X is None: #hit tree root
-            break #break loop
+            break 
         if X.label().startswith("NP#"):
             proposed_ids.append(extract_np_id(X.label()))
 
         left_siblings=[] #collect left sibling branches
         for child in X: #itrate childrn under X
             if child is curr: #reached path node curr
-                break #break loop
+                break 
             left_siblings.append(child) #store left subtree branch
         if X.parent() is None: #if reached top of sent
             for sib in reversed(left_siblings): #search left siblings in reverse
                 proposed_ids.extend(bfs_collect_nps([sib])) #bfs on sibling subtree
-        else: #pred was wrng
+        else: 
             proposed_ids.extend(bfs_collect_nps(left_siblings)) #bfs on left siblings
 
         if X.label() in ("S","SBAR"): #search rght siblings under clause
@@ -818,7 +817,7 @@ def hobbs_rank_candidates_for_segment(seg): #full 9-step hobbs across sents
                 tier1_match.append(cand) #tier 1 match
             elif is_prop: #tier 2: proper noun unknown gender
                 tier2_compat.append(cand) #tier 2 match
-            else: #pred was wrng
+            else: 
                 tier3_other.append(cand) #tier 3: other noun phrases
 
     for cand in reversed(seg["candidates"]): #fallback in case some nps not visited
@@ -831,9 +830,9 @@ def hobbs_rank_candidates_for_segment(seg): #full 9-step hobbs across sents
 
 #prob 7: rule based hobbs algorthm evaluation
 def problem_7(test_segments): #problem 7 hobbs algorthm
-    print("="*80) #printng stats out
-    print("PROBLEM 7 (10 marks): Rule-Based Hobbs' Algorithm on CFG Parse Trees") #printng stats out
-    print("="*80) #printng stats out
+    print("="*80) 
+    print("PROBLEM 7 Rule-Based Hobbs' Algorithm on CFG Parse Trees") 
+    print("="*80) 
     tp_all,fp_all,fn_all=0,0,0 #init all nps counters
     tp_ab,fp_ab,fn_ab=0,0,0 #init ab counters
 
@@ -843,7 +842,7 @@ def problem_7(test_segments): #problem 7 hobbs algorthm
         if len(hobbs_ranked)>0: #chek if candidtes proposed
             if hobbs_ranked[0]["is_antecedent"]: #top 1 pick correct
                 tp_all+=1 #got it rght
-            else: #pred was wrng
+            else: 
                 fp_all+=1 #pred wrng cand
                 if has_gold: #chek if gold existed
                     fn_all+=1 #missed true referent
@@ -854,7 +853,7 @@ def problem_7(test_segments): #problem 7 hobbs algorthm
         if len(hobbs_ab)>0: #ab canddate found
             if hobbs_ab[0]["is_antecedent"]: #top ab pick correct
                 tp_ab+=1 #correct betwen a and b
-            else: #pred was wrng
+            else: 
                 fp_ab+=1 #picked wrng betwen a and b
                 if has_gold: #chek if gold existed
                     fn_ab+=1 #missed true a/b antecednt
@@ -863,46 +862,46 @@ def problem_7(test_segments): #problem 7 hobbs algorthm
 
     p_all,r_all,f1_all=calc_prf(tp_all,fp_all,fn_all) #calc prf on all nps
     p_ab,r_ab,f1_ab=calc_prf(tp_ab,fp_ab,fn_ab) #calc prf on ab cands
-    print("Hobbs' Algorithm Performance on Test Set (gap-test.tsv, 2000 segments):") #printng stats out
-    print("  1. Full Candidate NP Pool (All POS-Extracted Candidate NPs):") #printng stats out
-    print(f"       Precision: {p_all*100:.2f}% | Recall: {r_all*100:.2f}% | F1-Score: {f1_all*100:.2f}%") #printng stats out
-    print("  2. GAP Candidate Entities (Evaluating on Candidates A vs B):") #printng stats out
-    print(f"       Precision: {p_ab*100:.2f}% | Recall: {r_ab*100:.2f}% | F1-Score: {f1_ab*100:.2f}%\n") #printng stats out
+    print("Hobbs' Algorithm Performance on Test Set (gap-test.tsv, 2000 segments):") 
+    print("  1. Full Candidate NP Pool (All POS-Extracted Candidate NPs):") 
+    print(f"       Precision: {p_all*100:.2f}% | Recall: {r_all*100:.2f}% | F1-Score: {f1_all*100:.2f}%") 
+    print("  2. GAP Candidate Entities (Evaluating on Candidates A vs B):") 
+    print(f"       Precision: {p_ab*100:.2f}% | Recall: {r_ab*100:.2f}% | F1-Score: {f1_ab*100:.2f}%\n") 
     return {"all_nps":(p_all,r_all,f1_all),"ab_nps":(p_ab,r_ab,f1_ab)} #ret metrics dict for all nps & ab
 
 
 #prob 8: comparing logistic regression vs hobbs
 def problem_8(lr_res,hobbs_res,rand_res,recent_res): #problem 8 comparison table
-    print("="*80) #printng stats out
-    print("PROBLEM 8 (5 marks): Quantitative & Qualitative Comparison (LR vs. Hobbs)") #printng stats out
-    print("="*80) #printng stats out
-    print(f"{'Method':<34} | {'All-NPs F1':>12} | {'GAP (A/B) Prec':>14} | {'GAP (A/B) Rec':>13} | {'GAP (A/B) F1':>12}") #printng stats out
-    print("-"*94) #printng stats out
-    print(f"{'Random Assignment (100 runs)':<34} | {rand_res[0]*100:11.2f}% | {rand_res[1]*100:13.2f}% | {rand_res[1]*100:12.2f}% | {rand_res[1]*100:11.2f}%") #printng stats out
-    print(f"{'Most Recent Antecedent':<34} | {recent_res[0]*100:11.2f}% | {recent_res[1]*100:13.2f}% | {recent_res[1]*100:12.2f}% | {recent_res[1]*100:11.2f}%") #printng stats out
+    print("="*80) 
+    print("PROBLEM 8 Quantitative & Qualitative Comparison (LR vs. Hobbs)") 
+    print("="*80) 
+    print(f"{'Method':<34} | {'All-NPs F1':>12} | {'GAP (A/B) Prec':>14} | {'GAP (A/B) Rec':>13} | {'GAP (A/B) F1':>12}") 
+    print("-"*94) 
+    print(f"{'Random Assignment (100 runs)':<34} | {rand_res[0]*100:11.2f}% | {rand_res[1]*100:13.2f}% | {rand_res[1]*100:12.2f}% | {rand_res[1]*100:11.2f}%") 
+    print(f"{'Most Recent Antecedent':<34} | {recent_res[0]*100:11.2f}% | {recent_res[1]*100:13.2f}% | {recent_res[1]*100:12.2f}% | {recent_res[1]*100:11.2f}%") 
     hp_a,hr_a,hf_a=hobbs_res["all_nps"] #hobbs all nps metrics
     hp_b,hr_b,hf_b=hobbs_res["ab_nps"] #hobbs ab metrics
-    print(f"{'Rule-Based Hobbs Algorithm':<34} | {hf_a*100:11.2f}% | {hp_b*100:13.2f}% | {hr_b*100:12.2f}% | {hf_b*100:11.2f}%") #printng stats out
+    print(f"{'Rule-Based Hobbs Algorithm':<34} | {hf_a*100:11.2f}% | {hp_b*100:13.2f}% | {hr_b*100:12.2f}% | {hf_b*100:11.2f}%") 
     lp_a,lr_a,lf_a=lr_res["all_nps"] #custom lr all nps metrics
     lp_b,lr_b,lf_b=lr_res["ab_nps"] #custom lr ab metrics
-    print(f"{'Custom Logistic Regression (Ours)':<34} | {lf_a*100:11.2f}% | {lp_b*100:13.2f}% | {lr_b*100:12.2f}% | {lf_b*100:11.2f}%\n") #printng stats out
+    print(f"{'Custom Logistic Regression (Ours)':<34} | {lf_a*100:11.2f}% | {lp_b*100:13.2f}% | {lr_b*100:12.2f}% | {lf_b*100:11.2f}%\n") 
 
 
 #extra credit: using sklearn logistic regression for comparison
 def extra_credit(train_segments,dev_segments,test_segments,hobbs_res=None): #extra credit sklearn lr
-    print("="*80) #printng stats out
-    print("EXTRA CREDIT (10 marks): Scikit-Learn Logistic Regression Implementation") #printng stats out
-    print("="*80) #printng stats out
+    print("="*80) 
+    print("EXTRA CREDIT Scikit-Learn Logistic Regression Implementation") 
+    print("="*80) 
     try:
         from sklearn.linear_model import LogisticRegression #import sklearn LogisticRegression
     except ImportError: #sklearn not installed
-        print("scikit-learn is not installed in this environment.") #printng stats out
+        print("scikit-learn is not installed in this environment.") 
         return None #ret none if import failed
 
     X_train,y_train=build_Xy_pairs(train_segments) #convrt train segs to feat matrix
-    print("1. Hyperparameter Tuning on Development Set (gap-validation.tsv):") #printng stats out
-    print(f"{'C':>6} | {'Pos_Weight':>10} | {'Dev F1 (All NPs)':>16} | {'Dev F1 (A/B NPs)':>16}") #printng stats out
-    print("-"*56) #printng stats out
+    print("1. Hyperparameter Tuning on Development Set (gap-validation.tsv):") 
+    print(f"{'C':>6} | {'Pos_Weight':>10} | {'Dev F1 (All NPs)':>16} | {'Dev F1 (A/B NPs)':>16}") 
+    print("-"*56) 
 
     best_params,best_f1,best_model=(1.0,3.0),-1.0,None #track best sklearn params
     for c_val in [0.01,0.1,1.0,10.0]: #grid search inverse reg C
@@ -915,44 +914,44 @@ def extra_credit(train_segments,dev_segments,test_segments,hobbs_res=None): #ext
 
             dev_res=evaluate_model_predictions(dev_segments,sk_model,threshold=0.25) #test on dev/validation set
             f1_all_dev,f1_ab_dev=dev_res["all_nps"][2],dev_res["ab_nps"][2] #dev set f1 scores
-            print(f"{c_val:6.2f} | {pw:10.1f} | {f1_all_dev*100:15.2f}% | {f1_ab_dev*100:15.2f}%") #printng stats out
+            print(f"{c_val:6.2f} | {pw:10.1f} | {f1_all_dev*100:15.2f}% | {f1_ab_dev*100:15.2f}%") 
             if 0.5*(f1_all_dev+f1_ab_dev)>best_f1: #is this C and poswt better
                 best_f1=0.5*(f1_all_dev+f1_ab_dev) #updated best dev f1
                 best_params=(c_val,pw) #save best C and pw
                 best_model=sk_model
 
-    print("-"*56) #printng stats out
-    print(f"Best scikit-learn Hyperparameters on Dev Set: C = {best_params[0]}, pos_weight = {best_params[1]}\n") #printng stats out
+    print("-"*56) 
+    print(f"Best scikit-learn Hyperparameters on Dev Set: C = {best_params[0]}, pos_weight = {best_params[1]}\n") 
 
     test_res=evaluate_model_predictions(test_segments,best_model,threshold=0.25) #evaluate on test set with best hp
     p_all,r_all,f1_all=test_res["all_nps"] #test metrics for full cand pool
     p_ab,r_ab,f1_ab=test_res["ab_nps"] #test metrics for a vs b
 
-    print("2. Test Set Performance (scikit-learn LogisticRegression on gap-test.tsv):") #printng stats out
-    print(f"  - Full Candidate NP Pool: Precision={p_all*100:.2f}% | Recall={r_all*100:.2f}% | F1={f1_all*100:.2f}%") #printng stats out
-    print(f"  - GAP Candidates (A/B):   Precision={p_ab*100:.2f}% | Recall={r_ab*100:.2f}% | F1={f1_ab*100:.2f}%\n") #printng stats out
+    print("2. Test Set Performance (scikit-learn LogisticRegression on gap-test.tsv):") 
+    print(f"  - Full Candidate NP Pool: Precision={p_all*100:.2f}% | Recall={r_all*100:.2f}% | F1={f1_all*100:.2f}%") 
+    print(f"  - GAP Candidates (A/B):   Precision={p_ab*100:.2f}% | Recall={r_ab*100:.2f}% | F1={f1_ab*100:.2f}%\n") 
 
-    print(f"3. Scikit-Learn Learned Feature Weights (Intercept = {best_model.bias:+.4f}):") #printng stats out
-    print(f"{'Rank':>4} | {'Feature Name':<26} | {'Learned Weight':>14} | {'|Weight|':>10}") #printng stats out
-    print("-"*64) #printng stats out
+    print(f"3. Scikit-Learn Learned Feature Weights (Intercept = {best_model.bias:+.4f}):") 
+    print(f"{'Rank':>4} | {'Feature Name':<26} | {'Learned Weight':>14} | {'|Weight|':>10}") 
+    print("-"*64) 
     sk_feats=sorted(zip(FEATURE_NAMES,best_model.weights),key=lambda item:abs(item[1]),reverse=True) #rank sklearn wghts by abs
     for idx,(fname,w) in enumerate(sk_feats,start=1): #printng sklearn wts
-        print(f"{idx:4d} | {fname:<26} | {w:+14.4f} | {abs(w):10.4f}") #printng stats out
+        print(f"{idx:4d} | {fname:<26} | {w:+14.4f} | {abs(w):10.4f}") 
 
-    print("\nScikit-Learn Top-5 Feature Weights:") #printng stats out
+    print("\nScikit-Learn Top-5 Feature Weights:") 
     for idx,(fname,w) in enumerate(sk_feats[:5],start=1): #show higest wghts sklearn wghts
-        print(f"  {idx}. {fname:<26}: {w:+.4f}") #printng stats out
+        print(f"  {idx}. {fname:<26}: {w:+.4f}") 
 
     sk_errors=sum( #count wrng test predictions
         1 for seg in test_segments if (seg["A_coref"] or seg["B_coref"])
         and not pick_best_candidate(seg["candidates"],seg["features"],best_model)[1]["is_antecedent"]
     )
-    print("\n4. Scikit-Learn Error Analysis & Comparison:") #printng stats out
-    print(f"  - Total errors on gold-annotated test segments: {sk_errors} (exhibits the same 4 error patterns as Custom LR)") #printng stats out
+    print("\n4. Scikit-Learn Error Analysis & Comparison:") 
+    print(f"  - Total errors on gold-annotated test segments: {sk_errors} (exhibits the same 4 error patterns as Custom LR)") 
     if hobbs_res is not None: #print diff vs hobbs algo
-        print(f"  - Comparison vs. Hobbs' Algorithm: Scikit-Learn LR improves Full-Pool F1 from {hobbs_res['all_nps'][2]*100:.2f}% to {f1_all*100:.2f}%") #printng stats out
-        print(f"    and GAP (A/B) F1 from {hobbs_res['ab_nps'][2]*100:.2f}% to {f1_ab*100:.2f}%.\n") #printng stats out
-    return test_res #ret test results dict
+        print(f"  - Comparison vs. Hobbs' Algorithm: Scikit-Learn LR improves Full-Pool F1 from {hobbs_res['all_nps'][2]*100:.2f}% to {f1_all*100:.2f}%") 
+        print(f"    and GAP (A/B) F1 from {hobbs_res['ab_nps'][2]*100:.2f}% to {f1_ab*100:.2f}%.\n") 
+    return test_res 
 
 
 #main flow
@@ -960,17 +959,17 @@ def main(): #main func runner
     base_dir=os.path.dirname(os.path.abspath(__file__)) #get current script dirctory path
     data_dir=os.path.join(base_dir,"data") #path to data/ folder
 
-    print("Loading GAP Coreference Dataset splits (train, dev, test)...") #printng stats out
+    print("Loading GAP Coreference Dataset splits (train, dev, test)...") 
     train_rows=load_gap_tsv(os.path.join(data_dir,"gap-development.tsv")) #load 2000 train rows from tsv
     dev_rows=load_gap_tsv(os.path.join(data_dir,"gap-validation.tsv")) #load 454 dev rows from tsv
     test_rows=load_gap_tsv(os.path.join(data_dir,"gap-test.tsv")) #load 2000 test rows from tsv
 
-    print("Running POS Tagger, CFG Parser, and Candidate NP Extraction...") #printng stats out
+    print("Running POS Tagger, CFG Parser, and Candidate NP Extraction...") 
     train_segments=extract_candidates_from_dataset(train_rows) #get cands and trees for train
     dev_segments=extract_candidates_from_dataset(dev_rows) #get cands and trees for dev
     test_segments=extract_candidates_from_dataset(test_rows) #get cands and trees for test
 
-    print("Extracting features (including Hobbs CFG tree features) for all segments...\n") #printng stats out
+    print("Extracting features (including Hobbs CFG tree features) for all segments...\n") 
     for seg in train_segments: #loop train passages
         seg["features"]=extract_features_for_segment(seg) #extrat 12 feats for cands in seg
     for seg in dev_segments: #loop dev passages
@@ -995,5 +994,5 @@ def main(): #main func runner
     extra_credit(train_segments,dev_segments,test_segments,hobbs_res=hobbs_res) #running sklearn log reg model
 
 
-if __name__=="__main__": #run when script executed directy
-    main() #calling main
+if __name__=="__main__": 
+    main() 
