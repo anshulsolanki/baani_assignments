@@ -1,0 +1,72 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.72in]{geometry}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue
+}
+
+\titlespacing*{\section}{0pt}{7pt}{3pt}
+\titlespacing*{\subsection}{0pt}{5pt}{2pt}
+\setlist[itemize]{noitemsep, topsep=2pt, leftmargin=1.5em}
+\setlist[enumerate]{noitemsep, topsep=2pt, leftmargin=1.5em}
+
+\title{\vspace{-1.2cm}\textbf{\Large Linguistically Guided Extractive Medical Summarization: From RST, Syntactic Parsing, and Semantic Representations to Feature-Driven Logistic Regression}\vspace{-0.3cm}}
+\author{
+    Yashaswi Priya (2025114007) \quad \& \quad Baani Solanki (2025114016) \\
+    \small Computational Linguistics 2 --- IIIT Hyderabad
+}
+\date{\vspace{-0.5cm}}
+
+\begin{document}
+\maketitle
+
+\section{Goal of the Project \& Research Question}
+Biomedical research articles (\textit{PLOS}, \textit{eLife}) are long and syntactically complex. While surface statistical baselines (\texttt{TF-IDF}, \texttt{TextRank}) extract sentences with frequent keywords, they ignore \textbf{discourse structure}, \textbf{syntactic clause nuclearity}, and \textbf{clinical meaning}, often selecting background boilerplate over core findings. Conversely, black-box pre-trained LLMs can hallucinate numeric dosages or invert clinical negations. Following the professor's feedback, we propose a \textbf{4-stage non-neural linguistic summarization framework}:
+\[
+\text{Rule-Based Linguistic Summarizer} \;\longrightarrow\; \text{Rules-to-Features Mapping} \;\longrightarrow\; \text{Logistic Regression} \;\longrightarrow\; \text{Fine-Tuning via Best Features}
+\]
+\textbf{Research Question:} \textit{How does converting linguistic summarization rules---spanning \textbf{Rhetorical Structure Theory (RST)}, \textbf{Syntactic Parsing \& Anaphora}, and \textbf{Semantic Representations} alongside \textbf{TF-IDF} and \textbf{TextRank}---into features for a supervised \textbf{Logistic Regression} (and \textbf{Naive Bayes}) model affect factual reliability, clinical information retention (Symptoms-to-Disease classification), and \texttt{ROUGE} quality in medical summarization?}
+
+\section{Scope \& 4-Stage Methodology (Strictly Non-Neural)}
+\begin{enumerate}
+    \item \textbf{Stage 1 --- Rule-Based Linguistic Summarization (\texttt{M0} Baselines $\to$ \texttt{M1} Linguistic Rules):}
+    \begin{itemize}
+        \item \textbf{Statistical \& Graph Baselines (\texttt{M0} --- Yashaswi):} Sentence-level \textbf{TF-IDF} salience and \textbf{TextRank} graph centrality.
+        \item \textbf{Rhetorical Structure Theory (\texttt{RST} --- Baani):} Segment sentences into \textbf{Elementary Discourse Units (EDUs)} and classify explicit biomedical connectives into \textit{Conclusion/Result} (\textit{therefore, consequently, findings show}), \textit{Contrast} (\textit{however, in contrast}), \textit{Cause} (\textit{because, due to}), and \textit{Concession} (\textit{although, despite}) to upweight \textbf{Nucleus} claims ($w_N > 1$) and downweight \textbf{Satellite} background ($w_S < 1$).
+        \item \textbf{Syntactic Parser \& Anaphora Resolution (\texttt{use a parser} --- Baani):} Use NLTK POS tagging and a Context-Free Grammar (\texttt{RegexpParser}) chunker to reward complete main-clause \texttt{[Subject-NP + Finite-VP + Object-NP]} structures, prune parenthetical citations, and apply \textbf{Hobbs'/Binding-Theory Anaphora Resolution} to resolve or penalize dangling initial pronouns (\textit{it, they, this treatment}).
+        \item \textbf{Meaning / Semantic Representation (\texttt{M1} --- Yashaswi):} Extract structured \textbf{Predicate--Argument Semantic Triples} (\texttt{<Intervention/Agent, Clinical-Predicate, Symptom/Disease>}), compute \textbf{Symptom/Disease/Treatment concept density} (WordNet + medical lexicon), and track \textbf{syntactic negation scope} (\textit{not, no evidence of}) and \textbf{numeric clinical evidence}.
+    \end{itemize}
+    \item \textbf{Stage 2 \& 3 --- Rules-to-Features Conversion \& Supervised Logistic Regression (\texttt{M2}):} Convert all 15 statistical, RST, syntactic-parser, and semantic rules into a feature vector $\mathbf{x}_i \in \mathbb{R}^{15}$ per sentence $s_i$, paired with \textbf{Oracle ROUGE Extractive Labels} $y_i \in \{0, 1\}$. Train custom \textbf{L2-Regularized Logistic Regression} (Baani) and \textbf{Naive Bayes} (Kupiec et al., 1995; Yashaswi) sentence classifiers $P(y_i = 1 \mid \mathbf{x}_i) = \sigma(\mathbf{w}^\top \mathbf{x}_i + b)$.
+    \item \textbf{Stage 4 --- Feature-Guided Fine-Tuning (\texttt{M3}):} Inspect learned Logistic Regression feature weights $|w_j|$, run systematic ablation across the linguistic feature families, and \textbf{fine-tune the model using the best-performing linguistic features} with an RST/anaphora coherence post-processor.
+\end{enumerate}
+
+\section{Datasets, Tools \& 3-Tier Objective Evaluation}
+\begin{itemize}
+    \item \textbf{Datasets:} (1) \textbf{BioLaySumm2025-PLOS} \& \textbf{BioLaySumm2025-eLife} (\url{https://huggingface.co/datasets/BioLaySumm/BioLaySumm2025-PLOS} \& \texttt{eLife} --- stratified 1,000-article train/dev/test benchmark); (2) \textbf{Symptom-to-Disease Clinical Dataset} for medical concept mapping and extrinsic diagnostic evaluation.
+    \item \textbf{Tools Used:} Python 3, \texttt{nltk} (POS tagger, \texttt{RegexpParser} CFG parser, WordNet), \texttt{networkx}/\texttt{numpy} for \texttt{TextRank}, and custom from-scratch \textbf{Logistic Regression} \& \textbf{Naive Bayes} implementations (\texttt{scikit-learn}/\texttt{matplotlib} for verification and plots).
+    \item \textbf{3-Tier Objective Evaluation (No Human Annotation Required):} (1) \textbf{Intrinsic Overlap:} \texttt{ROUGE-1}, \texttt{ROUGE-2}, and \texttt{ROUGE-L}; (2) \textbf{Python Rule-Based Factual Checker:} Medical keyword \& semantic-triple coverage, negation polarity preservation, and \textbf{regex matching for numeric values} (dosages, percentages, sample sizes, $p$-values); (3) \textbf{Extrinsic Clinical Utility (\texttt{Symptoms-to-Disease Classification}):} Evaluate a non-neural \textbf{Naive Bayes / Logistic Regression Symptoms-to-Disease Classifier} on the generated summaries to test diagnostic retention.
+\end{itemize}
+
+\section{Expected Challenges, Division of Work \& Key References}
+\begin{itemize}
+    \item \textbf{Challenges \& Mitigations:} (1) \textit{Sentence labels from gold summaries:} Standard \textbf{Greedy Oracle ROUGE Labeling} ($y_i \in \{0,1\}$); (2) \textit{Dangling pronouns:} Substitute antecedent NPs via \textbf{Anaphora Resolution}; (3) \textit{Feature collinearity:} $L_2$ regularization and Stage 4 feature selection.
+    \item \textbf{Equal 50/50 Division of Work:} \textbf{Yashaswi (\texttt{2025114007})} builds \texttt{TF-IDF}/\texttt{TextRank}, Semantic Representation triples \& negation, Naive Bayes, \texttt{ROUGE} \& Numeric Regex Checker, and the Symptoms-to-Disease Classifier. \textbf{Baani (\texttt{2025114016})} builds the RST Discourse Parser, CFG Syntactic Parser \& Anaphora module, Rules-to-Features L2 Logistic Regression, and Stage 4 Feature Selection \& Fine-Tuning.
+\end{itemize}
+\begin{enumerate}
+    \item \textbf{Marcu, D. (2000).} \textit{The Theory and Practice of Discourse Parsing and Summarization.} MIT Press.
+    \item \textbf{Kupiec, J., Pedersen, J., \& Chen, F. (1995).} A Trainable Document Summarizer. \textit{Proceedings of ACM SIGIR 1995}, 68--73.
+    \item \textbf{Mihalcea, R., \& Tarau, P. (2004).} TextRank: Bringing Order into Texts. \textit{Proceedings of EMNLP 2004}, 404--411.
+    \item \textbf{Goldsack, T., et al. (2023/2025).} BioLaySumm: Lay Summarisation of Biomedical Research Articles. \textit{ACL BioNLP Workshop} (\texttt{PMC10449915} \& \texttt{PMC13142433}).
+\end{enumerate}
+
+\end{document}
