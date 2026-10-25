@@ -1,0 +1,1714 @@
+{
+  "1": {
+    "id": 23,
+    "relation": "Explanation",
+    "nuclearity": "NS",
+    "start": 0,
+    "end": 508,
+    "text": "I don't believe that endorsing the Nuclear Freeze Initiative is the right step for California Common Cause. Tempting as it may be, we shouldn't embrace every popular issue that comes along. When we do so, we use precious, limited resources where other players with superior resources are already doing an adequate job. Rather, I think we will be stronger and more effective if we stick to those issues of governmental structure and process, broadly defined, that have formed the core of our agenda for years.",
+    "left": {
+      "id": 13,
+      "relation": "Attribution",
+      "nuclearity": "SN",
+      "start": 0,
+      "end": 107,
+      "text": "I don't believe that endorsing the Nuclear Freeze Initiative is the right step for California Common Cause.",
+      "left": {
+        "id": 0,
+        "relation": "elementary",
+        "nuclearity": "",
+        "start": 0,
+        "end": 15,
+        "text": "I don't believe"
+      },
+      "right": {
+        "id": 1,
+        "relation": "elementary",
+        "nuclearity": "",
+        "start": 16,
+        "end": 107,
+        "text": "that endorsing the Nuclear Freeze Initiative is the right step for California Common Cause."
+      }
+    },
+    "right": {
+      "id": 22,
+      "relation": "Contrast",
+      "nuclearity": "NN",
+      "start": 108,
+      "end": 508,
+      "text": "Tempting as it may be, we shouldn't embrace every popular issue that comes along. When we do so, we use precious, limited resources where other players with superior resources are already doing an adequate job. Rather, I think we will be stronger and more effective if we stick to those issues of governmental structure and process, broadly defined, that have formed the core of our agenda for years.",
+      "left": {
+        "id": 18,
+        "relation": "Explanation",
+        "nuclearity": "NS",
+        "start": 108,
+        "end": 318,
+        "text": "Tempting as it may be, we shouldn't embrace every popular issue that comes along. When we do so, we use precious, limited resources where other players with superior resources are already doing an adequate job.",
+        "left": {
+          "id": 15,
+          "relation": "Contrast",
+          "nuclearity": "SN",
+          "start": 108,
+          "end": 189,
+          "text": "Tempting as it may be, we shouldn't embrace every popular issue that comes along.",
+          "left": {
+            "id": 2,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 108,
+            "end": 130,
+            "text": "Tempting as it may be,"
+          },
+          "right": {
+            "id": 14,
+            "relation": "Elaboration",
+            "nuclearity": "NS",
+            "start": 131,
+            "end": 189,
+            "text": "we shouldn't embrace every popular issue that comes along.",
+            "left": {
+              "id": 3,
+              "relation": "elementary",
+              "nuclearity": "",
+              "start": 131,
+              "end": 171,
+              "text": "we shouldn't embrace every popular issue"
+            },
+            "right": {
+              "id": 4,
+              "relation": "elementary",
+              "nuclearity": "",
+              "start": 172,
+              "end": 189,
+              "text": "that comes along."
+            }
+          }
+        },
+        "right": {
+          "id": 17,
+          "relation": "Background",
+          "nuclearity": "SN",
+          "start": 190,
+          "end": 318,
+          "text": "When we do so, we use precious, limited resources where other players with superior resources are already doing an adequate job.",
+          "left": {
+            "id": 5,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 190,
+            "end": 204,
+            "text": "When we do so,"
+          },
+          "right": {
+            "id": 16,
+            "relation": "Elaboration",
+            "nuclearity": "NS",
+            "start": 205,
+            "end": 318,
+            "text": "we use precious, limited resources where other players with superior resources are already doing an adequate job.",
+            "left": {
+              "id": 6,
+              "relation": "elementary",
+              "nuclearity": "",
+              "start": 205,
+              "end": 239,
+              "text": "we use precious, limited resources"
+            },
+            "right": {
+              "id": 7,
+              "relation": "elementary",
+              "nuclearity": "",
+              "start": 240,
+              "end": 318,
+              "text": "where other players with superior resources are already doing an adequate job."
+            }
+          }
+        }
+      },
+      "right": {
+        "id": 21,
+        "relation": "Attribution",
+        "nuclearity": "SN",
+        "start": 319,
+        "end": 508,
+        "text": "Rather, I think we will be stronger and more effective if we stick to those issues of governmental structure and process, broadly defined, that have formed the core of our agenda for years.",
+        "left": {
+          "id": 8,
+          "relation": "elementary",
+          "nuclearity": "",
+          "start": 319,
+          "end": 334,
+          "text": "Rather, I think"
+        },
+        "right": {
+          "id": 20,
+          "relation": "Condition",
+          "nuclearity": "NS",
+          "start": 335,
+          "end": 508,
+          "text": "we will be stronger and more effective if we stick to those issues of governmental structure and process, broadly defined, that have formed the core of our agenda for years.",
+          "left": {
+            "id": 9,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 335,
+            "end": 373,
+            "text": "we will be stronger and more effective"
+          },
+          "right": {
+            "id": 19,
+            "relation": "Elaboration",
+            "nuclearity": "NS",
+            "start": 374,
+            "end": 508,
+            "text": "if we stick to those issues of governmental structure and process, broadly defined, that have formed the core of our agenda for years.",
+            "left": {
+              "id": 10,
+              "relation": "elementary",
+              "nuclearity": "",
+              "start": 374,
+              "end": 457,
+              "text": "if we stick to those issues of governmental structure and process, broadly defined,"
+            },
+            "right": {
+              "id": 11,
+              "relation": "elementary",
+              "nuclearity": "",
+              "start": 458,
+              "end": 508,
+              "text": "that have formed the core of our agenda for years."
+            }
+          }
+        }
+      }
+    }
+  },
+  "2": {
+    "id": 23,
+    "relation": "Elaboration",
+    "nuclearity": "NS",
+    "start": 0,
+    "end": 575,
+    "text": "As your floppy drive writes or reads, a Syncom diskette is working four ways to keep loose particles and dust from causing soft errors, dropouts. Cleaning agents on the burnished surface of the Ectype coating actually remove build-up from the head, while lubricating it at the same time. A carbon additive drains away static electricity before it can attract dust or lint. Strong binders hold the signal-carrying oxides tightly within the coating. And the non-woven jacket liner, more than just wiping the surface, provides thousands of tiny pockets to keep what it collects.",
+    "left": {
+      "id": 14,
+      "relation": "Background",
+      "nuclearity": "SN",
+      "start": 0,
+      "end": 145,
+      "text": "As your floppy drive writes or reads, a Syncom diskette is working four ways to keep loose particles and dust from causing soft errors, dropouts.",
+      "left": {
+        "id": 0,
+        "relation": "elementary",
+        "nuclearity": "",
+        "start": 0,
+        "end": 37,
+        "text": "As your floppy drive writes or reads,"
+      },
+      "right": {
+        "id": 13,
+        "relation": "Elaboration",
+        "nuclearity": "NS",
+        "start": 38,
+        "end": 145,
+        "text": "a Syncom diskette is working four ways to keep loose particles and dust from causing soft errors, dropouts.",
+        "left": {
+          "id": 1,
+          "relation": "elementary",
+          "nuclearity": "",
+          "start": 38,
+          "end": 76,
+          "text": "a Syncom diskette is working four ways"
+        },
+        "right": {
+          "id": 2,
+          "relation": "elementary",
+          "nuclearity": "",
+          "start": 77,
+          "end": 145,
+          "text": "to keep loose particles and dust from causing soft errors, dropouts."
+        }
+      }
+    },
+    "right": {
+      "id": 22,
+      "relation": "Joint",
+      "nuclearity": "NN",
+      "start": 146,
+      "end": 575,
+      "text": "Cleaning agents on the burnished surface of the Ectype coating actually remove build-up from the head, while lubricating it at the same time. A carbon additive drains away static electricity before it can attract dust or lint. Strong binders hold the signal-carrying oxides tightly within the coating. And the non-woven jacket liner, more than just wiping the surface, provides thousands of tiny pockets to keep what it collects.",
+      "left": {
+        "id": 15,
+        "relation": "Temporal",
+        "nuclearity": "NS",
+        "start": 146,
+        "end": 287,
+        "text": "Cleaning agents on the burnished surface of the Ectype coating actually remove build-up from the head, while lubricating it at the same time.",
+        "left": {
+          "id": 3,
+          "relation": "elementary",
+          "nuclearity": "",
+          "start": 146,
+          "end": 248,
+          "text": "Cleaning agents on the burnished surface of the Ectype coating actually remove build-up from the head,"
+        },
+        "right": {
+          "id": 4,
+          "relation": "elementary",
+          "nuclearity": "",
+          "start": 249,
+          "end": 287,
+          "text": "while lubricating it at the same time."
+        }
+      },
+      "right": {
+        "id": 21,
+        "relation": "Joint",
+        "nuclearity": "NN",
+        "start": 288,
+        "end": 575,
+        "text": "A carbon additive drains away static electricity before it can attract dust or lint. Strong binders hold the signal-carrying oxides tightly within the coating. And the non-woven jacket liner, more than just wiping the surface, provides thousands of tiny pockets to keep what it collects.",
+        "left": {
+          "id": 16,
+          "relation": "Temporal",
+          "nuclearity": "NS",
+          "start": 288,
+          "end": 372,
+          "text": "A carbon additive drains away static electricity before it can attract dust or lint.",
+          "left": {
+            "id": 5,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 288,
+            "end": 336,
+            "text": "A carbon additive drains away static electricity"
+          },
+          "right": {
+            "id": 6,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 337,
+            "end": 372,
+            "text": "before it can attract dust or lint."
+          }
+        },
+        "right": {
+          "id": 20,
+          "relation": "Joint",
+          "nuclearity": "NN",
+          "start": 373,
+          "end": 575,
+          "text": "Strong binders hold the signal-carrying oxides tightly within the coating. And the non-woven jacket liner, more than just wiping the surface, provides thousands of tiny pockets to keep what it collects.",
+          "left": {
+            "id": 7,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 373,
+            "end": 447,
+            "text": "Strong binders hold the signal-carrying oxides tightly within the coating."
+          },
+          "right": {
+            "id": 19,
+            "relation": "same-unit",
+            "nuclearity": "NN",
+            "start": 448,
+            "end": 575,
+            "text": "And the non-woven jacket liner, more than just wiping the surface, provides thousands of tiny pockets to keep what it collects.",
+            "left": {
+              "id": 17,
+              "relation": "Background",
+              "nuclearity": "NS",
+              "start": 448,
+              "end": 514,
+              "text": "And the non-woven jacket liner, more than just wiping the surface,",
+              "left": {
+                "id": 8,
+                "relation": "elementary",
+                "nuclearity": "",
+                "start": 448,
+                "end": 479,
+                "text": "And the non-woven jacket liner,"
+              },
+              "right": {
+                "id": 9,
+                "relation": "elementary",
+                "nuclearity": "",
+                "start": 480,
+                "end": 514,
+                "text": "more than just wiping the surface,"
+              }
+            },
+            "right": {
+              "id": 18,
+              "relation": "Elaboration",
+              "nuclearity": "NS",
+              "start": 515,
+              "end": 575,
+              "text": "provides thousands of tiny pockets to keep what it collects.",
+              "left": {
+                "id": 10,
+                "relation": "elementary",
+                "nuclearity": "",
+                "start": 515,
+                "end": 549,
+                "text": "provides thousands of tiny pockets"
+              },
+              "right": {
+                "id": 11,
+                "relation": "elementary",
+                "nuclearity": "",
+                "start": 550,
+                "end": 575,
+                "text": "to keep what it collects."
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "3": {
+    "id": 21,
+    "relation": "Elaboration",
+    "nuclearity": "NS",
+    "start": 0,
+    "end": 508,
+    "text": "To create your own \"Victorian\" bouquet of flowers, choose varying shapes, sizes and forms, besides a variety of complementary colors. Plants that grow tall should be surrounded by smaller ones and filled with others that tumble over the side of a hanging basket. Leaf textures and colors will also be important. There is the silver-white foliage of dusty miller, the feathery threads of lotus vine floating down from above, the deep greens, or chartreuse, even the widely varied foliage colors of the coleus.",
+    "left": {
+      "id": 12,
+      "relation": "Manner-Means",
+      "nuclearity": "NS",
+      "start": 0,
+      "end": 133,
+      "text": "To create your own \"Victorian\" bouquet of flowers, choose varying shapes, sizes and forms, besides a variety of complementary colors.",
+      "left": {
+        "id": 0,
+        "relation": "elementary",
+        "nuclearity": "",
+        "start": 0,
+        "end": 50,
+        "text": "To create your own \"Victorian\" bouquet of flowers,"
+      },
+      "right": {
+        "id": 1,
+        "relation": "elementary",
+        "nuclearity": "",
+        "start": 51,
+        "end": 133,
+        "text": "choose varying shapes, sizes and forms, besides a variety of complementary colors."
+      }
+    },
+    "right": {
+      "id": 20,
+      "relation": "Joint",
+      "nuclearity": "NN",
+      "start": 134,
+      "end": 508,
+      "text": "Plants that grow tall should be surrounded by smaller ones and filled with others that tumble over the side of a hanging basket. Leaf textures and colors will also be important. There is the silver-white foliage of dusty miller, the feathery threads of lotus vine floating down from above, the deep greens, or chartreuse, even the widely varied foliage colors of the coleus.",
+      "left": {
+        "id": 16,
+        "relation": "same-unit",
+        "nuclearity": "NN",
+        "start": 134,
+        "end": 262,
+        "text": "Plants that grow tall should be surrounded by smaller ones and filled with others that tumble over the side of a hanging basket.",
+        "left": {
+          "id": 13,
+          "relation": "Elaboration",
+          "nuclearity": "NS",
+          "start": 134,
+          "end": 155,
+          "text": "Plants that grow tall",
+          "left": {
+            "id": 2,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 134,
+            "end": 140,
+            "text": "Plants"
+          },
+          "right": {
+            "id": 3,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 141,
+            "end": 155,
+            "text": "that grow tall"
+          }
+        },
+        "right": {
+          "id": 15,
+          "relation": "Joint",
+          "nuclearity": "NN",
+          "start": 156,
+          "end": 262,
+          "text": "should be surrounded by smaller ones and filled with others that tumble over the side of a hanging basket.",
+          "left": {
+            "id": 4,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 156,
+            "end": 192,
+            "text": "should be surrounded by smaller ones"
+          },
+          "right": {
+            "id": 14,
+            "relation": "Elaboration",
+            "nuclearity": "NS",
+            "start": 193,
+            "end": 262,
+            "text": "and filled with others that tumble over the side of a hanging basket.",
+            "left": {
+              "id": 5,
+              "relation": "elementary",
+              "nuclearity": "",
+              "start": 193,
+              "end": 215,
+              "text": "and filled with others"
+            },
+            "right": {
+              "id": 6,
+              "relation": "elementary",
+              "nuclearity": "",
+              "start": 216,
+              "end": 262,
+              "text": "that tumble over the side of a hanging basket."
+            }
+          }
+        }
+      },
+      "right": {
+        "id": 19,
+        "relation": "Elaboration",
+        "nuclearity": "NS",
+        "start": 263,
+        "end": 508,
+        "text": "Leaf textures and colors will also be important. There is the silver-white foliage of dusty miller, the feathery threads of lotus vine floating down from above, the deep greens, or chartreuse, even the widely varied foliage colors of the coleus.",
+        "left": {
+          "id": 7,
+          "relation": "elementary",
+          "nuclearity": "",
+          "start": 263,
+          "end": 311,
+          "text": "Leaf textures and colors will also be important."
+        },
+        "right": {
+          "id": 18,
+          "relation": "same-unit",
+          "nuclearity": "NN",
+          "start": 312,
+          "end": 508,
+          "text": "There is the silver-white foliage of dusty miller, the feathery threads of lotus vine floating down from above, the deep greens, or chartreuse, even the widely varied foliage colors of the coleus.",
+          "left": {
+            "id": 17,
+            "relation": "Elaboration",
+            "nuclearity": "NS",
+            "start": 312,
+            "end": 423,
+            "text": "There is the silver-white foliage of dusty miller, the feathery threads of lotus vine floating down from above,",
+            "left": {
+              "id": 8,
+              "relation": "elementary",
+              "nuclearity": "",
+              "start": 312,
+              "end": 397,
+              "text": "There is the silver-white foliage of dusty miller, the feathery threads of lotus vine"
+            },
+            "right": {
+              "id": 9,
+              "relation": "elementary",
+              "nuclearity": "",
+              "start": 398,
+              "end": 423,
+              "text": "floating down from above,"
+            }
+          },
+          "right": {
+            "id": 10,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 424,
+            "end": 508,
+            "text": "the deep greens, or chartreuse, even the widely varied foliage colors of the coleus."
+          }
+        }
+      }
+    }
+  },
+  "4": {
+    "id": 17,
+    "relation": "Elaboration",
+    "nuclearity": "NS",
+    "start": 0,
+    "end": 331,
+    "text": "The people waiting in line carried a message, a refutation, of claims that the jobless could be employed if only they showed enough moxie. Every rule has exceptions, but the tragic and too-common tableaux of hundreds or even thousands of people snake-lining up for any task with a paycheck illustrates a lack of jobs, not laziness.",
+    "left": {
+      "id": 13,
+      "relation": "same-unit",
+      "nuclearity": "NN",
+      "start": 0,
+      "end": 138,
+      "text": "The people waiting in line carried a message, a refutation, of claims that the jobless could be employed if only they showed enough moxie.",
+      "left": {
+        "id": 10,
+        "relation": "Elaboration",
+        "nuclearity": "NS",
+        "start": 0,
+        "end": 26,
+        "text": "The people waiting in line",
+        "left": {
+          "id": 0,
+          "relation": "elementary",
+          "nuclearity": "",
+          "start": 0,
+          "end": 10,
+          "text": "The people"
+        },
+        "right": {
+          "id": 1,
+          "relation": "elementary",
+          "nuclearity": "",
+          "start": 11,
+          "end": 26,
+          "text": "waiting in line"
+        }
+      },
+      "right": {
+        "id": 12,
+        "relation": "Elaboration",
+        "nuclearity": "NS",
+        "start": 27,
+        "end": 138,
+        "text": "carried a message, a refutation, of claims that the jobless could be employed if only they showed enough moxie.",
+        "left": {
+          "id": 2,
+          "relation": "elementary",
+          "nuclearity": "",
+          "start": 27,
+          "end": 69,
+          "text": "carried a message, a refutation, of claims"
+        },
+        "right": {
+          "id": 11,
+          "relation": "Condition",
+          "nuclearity": "NS",
+          "start": 70,
+          "end": 138,
+          "text": "that the jobless could be employed if only they showed enough moxie.",
+          "left": {
+            "id": 3,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 70,
+            "end": 104,
+            "text": "that the jobless could be employed"
+          },
+          "right": {
+            "id": 4,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 105,
+            "end": 138,
+            "text": "if only they showed enough moxie."
+          }
+        }
+      }
+    },
+    "right": {
+      "id": 16,
+      "relation": "Contrast",
+      "nuclearity": "SN",
+      "start": 139,
+      "end": 331,
+      "text": "Every rule has exceptions, but the tragic and too-common tableaux of hundreds or even thousands of people snake-lining up for any task with a paycheck illustrates a lack of jobs, not laziness.",
+      "left": {
+        "id": 5,
+        "relation": "elementary",
+        "nuclearity": "",
+        "start": 139,
+        "end": 165,
+        "text": "Every rule has exceptions,"
+      },
+      "right": {
+        "id": 15,
+        "relation": "same-unit",
+        "nuclearity": "NN",
+        "start": 166,
+        "end": 331,
+        "text": "but the tragic and too-common tableaux of hundreds or even thousands of people snake-lining up for any task with a paycheck illustrates a lack of jobs, not laziness.",
+        "left": {
+          "id": 14,
+          "relation": "Elaboration",
+          "nuclearity": "NS",
+          "start": 166,
+          "end": 289,
+          "text": "but the tragic and too-common tableaux of hundreds or even thousands of people snake-lining up for any task with a paycheck",
+          "left": {
+            "id": 6,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 166,
+            "end": 244,
+            "text": "but the tragic and too-common tableaux of hundreds or even thousands of people"
+          },
+          "right": {
+            "id": 7,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 245,
+            "end": 289,
+            "text": "snake-lining up for any task with a paycheck"
+          }
+        },
+        "right": {
+          "id": 8,
+          "relation": "elementary",
+          "nuclearity": "",
+          "start": 290,
+          "end": 331,
+          "text": "illustrates a lack of jobs, not laziness."
+        }
+      }
+    }
+  },
+  "5": {
+    "id": 27,
+    "relation": "Elaboration",
+    "nuclearity": "NS",
+    "start": 0,
+    "end": 442,
+    "text": "While looking over a Scottsdale, Ariz., model house one day, my wife was amused by the real-estate agents, who engaged her in the \"you talk kinda funny\" conversation. We say \"to-mah-to\" and Arizonans say \"to-may-to.\" We call the hood of a car a \"bonnet\" and the trunk a boot. Then, as my wife entered the dining room, one agent pointed to a massive chandelier and asked, \"What would you call that in England?\" \"Ostentatious,\" my wife replied.",
+    "left": {
+      "id": 20,
+      "relation": "Elaboration",
+      "nuclearity": "NS",
+      "start": 0,
+      "end": 275,
+      "text": "While looking over a Scottsdale, Ariz., model house one day, my wife was amused by the real-estate agents, who engaged her in the \"you talk kinda funny\" conversation. We say \"to-mah-to\" and Arizonans say \"to-may-to.\" We call the hood of a car a \"bonnet\" and the trunk a boot.",
+      "left": {
+        "id": 19,
+        "relation": "Background",
+        "nuclearity": "SN",
+        "start": 0,
+        "end": 216,
+        "text": "While looking over a Scottsdale, Ariz., model house one day, my wife was amused by the real-estate agents, who engaged her in the \"you talk kinda funny\" conversation. We say \"to-mah-to\" and Arizonans say \"to-may-to.\"",
+        "left": {
+          "id": 0,
+          "relation": "elementary",
+          "nuclearity": "",
+          "start": 0,
+          "end": 60,
+          "text": "While looking over a Scottsdale, Ariz., model house one day,"
+        },
+        "right": {
+          "id": 18,
+          "relation": "Elaboration",
+          "nuclearity": "NS",
+          "start": 61,
+          "end": 216,
+          "text": "my wife was amused by the real-estate agents, who engaged her in the \"you talk kinda funny\" conversation. We say \"to-mah-to\" and Arizonans say \"to-may-to.\"",
+          "left": {
+            "id": 1,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 61,
+            "end": 106,
+            "text": "my wife was amused by the real-estate agents,"
+          },
+          "right": {
+            "id": 17,
+            "relation": "Elaboration",
+            "nuclearity": "NS",
+            "start": 107,
+            "end": 216,
+            "text": "who engaged her in the \"you talk kinda funny\" conversation. We say \"to-mah-to\" and Arizonans say \"to-may-to.\"",
+            "left": {
+              "id": 2,
+              "relation": "elementary",
+              "nuclearity": "",
+              "start": 107,
+              "end": 166,
+              "text": "who engaged her in the \"you talk kinda funny\" conversation."
+            },
+            "right": {
+              "id": 16,
+              "relation": "Contrast",
+              "nuclearity": "NN",
+              "start": 167,
+              "end": 216,
+              "text": "We say \"to-mah-to\" and Arizonans say \"to-may-to.\"",
+              "left": {
+                "id": 15,
+                "relation": "Attribution",
+                "nuclearity": "SN",
+                "start": 167,
+                "end": 185,
+                "text": "We say \"to-mah-to\"",
+                "left": {
+                  "id": 3,
+                  "relation": "elementary",
+                  "nuclearity": "",
+                  "start": 167,
+                  "end": 173,
+                  "text": "We say"
+                },
+                "right": {
+                  "id": 4,
+                  "relation": "elementary",
+                  "nuclearity": "",
+                  "start": 174,
+                  "end": 185,
+                  "text": "\"to-mah-to\""
+                }
+              },
+              "right": {
+                "id": 5,
+                "relation": "elementary",
+                "nuclearity": "",
+                "start": 186,
+                "end": 216,
+                "text": "and Arizonans say \"to-may-to.\""
+              }
+            }
+          }
+        }
+      },
+      "right": {
+        "id": 6,
+        "relation": "elementary",
+        "nuclearity": "",
+        "start": 217,
+        "end": 275,
+        "text": "We call the hood of a car a \"bonnet\" and the trunk a boot."
+      }
+    },
+    "right": {
+      "id": 26,
+      "relation": "same-unit",
+      "nuclearity": "NN",
+      "start": 276,
+      "end": 442,
+      "text": "Then, as my wife entered the dining room, one agent pointed to a massive chandelier and asked, \"What would you call that in England?\" \"Ostentatious,\" my wife replied.",
+      "left": {
+        "id": 7,
+        "relation": "elementary",
+        "nuclearity": "",
+        "start": 276,
+        "end": 281,
+        "text": "Then,"
+      },
+      "right": {
+        "id": 25,
+        "relation": "Background",
+        "nuclearity": "SN",
+        "start": 282,
+        "end": 442,
+        "text": "as my wife entered the dining room, one agent pointed to a massive chandelier and asked, \"What would you call that in England?\" \"Ostentatious,\" my wife replied.",
+        "left": {
+          "id": 8,
+          "relation": "elementary",
+          "nuclearity": "",
+          "start": 282,
+          "end": 317,
+          "text": "as my wife entered the dining room,"
+        },
+        "right": {
+          "id": 24,
+          "relation": "Temporal",
+          "nuclearity": "NN",
+          "start": 318,
+          "end": 442,
+          "text": "one agent pointed to a massive chandelier and asked, \"What would you call that in England?\" \"Ostentatious,\" my wife replied.",
+          "left": {
+            "id": 9,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 318,
+            "end": 359,
+            "text": "one agent pointed to a massive chandelier"
+          },
+          "right": {
+            "id": 23,
+            "relation": "Elaboration",
+            "nuclearity": "NS",
+            "start": 360,
+            "end": 442,
+            "text": "and asked, \"What would you call that in England?\" \"Ostentatious,\" my wife replied.",
+            "left": {
+              "id": 21,
+              "relation": "Attribution",
+              "nuclearity": "SN",
+              "start": 360,
+              "end": 409,
+              "text": "and asked, \"What would you call that in England?\"",
+              "left": {
+                "id": 10,
+                "relation": "elementary",
+                "nuclearity": "",
+                "start": 360,
+                "end": 370,
+                "text": "and asked,"
+              },
+              "right": {
+                "id": 11,
+                "relation": "elementary",
+                "nuclearity": "",
+                "start": 371,
+                "end": 409,
+                "text": "\"What would you call that in England?\""
+              }
+            },
+            "right": {
+              "id": 22,
+              "relation": "Attribution",
+              "nuclearity": "NS",
+              "start": 410,
+              "end": 442,
+              "text": "\"Ostentatious,\" my wife replied.",
+              "left": {
+                "id": 12,
+                "relation": "elementary",
+                "nuclearity": "",
+                "start": 410,
+                "end": 425,
+                "text": "\"Ostentatious,\""
+              },
+              "right": {
+                "id": 13,
+                "relation": "elementary",
+                "nuclearity": "",
+                "start": 426,
+                "end": 442,
+                "text": "my wife replied."
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "6": {
+    "id": 31,
+    "relation": "Elaboration",
+    "nuclearity": "NS",
+    "start": 0,
+    "end": 447,
+    "text": "When a group of Americans, many in the teaching profession, visited her in Calcutta, they asked her for some advice to take home to their families. \"Smile at your wives,\" she told them. \"Smile at your husbands.\" Thinking that perhaps the counsel was simplistic, coming from an unmarried person, one of them asked, \"Are you married?\" \"Yes,\" she replied, to their surprise, \"and I find it hard sometimes to smile at Jesus. He can be very demanding.\"",
+    "left": {
+      "id": 21,
+      "relation": "Elaboration",
+      "nuclearity": "NS",
+      "start": 0,
+      "end": 211,
+      "text": "When a group of Americans, many in the teaching profession, visited her in Calcutta, they asked her for some advice to take home to their families. \"Smile at your wives,\" she told them. \"Smile at your husbands.\"",
+      "left": {
+        "id": 18,
+        "relation": "Temporal",
+        "nuclearity": "NN",
+        "start": 0,
+        "end": 147,
+        "text": "When a group of Americans, many in the teaching profession, visited her in Calcutta, they asked her for some advice to take home to their families.",
+        "left": {
+          "id": 0,
+          "relation": "elementary",
+          "nuclearity": "",
+          "start": 0,
+          "end": 84,
+          "text": "When a group of Americans, many in the teaching profession, visited her in Calcutta,"
+        },
+        "right": {
+          "id": 17,
+          "relation": "Elaboration",
+          "nuclearity": "NS",
+          "start": 85,
+          "end": 147,
+          "text": "they asked her for some advice to take home to their families.",
+          "left": {
+            "id": 1,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 85,
+            "end": 115,
+            "text": "they asked her for some advice"
+          },
+          "right": {
+            "id": 2,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 116,
+            "end": 147,
+            "text": "to take home to their families."
+          }
+        }
+      },
+      "right": {
+        "id": 20,
+        "relation": "Contrast",
+        "nuclearity": "NN",
+        "start": 148,
+        "end": 211,
+        "text": "\"Smile at your wives,\" she told them. \"Smile at your husbands.\"",
+        "left": {
+          "id": 19,
+          "relation": "Attribution",
+          "nuclearity": "NS",
+          "start": 148,
+          "end": 185,
+          "text": "\"Smile at your wives,\" she told them.",
+          "left": {
+            "id": 3,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 148,
+            "end": 170,
+            "text": "\"Smile at your wives,\""
+          },
+          "right": {
+            "id": 4,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 171,
+            "end": 185,
+            "text": "she told them."
+          }
+        },
+        "right": {
+          "id": 5,
+          "relation": "elementary",
+          "nuclearity": "",
+          "start": 186,
+          "end": 211,
+          "text": "\"Smile at your husbands.\""
+        }
+      }
+    },
+    "right": {
+      "id": 30,
+      "relation": "Elaboration",
+      "nuclearity": "NS",
+      "start": 212,
+      "end": 447,
+      "text": "Thinking that perhaps the counsel was simplistic, coming from an unmarried person, one of them asked, \"Are you married?\" \"Yes,\" she replied, to their surprise, \"and I find it hard sometimes to smile at Jesus. He can be very demanding.\"",
+      "left": {
+        "id": 25,
+        "relation": "Background",
+        "nuclearity": "SN",
+        "start": 212,
+        "end": 332,
+        "text": "Thinking that perhaps the counsel was simplistic, coming from an unmarried person, one of them asked, \"Are you married?\"",
+        "left": {
+          "id": 23,
+          "relation": "Attribution",
+          "nuclearity": "SN",
+          "start": 212,
+          "end": 294,
+          "text": "Thinking that perhaps the counsel was simplistic, coming from an unmarried person,",
+          "left": {
+            "id": 6,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 212,
+            "end": 220,
+            "text": "Thinking"
+          },
+          "right": {
+            "id": 22,
+            "relation": "Explanation",
+            "nuclearity": "NS",
+            "start": 221,
+            "end": 294,
+            "text": "that perhaps the counsel was simplistic, coming from an unmarried person,",
+            "left": {
+              "id": 7,
+              "relation": "elementary",
+              "nuclearity": "",
+              "start": 221,
+              "end": 261,
+              "text": "that perhaps the counsel was simplistic,"
+            },
+            "right": {
+              "id": 8,
+              "relation": "elementary",
+              "nuclearity": "",
+              "start": 262,
+              "end": 294,
+              "text": "coming from an unmarried person,"
+            }
+          }
+        },
+        "right": {
+          "id": 24,
+          "relation": "Attribution",
+          "nuclearity": "SN",
+          "start": 295,
+          "end": 332,
+          "text": "one of them asked, \"Are you married?\"",
+          "left": {
+            "id": 9,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 295,
+            "end": 313,
+            "text": "one of them asked,"
+          },
+          "right": {
+            "id": 10,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 314,
+            "end": 332,
+            "text": "\"Are you married?\""
+          }
+        }
+      },
+      "right": {
+        "id": 29,
+        "relation": "Temporal",
+        "nuclearity": "NN",
+        "start": 333,
+        "end": 447,
+        "text": "\"Yes,\" she replied, to their surprise, \"and I find it hard sometimes to smile at Jesus. He can be very demanding.\"",
+        "left": {
+          "id": 26,
+          "relation": "Attribution",
+          "nuclearity": "NS",
+          "start": 333,
+          "end": 371,
+          "text": "\"Yes,\" she replied, to their surprise,",
+          "left": {
+            "id": 11,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 333,
+            "end": 339,
+            "text": "\"Yes,\""
+          },
+          "right": {
+            "id": 12,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 340,
+            "end": 371,
+            "text": "she replied, to their surprise,"
+          }
+        },
+        "right": {
+          "id": 28,
+          "relation": "Temporal",
+          "nuclearity": "NS",
+          "start": 372,
+          "end": 447,
+          "text": "\"and I find it hard sometimes to smile at Jesus. He can be very demanding.\"",
+          "left": {
+            "id": 13,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 372,
+            "end": 373,
+            "text": "\""
+          },
+          "right": {
+            "id": 27,
+            "relation": "Explanation",
+            "nuclearity": "NS",
+            "start": 373,
+            "end": 447,
+            "text": "and I find it hard sometimes to smile at Jesus. He can be very demanding.\"",
+            "left": {
+              "id": 14,
+              "relation": "elementary",
+              "nuclearity": "",
+              "start": 373,
+              "end": 420,
+              "text": "and I find it hard sometimes to smile at Jesus."
+            },
+            "right": {
+              "id": 15,
+              "relation": "elementary",
+              "nuclearity": "",
+              "start": 421,
+              "end": 447,
+              "text": "He can be very demanding.\""
+            }
+          }
+        }
+      }
+    }
+  },
+  "7": {
+    "id": 13,
+    "relation": "Elaboration",
+    "nuclearity": "NS",
+    "start": 0,
+    "end": 446,
+    "text": "ZPG's 1985 Urban Stress Test, created after months of persistent and exhaustive research, is the nation's first survey of how population-linked pressures affect U.S. cities. It ranks 184 urban areas on 11 different criteria ranging from crowding and birth rates to air quality and toxic wastes. The Urban Stress Test translates complex, technical data into an easy-to-use action tool for concerned citizens, elected officials and opinion leaders.",
+    "left": {
+      "id": 12,
+      "relation": "Elaboration",
+      "nuclearity": "NS",
+      "start": 0,
+      "end": 294,
+      "text": "ZPG's 1985 Urban Stress Test, created after months of persistent and exhaustive research, is the nation's first survey of how population-linked pressures affect U.S. cities. It ranks 184 urban areas on 11 different criteria ranging from crowding and birth rates to air quality and toxic wastes.",
+      "left": {
+        "id": 10,
+        "relation": "same-unit",
+        "nuclearity": "NN",
+        "start": 0,
+        "end": 173,
+        "text": "ZPG's 1985 Urban Stress Test, created after months of persistent and exhaustive research, is the nation's first survey of how population-linked pressures affect U.S. cities.",
+        "left": {
+          "id": 8,
+          "relation": "Elaboration",
+          "nuclearity": "NS",
+          "start": 0,
+          "end": 89,
+          "text": "ZPG's 1985 Urban Stress Test, created after months of persistent and exhaustive research,",
+          "left": {
+            "id": 0,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 0,
+            "end": 29,
+            "text": "ZPG's 1985 Urban Stress Test,"
+          },
+          "right": {
+            "id": 1,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 30,
+            "end": 89,
+            "text": "created after months of persistent and exhaustive research,"
+          }
+        },
+        "right": {
+          "id": 9,
+          "relation": "Elaboration",
+          "nuclearity": "NS",
+          "start": 90,
+          "end": 173,
+          "text": "is the nation's first survey of how population-linked pressures affect U.S. cities.",
+          "left": {
+            "id": 2,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 90,
+            "end": 118,
+            "text": "is the nation's first survey"
+          },
+          "right": {
+            "id": 3,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 119,
+            "end": 173,
+            "text": "of how population-linked pressures affect U.S. cities."
+          }
+        }
+      },
+      "right": {
+        "id": 11,
+        "relation": "Elaboration",
+        "nuclearity": "NS",
+        "start": 174,
+        "end": 294,
+        "text": "It ranks 184 urban areas on 11 different criteria ranging from crowding and birth rates to air quality and toxic wastes.",
+        "left": {
+          "id": 4,
+          "relation": "elementary",
+          "nuclearity": "",
+          "start": 174,
+          "end": 223,
+          "text": "It ranks 184 urban areas on 11 different criteria"
+        },
+        "right": {
+          "id": 5,
+          "relation": "elementary",
+          "nuclearity": "",
+          "start": 224,
+          "end": 294,
+          "text": "ranging from crowding and birth rates to air quality and toxic wastes."
+        }
+      }
+    },
+    "right": {
+      "id": 6,
+      "relation": "elementary",
+      "nuclearity": "",
+      "start": 295,
+      "end": 446,
+      "text": "The Urban Stress Test translates complex, technical data into an easy-to-use action tool for concerned citizens, elected officials and opinion leaders."
+    }
+  },
+  "8": {
+    "id": 15,
+    "relation": "Joint",
+    "nuclearity": "NN",
+    "start": 0,
+    "end": 524,
+    "text": "Our knowledge of ancient shipbuilding techniques, for example, is dependent on the work of archaeologists who have painstakingly excavated remains of ships themselves. The contents of shipwrecks are an equally valuable archaeological resource. Since the objects in a wreck represent a single moment in time, they provide better chronological information than even the most carefully excavated terrestrial site. Moreover, perishable items such as foodstuffs, which do not survive well on land, are often preserved underwater.",
+    "left": {
+      "id": 9,
+      "relation": "Elaboration",
+      "nuclearity": "NS",
+      "start": 0,
+      "end": 167,
+      "text": "Our knowledge of ancient shipbuilding techniques, for example, is dependent on the work of archaeologists who have painstakingly excavated remains of ships themselves.",
+      "left": {
+        "id": 0,
+        "relation": "elementary",
+        "nuclearity": "",
+        "start": 0,
+        "end": 105,
+        "text": "Our knowledge of ancient shipbuilding techniques, for example, is dependent on the work of archaeologists"
+      },
+      "right": {
+        "id": 1,
+        "relation": "elementary",
+        "nuclearity": "",
+        "start": 106,
+        "end": 167,
+        "text": "who have painstakingly excavated remains of ships themselves."
+      }
+    },
+    "right": {
+      "id": 14,
+      "relation": "Explanation",
+      "nuclearity": "NS",
+      "start": 168,
+      "end": 524,
+      "text": "The contents of shipwrecks are an equally valuable archaeological resource. Since the objects in a wreck represent a single moment in time, they provide better chronological information than even the most carefully excavated terrestrial site. Moreover, perishable items such as foodstuffs, which do not survive well on land, are often preserved underwater.",
+      "left": {
+        "id": 2,
+        "relation": "elementary",
+        "nuclearity": "",
+        "start": 168,
+        "end": 243,
+        "text": "The contents of shipwrecks are an equally valuable archaeological resource."
+      },
+      "right": {
+        "id": 13,
+        "relation": "Elaboration",
+        "nuclearity": "NS",
+        "start": 244,
+        "end": 524,
+        "text": "Since the objects in a wreck represent a single moment in time, they provide better chronological information than even the most carefully excavated terrestrial site. Moreover, perishable items such as foodstuffs, which do not survive well on land, are often preserved underwater.",
+        "left": {
+          "id": 10,
+          "relation": "Explanation",
+          "nuclearity": "SN",
+          "start": 244,
+          "end": 410,
+          "text": "Since the objects in a wreck represent a single moment in time, they provide better chronological information than even the most carefully excavated terrestrial site.",
+          "left": {
+            "id": 3,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 244,
+            "end": 307,
+            "text": "Since the objects in a wreck represent a single moment in time,"
+          },
+          "right": {
+            "id": 4,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 308,
+            "end": 410,
+            "text": "they provide better chronological information than even the most carefully excavated terrestrial site."
+          }
+        },
+        "right": {
+          "id": 12,
+          "relation": "same-unit",
+          "nuclearity": "NN",
+          "start": 411,
+          "end": 524,
+          "text": "Moreover, perishable items such as foodstuffs, which do not survive well on land, are often preserved underwater.",
+          "left": {
+            "id": 11,
+            "relation": "Elaboration",
+            "nuclearity": "NS",
+            "start": 411,
+            "end": 492,
+            "text": "Moreover, perishable items such as foodstuffs, which do not survive well on land,",
+            "left": {
+              "id": 5,
+              "relation": "elementary",
+              "nuclearity": "",
+              "start": 411,
+              "end": 457,
+              "text": "Moreover, perishable items such as foodstuffs,"
+            },
+            "right": {
+              "id": 6,
+              "relation": "elementary",
+              "nuclearity": "",
+              "start": 458,
+              "end": 492,
+              "text": "which do not survive well on land,"
+            }
+          },
+          "right": {
+            "id": 7,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 493,
+            "end": 524,
+            "text": "are often preserved underwater."
+          }
+        }
+      }
+    }
+  },
+  "9": {
+    "id": 17,
+    "relation": "Elaboration",
+    "nuclearity": "NS",
+    "start": 0,
+    "end": 400,
+    "text": "In an article for Campus Life magazine, Susan Smart describes her third and nearly last solo flight. She had been practicing a maneuver at 5,000 feet when she lost control and her Cessna 150 began spinning wildly toward earth. After several seconds of panic, she recalled her instructor's words: \"If you ever go into a spin in a Cessna 150, just let go of the controls. It's built to fly on its own.\"",
+    "left": {
+      "id": 0,
+      "relation": "elementary",
+      "nuclearity": "",
+      "start": 0,
+      "end": 100,
+      "text": "In an article for Campus Life magazine, Susan Smart describes her third and nearly last solo flight."
+    },
+    "right": {
+      "id": 16,
+      "relation": "Elaboration",
+      "nuclearity": "NS",
+      "start": 101,
+      "end": 400,
+      "text": "She had been practicing a maneuver at 5,000 feet when she lost control and her Cessna 150 began spinning wildly toward earth. After several seconds of panic, she recalled her instructor's words: \"If you ever go into a spin in a Cessna 150, just let go of the controls. It's built to fly on its own.\"",
+      "left": {
+        "id": 11,
+        "relation": "Temporal",
+        "nuclearity": "NN",
+        "start": 101,
+        "end": 226,
+        "text": "She had been practicing a maneuver at 5,000 feet when she lost control and her Cessna 150 began spinning wildly toward earth.",
+        "left": {
+          "id": 1,
+          "relation": "elementary",
+          "nuclearity": "",
+          "start": 101,
+          "end": 149,
+          "text": "She had been practicing a maneuver at 5,000 feet"
+        },
+        "right": {
+          "id": 10,
+          "relation": "Temporal",
+          "nuclearity": "NN",
+          "start": 150,
+          "end": 226,
+          "text": "when she lost control and her Cessna 150 began spinning wildly toward earth.",
+          "left": {
+            "id": 2,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 150,
+            "end": 171,
+            "text": "when she lost control"
+          },
+          "right": {
+            "id": 3,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 172,
+            "end": 226,
+            "text": "and her Cessna 150 began spinning wildly toward earth."
+          }
+        }
+      },
+      "right": {
+        "id": 15,
+        "relation": "Elaboration",
+        "nuclearity": "NS",
+        "start": 227,
+        "end": 400,
+        "text": "After several seconds of panic, she recalled her instructor's words: \"If you ever go into a spin in a Cessna 150, just let go of the controls. It's built to fly on its own.\"",
+        "left": {
+          "id": 13,
+          "relation": "Elaboration",
+          "nuclearity": "NS",
+          "start": 227,
+          "end": 369,
+          "text": "After several seconds of panic, she recalled her instructor's words: \"If you ever go into a spin in a Cessna 150, just let go of the controls.",
+          "left": {
+            "id": 4,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 227,
+            "end": 295,
+            "text": "After several seconds of panic, she recalled her instructor's words:"
+          },
+          "right": {
+            "id": 12,
+            "relation": "Condition",
+            "nuclearity": "SN",
+            "start": 296,
+            "end": 369,
+            "text": "\"If you ever go into a spin in a Cessna 150, just let go of the controls.",
+            "left": {
+              "id": 5,
+              "relation": "elementary",
+              "nuclearity": "",
+              "start": 296,
+              "end": 340,
+              "text": "\"If you ever go into a spin in a Cessna 150,"
+            },
+            "right": {
+              "id": 6,
+              "relation": "elementary",
+              "nuclearity": "",
+              "start": 341,
+              "end": 369,
+              "text": "just let go of the controls."
+            }
+          }
+        },
+        "right": {
+          "id": 14,
+          "relation": "Enablement",
+          "nuclearity": "NS",
+          "start": 370,
+          "end": 400,
+          "text": "It's built to fly on its own.\"",
+          "left": {
+            "id": 7,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 370,
+            "end": 380,
+            "text": "It's built"
+          },
+          "right": {
+            "id": 8,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 381,
+            "end": 400,
+            "text": "to fly on its own.\""
+          }
+        }
+      }
+    }
+  },
+  "10": {
+    "id": 27,
+    "relation": "Elaboration",
+    "nuclearity": "NS",
+    "start": 0,
+    "end": 572,
+    "text": "This paper is part of an effort to relate various accounts. It is the first in a pair of papers that compare two particular accounts: Rhetorical Structure Theory and Systemic Linguistics. Rhetorical Structure Theory, initially formulated in 1983, describes texts in terms of functionally-defined relations that hold between their parts. Systemic Linguistics is a much more comprehensive view of language initiated in the early 1960s. Where the two approaches are comparable, Systemic Linguistics describes texts in terms of categories of processes which the texts perform.",
+    "left": {
+      "id": 15,
+      "relation": "Elaboration",
+      "nuclearity": "NS",
+      "start": 0,
+      "end": 59,
+      "text": "This paper is part of an effort to relate various accounts.",
+      "left": {
+        "id": 0,
+        "relation": "elementary",
+        "nuclearity": "",
+        "start": 0,
+        "end": 31,
+        "text": "This paper is part of an effort"
+      },
+      "right": {
+        "id": 1,
+        "relation": "elementary",
+        "nuclearity": "",
+        "start": 32,
+        "end": 59,
+        "text": "to relate various accounts."
+      }
+    },
+    "right": {
+      "id": 26,
+      "relation": "Elaboration",
+      "nuclearity": "NS",
+      "start": 60,
+      "end": 572,
+      "text": "It is the first in a pair of papers that compare two particular accounts: Rhetorical Structure Theory and Systemic Linguistics. Rhetorical Structure Theory, initially formulated in 1983, describes texts in terms of functionally-defined relations that hold between their parts. Systemic Linguistics is a much more comprehensive view of language initiated in the early 1960s. Where the two approaches are comparable, Systemic Linguistics describes texts in terms of categories of processes which the texts perform.",
+      "left": {
+        "id": 17,
+        "relation": "Elaboration",
+        "nuclearity": "NS",
+        "start": 60,
+        "end": 187,
+        "text": "It is the first in a pair of papers that compare two particular accounts: Rhetorical Structure Theory and Systemic Linguistics.",
+        "left": {
+          "id": 16,
+          "relation": "Elaboration",
+          "nuclearity": "NS",
+          "start": 60,
+          "end": 133,
+          "text": "It is the first in a pair of papers that compare two particular accounts:",
+          "left": {
+            "id": 2,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 60,
+            "end": 95,
+            "text": "It is the first in a pair of papers"
+          },
+          "right": {
+            "id": 3,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 96,
+            "end": 133,
+            "text": "that compare two particular accounts:"
+          }
+        },
+        "right": {
+          "id": 4,
+          "relation": "elementary",
+          "nuclearity": "",
+          "start": 134,
+          "end": 187,
+          "text": "Rhetorical Structure Theory and Systemic Linguistics."
+        }
+      },
+      "right": {
+        "id": 25,
+        "relation": "Elaboration",
+        "nuclearity": "NS",
+        "start": 188,
+        "end": 572,
+        "text": "Rhetorical Structure Theory, initially formulated in 1983, describes texts in terms of functionally-defined relations that hold between their parts. Systemic Linguistics is a much more comprehensive view of language initiated in the early 1960s. Where the two approaches are comparable, Systemic Linguistics describes texts in terms of categories of processes which the texts perform.",
+        "left": {
+          "id": 22,
+          "relation": "Contrast",
+          "nuclearity": "NN",
+          "start": 188,
+          "end": 433,
+          "text": "Rhetorical Structure Theory, initially formulated in 1983, describes texts in terms of functionally-defined relations that hold between their parts. Systemic Linguistics is a much more comprehensive view of language initiated in the early 1960s.",
+          "left": {
+            "id": 20,
+            "relation": "same-unit",
+            "nuclearity": "NN",
+            "start": 188,
+            "end": 336,
+            "text": "Rhetorical Structure Theory, initially formulated in 1983, describes texts in terms of functionally-defined relations that hold between their parts.",
+            "left": {
+              "id": 18,
+              "relation": "Elaboration",
+              "nuclearity": "NS",
+              "start": 188,
+              "end": 246,
+              "text": "Rhetorical Structure Theory, initially formulated in 1983,",
+              "left": {
+                "id": 5,
+                "relation": "elementary",
+                "nuclearity": "",
+                "start": 188,
+                "end": 216,
+                "text": "Rhetorical Structure Theory,"
+              },
+              "right": {
+                "id": 6,
+                "relation": "elementary",
+                "nuclearity": "",
+                "start": 217,
+                "end": 246,
+                "text": "initially formulated in 1983,"
+              }
+            },
+            "right": {
+              "id": 19,
+              "relation": "Elaboration",
+              "nuclearity": "NS",
+              "start": 247,
+              "end": 336,
+              "text": "describes texts in terms of functionally-defined relations that hold between their parts.",
+              "left": {
+                "id": 7,
+                "relation": "elementary",
+                "nuclearity": "",
+                "start": 247,
+                "end": 305,
+                "text": "describes texts in terms of functionally-defined relations"
+              },
+              "right": {
+                "id": 8,
+                "relation": "elementary",
+                "nuclearity": "",
+                "start": 306,
+                "end": 336,
+                "text": "that hold between their parts."
+              }
+            }
+          },
+          "right": {
+            "id": 21,
+            "relation": "Elaboration",
+            "nuclearity": "NS",
+            "start": 337,
+            "end": 433,
+            "text": "Systemic Linguistics is a much more comprehensive view of language initiated in the early 1960s.",
+            "left": {
+              "id": 9,
+              "relation": "elementary",
+              "nuclearity": "",
+              "start": 337,
+              "end": 403,
+              "text": "Systemic Linguistics is a much more comprehensive view of language"
+            },
+            "right": {
+              "id": 10,
+              "relation": "elementary",
+              "nuclearity": "",
+              "start": 404,
+              "end": 433,
+              "text": "initiated in the early 1960s."
+            }
+          }
+        },
+        "right": {
+          "id": 24,
+          "relation": "Contrast",
+          "nuclearity": "SN",
+          "start": 434,
+          "end": 572,
+          "text": "Where the two approaches are comparable, Systemic Linguistics describes texts in terms of categories of processes which the texts perform.",
+          "left": {
+            "id": 11,
+            "relation": "elementary",
+            "nuclearity": "",
+            "start": 434,
+            "end": 474,
+            "text": "Where the two approaches are comparable,"
+          },
+          "right": {
+            "id": 23,
+            "relation": "Elaboration",
+            "nuclearity": "NS",
+            "start": 475,
+            "end": 572,
+            "text": "Systemic Linguistics describes texts in terms of categories of processes which the texts perform.",
+            "left": {
+              "id": 12,
+              "relation": "elementary",
+              "nuclearity": "",
+              "start": 475,
+              "end": 547,
+              "text": "Systemic Linguistics describes texts in terms of categories of processes"
+            },
+            "right": {
+              "id": 13,
+              "relation": "elementary",
+              "nuclearity": "",
+              "start": 548,
+              "end": 572,
+              "text": "which the texts perform."
+            }
+          }
+        }
+      }
+    }
+  }
+}

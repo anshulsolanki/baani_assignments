@@ -1,0 +1,753 @@
+================================================================================
+PROBLEM 1: Running Pretrained isanlp_rst Parser & Displaying RST Trees
+================================================================================
+[Info] Loading cached isanlp_rst parse trees from 'rst_trees_cache.json'...
+
+--- Paragraph 1 ---
+Original Text: I don't believe that endorsing the Nuclear Freeze Initiative is the right step for California Common Cause. Tempting as it may be, we shouldn't embrace every popular issue that comes along. When we do so, we use precious, limited resources where other players with superior resources are already doing an adequate job. Rather, I think we will be stronger and more effective if we stick to those issues of governmental structure and process, broadly defined, that have formed the core of our agenda for years.
+Relation Labels (11 internal splits): Explanation (NS), Attribution (SN), Contrast (NN), Explanation (NS), Contrast (SN), Elaboration (NS), Background (SN), Elaboration (NS), Attribution (SN), Condition (NS), Elaboration (NS)
+Discourse Tree:
+  [Node 23] (ROOT | split_rel=Explanation, nuclearity=NS)
+    [Node 13] (Nucleus | split_rel=Attribution, nuclearity=SN)
+      [EDU 0] (Satellite | rel=Attribution): "I don't believe"
+      [EDU 1] (Nucleus | rel=span): "that endorsing the Nuclear Freeze Initiative is the right step for California Common Cause."
+    [Node 22] (Satellite | split_rel=Contrast, nuclearity=NN)
+      [Node 18] (Nucleus | split_rel=Explanation, nuclearity=NS)
+        [Node 15] (Nucleus | split_rel=Contrast, nuclearity=SN)
+          [EDU 2] (Satellite | rel=Contrast): "Tempting as it may be,"
+          [Node 14] (Nucleus | split_rel=Elaboration, nuclearity=NS)
+            [EDU 3] (Nucleus | rel=span): "we shouldn't embrace every popular issue"
+            [EDU 4] (Satellite | rel=Elaboration): "that comes along."
+        [Node 17] (Satellite | split_rel=Background, nuclearity=SN)
+          [EDU 5] (Satellite | rel=Background): "When we do so,"
+          [Node 16] (Nucleus | split_rel=Elaboration, nuclearity=NS)
+            [EDU 6] (Nucleus | rel=span): "we use precious, limited resources"
+            [EDU 7] (Satellite | rel=Elaboration): "where other players with superior resources are already doing an adequate job."
+      [Node 21] (Nucleus | split_rel=Attribution, nuclearity=SN)
+        [EDU 8] (Satellite | rel=Attribution): "Rather, I think"
+        [Node 20] (Nucleus | split_rel=Condition, nuclearity=NS)
+          [EDU 9] (Nucleus | rel=span): "we will be stronger and more effective"
+          [Node 19] (Satellite | split_rel=Elaboration, nuclearity=NS)
+            [EDU 10] (Nucleus | rel=span): "if we stick to those issues of governmental structure and process, broadly defined,"
+            [EDU 11] (Satellite | rel=Elaboration): "that have formed the core of our agenda for years."
+
+--- Paragraph 2 ---
+Original Text: As your floppy drive writes or reads, a Syncom diskette is working four ways to keep loose particles and dust from causing soft errors, dropouts. Cleaning agents on the burnished surface of the Ectype coating actually remove build-up from the head, while lubricating it at the same time. A carbon additive drains away static electricity before it can attract dust or lint. Strong binders hold the signal-carrying oxides tightly within the coating. And the non-woven jacket liner, more than just wiping the surface, provides thousands of tiny pockets to keep what it collects.
+Relation Labels (11 internal splits): Elaboration (NS), Background (SN), Elaboration (NS), Joint (NN), Temporal (NS), Joint (NN), Temporal (NS), Joint (NN), same-unit (NN), Background (NS), Elaboration (NS)
+Discourse Tree:
+  [Node 23] (ROOT | split_rel=Elaboration, nuclearity=NS)
+    [Node 14] (Nucleus | split_rel=Background, nuclearity=SN)
+      [EDU 0] (Satellite | rel=Background): "As your floppy drive writes or reads,"
+      [Node 13] (Nucleus | split_rel=Elaboration, nuclearity=NS)
+        [EDU 1] (Nucleus | rel=span): "a Syncom diskette is working four ways"
+        [EDU 2] (Satellite | rel=Elaboration): "to keep loose particles and dust from causing soft errors, dropouts."
+    [Node 22] (Satellite | split_rel=Joint, nuclearity=NN)
+      [Node 15] (Nucleus | split_rel=Temporal, nuclearity=NS)
+        [EDU 3] (Nucleus | rel=span): "Cleaning agents on the burnished surface of the Ectype coating actually remove build-up from the head,"
+        [EDU 4] (Satellite | rel=Temporal): "while lubricating it at the same time."
+      [Node 21] (Nucleus | split_rel=Joint, nuclearity=NN)
+        [Node 16] (Nucleus | split_rel=Temporal, nuclearity=NS)
+          [EDU 5] (Nucleus | rel=span): "A carbon additive drains away static electricity"
+          [EDU 6] (Satellite | rel=Temporal): "before it can attract dust or lint."
+        [Node 20] (Nucleus | split_rel=Joint, nuclearity=NN)
+          [EDU 7] (Nucleus | rel=Joint): "Strong binders hold the signal-carrying oxides tightly within the coating."
+          [Node 19] (Nucleus | split_rel=same-unit, nuclearity=NN)
+            [Node 17] (Nucleus | split_rel=Background, nuclearity=NS)
+              [EDU 8] (Nucleus | rel=span): "And the non-woven jacket liner,"
+              [EDU 9] (Satellite | rel=Background): "more than just wiping the surface,"
+            [Node 18] (Nucleus | split_rel=Elaboration, nuclearity=NS)
+              [EDU 10] (Nucleus | rel=span): "provides thousands of tiny pockets"
+              [EDU 11] (Satellite | rel=Elaboration): "to keep what it collects."
+
+--- Paragraph 3 ---
+Original Text: To create your own "Victorian" bouquet of flowers, choose varying shapes, sizes and forms, besides a variety of complementary colors. Plants that grow tall should be surrounded by smaller ones and filled with others that tumble over the side of a hanging basket. Leaf textures and colors will also be important. There is the silver-white foliage of dusty miller, the feathery threads of lotus vine floating down from above, the deep greens, or chartreuse, even the widely varied foliage colors of the coleus.
+Relation Labels (10 internal splits): Elaboration (NS), Manner-Means (NS), Joint (NN), same-unit (NN), Elaboration (NS), Joint (NN), Elaboration (NS), Elaboration (NS), same-unit (NN), Elaboration (NS)
+Discourse Tree:
+  [Node 21] (ROOT | split_rel=Elaboration, nuclearity=NS)
+    [Node 12] (Nucleus | split_rel=Manner-Means, nuclearity=NS)
+      [EDU 0] (Nucleus | rel=span): "To create your own "Victorian" bouquet of flowers,"
+      [EDU 1] (Satellite | rel=Manner-Means): "choose varying shapes, sizes and forms, besides a variety of complementary colors."
+    [Node 20] (Satellite | split_rel=Joint, nuclearity=NN)
+      [Node 16] (Nucleus | split_rel=same-unit, nuclearity=NN)
+        [Node 13] (Nucleus | split_rel=Elaboration, nuclearity=NS)
+          [EDU 2] (Nucleus | rel=span): "Plants"
+          [EDU 3] (Satellite | rel=Elaboration): "that grow tall"
+        [Node 15] (Nucleus | split_rel=Joint, nuclearity=NN)
+          [EDU 4] (Nucleus | rel=Joint): "should be surrounded by smaller ones"
+          [Node 14] (Nucleus | split_rel=Elaboration, nuclearity=NS)
+            [EDU 5] (Nucleus | rel=span): "and filled with others"
+            [EDU 6] (Satellite | rel=Elaboration): "that tumble over the side of a hanging basket."
+      [Node 19] (Nucleus | split_rel=Elaboration, nuclearity=NS)
+        [EDU 7] (Nucleus | rel=span): "Leaf textures and colors will also be important."
+        [Node 18] (Satellite | split_rel=same-unit, nuclearity=NN)
+          [Node 17] (Nucleus | split_rel=Elaboration, nuclearity=NS)
+            [EDU 8] (Nucleus | rel=span): "There is the silver-white foliage of dusty miller, the feathery threads of lotus vine"
+            [EDU 9] (Satellite | rel=Elaboration): "floating down from above,"
+          [EDU 10] (Nucleus | rel=same-unit): "the deep greens, or chartreuse, even the widely varied foliage colors of the coleus."
+
+--- Paragraph 4 ---
+Original Text: The people waiting in line carried a message, a refutation, of claims that the jobless could be employed if only they showed enough moxie. Every rule has exceptions, but the tragic and too-common tableaux of hundreds or even thousands of people snake-lining up for any task with a paycheck illustrates a lack of jobs, not laziness.
+Relation Labels (8 internal splits): Elaboration (NS), same-unit (NN), Elaboration (NS), Elaboration (NS), Condition (NS), Contrast (SN), same-unit (NN), Elaboration (NS)
+Discourse Tree:
+  [Node 17] (ROOT | split_rel=Elaboration, nuclearity=NS)
+    [Node 13] (Nucleus | split_rel=same-unit, nuclearity=NN)
+      [Node 10] (Nucleus | split_rel=Elaboration, nuclearity=NS)
+        [EDU 0] (Nucleus | rel=span): "The people"
+        [EDU 1] (Satellite | rel=Elaboration): "waiting in line"
+      [Node 12] (Nucleus | split_rel=Elaboration, nuclearity=NS)
+        [EDU 2] (Nucleus | rel=span): "carried a message, a refutation, of claims"
+        [Node 11] (Satellite | split_rel=Condition, nuclearity=NS)
+          [EDU 3] (Nucleus | rel=span): "that the jobless could be employed"
+          [EDU 4] (Satellite | rel=Condition): "if only they showed enough moxie."
+    [Node 16] (Satellite | split_rel=Contrast, nuclearity=SN)
+      [EDU 5] (Satellite | rel=Contrast): "Every rule has exceptions,"
+      [Node 15] (Nucleus | split_rel=same-unit, nuclearity=NN)
+        [Node 14] (Nucleus | split_rel=Elaboration, nuclearity=NS)
+          [EDU 6] (Nucleus | rel=span): "but the tragic and too-common tableaux of hundreds or even thousands of people"
+          [EDU 7] (Satellite | rel=Elaboration): "snake-lining up for any task with a paycheck"
+        [EDU 8] (Nucleus | rel=same-unit): "illustrates a lack of jobs, not laziness."
+
+--- Paragraph 5 ---
+Original Text: While looking over a Scottsdale, Ariz., model house one day, my wife was amused by the real-estate agents, who engaged her in the "you talk kinda funny" conversation. We say "to-mah-to" and Arizonans say "to-may-to." We call the hood of a car a "bonnet" and the trunk a boot. Then, as my wife entered the dining room, one agent pointed to a massive chandelier and asked, "What would you call that in England?" "Ostentatious," my wife replied.
+Relation Labels (13 internal splits): Elaboration (NS), Elaboration (NS), Background (SN), Elaboration (NS), Elaboration (NS), Contrast (NN), Attribution (SN), same-unit (NN), Background (SN), Temporal (NN), Elaboration (NS), Attribution (SN), Attribution (NS)
+Discourse Tree:
+  [Node 27] (ROOT | split_rel=Elaboration, nuclearity=NS)
+    [Node 20] (Nucleus | split_rel=Elaboration, nuclearity=NS)
+      [Node 19] (Nucleus | split_rel=Background, nuclearity=SN)
+        [EDU 0] (Satellite | rel=Background): "While looking over a Scottsdale, Ariz., model house one day,"
+        [Node 18] (Nucleus | split_rel=Elaboration, nuclearity=NS)
+          [EDU 1] (Nucleus | rel=span): "my wife was amused by the real-estate agents,"
+          [Node 17] (Satellite | split_rel=Elaboration, nuclearity=NS)
+            [EDU 2] (Nucleus | rel=span): "who engaged her in the "you talk kinda funny" conversation."
+            [Node 16] (Satellite | split_rel=Contrast, nuclearity=NN)
+              [Node 15] (Nucleus | split_rel=Attribution, nuclearity=SN)
+                [EDU 3] (Satellite | rel=Attribution): "We say"
+                [EDU 4] (Nucleus | rel=span): ""to-mah-to""
+              [EDU 5] (Nucleus | rel=Contrast): "and Arizonans say "to-may-to.""
+      [EDU 6] (Satellite | rel=Elaboration): "We call the hood of a car a "bonnet" and the trunk a boot."
+    [Node 26] (Satellite | split_rel=same-unit, nuclearity=NN)
+      [EDU 7] (Nucleus | rel=same-unit): "Then,"
+      [Node 25] (Nucleus | split_rel=Background, nuclearity=SN)
+        [EDU 8] (Satellite | rel=Background): "as my wife entered the dining room,"
+        [Node 24] (Nucleus | split_rel=Temporal, nuclearity=NN)
+          [EDU 9] (Nucleus | rel=Temporal): "one agent pointed to a massive chandelier"
+          [Node 23] (Nucleus | split_rel=Elaboration, nuclearity=NS)
+            [Node 21] (Nucleus | split_rel=Attribution, nuclearity=SN)
+              [EDU 10] (Satellite | rel=Attribution): "and asked,"
+              [EDU 11] (Nucleus | rel=span): ""What would you call that in England?""
+            [Node 22] (Satellite | split_rel=Attribution, nuclearity=NS)
+              [EDU 12] (Nucleus | rel=span): ""Ostentatious,""
+              [EDU 13] (Satellite | rel=Attribution): "my wife replied."
+
+--- Paragraph 6 ---
+Original Text: When a group of Americans, many in the teaching profession, visited her in Calcutta, they asked her for some advice to take home to their families. "Smile at your wives," she told them. "Smile at your husbands." Thinking that perhaps the counsel was simplistic, coming from an unmarried person, one of them asked, "Are you married?" "Yes," she replied, to their surprise, "and I find it hard sometimes to smile at Jesus. He can be very demanding."
+Relation Labels (15 internal splits): Elaboration (NS), Elaboration (NS), Temporal (NN), Elaboration (NS), Contrast (NN), Attribution (NS), Elaboration (NS), Background (SN), Attribution (SN), Explanation (NS), Attribution (SN), Temporal (NN), Attribution (NS), Temporal (NS), Explanation (NS)
+Discourse Tree:
+  [Node 31] (ROOT | split_rel=Elaboration, nuclearity=NS)
+    [Node 21] (Nucleus | split_rel=Elaboration, nuclearity=NS)
+      [Node 18] (Nucleus | split_rel=Temporal, nuclearity=NN)
+        [EDU 0] (Nucleus | rel=Temporal): "When a group of Americans, many in the teaching profession, visited her in Calcutta,"
+        [Node 17] (Nucleus | split_rel=Elaboration, nuclearity=NS)
+          [EDU 1] (Nucleus | rel=span): "they asked her for some advice"
+          [EDU 2] (Satellite | rel=Elaboration): "to take home to their families."
+      [Node 20] (Satellite | split_rel=Contrast, nuclearity=NN)
+        [Node 19] (Nucleus | split_rel=Attribution, nuclearity=NS)
+          [EDU 3] (Nucleus | rel=span): ""Smile at your wives,""
+          [EDU 4] (Satellite | rel=Attribution): "she told them."
+        [EDU 5] (Nucleus | rel=Contrast): ""Smile at your husbands.""
+    [Node 30] (Satellite | split_rel=Elaboration, nuclearity=NS)
+      [Node 25] (Nucleus | split_rel=Background, nuclearity=SN)
+        [Node 23] (Satellite | split_rel=Attribution, nuclearity=SN)
+          [EDU 6] (Satellite | rel=Attribution): "Thinking"
+          [Node 22] (Nucleus | split_rel=Explanation, nuclearity=NS)
+            [EDU 7] (Nucleus | rel=span): "that perhaps the counsel was simplistic,"
+            [EDU 8] (Satellite | rel=Explanation): "coming from an unmarried person,"
+        [Node 24] (Nucleus | split_rel=Attribution, nuclearity=SN)
+          [EDU 9] (Satellite | rel=Attribution): "one of them asked,"
+          [EDU 10] (Nucleus | rel=span): ""Are you married?""
+      [Node 29] (Satellite | split_rel=Temporal, nuclearity=NN)
+        [Node 26] (Nucleus | split_rel=Attribution, nuclearity=NS)
+          [EDU 11] (Nucleus | rel=span): ""Yes,""
+          [EDU 12] (Satellite | rel=Attribution): "she replied, to their surprise,"
+        [Node 28] (Nucleus | split_rel=Temporal, nuclearity=NS)
+          [EDU 13] (Nucleus | rel=span): """
+          [Node 27] (Satellite | split_rel=Explanation, nuclearity=NS)
+            [EDU 14] (Nucleus | rel=span): "and I find it hard sometimes to smile at Jesus."
+            [EDU 15] (Satellite | rel=Explanation): "He can be very demanding.""
+
+--- Paragraph 7 ---
+Original Text: ZPG's 1985 Urban Stress Test, created after months of persistent and exhaustive research, is the nation's first survey of how population-linked pressures affect U.S. cities. It ranks 184 urban areas on 11 different criteria ranging from crowding and birth rates to air quality and toxic wastes. The Urban Stress Test translates complex, technical data into an easy-to-use action tool for concerned citizens, elected officials and opinion leaders.
+Relation Labels (6 internal splits): Elaboration (NS), Elaboration (NS), same-unit (NN), Elaboration (NS), Elaboration (NS), Elaboration (NS)
+Discourse Tree:
+  [Node 13] (ROOT | split_rel=Elaboration, nuclearity=NS)
+    [Node 12] (Nucleus | split_rel=Elaboration, nuclearity=NS)
+      [Node 10] (Nucleus | split_rel=same-unit, nuclearity=NN)
+        [Node 8] (Nucleus | split_rel=Elaboration, nuclearity=NS)
+          [EDU 0] (Nucleus | rel=span): "ZPG's 1985 Urban Stress Test,"
+          [EDU 1] (Satellite | rel=Elaboration): "created after months of persistent and exhaustive research,"
+        [Node 9] (Nucleus | split_rel=Elaboration, nuclearity=NS)
+          [EDU 2] (Nucleus | rel=span): "is the nation's first survey"
+          [EDU 3] (Satellite | rel=Elaboration): "of how population-linked pressures affect U.S. cities."
+      [Node 11] (Satellite | split_rel=Elaboration, nuclearity=NS)
+        [EDU 4] (Nucleus | rel=span): "It ranks 184 urban areas on 11 different criteria"
+        [EDU 5] (Satellite | rel=Elaboration): "ranging from crowding and birth rates to air quality and toxic wastes."
+    [EDU 6] (Satellite | rel=Elaboration): "The Urban Stress Test translates complex, technical data into an easy-to-use action tool for concerned citizens, elected officials and opinion leaders."
+
+--- Paragraph 8 ---
+Original Text: Our knowledge of ancient shipbuilding techniques, for example, is dependent on the work of archaeologists who have painstakingly excavated remains of ships themselves. The contents of shipwrecks are an equally valuable archaeological resource. Since the objects in a wreck represent a single moment in time, they provide better chronological information than even the most carefully excavated terrestrial site. Moreover, perishable items such as foodstuffs, which do not survive well on land, are often preserved underwater.
+Relation Labels (7 internal splits): Joint (NN), Elaboration (NS), Explanation (NS), Elaboration (NS), Explanation (SN), same-unit (NN), Elaboration (NS)
+Discourse Tree:
+  [Node 15] (ROOT | split_rel=Joint, nuclearity=NN)
+    [Node 9] (Nucleus | split_rel=Elaboration, nuclearity=NS)
+      [EDU 0] (Nucleus | rel=span): "Our knowledge of ancient shipbuilding techniques, for example, is dependent on the work of archaeologists"
+      [EDU 1] (Satellite | rel=Elaboration): "who have painstakingly excavated remains of ships themselves."
+    [Node 14] (Nucleus | split_rel=Explanation, nuclearity=NS)
+      [EDU 2] (Nucleus | rel=span): "The contents of shipwrecks are an equally valuable archaeological resource."
+      [Node 13] (Satellite | split_rel=Elaboration, nuclearity=NS)
+        [Node 10] (Nucleus | split_rel=Explanation, nuclearity=SN)
+          [EDU 3] (Satellite | rel=Explanation): "Since the objects in a wreck represent a single moment in time,"
+          [EDU 4] (Nucleus | rel=span): "they provide better chronological information than even the most carefully excavated terrestrial site."
+        [Node 12] (Satellite | split_rel=same-unit, nuclearity=NN)
+          [Node 11] (Nucleus | split_rel=Elaboration, nuclearity=NS)
+            [EDU 5] (Nucleus | rel=span): "Moreover, perishable items such as foodstuffs,"
+            [EDU 6] (Satellite | rel=Elaboration): "which do not survive well on land,"
+          [EDU 7] (Nucleus | rel=same-unit): "are often preserved underwater."
+
+--- Paragraph 9 ---
+Original Text: In an article for Campus Life magazine, Susan Smart describes her third and nearly last solo flight. She had been practicing a maneuver at 5,000 feet when she lost control and her Cessna 150 began spinning wildly toward earth. After several seconds of panic, she recalled her instructor's words: "If you ever go into a spin in a Cessna 150, just let go of the controls. It's built to fly on its own."
+Relation Labels (8 internal splits): Elaboration (NS), Elaboration (NS), Temporal (NN), Temporal (NN), Elaboration (NS), Elaboration (NS), Condition (SN), Enablement (NS)
+Discourse Tree:
+  [Node 17] (ROOT | split_rel=Elaboration, nuclearity=NS)
+    [EDU 0] (Nucleus | rel=span): "In an article for Campus Life magazine, Susan Smart describes her third and nearly last solo flight."
+    [Node 16] (Satellite | split_rel=Elaboration, nuclearity=NS)
+      [Node 11] (Nucleus | split_rel=Temporal, nuclearity=NN)
+        [EDU 1] (Nucleus | rel=Temporal): "She had been practicing a maneuver at 5,000 feet"
+        [Node 10] (Nucleus | split_rel=Temporal, nuclearity=NN)
+          [EDU 2] (Nucleus | rel=Temporal): "when she lost control"
+          [EDU 3] (Nucleus | rel=Temporal): "and her Cessna 150 began spinning wildly toward earth."
+      [Node 15] (Satellite | split_rel=Elaboration, nuclearity=NS)
+        [Node 13] (Nucleus | split_rel=Elaboration, nuclearity=NS)
+          [EDU 4] (Nucleus | rel=span): "After several seconds of panic, she recalled her instructor's words:"
+          [Node 12] (Satellite | split_rel=Condition, nuclearity=SN)
+            [EDU 5] (Satellite | rel=Condition): ""If you ever go into a spin in a Cessna 150,"
+            [EDU 6] (Nucleus | rel=span): "just let go of the controls."
+        [Node 14] (Satellite | split_rel=Enablement, nuclearity=NS)
+          [EDU 7] (Nucleus | rel=span): "It's built"
+          [EDU 8] (Satellite | rel=Enablement): "to fly on its own.""
+
+--- Paragraph 10 ---
+Original Text: This paper is part of an effort to relate various accounts. It is the first in a pair of papers that compare two particular accounts: Rhetorical Structure Theory and Systemic Linguistics. Rhetorical Structure Theory, initially formulated in 1983, describes texts in terms of functionally-defined relations that hold between their parts. Systemic Linguistics is a much more comprehensive view of language initiated in the early 1960s. Where the two approaches are comparable, Systemic Linguistics describes texts in terms of categories of processes which the texts perform.
+Relation Labels (13 internal splits): Elaboration (NS), Elaboration (NS), Elaboration (NS), Elaboration (NS), Elaboration (NS), Elaboration (NS), Contrast (NN), same-unit (NN), Elaboration (NS), Elaboration (NS), Elaboration (NS), Contrast (SN), Elaboration (NS)
+Discourse Tree:
+  [Node 27] (ROOT | split_rel=Elaboration, nuclearity=NS)
+    [Node 15] (Nucleus | split_rel=Elaboration, nuclearity=NS)
+      [EDU 0] (Nucleus | rel=span): "This paper is part of an effort"
+      [EDU 1] (Satellite | rel=Elaboration): "to relate various accounts."
+    [Node 26] (Satellite | split_rel=Elaboration, nuclearity=NS)
+      [Node 17] (Nucleus | split_rel=Elaboration, nuclearity=NS)
+        [Node 16] (Nucleus | split_rel=Elaboration, nuclearity=NS)
+          [EDU 2] (Nucleus | rel=span): "It is the first in a pair of papers"
+          [EDU 3] (Satellite | rel=Elaboration): "that compare two particular accounts:"
+        [EDU 4] (Satellite | rel=Elaboration): "Rhetorical Structure Theory and Systemic Linguistics."
+      [Node 25] (Satellite | split_rel=Elaboration, nuclearity=NS)
+        [Node 22] (Nucleus | split_rel=Contrast, nuclearity=NN)
+          [Node 20] (Nucleus | split_rel=same-unit, nuclearity=NN)
+            [Node 18] (Nucleus | split_rel=Elaboration, nuclearity=NS)
+              [EDU 5] (Nucleus | rel=span): "Rhetorical Structure Theory,"
+              [EDU 6] (Satellite | rel=Elaboration): "initially formulated in 1983,"
+            [Node 19] (Nucleus | split_rel=Elaboration, nuclearity=NS)
+              [EDU 7] (Nucleus | rel=span): "describes texts in terms of functionally-defined relations"
+              [EDU 8] (Satellite | rel=Elaboration): "that hold between their parts."
+          [Node 21] (Nucleus | split_rel=Elaboration, nuclearity=NS)
+            [EDU 9] (Nucleus | rel=span): "Systemic Linguistics is a much more comprehensive view of language"
+            [EDU 10] (Satellite | rel=Elaboration): "initiated in the early 1960s."
+        [Node 24] (Satellite | split_rel=Contrast, nuclearity=SN)
+          [EDU 11] (Satellite | rel=Contrast): "Where the two approaches are comparable,"
+          [Node 23] (Nucleus | split_rel=Elaboration, nuclearity=NS)
+            [EDU 12] (Nucleus | rel=span): "Systemic Linguistics describes texts in terms of categories of processes"
+            [EDU 13] (Satellite | rel=Elaboration): "which the texts perform."
+
+================================================================================
+PROBLEM 2: Extracting Structured Nucleus/Satellite & Relation Information
+================================================================================
+
+--- Paragraph 1 Structured RST Table (12 EDUs, 4 Sentences) ---
+  EDU  0 | Role=Satellite | Rel=Attribution   | Depth=2 (PromDepth=2) | NucRatio=0.50 | "I don't believe"
+  EDU  1 | Role=Nucleus   | Rel=Attribution   | Depth=2 (PromDepth=0) | NucRatio=1.00 [CENTRAL NUCLEUS] | "that endorsing the Nuclear Freeze Initiative is the right step for California Common Cause."
+  EDU  2 | Role=Satellite | Rel=Contrast      | Depth=4 (PromDepth=4) | NucRatio=0.33 | "Tempting as it may be,"
+  EDU  3 | Role=Nucleus   | Rel=Elaboration   | Depth=5 (PromDepth=1) | NucRatio=0.50 | "we shouldn't embrace every popular issue"
+  EDU  4 | Role=Satellite | Rel=Elaboration   | Depth=5 (PromDepth=5) | NucRatio=0.33 | "that comes along."
+  EDU  5 | Role=Satellite | Rel=Background    | Depth=4 (PromDepth=4) | NucRatio=0.25 | "When we do so,"
+  EDU  6 | Role=Nucleus   | Rel=Elaboration   | Depth=5 (PromDepth=3) | NucRatio=0.33 | "we use precious, limited resources"
+  EDU  7 | Role=Satellite | Rel=Elaboration   | Depth=5 (PromDepth=5) | NucRatio=0.25 | "where other players with superior resources are already doing an adequate job."
+  EDU  8 | Role=Satellite | Rel=Attribution   | Depth=3 (PromDepth=3) | NucRatio=0.33 | "Rather, I think"
+  EDU  9 | Role=Nucleus   | Rel=Condition     | Depth=4 (PromDepth=1) | NucRatio=0.50 | "we will be stronger and more effective"
+  EDU 10 | Role=Nucleus   | Rel=Elaboration   | Depth=5 (PromDepth=4) | NucRatio=0.33 | "if we stick to those issues of governmental structure and process, broadly defined,"
+  EDU 11 | Role=Satellite | Rel=Elaboration   | Depth=5 (PromDepth=5) | NucRatio=0.25 | "that have formed the core of our agenda for years."
+  Sentence-Level Aggregation:
+    S1: Role=Nucleus   | CentralNuc=True  | MinDepth=2 | PromDepth=0 | MaxNucRatio=1.00 | NucRels=['Explanation', 'Attribution'] | SatRels=['Attribution']
+    S2: Role=Satellite | CentralNuc=False | MinDepth=4 | PromDepth=1 | MaxNucRatio=0.50 | NucRels=['Contrast', 'Explanation', 'Elaboration'] | SatRels=['Contrast', 'Elaboration']
+    S3: Role=Satellite | CentralNuc=False | MinDepth=4 | PromDepth=3 | MaxNucRatio=0.33 | NucRels=['Background', 'Elaboration'] | SatRels=['Background', 'Elaboration']
+    S4: Role=Nucleus   | CentralNuc=False | MinDepth=3 | PromDepth=1 | MaxNucRatio=0.50 | NucRels=['Contrast', 'Attribution', 'Condition', 'Elaboration'] | SatRels=['Attribution', 'Elaboration']
+
+--- Paragraph 2 Structured RST Table (12 EDUs, 5 Sentences) ---
+  EDU  0 | Role=Satellite | Rel=Background    | Depth=2 (PromDepth=2) | NucRatio=0.50 | "As your floppy drive writes or reads,"
+  EDU  1 | Role=Nucleus   | Rel=Elaboration   | Depth=3 (PromDepth=0) | NucRatio=1.00 [CENTRAL NUCLEUS] | "a Syncom diskette is working four ways"
+  EDU  2 | Role=Satellite | Rel=Elaboration   | Depth=3 (PromDepth=3) | NucRatio=0.50 | "to keep loose particles and dust from causing soft errors, dropouts."
+  EDU  3 | Role=Nucleus   | Rel=Temporal      | Depth=3 (PromDepth=1) | NucRatio=0.50 | "Cleaning agents on the burnished surface of the Ectype coating actually remove build-up from the head,"
+  EDU  4 | Role=Satellite | Rel=Temporal      | Depth=3 (PromDepth=3) | NucRatio=0.33 | "while lubricating it at the same time."
+  EDU  5 | Role=Nucleus   | Rel=Temporal      | Depth=4 (PromDepth=1) | NucRatio=0.50 | "A carbon additive drains away static electricity"
+  EDU  6 | Role=Satellite | Rel=Temporal      | Depth=4 (PromDepth=4) | NucRatio=0.33 | "before it can attract dust or lint."
+  EDU  7 | Role=Nucleus   | Rel=Joint         | Depth=4 (PromDepth=1) | NucRatio=0.50 | "Strong binders hold the signal-carrying oxides tightly within the coating."
+  EDU  8 | Role=Nucleus   | Rel=Background    | Depth=6 (PromDepth=1) | NucRatio=0.50 | "And the non-woven jacket liner,"
+  EDU  9 | Role=Satellite | Rel=Background    | Depth=6 (PromDepth=6) | NucRatio=0.33 | "more than just wiping the surface,"
+  EDU 10 | Role=Nucleus   | Rel=Elaboration   | Depth=6 (PromDepth=1) | NucRatio=0.50 | "provides thousands of tiny pockets"
+  EDU 11 | Role=Satellite | Rel=Elaboration   | Depth=6 (PromDepth=6) | NucRatio=0.33 | "to keep what it collects."
+  Sentence-Level Aggregation:
+    S1: Role=Nucleus   | CentralNuc=True  | MinDepth=2 | PromDepth=0 | MaxNucRatio=1.00 | NucRels=['Elaboration', 'Background'] | SatRels=['Background', 'Elaboration']
+    S2: Role=Nucleus   | CentralNuc=False | MinDepth=3 | PromDepth=1 | MaxNucRatio=0.50 | NucRels=['Joint', 'Temporal'] | SatRels=['Temporal']
+    S3: Role=Nucleus   | CentralNuc=False | MinDepth=4 | PromDepth=1 | MaxNucRatio=0.50 | NucRels=['Joint', 'Temporal'] | SatRels=['Temporal']
+    S4: Role=Nucleus   | CentralNuc=False | MinDepth=4 | PromDepth=1 | MaxNucRatio=0.50 | NucRels=['Joint'] | SatRels=[]
+    S5: Role=Nucleus   | CentralNuc=False | MinDepth=6 | PromDepth=1 | MaxNucRatio=0.50 | NucRels=['Joint', 'Background', 'Elaboration'] | SatRels=['Background', 'Elaboration']
+
+--- Paragraph 3 Structured RST Table (11 EDUs, 4 Sentences) ---
+  EDU  0 | Role=Nucleus   | Rel=Manner-Means  | Depth=2 (PromDepth=0) | NucRatio=1.00 [CENTRAL NUCLEUS] | "To create your own "Victorian" bouquet of flowers,"
+  EDU  1 | Role=Satellite | Rel=Manner-Means  | Depth=2 (PromDepth=2) | NucRatio=0.50 | "choose varying shapes, sizes and forms, besides a variety of complementary colors."
+  EDU  2 | Role=Nucleus   | Rel=Elaboration   | Depth=4 (PromDepth=1) | NucRatio=0.50 | "Plants"
+  EDU  3 | Role=Satellite | Rel=Elaboration   | Depth=4 (PromDepth=4) | NucRatio=0.33 | "that grow tall"
+  EDU  4 | Role=Nucleus   | Rel=Joint         | Depth=4 (PromDepth=1) | NucRatio=0.50 | "should be surrounded by smaller ones"
+  EDU  5 | Role=Nucleus   | Rel=Elaboration   | Depth=5 (PromDepth=1) | NucRatio=0.50 | "and filled with others"
+  EDU  6 | Role=Satellite | Rel=Elaboration   | Depth=5 (PromDepth=5) | NucRatio=0.33 | "that tumble over the side of a hanging basket."
+  EDU  7 | Role=Nucleus   | Rel=Elaboration   | Depth=3 (PromDepth=1) | NucRatio=0.50 | "Leaf textures and colors will also be important."
+  EDU  8 | Role=Nucleus   | Rel=Elaboration   | Depth=5 (PromDepth=3) | NucRatio=0.33 | "There is the silver-white foliage of dusty miller, the feathery threads of lotus vine"
+  EDU  9 | Role=Satellite | Rel=Elaboration   | Depth=5 (PromDepth=5) | NucRatio=0.25 | "floating down from above,"
+  EDU 10 | Role=Nucleus   | Rel=same-unit     | Depth=4 (PromDepth=3) | NucRatio=0.33 | "the deep greens, or chartreuse, even the widely varied foliage colors of the coleus."
+  Sentence-Level Aggregation:
+    S1: Role=Nucleus   | CentralNuc=True  | MinDepth=2 | PromDepth=0 | MaxNucRatio=1.00 | NucRels=['Elaboration', 'Manner-Means'] | SatRels=['Manner-Means']
+    S2: Role=Nucleus   | CentralNuc=False | MinDepth=4 | PromDepth=1 | MaxNucRatio=0.50 | NucRels=['Joint', 'Elaboration'] | SatRels=['Elaboration', 'Elaboration']
+    S3: Role=Nucleus   | CentralNuc=False | MinDepth=3 | PromDepth=1 | MaxNucRatio=0.50 | NucRels=['Joint', 'Elaboration'] | SatRels=[]
+    S4: Role=Nucleus   | CentralNuc=False | MinDepth=4 | PromDepth=3 | MaxNucRatio=0.33 | NucRels=['Elaboration'] | SatRels=['Elaboration']
+
+--- Paragraph 4 Structured RST Table (9 EDUs, 2 Sentences) ---
+  EDU  0 | Role=Nucleus   | Rel=Elaboration   | Depth=3 (PromDepth=0) | NucRatio=1.00 [CENTRAL NUCLEUS] | "The people"
+  EDU  1 | Role=Satellite | Rel=Elaboration   | Depth=3 (PromDepth=3) | NucRatio=0.50 | "waiting in line"
+  EDU  2 | Role=Nucleus   | Rel=Elaboration   | Depth=3 (PromDepth=0) | NucRatio=1.00 [CENTRAL NUCLEUS] | "carried a message, a refutation, of claims"
+  EDU  3 | Role=Nucleus   | Rel=Condition     | Depth=4 (PromDepth=3) | NucRatio=0.50 | "that the jobless could be employed"
+  EDU  4 | Role=Satellite | Rel=Condition     | Depth=4 (PromDepth=4) | NucRatio=0.33 | "if only they showed enough moxie."
+  EDU  5 | Role=Satellite | Rel=Contrast      | Depth=2 (PromDepth=2) | NucRatio=0.33 | "Every rule has exceptions,"
+  EDU  6 | Role=Nucleus   | Rel=Elaboration   | Depth=4 (PromDepth=1) | NucRatio=0.50 | "but the tragic and too-common tableaux of hundreds or even thousands of people"
+  EDU  7 | Role=Satellite | Rel=Elaboration   | Depth=4 (PromDepth=4) | NucRatio=0.33 | "snake-lining up for any task with a paycheck"
+  EDU  8 | Role=Nucleus   | Rel=same-unit     | Depth=3 (PromDepth=1) | NucRatio=0.50 | "illustrates a lack of jobs, not laziness."
+  Sentence-Level Aggregation:
+    S1: Role=Nucleus   | CentralNuc=True  | MinDepth=3 | PromDepth=0 | MaxNucRatio=1.00 | NucRels=['Elaboration', 'Condition'] | SatRels=['Elaboration', 'Condition']
+    S2: Role=Nucleus   | CentralNuc=False | MinDepth=2 | PromDepth=1 | MaxNucRatio=0.50 | NucRels=['Contrast', 'Elaboration'] | SatRels=['Contrast', 'Elaboration']
+
+--- Paragraph 5 Structured RST Table (14 EDUs, 5 Sentences) ---
+  EDU  0 | Role=Satellite | Rel=Background    | Depth=3 (PromDepth=3) | NucRatio=0.50 | "While looking over a Scottsdale, Ariz., model house one day,"
+  EDU  1 | Role=Nucleus   | Rel=Elaboration   | Depth=4 (PromDepth=0) | NucRatio=1.00 [CENTRAL NUCLEUS] | "my wife was amused by the real-estate agents,"
+  EDU  2 | Role=Nucleus   | Rel=Elaboration   | Depth=5 (PromDepth=4) | NucRatio=0.50 | "who engaged her in the "you talk kinda funny" conversation."
+  EDU  3 | Role=Satellite | Rel=Attribution   | Depth=7 (PromDepth=7) | NucRatio=0.25 | "We say"
+  EDU  4 | Role=Nucleus   | Rel=Attribution   | Depth=7 (PromDepth=5) | NucRatio=0.33 | ""to-mah-to""
+  EDU  5 | Role=Nucleus   | Rel=Contrast      | Depth=6 (PromDepth=5) | NucRatio=0.33 | "and Arizonans say "to-may-to.""
+  EDU  6 | Role=Satellite | Rel=Elaboration   | Depth=2 (PromDepth=2) | NucRatio=0.50 | "We call the hood of a car a "bonnet" and the trunk a boot."
+  EDU  7 | Role=Nucleus   | Rel=same-unit     | Depth=2 (PromDepth=1) | NucRatio=0.50 | "Then,"
+  EDU  8 | Role=Satellite | Rel=Background    | Depth=3 (PromDepth=3) | NucRatio=0.33 | "as my wife entered the dining room,"
+  EDU  9 | Role=Nucleus   | Rel=Temporal      | Depth=4 (PromDepth=1) | NucRatio=0.50 | "one agent pointed to a massive chandelier"
+  EDU 10 | Role=Satellite | Rel=Attribution   | Depth=6 (PromDepth=6) | NucRatio=0.33 | "and asked,"
+  EDU 11 | Role=Nucleus   | Rel=Attribution   | Depth=6 (PromDepth=1) | NucRatio=0.50 | ""What would you call that in England?""
+  EDU 12 | Role=Nucleus   | Rel=Attribution   | Depth=6 (PromDepth=5) | NucRatio=0.33 | ""Ostentatious,""
+  EDU 13 | Role=Satellite | Rel=Attribution   | Depth=6 (PromDepth=6) | NucRatio=0.25 | "my wife replied."
+  Sentence-Level Aggregation:
+    S1: Role=Nucleus   | CentralNuc=True  | MinDepth=3 | PromDepth=0 | MaxNucRatio=1.00 | NucRels=['Elaboration', 'Background'] | SatRels=['Background']
+    S2: Role=Nucleus   | CentralNuc=False | MinDepth=6 | PromDepth=5 | MaxNucRatio=0.33 | NucRels=['Contrast', 'Attribution'] | SatRels=['Attribution']
+    S3: Role=Satellite | CentralNuc=False | MinDepth=2 | PromDepth=2 | MaxNucRatio=0.50 | NucRels=[] | SatRels=['Elaboration']
+    S4: Role=Nucleus   | CentralNuc=False | MinDepth=2 | PromDepth=1 | MaxNucRatio=0.50 | NucRels=['Background', 'Temporal', 'Elaboration', 'Attribution'] | SatRels=['Background', 'Attribution']
+    S5: Role=Nucleus   | CentralNuc=False | MinDepth=6 | PromDepth=5 | MaxNucRatio=0.33 | NucRels=['Attribution'] | SatRels=['Attribution']
+
+--- Paragraph 6 Structured RST Table (16 EDUs, 5 Sentences) ---
+  EDU  0 | Role=Nucleus   | Rel=Temporal      | Depth=3 (PromDepth=0) | NucRatio=1.00 [CENTRAL NUCLEUS] | "When a group of Americans, many in the teaching profession, visited her in Calcutta,"
+  EDU  1 | Role=Nucleus   | Rel=Elaboration   | Depth=4 (PromDepth=0) | NucRatio=1.00 [CENTRAL NUCLEUS] | "they asked her for some advice"
+  EDU  2 | Role=Satellite | Rel=Elaboration   | Depth=4 (PromDepth=4) | NucRatio=0.50 | "to take home to their families."
+  EDU  3 | Role=Nucleus   | Rel=Attribution   | Depth=4 (PromDepth=2) | NucRatio=0.50 | ""Smile at your wives,""
+  EDU  4 | Role=Satellite | Rel=Attribution   | Depth=4 (PromDepth=4) | NucRatio=0.33 | "she told them."
+  EDU  5 | Role=Nucleus   | Rel=Contrast      | Depth=3 (PromDepth=2) | NucRatio=0.50 | ""Smile at your husbands.""
+  EDU  6 | Role=Satellite | Rel=Attribution   | Depth=4 (PromDepth=4) | NucRatio=0.25 | "Thinking"
+  EDU  7 | Role=Nucleus   | Rel=Explanation   | Depth=5 (PromDepth=3) | NucRatio=0.33 | "that perhaps the counsel was simplistic,"
+  EDU  8 | Role=Satellite | Rel=Explanation   | Depth=5 (PromDepth=5) | NucRatio=0.25 | "coming from an unmarried person,"
+  EDU  9 | Role=Satellite | Rel=Attribution   | Depth=4 (PromDepth=4) | NucRatio=0.33 | "one of them asked,"
+  EDU 10 | Role=Nucleus   | Rel=Attribution   | Depth=4 (PromDepth=1) | NucRatio=0.50 | ""Are you married?""
+  EDU 11 | Role=Nucleus   | Rel=Attribution   | Depth=4 (PromDepth=2) | NucRatio=0.33 | ""Yes,""
+  EDU 12 | Role=Satellite | Rel=Attribution   | Depth=4 (PromDepth=4) | NucRatio=0.25 | "she replied, to their surprise,"
+  EDU 13 | Role=Nucleus   | Rel=Temporal      | Depth=4 (PromDepth=2) | NucRatio=0.33 | """
+  EDU 14 | Role=Nucleus   | Rel=Explanation   | Depth=5 (PromDepth=4) | NucRatio=0.25 | "and I find it hard sometimes to smile at Jesus."
+  EDU 15 | Role=Satellite | Rel=Explanation   | Depth=5 (PromDepth=5) | NucRatio=0.20 | "He can be very demanding.""
+  Sentence-Level Aggregation:
+    S1: Role=Nucleus   | CentralNuc=True  | MinDepth=3 | PromDepth=0 | MaxNucRatio=1.00 | NucRels=['Elaboration', 'Temporal'] | SatRels=['Elaboration']
+    S2: Role=Nucleus   | CentralNuc=False | MinDepth=4 | PromDepth=2 | MaxNucRatio=0.50 | NucRels=['Contrast', 'Attribution'] | SatRels=['Attribution']
+    S3: Role=Nucleus   | CentralNuc=False | MinDepth=3 | PromDepth=2 | MaxNucRatio=0.50 | NucRels=['Contrast'] | SatRels=[]
+    S4: Role=Satellite | CentralNuc=False | MinDepth=4 | PromDepth=1 | MaxNucRatio=0.50 | NucRels=['Attribution', 'Explanation', 'Elaboration', 'Background'] | SatRels=['Attribution', 'Explanation', 'Attribution']
+    S5: Role=Nucleus   | CentralNuc=False | MinDepth=4 | PromDepth=2 | MaxNucRatio=0.33 | NucRels=['Temporal', 'Attribution', 'Explanation'] | SatRels=['Attribution', 'Explanation']
+
+--- Paragraph 7 Structured RST Table (7 EDUs, 3 Sentences) ---
+  EDU  0 | Role=Nucleus   | Rel=Elaboration   | Depth=4 (PromDepth=0) | NucRatio=1.00 [CENTRAL NUCLEUS] | "ZPG's 1985 Urban Stress Test,"
+  EDU  1 | Role=Satellite | Rel=Elaboration   | Depth=4 (PromDepth=4) | NucRatio=0.50 | "created after months of persistent and exhaustive research,"
+  EDU  2 | Role=Nucleus   | Rel=Elaboration   | Depth=4 (PromDepth=0) | NucRatio=1.00 [CENTRAL NUCLEUS] | "is the nation's first survey"
+  EDU  3 | Role=Satellite | Rel=Elaboration   | Depth=4 (PromDepth=4) | NucRatio=0.50 | "of how population-linked pressures affect U.S. cities."
+  EDU  4 | Role=Nucleus   | Rel=Elaboration   | Depth=3 (PromDepth=2) | NucRatio=0.50 | "It ranks 184 urban areas on 11 different criteria"
+  EDU  5 | Role=Satellite | Rel=Elaboration   | Depth=3 (PromDepth=3) | NucRatio=0.33 | "ranging from crowding and birth rates to air quality and toxic wastes."
+  EDU  6 | Role=Satellite | Rel=Elaboration   | Depth=1 (PromDepth=1) | NucRatio=0.50 | "The Urban Stress Test translates complex, technical data into an easy-to-use action tool for concerned citizens, elected officials and opinion leaders."
+  Sentence-Level Aggregation:
+    S1: Role=Nucleus   | CentralNuc=True  | MinDepth=4 | PromDepth=0 | MaxNucRatio=1.00 | NucRels=['Elaboration'] | SatRels=['Elaboration', 'Elaboration']
+    S2: Role=Nucleus   | CentralNuc=False | MinDepth=3 | PromDepth=2 | MaxNucRatio=0.50 | NucRels=['Elaboration'] | SatRels=['Elaboration']
+    S3: Role=Nucleus   | CentralNuc=False | MinDepth=1 | PromDepth=1 | MaxNucRatio=0.50 | NucRels=[] | SatRels=['Elaboration']
+
+--- Paragraph 8 Structured RST Table (8 EDUs, 4 Sentences) ---
+  EDU  0 | Role=Nucleus   | Rel=Elaboration   | Depth=2 (PromDepth=0) | NucRatio=1.00 [CENTRAL NUCLEUS] | "Our knowledge of ancient shipbuilding techniques, for example, is dependent on the work of archaeologists"
+  EDU  1 | Role=Satellite | Rel=Elaboration   | Depth=2 (PromDepth=2) | NucRatio=0.50 | "who have painstakingly excavated remains of ships themselves."
+  EDU  2 | Role=Nucleus   | Rel=Explanation   | Depth=2 (PromDepth=0) | NucRatio=1.00 [CENTRAL NUCLEUS] | "The contents of shipwrecks are an equally valuable archaeological resource."
+  EDU  3 | Role=Satellite | Rel=Explanation   | Depth=4 (PromDepth=4) | NucRatio=0.33 | "Since the objects in a wreck represent a single moment in time,"
+  EDU  4 | Role=Nucleus   | Rel=Explanation   | Depth=4 (PromDepth=2) | NucRatio=0.50 | "they provide better chronological information than even the most carefully excavated terrestrial site."
+  EDU  5 | Role=Nucleus   | Rel=Elaboration   | Depth=5 (PromDepth=3) | NucRatio=0.33 | "Moreover, perishable items such as foodstuffs,"
+  EDU  6 | Role=Satellite | Rel=Elaboration   | Depth=5 (PromDepth=5) | NucRatio=0.25 | "which do not survive well on land,"
+  EDU  7 | Role=Nucleus   | Rel=same-unit     | Depth=4 (PromDepth=3) | NucRatio=0.33 | "are often preserved underwater."
+  Sentence-Level Aggregation:
+    S1: Role=Nucleus   | CentralNuc=True  | MinDepth=2 | PromDepth=0 | MaxNucRatio=1.00 | NucRels=['Joint', 'Elaboration'] | SatRels=['Elaboration']
+    S2: Role=Nucleus   | CentralNuc=True  | MinDepth=2 | PromDepth=0 | MaxNucRatio=1.00 | NucRels=['Joint', 'Explanation'] | SatRels=[]
+    S3: Role=Nucleus   | CentralNuc=False | MinDepth=4 | PromDepth=2 | MaxNucRatio=0.50 | NucRels=['Elaboration', 'Explanation'] | SatRels=['Explanation']
+    S4: Role=Nucleus   | CentralNuc=False | MinDepth=4 | PromDepth=3 | MaxNucRatio=0.33 | NucRels=['Elaboration'] | SatRels=['Elaboration']
+
+--- Paragraph 9 Structured RST Table (9 EDUs, 3 Sentences) ---
+  EDU  0 | Role=Nucleus   | Rel=Elaboration   | Depth=1 (PromDepth=0) | NucRatio=1.00 [CENTRAL NUCLEUS] | "In an article for Campus Life magazine, Susan Smart describes her third and nearly last solo flight."
+  EDU  1 | Role=Nucleus   | Rel=Temporal      | Depth=3 (PromDepth=1) | NucRatio=0.50 | "She had been practicing a maneuver at 5,000 feet"
+  EDU  2 | Role=Nucleus   | Rel=Temporal      | Depth=4 (PromDepth=1) | NucRatio=0.50 | "when she lost control"
+  EDU  3 | Role=Nucleus   | Rel=Temporal      | Depth=4 (PromDepth=1) | NucRatio=0.50 | "and her Cessna 150 began spinning wildly toward earth."
+  EDU  4 | Role=Nucleus   | Rel=Elaboration   | Depth=4 (PromDepth=2) | NucRatio=0.33 | "After several seconds of panic, she recalled her instructor's words:"
+  EDU  5 | Role=Satellite | Rel=Condition     | Depth=5 (PromDepth=5) | NucRatio=0.20 | ""If you ever go into a spin in a Cessna 150,"
+  EDU  6 | Role=Nucleus   | Rel=Condition     | Depth=5 (PromDepth=4) | NucRatio=0.25 | "just let go of the controls."
+  EDU  7 | Role=Nucleus   | Rel=Enablement    | Depth=4 (PromDepth=3) | NucRatio=0.25 | "It's built"
+  EDU  8 | Role=Satellite | Rel=Enablement    | Depth=4 (PromDepth=4) | NucRatio=0.20 | "to fly on its own.""
+  Sentence-Level Aggregation:
+    S1: Role=Nucleus   | CentralNuc=True  | MinDepth=1 | PromDepth=0 | MaxNucRatio=1.00 | NucRels=['Elaboration'] | SatRels=[]
+    S2: Role=Nucleus   | CentralNuc=False | MinDepth=3 | PromDepth=1 | MaxNucRatio=0.50 | NucRels=['Elaboration', 'Temporal'] | SatRels=[]
+    S3: Role=Nucleus   | CentralNuc=False | MinDepth=4 | PromDepth=2 | MaxNucRatio=0.33 | NucRels=['Elaboration', 'Condition', 'Enablement'] | SatRels=['Condition', 'Enablement']
+
+--- Paragraph 10 Structured RST Table (14 EDUs, 5 Sentences) ---
+  EDU  0 | Role=Nucleus   | Rel=Elaboration   | Depth=2 (PromDepth=0) | NucRatio=1.00 [CENTRAL NUCLEUS] | "This paper is part of an effort"
+  EDU  1 | Role=Satellite | Rel=Elaboration   | Depth=2 (PromDepth=2) | NucRatio=0.50 | "to relate various accounts."
+  EDU  2 | Role=Nucleus   | Rel=Elaboration   | Depth=4 (PromDepth=1) | NucRatio=0.50 | "It is the first in a pair of papers"
+  EDU  3 | Role=Satellite | Rel=Elaboration   | Depth=4 (PromDepth=4) | NucRatio=0.33 | "that compare two particular accounts:"
+  EDU  4 | Role=Satellite | Rel=Elaboration   | Depth=3 (PromDepth=3) | NucRatio=0.33 | "Rhetorical Structure Theory and Systemic Linguistics."
+  EDU  5 | Role=Nucleus   | Rel=Elaboration   | Depth=6 (PromDepth=2) | NucRatio=0.33 | "Rhetorical Structure Theory,"
+  EDU  6 | Role=Satellite | Rel=Elaboration   | Depth=6 (PromDepth=6) | NucRatio=0.25 | "initially formulated in 1983,"
+  EDU  7 | Role=Nucleus   | Rel=Elaboration   | Depth=6 (PromDepth=2) | NucRatio=0.33 | "describes texts in terms of functionally-defined relations"
+  EDU  8 | Role=Satellite | Rel=Elaboration   | Depth=6 (PromDepth=6) | NucRatio=0.25 | "that hold between their parts."
+  EDU  9 | Role=Nucleus   | Rel=Elaboration   | Depth=5 (PromDepth=2) | NucRatio=0.33 | "Systemic Linguistics is a much more comprehensive view of language"
+  EDU 10 | Role=Satellite | Rel=Elaboration   | Depth=5 (PromDepth=5) | NucRatio=0.25 | "initiated in the early 1960s."
+  EDU 11 | Role=Satellite | Rel=Contrast      | Depth=4 (PromDepth=4) | NucRatio=0.20 | "Where the two approaches are comparable,"
+  EDU 12 | Role=Nucleus   | Rel=Elaboration   | Depth=5 (PromDepth=3) | NucRatio=0.25 | "Systemic Linguistics describes texts in terms of categories of processes"
+  EDU 13 | Role=Satellite | Rel=Elaboration   | Depth=5 (PromDepth=5) | NucRatio=0.20 | "which the texts perform."
+  Sentence-Level Aggregation:
+    S1: Role=Nucleus   | CentralNuc=True  | MinDepth=2 | PromDepth=0 | MaxNucRatio=1.00 | NucRels=['Elaboration'] | SatRels=['Elaboration']
+    S2: Role=Nucleus   | CentralNuc=False | MinDepth=3 | PromDepth=1 | MaxNucRatio=0.50 | NucRels=['Elaboration'] | SatRels=['Elaboration', 'Elaboration']
+    S3: Role=Nucleus   | CentralNuc=False | MinDepth=6 | PromDepth=2 | MaxNucRatio=0.33 | NucRels=['Elaboration', 'Contrast'] | SatRels=['Elaboration', 'Elaboration']
+    S4: Role=Nucleus   | CentralNuc=False | MinDepth=5 | PromDepth=2 | MaxNucRatio=0.33 | NucRels=['Elaboration', 'Contrast'] | SatRels=['Elaboration']
+    S5: Role=Satellite | CentralNuc=False | MinDepth=4 | PromDepth=3 | MaxNucRatio=0.25 | NucRels=['Contrast', 'Elaboration'] | SatRels=['Contrast', 'Elaboration']
+
+================================================================================
+PROBLEM 3: Rule-Based RST Sentence Selection & Summarization
+================================================================================
+
+--- Paragraph 1 ---
+Original Paragraph (4 sentences):
+  I don't believe that endorsing the Nuclear Freeze Initiative is the right step for California Common Cause. Tempting as it may be, we shouldn't embrace every popular issue that comes along. When we do so, we use precious, limited resources where other players with superior resources are already doing an adequate job. Rather, I think we will be stronger and more effective if we stick to those issues of governmental structure and process, broadly defined, that have formed the core of our agenda for years.
+Sentence RST Rule Scores:
+  [S1] Score= 11.02 (R1_Central_Nucleus(+3.00), R2_Prom_Depth(+3.00), R2_Tree_Depth(+0.75), R3_Nuc_Ratio(+3.00), R4_Nuc_Rel(+1.27)) <-- SELECTED
+       "I don't believe that endorsing the Nuclear Freeze Initiative is the right step for California Common Cause."
+  [S2] Score=  5.06 (R2_Prom_Depth(+1.50), R2_Tree_Depth(+0.38), R3_Nuc_Ratio(+1.50), R4_Nuc_Rel(+2.25), R5_Sat_Penalty(-0.57))
+       "Tempting as it may be, we shouldn't embrace every popular issue that comes along."
+  [S3] Score=  1.89 (R2_Prom_Depth(+0.75), R2_Tree_Depth(+0.38), R3_Nuc_Ratio(+1.00), R4_Nuc_Rel(+0.64), R5_Sat_Penalty(-0.87))
+       "When we do so, we use precious, limited resources where other players with superior resources are already doing an adequate job."
+  [S4] Score=  5.25 (R2_Prom_Depth(+1.50), R2_Tree_Depth(+0.50), R3_Nuc_Ratio(+1.50), R4_Nuc_Rel(+1.75)) <-- SELECTED
+       "Rather, I think we will be stronger and more effective if we stick to those issues of governmental structure and process, broadly defined, that have formed the core of our agenda for years."
+Generated Rule-Based Summary (2 sentence(s), S[1, 4]):
+  I don't believe that endorsing the Nuclear Freeze Initiative is the right step for California Common Cause. Rather, I think we will be stronger and more effective if we stick to those issues of governmental structure and process, broadly defined, that have formed the core of our agenda for years.
+
+--- Paragraph 2 ---
+Original Paragraph (5 sentences):
+  As your floppy drive writes or reads, a Syncom diskette is working four ways to keep loose particles and dust from causing soft errors, dropouts. Cleaning agents on the burnished surface of the Ectype coating actually remove build-up from the head, while lubricating it at the same time. A carbon additive drains away static electricity before it can attract dust or lint. Strong binders hold the signal-carrying oxides tightly within the coating. And the non-woven jacket liner, more than just wiping the surface, provides thousands of tiny pockets to keep what it collects.
+Sentence RST Rule Scores:
+  [S1] Score= 10.39 (R1_Central_Nucleus(+3.00), R2_Prom_Depth(+3.00), R2_Tree_Depth(+0.75), R3_Nuc_Ratio(+3.00), R4_Nuc_Rel(+0.64)) <-- SELECTED
+       "As your floppy drive writes or reads, a Syncom diskette is working four ways to keep loose particles and dust from causing soft errors, dropouts."
+  [S2] Score=  5.13 (R2_Prom_Depth(+1.50), R2_Tree_Depth(+0.50), R3_Nuc_Ratio(+1.50), R4_Nuc_Rel(+1.63)) <-- SELECTED
+       "Cleaning agents on the burnished surface of the Ectype coating actually remove build-up from the head, while lubricating it at the same time."
+  [S3] Score=  5.00 (R2_Prom_Depth(+1.50), R2_Tree_Depth(+0.38), R3_Nuc_Ratio(+1.50), R4_Nuc_Rel(+1.63))
+       "A carbon additive drains away static electricity before it can attract dust or lint."
+  [S4] Score=  4.67 (R2_Prom_Depth(+1.50), R2_Tree_Depth(+0.38), R3_Nuc_Ratio(+1.50), R4_Nuc_Rel(+1.30))
+       "Strong binders hold the signal-carrying oxides tightly within the coating."
+  [S5] Score=  4.45 (R2_Prom_Depth(+1.50), R2_Tree_Depth(+0.25), R3_Nuc_Ratio(+1.50), R4_Nuc_Rel(+1.20))
+       "And the non-woven jacket liner, more than just wiping the surface, provides thousands of tiny pockets to keep what it collects."
+Generated Rule-Based Summary (2 sentence(s), S[1, 2]):
+  As your floppy drive writes or reads, a Syncom diskette is working four ways to keep loose particles and dust from causing soft errors, dropouts. Cleaning agents on the burnished surface of the Ectype coating actually remove build-up from the head, while lubricating it at the same time.
+
+--- Paragraph 3 ---
+Original Paragraph (4 sentences):
+  To create your own "Victorian" bouquet of flowers, choose varying shapes, sizes and forms, besides a variety of complementary colors. Plants that grow tall should be surrounded by smaller ones and filled with others that tumble over the side of a hanging basket. Leaf textures and colors will also be important. There is the silver-white foliage of dusty miller, the feathery threads of lotus vine floating down from above, the deep greens, or chartreuse, even the widely varied foliage colors of the coleus.
+Sentence RST Rule Scores:
+  [S1] Score= 11.09 (R1_Central_Nucleus(+3.00), R2_Prom_Depth(+3.00), R2_Tree_Depth(+0.75), R3_Nuc_Ratio(+3.00), R4_Nuc_Rel(+1.34)) <-- SELECTED
+       "To create your own "Victorian" bouquet of flowers, choose varying shapes, sizes and forms, besides a variety of complementary colors."
+  [S2] Score=  4.31 (R2_Prom_Depth(+1.50), R2_Tree_Depth(+0.38), R3_Nuc_Ratio(+1.50), R4_Nuc_Rel(+0.94))
+       "Plants that grow tall should be surrounded by smaller ones and filled with others that tumble over the side of a hanging basket."
+  [S3] Score=  5.60 (R2_Prom_Depth(+1.50), R2_Tree_Depth(+0.50), R3_Nuc_Ratio(+1.50), R4_Nuc_Rel(+2.10)) <-- SELECTED
+       "Leaf textures and colors will also be important."
+  [S4] Score=  2.59 (R2_Prom_Depth(+0.75), R2_Tree_Depth(+0.38), R3_Nuc_Ratio(+1.00), R4_Nuc_Rel(+0.46))
+       "There is the silver-white foliage of dusty miller, the feathery threads of lotus vine floating down from above, the deep greens, or chartreuse, even the widely varied foliage colors of the coleus."
+Generated Rule-Based Summary (2 sentence(s), S[1, 3]):
+  To create your own "Victorian" bouquet of flowers, choose varying shapes, sizes and forms, besides a variety of complementary colors. Leaf textures and colors will also be important.
+
+--- Paragraph 4 ---
+Original Paragraph (2 sentences):
+  The people waiting in line carried a message, a refutation, of claims that the jobless could be employed if only they showed enough moxie. Every rule has exceptions, but the tragic and too-common tableaux of hundreds or even thousands of people snake-lining up for any task with a paycheck illustrates a lack of jobs, not laziness.
+Sentence RST Rule Scores:
+  [S1] Score= 10.30 (R1_Central_Nucleus(+3.00), R2_Prom_Depth(+3.00), R2_Tree_Depth(+0.50), R3_Nuc_Ratio(+3.00), R4_Nuc_Rel(+0.80)) <-- SELECTED
+       "The people waiting in line carried a message, a refutation, of claims that the jobless could be employed if only they showed enough moxie."
+  [S2] Score=  4.90 (R2_Prom_Depth(+1.50), R2_Tree_Depth(+0.75), R3_Nuc_Ratio(+1.50), R4_Nuc_Rel(+1.15))
+       "Every rule has exceptions, but the tragic and too-common tableaux of hundreds or even thousands of people snake-lining up for any task with a paycheck illustrates a lack of jobs, not laziness."
+Generated Rule-Based Summary (1 sentence(s), S[1]):
+  The people waiting in line carried a message, a refutation, of claims that the jobless could be employed if only they showed enough moxie.
+
+--- Paragraph 5 ---
+Original Paragraph (5 sentences):
+  While looking over a Scottsdale, Ariz., model house one day, my wife was amused by the real-estate agents, who engaged her in the "you talk kinda funny" conversation. We say "to-mah-to" and Arizonans say "to-may-to." We call the hood of a car a "bonnet" and the trunk a boot. Then, as my wife entered the dining room, one agent pointed to a massive chandelier and asked, "What would you call that in England?" "Ostentatious," my wife replied.
+Sentence RST Rule Scores:
+  [S1] Score= 10.14 (R1_Central_Nucleus(+3.00), R2_Prom_Depth(+3.00), R2_Tree_Depth(+0.50), R3_Nuc_Ratio(+3.00), R4_Nuc_Rel(+0.64)) <-- SELECTED
+       "While looking over a Scottsdale, Ariz., model house one day, my wife was amused by the real-estate agents, who engaged her in the "you talk kinda funny" conversation."
+  [S2] Score=  2.73 (R2_Prom_Depth(+0.50), R2_Tree_Depth(+0.25), R3_Nuc_Ratio(+1.00), R4_Nuc_Rel(+0.98))
+       "We say "to-mah-to" and Arizonans say "to-may-to.""
+  [S3] Score=  1.85 (R2_Prom_Depth(+1.00), R2_Tree_Depth(+0.75), R3_Nuc_Ratio(+1.50), R5_Sat_Penalty(-1.40))
+       "We call the hood of a car a "bonnet" and the trunk a boot."
+  [S4] Score=  4.78 (R2_Prom_Depth(+1.50), R2_Tree_Depth(+0.75), R3_Nuc_Ratio(+1.50), R4_Nuc_Rel(+1.03)) <-- SELECTED
+       "Then, as my wife entered the dining room, one agent pointed to a massive chandelier and asked, "What would you call that in England?""
+  [S5] Score= -0.11 (R2_Prom_Depth(+0.50), R2_Tree_Depth(+0.25), R3_Nuc_Ratio(+1.00), R4_Nuc_Rel(+0.14), R5_Short_Fragment(-2.00))
+       ""Ostentatious," my wife replied."
+Generated Rule-Based Summary (2 sentence(s), S[1, 4]):
+  While looking over a Scottsdale, Ariz., model house one day, my wife was amused by the real-estate agents, who engaged her in the "you talk kinda funny" conversation. Then, as my wife entered the dining room, one agent pointed to a massive chandelier and asked, "What would you call that in England?"
+
+--- Paragraph 6 ---
+Original Paragraph (5 sentences):
+  When a group of Americans, many in the teaching profession, visited her in Calcutta, they asked her for some advice to take home to their families. "Smile at your wives," she told them. "Smile at your husbands." Thinking that perhaps the counsel was simplistic, coming from an unmarried person, one of them asked, "Are you married?" "Yes," she replied, to their surprise, "and I find it hard sometimes to smile at Jesus. He can be very demanding."
+Sentence RST Rule Scores:
+  [S1] Score= 10.54 (R1_Central_Nucleus(+3.00), R2_Prom_Depth(+3.00), R2_Tree_Depth(+0.50), R3_Nuc_Ratio(+3.00), R4_Nuc_Rel(+1.04)) <-- SELECTED
+       "When a group of Americans, many in the teaching profession, visited her in Calcutta, they asked her for some advice to take home to their families."
+  [S2] Score=  4.08 (R2_Prom_Depth(+1.00), R2_Tree_Depth(+0.38), R3_Nuc_Ratio(+1.50), R4_Nuc_Rel(+1.20))
+       ""Smile at your wives," she told them."
+  [S3] Score=  2.50 (R2_Prom_Depth(+1.00), R2_Tree_Depth(+0.50), R3_Nuc_Ratio(+1.50), R4_Nuc_Rel(+1.50), R5_Short_Fragment(-2.00))
+       ""Smile at your husbands.""
+  [S4] Score=  4.11 (R2_Prom_Depth(+1.50), R2_Tree_Depth(+0.38), R3_Nuc_Ratio(+1.50), R4_Nuc_Rel(+1.30), R5_Sat_Penalty(-0.56)) <-- SELECTED
+       "Thinking that perhaps the counsel was simplistic, coming from an unmarried person, one of them asked, "Are you married?""
+  [S5] Score=  3.77 (R2_Prom_Depth(+1.00), R2_Tree_Depth(+0.38), R3_Nuc_Ratio(+1.00), R4_Nuc_Rel(+1.40))
+       ""Yes," she replied, to their surprise, "and I find it hard sometimes to smile at Jesus. He can be very demanding.""
+Generated Rule-Based Summary (2 sentence(s), S[1, 4]):
+  When a group of Americans, many in the teaching profession, visited her in Calcutta, they asked her for some advice to take home to their families. Thinking that perhaps the counsel was simplistic, coming from an unmarried person, one of them asked, "Are you married?"
+
+--- Paragraph 7 ---
+Original Paragraph (3 sentences):
+  ZPG's 1985 Urban Stress Test, created after months of persistent and exhaustive research, is the nation's first survey of how population-linked pressures affect U.S. cities. It ranks 184 urban areas on 11 different criteria ranging from crowding and birth rates to air quality and toxic wastes. The Urban Stress Test translates complex, technical data into an easy-to-use action tool for concerned citizens, elected officials and opinion leaders.
+Sentence RST Rule Scores:
+  [S1] Score=  9.78 (R1_Central_Nucleus(+3.00), R2_Prom_Depth(+3.00), R2_Tree_Depth(+0.38), R3_Nuc_Ratio(+3.00), R4_Nuc_Rel(+0.40)) <-- SELECTED
+       "ZPG's 1985 Urban Stress Test, created after months of persistent and exhaustive research, is the nation's first survey of how population-linked pressures affect U.S. cities."
+  [S2] Score=  3.57 (R2_Prom_Depth(+1.00), R2_Tree_Depth(+0.50), R3_Nuc_Ratio(+1.50), R4_Nuc_Rel(+0.57))
+       "It ranks 184 urban areas on 11 different criteria ranging from crowding and birth rates to air quality and toxic wastes."
+  [S3] Score=  4.50 (R2_Prom_Depth(+1.50), R2_Tree_Depth(+1.50), R3_Nuc_Ratio(+1.50)) <-- SELECTED
+       "The Urban Stress Test translates complex, technical data into an easy-to-use action tool for concerned citizens, elected officials and opinion leaders."
+Generated Rule-Based Summary (2 sentence(s), S[1, 3]):
+  ZPG's 1985 Urban Stress Test, created after months of persistent and exhaustive research, is the nation's first survey of how population-linked pressures affect U.S. cities. The Urban Stress Test translates complex, technical data into an easy-to-use action tool for concerned citizens, elected officials and opinion leaders.
+
+--- Paragraph 8 ---
+Original Paragraph (4 sentences):
+  Our knowledge of ancient shipbuilding techniques, for example, is dependent on the work of archaeologists who have painstakingly excavated remains of ships themselves. The contents of shipwrecks are an equally valuable archaeological resource. Since the objects in a wreck represent a single moment in time, they provide better chronological information than even the most carefully excavated terrestrial site. Moreover, perishable items such as foodstuffs, which do not survive well on land, are often preserved underwater.
+Sentence RST Rule Scores:
+  [S1] Score= 11.23 (R1_Central_Nucleus(+3.00), R2_Prom_Depth(+3.00), R2_Tree_Depth(+0.75), R3_Nuc_Ratio(+3.00), R4_Nuc_Rel(+1.48)) <-- SELECTED
+       "Our knowledge of ancient shipbuilding techniques, for example, is dependent on the work of archaeologists who have painstakingly excavated remains of ships themselves."
+  [S2] Score= 12.65 (R1_Central_Nucleus(+3.00), R2_Prom_Depth(+3.00), R2_Tree_Depth(+0.75), R3_Nuc_Ratio(+3.00), R4_Nuc_Rel(+2.90)) <-- SELECTED
+       "The contents of shipwrecks are an equally valuable archaeological resource."
+  [S3] Score=  4.57 (R2_Prom_Depth(+1.00), R2_Tree_Depth(+0.38), R3_Nuc_Ratio(+1.50), R4_Nuc_Rel(+1.70))
+       "Since the objects in a wreck represent a single moment in time, they provide better chronological information than even the most carefully excavated terrestrial site."
+  [S4] Score=  2.59 (R2_Prom_Depth(+0.75), R2_Tree_Depth(+0.38), R3_Nuc_Ratio(+1.00), R4_Nuc_Rel(+0.46))
+       "Moreover, perishable items such as foodstuffs, which do not survive well on land, are often preserved underwater."
+Generated Rule-Based Summary (2 sentence(s), S[1, 2]):
+  Our knowledge of ancient shipbuilding techniques, for example, is dependent on the work of archaeologists who have painstakingly excavated remains of ships themselves. The contents of shipwrecks are an equally valuable archaeological resource.
+
+--- Paragraph 9 ---
+Original Paragraph (3 sentences):
+  In an article for Campus Life magazine, Susan Smart describes her third and nearly last solo flight. She had been practicing a maneuver at 5,000 feet when she lost control and her Cessna 150 began spinning wildly toward earth. After several seconds of panic, she recalled her instructor's words: "If you ever go into a spin in a Cessna 150, just let go of the controls. It's built to fly on its own."
+Sentence RST Rule Scores:
+  [S1] Score= 11.30 (R1_Central_Nucleus(+3.00), R2_Prom_Depth(+3.00), R2_Tree_Depth(+1.50), R3_Nuc_Ratio(+3.00), R4_Nuc_Rel(+0.80)) <-- SELECTED
+       "In an article for Campus Life magazine, Susan Smart describes her third and nearly last solo flight."
+  [S2] Score=  4.54 (R2_Prom_Depth(+1.50), R2_Tree_Depth(+0.50), R3_Nuc_Ratio(+1.50), R4_Nuc_Rel(+1.04)) <-- SELECTED
+       "She had been practicing a maneuver at 5,000 feet when she lost control and her Cessna 150 began spinning wildly toward earth."
+  [S3] Score=  3.40 (R2_Prom_Depth(+1.00), R2_Tree_Depth(+0.38), R3_Nuc_Ratio(+1.00), R4_Nuc_Rel(+1.03))
+       "After several seconds of panic, she recalled her instructor's words: "If you ever go into a spin in a Cessna 150, just let go of the controls. It's built to fly on its own.""
+Generated Rule-Based Summary (2 sentence(s), S[1, 2]):
+  In an article for Campus Life magazine, Susan Smart describes her third and nearly last solo flight. She had been practicing a maneuver at 5,000 feet when she lost control and her Cessna 150 began spinning wildly toward earth.
+
+--- Paragraph 10 ---
+Original Paragraph (5 sentences):
+  This paper is part of an effort to relate various accounts. It is the first in a pair of papers that compare two particular accounts: Rhetorical Structure Theory and Systemic Linguistics. Rhetorical Structure Theory, initially formulated in 1983, describes texts in terms of functionally-defined relations that hold between their parts. Systemic Linguistics is a much more comprehensive view of language initiated in the early 1960s. Where the two approaches are comparable, Systemic Linguistics describes texts in terms of categories of processes which the texts perform.
+Sentence RST Rule Scores:
+  [S1] Score= 10.32 (R1_Central_Nucleus(+3.00), R2_Prom_Depth(+3.00), R2_Tree_Depth(+0.75), R3_Nuc_Ratio(+3.00), R4_Nuc_Rel(+0.57)) <-- SELECTED
+       "This paper is part of an effort to relate various accounts."
+  [S2] Score=  3.96 (R2_Prom_Depth(+1.50), R2_Tree_Depth(+0.50), R3_Nuc_Ratio(+1.50), R4_Nuc_Rel(+0.46)) <-- SELECTED
+       "It is the first in a pair of papers that compare two particular accounts: Rhetorical Structure Theory and Systemic Linguistics."
+  [S3] Score=  3.40 (R2_Prom_Depth(+1.00), R2_Tree_Depth(+0.25), R3_Nuc_Ratio(+1.00), R4_Nuc_Rel(+1.15))
+       "Rhetorical Structure Theory, initially formulated in 1983, describes texts in terms of functionally-defined relations that hold between their parts."
+  [S4] Score=  3.93 (R2_Prom_Depth(+1.00), R2_Tree_Depth(+0.30), R3_Nuc_Ratio(+1.00), R4_Nuc_Rel(+1.63))
+       "Systemic Linguistics is a much more comprehensive view of language initiated in the early 1960s."
+  [S5] Score=  2.64 (R2_Prom_Depth(+0.75), R2_Tree_Depth(+0.38), R3_Nuc_Ratio(+0.75), R4_Nuc_Rel(+1.33), R5_Sat_Penalty(-0.57))
+       "Where the two approaches are comparable, Systemic Linguistics describes texts in terms of categories of processes which the texts perform."
+Generated Rule-Based Summary (2 sentence(s), S[1, 2]):
+  This paper is part of an effort to relate various accounts. It is the first in a pair of papers that compare two particular accounts: Rhetorical Structure Theory and Systemic Linguistics.
+
+================================================================================
+PROBLEM 4: Comparison with ChatGPT Baseline & Accuracy / F1 Evaluation
+================================================================================
+
+--- Paragraph 1 Comparison ---
+  Gold Key Sentences    : S[1, 4]
+  RST Selected Sentences: S[1, 4]
+  Rule-Based Summary    : I don't believe that endorsing the Nuclear Freeze Initiative is the right step for California Common Cause. Rather, I think we will be stronger and more effective if we stick to those issues of governmental structure and process, broadly defined, that have formed the core of our agenda for years.
+  ChatGPT Summary       : Endorsing the Nuclear Freeze Initiative is not the right step for California Common Cause because embracing every popular issue drains limited resources where other organizations are already effective. Instead, the organization will remain stronger by focusing on its core agenda of governmental structure and process.
+  Paragraph Metrics     : Sent_Acc=100.0%, Sent_F1=100.0%, Token_F1(RST vs Gold)=100.0%, Token_F1(RST vs ChatGPT)=50.7%
+
+--- Paragraph 2 Comparison ---
+  Gold Key Sentences    : S[1, 2]
+  RST Selected Sentences: S[1, 2]
+  Rule-Based Summary    : As your floppy drive writes or reads, a Syncom diskette is working four ways to keep loose particles and dust from causing soft errors, dropouts. Cleaning agents on the burnished surface of the Ectype coating actually remove build-up from the head, while lubricating it at the same time.
+  ChatGPT Summary       : As a floppy drive reads or writes, a Syncom diskette works in four ways to prevent dust and loose particles from causing soft errors and dropouts. Its Ectype coating cleans and lubricates the drive head, a carbon additive drains static electricity, strong binders secure the oxides, and a non-woven liner traps collected debris.
+  Paragraph Metrics     : Sent_Acc=100.0%, Sent_F1=100.0%, Token_F1(RST vs Gold)=100.0%, Token_F1(RST vs ChatGPT)=51.4%
+
+--- Paragraph 3 Comparison ---
+  Gold Key Sentences    : S[1, 3]
+  RST Selected Sentences: S[1, 3]
+  Rule-Based Summary    : To create your own "Victorian" bouquet of flowers, choose varying shapes, sizes and forms, besides a variety of complementary colors. Leaf textures and colors will also be important.
+  ChatGPT Summary       : Creating a Victorian flower bouquet requires selecting varied shapes, sizes, forms, and complementary colors. Tall plants should be surrounded by smaller and trailing varieties, while incorporating diverse leaf textures and foliage colors such as dusty miller, lotus vine, and coleus.
+  Paragraph Metrics     : Sent_Acc=100.0%, Sent_F1=100.0%, Token_F1(RST vs Gold)=100.0%, Token_F1(RST vs ChatGPT)=38.5%
+
+--- Paragraph 4 Comparison ---
+  Gold Key Sentences    : S[2]
+  RST Selected Sentences: S[1]
+  Rule-Based Summary    : The people waiting in line carried a message, a refutation, of claims that the jobless could be employed if only they showed enough moxie.
+  ChatGPT Summary       : The long lines of unemployed people waiting for work refute the claim that joblessness is simply due to a lack of effort or moxie. Seeing hundreds or thousands of applicants lining up for any paid task demonstrates a genuine shortage of jobs rather than laziness.
+  Paragraph Metrics     : Sent_Acc=0.0%, Sent_F1=0.0%, Token_F1(RST vs Gold)=5.3%, Token_F1(RST vs ChatGPT)=13.3%
+
+--- Paragraph 5 Comparison ---
+  Gold Key Sentences    : S[1, 4]
+  RST Selected Sentences: S[1, 4]
+  Rule-Based Summary    : While looking over a Scottsdale, Ariz., model house one day, my wife was amused by the real-estate agents, who engaged her in the "you talk kinda funny" conversation. Then, as my wife entered the dining room, one agent pointed to a massive chandelier and asked, "What would you call that in England?"
+  ChatGPT Summary       : While touring a model house in Scottsdale, Arizona, the narrator's British wife was amused by real-estate agents comparing American and British vocabulary. When an agent pointed to a massive dining room chandelier and asked what she would call it in England, she wittily replied, 'Ostentatious.'
+  Paragraph Metrics     : Sent_Acc=100.0%, Sent_F1=100.0%, Token_F1(RST vs Gold)=100.0%, Token_F1(RST vs ChatGPT)=55.6%
+
+--- Paragraph 6 Comparison ---
+  Gold Key Sentences    : S[1, 5]
+  RST Selected Sentences: S[1, 4]
+  Rule-Based Summary    : When a group of Americans, many in the teaching profession, visited her in Calcutta, they asked her for some advice to take home to their families. Thinking that perhaps the counsel was simplistic, coming from an unmarried person, one of them asked, "Are you married?"
+  ChatGPT Summary       : When a group of visiting American teachers in Calcutta asked Mother Teresa for family advice, she told husbands and wives to smile at one another. When questioned on whether she was married, she surprised them by replying that she was married to Jesus and found him very demanding at times.
+  Paragraph Metrics     : Sent_Acc=60.0%, Sent_F1=50.0%, Token_F1(RST vs Gold)=53.8%, Token_F1(RST vs ChatGPT)=28.1%
+
+--- Paragraph 7 Comparison ---
+  Gold Key Sentences    : S[1, 3]
+  RST Selected Sentences: S[1, 3]
+  Rule-Based Summary    : ZPG's 1985 Urban Stress Test, created after months of persistent and exhaustive research, is the nation's first survey of how population-linked pressures affect U.S. cities. The Urban Stress Test translates complex, technical data into an easy-to-use action tool for concerned citizens, elected officials and opinion leaders.
+  ChatGPT Summary       : ZPG's 1985 Urban Stress Test is the first national survey examining how population-related pressures impact U.S. cities. It ranks 184 urban areas across 11 environmental and demographic criteria, translating complex technical data into an accessible action tool for citizens and leaders.
+  Paragraph Metrics     : Sent_Acc=100.0%, Sent_F1=100.0%, Token_F1(RST vs Gold)=100.0%, Token_F1(RST vs ChatGPT)=58.2%
+
+--- Paragraph 8 Comparison ---
+  Gold Key Sentences    : S[1, 2]
+  RST Selected Sentences: S[1, 2]
+  Rule-Based Summary    : Our knowledge of ancient shipbuilding techniques, for example, is dependent on the work of archaeologists who have painstakingly excavated remains of ships themselves. The contents of shipwrecks are an equally valuable archaeological resource.
+  ChatGPT Summary       : Archaeological excavations of both ship remains and shipwreck contents are vital to our understanding of ancient shipbuilding. Because shipwrecks capture a single moment in time and preserve perishable items like food underwater, they offer superior chronological evidence compared to land sites.
+  Paragraph Metrics     : Sent_Acc=100.0%, Sent_F1=100.0%, Token_F1(RST vs Gold)=100.0%, Token_F1(RST vs ChatGPT)=23.5%
+
+--- Paragraph 9 Comparison ---
+  Gold Key Sentences    : S[1, 2]
+  RST Selected Sentences: S[1, 2]
+  Rule-Based Summary    : In an article for Campus Life magazine, Susan Smart describes her third and nearly last solo flight. She had been practicing a maneuver at 5,000 feet when she lost control and her Cessna 150 began spinning wildly toward earth.
+  ChatGPT Summary       : In Campus Life magazine, Susan Smart recounts losing control of her Cessna 150 at 5,000 feet during her third solo flight as the plane spun toward earth. Overcoming her panic, she remembered her instructor's advice to simply let go of the controls because the aircraft is designed to stabilize itself.
+  Paragraph Metrics     : Sent_Acc=100.0%, Sent_F1=100.0%, Token_F1(RST vs Gold)=100.0%, Token_F1(RST vs ChatGPT)=50.0%
+
+--- Paragraph 10 Comparison ---
+  Gold Key Sentences    : S[2, 3]
+  RST Selected Sentences: S[1, 2]
+  Rule-Based Summary    : This paper is part of an effort to relate various accounts. It is the first in a pair of papers that compare two particular accounts: Rhetorical Structure Theory and Systemic Linguistics.
+  ChatGPT Summary       : This paper is the first of two studies comparing Rhetorical Structure Theory (RST) and Systemic Linguistics. While RST characterizes texts through functionally defined relations between text parts, Systemic Linguistics offers a broader framework that describes texts through the categories of processes they perform.
+  Paragraph Metrics     : Sent_Acc=60.0%, Sent_F1=50.0%, Token_F1(RST vs Gold)=53.3%, Token_F1(RST vs ChatGPT)=31.4%
+
+--------------------------------------------------------------------------------
+OVERALL EVALUATION SUMMARY ACROSS ALL 10 PARAGRAPHS (40 Total Sentences)
+--------------------------------------------------------------------------------
+1. Rule-Based RST Summarizer (1-2 sentences/para):
+   - Sentence Selection Accuracy : 85.00% (34/40)
+   - Sentence Selection Precision: 84.21% (TP=16, FP=3)
+   - Sentence Selection Recall   : 84.21% (TP=16, FN=3)
+   - Sentence Selection F1-Score : 84.21%
+   - Content Token Overlap F1 (vs. Gold Key Content)   : 81.24%
+   - Content Token Overlap F1 (vs. ChatGPT Summaries)  : 40.07%
+2. ChatGPT Baseline Coverage (2-3 sentences/para):
+   - Sentence Alignment Accuracy : 75.00% (30/40)
+   - Sentence Alignment Precision: 65.52% (TP=19, FP=10)
+   - Sentence Alignment Recall   : 100.00% (TP=19, FN=0)
+   - Sentence Alignment F1-Score : 79.17%
+   - Content Token Overlap F1 (vs. Gold Key Content)   : 44.39%
+
+================================================================================
+PROBLEM 5: Discussion of Results, Rule Analysis & System Improvements
+================================================================================
+1. Overall Summarization Quality:
+   - Our Rule-Based RST Summarizer achieved 85.00% sentence-level accuracy and 84.21% F1-score (81.24% content-word overlap F1) without using any lexical frequency (TF-IDF) or neural summarization models.
+   - On 7 out of 10 paragraphs, the RST rules matched the exact gold key sentences (100% F1 on those paragraphs).
+
+2. Rule Patterns That Worked Exceptionally Well:
+   - Central Nucleus Promotion (Rule 1) & Top-Level Depth (Rule 2): In exposition and argument paragraphs (Paragraphs 1, 2, 3, 7, 8, 9), the author states the central thesis in Sentence 1 and attaches the rest of the paragraph as an 'Elaboration (NS)' or 'Explanation (NS)' satellite. Following the all-Nucleus path from the root immediately identified the exact topic sentence in 9 out of 10 paragraphs.
+   - Multinuclear Contrast & Joint Detection (Rule 4): In Paragraph 1 ('Contrast NN' between avoiding every popular issue and sticking to governmental structure) and Paragraph 8 ('Joint NN' linking ship remains in S1 and shipwreck contents in S2), rewarding high-level multinuclear relations captured both halves of the argument.
+   - Satellite Pruning (Rule 5): Downweighting 'Background (SN)' and deep 'Elaboration (NS)' satellites successfully filtered out secondary example lists (such as the plant species list in Paragraph 3 S4 and the British-American word examples in Paragraph 5 S2-S3).
+
+3. Failure Modes & Where Rule Patterns Struggled:
+   - Narrative / Anecdotal Punchlines at Deep Leaves (Paragraphs 5 & 6): In joke or narrative-twist paragraphs (e.g., Paragraph 5's 'Ostentatious' punchline in S5, or Mother Teresa's final reply in Paragraph 6 S5), the parser attaches the dialogue progression as a chain of 'Elaboration (NS)' and 'Attribution' splits at depth 4-6. Because top-down RST rules favor shallow depth, the rules preferred the narrative setup over the deep punchline.
+   - Meta-Discourse Introductory Sentences (Paragraph 10): In Paragraph 10, S1 ('This paper is part of an effort to relate various accounts') is the root Nucleus, while S2-S4 contain the actual comparison of RST and Systemic Linguistics. A pure tree-top rule picks S1 even though S1 is meta-discourse with low standalone informativeness.
+   - Dangling Anaphoric Pronouns in Extractive Selection: Selecting S2 in Paragraph 10 ('It is the first in a pair...') or S2 in Paragraph 7 ('It ranks 184 urban areas...') without S1 leaves an unresolved pronoun ('It').
+
+4. Concrete Ways to Improve the System:
+   - Sub-Sentence EDU Compression: Instead of extracting whole sentences, prune Satellite EDUs (such as 'Attribution' or 'Background' clauses) inside a selected sentence to produce tighter, compressive summaries.
+   - Genre-Aware Depth Weighting: Distinguish expository/argumentative texts (where top-level Nuclei hold the thesis) from narrative/dialogue texts (where 'Temporal' and climax leaves at the end of the chain hold the resolution).
+   - Hybrid Lexical + Anaphora Post-Processing: Combine learned Logistic Regression RST weights (Extra Credit) with content-word TF-IDF salience and anaphora resolution (replacing dangling 'It/She' with its antecedent NP).
+
+================================================================================
+EXTRA CREDIT: Learning Nucleus & Satellite Relation Weights via Logistic Regression
+================================================================================
+
+Learned Intercept (Bias b): -1.6209
+
+Learned Logistic Regression Weights (Ranked from Most Positive to Most Negative):
+  Rank | Feature / Relation Name  | Learned Weight | RST Theoretical Role
+  --------------------------------------------------------------------------
+  1    | inv_min_depth            |        +1.0888 | Global RST Tree Nuclearity / Hierarchy
+  2    | inv_promoted_depth       |        +1.0334 | Global RST Tree Nuclearity / Hierarchy
+  3    | N_Temporal               |        +0.6741 | Nucleus Relation (Promotes Summary Inclusion)
+  4    | is_central_nucleus       |        +0.6345 | Global RST Tree Nuclearity / Hierarchy
+  5    | max_nucleus_ratio        |        +0.4980 | Global RST Tree Nuclearity / Hierarchy
+  6    | N_Elaboration            |        +0.3180 | Nucleus Relation (Promotes Summary Inclusion)
+  7    | N_Joint                  |        +0.2525 | Nucleus Relation (Promotes Summary Inclusion)
+  8    | N_Manner_Means           |        +0.1320 | Nucleus Relation (Promotes Summary Inclusion)
+  9    | N_Explanation            |        +0.1210 | Nucleus Relation (Promotes Summary Inclusion)
+  10   | S_Background             |        +0.0881 | Satellite Relation (Contextual Support)
+  11   | S_Attribution            |        +0.0545 | Satellite Relation (Contextual Support)
+  12   | N_Condition              |        -0.0527 | Nucleus Relation (Deep Narrative Clause)
+  13   | S_Elaboration            |        -0.0575 | Satellite Relation (Suppresses Inclusion)
+  14   | S_Explanation            |        -0.1131 | Satellite Relation (Suppresses Inclusion)
+  15   | S_Condition_Enablement   |        -0.3203 | Satellite Relation (Suppresses Inclusion)
+  16   | N_Contrast               |        -0.4158 | Nucleus Relation (Deep Narrative Clause)
+
+Logistic Regression Summarization Performance:
+  - Full Model Fit (Top-K Selection)        : Accuracy = 85.00%, F1-Score = 84.21%
+  - Leave-One-Paragraph-Out CV (Unseen Text): Accuracy = 75.00%, F1-Score = 73.68%
+
+[Info] Saved all quantitative outputs to 'summarization_results.json'.

@@ -1,0 +1,399 @@
+{
+  "overall_metrics": {
+    "total_sentences": 40,
+    "rst_accuracy": 0.85,
+    "rst_precision": 0.8421,
+    "rst_recall": 0.8421,
+    "rst_f1": 0.8421,
+    "rst_token_f1": 0.8124,
+    "rst_vs_llm_token_f1": 0.4007,
+    "llm_accuracy": 0.75,
+    "llm_precision": 0.6552,
+    "llm_recall": 1.0,
+    "llm_f1": 0.7917,
+    "llm_token_f1": 0.4439,
+    "per_paragraph": {
+      "1": {
+        "gold_sentences": [
+          0,
+          3
+        ],
+        "rst_sentences": [
+          0,
+          3
+        ],
+        "llm_aligned_sentences": [
+          0,
+          2,
+          3
+        ],
+        "sent_accuracy": 1.0,
+        "sent_precision": 1.0,
+        "sent_recall": 1.0,
+        "sent_f1": 1.0,
+        "rst_vs_gold_token_f1": 1.0,
+        "llm_vs_gold_token_f1": 0.5075,
+        "rst_vs_llm_token_f1": 0.5075,
+        "chatgpt_summary": "Endorsing the Nuclear Freeze Initiative is not the right step for California Common Cause because embracing every popular issue drains limited resources where other organizations are already effective. Instead, the organization will remain stronger by focusing on its core agenda of governmental structure and process.",
+        "gold_reference_text": "I don't believe that endorsing the Nuclear Freeze Initiative is the right step for California Common Cause. Rather, I think we will be stronger and more effective if we stick to those issues of governmental structure and process, broadly defined, that have formed the core of our agenda for years."
+      },
+      "2": {
+        "gold_sentences": [
+          0,
+          1
+        ],
+        "rst_sentences": [
+          0,
+          1
+        ],
+        "llm_aligned_sentences": [
+          0,
+          1,
+          4
+        ],
+        "sent_accuracy": 1.0,
+        "sent_precision": 1.0,
+        "sent_recall": 1.0,
+        "sent_f1": 1.0,
+        "rst_vs_gold_token_f1": 1.0,
+        "llm_vs_gold_token_f1": 0.5143,
+        "rst_vs_llm_token_f1": 0.5143,
+        "chatgpt_summary": "As a floppy drive reads or writes, a Syncom diskette works in four ways to prevent dust and loose particles from causing soft errors and dropouts. Its Ectype coating cleans and lubricates the drive head, a carbon additive drains static electricity, strong binders secure the oxides, and a non-woven liner traps collected debris.",
+        "gold_reference_text": "As your floppy drive writes or reads, a Syncom diskette is working four ways to keep loose particles and dust from causing soft errors, dropouts. Cleaning agents on the burnished surface of the Ectype coating actually remove build-up from the head, while lubricating it at the same time."
+      },
+      "3": {
+        "gold_sentences": [
+          0,
+          2
+        ],
+        "rst_sentences": [
+          0,
+          2
+        ],
+        "llm_aligned_sentences": [
+          0,
+          1,
+          2
+        ],
+        "sent_accuracy": 1.0,
+        "sent_precision": 1.0,
+        "sent_recall": 1.0,
+        "sent_f1": 1.0,
+        "rst_vs_gold_token_f1": 1.0,
+        "llm_vs_gold_token_f1": 0.3846,
+        "rst_vs_llm_token_f1": 0.3846,
+        "chatgpt_summary": "Creating a Victorian flower bouquet requires selecting varied shapes, sizes, forms, and complementary colors. Tall plants should be surrounded by smaller and trailing varieties, while incorporating diverse leaf textures and foliage colors such as dusty miller, lotus vine, and coleus.",
+        "gold_reference_text": "To create your own \"Victorian\" bouquet of flowers, choose varying shapes, sizes and forms, besides a variety of complementary colors. Leaf textures and colors will also be important."
+      },
+      "4": {
+        "gold_sentences": [
+          1
+        ],
+        "rst_sentences": [
+          0
+        ],
+        "llm_aligned_sentences": [
+          0,
+          1
+        ],
+        "sent_accuracy": 0.0,
+        "sent_precision": 0.0,
+        "sent_recall": 0.0,
+        "sent_f1": 0.0,
+        "rst_vs_gold_token_f1": 0.0526,
+        "llm_vs_gold_token_f1": 0.3774,
+        "rst_vs_llm_token_f1": 0.1333,
+        "chatgpt_summary": "The long lines of unemployed people waiting for work refute the claim that joblessness is simply due to a lack of effort or moxie. Seeing hundreds or thousands of applicants lining up for any paid task demonstrates a genuine shortage of jobs rather than laziness.",
+        "gold_reference_text": "Every rule has exceptions, but the tragic and too-common tableaux of hundreds or even thousands of people snake-lining up for any task with a paycheck illustrates a lack of jobs, not laziness."
+      },
+      "5": {
+        "gold_sentences": [
+          0,
+          3
+        ],
+        "rst_sentences": [
+          0,
+          3
+        ],
+        "llm_aligned_sentences": [
+          0,
+          3,
+          4
+        ],
+        "sent_accuracy": 1.0,
+        "sent_precision": 1.0,
+        "sent_recall": 1.0,
+        "sent_f1": 1.0,
+        "rst_vs_gold_token_f1": 1.0,
+        "llm_vs_gold_token_f1": 0.5556,
+        "rst_vs_llm_token_f1": 0.5556,
+        "chatgpt_summary": "While touring a model house in Scottsdale, Arizona, the narrator's British wife was amused by real-estate agents comparing American and British vocabulary. When an agent pointed to a massive dining room chandelier and asked what she would call it in England, she wittily replied, 'Ostentatious.'",
+        "gold_reference_text": "While looking over a Scottsdale, Ariz., model house one day, my wife was amused by the real-estate agents, who engaged her in the \"you talk kinda funny\" conversation. Then, as my wife entered the dining room, one agent pointed to a massive chandelier and asked, \"What would you call that in England?\""
+      },
+      "6": {
+        "gold_sentences": [
+          0,
+          4
+        ],
+        "rst_sentences": [
+          0,
+          3
+        ],
+        "llm_aligned_sentences": [
+          0,
+          1,
+          4
+        ],
+        "sent_accuracy": 0.6,
+        "sent_precision": 0.5,
+        "sent_recall": 0.5,
+        "sent_f1": 0.5,
+        "rst_vs_gold_token_f1": 0.5385,
+        "llm_vs_gold_token_f1": 0.3158,
+        "rst_vs_llm_token_f1": 0.2807,
+        "chatgpt_summary": "When a group of visiting American teachers in Calcutta asked Mother Teresa for family advice, she told husbands and wives to smile at one another. When questioned on whether she was married, she surprised them by replying that she was married to Jesus and found him very demanding at times.",
+        "gold_reference_text": "When a group of Americans, many in the teaching profession, visited her in Calcutta, they asked her for some advice to take home to their families. \"Yes,\" she replied, to their surprise, \"and I find it hard sometimes to smile at Jesus. He can be very demanding.\""
+      },
+      "7": {
+        "gold_sentences": [
+          0,
+          2
+        ],
+        "rst_sentences": [
+          0,
+          2
+        ],
+        "llm_aligned_sentences": [
+          0,
+          1,
+          2
+        ],
+        "sent_accuracy": 1.0,
+        "sent_precision": 1.0,
+        "sent_recall": 1.0,
+        "sent_f1": 1.0,
+        "rst_vs_gold_token_f1": 1.0,
+        "llm_vs_gold_token_f1": 0.5823,
+        "rst_vs_llm_token_f1": 0.5823,
+        "chatgpt_summary": "ZPG's 1985 Urban Stress Test is the first national survey examining how population-related pressures impact U.S. cities. It ranks 184 urban areas across 11 environmental and demographic criteria, translating complex technical data into an accessible action tool for citizens and leaders.",
+        "gold_reference_text": "ZPG's 1985 Urban Stress Test, created after months of persistent and exhaustive research, is the nation's first survey of how population-linked pressures affect U.S. cities. The Urban Stress Test translates complex, technical data into an easy-to-use action tool for concerned citizens, elected officials and opinion leaders."
+      },
+      "8": {
+        "gold_sentences": [
+          0,
+          1
+        ],
+        "rst_sentences": [
+          0,
+          1
+        ],
+        "llm_aligned_sentences": [
+          0,
+          1,
+          2
+        ],
+        "sent_accuracy": 1.0,
+        "sent_precision": 1.0,
+        "sent_recall": 1.0,
+        "sent_f1": 1.0,
+        "rst_vs_gold_token_f1": 1.0,
+        "llm_vs_gold_token_f1": 0.2353,
+        "rst_vs_llm_token_f1": 0.2353,
+        "chatgpt_summary": "Archaeological excavations of both ship remains and shipwreck contents are vital to our understanding of ancient shipbuilding. Because shipwrecks capture a single moment in time and preserve perishable items like food underwater, they offer superior chronological evidence compared to land sites.",
+        "gold_reference_text": "Our knowledge of ancient shipbuilding techniques, for example, is dependent on the work of archaeologists who have painstakingly excavated remains of ships themselves. The contents of shipwrecks are an equally valuable archaeological resource."
+      },
+      "9": {
+        "gold_sentences": [
+          0,
+          1
+        ],
+        "rst_sentences": [
+          0,
+          1
+        ],
+        "llm_aligned_sentences": [
+          0,
+          1,
+          2
+        ],
+        "sent_accuracy": 1.0,
+        "sent_precision": 1.0,
+        "sent_recall": 1.0,
+        "sent_f1": 1.0,
+        "rst_vs_gold_token_f1": 1.0,
+        "llm_vs_gold_token_f1": 0.5,
+        "rst_vs_llm_token_f1": 0.5,
+        "chatgpt_summary": "In Campus Life magazine, Susan Smart recounts losing control of her Cessna 150 at 5,000 feet during her third solo flight as the plane spun toward earth. Overcoming her panic, she remembered her instructor's advice to simply let go of the controls because the aircraft is designed to stabilize itself.",
+        "gold_reference_text": "In an article for Campus Life magazine, Susan Smart describes her third and nearly last solo flight. She had been practicing a maneuver at 5,000 feet when she lost control and her Cessna 150 began spinning wildly toward earth."
+      },
+      "10": {
+        "gold_sentences": [
+          1,
+          2
+        ],
+        "rst_sentences": [
+          0,
+          1
+        ],
+        "llm_aligned_sentences": [
+          1,
+          2,
+          3
+        ],
+        "sent_accuracy": 0.6,
+        "sent_precision": 0.5,
+        "sent_recall": 0.5,
+        "sent_f1": 0.5,
+        "rst_vs_gold_token_f1": 0.5333,
+        "llm_vs_gold_token_f1": 0.4667,
+        "rst_vs_llm_token_f1": 0.3137,
+        "chatgpt_summary": "This paper is the first of two studies comparing Rhetorical Structure Theory (RST) and Systemic Linguistics. While RST characterizes texts through functionally defined relations between text parts, Systemic Linguistics offers a broader framework that describes texts through the categories of processes they perform.",
+        "gold_reference_text": "It is the first in a pair of papers that compare two particular accounts: Rhetorical Structure Theory and Systemic Linguistics. Rhetorical Structure Theory, initially formulated in 1983, describes texts in terms of functionally-defined relations that hold between their parts."
+      }
+    }
+  },
+  "extra_credit_logreg": {
+    "bias": -1.6209,
+    "weights": [
+      [
+        "inv_min_depth",
+        1.0888
+      ],
+      [
+        "inv_promoted_depth",
+        1.0334
+      ],
+      [
+        "N_Temporal",
+        0.6741
+      ],
+      [
+        "is_central_nucleus",
+        0.6345
+      ],
+      [
+        "max_nucleus_ratio",
+        0.498
+      ],
+      [
+        "N_Elaboration",
+        0.318
+      ],
+      [
+        "N_Joint",
+        0.2525
+      ],
+      [
+        "N_Manner_Means",
+        0.132
+      ],
+      [
+        "N_Explanation",
+        0.121
+      ],
+      [
+        "S_Background",
+        0.0881
+      ],
+      [
+        "S_Attribution",
+        0.0545
+      ],
+      [
+        "N_Condition",
+        -0.0527
+      ],
+      [
+        "S_Elaboration",
+        -0.0575
+      ],
+      [
+        "S_Explanation",
+        -0.1131
+      ],
+      [
+        "S_Condition_Enablement",
+        -0.3203
+      ],
+      [
+        "N_Contrast",
+        -0.4158
+      ]
+    ],
+    "train_accuracy": 0.85,
+    "train_f1": 0.8421,
+    "lopo_cv_accuracy": 0.75,
+    "lopo_cv_f1": 0.7368
+  },
+  "rule_summaries": {
+    "1": {
+      "selected_indices": [
+        0,
+        3
+      ],
+      "summary_text": "I don't believe that endorsing the Nuclear Freeze Initiative is the right step for California Common Cause. Rather, I think we will be stronger and more effective if we stick to those issues of governmental structure and process, broadly defined, that have formed the core of our agenda for years."
+    },
+    "2": {
+      "selected_indices": [
+        0,
+        1
+      ],
+      "summary_text": "As your floppy drive writes or reads, a Syncom diskette is working four ways to keep loose particles and dust from causing soft errors, dropouts. Cleaning agents on the burnished surface of the Ectype coating actually remove build-up from the head, while lubricating it at the same time."
+    },
+    "3": {
+      "selected_indices": [
+        0,
+        2
+      ],
+      "summary_text": "To create your own \"Victorian\" bouquet of flowers, choose varying shapes, sizes and forms, besides a variety of complementary colors. Leaf textures and colors will also be important."
+    },
+    "4": {
+      "selected_indices": [
+        0
+      ],
+      "summary_text": "The people waiting in line carried a message, a refutation, of claims that the jobless could be employed if only they showed enough moxie."
+    },
+    "5": {
+      "selected_indices": [
+        0,
+        3
+      ],
+      "summary_text": "While looking over a Scottsdale, Ariz., model house one day, my wife was amused by the real-estate agents, who engaged her in the \"you talk kinda funny\" conversation. Then, as my wife entered the dining room, one agent pointed to a massive chandelier and asked, \"What would you call that in England?\""
+    },
+    "6": {
+      "selected_indices": [
+        0,
+        3
+      ],
+      "summary_text": "When a group of Americans, many in the teaching profession, visited her in Calcutta, they asked her for some advice to take home to their families. Thinking that perhaps the counsel was simplistic, coming from an unmarried person, one of them asked, \"Are you married?\""
+    },
+    "7": {
+      "selected_indices": [
+        0,
+        2
+      ],
+      "summary_text": "ZPG's 1985 Urban Stress Test, created after months of persistent and exhaustive research, is the nation's first survey of how population-linked pressures affect U.S. cities. The Urban Stress Test translates complex, technical data into an easy-to-use action tool for concerned citizens, elected officials and opinion leaders."
+    },
+    "8": {
+      "selected_indices": [
+        0,
+        1
+      ],
+      "summary_text": "Our knowledge of ancient shipbuilding techniques, for example, is dependent on the work of archaeologists who have painstakingly excavated remains of ships themselves. The contents of shipwrecks are an equally valuable archaeological resource."
+    },
+    "9": {
+      "selected_indices": [
+        0,
+        1
+      ],
+      "summary_text": "In an article for Campus Life magazine, Susan Smart describes her third and nearly last solo flight. She had been practicing a maneuver at 5,000 feet when she lost control and her Cessna 150 began spinning wildly toward earth."
+    },
+    "10": {
+      "selected_indices": [
+        0,
+        1
+      ],
+      "summary_text": "This paper is part of an effort to relate various accounts. It is the first in a pair of papers that compare two particular accounts: Rhetorical Structure Theory and Systemic Linguistics."
+    }
+  }
+}
