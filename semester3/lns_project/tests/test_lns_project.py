@@ -323,3 +323,52 @@ class TestDocumentationDeliverables:
         assert path.is_file(), f"Missing required documentation file: {doc_name}"
         content = path.read_text(encoding="utf-8")
         assert len(content) > 2500, f"Documentation file {doc_name} is too brief"
+
+
+# ==============================================================================
+# 7. Overleaf LaTeX (.tex) Deliverables Tests
+# ==============================================================================
+class TestOverleafLatex:
+    def test_all_individual_and_combined_latex_files_exist(self):
+        latex_dir = PROJECT_DIR / "analysis_forms" / "latex"
+        assert latex_dir.is_dir(), "analysis_forms/latex/ directory missing"
+        for _, basename, _ in EXPECTED_CREATOR_FILES:
+            tex_path = latex_dir / f"{basename}.tex"
+            assert tex_path.is_file(), f"Missing LaTeX worksheet: {tex_path}"
+            assert tex_path.stat().st_size > 20000, f"LaTeX file too small: {tex_path}"
+
+        master_path = latex_dir / "All_6_Creators_Analysis_Overleaf.tex"
+        assert master_path.is_file(), "Missing combined master Overleaf .tex file"
+        assert master_path.stat().st_size > 200000
+
+    def test_latex_syntax_pure_ascii_and_balanced_environments(self):
+        latex_dir = PROJECT_DIR / "analysis_forms" / "latex"
+        for tex_path in sorted(latex_dir.glob("*.tex")):
+            txt = tex_path.read_text(encoding="utf-8")
+            # 1. Pure 7-bit ASCII so Overleaf pdflatex never hits Unicode inputenc errors
+            non_ascii = [ch for ch in txt if ord(ch) > 127]
+            assert non_ascii == [], f"Non-ASCII characters found in {tex_path.name}: {non_ascii[:5]}"
+            # 2. No leftover internal tokenizer placeholders
+            assert re.findall(r"@@[A-Z0-9]+@@", txt) == [], f"Leftover placeholder in {tex_path.name}"
+            # 3. Balanced unescaped braces { and }
+            cleaned = re.sub(r"\\[{}]", "", txt)
+            assert cleaned.count("{") == cleaned.count("}"), f"Unbalanced braces in {tex_path.name}"
+            # 4. Properly nested \begin{env} and \end{env} stack
+            env_stack = []
+            for m in re.finditer(r"\\(begin|end)\{([^}]+)\}", txt):
+                kind, env_name = m.group(1), m.group(2)
+                if kind == "begin":
+                    env_stack.append(env_name)
+                else:
+                    assert env_stack, f"Unexpected \\end{{{env_name}}} in {tex_path.name}"
+                    top = env_stack.pop()
+                    assert top == env_name, f"Mismatched \\begin{{{top}}} vs \\end{{{env_name}}} in {tex_path.name}"
+            assert env_stack == [], f"Unclosed environments {env_stack} in {tex_path.name}"
+            # 5. Official analysis_form.pdf header & sections present
+            assert r"\fancyhead[L]{\small LANGUAGE \& SOCIETY}" in txt
+            assert r"\fancyhead[R]{\small TRANSCRIPT ANALYSIS WORKSHEET}" in txt
+            assert r"\section*{Guidelines: Five features to look for in every event}" in txt
+            assert r"\section*{Event1. Ram Mandir donation controversy}" in txt
+            assert r"\section*{Event2. Students' protest regarding NEET paper leak}" in txt
+            assert r"\section*{Common form: Blank excerpt record}" in txt
+            assert r"\section*{Common form: End-of-event summary}" in txt
