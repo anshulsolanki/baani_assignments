@@ -1,22 +1,24 @@
-"""Convert the 6 filled Creator Analysis Worksheets (.md) into Overleaf-ready
-LaTeX (.tex) files that mirror the exact layout and typography of `analysis_form.pdf`.
+r"""Generate Overleaf-ready LaTeX (.tex) files that reproduce the EXACT look,
+typography, fonts, margins, form rules, and black-and-white layout of
+`analysis_form.pdf` (compiled originally with pdfTeX / Computer Modern).
 
-Generates:
-1. Six individual standalone Overleaf `.tex` files in `analysis_forms/latex/`:
-   - `01_Sarthak_Goswami_Analysis.tex`
-   - `02_Dhruv_Rathee_Analysis.tex`
-   - `03_Mohak_Mangal_Analysis.tex`
-   - `04_Aaj_Tak_Analysis.tex`
-   - `05_Republic_TV_Analysis.tex`
-   - `06_The_Wire_Analysis.tex`
-2. One combined master Overleaf `.tex` file in `analysis_forms/latex/`:
-   - `All_6_Creators_Analysis_Overleaf.tex` (all 6 worksheets in a single compilation unit)
+Key fidelity features matching `analysis_form.pdf`:
+- Standard `10pt` `a4paper` `article` class in classic Computer Modern (OT1/UTF-8)
+- Exact `46.77pt` (`1.65cm`) left/right margins (`501.73pt` text width)
+- Running `fancyhdr` header: `LANGUAGE & SOCIETY` (left) and `TRANSCRIPT ANALYSIS WORKSHEET` (right)
+- Zero colors (`xcolor` removed), zero hyperlinks (`hyperref`/`url` removed), zero `\texttt` code blocks
+- Exact Page 1 title block and centered `\small` `booktabs` Guidelines table
+- Exact underlined/ruled form fields (`Outlet:`, `Date:`, `Video title:`, `Timestamp(s):`, `Analyst:`, `Language:`)
+- Exact `Event-specific questions` (normal Roman question text followed by the answer)
+- Exact `Apply the five shared features` table (`Naming`, `Presupposition`, `Agency`, `Antagonisation`, `Intensification / softening`)
+- Exact `Short summary`, `Common form: Blank excerpt record`, and `Common form: End-of-event summary`
+  layout using bold prompt lines and `0.35pt` full-width horizontal form rules (`\rule{\textwidth}{0.35pt}`).
 """
 
 import re
 import sys
 from pathlib import Path
-from typing import List, Tuple
+from typing import Dict, List, Optional, Tuple
 
 PROJECT_DIR = Path(__file__).resolve().parent.parent
 FORMS_DIR = PROJECT_DIR / "analysis_forms"
@@ -24,21 +26,17 @@ LATEX_DIR = FORMS_DIR / "latex"
 
 LATEX_PREAMBLE = r"""\documentclass[10pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[a4paper,top=20mm,bottom=20mm,left=16mm,right=16mm,headheight=14pt]{geometry}
+\usepackage[a4paper,left=46.77pt,right=46.77pt,top=48pt,bottom=48pt,headheight=14pt,headsep=14pt]{geometry}
 \usepackage{fancyhdr}
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
 \usepackage{enumitem}
 \usepackage{amssymb}
-\usepackage{xcolor}
-\usepackage[hyphens]{url}
-\usepackage[colorlinks=true,urlcolor=blue!60!black,linkcolor=blue!60!black]{hyperref}
 
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{3pt}
-\renewcommand{\arraystretch}{1.28}
+\setlength{\parskip}{0pt}
+\renewcommand{\arraystretch}{1.35}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -46,22 +44,50 @@ LATEX_PREAMBLE = r"""\documentclass[10pt,a4paper]{article}
 \fancyhead[R]{\small TRANSCRIPT ANALYSIS WORKSHEET}
 \fancyfoot[C]{\small\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
+
+\newcommand{\formrule}{\par\vspace{3pt}\noindent\rule{\textwidth}{0.35pt}\par\vspace{7pt}}
+\newcommand{\sectionrule}{\par\vspace{4pt}\noindent\rule{\textwidth}{0.4pt}\par\vspace{8pt}}
 """
 
-WORKSHEET_TITLE_BANNER = r"""\begin{center}
-    {\large\bfseries LANGUAGE \& SOCIETY PROJECT}\\[3pt]
-    {\LARGE\bfseries Transcript Analysis Worksheet}\\[3pt]
-    {\normalsize Qualitative analysis of political news discourse}
+PAGE1_GUIDELINES_LATEX = r"""\begin{center}
+{\large\textbf{LANGUAGE \& SOCIETY PROJECT}}\\[4pt]
+{\LARGE\textbf{Transcript Analysis Worksheet}}\\[4pt]
+{\normalsize Qualitative analysis of political news discourse}
 \end{center}
 \vspace{2pt}
 \noindent\rule{\textwidth}{0.4pt}
+
+\section*{Guidelines: Five features to look for in every event}
+
+\begin{center}
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.18\textwidth} >{\raggedright\arraybackslash}p{0.21\textwidth} >{\raggedright\arraybackslash}p{0.23\textwidth} >{\raggedright\arraybackslash}p{0.29\textwidth}@{}}
+\toprule
+\textbf{Feature} & \textbf{What to look for} & \textbf{Illustrative example} & \textbf{Questions to answer} \\
+\midrule
+\textbf{1. Naming} & What are people, groups, actions, or events called? & ``Students'', ``protesters'', ``agitators''; ``irregularity'', ``scam'', ``controversy''. & What exact label is used? Who or what does it refer to? Who uses it? What alternative label could have been used? \\[6pt]
+\textbf{2. Presupposition} & What is treated as already true or taken for granted? & ``Why are students creating chaos again?'' may presuppose earlier disruption. & What does the wording assume? Is that assumption supported, disputed, or left unexamined? Does it appear in a question or words such as ``again'', ``still'', or ``finally''? \\[6pt]
+\textbf{3. Agency} & Who is shown doing something? Who is acted upon? Who disappears? & ``Police injured protesters'' vs.\ ``Protesters were injured.'' & Who is the actor? Who experiences the action? Is responsibility named, backgrounded, or omitted? \\[6pt]
+\textbf{4. Antagonisation} & Who is positioned against whom? & ``Ordinary citizens'' vs.\ ``political troublemakers''. & Which groups are contrasted? Is one presented as more legitimate, moral, patriotic, dangerous, or disloyal? Is an ``us vs.\ them'' division implied? \\[6pt]
+\textbf{5. Intensification / softening} & What is exaggerated, minimised, softened, or euphemised? & ``Violent mob'' vs.\ ``peaceful demonstrators''; ``incident'' instead of a direct description. & Which words heighten emotion or seriousness? Which minimise it? Are metaphors, dramatic adjectives, hedges, or euphemisms used? Does the wording match the evidence? \\
+\bottomrule
+\end{tabular}
+\end{center}
+
 \vspace{4pt}
+\noindent{\small\emph{Reminder:} A label or implication is not automatically false or manipulative. Examine the surrounding context and evidence.}
+
+\newpage
 """
 
 
-def escape_latex_text(text: str) -> str:
-    """Escape plain text for LaTeX while normalizing Unicode punctuation to pure ASCII."""
-    # Normalize Unicode characters first
+def convert_quotes_to_tex(text: str) -> str:
+    """Convert straight ASCII double quotes "..." into TeX quotes ``...''."""
+    return re.sub(r'"([^"]*)"', r"``\1''", text)
+
+
+def escape_latex_plain(text: str) -> str:
+    """Escape plain text for LaTeX (pure ASCII, Computer Modern serif, no \\texttt)."""
     replacements = [
         ("₹", "Rs.\\,"),
         ("–", "--"),
@@ -76,7 +102,8 @@ def escape_latex_text(text: str) -> str:
     for src, dst in replacements:
         text = text.replace(src, dst)
 
-    # Escape special LaTeX characters in plain text
+    text = convert_quotes_to_tex(text)
+
     out: List[str] = []
     for ch in text:
         if ch == "\\":
@@ -102,47 +129,33 @@ def escape_latex_text(text: str) -> str:
         else:
             out.append(ch)
     res = "".join(out)
-    # Restore our intentional Rs.\, thinspace command if backslash was escaped
     res = res.replace(r"Rs.\textbackslash{},", r"Rs.\,")
     res = res.replace(r"\textbackslash{}ldots\{\}", r"\ldots{}")
     return res
 
 
-def format_inline_markdown(text: str, is_quote_block: bool = False) -> str:
-    """Convert inline Markdown (`code`, **bold**, *italic*, [x]/[ ], <br>, ->) to LaTeX."""
-    # Replace <br> tags with a placeholder before tokenizing
+def format_inline(text: str) -> str:
+    """Convert Markdown inline markup into clean serif LaTeX without colors, URLs, or \\texttt."""
+    # Strip parenthesized raw YouTube URLs like (`https://youtu.be/...`)
+    text = re.sub(r"\s*\(`https?://[^`]+`\)", "", text)
+    text = re.sub(r"`https?://[^`]+`", "", text)
+
+    # Replace <br> tags with a newline placeholder
     text = re.sub(r"<br\s*/?>", " @@BR@@ ", text)
 
-    # Tokenize inline code spans `...` first so their contents aren't parsed as bold/italics
-    code_tokens: List[str] = []
-
-    def replace_code(match: re.Match) -> str:
-        inner = match.group(1)
-        idx = len(code_tokens)
-        if inner == "[x]":
-            code_tokens.append(r"$\boxtimes$")
-        elif inner == "[ ]":
-            code_tokens.append(r"$\square$")
-        elif inner.startswith("http://") or inner.startswith("https://"):
-            # Safe URL inside \url{...}
-            safe_url = inner.replace("%", r"\%").replace("#", r"\#")
-            code_tokens.append(f"\\url{{{safe_url}}}")
-        else:
-            code_tokens.append(f"\\texttt{{{escape_latex_text(inner)}}}")
-        return f"@@CODE{idx}@@"
-
-    text = re.sub(r"`([^`]+)`", replace_code, text)
-
-    # Also support bare [x] and [ ] checkboxes outside backticks
+    # Replace checkboxes [x] and [ ] (with or without backticks)
+    text = text.replace("`[x]`", "@@CBCHECKED@@").replace("`[ ]`", "@@CBUNCHECKED@@")
     text = text.replace("[x]", "@@CBCHECKED@@").replace("[ ]", "@@CBUNCHECKED@@")
 
-    # Tokenize **bold** and *italic* before escaping plain text
+    # Strip backticks around inline code/quotes so everything renders in clean Computer Modern serif
+    text = re.sub(r"`([^`]+)`", r"\1", text)
+
+    # Tokenize **bold** and *italic*
     bold_tokens: List[str] = []
 
     def replace_bold(match: re.Match) -> str:
-        inner = match.group(1)
         idx = len(bold_tokens)
-        bold_tokens.append(inner)
+        bold_tokens.append(match.group(1))
         return f"@@BOLD{idx}@@"
 
     text = re.sub(r"\*\*([^*]+)\*\*", replace_bold, text)
@@ -150,266 +163,428 @@ def format_inline_markdown(text: str, is_quote_block: bool = False) -> str:
     italic_tokens: List[str] = []
 
     def replace_italic(match: re.Match) -> str:
-        inner = match.group(1)
         idx = len(italic_tokens)
-        italic_tokens.append(inner)
+        italic_tokens.append(match.group(1))
         return f"@@ITALIC{idx}@@"
 
     text = re.sub(r"\*([^*]+)\*", replace_italic, text)
 
-    # Replace ASCII arrow -> with placeholder
+    # Replace ASCII arrow
     text = text.replace(" -> ", " @@ARROW@@ ")
 
-    # Escape remaining plain text
-    escaped = escape_latex_text(text)
+    escaped = escape_latex_plain(text)
 
-    # Restore italic tokens (and recursively handle any code tokens inside them)
     for idx, inner in enumerate(italic_tokens):
-        escaped_inner = escape_latex_text(inner)
-        escaped = escaped.replace(f"@@ITALIC{idx}@@", f"\\textit{{{escaped_inner}}}")
+        escaped = escaped.replace(f"@@ITALIC{idx}@@", f"\\emph{{{escape_latex_plain(inner)}}}")
 
-    # Restore bold tokens
     for idx, inner in enumerate(bold_tokens):
-        escaped_inner = escape_latex_text(inner)
-        # Restore any italic tokens inside bold if present
+        inner_esc = escape_latex_plain(inner)
         for i_idx, i_inner in enumerate(italic_tokens):
-            escaped_inner = escaped_inner.replace(
-                f"@@ITALIC{i_idx}@@", f"\\textit{{{escape_latex_text(i_inner)}}}"
-            )
-        escaped = escaped.replace(f"@@BOLD{idx}@@", f"\\textbf{{{escaped_inner}}}")
+            inner_esc = inner_esc.replace(f"@@ITALIC{i_idx}@@", f"\\emph{{{escape_latex_plain(i_inner)}}}")
+        escaped = escaped.replace(f"@@BOLD{idx}@@", f"\\textbf{{{inner_esc}}}")
 
-    # Restore checkboxes, arrows, line breaks, and code tokens
     escaped = escaped.replace("@@CBCHECKED@@", r"$\boxtimes$")
     escaped = escaped.replace("@@CBUNCHECKED@@", r"$\square$")
     escaped = escaped.replace("@@ARROW@@", r"$\rightarrow$")
     escaped = escaped.replace("@@BR@@", r"\newline ")
-
-    for idx, token_latex in enumerate(code_tokens):
-        escaped = escaped.replace(f"@@CODE{idx}@@", token_latex)
-
-    if is_quote_block:
-        return escaped
     return escaped
 
 
-def render_table(table_lines: List[str]) -> str:
-    """Convert a Markdown pipe table into a booktabs + longtable LaTeX environment."""
+def render_metadata_header_block(meta: Dict[str, str], small_font: bool = False) -> str:
+    """Render the exact 6-field metadata header block from Pages 2, 4, and 5 of `analysis_form.pdf`."""
+    outlet = meta.get("Outlet", "")
+    date = meta.get("Date", "")
+    title = meta.get("Video title", "")
+    timestamps = meta.get("Timestamp(s)", "")
+    analyst = meta.get("Analyst", "")
+    language = meta.get("Language", "")
+
+    open_sz = "{\\small\n" if small_font else ""
+    close_sz = "\n}" if small_font else ""
+    lines = [
+        r"\par\vspace{6pt}",
+        f"{open_sz}\\noindent\\textbf{{Outlet:}} {outlet} \\hfill \\textbf{{Date:}} {date}",
+        r"\formrule",
+        f"\\noindent\\textbf{{Video title:}} {title}",
+        r"\formrule",
+        f"\\noindent\\textbf{{Timestamp(s):}} {timestamps}",
+        r"\formrule",
+        f"\\noindent\\textbf{{Analyst:}} {analyst} \\hfill \\textbf{{Language:}} {language}{close_sz}",
+        r"\sectionrule",
+    ]
+    if "Note" in meta:
+        lines.append(f"\\noindent{{\\small\\emph{{Note:}} {meta['Note']}\\par\\vspace{{6pt}}}}")
+    return "\n".join(lines)
+
+
+def render_shared_features_table(table_lines: List[str]) -> str:
+    """Render the `Apply the five shared features` table matching `analysis_form.pdf` Pages 2 & 4."""
     rows: List[List[str]] = []
     for ln in table_lines:
         stripped = ln.strip()
         if stripped.startswith("|") and stripped.endswith("|"):
             cells = [c.strip() for c in stripped[1:-1].split("|")]
-            # Skip alignment separator row | :--- | :--- |
             if all(re.match(r"^:?-{2,}:?$", c) for c in cells):
                 continue
             rows.append(cells)
 
-    if not rows:
+    if len(rows) <= 1:
         return ""
 
-    ncols = len(rows[0])
-    if ncols == 4:
-        colspec = (
-            r"@{}>{\raggedright\arraybackslash}p{0.17\textwidth}"
-            r" >{\raggedright\arraybackslash}p{0.20\textwidth}"
-            r" >{\raggedright\arraybackslash}p{0.24\textwidth}"
-            r" >{\raggedright\arraybackslash}p{0.32\textwidth}@{}"
-        )
-    elif ncols == 3:
-        colspec = (
-            r"@{}>{\raggedright\arraybackslash}p{0.19\textwidth}"
-            r" >{\raggedright\arraybackslash}p{0.38\textwidth}"
-            r" >{\raggedright\arraybackslash}p{0.37\textwidth}@{}"
-        )
-    else:
-        w = round(0.94 / ncols, 2)
-        colspec = "@{}" + " ".join([f">{{ \\raggedright\\arraybackslash }}p{{{w}\\textwidth}}"] * ncols) + "@{}"
-
-    out: List[str] = [f"\\begin{{longtable}}{{{colspec}}}", "\\toprule"]
-    header_cells = [f"\\textbf{{{format_inline_markdown(c)}}}" for c in rows[0]]
-    out.append(" & ".join(header_cells) + r" \\")
-    out.append("\\midrule")
-    out.append("\\endhead")
-
+    colspec = (
+        r"@{}>{\raggedright\arraybackslash}p{0.18\textwidth}"
+        r" >{\raggedright\arraybackslash}p{0.38\textwidth}"
+        r" >{\raggedright\arraybackslash}p{0.38\textwidth}@{}"
+    )
+    out = [
+        r"\par\vspace{4pt}",
+        r"{\small",
+        f"\\begin{{longtable}}{{{colspec}}}",
+        r"\toprule",
+        r"\textbf{Feature} & \textbf{Exact wording + timestamp} & \textbf{What it does in context} \\",
+        r"\midrule",
+        r"\endhead",
+    ]
     for r_idx, row in enumerate(rows[1:]):
-        # Pad or trim if needed
-        while len(row) < ncols:
+        while len(row) < 3:
             row.append("")
-        formatted_cells = [format_inline_markdown(c) for c in row[:ncols]]
-        out.append(" & ".join(formatted_cells) + r" \\")
+        # Strip leading '1. ', '2. ' etc. and bolding from Feature name to match analysis_form.pdf Page 2 & 4
+        feat_raw = re.sub(r"^\*\*(\d+\.\s*)?([^*]+)\*\*$", r"\2", row[0].strip())
+        feat_raw = re.sub(r"^\d+\.\s*", "", feat_raw)
+        feat_cell = format_inline(feat_raw)
+        wording_cell = format_inline(row[1])
+        context_cell = format_inline(row[2])
+        out.append(f"{feat_cell} & {wording_cell} & {context_cell} \\\\")
         if r_idx < len(rows[1:]) - 1:
-            out.append(r"\addlinespace[4pt]")
+            out.append(r"\addlinespace[6pt]")
 
-    out.append("\\bottomrule")
-    out.append("\\end{longtable}")
+    out.append(r"\bottomrule")
+    out.append(r"\end{longtable}")
+    out.append(r"}")
     return "\n".join(out)
 
 
-def convert_markdown_body_to_latex(md_text: str) -> str:
-    """Convert a single Creator Analysis Worksheet Markdown document body into LaTeX."""
-    lines = md_text.splitlines()
-    out: List[str] = [WORKSHEET_TITLE_BANNER]
+def parse_metadata_bullets(lines: List[str], start_idx: int) -> Tuple[Dict[str, str], int]:
+    """Parse `- **Outlet:** ...` style metadata lines into a dictionary."""
+    meta: Dict[str, str] = {}
+    i = start_idx
+    n = len(lines)
+    while i < n:
+        ln = lines[i].strip()
+        if not ln:
+            i += 1
+            continue
+        if ln.startswith("- **"):
+            # Handle single line `- **Outlet:** ... | **Date:** ...` or `- **Key:** Value`
+            if " | **" in ln:
+                parts = [p.strip() for p in ln[2:].split("|")]
+                for p in parts:
+                    m = re.match(r"^\*\*([^*:]+):?\*\*:?\s*(.*)$", p)
+                    if m:
+                        meta[m.group(1).strip()] = format_inline(m.group(2).strip())
+            else:
+                m = re.match(r"^-\s+\*\*([^*:]+):?\*\*:?\s*(.*)$", ln)
+                if m:
+                    key = m.group(1).strip()
+                    val = format_inline(m.group(2).strip())
+                    if "Analytical Note" in key:
+                        meta["Note"] = val
+                    else:
+                        meta[key] = val
+            i += 1
+        else:
+            break
+    return meta, i
 
-    i = 0
+
+def convert_event_section(lines: List[str], start_idx: int, is_event2: bool = False) -> Tuple[str, int]:
+    """Convert `## Event1...` or `## Event2...` section into exact `analysis_form.pdf` LaTeX."""
+    out: List[str] = []
+    if is_event2:
+        out.append(r"\newpage")
+
+    header_line = lines[start_idx].strip()[3:].strip()
+    out.append(f"\\section*{{{format_inline(header_line)}}}")
+    i = start_idx + 1
     n = len(lines)
 
+    # Parse Focus line
+    while i < n and not lines[i].strip():
+        i += 1
+    if i < n and lines[i].strip().startswith("**Focus:**"):
+        focus_body = lines[i].strip()[len("**Focus:**") :].strip()
+        font_prefix = r"\small " if is_event2 else ""
+        out.append(f"\\noindent{{{font_prefix}Focus: {format_inline(focus_body)}}}")
+        i += 1
+
+    # Parse metadata fields
+    meta, i = parse_metadata_bullets(lines, i)
+    out.append(render_metadata_header_block(meta, small_font=is_event2))
+
+    # Parse subsections inside Event 1 / Event 2 (`### Event-specific questions`, `### Apply...`, `### Short summary`)
     while i < n:
-        line = lines[i]
-        stripped = line.strip()
-
-        # Skip the top H1 and subtitle line since WORKSHEET_TITLE_BANNER renders them
-        if i <= 2 and (
-            stripped.startswith("# LANGUAGE & SOCIETY PROJECT")
-            or stripped == "**Qualitative analysis of political news discourse**"
-        ):
+        ln = lines[i].strip()
+        if not ln:
             i += 1
             continue
-
-        if not stripped:
-            i += 1
-            continue
-
-        # Horizontal rule
-        if stripped == "---":
-            out.append(r"\vspace{4pt}\noindent\rule{\textwidth}{0.4pt}\vspace{4pt}")
-            i += 1
-            continue
-
-        # Section H2 (## ...)
-        if stripped.startswith("## "):
-            title = format_inline_markdown(stripped[3:].strip())
-            out.append(f"\n\\section*{{{title}}}")
-            i += 1
-            continue
-
-        # Subsection H3 (### ...)
-        if stripped.startswith("### "):
-            title = format_inline_markdown(stripped[4:].strip())
-            out.append(f"\n\\subsection*{{{title}}}")
-            i += 1
-            continue
-
-        # Pipe Table
-        if stripped.startswith("|") and stripped.endswith("|"):
-            table_lines: List[str] = []
-            while i < n and lines[i].strip().startswith("|") and lines[i].strip().endswith("|"):
-                table_lines.append(lines[i])
+        if ln == "---" or ln.startswith("## "):
+            if ln == "---":
                 i += 1
-            out.append(render_table(table_lines))
-            continue
+            break
 
-        # Numbered list block (1. ... through 8./9. ...)
-        if re.match(r"^\d+\.\s+", stripped):
-            out.append(r"\begin{enumerate}[leftmargin=1.6em, itemsep=4pt, topsep=4pt]")
+        if ln.startswith("### Event-specific questions"):
+            out.append(r"\subsection*{Event-specific questions}")
+            if is_event2:
+                out.append(r"{\small")
+            out.append(r"\begin{enumerate}[leftmargin=1.5em, itemsep=6pt, topsep=4pt]")
+            i += 1
             while i < n:
                 cur = lines[i]
                 cur_str = cur.strip()
                 if not cur_str:
-                    # Peek ahead to see if another numbered item or indented sub-bullet follows
-                    j = i + 1
-                    while j < n and not lines[j].strip():
-                        j += 1
-                    if j < n and (
-                        re.match(r"^\d+\.\s+", lines[j].strip())
-                        or re.match(r"^ {2,4}-\s+", lines[j])
-                    ):
-                        i = j
-                        continue
-                    else:
-                        break
-
-                m_num = re.match(r"^(\d+)\.\s+(.*)$", cur_str)
-                if m_num:
-                    q_text = format_inline_markdown(m_num.group(2))
-                    out.append(f"  \\item {q_text}")
                     i += 1
-                    # Collect any indented sub-bullets under this numbered item
-                    sub_bullets: List[str] = []
+                    continue
+                if cur_str.startswith("### ") or cur_str.startswith("## ") or cur_str == "---":
+                    break
+                m_q = re.match(r"^(\d+)\.\s+\*\*([^*]+)\*\*\s*$", cur_str)
+                if not m_q:
+                    m_q = re.match(r"^(\d+)\.\s+(.*)$", cur_str)
+                if m_q:
+                    q_text = format_inline(m_q.group(2).strip())
+                    i += 1
+                    ans_parts: List[str] = []
                     while i < n:
                         sub_ln = lines[i]
                         m_sub = re.match(r"^ {2,4}-\s+(.*)$", sub_ln)
                         if m_sub:
-                            sub_bullets.append(format_inline_markdown(m_sub.group(1)))
+                            ans_parts.append(format_inline(m_sub.group(1).strip()))
                             i += 1
                         elif not sub_ln.strip():
-                            # Peek if another sub-bullet follows
-                            k = i + 1
-                            while k < n and not lines[k].strip():
-                                k += 1
-                            if k < n and re.match(r"^ {2,4}-\s+", lines[k]):
-                                i = k
-                                continue
-                            break
+                            i += 1
                         else:
                             break
-                    if sub_bullets:
-                        out.append(r"  \begin{itemize}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]")
-                        for sb in sub_bullets:
-                            out.append(f"    \\item {sb}")
-                        out.append(r"  \end{itemize}")
+                    ans_joined = "\n\n  ".join(ans_parts)
+                    out.append(f"  \\item {q_text}\\par\\smallskip\n  {ans_joined}")
                 else:
-                    break
+                    i += 1
             out.append(r"\end{enumerate}")
+            if is_event2:
+                out.append(r"}")
             continue
 
-        # Top-level unordered bullet list (- ...)
-        if line.startswith("- "):
-            out.append(r"\begin{itemize}[leftmargin=1.5em, itemsep=3pt, topsep=4pt]")
+        if ln.startswith("### Apply the five shared features"):
+            out.append(r"\subsection*{Apply the five shared features}")
+            i += 1
+            while i < n and not lines[i].strip():
+                i += 1
+            table_lines: List[str] = []
+            while i < n and lines[i].strip().startswith("|"):
+                table_lines.append(lines[i])
+                i += 1
+            out.append(render_shared_features_table(table_lines))
+            continue
+
+        if ln.startswith("### Short summary"):
+            out.append(r"\subsection*{Short summary}")
+            i += 1
             while i < n:
                 cur = lines[i]
-                if cur.startswith("- "):
-                    item_text = format_inline_markdown(cur[2:].strip())
+                cur_str = cur.strip()
+                if not cur_str:
                     i += 1
-                    # Check for continuation lines (indented by 2 spaces, e.g. `  > ...`, `  - ...`, or `  Text...`)
-                    sub_items: List[str] = []
-                    continuation_parts: List[str] = []
-                    while i < n:
-                        nxt = lines[i]
-                        if nxt.startswith("  - "):
-                            sub_items.append(format_inline_markdown(nxt[4:].strip()))
-                            i += 1
-                        elif nxt.startswith("  > "):
-                            quote_raw = nxt[4:].strip()
-                            # Remove surrounding backticks if the whole quote is wrapped in `...`
-                            if quote_raw.startswith("`") and quote_raw.endswith("`") and quote_raw.count("`") == 2:
-                                quote_raw = quote_raw[1:-1]
-                            quote_formatted = format_inline_markdown(quote_raw, is_quote_block=True)
-                            continuation_parts.append(
-                                f"\n    \\begin{{quote}}\\small\\ttfamily {quote_formatted}\\end{{quote}}"
-                            )
-                            i += 1
-                        elif nxt.startswith("  ") and nxt.strip() and not nxt.startswith("    -"):
-                            continuation_parts.append(" " + format_inline_markdown(nxt.strip()))
-                            i += 1
-                        else:
-                            break
-
-                    full_item = item_text + "".join(continuation_parts)
-                    out.append(f"  \\item {full_item}")
-                    if sub_items:
-                        out.append(r"  \begin{itemize}[leftmargin=1.4em, itemsep=2pt, topsep=2pt]")
-                        for si in sub_items:
-                            out.append(f"    \\item {si}")
-                        out.append(r"  \end{itemize}")
-                elif not cur.strip():
-                    # Check if the next non-empty line is still a `- ` bullet
-                    j = i + 1
-                    while j < n and not lines[j].strip():
-                        j += 1
-                    if j < n and lines[j].startswith("- "):
-                        i = j
-                        continue
+                    continue
+                if cur_str.startswith("### ") or cur_str.startswith("## ") or cur_str == "---":
                     break
+                m_prompt = re.match(r"^-\s+\*\*([^*]+)\*\*\s*(.*)$", cur_str)
+                if m_prompt:
+                    prompt_label = format_inline(m_prompt.group(1).strip())
+                    first_ans = format_inline(m_prompt.group(2).strip()) if m_prompt.group(2).strip() else ""
+                    i += 1
+                    cont_ans: List[str] = [first_ans] if first_ans else []
+                    while i < n and lines[i].startswith("  ") and lines[i].strip():
+                        cont_ans.append(format_inline(lines[i].strip()))
+                        i += 1
+                    full_ans = " ".join(cont_ans)
+                    out.append(f"\\noindent{{\\small\\textbf{{{prompt_label}}}}}\\par\\smallskip")
+                    out.append(f"\\noindent{{\\small {full_ans}}}")
+                    out.append(r"\formrule")
                 else:
-                    break
-            out.append(r"\end{itemize}")
+                    i += 1
             continue
 
-        # Standalone paragraph (e.g. Focus: ..., Reminder: ..., Copy or print...)
-        out.append(format_inline_markdown(stripped) + "\n")
         i += 1
 
-    return "\n".join(out)
+    return "\n".join(out), i
+
+
+def convert_excerpt_records_section(lines: List[str], start_idx: int) -> Tuple[str, int]:
+    """Convert `## Common form: Blank excerpt record` into Page 5 layout of `analysis_form.pdf`."""
+    out: List[str] = []
+    i = start_idx + 1
+    n = len(lines)
+
+    # Skip blank lines and the instruction line (we print the header + instruction on each Excerpt Record)
+    while i < n:
+        cur_str = lines[i].strip()
+        if not cur_str or cur_str.startswith("*Copy or print"):
+            i += 1
+            continue
+        break
+
+    while i < n:
+        cur_str = lines[i].strip()
+        if not cur_str:
+            i += 1
+            continue
+        if cur_str == "---" or cur_str.startswith("## "):
+            if cur_str == "---":
+                i += 1
+            break
+
+        if cur_str.startswith("### Excerpt Record"):
+            rec_title = format_inline(cur_str[4:].strip())
+            out.append(r"\newpage")
+            out.append(r"\section*{Common form: Blank excerpt record}")
+            out.append(
+                r"\noindent{\small Copy or print this page whenever you find a passage worth analysing. "
+                r"Keep the exact wording and enough context to interpret it.}"
+            )
+            out.append(f"\\par\\smallskip\\noindent{{\\small\\emph{{{rec_title}}}}}")
+            i += 1
+
+            # First 3 bullets are Outlet/Date, Video title, Timestamp(s)/Analyst/Language
+            meta_lines: List[str] = []
+            while i < n:
+                s = lines[i].strip()
+                if s.startswith("- **Exact transcript excerpt"):
+                    break
+                if s.startswith("- **"):
+                    meta_lines.append(lines[i])
+                i += 1
+            meta, _ = parse_metadata_bullets(meta_lines, 0)
+            out.append(render_metadata_header_block(meta, small_font=True))
+
+            # Now parse the remaining prompts of this Excerpt Record
+            while i < n:
+                s = lines[i].strip()
+                if not s:
+                    i += 1
+                    continue
+                if s.startswith("### Excerpt Record") or s.startswith("## ") or s == "---":
+                    break
+                m_p = re.match(r"^-\s+\*\*([^*]+)\*\*\s*(.*)$", s)
+                if m_p:
+                    raw_label = m_p.group(1).strip()
+                    inline_rest = m_p.group(2).strip()
+                    i += 1
+                    body_lines: List[str] = []
+                    if inline_rest:
+                        body_lines.append(format_inline(inline_rest))
+                    while i < n and lines[i].startswith("  ") and lines[i].strip():
+                        b_ln = lines[i].strip()
+                        if b_ln.startswith("> "):
+                            b_ln = b_ln[2:].strip()
+                        body_lines.append(format_inline(b_ln))
+                        i += 1
+                    body_text = " ".join(body_lines)
+
+                    # Match exact label punctuation from Page 5 of analysis_form.pdf
+                    if raw_label.startswith("Exact transcript excerpt"):
+                        out.append(r"\noindent{\small\textbf{Exact transcript excerpt}}\par\smallskip")
+                        out.append(f"\\noindent{{\\small ``{body_text}''}}")
+                        out.append(r"\formrule")
+                    elif raw_label.startswith("Feature(s)"):
+                        out.append(f"\\noindent{{\\small\\textbf{{Feature(s):}} {body_text}}}\\par\\vspace{{6pt}}")
+                    elif raw_label.startswith("My interpretation, with reasons"):
+                        out.append(r"\noindent{\small\textbf{My interpretation, with reasons}}\par\smallskip")
+                        out.append(f"\\noindent{{\\small {body_text}}}")
+                        out.append(r"\formrule")
+                    else:
+                        label_clean = format_inline(raw_label)
+                        out.append(f"\\noindent{{\\small\\textbf{{{label_clean}}}}}\\par\\smallskip")
+                        out.append(f"\\noindent{{\\small {body_text}}}")
+                        out.append(r"\formrule")
+                else:
+                    i += 1
+            continue
+
+        i += 1
+
+    return "\n".join(out), i
+
+
+def convert_end_of_event_summary_section(lines: List[str], start_idx: int) -> Tuple[str, int]:
+    """Convert `## Common form: End-of-event summary` into Page 6 layout of `analysis_form.pdf`."""
+    out: List[str] = [
+        r"\newpage",
+        r"\section*{Common form: End-of-event summary}",
+    ]
+    i = start_idx + 1
+    n = len(lines)
+
+    while i < n:
+        s = lines[i].strip()
+        if not s:
+            i += 1
+            continue
+        if s.startswith("### End-of-Event Summary"):
+            sub_title = format_inline(s[4:].strip())
+            out.append(f"\\subsection*{{{sub_title}}}")
+            i += 1
+            continue
+        if s.startswith("*Research reminder:"):
+            rem_text = format_inline(s.strip("*"))
+            out.append(r"\vfill")
+            out.append(f"\\noindent{{\\small {rem_text}}}")
+            i += 1
+            continue
+        m_p = re.match(r"^-\s+\*\*([^*]+)\*\*\s*(.*)$", s)
+        if m_p:
+            label = format_inline(m_p.group(1).strip())
+            rest = format_inline(m_p.group(2).strip()) if m_p.group(2).strip() else ""
+            i += 1
+            cont: List[str] = [rest] if rest else []
+            while i < n and lines[i].startswith("  ") and lines[i].strip():
+                cont.append(format_inline(lines[i].strip()))
+                i += 1
+            full_val = " ".join(cont)
+            out.append(f"\\noindent{{\\small\\textbf{{{label}}}}}\\par\\smallskip")
+            out.append(f"\\noindent{{\\small {full_val}}}")
+            out.append(r"\formrule")
+            continue
+        i += 1
+
+    return "\n".join(out), i
+
+
+def convert_worksheet_markdown_to_exact_form_latex(md_text: str) -> str:
+    """Convert a Creator Analysis Worksheet Markdown file into the exact LaTeX structure of `analysis_form.pdf`."""
+    lines = md_text.splitlines()
+    n = len(lines)
+    sections_out: List[str] = [PAGE1_GUIDELINES_LATEX]
+
+    i = 0
+    while i < n:
+        s = lines[i].strip()
+        if s.startswith("## Event1."):
+            ev1_latex, i = convert_event_section(lines, i, is_event2=False)
+            sections_out.append(ev1_latex)
+            continue
+        if s.startswith("## Event2."):
+            ev2_latex, i = convert_event_section(lines, i, is_event2=True)
+            sections_out.append(ev2_latex)
+            continue
+        if s.startswith("## Common form: Blank excerpt record"):
+            exc_latex, i = convert_excerpt_records_section(lines, i)
+            sections_out.append(exc_latex)
+            continue
+        if s.startswith("## Common form: End-of-event summary"):
+            sum_latex, i = convert_end_of_event_summary_section(lines, i)
+            sections_out.append(sum_latex)
+            continue
+        i += 1
+
+    return "\n\n".join(sections_out)
 
 
 def generate_all_latex_files() -> Tuple[List[Path], Path]:
@@ -424,7 +599,7 @@ def generate_all_latex_files() -> Tuple[List[Path], Path]:
 
     for md_path in md_files:
         md_text = md_path.read_text(encoding="utf-8")
-        body_latex = convert_markdown_body_to_latex(md_text)
+        body_latex = convert_worksheet_markdown_to_exact_form_latex(md_text)
         combined_bodies.append(body_latex)
 
         full_tex = (
@@ -441,7 +616,7 @@ def generate_all_latex_files() -> Tuple[List[Path], Path]:
     master_tex = (
         LATEX_PREAMBLE
         + "\n\\begin{document}\n\n"
-        + "\n\n\\clearpage\n\n".join(combined_bodies)
+        + "\n\n\\clearpage\n\\setcounter{page}{1}\n\n".join(combined_bodies)
         + "\n\n\\end{document}\n"
     )
     master_path = LATEX_DIR / "All_6_Creators_Analysis_Overleaf.tex"

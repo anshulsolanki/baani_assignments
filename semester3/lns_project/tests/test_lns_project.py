@@ -364,7 +364,7 @@ class TestOverleafLatex:
                     top = env_stack.pop()
                     assert top == env_name, f"Mismatched \\begin{{{top}}} vs \\end{{{env_name}}} in {tex_path.name}"
             assert env_stack == [], f"Unclosed environments {env_stack} in {tex_path.name}"
-            # 5. Official analysis_form.pdf header & sections present
+            # 5. Official analysis_form.pdf header, sections, and strict no-color / no-link / no-texttt policy
             assert r"\fancyhead[L]{\small LANGUAGE \& SOCIETY}" in txt
             assert r"\fancyhead[R]{\small TRANSCRIPT ANALYSIS WORKSHEET}" in txt
             assert r"\section*{Guidelines: Five features to look for in every event}" in txt
@@ -372,3 +372,8 @@ class TestOverleafLatex:
             assert r"\section*{Event2. Students' protest regarding NEET paper leak}" in txt
             assert r"\section*{Common form: Blank excerpt record}" in txt
             assert r"\section*{Common form: End-of-event summary}" in txt
+            assert r"\formrule" in txt
+            assert "xcolor" not in txt
+            assert "hyperref" not in txt
+            assert r"\url{" not in txt
+            assert r"\texttt{" not in txt
