@@ -1,0 +1,2352 @@
+# The government announced new research grants for students.
+1   The JJ
+2   government k1
+3   announced V
+4   new JJ
+5   research NN
+6   grants k2
+7   for PSP
+8   students k4
+9   . PUNC
+
+# Global temperatures reached a record high last month.
+1   Global JJ
+2   temperatures k1
+3   reached V
+4   a JJ
+5   record NN
+6   high k2
+7   last JJ
+8   month k7
+9   . PUNC
+
+# Stock markets reacted sharply to the central bank decision.
+1   Stock NN
+2   markets k1
+3   reacted V
+4   sharply RB
+5   to PSP
+6   the JJ
+7   central JJ
+8   bank NN
+9   decision k2
+10   . PUNC
+
+# Scientists discovered a new species in the Western Ghats.
+1   Scientists k1
+2   discovered V
+3   a JJ
+4   new JJ
+5   species k2
+6   in PSP
+7   the JJ
+8   Western JJ
+9   Ghats k7
+10   . PUNC
+
+# Space Exploration reaches a new milestone this week.
+1   Space NN
+2   Exploration k1
+3   reaches V
+4   a JJ
+5   new JJ
+6   milestone k2
+7   this JJ
+8   week k7
+9   . PUNC
+
+# The trade agreement aims to reduce export tariffs significantly.
+1   The JJ
+2   trade NN
+3   agreement k1
+4   aims V
+5   to PSP
+6   reduce V
+7   export NN
+8   tariffs k2
+9   significantly RB
+10   . PUNC
+
+# Local communities are working to restore the ancient temple.
+1   Local JJ
+2   communities k1
+3   are VAUX
+4   working V
+5   to PSP
+6   restore V
+7   the JJ
+8   ancient JJ
+9   temple k2
+10   . PUNC
+
+# Technology firms are investing heavily in artificial intelligence.
+1   Technology NN
+2   firms k1
+3   are VAUX
+4   investing V
+5   heavily RB
+6   in PSP
+7   artificial JJ
+8   intelligence k7
+9   . PUNC
+
+# Oil prices stabilized after the recent production cut announcement.
+1   Oil NN
+2   prices k1
+3   stabilized V
+4   after PSP
+5   the JJ
+6   recent JJ
+7   production NN
+8   cut NN
+9   announcement k7
+10   . PUNC
+
+# The university campus will host the national sports meet.
+1   The JJ
+2   university NN
+3   campus k1
+4   will VAUX
+5   host V
+6   the JJ
+7   national JJ
+8   sports NN
+9   meet k2
+10   . PUNC
+
+# Renewable energy projects are expanding across the rural sector.
+1   Renewable JJ
+2   energy NN
+3   projects k1
+4   are VAUX
+5   expanding V
+6   across PSP
+7   the JJ
+8   rural JJ
+9   sector k7
+10   . PUNC
+
+# Global supply chains are recovering from recent disruptions.
+1   Global JJ
+2   supply NN
+3   chains k1
+4   are VAUX
+5   recovering V
+6   from PSP
+7   recent JJ
+8   disruptions k5
+9   . PUNC
+
+# Urban planning must focus on sustainable public transport.
+1   Urban JJ
+2   planning k1
+3   must VAUX
+4   focus V
+5   on PSP
+6   sustainable JJ
+7   public JJ
+8   transport k7
+9   . PUNC
+
+# Art exhibitions in the city are drawing large crowds.
+1   Art NN
+2   exhibitions k1
+3   in PSP
+4   the JJ
+5   city k7
+6   are VAUX
+7   drawing V
+8   large JJ
+9   crowds k2
+10   . PUNC
+
+# The tech startup secured funding for its innovative platform.
+1   The JJ
+2   tech NN
+3   startup k1
+4   secured V
+5   funding k2
+6   for PSP
+7   its JJ
+8   innovative JJ
+9   platform k4
+10   . PUNC
+
+# Monsoon rains reached the southern coast earlier than expected.
+1   Monsoon NN
+2   rains k1
+3   reached V
+4   the JJ
+5   southern JJ
+6   coast k2
+7   earlier RB
+8   than PSP
+9   expected V
+10   . PUNC
+
+# Public health initiatives have reduced the spread of disease.
+1   Public JJ
+2   health NN
+3   initiatives k1
+4   have VAUX
+5   reduced V
+6   the JJ
+7   spread k2
+8   of PSP
+9   disease NN
+10   . PUNC
+
+# E-commerce growth continues to transform the retail landscape.
+1   E-commerce NN
+2   growth k1
+3   continues V
+4   to PSP
+5   transform V
+6   the JJ
+7   retail JJ
+8   landscape k2
+9   . PUNC
+
+# High court judges emphasized the importance of digital privacy.
+1   High JJ
+2   court NN
+3   judges k1
+4   emphasized V
+5   the JJ
+6   importance k2
+7   of PSP
+8   digital JJ
+9   privacy NN
+10   . PUNC
+
+# Educational reforms are being implemented in several states.
+1   Educational JJ
+2   reforms k1
+3   are VAUX
+4   being VAUX
+5   implemented V
+6   in PSP
+7   several JJ
+8   states k7
+9   . PUNC
+
+# Manufacturing output increased for the third consecutive month.
+1   Manufacturing NN
+2   output k1
+3   increased V
+4   for PSP
+5   the JJ
+6   third JJ
+7   consecutive JJ
+8   month k7
+9   . PUNC
+
+# Archaeological survey found evidence of an ancient civilization.
+1   Archaeological JJ
+2   survey k1
+3   found V
+4   evidence k2
+5   of PSP
+6   an JJ
+7   ancient JJ
+8   civilization NN
+9   . PUNC
+
+# Wildlife conservation efforts have helped save endangered tigers.
+1   Wildlife NN
+2   conservation NN
+3   efforts k1
+4   have VAUX
+5   helped V
+6   save V
+7   endangered JJ
+8   tigers k2
+9   . PUNC
+
+# Airline industry expects a surge in summer holiday bookings.
+1   Airline NN
+2   industry k1
+3   expects V
+4   a JJ
+5   surge k2
+6   in PSP
+7   summer NN
+8   holiday NN
+9   bookings k7
+10   . PUNC
+
+# New legislation aims to protect the rights of workers.
+1   New JJ
+2   legislation k1
+3   aims V
+4   to PSP
+5   protect V
+6   the JJ
+7   rights k2
+8   of PSP
+9   workers NN
+10   . PUNC
+
+# Remote work remains popular among several software development teams.
+1   Remote JJ
+2   work k1
+3   remains V
+4   popular JJ
+5   among PSP
+6   several JJ
+7   software NN
+8   development NN
+9   teams k7
+10   . PUNC
+
+# Interest rates might remain steady until the next quarter.
+1   Interest NN
+2   rates k1
+3   might VAUX
+4   remain V
+5   steady JJ
+6   until PSP
+7   the JJ
+8   next JJ
+9   quarter k7
+10   . PUNC
+
+# The library expanded its digital collection for remote access.
+1   The JJ
+2   library k1
+3   expanded V
+4   its JJ
+5   digital JJ
+6   collection k2
+7   for PSP
+8   remote JJ
+9   access k4
+10   . PUNC
+
+# Sports fans celebrated the victory in the city center.
+1   Sports NN
+2   fans k1
+3   celebrated V
+4   the JJ
+5   victory k2
+6   in PSP
+7   the JJ
+8   city NN
+9   center k7
+10   . PUNC
+
+# Agriculture exports reached an all-time high this fiscal year.
+1   Agriculture NN
+2   exports k1
+3   reached V
+4   an JJ
+5   all-time JJ
+6   high k2
+7   this JJ
+8   fiscal JJ
+9   year k7
+10   . PUNC
+
+# Solar power plants are being installed in desert regions.
+1   Solar JJ
+2   power NN
+3   plants k1
+4   are VAUX
+5   being VAUX
+6   installed V
+7   in PSP
+8   desert JJ
+9   regions k7
+10   . PUNC
+
+# Music festivals are returning after a two-year hiatus.
+1   Music NN
+2   festivals k1
+3   are VAUX
+4   returning V
+5   after PSP
+6   a JJ
+7   two-year JJ
+8   hiatus k7
+9   . PUNC
+
+# Luxury car sales have seen a significant increase recently.
+1   Luxury NN
+2   car NN
+3   sales k1
+4   have VAUX
+5   seen V
+6   a JJ
+7   significant JJ
+8   increase k2
+9   recently RB
+10   . PUNC
+
+# The state government launched a new health insurance scheme.
+1   The JJ
+2   state NN
+3   government k1
+4   launched V
+5   a JJ
+6   new JJ
+7   health NN
+8   insurance NN
+9   scheme k2
+10   . PUNC
+
+# Climate change is affecting the migration patterns of birds.
+1   Climate NN
+2   change k1
+3   is VAUX
+4   affecting V
+5   the JJ
+6   migration NN
+7   patterns k2
+8   of PSP
+9   birds NN
+10   . PUNC
+
+# Inflation data suggests a cooling trend in the economy.
+1   Inflation NN
+2   data k1
+3   suggests V
+4   a JJ
+5   cooling JJ
+6   trend k2
+7   in PSP
+8   the JJ
+9   economy k7
+10   . PUNC
+
+# Students participated in a large-scale tree planting drive.
+1   Students k1
+2   participated V
+3   in PSP
+4   a JJ
+5   large-scale JJ
+6   tree NN
+7   planting NN
+8   drive k7
+9   . PUNC
+
+# Digital banking has become the preferred choice for many.
+1   Digital JJ
+2   banking k1
+3   has VAUX
+4   become V
+5   the JJ
+6   preferred JJ
+7   choice k2
+8   for PSP
+9   many k4
+10   . PUNC
+
+# Regional tensions have impacted the local shipping routes.
+1   Regional JJ
+2   tensions k1
+3   have VAUX
+4   impacted V
+5   the JJ
+6   local JJ
+7   shipping NN
+8   routes k2
+9   . PUNC
+
+# The literary festival hosted authors from across the world.
+1   The JJ
+2   literary JJ
+3   festival k1
+4   hosted V
+5   authors k2
+6   from PSP
+7   across PSP
+8   the JJ
+9   world k5
+10   . PUNC
+
+# Space telescopes have captured images of distant galaxies.
+1   Space NN
+2   telescopes k1
+3   have VAUX
+4   captured V
+5   images k2
+6   of PSP
+7   distant JJ
+8   galaxies NN
+9   . PUNC
+
+# Foreign direct investment reached a new peak this month.
+1   Foreign JJ
+2   direct JJ
+3   investment k1
+4   reached V
+5   a JJ
+6   new JJ
+7   peak k2
+8   this JJ
+9   month k7
+10   . PUNC
+
+# The metro rail project is expected to finish soon.
+1   The JJ
+2   metro NN
+3   rail NN
+4   project k1
+5   is VAUX
+6   expected V
+7   to PSP
+8   finish V
+9   soon RB
+10   . PUNC
+
+# Ocean conservation is vital for maintaining marine biodiversity.
+1   Ocean NN
+2   conservation k1
+3   is V
+4   vital JJ
+5   for PSP
+6   maintaining V
+7   marine JJ
+8   biodiversity k2
+9   . PUNC
+
+# The pharmaceutical company received approval for its new vaccine.
+1   The JJ
+2   pharmaceutical JJ
+3   company k1
+4   received V
+5   approval k2
+6   for PSP
+7   its JJ
+8   new JJ
+9   vaccine k4
+10   . PUNC
+
+# Traditional crafts are being promoted through local cooperatives.
+1   Traditional JJ
+2   crafts k1
+3   are VAUX
+4   being VAUX
+5   promoted V
+6   through PSP
+7   local JJ
+8   cooperatives k3
+9   . PUNC
+
+# Virtual reality is being used for advanced medical training.
+1   Virtual JJ
+2   reality k1
+3   is VAUX
+4   being VAUX
+5   used V
+6   for PSP
+7   advanced JJ
+8   medical JJ
+9   training k4
+10   . PUNC
+
+# Gold prices edged higher amid global economic uncertainty.
+1   Gold NN
+2   prices k1
+3   edged V
+4   higher RB
+5   amid PSP
+6   global JJ
+7   economic JJ
+8   uncertainty k7
+9   . PUNC
+
+# The museum is hosting a special exhibit on coins.
+1   The JJ
+2   museum k1
+3   is VAUX
+4   hosting V
+5   a JJ
+6   special JJ
+7   exhibit k2
+8   on PSP
+9   coins NN
+10   . PUNC
+
+# New robotics technology is assisting in complex surgeries.
+1   New JJ
+2   robotics NN
+3   technology k1
+4   is VAUX
+5   assisting V
+6   in PSP
+7   complex JJ
+8   surgeries k7
+9   . PUNC
+
+# Corporate earnings reports exceeded analyst expectations this quarter.
+1   Corporate JJ
+2   earnings NN
+3   reports k1
+4   exceeded V
+5   analyst NN
+6   expectations k2
+7   this JJ
+8   quarter k7
+9   . PUNC
+
+# Organic farming is gaining popularity among young entrepreneurs.
+1   Organic JJ
+2   farming k1
+3   is VAUX
+4   gaining V
+5   popularity k2
+6   among PSP
+7   young JJ
+8   entrepreneurs k7
+9   . PUNC
+
+# The international film festival opened with a grand ceremony.
+1   The JJ
+2   international JJ
+3   film NN
+4   festival k1
+5   opened V
+6   with PSP
+7   a JJ
+8   grand JJ
+9   ceremony k3
+10   . PUNC
+
+# Trade deficit narrowed due to a rise in exports.
+1   Trade NN
+2   deficit k1
+3   narrowed V
+4   due JJ
+5   to PSP
+6   a JJ
+7   rise k2
+8   in PSP
+9   exports NN
+10   . PUNC
+
+# Traffic rules have been tightened to improve road safety.
+1   Traffic NN
+2   rules k1
+3   have VAUX
+4   been VAUX
+5   tightened V
+6   to PSP
+7   improve V
+8   road NN
+9   safety k2
+10   . PUNC
+
+# Astronomers observed a rare comet passing near Earth.
+1   Astronomers k1
+2   observed V
+3   a JJ
+4   rare JJ
+5   comet k2
+6   passing V
+7   near PSP
+8   Earth k7
+9   . PUNC
+
+# Global logistics firms are adopting green energy solutions.
+1   Global JJ
+2   logistics NN
+3   firms k1
+4   are VAUX
+5   adopting V
+6   green JJ
+7   energy NN
+8   solutions k2
+9   . PUNC
+
+# The irrigation project will benefit thousands of farmers.
+1   The JJ
+2   irrigation NN
+3   project k1
+4   will VAUX
+5   benefit V
+6   thousands k2
+7   of PSP
+8   farmers NN
+9   . PUNC
+
+# Mental health awareness is increasing in the workplace.
+1   Mental JJ
+2   health NN
+3   awareness k1
+4   is VAUX
+5   increasing V
+6   in PSP
+7   the JJ
+8   workplace k7
+9   . PUNC
+
+# Small businesses are receiving support through government grants.
+1   Small JJ
+2   businesses k1
+3   are VAUX
+4   receiving V
+5   support k2
+6   through PSP
+7   government NN
+8   grants k3
+9   . PUNC
+
+# The state library offers free internet access to students.
+1   The JJ
+2   state NN
+3   library k1
+4   offers V
+5   free JJ
+6   internet NN
+7   access k2
+8   to PSP
+9   students k4
+10   . PUNC
+
+# Urban vertical gardens are helping reduce city pollution.
+1   Urban JJ
+2   vertical JJ
+3   gardens k1
+4   are VAUX
+5   helping V
+6   reduce V
+7   city NN
+8   pollution k2
+9   . PUNC
+
+# The steel industry reported a surge in global demand.
+1   The JJ
+2   steel NN
+3   industry k1
+4   reported V
+5   a JJ
+6   surge k2
+7   in PSP
+8   global JJ
+9   demand NN
+10   . PUNC
+
+# Community kitchens provided meals to those in need.
+1   Community NN
+2   kitchens k1
+3   provided V
+4   meals k2
+5   to PSP
+6   those k4
+7   in PSP
+8   need NN
+9   . PUNC
+
+# Scientists are studying the effects of microplastics on fish.
+1   Scientists k1
+2   are VAUX
+3   studying V
+4   the JJ
+5   effects k2
+6   of PSP
+7   microplastics NN
+8   on PSP
+9   fish NN
+10   . PUNC
+
+# The semiconductor shortage is finally beginning to ease.
+1   The JJ
+2   semiconductor NN
+3   shortage k1
+4   is VAUX
+5   finally RB
+6   beginning V
+7   to PSP
+8   ease V
+9   . PUNC
+
+# Coastal erosion is threatening several historic seaside villages.
+1   Coastal JJ
+2   erosion k1
+3   is VAUX
+4   threatening V
+5   several JJ
+6   historic JJ
+7   seaside JJ
+8   villages k2
+9   . PUNC
+
+# New educational software helps children learn math easily.
+1   New JJ
+2   educational JJ
+3   software k1
+4   helps V
+5   children k2
+6   learn V
+7   math k2
+8   easily RB
+9   . PUNC
+
+# Consumer confidence hit a one-year high this month.
+1   Consumer NN
+2   confidence k1
+3   hit V
+4   a JJ
+5   one-year JJ
+6   high k2
+7   this JJ
+8   month k7
+9   . PUNC
+
+# The national park reopened after successful habitat restoration.
+1   The JJ
+2   national JJ
+3   park k1
+4   reopened V
+5   after PSP
+6   successful JJ
+7   habitat NN
+8   restoration k7
+9   . PUNC
+
+# Modern art galleries are focusing on interactive installations.
+1   Modern JJ
+2   art NN
+3   galleries k1
+4   are VAUX
+5   focusing V
+6   on PSP
+7   interactive JJ
+8   installations k2
+9   . PUNC
+
+# Debt restructuring plans were approved by the creditors.
+1   Debt NN
+2   restructuring NN
+3   plans k1
+4   were VAUX
+5   approved V
+6   by PSP
+7   the JJ
+8   creditors k1
+9   . PUNC
+
+# Farmers are adopting smart sensors for water management.
+1   Farmers k1
+2   are VAUX
+3   adopting V
+4   smart JJ
+5   sensors k2
+6   for PSP
+7   water NN
+8   management k4
+9   . PUNC
+
+# Space debris is a growing concern for satellite safety.
+1   Space NN
+2   debris k1
+3   is V
+4   a JJ
+5   growing JJ
+6   concern k2
+7   for PSP
+8   satellite NN
+9   safety NN
+10   . PUNC
+
+# The hospitality sector is seeing a rapid recovery.
+1   The JJ
+2   hospitality NN
+3   sector k1
+4   is VAUX
+5   seeing V
+6   a JJ
+7   rapid JJ
+8   recovery k2
+9   . PUNC
+
+# Local artisans are showcasing their work at the fair.
+1   Local JJ
+2   artisans k1
+3   are VAUX
+4   showcasing V
+5   their JJ
+6   work k2
+7   at PSP
+8   the JJ
+9   fair k7
+10   . PUNC
+
+# Genomic research is providing insights into rare diseases.
+1   Genomic JJ
+2   research k1
+3   is VAUX
+4   providing V
+5   insights k2
+6   into PSP
+7   rare JJ
+8   diseases NN
+9   . PUNC
+
+# Commodity prices fluctuate due to changing global demand.
+1   Commodity NN
+2   prices k1
+3   fluctuate V
+4   due JJ
+5   to PSP
+6   changing JJ
+7   global JJ
+8   demand k2
+9   . PUNC
+
+# The city council approved the new waste management plan.
+1   The JJ
+2   city NN
+3   council k1
+4   approved V
+5   the JJ
+6   new JJ
+7   waste NN
+8   management NN
+9   plan k2
+10   . PUNC
+
+# Public libraries are evolving into modern community hubs.
+1   Public JJ
+2   libraries k1
+3   are VAUX
+4   evolving V
+5   into PSP
+6   modern JJ
+7   community NN
+8   hubs k2
+9   . PUNC
+
+# Foreign exchange reserves reached a comfortable level recently.
+1   Foreign JJ
+2   exchange NN
+3   reserves k1
+4   reached V
+5   a JJ
+6   comfortable JJ
+7   level k2
+8   recently RB
+9   . PUNC
+
+# Youth volunteers are leading the urban cleanup drive.
+1   Youth NN
+2   volunteers k1
+3   are VAUX
+4   leading V
+5   the JJ
+6   urban JJ
+7   cleanup NN
+8   drive k2
+9   . PUNC
+
+# Advancements in battery technology are aiding electric vehicles.
+1   Advancements k1
+2   in PSP
+3   battery NN
+4   technology k7
+5   are VAUX
+6   aiding V
+7   electric JJ
+8   vehicles k2
+9   . PUNC
+
+# The automotive market is shifting toward sustainable models.
+1   The JJ
+2   automotive JJ
+3   market k1
+4   is VAUX
+5   shifting V
+6   toward PSP
+7   sustainable JJ
+8   models k2
+9   . PUNC
+
+# The heritage walk covers ten historical monuments today.
+1   The JJ
+2   heritage NN
+3   walk k1
+4   covers V
+5   ten JJ
+6   historical JJ
+7   monuments k2
+8   today k7
+9   . PUNC
+
+# High-speed trains are being tested on new routes.
+1   High-speed JJ
+2   trains k1
+3   are VAUX
+4   being VAUX
+5   tested V
+6   on PSP
+7   new JJ
+8   routes k7
+9   . PUNC
+
+# Tax revenue increased following the new policy changes.
+1   Tax NN
+2   revenue k1
+3   increased V
+4   following PSP
+5   the JJ
+6   new JJ
+7   policy NN
+8   changes k2
+9   . PUNC
+
+# Rural schools received new computer labs this month.
+1   Rural JJ
+2   schools k1
+3   received V
+4   new JJ
+5   computer NN
+6   labs k2
+7   this JJ
+8   month k7
+9   . PUNC
+
+# Deep-sea exploration revealed amazing volcanic vent ecosystems.
+1   Deep-sea JJ
+2   exploration k1
+3   revealed V
+4   amazing JJ
+5   volcanic JJ
+6   vent NN
+7   ecosystems k2
+8   . PUNC
+
+# Retail inflation dropped to a six-month low recently.
+1   Retail JJ
+2   inflation k1
+3   dropped V
+4   to PSP
+5   a JJ
+6   six-month JJ
+7   low k2
+8   recently RB
+9   . PUNC
+
+# The food festival features cuisines from various states.
+1   The JJ
+2   food NN
+3   festival k1
+4   features V
+5   cuisines k2
+6   from PSP
+7   various JJ
+8   states k5
+9   . PUNC
+
+# Cybersecurity threats are becoming more sophisticated each year.
+1   Cybersecurity NN
+2   threats k1
+3   are VAUX
+4   becoming V
+5   more RB
+6   sophisticated JJ
+7   each JJ
+8   year k7
+9   . PUNC
+
+# Commercial real estate demand is picking up slowly.
+1   Commercial JJ
+2   real JJ
+3   estate NN
+4   demand k1
+5   is VAUX
+6   picking V
+7   up RP
+8   slowly RB
+9   . PUNC
+
+# Vocational training centers help youth find better jobs.
+1   Vocational JJ
+2   training NN
+3   centers k1
+4   help V
+5   youth k2
+6   find V
+7   better JJ
+8   jobs k2
+9   . PUNC
+
+# Scientists found a way to recycle plastic efficiently.
+1   Scientists k1
+2   found V
+3   a JJ
+4   way k2
+5   to PSP
+6   recycle V
+7   plastic k2
+8   efficiently RB
+9   . PUNC
+
+# Major banks reported stable profits for the half-year.
+1   Major JJ
+2   banks k1
+3   reported V
+4   stable JJ
+5   profits k2
+6   for PSP
+7   the JJ
+8   half-year k7
+9   . PUNC
+
+# The literary award went to a debut novelist.
+1   The JJ
+2   literary JJ
+3   award k1
+4   went V
+5   to PSP
+6   a JJ
+7   debut NN
+8   novelist k4
+9   . PUNC
+
+# New telescopes will help us understand black holes.
+1   New JJ
+2   telescopes k1
+3   will VAUX
+4   help V
+5   us k2
+6   understand V
+7   black JJ
+8   holes k2
+9   . PUNC
+
+# The construction sector is facing a labor shortage.
+1   The JJ
+2   construction NN
+3   sector k1
+4   is VAUX
+5   facing V
+6   a JJ
+7   labor NN
+8   shortage k2
+9   . PUNC
+
+# The flower show at the park was beautiful.
+1   The JJ
+2   flower NN
+3   show k1
+4   at PSP
+5   the JJ
+6   park k7
+7   was V
+8   beautiful JJ
+9   . PUNC
+
+# New research suggests that urban green spaces improve mental health.
+1   New JJ
+2   research k1
+3   suggests V
+4   that PSP
+5   urban JJ
+6   green JJ
+7   spaces k1
+8   improve V
+9   mental JJ
+10   health k2
+11   . PUNC
+
+# The central bank raised interest rates to combat rising inflation.
+1   The JJ
+2   central JJ
+3   bank k1
+4   raised V
+5   interest NN
+6   rates k2
+7   to PSP
+8   combat V
+9   rising JJ
+10   inflation k2
+11   . PUNC
+
+# Peace talks between the two nations ended without an agreement.
+1   Peace NN
+2   talks k1
+3   between PSP
+4   the JJ
+5   two JJ
+6   nations k7
+7   ended V
+8   without PSP
+9   an JJ
+10   agreement NN
+11   . PUNC
+
+# The state government launched a program to clean local rivers.
+1   The JJ
+2   state NN
+3   government k1
+4   launched V
+5   a JJ
+6   program k2
+7   to PSP
+8   clean V
+9   local JJ
+10   rivers k2
+11   . PUNC
+
+# Archaeologists discovered ancient ruins near the coastal city.
+1   Archaeologists k1
+2   discovered V
+3   ancient JJ
+4   ruins k2
+5   near PSP
+6   the JJ
+7   coastal JJ
+8   city k7
+9   . PUNC
+
+# Global markets stabilized after a week of intense volatility.
+1   Global JJ
+2   markets k1
+3   stabilized V
+4   after PSP
+5   a JJ
+6   week k7
+7   of PSP
+8   intense JJ
+9   volatility NN
+10   . PUNC
+
+# Scientists are tracking the migration patterns of arctic birds.
+1   Scientists k1
+2   are VAUX
+3   tracking V
+4   the JJ
+5   migration NN
+6   patterns k2
+7   of PSP
+8   arctic JJ
+9   birds NN
+10   . PUNC
+
+# Technology companies face new regulations regarding user data privacy.
+1   Technology NN
+2   companies k1
+3   face V
+4   new JJ
+5   regulations k2
+6   regarding PSP
+7   user NN
+8   data NN
+9   privacy NN
+10   . PUNC
+
+# Humanitarian aid reached the remote mountainous region today.
+1   Humanitarian JJ
+2   aid k1
+3   reached V
+4   the JJ
+5   remote JJ
+6   mountainous JJ
+7   region k2
+8   today k7
+9   . PUNC
+
+# Farmers are shifting toward organic fertilizers to improve soil.
+1   Farmers k1
+2   are VAUX
+3   shifting V
+4   toward PSP
+5   organic JJ
+6   fertilizers k2
+7   to PSP
+8   improve V
+9   soil k2
+10   . PUNC
+
+# The international space station completed its latest orbital maneuver.
+1   The JJ
+2   international JJ
+3   space NN
+4   station k1
+5   completed V
+6   its JJ
+7   latest JJ
+8   orbital JJ
+9   maneuver k2
+10   . PUNC
+
+# Oil production increased slightly during the last quarter.
+1   Oil NN
+2   production k1
+3   increased V
+4   slightly RB
+5   during PSP
+6   the JJ
+7   last JJ
+8   quarter k7
+9   . PUNC
+
+# Public transport usage in the city reached pre-pandemic levels.
+1   Public JJ
+2   transport NN
+3   usage k1
+4   in PSP
+5   the JJ
+6   city k7
+7   reached V
+8   pre-pandemic JJ
+9   levels k2
+10   . PUNC
+
+# A new art exhibit explores the history of digital expression.
+1   A JJ
+2   new JJ
+3   art NN
+4   exhibit k1
+5   explores V
+6   the JJ
+7   history k2
+8   of PSP
+9   digital JJ
+10   expression NN
+11   . PUNC
+
+# The refugee crisis requires a coordinated global response.
+1   The JJ
+2   refugee NN
+3   crisis k1
+4   requires V
+5   a JJ
+6   coordinated JJ
+7   global JJ
+8   response k2
+9   . PUNC
+
+# Local schools introduced coding classes for primary students.
+1   Local JJ
+2   schools k1
+3   introduced V
+4   coding NN
+5   classes k2
+6   for PSP
+7   primary JJ
+8   students k4
+9   . PUNC
+
+# Renewable energy sources now provide half of the grid power.
+1   Renewable JJ
+2   energy NN
+3   sources k1
+4   now RB
+5   provide V
+6   half k2
+7   of PSP
+8   the JJ
+9   grid NN
+10   power NN
+11   . PUNC
+
+# The manufacturing sector reported a growth in export orders.
+1   The JJ
+2   manufacturing NN
+3   sector k1
+4   reported V
+5   a JJ
+6   growth k2
+7   in PSP
+8   export NN
+9   orders k7
+10   . PUNC
+
+# Extreme weather events are becoming more frequent and severe.
+1   Extreme JJ
+2   weather NN
+3   events k1
+4   are VAUX
+5   becoming V
+6   more RB
+7   frequent JJ
+8   and CC
+9   severe JJ
+10   . PUNC
+
+# The supreme court issued a landmark ruling on voting rights.
+1   The JJ
+2   supreme JJ
+3   court k1
+4   issued V
+5   a JJ
+6   landmark JJ
+7   ruling k2
+8   on PSP
+9   voting NN
+10   rights NN
+11   . PUNC
+
+# Regional leaders met to discuss a new trade partnership.
+1   Regional JJ
+2   leaders k1
+3   met V
+4   to PSP
+5   discuss V
+6   a JJ
+7   new JJ
+8   trade NN
+9   partnership k2
+10   . PUNC
+
+# Wildlife officials spotted a rare leopard in the national park.
+1   Wildlife NN
+2   officials k1
+3   spotted V
+4   a JJ
+5   rare JJ
+6   leopard k2
+7   in PSP
+8   the JJ
+9   national JJ
+10   park k7
+11   . PUNC
+
+# Cybersecurity experts warn of a new phishing campaign.
+1   Cybersecurity NN
+2   experts k1
+3   warn V
+4   of PSP
+5   a JJ
+6   new JJ
+7   phishing NN
+8   campaign k2
+9   . PUNC
+
+# Retail sales rose during the annual holiday shopping season.
+1   Retail JJ
+2   sales k1
+3   rose V
+4   during PSP
+5   the JJ
+6   annual JJ
+7   holiday NN
+8   shopping NN
+9   season k7
+10   . PUNC
+
+# Medical researchers developed a more efficient diagnostic test.
+1   Medical JJ
+2   researchers k1
+3   developed V
+4   a JJ
+5   more RB
+6   efficient JJ
+7   diagnostic JJ
+8   test k2
+9   . PUNC
+
+# Small businesses struggle with rising costs of raw materials.
+1   Small JJ
+2   businesses k1
+3   struggle V
+4   with PSP
+5   rising JJ
+6   costs k2
+7   of PSP
+8   raw JJ
+9   materials NN
+10   . PUNC
+
+# Protests broke out in the capital over high fuel prices.
+1   Protests k1
+2   broke V
+3   out RP
+4   in PSP
+5   the JJ
+6   capital k7
+7   over PSP
+8   high JJ
+9   fuel NN
+10   prices k2
+11   . PUNC
+
+# The city library added thousands of e-books to its collection.
+1   The JJ
+2   city NN
+3   library k1
+4   added V
+5   thousands k2
+6   of PSP
+7   e-books NN
+8   to PSP
+9   its JJ
+10   collection k4
+11   . PUNC
+
+# Exploring the deep ocean reveals unique and bioluminescent creatures.
+1   Exploring k1
+2   the JJ
+3   deep JJ
+4   ocean NN
+5   reveals V
+6   unique JJ
+7   and CC
+8   bioluminescent JJ
+9   creatures k2
+10   . PUNC
+
+# The central bank kept the interest rates unchanged this month.
+1   The JJ
+2   central JJ
+3   bank k1
+4   kept V
+5   the JJ
+6   interest NN
+7   rates k2
+8   unchanged JJ
+9   this JJ
+10   month k7
+11   . PUNC
+
+# Educators emphasize the importance of critical thinking in schools.
+1   Educators k1
+2   emphasize V
+3   the JJ
+4   importance k2
+5   of PSP
+6   critical JJ
+7   thinking NN
+8   in PSP
+9   schools k7
+10   . PUNC
+
+# Silicon Valley startups are pivoting toward sustainable energy solutions.
+1   Silicon NN
+2   Valley NN
+3   startups k1
+4   are VAUX
+5   pivoting V
+6   toward PSP
+7   sustainable JJ
+8   energy NN
+9   solutions k2
+10   . PUNC
+
+# Food shortages continue to affect millions in the conflict zone.
+1   Food NN
+2   shortages k1
+3   continue V
+4   to PSP
+5   affect V
+6   millions k2
+7   in PSP
+8   the JJ
+9   conflict NN
+10   zone k7
+11   . PUNC
+
+# Yoga festivals attract thousands of participants to the river bank.
+1   Yoga NN
+2   festivals k1
+3   attract V
+4   thousands k2
+5   of PSP
+6   participants NN
+7   to PSP
+8   the JJ
+9   river NN
+10   bank k7
+11   . PUNC
+
+# New laws aim to reduce plastic waste in the ocean.
+1   New JJ
+2   laws k1
+3   aim V
+4   to PSP
+5   reduce V
+6   plastic JJ
+7   waste k2
+8   in PSP
+9   the JJ
+10   ocean k7
+11   . PUNC
+
+# Global logistics chains are slowly returning to normal operation.
+1   Global JJ
+2   logistics NN
+3   chains k1
+4   are VAUX
+5   slowly RB
+6   returning V
+7   to PSP
+8   normal JJ
+9   operation k2
+10   . PUNC
+
+# Solar power installation costs have dropped by forty percent.
+1   Solar JJ
+2   power NN
+3   installation NN
+4   costs k1
+5   have VAUX
+6   dropped V
+7   by PSP
+8   forty JJ
+9   percent NN
+10   . PUNC
+
+# Broadway theaters reported record-breaking attendance numbers this summer.
+1   Broadway NN
+2   theaters k1
+3   reported V
+4   record-breaking JJ
+5   attendance NN
+6   numbers k2
+7   this JJ
+8   summer k7
+9   . PUNC
+
+# Diplomatic efforts intensified to prevent further military escalation.
+1   Diplomatic JJ
+2   efforts k1
+3   intensified V
+4   to PSP
+5   prevent V
+6   further JJ
+7   military JJ
+8   escalation k2
+9   . PUNC
+
+# The heritage building underwent extensive restoration work last year.
+1   The JJ
+2   heritage NN
+3   building k1
+4   underwent V
+5   extensive JJ
+6   restoration NN
+7   work k2
+8   last JJ
+9   year k7
+10   . PUNC
+
+# Artificial intelligence can now generate realistic human speech.
+1   Artificial JJ
+2   intelligence k1
+3   can VAUX
+4   now RB
+5   generate V
+6   realistic JJ
+7   human JJ
+8   speech k2
+9   . PUNC
+
+# Economic indicators point toward a steady recovery this year.
+1   Economic JJ
+2   indicators k1
+3   point V
+4   toward PSP
+5   a JJ
+6   steady JJ
+7   recovery k2
+8   this JJ
+9   year k7
+10   . PUNC
+
+# Biodiversity loss remains a significant threat to global ecosystems.
+1   Biodiversity NN
+2   loss k1
+3   remains V
+4   a JJ
+5   significant JJ
+6   threat k2
+7   to PSP
+8   global JJ
+9   ecosystems k4
+10   . PUNC
+
+# NASA launched a mission to explore an icy moon.
+1   NASA k1
+2   launched V
+3   a JJ
+4   mission k2
+5   to PSP
+6   explore V
+7   an JJ
+8   icy JJ
+9   moon k2
+10   . PUNC
+
+# International observers arrived to monitor the national elections.
+1   International JJ
+2   observers k1
+3   arrived V
+4   to PSP
+5   monitor V
+6   the JJ
+7   national JJ
+8   elections k2
+9   . PUNC
+
+# Traditional weavers are using social media to sell products.
+1   Traditional JJ
+2   weavers k1
+3   are VAUX
+4   using V
+5   social JJ
+6   media k2
+7   to PSP
+8   sell V
+9   products k2
+10   . PUNC
+
+# Virtual reality headsets are becoming lighter and more affordable.
+1   Virtual JJ
+2   reality NN
+3   headsets k1
+4   are VAUX
+5   becoming V
+6   lighter JJ
+7   and CC
+8   more RB
+9   affordable JJ
+10   . PUNC
+
+# Gold prices hit a record high amid economic uncertainty.
+1   Gold NN
+2   prices k1
+3   hit V
+4   a JJ
+5   record JJ
+6   high k2
+7   amid PSP
+8   economic JJ
+9   uncertainty k7
+10   . PUNC
+
+# Carbon emissions must drop significantly to reach climate goals.
+1   Carbon NN
+2   emissions k1
+3   must VAUX
+4   drop V
+5   significantly RB
+6   to PSP
+7   reach V
+8   climate NN
+9   goals k2
+10   . PUNC
+
+# Streaming platforms are investing more in original international content.
+1   Streaming NN
+2   platforms k1
+3   are VAUX
+4   investing V
+5   more k2
+6   in PSP
+7   original JJ
+8   international JJ
+9   content k7
+10   . PUNC
+
+# The ceasefire agreement brought temporary peace to the region.
+1   The JJ
+2   ceasefire NN
+3   agreement k1
+4   brought V
+5   temporary JJ
+6   peace k2
+7   to PSP
+8   the JJ
+9   region k4
+10   . PUNC
+
+# Public parks are being renovated to include more playgrounds.
+1   Public JJ
+2   parks k1
+3   are VAUX
+4   being VAUX
+5   renovated V
+6   to PSP
+7   include V
+8   more JJ
+9   playgrounds k2
+10   . PUNC
+
+# Electric scooters are changing how people navigate urban centers.
+1   Electric JJ
+2   scooters k1
+3   are VAUX
+4   changing V
+5   how RB
+6   people k1
+7   navigate V
+8   urban JJ
+9   centers k2
+10   . PUNC
+
+# The trade deficit narrowed as electronics exports increased sharply.
+1   The JJ
+2   trade NN
+3   deficit k1
+4   narrowed V
+5   as PSP
+6   electronics NN
+7   exports k1
+8   increased V
+9   sharply RB
+10   . PUNC
+
+# Urban planners suggest building more bicycle lanes for safety.
+1   Urban JJ
+2   planners k1
+3   suggest V
+4   building V
+5   more JJ
+6   bicycle NN
+7   lanes k2
+8   for PSP
+9   safety k4
+10   . PUNC
+
+# High inflation rates are impacting consumer spending on luxury items.
+1   High JJ
+2   inflation NN
+3   rates k1
+4   are VAUX
+5   impacting V
+6   consumer NN
+7   spending k2
+8   on PSP
+9   luxury NN
+10   items k7
+11   . PUNC
+
+# Military exercises near the border caused regional diplomatic concern.
+1   Military JJ
+2   exercises k1
+3   near PSP
+4   the JJ
+5   border k7
+6   caused V
+7   regional JJ
+8   diplomatic JJ
+9   concern k2
+10   . PUNC
+
+# The film festival showcased independent movies from across Asia.
+1   The JJ
+2   film NN
+3   festival k1
+4   showcased V
+5   independent JJ
+6   movies k2
+7   from PSP
+8   across PSP
+9   Asia k5
+10   . PUNC
+
+# Modern medicine can successfully treat many previously fatal conditions.
+1   Modern JJ
+2   medicine k1
+3   can VAUX
+4   successfully RB
+5   treat V
+6   many JJ
+7   previously RB
+8   fatal JJ
+9   conditions k2
+10   . PUNC
+
+# Construction activity increased following the approval of new projects.
+1   Construction NN
+2   activity k1
+3   increased V
+4   following PSP
+5   the JJ
+6   approval k2
+7   of PSP
+8   new JJ
+9   projects NN
+10   . PUNC
+
+# Sustainable fashion brands use recycled materials for their clothing.
+1   Sustainable JJ
+2   fashion NN
+3   brands k1
+4   use V
+5   recycled JJ
+6   materials k2
+7   for PSP
+8   their JJ
+9   clothing k4
+10   . PUNC
+
+# A new biography details the secret life of the author.
+1   A JJ
+2   new JJ
+3   biography k1
+4   details V
+5   the JJ
+6   secret JJ
+7   life k2
+8   of PSP
+9   the JJ
+10   author NN
+11   . PUNC
+
+# Thousands gathered for the annual pilgrimage to the holy site.
+1   Thousands k1
+2   gathered V
+3   for PSP
+4   the JJ
+5   annual JJ
+6   pilgrimage k2
+7   to PSP
+8   the JJ
+9   holy JJ
+10   site k7
+11   . PUNC
+
+# The metro train service was extended to the airport.
+1   The JJ
+2   metro NN
+3   train NN
+4   service k1
+5   was VAUX
+6   extended V
+7   to PSP
+8   the JJ
+9   airport k2
+10   . PUNC
+
+# Robots are being deployed to clean hazardous waste sites.
+1   Robots k1
+2   are VAUX
+3   being VAUX
+4   deployed V
+5   to PSP
+6   clean V
+7   hazardous JJ
+8   waste NN
+9   sites k2
+10   . PUNC
+
+# The central bank keeps a close watch on inflation.
+1   The JJ
+2   central JJ
+3   bank k1
+4   keeps V
+5   a JJ
+6   close JJ
+7   watch k2
+8   on PSP
+9   inflation k7
+10   . PUNC
+
+# Planting trees in cities helps lower the local temperature.
+1   Planting k1
+2   trees k2
+3   in PSP
+4   cities k7
+5   helps V
+6   lower V
+7   the JJ
+8   local JJ
+9   temperature k2
+10   . PUNC
+
+# A major software update improved the battery life of phones.
+1   A JJ
+2   major JJ
+3   software NN
+4   update k1
+5   improved V
+6   the JJ
+7   battery NN
+8   life k2
+9   of PSP
+10   phones NN
+11   . PUNC
+
+# Tensions rise over disputed territory in the northern region.
+1   Tensions k1
+2   rise V
+3   over PSP
+4   disputed JJ
+5   territory k2
+6   in PSP
+7   the JJ
+8   northern JJ
+9   region k7
+10   . PUNC
+
+# Fresh fruits and vegetables are sold at the local market.
+1   Fresh JJ
+2   fruits k1
+3   and CC
+4   vegetables k1
+5   are VAUX
+6   sold V
+7   at PSP
+8   the JJ
+9   local JJ
+10   market k7
+11   . PUNC
+
+# Exploring the ruins provided clues about the ancient culture.
+1   Exploring k1
+2   the JJ
+3   ruins k2
+4   provided V
+5   clues k2
+6   about PSP
+7   the JJ
+8   ancient JJ
+9   culture NN
+10   . PUNC
+
+# Consumer prices rose faster than expected in the last month.
+1   Consumer NN
+2   prices k1
+3   rose V
+4   faster RB
+5   than PSP
+6   expected V
+7   in PSP
+8   the JJ
+9   last JJ
+10   month k7
+11   . PUNC
+
+# Protecting endangered species requires global cooperation and strong laws.
+1   Protecting k1
+2   endangered JJ
+3   species k2
+4   requires V
+5   global JJ
+6   cooperation k2
+7   and CC
+8   strong JJ
+9   laws k2
+10   . PUNC
+
+# The company announced a new line of smart home devices.
+1   The JJ
+2   company k1
+3   announced V
+4   a JJ
+5   new JJ
+6   line k2
+7   of PSP
+8   smart JJ
+9   home NN
+10   devices NN
+11   . PUNC
+
+# Heavy snowfall blocked major highways in the mountain pass.
+1   Heavy JJ
+2   snowfall k1
+3   blocked V
+4   major JJ
+5   highways k2
+6   in PSP
+7   the JJ
+8   mountain NN
+9   pass k7
+10   . PUNC
+
+# The school building was repainted before the new semester started.
+1   The JJ
+2   school NN
+3   building k1
+4   was VAUX
+5   repainted V
+6   before PSP
+7   the JJ
+8   new JJ
+9   semester k1
+10   started V
+11   . PUNC
+
+# Learning a new language improves memory and cognitive skills.
+1   Learning k1
+2   a JJ
+3   new JJ
+4   language k2
+5   improves V
+6   memory k2
+7   and CC
+8   cognitive JJ
+9   skills k2
+10   . PUNC
+
+# Economic growth slowed down due to high energy costs.
+1   Economic JJ
+2   growth k1
+3   slowed V
+4   down RP
+5   due JJ
+6   to PSP
+7   high JJ
+8   energy NN
+9   costs k2
+10   . PUNC
+
+# Reducing carbon footprints is essential for a sustainable future.
+1   Reducing k1
+2   carbon NN
+3   footprints k2
+4   is V
+5   essential JJ
+6   for PSP
+7   a JJ
+8   sustainable JJ
+9   future k4
+10   . PUNC
+
+# The play received glowing reviews from theater critics yesterday.
+1   The JJ
+2   play k1
+3   received V
+4   glowing JJ
+5   reviews k2
+6   from PSP
+7   theater NN
+8   critics k5
+9   yesterday k7
+10   . PUNC
+
+# Refugees received emergency medical care at the border camp.
+1   Refugees k1
+2   received V
+3   emergency JJ
+4   medical JJ
+5   care k2
+6   at PSP
+7   the JJ
+8   border NN
+9   camp k7
+10   . PUNC
+
+# Traffic congestion in the city remains a major problem.
+1   Traffic NN
+2   congestion k1
+3   in PSP
+4   the JJ
+5   city k7
+6   remains V
+7   a JJ
+8   major JJ
+9   problem k2
+10   . PUNC
+
+# Modern architects focus on energy efficiency and natural light.
+1   Modern JJ
+2   architects k1
+3   focus V
+4   on PSP
+5   energy NN
+6   efficiency k2
+7   and CC
+8   natural JJ
+9   light k2
+10   . PUNC
+
+# The stock market reacted positively to the merger news.
+1   The JJ
+2   stock NN
+3   market k1
+4   reacted V
+5   positively RB
+6   to PSP
+7   the JJ
+8   merger NN
+9   news k2
+10   . PUNC
+
+# Oceans play a crucial role in regulating the global climate.
+1   Oceans k1
+2   play V
+3   a JJ
+4   crucial JJ
+5   role k2
+6   in PSP
+7   regulating V
+8   the JJ
+9   global JJ
+10   climate k2
+11   . PUNC
+
+# A new smartphone model was launched with a better camera.
+1   A JJ
+2   new JJ
+3   smartphone NN
+4   model k1
+5   was VAUX
+6   launched V
+7   with PSP
+8   a JJ
+9   better JJ
+10   camera k3
+11   . PUNC
+
+# Human rights groups called for an independent investigation.
+1   Human JJ
+2   rights NN
+3   groups k1
+4   called V
+5   for PSP
+6   an JJ
+7   independent JJ
+8   investigation k2
+9   . PUNC
+
+# Farmers harvested the rice crop after the monsoon ended.
+1   Farmers k1
+2   harvested V
+3   the JJ
+4   rice NN
+5   crop k2
+6   after PSP
+7   the JJ
+8   monsoon k1
+9   ended V
+10   . PUNC
+
+# Watching the sunset over the ocean is a peaceful experience.
+1   Watching k1
+2   the JJ
+3   sunset k2
+4   over PSP
+5   the JJ
+6   ocean k7
+7   is V
+8   a JJ
+9   peaceful JJ
+10   experience k2
+11   . PUNC
+
+# International trade decreased due to new tariff regulations.
+1   International JJ
+2   trade k1
+3   decreased V
+4   due JJ
+5   to PSP
+6   new JJ
+7   tariff NN
+8   regulations k2
+9   . PUNC
+
+# Switching to electric cars can help reduce urban air pollution.
+1   Switching k1
+2   to PSP
+3   electric JJ
+4   cars k2
+5   can VAUX
+6   help V
+7   reduce V
+8   urban JJ
+9   air NN
+10   pollution k2
+11   . PUNC
+
+# The museum opened a new wing for contemporary art.
+1   The JJ
+2   museum k1
+3   opened V
+4   a JJ
+5   new JJ
+6   wing k2
+7   for PSP
+8   contemporary JJ
+9   art k4
+10   . PUNC
+
+# Military forces were deployed to the flood-affected areas.
+1   Military JJ
+2   forces k1
+3   were VAUX
+4   deployed V
+5   to PSP
+6   the JJ
+7   flood-affected JJ
+8   areas k7
+9   . PUNC
+
+# Classical music concerts are held every weekend in December.
+1   Classical JJ
+2   music NN
+3   concerts k1
+4   are VAUX
+5   held V
+6   every JJ
+7   weekend k7
+8   in PSP
+9   December k7
+10   . PUNC
+
+# Scientific discoveries often lead to new and better technologies.
+1   Scientific JJ
+2   discoveries k1
+3   often RB
+4   lead V
+5   to PSP
+6   new JJ
+7   and CC
+8   better JJ
+9   technologies k2
+10   . PUNC
+
+# Unemployment rates dropped slightly for the second consecutive month.
+1   Unemployment NN
+2   rates k1
+3   dropped V
+4   slightly RB
+5   for PSP
+6   the JJ
+7   second JJ
+8   consecutive JJ
+9   month k7
+10   . PUNC
+
+# Healthy eating and regular exercise are key to longevity.
+1   Healthy JJ
+2   eating k1
+3   and CC
+4   regular JJ
+5   exercise k1
+6   are V
+7   key k2
+8   to PSP
+9   longevity k4
+10   . PUNC
+
+# A major earthquake struck the northern coast this morning.
+1   A JJ
+2   major JJ
+3   earthquake k1
+4   struck V
+5   the JJ
+6   northern JJ
+7   coast k2
+8   this JJ
+9   morning k7
+10   . PUNC
+
+# Negotiations for a permanent peace treaty will begin next week.
+1   Negotiations k1
+2   for PSP
+3   a JJ
+4   permanent JJ
+5   peace NN
+6   treaty NN
+7   will VAUX
+8   begin V
+9   next JJ
+10   week k7
+11   . PUNC
+
+# The botanical garden features a wide variety of rare plants.
+1   The JJ
+2   botanical JJ
+3   garden k1
+4   features V
+5   a JJ
+6   wide JJ
+7   variety k2
+8   of PSP
+9   rare JJ
+10   plants NN
+11   . PUNC

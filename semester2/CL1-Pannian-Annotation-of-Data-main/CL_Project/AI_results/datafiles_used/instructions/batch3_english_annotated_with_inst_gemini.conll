@@ -1,0 +1,42 @@
+# Al Jazeera
+# The ceasefire agreement brought temporary peace to the region.
+1 The JJ
+2 ceasefire NN
+3 agreement NN k1
+4 brought V
+5 temporary JJ
+6 peace NN k2
+7 to PSP
+8 the JJ
+9 region NN
+
+# The Hindu
+# Public parks are being renovated to include more playgrounds.
+1 The [POS Tag] [Karaka Role]
+2 Hindu [POS Tag] [Karaka Role]
+3 Public JJ
+4 parks NN k1
+5 are VAUX
+
+# BBC News
+# Electric scooters are changing how people navigate urban centers.
+1 Electric JJ
+2 scooters NN k1
+3 are VAUX
+4 changing V
+5 how RB
+6 people NN k1
+7 navigate V
+8 urban JJ
+9 centers NN
+
+# Reuters
+# The trade deficit narrowed as electronics exports increased sharply.
+1 The NN r6
+2 trade NN r6
+3 deficit NN k1
+4 narrowed V VERB
+5 as CC CONJ
+6 electronics NN r6
+7 exports NN
+

@@ -1,0 +1,38 @@
+# Amar Ujala
+# Museum mein naye itihasik chitra dikhaye gaye.
+1 Museum NN k7
+2 mein PSP k7
+3 naye JJ
+4 itihasik JJ
+5 chitra NN k1
+6 dikhaye V
+
+# Dainik Jagran
+# Kendriya mantralaya ne naya budget pesh kiya hai.
+1 Kendriya JJ
+2 mantralaya NN k1
+3 ne PSP
+4 naya JJ
+5 budget NN k2
+6 pesh NN pof
+7 kiya V
+
+# Navbharat Times
+# Shahar mein naya stadium jald hi ban jayega.
+1 Shahar NN k7
+2 mein PSP N/A
+3 naya JJ N/A
+4 stadium NN k1
+5 jald RB N/A
+6 hi RP
+
+# Amar Ujala
+# Naye kanoon se paryavaran ka sanrakshan hoga.
+1 Naye JJ
+2 kanoon NN k3
+3 se PSP
+4 paryavaran NN r6
+5 ka PSP
+6 sanrakshan NN k1
+7 hoga V
+

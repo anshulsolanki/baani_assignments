@@ -1,0 +1,33 @@
+You have been given 2 datasets of languages Hindi, english. 
+
+You have to complete following 2 tasks
+
+Task 1: 
+a) Search reliable resources in the internet and inform yourself about Paninian grammar. 
+b) Now use the following tagset structure to annotate the English and Hindi dataset. (Please Note: Annotate by writing relevant tag after each token of each sentence)
+
+
+Karak tags-
+k1: Karta (subject/agent)
+k2: Karma (Direct Object/Theme)
+k3: Karana (instrument)
+k4:sampradana(recipient/beneficiary)
+k5:apadana(departure/source)
+k7: adhikarana(location/time/context)
+
+
+Standard POS tagging for no-karaka parts of speech-
+V:main verb(predicate)
+VAUX: auxiliary verb
+JJ: adjective 
+RB: adverb
+PSP: postpositions/case markers
+NN: General noun
+CC: Conjunction 
+RP: particle
+PUNC: punctuation 
+SYM: for numbers/symbols
+
+
+Task 2: 
+Look at the datasets generated. What are some observations that you made while tagging the 2 languages? Why linguistic factors influence these differences?

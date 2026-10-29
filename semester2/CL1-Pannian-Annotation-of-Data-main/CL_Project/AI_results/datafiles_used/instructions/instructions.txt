@@ -1,0 +1,47 @@
+PROMPT: PANINIAN-UD HYBRID ANNOTATION FRAMEWORK ANALYSIS
+
+[CONTEXT]
+Target Model: Gemma 2B/7B (8192 Context Window)
+Framework: Computational Paninian Grammar (CPG) & Universal Dependencies (UD) fusion.
+
+[1. THEORETICAL FOUNDATIONS]
+- Verb-Centricity: Sentence relations are anchored by the main verb.
+- Layers: 
+  1. Semantic (Intent)
+  2. Karaka (Syntactico-semantic relations)
+  3. Vibhakti (Morpho-syntactic markers: case, postpositions, order)
+  4. Surface (Orthographic string)
+- Logic: Aakaankshaa (Verb expectations) vs. Yogyataa (Nominal capability).
+
+[2. POS TAGSET & UD MAPPING]
+- V: VERB (Root; dictates Karaka chart)
+- VAUX: AUX (Combines with V for Tense/Aspect/Modality [TAM])
+- NN: NOUN/PROPN (Core Karaka candidate)
+- JJ/RB: ADJ/ADV (Modifiers for NN or V/JJ)
+- PSP: ADP (Postposition/Case; defines Vibhakti)
+- CC: CCONJ/SCONJ (Coordinate/Subordinate links)
+- RP: PART (Pragmatic emphasis)
+- PUNC: PUNCT (Parsing boundaries)
+
+[3. KARAKA ARGUMENT STRUCTURE]
+- k1 (Karta): Independent agent. Maps to 'nsubj'.
+- k2 (Karma): Primary patient/object. Maps to 'obj'.
+- k3 (Karana): Instrument/Medium. Maps to 'obl:inst'.
+- k4 (Sampradana): Recipient. Maps to 'iobj' (k4a Experiencer -> nsubj:nc).
+- k5 (Apadana): Source/Departure. Maps to 'obl:source'.
+- k7 (Adhikarana): Spatio-temporal locus (k7p: loc, k7t: time).
+
+[4. NON-KARAKA & COMPLEX RELATIONS]
+- r6: Genitive (NN-NN). Maps to 'nmod:poss'.
+- pof: Part-of (Noun-Verb conjuncts). Maps to 'compound:lvc'.
+- Control: Handles Karta/Karma control in infinitival clauses via explicit sharing rules.
+
+[5. OPERATIONAL PIPELINE]
+1. Tokenization & POS Tagging.
+2. LWG Formation: Group NN+PSP (Vibhakti) and V+VAUX (TAM).
+3. Chart Retrieval: Fetch Karaka chart; apply voice transformations (e.g., Passive).
+4. Constraint Matching: Evaluate Vibhakti against Chart demands.
+5. UD Conversion: Head-initial realignment; label mapping (Karaka -> UD label).
+
+[TASK]
+Analyze the provided sentence using the rules above. Identify LWGs, assign Karaka/POS tags, and output UD-compliant dependency triples.

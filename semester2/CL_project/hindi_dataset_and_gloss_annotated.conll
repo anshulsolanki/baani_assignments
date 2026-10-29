@@ -1,0 +1,2203 @@
+# Bharat ne naya missile parikshan saphalta purvak kiya.
+1   Bharat k1
+2   ne PSP
+3   naya JJ
+4   missile NN
+5   parikshan k2
+6   saphalta NN
+7   purvak RB
+8   kiya V
+9   . PUNC
+
+# Rajya sarkar ne berozgar yuvaon ke liye bhatta ghoshit kiya.
+1   Rajya NN
+2   sarkar k1
+3   ne PSP
+4   berozgar JJ
+5   yuvaon k4
+6   ke PSP
+7   liye PSP
+8   bhatta k2
+9   ghoshit JJ
+10   kiya V
+11   . PUNC
+
+# Ayodhya mein paryatako ki sankhya mein bhari vriddhi hui.
+1   Ayodhya k7
+2   mein PSP
+3   paryatako NN
+4   ki PSP
+5   sankhya k1
+6   mein PSP
+7   bhari JJ
+8   vriddhi k2
+9   hui V
+10   . PUNC
+
+# ISRO ne agle mahine Chandrayaan mission ki taiyari shuru ki.
+1   ISRO k1
+2   ne PSP
+3   agle JJ
+4   mahine k7
+5   Chandrayaan NN
+6   mission k2
+7   ki PSP
+8   taiyari NN
+9   shuru NN
+10   ki V
+11   . PUNC
+
+# Pradushan ke karan Delhi mein school band kiye gaye.
+1   Pradushan k5
+2   ke PSP
+3   karan PSP
+4   Delhi k7
+5   mein PSP
+6   school k2
+7   band JJ
+8   kiye V
+9   gaye VAUX
+10   . PUNC
+
+# Lok Sabha chunav ke liye prachar tez ho gaya hai.
+1   Lok NN
+2   Sabha NN
+3   chunav k7
+4   ke PSP
+5   liye PSP
+6   prachar k1
+7   tez JJ
+8   ho V
+9   gaya VAUX
+10   hai VAUX
+11   . PUNC
+
+# Reserve Bank ne repo rate mein koi badlav nahi kiya.
+1   Reserve NN
+2   Bank k1
+3   ne PSP
+4   repo NN
+5   rate k7
+6   mein PSP
+7   koi JJ
+8   badlav k2
+9   nahi RB
+10   kiya V
+11   . PUNC
+
+# Kedarnath dham ke kapat sheetkal ke liye band hue.
+1   Kedarnath NN
+2   dham k1
+3   ke PSP
+4   kapat NN
+5   sheetkal k7
+6   ke PSP
+7   liye PSP
+8   band JJ
+9   hue V
+10   . PUNC
+
+# Social media par viral video ki janch shuru hui.
+1   Social JJ
+2   media k7
+3   par PSP
+4   viral JJ
+5   video NN
+6   ki PSP
+7   janch k1
+8   shuru NN
+9   hui V
+10   . PUNC
+
+# Olympics mein Bharat ne do swarna padak jeete.
+1   Olympics k7
+2   mein PSP
+3   Bharat k1
+4   ne PSP
+5   do SYM
+6   swarna NN
+7   padak k2
+8   jeete V
+9   . PUNC
+
+# Kisanon ne naye krishi kanoon ka virodh kiya.
+1   Kisanon k1
+2   ne PSP
+3   naye JJ
+4   krishi NN
+5   kanoon k2
+6   ka PSP
+7   virodh NN
+8   kiya V
+9   . PUNC
+
+# Himalaya mein himskhalan se rasta rok diya gaya.
+1   Himalaya k7
+2   mein PSP
+3   himskhalan k5
+4   se PSP
+5   rasta k2
+6   rok V
+7   diya VAUX
+8   gaya VAUX
+9   . PUNC
+
+# Naya sansad bhavan paryatako ke liye khola jayega.
+1   Naya JJ
+2   sansad NN
+3   bhavan k2
+4   paryatako k4
+5   ke PSP
+6   liye PSP
+7   khola V
+8   jayega VAUX
+9   . PUNC
+
+# Electricity bill mein chhoot dene ki ghoshna hui.
+1   Electricity NN
+2   bill k7
+3   mein PSP
+4   chhoot k2
+5   dene V
+6   ki PSP
+7   ghoshna k1
+8   hui V
+9   . PUNC
+
+# National highway par bhari jam se log pareshan hain.
+1   National JJ
+2   highway k7
+3   par PSP
+4   bhari JJ
+5   jam k5
+6   se PSP
+7   log k1
+8   pareshan JJ
+9   hain V
+10   . PUNC
+
+# Cyber crime se bachne ke liye naya portal banaya gaya.
+1   Cyber JJ
+2   crime k5
+3   se PSP
+4   bachne V
+5   ke PSP
+6   liye PSP
+7   naya JJ
+8   portal k2
+9   banaya V
+10   gaya VAUX
+11   . PUNC
+
+# Mahilaon ki suraksha ke liye nayi helpline shuru hui.
+1   Mahilaon NN
+2   ki PSP
+3   suraksha k4
+4   ke PSP
+5   liye PSP
+6   nayi JJ
+7   helpline k1
+8   shuru NN
+9   hui V
+10   . PUNC
+
+# Taj Mahal dekhne ke liye ticket ki dar badh gayi.
+1   Taj NN
+2   Mahal k2
+3   dekhne V
+4   ke PSP
+5   liye PSP
+6   ticket NN
+7   ki PSP
+8   dar k1
+9   badh V
+10   gayi VAUX
+11   . PUNC
+
+# Virat Kohli ne ek naya vishwa record banaya.
+1   Virat NN
+2   Kohli k1
+3   ne PSP
+4   ek SYM
+5   naya JJ
+6   vishwa NN
+7   record k2
+8   banaya V
+9   . PUNC
+
+# Ganga nadi ko saaf karne ka abhiyan tez hua.
+1   Ganga NN
+2   nadi k2
+3   ko PSP
+4   saaf JJ
+5   karne V
+6   ka PSP
+7   abhiyan k1
+8   tez JJ
+9   hua V
+10   . PUNC
+
+# Kumbh mela ki taiyariyan Haridwar mein shuru hain.
+1   Kumbh NN
+2   mela NN
+3   ki PSP
+4   taiyariyan k1
+5   Haridwar k7
+6   mein PSP
+7   shuru NN
+8   hain V
+9   . PUNC
+
+# Naye startup ke liye bank ne loan suvidha di.
+1   Naye JJ
+2   startup k4
+3   ke PSP
+4   liye PSP
+5   bank k1
+6   ne PSP
+7   loan NN
+8   suvidha k2
+9   di V
+10   . PUNC
+
+# Traffic rules todne par bhari jurmana lagega.
+1   Traffic NN
+2   rules k2
+3   todne V
+4   par PSP
+5   bhari JJ
+6   jurmana k1
+7   lagega V
+8   . PUNC
+
+# Shilp mela mein hastshilp ki bhari mang rahi.
+1   Shilp NN
+2   mela k7
+3   mein PSP
+4   hastshilp NN
+5   ki PSP
+6   bhari JJ
+7   mang k1
+8   rahi V
+9   . PUNC
+
+# Tech company ne naya laptop model launch kiya.
+1   Tech NN
+2   company k1
+3   ne PSP
+4   naya JJ
+5   laptop NN
+6   model k2
+7   launch NN
+8   kiya V
+9   . PUNC
+
+# Garmi badhne se pani ki samasya paida hui.
+1   Garmi k5
+2   badhne V
+3   se PSP
+4   pani NN
+5   ki PSP
+6   samasya k1
+7   paida JJ
+8   hui V
+9   . PUNC
+
+# Railway station par naye escalator lagaye gaye.
+1   Railway NN
+2   station k7
+3   par PSP
+4   naye JJ
+5   escalator k2
+6   lagaye V
+7   gaye VAUX
+8   . PUNC
+
+# Yoga divas par desh bhar mein karyakram hue.
+1   Yoga NN
+2   divas k7
+3   par PSP
+4   desh NN
+5   bhar RP
+6   mein PSP
+7   karyakram k1
+8   hue V
+9   . PUNC
+
+# Ration card ke liye naye niyam lagu honge.
+1   Ration NN
+2   card k4
+3   ke PSP
+4   liye PSP
+5   naye JJ
+6   niyam k1
+7   lagu JJ
+8   honge V
+9   . PUNC
+
+# Cricket match ke liye stadium mein bhid umdi.
+1   Cricket NN
+2   match k7
+3   ke PSP
+4   liye PSP
+5   stadium k7
+6   mein PSP
+7   bhid k1
+8   umdi V
+9   . PUNC
+
+# Bharat ne naya dosti samjhauta Japan ke saath kiya.
+1   Bharat k1
+2   ne PSP
+3   naya JJ
+4   dosti NN
+5   samjhauta k2
+6   Japan NN
+7   ke PSP
+8   saath PSP
+9   kiya V
+10   . PUNC
+
+# Sahar mein naye flyover ka kaam poora hua.
+1   Sahar k7
+2   mein PSP
+3   naye JJ
+4   flyover NN
+5   ka PSP
+6   kaam k1
+7   poora JJ
+8   hua V
+9   . PUNC
+
+# Van vibhag ne naye podhe lagane ki yojana banayi.
+1   Van NN
+2   vibhag k1
+3   ne PSP
+4   naye JJ
+5   podhe k2
+6   lagane V
+7   ki PSP
+8   yojana k2
+9   banayi V
+10   . PUNC
+
+# Vigyan mela mein bachon ne naye model dikhaye.
+1   Vigyan NN
+2   mela k7
+3   mein PSP
+4   bachon k1
+5   ne PSP
+6   naye JJ
+7   model k2
+8   dikhaye V
+9   . PUNC
+
+# Hospital mein naya oxygen plant lagaya gaya.
+1   Hospital k7
+2   mein PSP
+3   naya JJ
+4   oxygen NN
+5   plant k2
+6   lagaya V
+7   gaya VAUX
+8   . PUNC
+
+# Samudra tat par paryatako ne sunset ka anand liya.
+1   Samudra NN
+2   tat k7
+3   par PSP
+4   paryatako k1
+5   ne PSP
+6   sunset k2
+7   ka PSP
+8   anand NN
+9   liya V
+10   . PUNC
+
+# Police ne chori ki ghatna ka khulasa kiya.
+1   Police k1
+2   ne PSP
+3   chori NN
+4   ki PSP
+5   ghatna k2
+6   ka PSP
+7   khulasa NN
+8   kiya V
+9   . PUNC
+
+# Mahila sammelan mein naye muddo par charcha hui.
+1   Mahila NN
+2   sammelan k7
+3   mein PSP
+4   naye JJ
+5   muddo k7
+6   par PSP
+7   charcha k1
+8   hui V
+9   . PUNC
+
+# Pahadi kshetron mein barfbari ka silsila jari hai.
+1   Pahadi JJ
+2   kshetron k7
+3   mein PSP
+4   barfbari NN
+5   ka PSP
+6   silsila k1
+7   jari JJ
+8   hai V
+9   . PUNC
+
+# Education policy mein naye badlav shamil kiye gaye.
+1   Education NN
+2   policy k7
+3   mein PSP
+4   naye JJ
+5   badlav k1
+6   shamil JJ
+7   kiye V
+8   gaye VAUX
+9   . PUNC
+
+# Sports academy mein naye khiladiyon ka chayan hua.
+1   Sports NN
+2   academy k7
+3   mein PSP
+4   naye JJ
+5   khiladiyon k2
+6   ka PSP
+7   chayan k1
+8   hua V
+9   . PUNC
+
+# Mandir mein darshan ke liye lambi katar lagi.
+1   Mandir k7
+2   mein PSP
+3   darshan k4
+4   ke PSP
+5   liye PSP
+6   lambi JJ
+7   katar k1
+8   lagi V
+9   . PUNC
+
+# Bharat ne naya vyapar samjhauta America se kiya.
+1   Bharat k1
+2   ne PSP
+3   naya JJ
+4   vyapar NN
+5   samjhauta k2
+6   America k3
+7   se PSP
+8   kiya V
+9   . PUNC
+
+# Naye park mein bachon ke liye jhoole lagaye.
+1   Naye JJ
+2   park k7
+3   mein PSP
+4   bachon k4
+5   ke PSP
+6   liye PSP
+7   jhoole k2
+8   lagaye V
+9   . PUNC
+
+# Local train ki samay sarni mein badlav hua.
+1   Local JJ
+2   train NN
+3   ki PSP
+4   samay NN
+5   sarni k7
+6   mein PSP
+7   badlav k1
+8   hua V
+9   . PUNC
+
+# Robot ne factory mein kaam karna shuru kiya.
+1   Robot k1
+2   ne PSP
+3   factory k7
+4   mein PSP
+5   kaam k2
+6   karna V
+7   shuru NN
+8   kiya V
+9   . PUNC
+
+# Sabji ki keematon mein bhari uchal dekhne mila.
+1   Sabji NN
+2   ki PSP
+3   keematon k7
+4   mein PSP
+5   bhari JJ
+6   uchal k1
+7   dekhne V
+8   mila VAUX
+9   . PUNC
+
+# Heritage site par naya museum banaya jayega.
+1   Heritage JJ
+2   site k7
+3   par PSP
+4   naya JJ
+5   museum k2
+6   banaya V
+7   jayega VAUX
+8   . PUNC
+
+# Smartphone industry mein naya competition shuru hua.
+1   Smartphone NN
+2   industry k7
+3   mein PSP
+4   naya JJ
+5   competition k1
+6   shuru NN
+7   hua V
+8   . PUNC
+
+# Gaon mein bijli ki suvidha behtar ho gayi.
+1   Gaon k7
+2   mein PSP
+3   bijli NN
+4   ki PSP
+5   suvidha k1
+6   behtar JJ
+7   ho V
+8   gayi VAUX
+9   . PUNC
+
+# Jungle safari mein logon ne sher dekha.
+1   Jungle NN
+2   safari k7
+3   mein PSP
+4   logon k1
+5   ne PSP
+6   sher k2
+7   dekha V
+8   . PUNC
+
+# Bharat ne naya vaccine program shuru kiya hai.
+1   Bharat k1
+2   ne PSP
+3   naya JJ
+4   vaccine NN
+5   program k2
+6   shuru NN
+7   kiya V
+8   hai VAUX
+9   . PUNC
+
+# Naye kanoon se bhrashtachar par rok lagegi.
+1   Naye JJ
+2   kanoon k3
+3   se PSP
+4   bhrashtachar k7
+5   par PSP
+6   rok k1
+7   lagegi V
+8   . PUNC
+
+# Railway ne naya special train chalane ka nirnay liya.
+1   Railway k1
+2   ne PSP
+3   naya JJ
+4   special JJ
+5   train k2
+6   chalane V
+7   ka PSP
+8   nirnay k2
+9   liya V
+10   . PUNC
+
+# Tech summit mein naye inventions dikhaye gaye.
+1   Tech NN
+2   summit k7
+3   mein PSP
+4   naye JJ
+5   inventions k2
+6   dikhaye V
+7   gaye VAUX
+8   . PUNC
+
+# Shahar ki sadkon ko chaunda kiya jayega.
+1   Shahar NN
+2   ki PSP
+3   sadkon k2
+4   ko PSP
+5   chaunda JJ
+6   kiya V
+7   jayega VAUX
+8   . PUNC
+
+# Museum mein purani talwaren pradarshit ki gayi hain.
+1   Museum k7
+2   mein PSP
+3   purani JJ
+4   talwaren k2
+5   pradarshit JJ
+6   ki V
+7   gayi VAUX
+8   hain VAUX
+9   . PUNC
+
+# New space station ka naksha taiyar ho gaya.
+1   New JJ
+2   space NN
+3   station NN
+4   ka PSP
+5   naksha k1
+6   taiyar JJ
+7   ho V
+8   gaya VAUX
+9   . PUNC
+
+# Nayi shiksha niti se bachon ko fayda hoga.
+1   Nayi JJ
+2   shiksha NN
+3   niti k3
+4   se PSP
+5   bachon k4
+6   ko PSP
+7   fayda k1
+8   hoga V
+9   . PUNC
+
+# Waterfall dekhne ke liye bhari sankhya mein paryatak aye.
+1   Waterfall k2
+2   dekhne V
+3   ke PSP
+4   liye PSP
+5   bhari JJ
+6   sankhya k7
+7   mein PSP
+8   paryatak k1
+9   aye V
+10   . PUNC
+
+# Bharat ne naya cricket coach niyukt kiya hai.
+1   Bharat k1
+2   ne PSP
+3   naya JJ
+4   cricket NN
+5   coach k2
+6   niyukt JJ
+7   kiya V
+8   hai VAUX
+9   . PUNC
+
+# Solar energy ko badhava dene ke liye subsidy di.
+1   Solar JJ
+2   energy k2
+3   ko PSP
+4   badhava NN
+5   dene V
+6   ke PSP
+7   liye PSP
+8   subsidy k2
+9   di V
+10   . PUNC
+
+# Historical palace mein naya garden banaya gaya hai.
+1   Historical JJ
+2   palace k7
+3   mein PSP
+4   naya JJ
+5   garden k2
+6   banaya V
+7   gaya VAUX
+8   hai VAUX
+9   . PUNC
+
+# Artificial Intelligence ne naya record banaya hai.
+1   Artificial JJ
+2   Intelligence k1
+3   ne PSP
+4   naya JJ
+5   record k2
+6   banaya V
+7   hai VAUX
+8   . PUNC
+
+# Naye highway par car ki raftaar badh gayi.
+1   Naye JJ
+2   highway k7
+3   par PSP
+4   car NN
+5   ki PSP
+6   raftaar k1
+7   badh V
+8   gayi VAUX
+9   . PUNC
+
+# Lake mein boat riding ka maza logon ne liya.
+1   Lake k7
+2   mein PSP
+3   boat NN
+4   riding NN
+5   ka PSP
+6   maza k2
+7   logon k1
+8   ne PSP
+9   liya V
+10   . PUNC
+
+# Bharat ne naya satellite launch pad banaya hai.
+1   Bharat k1
+2   ne PSP
+3   naya JJ
+4   satellite NN
+5   launch NN
+6   pad k2
+7   banaya V
+8   hai VAUX
+9   . PUNC
+
+# Public transport mein naye badlav kiye gaye hain.
+1   Public JJ
+2   transport k7
+3   mein PSP
+4   naye JJ
+5   badlav k2
+6   kiye V
+7   gaye VAUX
+8   hain VAUX
+9   . PUNC
+
+# Mountain climbing ke liye naya camp shuru hua.
+1   Mountain NN
+2   climbing k4
+3   ke PSP
+4   liye PSP
+5   naya JJ
+6   camp k1
+7   shuru NN
+8   hua V
+9   . PUNC
+
+# New smartphone market mein dhoom macha raha hai.
+1   New JJ
+2   smartphone NN
+3   market k7
+4   mein PSP
+5   dhoom k2
+6   macha V
+7   raha VAUX
+8   hai VAUX
+9   . PUNC
+
+# Naye library mein bahut sari kitabein hain.
+1   Naye JJ
+2   library k7
+3   mein PSP
+4   bahut RB
+5   sari JJ
+6   kitabein k1
+7   hain V
+8   . PUNC
+
+# City park mein morning walk ke liye log aye.
+1   City NN
+2   park k7
+3   mein PSP
+4   morning NN
+5   walk k4
+6   ke PSP
+7   liye PSP
+8   log k1
+9   aye V
+10   . PUNC
+
+# Bharat ne naya trade agreement sign kiya hai.
+1   Bharat k1
+2   ne PSP
+3   naya JJ
+4   trade NN
+5   agreement k2
+6   sign NN
+7   kiya V
+8   hai VAUX
+9   . PUNC
+
+# Naye bridge se traffic ki samasya hal hui.
+1   Naye JJ
+2   bridge k3
+3   se PSP
+4   traffic NN
+5   ki PSP
+6   samasya k1
+7   hal JJ
+8   hui V
+9   . PUNC
+
+# Zoo mein naye janwaro ko laya gaya hai.
+1   Zoo k7
+2   mein PSP
+3   naye JJ
+4   janwaro k2
+5   ko PSP
+6   laya V
+7   gaya VAUX
+8   hai VAUX
+9   . PUNC
+
+# Science project mein bachon ne prize jeeta hai.
+1   Science NN
+2   project k7
+3   mein PSP
+4   bachon k1
+5   ne PSP
+6   prize k2
+7   jeeta V
+8   hai VAUX
+9   . PUNC
+
+# Naye hospital mein sari adhunik suvidhayen hain.
+1   Naye JJ
+2   hospital k7
+3   mein PSP
+4   sari JJ
+5   adhunik JJ
+6   suvidhayen k1
+7   hain V
+8   . PUNC
+
+# Beach par logon ne khel ka anand liya.
+1   Beach k7
+2   par PSP
+3   logon k1
+4   ne PSP
+5   khel NN
+6   ka PSP
+7   anand k2
+8   liya V
+9   . PUNC
+
+# Bharat ne naya cyber security law banaya hai.
+1   Bharat k1
+2   ne PSP
+3   naya JJ
+4   cyber JJ
+5   security NN
+6   law k2
+7   banaya V
+8   hai VAUX
+9   . PUNC
+
+# Naye school mein smart classes ki suvidha hai.
+1   Naye JJ
+2   school k7
+3   mein PSP
+4   smart JJ
+5   classes NN
+6   ki PSP
+7   suvidha k1
+8   hai V
+9   . PUNC
+
+# Forest department ne naye ped lagaye hain.
+1   Forest NN
+2   department k1
+3   ne PSP
+4   naye JJ
+5   ped k2
+6   lagaye V
+7   hain VAUX
+8   . PUNC
+
+# New movie theater shahar mein khula hai.
+1   New JJ
+2   movie NN
+3   theater k1
+4   shahar k7
+5   mein PSP
+6   khula V
+7   hai VAUX
+8   . PUNC
+
+# Naye kanoon se bhrashtachar kam ho jayega.
+1   Naye JJ
+2   kanoon k3
+3   se PSP
+4   bhrashtachar k1
+5   kam JJ
+6   ho V
+7   jayega VAUX
+8   . PUNC
+
+# Garden mein phool khile huye hain.
+1   Garden k7
+2   mein PSP
+3   phool k1
+4   khile V
+5   huye VAUX
+6   hain VAUX
+7   . PUNC
+
+# Bharat ne naya sports complex banaya hai.
+1   Bharat k1
+2   ne PSP
+3   naya JJ
+4   sports NN
+5   complex k2
+6   banaya V
+7   hai VAUX
+8   . PUNC
+
+# Naye bus stop par log khade hain.
+1   Naye JJ
+2   bus NN
+3   stop k7
+4   par PSP
+5   log k1
+6   khade JJ
+7   hain V
+8   . PUNC
+
+# Market mein naye kapde aye hain.
+1   Market k7
+2   mein PSP
+3   naye JJ
+4   kapde k1
+5   aye V
+6   hain VAUX
+7   . PUNC
+
+# Science fair mein naye experiment dikhaye gaye.
+1   Science NN
+2   fair k7
+3   mein PSP
+4   naye JJ
+5   experiment k2
+6   dikhaye V
+7   gaye VAUX
+8   . PUNC
+
+# Naye mall mein bahut sari dukanen hain.
+1   Naye JJ
+2   mall k7
+3   mein PSP
+4   bahut RB
+5   sari JJ
+6   dukanen k1
+7   hain V
+8   . PUNC
+
+# River side par log ghoom rahe hain.
+1   River NN
+2   side k7
+3   par PSP
+4   log k1
+5   ghoom V
+6   rahe VAUX
+7   hain VAUX
+8   . PUNC
+
+# Bharat ne naya economic plan banaya hai.
+1   Bharat k1
+2   ne PSP
+3   naya JJ
+4   economic JJ
+5   plan k2
+6   banaya V
+7   hai VAUX
+8   . PUNC
+
+# Naye office mein kaam shuru ho gaya.
+1   Naye JJ
+2   office k7
+3   mein PSP
+4   kaam k1
+5   shuru NN
+6   ho V
+7   gaya VAUX
+8   . PUNC
+
+# Park mein bachhe khel rahe hain.
+1   Park k7
+2   mein PSP
+3   bachhe k1
+4   khel V
+5   rahe VAUX
+6   hain VAUX
+7   . PUNC
+
+# New technology se kaam asan ho gaya hai.
+1   New JJ
+2   technology k3
+3   se PSP
+4   kaam k1
+5   asan JJ
+6   ho V
+7   gaya VAUX
+8   hai VAUX
+9   . PUNC
+
+# Naye railway line par train chalne lagi.
+1   Naye JJ
+2   railway NN
+3   line k7
+4   par PSP
+5   train k1
+6   chalne V
+7   lagi VAUX
+8   . PUNC
+
+# Temple mein puja ho rahi hai.
+1   Temple k7
+2   mein PSP
+3   puja k1
+4   ho V
+5   rahi VAUX
+6   hai VAUX
+7   . PUNC
+
+# Bharat ne naya energy policy launch kiya hai.
+1   Bharat k1
+2   ne PSP
+3   naya JJ
+4   energy NN
+5   policy k2
+6   launch NN
+7   kiya V
+8   hai VAUX
+9   . PUNC
+
+# Naye building mein lift ki suvidha hai.
+1   Naye JJ
+2   building k7
+3   mein PSP
+4   lift NN
+5   ki PSP
+6   suvidha k1
+7   hai V
+8   . PUNC
+
+# Zoo mein sher dahad raha hai.
+1   Zoo k7
+2   mein PSP
+3   sher k1
+4   dahad V
+5   raha VAUX
+6   hai VAUX
+7   . PUNC
+
+# Science ne naye rahasya suljhaye hain.
+1   Science k1
+2   ne PSP
+3   naye JJ
+4   rahasya k2
+5   suljhaye V
+6   hain VAUX
+7   . PUNC
+
+# Bharat ne videshi nivesh ke naye raste khole hain.
+1   Bharat k1
+2   ne PSP
+3   videshi JJ
+4   nivesh k4
+5   ke PSP
+6   naye JJ
+7   raste k2
+8   khole V
+9   hain VAUX
+10   . PUNC
+
+# Digital bhugtan ab har chote shahar mein uplabdh hai.
+1   Digital JJ
+2   bhugtan k1
+3   ab RB
+4   har JJ
+5   chote JJ
+6   shahar k7
+7   mein PSP
+8   uplabdh JJ
+9   hai V
+10   . PUNC
+
+# Vigyanikon ne ek naye virus ki vaccine taiyar ki.
+1   Vigyanikon k1
+2   ne PSP
+3   ek SYM
+4   naye JJ
+5   virus NN
+6   ki PSP
+7   vaccine k2
+8   taiyar JJ
+9   ki V
+10   . PUNC
+
+# Kendriya mantri ne naye ropeway ka udghatan kiya.
+1   Kendriya JJ
+2   mantri k1
+3   ne PSP
+4   naye JJ
+5   ropeway k2
+6   ka PSP
+7   udghatan NN
+8   kiya V
+9   . PUNC
+
+# Mahila t20 world cup mein Bharat ki shandaar jeet.
+1   Mahila NN
+2   t20 NN
+3   world NN
+4   cup k7
+5   mein PSP
+6   Bharat NN
+7   ki PSP
+8   shandaar JJ
+9   jeet k1
+10   . PUNC
+
+# Pradushan kam karne ke liye naye niyam banaye gaye.
+1   Pradushan k2
+2   kam JJ
+3   karne V
+4   ke PSP
+5   liye PSP
+6   naye JJ
+7   niyam k1
+8   banaye V
+9   gaye VAUX
+10   . PUNC
+
+# Uttar Pradesh mein naye udyog lagane par zor diya.
+1   Uttar NN
+2   Pradesh k7
+3   mein PSP
+4   naye JJ
+5   udyog k2
+6   lagane V
+7   par PSP
+8   zor k1
+9   diya V
+10   . PUNC
+
+# Antariksh yatriyon ne naya spacewalk saphalta se poora kiya.
+1   Antariksh NN
+2   yatriyon k1
+3   ne PSP
+4   naya JJ
+5   spacewalk k2
+6   saphalta NN
+7   se PSP
+8   poora JJ
+9   kiya V
+10   . PUNC
+
+# Pahadi ilakon mein bhari barfbari se yatayat thap hai.
+1   Pahadi JJ
+2   ilakon k7
+3   mein PSP
+4   bhari JJ
+5   barfbari k3
+6   se PSP
+7   yatayat k1
+8   thap JJ
+9   hai V
+10   . PUNC
+
+# Shiksha niti mein naye badlavon ka swagat kiya gaya.
+1   Shiksha NN
+2   niti k7
+3   mein PSP
+4   naye JJ
+5   badlavon k2
+6   ka PSP
+7   swagat NN
+8   kiya V
+9   gaya VAUX
+10   . PUNC
+
+# Sahar mein naye water plant ki sthapana hui.
+1   Sahar k7
+2   mein PSP
+3   naye JJ
+4   water NN
+5   plant NN
+6   ki PSP
+7   sthapana k1
+8   hui V
+9   . PUNC
+
+# Van vibhag ne jungle mein naye CCTV camera lagaye.
+1   Van NN
+2   vibhag k1
+3   ne PSP
+4   jungle k7
+5   mein PSP
+6   naye JJ
+7   CCTV NN
+8   camera k2
+9   lagaye V
+10   . PUNC
+
+# Startup India se naye vyapariyon ko sahayata mili.
+1   Startup NN
+2   India k5
+3   se PSP
+4   naye JJ
+5   vyapariyon k4
+6   ko PSP
+7   sahayata k1
+8   mili V
+9   . PUNC
+
+# Indian Premier League ke naye season ka aagaz hua.
+1   Indian NN
+2   Premier NN
+3   League k7
+4   ke PSP
+5   naye JJ
+6   season k2
+7   ka PSP
+8   aagaz k1
+9   hua V
+10   . PUNC
+
+# Naye kanoon se cyber apraadh kam honge.
+1   Naye JJ
+2   kanoon k3
+3   se PSP
+4   cyber JJ
+5   apraadh k1
+6   kam JJ
+7   honge V
+8   . PUNC
+
+# Railway ne naye coach mein vishesh suvidhaye di hain.
+1   Railway k1
+2   ne PSP
+3   naye JJ
+4   coach k7
+5   mein PSP
+6   vishesh JJ
+7   suvidhaye k2
+8   di V
+9   hain VAUX
+10   . PUNC
+
+# Sanskritik mela mein naye kalakaro ne prastuti di.
+1   Sanskritik JJ
+2   mela k7
+3   mein PSP
+4   naye JJ
+5   kalakaro k1
+6   ne PSP
+7   prastuti k2
+8   di V
+9   . PUNC
+
+# Himalayan kshetron mein naye rahasya mile hain.
+1   Himalayan JJ
+2   kshetron k7
+3   mein PSP
+4   naye JJ
+5   rahasya k1
+6   mile V
+7   hain VAUX
+8   . PUNC
+
+# PM Modi ne naye samjhauto par hastakshar kiye.
+1   PM NN
+2   Modi k1
+3   ne PSP
+4   naye JJ
+5   samjhauto k7
+6   par PSP
+7   hastakshar NN
+8   kiye V
+9   . PUNC
+
+# Sahar ke beechon-beech naya auditorium banaya gaya.
+1   Sahar k7
+2   ke PSP
+3   beechon-beech RB
+4   naya JJ
+5   auditorium k2
+6   banaya V
+7   gaya VAUX
+8   . PUNC
+
+# Jal sanrakshan ke liye naya abhiyan shuru hua.
+1   Jal NN
+2   sanrakshan k4
+3   ke PSP
+4   liye PSP
+5   naya JJ
+6   abhiyan k1
+7   shuru NN
+8   hua V
+9   . PUNC
+
+# Khel mantralaya ne naye stadium ke liye paise diye.
+1   Khel NN
+2   mantralaya k1
+3   ne PSP
+4   naye JJ
+5   stadium k4
+6   ke PSP
+7   liye PSP
+8   paise k2
+9   diye V
+10   . PUNC
+
+# Agle mahine naya smartphone market mein ayega.
+1   Agle JJ
+2   mahine k7
+3   naya JJ
+4   smartphone k1
+5   market k7
+6   mein PSP
+7   ayega V
+8   . PUNC
+
+# Paryatan ko badhava dene ke liye naye hotel khule.
+1   Paryatan k2
+2   ko PSP
+3   badhava NN
+4   dene V
+5   ke PSP
+6   liye PSP
+7   naye JJ
+8   hotel k1
+9   khule V
+10   . PUNC
+
+# Kendriya sarkaar ne kisanon ke liye nayi policy banayi.
+1   Kendriya JJ
+2   sarkaar k1
+3   ne PSP
+4   kisanon k4
+5   ke PSP
+6   liye PSP
+7   nayi JJ
+8   policy k2
+9   banayi V
+10   . PUNC
+
+# Smart city project mein naya vikas hua hai.
+1   Smart JJ
+2   city NN
+3   project k7
+4   mein PSP
+5   naya JJ
+6   vikas k1
+7   hua V
+8   hai VAUX
+9   . PUNC
+
+# Kedarnath yatra ke liye naye registration shuru hue.
+1   Kedarnath NN
+2   yatra k4
+3   ke PSP
+4   liye PSP
+5   naye JJ
+6   registration k1
+7   shuru NN
+8   hue V
+9   . PUNC
+
+# Vyapaarik kshetron mein naye niyam lagu kiye gaye.
+1   Vyapaarik JJ
+2   kshetron k7
+3   mein PSP
+4   naye JJ
+5   niyam k2
+6   lagu JJ
+7   kiye V
+8   gaye VAUX
+9   . PUNC
+
+# Technology ke upyog se kheti asaan ho gayi hai.
+1   Technology k3
+2   ke PSP
+3   upyog k3
+4   se PSP
+5   kheti k1
+6   asaan JJ
+7   ho V
+8   gayi VAUX
+9   hai VAUX
+10   . PUNC
+
+# Naye bridge se yatra ka samay kam ho gaya.
+1   Naye JJ
+2   bridge k3
+3   se PSP
+4   yatra NN
+5   ka PSP
+6   samay k1
+7   kam JJ
+8   ho V
+9   gaya VAUX
+10   . PUNC
+
+# Shahar ke kude se bijli banane ka naya plant.
+1   Shahar NN
+2   ke PSP
+3   kude k3
+4   se PSP
+5   bijli k2
+6   banane V
+7   ka PSP
+8   naya JJ
+9   plant k1
+10   . PUNC
+
+# Science exhibition mein bachon ne naya chamatkar dikhaya.
+1   Science NN
+2   exhibition k7
+3   mein PSP
+4   bachon k1
+5   ne PSP
+6   naya JJ
+7   chamatkar k2
+8   dikhaya V
+9   . PUNC
+
+# Wildlife photography ke liye naya kanoon banaya gaya.
+1   Wildlife NN
+2   photography k4
+3   ke PSP
+4   liye PSP
+5   naya JJ
+6   kanoon k2
+7   banaya V
+8   gaya VAUX
+9   . PUNC
+
+# Sarkaar ne naye startup ko tax mein chhoot di.
+1   Sarkaar k1
+2   ne PSP
+3   naye JJ
+4   startup k4
+5   ko PSP
+6   tax k7
+7   mein PSP
+8   chhoot k2
+9   di V
+10   . PUNC
+
+# Cricket team mein naye khiladi ko mauka mila.
+1   Cricket NN
+2   team k7
+3   mein PSP
+4   naye JJ
+5   khiladi k4
+6   ko PSP
+7   mauka k1
+8   mila V
+9   . PUNC
+
+# Ganga nadi ki safai ke liye naye upkaran aye.
+1   Ganga NN
+2   nadi NN
+3   ki PSP
+4   safai k4
+5   ke PSP
+6   liye PSP
+7   naye JJ
+8   upkaran k1
+9   aye V
+10   . PUNC
+
+# Naye sansad bhavan mein pehli baithak saphal rahi.
+1   Naye JJ
+2   sansad NN
+3   bhavan k7
+4   mein PSP
+5   pehli JJ
+6   baithak k1
+7   saphal JJ
+8   rahi V
+9   . PUNC
+
+# Online shopping par naye offers ki bauchar hui.
+1   Online JJ
+2   shopping k7
+3   par PSP
+4   naye JJ
+5   offers NN
+6   ki PSP
+7   bauchar k1
+8   hui V
+9   . PUNC
+
+# Pahadi rasto par naye sign board lagaye gaye.
+1   Pahadi JJ
+2   rasto k7
+3   par PSP
+4   naye JJ
+5   sign NN
+6   board k2
+7   lagaye V
+8   gaye VAUX
+9   . PUNC
+
+# Education sector mein naye badlav ki ummeed hai.
+1   Education NN
+2   sector k7
+3   mein PSP
+4   naye JJ
+5   badlav NN
+6   ki PSP
+7   ummeed k1
+8   hai V
+9   . PUNC
+
+# Naya software computer ki raftaar ko badha dega.
+1   Naya JJ
+2   software k1
+3   computer NN
+4   ki PSP
+5   raftaar k2
+6   ko PSP
+7   badha V
+8   dega VAUX
+9   . PUNC
+
+# Gaon mein naye pani ke tank banaye gaye.
+1   Gaon k7
+2   mein PSP
+3   naye JJ
+4   pani NN
+5   ke PSP
+6   tank k2
+7   banaye V
+8   gaye VAUX
+9   . PUNC
+
+# Cyber cell ne naye fraud ka parda-faash kiya.
+1   Cyber JJ
+2   cell k1
+3   ne PSP
+4   naye JJ
+5   fraud k2
+6   ka PSP
+7   parda-faash NN
+8   kiya V
+9   . PUNC
+
+# International market mein naye product ki mang badhi.
+1   International JJ
+2   market k7
+3   mein PSP
+4   naye JJ
+5   product NN
+6   ki PSP
+7   mang k1
+8   badhi V
+9   . PUNC
+
+# Naye saal par shahar mein kadi suraksha hogi.
+1   Naye JJ
+2   saal k7
+3   par PSP
+4   shahar k7
+5   mein PSP
+6   kadi JJ
+7   suraksha k1
+8   hogi V
+9   . PUNC
+
+# Indian space agency ne naya record banaya hai.
+1   Indian JJ
+2   space NN
+3   agency k1
+4   ne PSP
+5   naya JJ
+6   record k2
+7   banaya V
+8   hai VAUX
+9   . PUNC
+
+# High court ne naye hospital par faisla sunaya.
+1   High JJ
+2   court k1
+3   ne PSP
+4   naye JJ
+5   hospital k7
+6   par PSP
+7   faisla k2
+8   sunaya V
+9   . PUNC
+
+# Heritage site par naya entry gate banaya gaya.
+1   Heritage JJ
+2   site k7
+3   par PSP
+4   naya JJ
+5   entry NN
+6   gate k2
+7   banaya V
+8   gaya VAUX
+9   . PUNC
+
+# Naye vyaparik samjhauto se desh ko fayda hoga.
+1   Naye JJ
+2   vyaparik JJ
+3   samjhauto k3
+4   se PSP
+5   desh k4
+6   ko PSP
+7   fayda k1
+8   hoga V
+9   . PUNC
+
+# Railway station par naye lift lagaye gaye hain.
+1   Railway NN
+2   station k7
+3   par PSP
+4   naye JJ
+5   lift k2
+6   lagaye V
+7   gaye VAUX
+8   hain VAUX
+9   . PUNC
+
+# Museum mein naye itihasik chitra dikhaye gaye.
+1   Museum k7
+2   mein PSP
+3   naye JJ
+4   itihasik JJ
+5   chitra k2
+6   dikhaye V
+7   gaye VAUX
+8   . PUNC
+
+# Kendriya mantralaya ne naya budget pesh kiya hai.
+1   Kendriya JJ
+2   mantralaya k1
+3   ne PSP
+4   naya JJ
+5   budget k2
+6   pesh NN
+7   kiya V
+8   hai VAUX
+9   . PUNC
+
+# Shahar mein naya stadium jald hi ban jayega.
+1   Shahar k7
+2   mein PSP
+3   naya JJ
+4   stadium k1
+5   jald RB
+6   hi RP
+7   ban V
+8   jayega VAUX
+9   . PUNC
+
+# Naye kanoon se paryavaran ka sanrakshan hoga.
+1   Naye JJ
+2   kanoon k3
+3   se PSP
+4   paryavaran NN
+5   ka PSP
+6   sanrakshan k1
+7   hoga V
+8   . PUNC
+
+# Startup culture ne yuvaon ko naya rasta dikhaya.
+1   Startup NN
+2   culture k1
+3   ne PSP
+4   yuvaon k4
+5   ko PSP
+6   naya JJ
+7   rasta k2
+8   dikhaya V
+9   . PUNC
+
+# Agle mahine naya robot factory mein kaam karega.
+1   Agle JJ
+2   mahine k7
+3   naya JJ
+4   robot k1
+5   factory k7
+6   mein PSP
+7   kaam k2
+8   karega V
+9   . PUNC
+
+# Naye bridge ka kaam jald poora hone wala hai.
+1   Naye JJ
+2   bridge NN
+3   ka PSP
+4   kaam k1
+5   jald RB
+6   poora JJ
+7   hone V
+8   wala VAUX
+9   hai VAUX
+10   . PUNC
+
+# Bharat ne naya dosti samjhauta sign kiya hai.
+1   Bharat k1
+2   ne PSP
+3   naya JJ
+4   dosti NN
+5   samjhauta k2
+6   sign NN
+7   kiya V
+8   hai VAUX
+9   . PUNC
+
+# Shahar mein naye park ka nirman shuru hua.
+1   Shahar k7
+2   mein PSP
+3   naye JJ
+4   park NN
+5   ka PSP
+6   nirman k1
+7   shuru NN
+8   hua V
+9   . PUNC
+
+# Naye saal mein khetibadi ke naye tarike ayenge.
+1   Naye JJ
+2   saal k7
+3   mein PSP
+4   khetibadi NN
+5   ke PSP
+6   naye JJ
+7   tarike k1
+8   ayenge V
+9   . PUNC
+
+# Bharat ne naya raksha samjhauta France se kiya.
+1   Bharat k1
+2   ne PSP
+3   naya JJ
+4   raksha NN
+5   samjhauta k2
+6   France k3
+7   se PSP
+8   kiya V
+9   . PUNC
+
+# Agle hafte naya laptop market mein launch hoga.
+1   Agle JJ
+2   hafte k7
+3   naya JJ
+4   laptop k1
+5   market k7
+6   mein PSP
+7   launch NN
+8   hoga V
+9   . PUNC
+
+# Naye hospital mein sari adhunik suvidhayen hongi.
+1   Naye JJ
+2   hospital k7
+3   mein PSP
+4   sari JJ
+5   adhunik JJ
+6   suvidhayen k1
+7   hongi V
+8   . PUNC
+
+# Bharat ne naya space satellite launch kiya hai.
+1   Bharat k1
+2   ne PSP
+3   naya JJ
+4   space NN
+5   satellite k2
+6   launch NN
+7   kiya V
+8   hai VAUX
+9   . PUNC
+
+# Shahar mein naya flyover jald hi khulega.
+1   Shahar k7
+2   mein PSP
+3   naya JJ
+4   flyover k1
+5   jald RB
+6   hi RP
+7   khulega V
+8   . PUNC
+
+# Naye kanoon se bhrashtachar par rok lagegi jald.
+1   Naye JJ
+2   kanoon k3
+3   se PSP
+4   bhrashtachar k7
+5   par PSP
+6   rok k1
+7   lagegi V
+8   jald RB
+9   . PUNC
+
+# Bharat ne naya economic corridor banaya hai.
+1   Bharat k1
+2   ne PSP
+3   naya JJ
+4   economic JJ
+5   corridor k2
+6   banaya V
+7   hai VAUX
+8   . PUNC
+
+# Naya software bank ke kaam ko asaan karega.
+1   Naya JJ
+2   software k1
+3   bank NN
+4   ke PSP
+5   kaam k2
+6   ko PSP
+7   asaan JJ
+8   karega V
+9   . PUNC
+
+# Naye mall mein naye showroom khule hain aaj.
+1   Naye JJ
+2   mall k7
+3   mein PSP
+4   naye JJ
+5   showroom k1
+6   khule V
+7   hain VAUX
+8   aaj RB
+9   . PUNC
+
+# Bharat ne naya solar power project shuru kiya.
+1   Bharat k1
+2   ne PSP
+3   naya JJ
+4   solar JJ
+5   power NN
+6   project k2
+7   shuru NN
+8   kiya V
+9   . PUNC
+
+# Naya mobile app kisanon ki madad karega jald.
+1   Naya JJ
+2   mobile NN
+3   app k1
+4   kisanon NN
+5   ki PSP
+6   madad k2
+7   karega V
+8   jald RB
+9   . PUNC
+
+# Naye museum mein purani talwaren rakhi gayi hain.
+1   Naye JJ
+2   museum k7
+3   mein PSP
+4   purani JJ
+5   talwaren k2
+6   rakhi V
+7   gayi VAUX
+8   hain VAUX
+9   . PUNC
+
+# Bharat ne naya missile test saphalta se kiya.
+1   Bharat k1
+2   ne PSP
+3   naya JJ
+4   missile NN
+5   test k2
+6   saphalta NN
+7   se PSP
+8   kiya V
+9   . PUNC
+
+# Agle mahine naya budget pesh kiya jayega aaj.
+1   Agle JJ
+2   mahine k7
+3   naya JJ
+4   budget k2
+5   pesh NN
+6   kiya V
+7   jayega VAUX
+8   aaj RB
+9   . PUNC
+
+# Naye park mein bachon ke liye jhoole hain.
+1   Naye JJ
+2   park k7
+3   mein PSP
+4   bachon k4
+5   ke PSP
+6   liye PSP
+7   jhoole k1
+8   hain V
+9   . PUNC
+
+# Bharat ne naya energy samjhauta sign kiya hai.
+1   Bharat k1
+2   ne PSP
+3   naya JJ
+4   energy NN
+5   samjhauta k2
+6   sign NN
+7   kiya V
+8   hai VAUX
+9   . PUNC
+
+# Naya smartphone bahut hi sasta aur achha hai.
+1   Naya JJ
+2   smartphone k1
+3   bahut RB
+4   hi RP
+5   sasta JJ
+6   aur CC
+7   achha JJ
+8   hai V
+9   . PUNC
+
+# Naye saal mein shahar mein naye badlav honge.
+1   Naye JJ
+2   saal k7
+3   mein PSP
+4   shahar k7
+5   mein PSP
+6   naye JJ
+7   badlav k1
+8   honge V
+9   . PUNC
+
+# Bharat ne naya water conservation project banaya hai.
+1   Bharat k1
+2   ne PSP
+3   naya JJ
+4   water NN
+5   conservation NN
+6   project k2
+7   banaya V
+8   hai VAUX
+9   . PUNC
+
+# Naya airport jald hi shuru hone wala hai.
+1   Naya JJ
+2   airport k1
+3   jald RB
+4   hi RP
+5   shuru NN
+6   hone V
+7   wala VAUX
+8   hai VAUX
+9   . PUNC
+
+# Naye kanoon se logon ko fayda hoga jald.
+1   Naye JJ
+2   kanoon k3
+3   se PSP
+4   logon k4
+5   ko PSP
+6   fayda k1
+7   hoga V
+8   jald RB
+9   . PUNC
+
+# Bharat ne naya tech city banaya hai abhi.
+1   Bharat k1
+2   ne PSP
+3   naya JJ
+4   tech NN
+5   city k2
+6   banaya V
+7   hai VAUX
+8   abhi RB
+9   . PUNC
+
+# Naya software har computer par kaam karega jald.
+1   Naya JJ
+2   software k1
+3   har JJ
+4   computer k7
+5   par PSP
+6   kaam k2
+7   karega V
+8   jald RB
+9   . PUNC
+
+# Naye hospital mein naye doctor niyukt kiye gaye.
+1   Naye JJ
+2   hospital k7
+3   mein PSP
+4   naye JJ
+5   doctor k2
+6   niyukt JJ
+7   kiye V
+8   gaye VAUX
+9   . PUNC
+
+# Bharat ne naya agriculture plan launch kiya hai.
+1   Bharat k1
+2   ne PSP
+3   naya JJ
+4   agriculture NN
+5   plan k2
+6   launch NN
+7   kiya V
+8   hai VAUX
+9   . PUNC
+
+# Naya metro line jald hi khulne wala hai.
+1   Naya JJ
+2   metro NN
+3   line k1
+4   jald RB
+5   hi RP
+6   khulne V
+7   wala VAUX
+8   hai VAUX
+9   . PUNC
+
+# Naye school mein naye bache bharti hue aaj.
+1   Naye JJ
+2   school k7
+3   mein PSP
+4   naye JJ
+5   bache k1
+6   bharti JJ
+7   hue V
+8   aaj RB
+9   . PUNC
+
+# Bharat ne naya research centre banaya hai abhi.
+1   Bharat k1
+2   ne PSP
+3   naya JJ
+4   research NN
+5   centre k2
+6   banaya V
+7   hai VAUX
+8   abhi RB
+9   . PUNC
+
+# Naya laptop market mein bahut hi lokpriya hai.
+1   Naya JJ
+2   laptop k1
+3   market k7
+4   mein PSP
+5   bahut RB
+6   hi RP
+7   lokpriya JJ
+8   hai V
+9   . PUNC
+
+# Naye park mein naye podhe lagaye gaye hain.
+1   Naye JJ
+2   park k7
+3   mein PSP
+4   naye JJ
+5   podhe k2
+6   lagaye V
+7   gaye VAUX
+8   hain VAUX
+9   . PUNC
+
+# Bharat ne naya global partnership sign kiya hai.
+1   Bharat k1
+2   ne PSP
+3   naya JJ
+4   global JJ
+5   partnership k2
+6   sign NN
+7   kiya V
+8   hai VAUX
+9   . PUNC
+
+# Naya smartphone market mein sabse tez hai abhi.
+1   Naya JJ
+2   smartphone k1
+3   market k7
+4   mein PSP
+5   sabse RB
+6   tez JJ
+7   hai V
+8   abhi RB
+9   . PUNC
+
+# Naye museum mein naye pradarshan dikhaye gaye aaj.
+1   Naye JJ
+2   museum k7
+3   mein PSP
+4   naye JJ
+5   pradarshan k2
+6   dikhaye V
+7   gaye VAUX
+8   aaj RB
+9   . PUNC
+
+# Bharat ne naya infrastructure project shuru kiya hai.
+1   Bharat k1
+2   ne PSP
+3   naya JJ
+4   infrastructure NN
+5   project k2
+6   shuru NN
+7   kiya V
+8   hai VAUX
+9   . PUNC
+
+# Naya bridge shahar ke traffic ko kam karega.
+1   Naya JJ
+2   bridge k1
+3   shahar NN
+4   ke PSP
+5   traffic k2
+6   ko PSP
+7   kam JJ
+8   karega V
+9   . PUNC
+
+# Naye hospital mein naye mareez bharti hue aaj.
+1   Naye JJ
+2   hospital k7
+3   mein PSP
+4   naye JJ
+5   mareez k1
+6   bharti JJ
+7   hue V
+8   aaj RB
+9   . PUNC
+
+# Bharat ne naya tourism plan launch kiya hai.
+1   Bharat k1
+2   ne PSP
+3   naya JJ
+4   tourism NN
+5   plan k2
+6   launch NN
+7   kiya V
+8   hai VAUX
+9   . PUNC
+
+# Naya metro shahar ke logon ki madad karega.
+1   Naya JJ
+2   metro k1
+3   shahar NN
+4   ke PSP
+5   logon k4
+6   ki PSP
+7   madad NN
+8   karega V
+9   . PUNC
+
+# Naye saal mein naye umeedon ka savera hoga.
+1   Naye JJ
+2   saal k7
+3   mein PSP
+4   naye JJ
+5   umeedon NN
+6   ka PSP
+7   savera k1
+8   hoga V
+9   . PUNC
+
+# Bharat ne naya digital mission shuru kiya hai.
+1   Bharat k1
+2   ne PSP
+3   naya JJ
+4   digital JJ
+5   mission k2
+6   shuru NN
+7   kiya V
+8   hai VAUX
+9   . PUNC
