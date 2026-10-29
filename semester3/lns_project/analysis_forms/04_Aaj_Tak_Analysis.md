@@ -1,0 +1,305 @@
+# LANGUAGE & SOCIETY PROJECT — TRANSCRIPT ANALYSIS WORKSHEET
+**Qualitative analysis of political news discourse**
+
+## Creator 4: Aaj Tak (*Halla Bol* & *AT2 Live* — Mainstream Hindi Television News)
+
+- **Analyst:** Baani Solanki (`2025114016`)
+- **Channel / Outlet:** Aaj Tak (`@aajtak`, TV Today Network)
+- **Ideological / Editorial Positioning:** Mainstream commercial Hindi broadcast news; combines high-drama devotional/emotional vocabulary (`"toophan"`, `"paap"`, `"dangal"`) with formal procedural/law-and-order deference toward state institutions (SIT, CM Yogi, PM Modi, Delhi Police), while staging multi-party partisan shouting matches and electoral horse-race framing.
+- **Transcript Files Referenced:**
+  - Event 1: `transcripts/event1_ram_mandir/04_aaj_tak_B4L1pz0o4dc.txt`
+  - Event 2: `transcripts/event2_neet_protest/04_aaj_tak_JXLIs0WtJAM.txt`
+
+---
+
+## Guidelines: Five features to look for in every event
+
+| Feature | What to look for | Illustrative example | Questions to answer |
+| :--- | :--- | :--- | :--- |
+| **1. Naming** | What are people, groups, actions, or events called? | "Students", "protesters", "agitators"; "irregularity", "scam", "controversy". | What exact label is used? Who or what does it refer to? Who uses it? What alternative label could have been used? |
+| **2. Presupposition** | What is treated as already true or taken for granted? | "Why are students creating chaos again?" may presuppose earlier disruption. | What does the wording assume? Is that assumption supported, disputed, or left unexamined? Does it appear in a question or words such as "again", "still", or "finally"? |
+| **3. Agency** | Who is shown doing something? Who is acted upon? Who disappears? | "Police injured protesters" vs. "Protesters were injured." | Who is the actor? Who experiences the action? Is responsibility named, backgrounded, or omitted? |
+| **4. Antagonisation** | Who is positioned against whom? | "Ordinary citizens" vs. "political troublemakers". | Which groups are contrasted? Is one presented as more legitimate, moral, patriotic, dangerous, or disloyal? Is an "us vs. them" division implied? |
+| **5. Intensification / softening** | What is exaggerated, minimised, softened, or euphemised? | "Violent mob" vs. "peaceful demonstrators"; "incident" instead of a direct description. | Which words heighten emotion or seriousness? Which minimise it? Are metaphors, dramatic adjectives, hedges, or euphemisms used? Does the wording match the evidence? |
+
+*Reminder: A label or implication is not automatically false or manipulative. Examine the surrounding context and evidence.*
+
+---
+
+## Event1. Ram Mandir donation controversy
+
+**Focus:** How is the controversy framed—as financial accountability, religious sentiment, political motivation, or something else? Be precise about the specific allegation or episode covered.
+
+- **Outlet:** Aaj Tak (*Halla Bol With Anjana Om Kashyap*)
+- **Date:** `2026-06-19` *(Day 5 of the UP SIT probe — one week BEFORE the 26 June arrests and Champat Rai's resignation)*
+- **Video title:** *Halla Bol With Anjana Om Kashyap Full Show: Ram Mandir ko kisne 'loota'? | Ram Mandir Donation | BJP* (`https://youtu.be/B4L1pz0o4dc?si=BRvYR4hn3KalxM_t`)
+- **Timestamp(s):** Relevant Event 1 segment `[00:00–38:26]` (`100%` of broadcast dedicated to the Ram Mandir donation controversy; total duration `38:30`).
+- **Analyst:** Baani Solanki (`2025114016`)
+- **Language:** Hindi / Hinglish (Native Hindi broadcast audio, Romanized script; non-AI-dubbed)
+
+### Event-specific questions (Event 1)
+
+1. **What terms are used: "scam", "alleged irregularity", "corruption", "political controversy", or something else?**
+    - **Carefully hedged in the anchor's voice, dramatized in the VTR package, and polarized across panelists:**
+    - **Title & Anchor (Anjana Om Kashyap):** Uses scare-quotes in the title (`Ram Mandir ko kisne 'loota'?`) and attributes allegations carefully as `"Ram Mandir chadhava chori ka aarop"` [allegation of offering theft] (`[00:10]`), `"gambhir aarop"` [serious allegations] (`[00:48]`, `[09:12]`), and `"bahut bada toophan"` [a massive storm] (`[00:10]`, `[00:58]`).
+    - **Aaj Tak Bureau Report (`[02:02–09:02]`):** Escalates into devotional-moral terms—`"bhrashtachariyon ne dhava bola hai"` [corrupt people have raided the temple] (`[02:02]`), `"karodon arbon bhakton ki aastha se chhal"` [betrayal of crores of devotees' faith] (`[02:19]`), `"chadhava chori kand"` (`[02:19–02:30]`), and `"ek aisa paap hai jiska prayashchit shayad nahin ho sakta"` [a sin perhaps beyond atonement] (`[08:51]`).
+    - **Panelists:** SP/Congress/analysts call it `"bahut bada ghotala dakaiti chori"` (`[08:14]`) and `"jamin ghotala"` (`[34:58]`), while pro-Trust/VHP voices soften it to `"gadabdi"` [irregularity] (`[10:08]`), `"kuch avyavastha huee hai"` [some mismanagement occurred] (`[34:21]`), and `"badant intjami"` [poor administration] (`[22:38]`).
+
+2. **How are the temple, trust, donors, and people making allegations described?**
+    - **Temple:** Reverentially named `"prabhu shri Ram ke Mandir"` (`[00:00]`) and `"500 salon ke sangharsh ke baad yeh Mandir bana"` (`[01:16]`, `[02:02]`).
+    - **Trust & Suspects:** Anchor Anjana notes `"Mandir prabandhan samiti se jude log hi sandeh ke ghere mein hain"` (`[00:20]`) and repeatedly cites Construction Chair Nripendra Misra's admission that oversight wasn't foolproof (`[01:06]`, `[04:24–06:05]`, `[16:44–17:08]`, `[33:19–33:47]`), while pointedly *exonerating* Misra himself (`"nirman alag hai, prabandhan alag hai"`, `[10:57–11:24]`). Suspects (`Ramashankar Yadav urph Tinnoo Yadav`, `Lavkush Mishra`, `Anukalp Mishra`, `Rajesh Pathak`, `K.D. Tiwari`, `Manish Yadav`, `[03:39–04:06]`) are framed as counting/admin staff, while right-leaning panelist Prof. Sangeet Ragi shields Champat Rai as a lifelong RSS pracharak living in `"do dhoti aur do kurte"` (`[12:25–12:56]`). Notably, Aaj Tak notes at `[13:21–13:30]` (via SP's Anurag Bhadauria) that no official BJP spokesperson even showed up, leaving VHP spokesperson Pravesh Chaudhary (`[01:38]`) and sympathetic analysts (`Sangeet Ragi`, `Saurabh/Soor Maithil`) to defend the Trust.
+    - **Donors:** Revered as `"karodon arbon bhakton"` (`[02:19]`) who made `"samarpan"` [sacred offering, not mere chanda] (`[17:17–17:25]`).
+    - **People Making Allegations:** Introduced through an electoral-partisan lens (`"vipaksh bhi is mudde ko bada bana raha hai aur BJP ko is mauke par gher raha hai"`, `[00:20–00:29]`), citing SP ex-minister Pawan Pandey, Akhilesh Yadav's June 7 X post (`[06:13–06:21]`), and Faizabad MP Awadhesh Prasad (`[01:06–01:16]`, `[06:32–07:46]`), whom the Aaj Tak reporter pointedly quizzes on why Akhilesh Yadav hasn't visited Ayodhya Ram Mandir (`[07:10–07:46]`, echoed by Anjana at `[16:10–16:20]`, `[26:52–27:10]`).
+
+3. **Is the issue framed as financial accountability, an attack on Hindu faith, a political dispute, or a matter of public trust?**
+    - **Hybrid devotional-trust + partisan slugfest frame:** Aaj Tak frames the theft itself as a grave wound to devotees' faith and public trust (`" kya Yogi aadityanath yeh bharosa Ram bhakton ko lauta paenge"`, `[00:38–00:48]`; `"paap"`, `[08:51]`) requiring managerial accountability (`[16:44–17:17]`, `[33:19–33:47]`), while simultaneously allowing over half the show (`[16:10–23:18]`, `[26:16–29:43]`, `[35:46–38:00]`) to devolve into a BJP/VHP vs SP/Congress litmus test over 1990 kar-sevak firing and Pran Pratishtha boycotts.
+
+4. **Are questions about donations presented as legitimate scrutiny or as an attempt to malign the temple or its supporters?**
+    - **Split between Anchor vs Right-Wing Panelists/Audience:** Anchor Anjana insists scrutiny of unchecked VIP/trustee access without frisking is legitimate (`"akauntebal sabko hona padega... sare niyam toh shraddhaluon ke lie hain"`, `[33:19–33:47]`), whereas CM Yogi (`[00:29–00:38]`, `[02:30–03:13]`), VHP's Pravesh Chaudhary (`[18:50–19:19]`, `[34:13]`: `"nyas par prashn khada karna hi invailid hai"`), Soor Maithil (`[21:13–21:39]`), and studio audience youth (`[26:33]`, `[28:08]`: `"aapko hak hi nahin hai... Ram ji ke bare mein bolne ke lie"`) attack opposition questioners as `"ramadrohi"` [traitors to Ram] (`[18:50]`, `[21:30]`).
+
+5. **Are allegations attributed to specific people and supported with evidence, or presented as established facts?**
+    - Carefully attributed at the editorial level: Aaj Tak cites **exclusive CCTV footage** of counting (`[03:30]`), **₹10 lakh cash seized** from Lavkush Mishra's house (`[03:49]`), and **Nripendra Misra's on-record interview** with Anjana admitting lack of frisking, SBI's `"most non siriyas mainar"`, and broken double-lock protocols (`[01:06]`, `[04:24–06:05]`), while repeatedly reminding viewers that `"abhi toh SIT ki poori report aani baki hai"` (`[00:58]`, `[38:09]`).
+
+6. **How are denials and counterarguments represented: explained, dismissed, challenged, or omitted?**
+    - **Given massive airtime, and occasionally challenged on procedure:** CM Yogi's `"doodh ka doodh aur pani ka pani"` SIT assurance is aired prominently twice (`[00:29–00:38]`, `[02:30–03:30]`); VHP's `"500 varsh intjar kiya hai. kya ham 15 din aur intjar nahin kar sakte?"` (`[18:00–18:38]`) and Sangeet Ragi's separation of senior trustees from 40 counting clerks (`[09:59–10:36]`) are heard at length. However, Anjana and analyst Satish Prakash do challenge VHP on **why no FIR was registered immediately** (`"Anjana ji poochhie FIR kyon nahin karaee?"`, `[22:09–22:28]`; `[23:18–23:29]`) and why trustees walked in above police frisking rules (`[16:52–17:17]`, `[33:19–33:47]`).
+
+7. **Does the presenter distinguish criticism of the trust or its financial practices from criticism of the temple or religion itself?**
+    - **Yes—devotion to the temple is the show's foundational premise.** Anjana speaks from *within* a devout Hindu consensus (`"prabhu shri Ram ke Mandir"`, `[00:00]`; `"500 salon ke sangharsh"`, `[01:16]`), criticizing *management* (`prabandhan`, lack of frisking at `[33:19–33:47]`) precisely because `"koi bhagvan se oopar kaise ho gaya"` [how did anyone become above God?] (`[17:08–17:17]`).
+
+8. **Who is portrayed as protecting donors' interests, and who as exploiting religious sentiment?**
+    - Every camp claims the mantle of protector in Aaj Tak's multi-voice arena: CM Yogi (`[02:53]`) and VHP (`[17:50]`) claim the Trust/State initiated the SIT; SP (`[14:57–15:25]`) and Congress (`[24:55–25:22]`) claim opposition whistleblowing exposed the `"kuchakra"`; meanwhile Anjana positions **Nripendra Misra** (who handed over keys cleanly after construction, `[10:57–11:15]`) and **Aaj Tak's own questioning** (`[01:06]`, `[33:19]`) as neutral guardians of devotees' trust, while testing opposition leaders for political opportunism (`[16:10–16:20]`, `[26:52–27:10]`).
+
+### Apply the five shared features (Event 1)
+
+| Feature | Exact wording + timestamp | What it does in context |
+| :--- | :--- | :--- |
+| **1. Naming** | Title: `"Ram Mandir ko kisne 'loota'?"`<br>VTR `[08:51]`: `"sirf ek bhrashtachar ka mamla bhar nahin balki ek aisa paap hai"` vs VHP `[17:17]`: `"chanda bhi nahin de sakte samarpan hai"` & `[18:50]`, `[21:30]`: `"ramadrohi"` | Anchor scare-quotes `'loota'` to maintain journalistic distance, VTR sacralizes financial crime into religious `"paap"` [sin], and VHP/pro-BJP speakers rename donations `"samarpan"` [sacred surrender] while branding opposition critics `"ramadrohi"` [traitors to Ram]. |
+| **2. Presupposition** | Anchor to SP `[16:20]`: `"par aisa kya hai ki akhilesh ji Ram Mandir nahin jate?"` & `[26:52]`: `"pran pratishtha ke taim jise aapne BJP ka ivent kah ke apne aap ko doori bana li thi. aaj chande ke mudde pe kyon bhaee aapko... Ram bhakton ki aastha ki duhaee dene lag gae?"` | Presupposes that boycotting the 2024 Pran Pratishtha ceremony makes SP's concern for devotees' donations suspect and politically opportunistic, shifting the burden of proof onto the whistleblower party! |
+| **3. Agency** | Nripendra Misra `[04:56–05:19]`: `"SBI ne isko most non siriyas mainar mein impliment kiya... suparavijan totli laiking tha"` & Sangeet Ragi `[10:18]`: `"jo paise ki ginti mein shamil log the unhonne gadabdi ki hai"` | Deflects institutional agency away from top BJP/RSS/Trust leadership onto an external bank (`SBI`) and low-level counting clerks (`ginti mein shamil log`), insulating Champat Rai (`[12:25–12:56]`) and Nripendra Misra (`[10:57–11:24]`). |
+| **4. Antagonisation** | CM Yogi `[00:29]`, `[02:30]`: `"Ram bhakton par, kaar sevkon par goli chalane... vale log aaj updesh dene chale hain"`<br>Audience member `[28:08]`: `"aapko hak hi nahin hai... wo hamare bhagvan Ram hai ham apne aap dekh lenge"` | Invokes 1990 historical trauma (`kaar sevkon par goli chalane vale`) to draw an exclusionary boundary between authentic `"sanataniyon"` / `"Ram bhakton"` (`"hamare ghar ka mamla"`, `[26:33]`) and illegitimate `"ramadrohi"` / `"pappoo parti"` outsiders (`[25:49]`). |
+| **5. Intensification / softening** | **Intensification (VTR):** `"bahut toophan khada kar chuka hai"` `[00:10]`, `"bhrashtachariyon ne dhava bola"` `[02:02]`, `"paap... prayashchit shayad nahin"` `[08:51]`<br>**Softening (VHP):** `"500 varsh intjar kiya hai. kya ham 15 din aur intjar nahin kar sakte?"` `[18:00]`; `"kuch avyavastha huee hai"` `[34:21]` | Melodramatic opening metaphors (`toophan`, `dhava`, `paap`) hook prime-time viewers, while VHP softens systemic theft into minor `"avyavastha"` [disarray] and dwarfs a 15-day SIT wait against a `"500 varsh"` civilizational struggle. |
+
+### Short summary (Event 1)
+- **What interpretation of the event does this video encourage?**
+  That a deeply distressing lapse in cash-counting supervision (`"nigrani ki kami"`, `[05:56]`) allowed insiders/clerks to steal sacred offerings (`chadhava`) at Ayodhya—demanding strict accountability (`[33:19–33:47]`) while giving viewers reason to await CM Yogi's 15-day SIT report (`[00:38]`, `[38:09]`) and to view SP/Congress outrage with skepticism given their past distance from the Ram Mandir (`[16:10–16:20]`, `[26:52–27:10]`).
+- **Whose perspective is foregrounded, challenged, or missing?**
+  *Foregrounded:* CM Yogi Adityanath's SIT assurance, Nripendra Misra's technocratic diagnosis, VHP/RSS defenders, SP/Congress spokespersons, and vocal pro-BJP studio youth (`[26:16–29:53]`). *Challenged:* Both the Trust's lack of frisking/FIR (`[16:52–17:17]`, `[22:09]`, `[33:19]`) AND the opposition's religious credentials (`[07:10–07:46]`, `[26:52]`, `[36:42]`). *Missing:* Official BJP party spokesperson (`[13:21–13:30]`), SBI's institutional response to Nripendra Misra's blame (`[04:56]`), and unreceipted donors like the Sindhi silver-brick contributors.
+- **What evidence supports your interpretation? What complicates it?**
+  *Supports:* Exclusive counting-room CCTV visuals (`[03:30]`), `₹10 lakh` cash recovery from Lavkush Mishra (`[03:49]`), and Nripendra Misra's candid on-camera admission of informal/missing frisking and double-lock failures (`[04:35–06:05]`). *Complicates:* Whenever panelists raise structural precedents—like the 2021 Ayodhya land scam (`[34:58–35:08]`), Vaishno Devi Shrine Board reforms (`[23:56–24:14]`), or missing FIRs (`[23:18–23:29]`)—the studio format drowns them out in personal insults (`"pharji prophesar"` `[14:15]`, `"pappoo parti"` `[25:49]`) and 1990 kar-sevak diversions (`"stop dis shauting maich"`, `[35:38]`).
+
+---
+
+## Event2. Students' protest regarding NEET paper leak
+
+**Focus:** How does coverage construct the legitimacy of student protest and responsibility for the underlying problem?
+
+- **Outlet:** Aaj Tak (*AAJTAK 2 LIVE | AT2 LIVE* anchored by Himanshu Dixit, with ground reporter Sushant Mehra)
+- **Date:** `2026-07-21` *(the day AFTER the 20 July clashes)*
+- **Video title:** *AAJTAK 2 LIVE | NEET PROTEST| PM aavas ke bahar dharne par baithe Rahul Gandhi! | AT2 LIVE* (`https://www.youtube.com/live/JXLIs0WtJAM?si=3_7gAW9j4KDBWCUo`)
+- **Timestamp(s):** Relevant Event 2 segment `[00:04–23:50]` (`100%` of live bulletin; total duration `24:10`).
+- **Analyst:** Baani Solanki (`2025114016`)
+- **Language:** Hindi / Hinglish (Native Hindi broadcast audio, Romanized script; non-AI-dubbed)
+
+### Event-specific questions (Event 2)
+
+1. **Are participants called "students", "candidates", "protesters", "agitators", "mobs", or "political pawns"?**
+    - **Shifts noticeably across the 24-minute broadcast from neutral to law-and-order delegitimization:**
+    - **Opening & Opposition Soundbites (`[00:14–09:56]`):** Anchor uses neutral `"pradarshankariyon"` [protesters] (`[00:14]`) and `"chhatron"` [students] (`[14:50]`), while Rahul Gandhi, Akhilesh Yadav, and Dimple Yadav call them `"students"`, `"yuvaon"`, and `"bachche jo door-door se chalakar ke aae hain"` (`[04:37]`, `[06:40]`, `[13:34]`).
+    - **Mid-Bulletin Official Quote (`[10:04–11:10]`):** Airs Maharashtra CM Devendra Fadnavis claiming `"kuch log ismen sirf apna ejenda poora karne ke lie ghuse hue hain"` who don't even know what NEET is.
+    - **Ground & Police Segment (`[15:43–23:50]`):** Reporter Sushant Mehra introduces `"asamajik tatva"` [anti-social elements] (`[15:52]`), and the anchor explicitly adopts `"upadraviyon"` [rioters/miscreants] (`"kaise upadraviyon ne police valon ko nishana banaya"`, `[21:20]`; `"upadravi unke chehre par hamla kar rahe the"`, `[22:38]`)!
+
+2. **Are their stated demands explained, summarised, mocked, questioned, or left out?**
+    - **Briefly summarised two-thirds of the way into the bulletin (`[16:01–16:31]`):** Ground reporter Sushant Mehra lists CJP's three core demands presented to J.P. Nadda—(i) Education Minister's resignation, (ii) `₹1 crore` compensation to families of students who died by suicide after the NEET leak, and (iii) release of Sonam Wangchuk—while also covering Delhi High Court's order shifting Wangchuk to Medanta Hospital (`[02:02–02:54]`).
+
+3. **Does the presenter focus on the original grievance, disruption, political affiliations, or public inconvenience?**
+    - **Overwhelmingly focuses on (a) high-profile party politics / UP electoral horse-race (`[00:31–02:02]`, `[03:04–14:42]`) and (b) Parliamentary/street disruption & police injuries (`[15:43–23:50]`)**, rather than the NEET exam mechanics or student experiences. Even the video title foregrounds Rahul Gandhi (`PM aavas ke bahar dharne par baithe Rahul Gandhi!`), and an entire special package (`[11:18–14:42]`) evaluates the student protest purely as a `2027 UP election` contest (`"lakhanvi siyasat"`, `"dangal"`) comparing Dimple Yadav/SP against Rahul Gandhi/Congress, BSP, AAP, and AIMIM!
+
+4. **Who is represented as responsible: examination authorities, government, students, political parties, or others?**
+    - **Distributed across partisan claims, with editorial sympathy tilting toward police on street violence:** Opposition clips blame PM Modi, Home Minister, and Education Minister (`[04:47–05:05]`, `[06:19–07:08]`, `[08:00–09:48]`, `[13:34]`); PM Modi's NDA speech blames state-level `"dhandhe mein involva"` paper-leak criminals and accuses the opposition of `"rajniti"` (`[04:29–04:37]`, `[05:05–05:51]`); Parliamentary Minister blames opposition MPs for stalling the Supreme Court Judges Bill (`[07:08–07:50]`); and the final 8 minutes (`[15:43–23:50]`) blame `"asamajik tatva"` and `"upadraviyon"` breaking barricades at an `"illigal"` march for the 20 July violence.
+
+5. **Are questions framed around whether students have legitimate grievances, or why they are causing disruption?**
+    - **Framed primarily around political gamesmanship and law-and-order management:** Who is winning the opposition `"dangal"` over UP issues in Delhi (`[11:18–14:42]`), why Parliament was adjourned thrice (`11:00`, `12:00`, `2:00` at `[03:04–04:10]`), and how `"upadraviyon"` injured `110–118` police personnel during an `"illigal"` march (`[19:25–23:50]`).
+
+6. **Are claims of violence, disorder, or political manipulation attributed to sources and substantiated?**
+    - **Asymmetric substantiation:**
+    - Claims of **protester violence against police** are substantiated with official FIR charges (`5 FIRs` at `[19:25–19:43]`), casualty counts (`110–118` injured police including `5 IPS` vs `~70` protesters at `[18:09–18:20]`, `[19:43]`, `[20:51]`), and **three consecutive on-camera police interviews** (`DCP Sachin Sharma`, `Addl. DCP Anand Mishra` with a fractured hand, `Addl. DCP Jagdev` with a swollen/fractured hand at `[19:51–23:50]`).
+    - Claims of **police/plainclothes brutality against students** (stitched heads, broken limbs, Hitler-style `"praivet dres"` lathi gangs, torn girls' clothes) appear **only inside opposition politicians' soundbites** (Rahul Gandhi `[04:47]`, Akhilesh Yadav `[06:19–07:08]`, Kharge `[08:38–08:59]`, `[09:56]`)—with **zero injured students interviewed directly by Aaj Tak**!
+
+7. **How are police and government actions described compared with protesters' actions? Are similar actions evaluated differently?**
+    - Anchor Himanshu Dixit explicitly endorses police action as civic duty: `"kanoon vyavastha ko durust karna ye police ka kaam hai"` (`[19:09]`) and praises injured officers returning to `"24 * 7 janta ki seva"` (`[23:30–23:50]`). Note the causal syntax in Sushant Mehra's ground report (`[15:43]`): `"us pradarshan ne ugra roop liya, pattharbaji huee aur uske baad tiyar gais chhode gae, police par hamla huaa"`—placing crowd escalation and stone-pelting *first* and tear-gas *after* in passive voice (`chhode gae`), the exact inverse of Dhruv Rathee (`l-6Pm-112io`, `[07:43–08:43]`) and Mohak Mangal (`v-RikSqb0Vw`, `[01:21–02:06]`).
+
+8. **Are students allowed to explain their demands in their own words, or does the presenter mainly speak for them?**
+    - **Zero students speak in their own words in the entire `24:10` broadcast.** Every single soundbite belongs to a politician (`Rahul Gandhi`, `PM Modi`, `Akhilesh Yadav`, `BJP Minister`, `Priyanka Gandhi`, `Mallikarjun Kharge`, `Devendra Fadnavis`, `Dimple Yadav`) or a senior IPS officer (`DCP Sachin Sharma`, `Addl. DCP Anand Mishra`, `Addl. DCP Jagdev`), mediated by Aaj Tak anchors and reporters.
+
+9. **Does the outlet's framing differ between coverage of the NEET paper-leak issue before the protest and coverage once students begin protesting?**
+    - **Yes, sharply.** While the underlying NEET paper leak is treated via PM Modi's quote as a non-partisan crime against youth (`"paap kaam"`, `[05:25]`), once students march on 20 July and politicians join on 21 July, Aaj Tak's coverage pivots entirely into **partisan spectacle** (`handcuff dharna`, `UP 2027 dangal`) and **law-and-order criminalization** (`5 FIRs`, `"upadraviyon"`, injured DCPs).
+
+### Apply the five shared features (Event 2)
+
+| Feature | Exact wording + timestamp | What it does in context |
+| :--- | :--- | :--- |
+| **1. Naming** | Opening `[00:14]`: `"pradarshankariyon"` -> Reporter `[15:52]`: `"asamajik tatva"` -> Anchor `[21:20]`, `[22:38]`: `"kaise upadraviyon ne police valon ko nishana banaya"` | Tracks an editorial lexical slide across the bulletin from neutral `"pradarshankariyon"` [protesters] to `"asamajik tatva"` [anti-social elements] to unhedged `"upadraviyon"` [rioters] in the anchor's own voice, legitimizing the 5 police FIRs. |
+| **2. Presupposition** | Anchor to Addl. DCP `[21:20]`: `"kaise upadraviyon ne police valon ko nishana banaya"` & `[21:30]`: `"kyunki jo police hai wo toh rok rahi thi jo protestar the unko"` | The *how*-clause (`kaise upadraviyon ne... nishana banaya`) and causal premise (`kyunki jo police hai wo toh rok rahi thi`) presuppose as established fact that police were merely restraining peacefully while rioters targeted them. |
+| **3. Agency** | Reporter `[15:43]`: `"us pradarshan ne ugra roop liya, pattharbaji huee aur uske baad tiyar gais chhode gae, police par hamla huaa"` vs Anchor `[00:14]`: `"pradarshankariyon par jis tarah ki karvaee ki gaee"` | Police violence (`karvaee ki gaee`, `tiyar gais chhode gae`) is systematically passivized with the police agent deleted and sequenced *after* `"pattharbaji huee"`, whereas `"asamajik tatva"` and `"upadraviyon"` receive active ergative verbs (`gadiyan todi`, `nishana banaya`). |
+| **4. Antagonisation** | VTR `[12:01–12:10]`: `"satta paksh ke UP vale bhagidar... Mangal milan kar rahe hain toh satta ke lie lad raha vipaksh apne-apne hisab se dangal kar raha hai"` | Reframes a grassroots youth movement into a cynical, symmetric gladiatorial contest (`Mangal milan` vs `dangal`, `"siyasi rotiyan sek rahi hai"` `[06:08]`) among rival political parties eyeing UP elections. |
+| **5. Intensification / softening** | **Softening (police force & gov delay):** `"sootron ke havale se khabar hai ki sarkar... batchit ke darvaje khule rakhegi"` `[09:56]`, `[17:07]`; `"priventiv arenjment"` `[20:02]`<br>**Intensification (police pain):** `"poora haath aapka laal pad gaya"` `[22:46]`, `"118 se zyada pulisakarmi... panch aaeepies adhikari... gambhir chot"` `[18:09]` | Softens 30 days of government silence via anonymous `"sources"` promising `"open doors for dialogue"`, while visually and emotionally intensifying police injuries (`poora haath aapka laal pad gaya`) over student injuries (`70 ke aaspas` mentioned in a single passing clause at `[18:20]`). |
+
+### Short summary (Event 2)
+- **What interpretation of the event does this video encourage?**
+  That the NEET protest aftermath on 21 July is primarily a high-stakes **ruling-vs-opposition political showdown** (from Parliament adjournments and Rahul Gandhi's PM-residence dharna to SP vs Congress `UP 2027` positioning) alongside a serious **law-and-order breach** in which `"upadraviyon"` at an `"illigal"` march injured over `110–118` dedicated police personnel while the government keeps `"batchit ke darvaje khule"` (`[09:56]`, `[15:43–23:50]`).
+- **Whose perspective is foregrounded, challenged, or missing?**
+  *Foregrounded:* Delhi Police officers (`DCP Sachin Sharma`, `Addl. DCP Anand Mishra`, `Addl. DCP Jagdev`), PM Modi, CM Fadnavis, and national/UP party leaders (`Rahul Gandhi`, `Akhilesh/Dimple Yadav`, `Kharge`). *Challenged:* Congress's street commitment compared to SP (`[11:18–14:14]`) and protesters' breach of barricades (`[17:50–23:50]`). *Missing:* **Protesting NEET students and CJP members themselves**—not a single student or injured youth is interviewed directly!
+- **What evidence supports your interpretation? What complicates it?**
+  *Supports:* Verifiable Parliamentary adjournment timestamps (`11:00`, `12:00`, `2:00` at `[03:35–04:00]`), Delhi HC's Medanta transfer order for Sonam Wangchuk (`[02:02–02:54]`), `5 FIRs`, and firsthand interviews with visibly bandaged IPS officers (`[19:25–23:50]`). *Complicates:* Opposition leaders within Aaj Tak's own broadcast cite stitched student heads, broken limbs, and Hitler-like `"praivet dres"` lathi squads (`[06:30–07:08]`), and Addl. DCP Anand Mishra notably evades the reporter's brief question (`"police ki taraph se huaa ya unki taraph se huaa?"`) with `"abhi toh investigeshan chal raha hai"` (`[21:39–21:49]`).
+
+---
+
+## Common form: Blank excerpt record
+
+*Copy or print this page whenever you find a passage worth analysing. Keep the exact wording and enough context to interpret it.*
+
+### Excerpt Record 1 (Event 1 — Nripendra Misra Interview & Anchor's Institutional Separation)
+- **Outlet:** Aaj Tak (*Halla Bol*) | **Date:** `2026-06-19`
+- **Video title:** *Halla Bol With Anjana Om Kashyap Full Show: Ram Mandir ko kisne 'loota'? | Ram Mandir Donation | BJP*
+- **Timestamp(s):** `[04:35–05:19]` & `[10:57–11:24]` | **Analyst:** Baani Solanki | **Language:** Hindi / Hinglish (Roman script)
+- **Exact transcript excerpt:**
+  > `[04:35] [Nripendra Misra:] aaj poora prabandhan anaupcharik tarike se hai. kis prakar se entri aur egjit par phrisking hogi us vyakti ki... [04:56] kadachit in kagjon ka koi anupalan nahin huaa hai. SBI ne isko most non siriyas mainar mein [05:09] impliment kiya... woh suparavijan totli laiking tha...`
+  > `[10:57] [Anjana Om Kashyap:] ek toh kisi bhi prabandhan samiti mein nirpen mishra hai hi nahin... shri Ram janmabhoomi [11:07] nirman samiti ke adhyaksh hain. nirman ka kaam poora ho chuka hai. ek-ek jagah ki phail chabi sab kuch unhonne Trust ko diya hai. [11:15] prabandhan samiti nahin Trust hota hai... champat raay ji ki baat karen ya [11:24] anya logon ki baat karen prabandhan ki jimmedari un logon ki hoti hai.`
+- **Feature(s):** `[x]` Naming `[ ]` Presupposition `[x]` Agency `[ ]` Antagonisation `[x]` Intensification / softening
+- **Who is speaking? Is this the outlet's wording or a quotation?**
+  Quotation from Construction Committee Chair Nripendra Misra (`[04:35–05:19]`) followed by anchor Anjana Om Kashyap's forceful editorial correction (`[10:57–11:24]`).
+- **What does the wording imply, foreground, soften, or leave unstated?**
+  Nripendra Misra softens internal culpability into `"anaupcharik"` [informal] management while assigning active blame to `"SBI"` (`"most non siriyas mainar"`). Anjana then draws a firewall (`"nirman alag hai, prabandhan alag hai"`) that completely insulates PM Modi's former Principal Secretary Nripendra Misra (and thus Delhi/PMO) while localizing responsibility onto Trust managers like Champat Rai.
+- **What context or evidence supports or complicates this interpretation?**
+  Supported by the formal administrative division between the Construction Committee and the Trust Secretariat. Complicated by **The Wire** (`7rUL8fGgRJA`, `[11:48–14:55]`) and **Dhruv Rathee** (`oeH0fOSJuX8`, `[04:28]`), who argue that as PMO's deputed overseer, Misra scrutinized land/material acquisitions and necessarily kept top leadership informed.
+- **How does another outlet describe the same event or actor?**
+  **The Wire** (`7rUL8fGgRJA`, `[12:27–13:42]`) treats Nripendra Misra as the prime institutional link proving PMO awareness since 2021, whereas **Aaj Tak** presents him as an unimpeachable whistleblower-statesman who cleanly handed over `"ek-ek jagah ki phail chabi"` (`[11:07]`).
+- **My interpretation, with reasons:**
+  This excerpt shows subtle mainstream TV gatekeeping: Aaj Tak allows hard questions about Ayodhya's *local counting management* while ring-fencing PMO-linked technocrats from political fallout.
+
+### Excerpt Record 2 (Event 1 — Testing the Whistleblower's Devotion & "Ramadrohi" Attacks)
+- **Outlet:** Aaj Tak (*Halla Bol*) | **Date:** `2026-06-19`
+- **Video title:** *Halla Bol With Anjana Om Kashyap Full Show: Ram Mandir ko kisne 'loota'? | Ram Mandir Donation | BJP*
+- **Timestamp(s):** `[18:00–19:00]` & `[26:52–27:10]` | **Analyst:** Baani Solanki | **Language:** Hindi / Hinglish (Roman script)
+- **Exact transcript excerpt:**
+  > `[18:00] [VHP Spokesperson Pravesh Chaudhary:] aap ye dekhie Anjana ji is Hindu samaj ne 500 varsh intjar kiya hai. kya ham 15 din aur intjar nahin kar [18:10] sakte? ... ye jo sootron ke havale se khabar aa rahi hai... sootron pe vishvas mat karie... [18:50] ye wo log hain jo prashn khada karte hain jinko Ram se kuch nahin hai. Ram drohi Ram ramadrohi...`
+  > `[26:52] [Anjana Om Kashyap to SP's Anurag Bhadauria:] pran pratishtha ke taim jise aapne BJP ka ivent kah ke apne aap ko doori bana li thi. aaj chande ke [27:01] mudde pe kyon bhaee aapko Ram Mandir matalab Ram bhakton ki aastha ki duhaee dene lag gae.`
+- **Feature(s):** `[x]` Naming `[x]` Presupposition `[ ]` Agency `[x]` Antagonisation `[x]` Intensification / softening
+- **Who is speaking? Is this the outlet's wording or a quotation?**
+  VHP spokesperson Pravesh Chaudhary (`[18:00–19:00]`) and anchor Anjana Om Kashyap's own question to SP spokesperson Anurag Bhadauria (`[26:52–27:10]`).
+- **What does the wording imply, foreground, soften, or leave unstated?**
+  VHP juxtaposes `"500 varsh"` against `"15 din"` to make immediate scrutiny look impatient, and labels critics `"ramadrohi"`. Crucially, even though Congress's Deepak Jha objects (`"sawal poochhne vale ko deshadrohi aur ramadrohi kyon bata rahe hain?"`, `[24:55]`), Anchor Anjana herself adopts the *ad hominem* devotional test at `[26:52]`—implying only those who attended Pran Pratishtha have moral standing to question donation theft.
+- **What context or evidence supports or complicates this interpretation?**
+  Supported factually by SP/Congress leaders declining the January 2024 Pran Pratishtha invitation. Complicated by basic public-trust law: financial fraud in a statutory public trust requires investigation regardless of who raises the complaint, and even Ayodhya sants/kar-sevaks expressed anger in Aaj Tak's own VTR (`[08:23–08:42]`).
+- **How does another outlet describe the same event or actor?**
+  **Republic TV** (`0H-bruoEkaY`, `[02:46–03:14]`, `[04:18]`) pushes this exact same line to an extreme (`"don't have the asta to visit the Ram temple"`), whereas **Dhruv Rathee** (`oeH0fOSJuX8`, `[14:24]`) counters: `"Who is playing with their faith? The scammer or the one who is questioning the scam?"`.
+- **My interpretation, with reasons:**
+  Aaj Tak occupies a middle ground between Republic TV and independent YouTubers—acknowledging the theft hurts devotees, yet repeatedly validating the ruling camp's "who-are-you-to-ask?" credential test against the opposition.
+
+### Excerpt Record 3 (Event 1 — Anchor Pressing VHP on Unchecked VIP Trustees & Missing Frisking)
+- **Outlet:** Aaj Tak (*Halla Bol*) | **Date:** `2026-06-19`
+- **Video title:** *Halla Bol With Anjana Om Kashyap Full Show: Ram Mandir ko kisne 'loota'? | Ram Mandir Donation | BJP*
+- **Timestamp(s):** `[33:19–34:21]` | **Analyst:** Baani Solanki | **Language:** Hindi / Hinglish (Roman script)
+- **Exact transcript excerpt:**
+  > `[33:19] [Anjana Om Kashyap:] akauntebal sabko hona padega. aur yeh sawal hai ki sab wahan par agar chadhava [33:28] chori ho raha tha kisi ko dikh hi nahin raha tha. woh log jo thaat baat se wahan ghoomte hain Mandir mein kyunki sare niyam toh shraddhaluon ke lie hain. yahan se jana hai. [33:38] iske aage nahin badhna hai. jinko ekses tha. 40 daan petiyon ka paisa ja raha tha. kalekshan ho raha tha. phrisking ho rahi hai nahin ho rahi hai. kisi ko dikh hi nahin raha [33:47] tha... [34:13] [VHP Spokesperson:] aapka nyas par prashn khada karna hi invailid hai... [Anjana:] jimmedari kiski thi? [34:21] thik hai agar Trust ki jimmedari nahin thi toh kiski jimmedari? [VHP:] bilakul Trust ki jimmedari thi kuch avyavastha huee hai.`
+- **Feature(s):** `[x]` Naming `[x]` Presupposition `[x]` Agency `[x]` Antagonisation `[x]` Intensification / softening
+- **Who is speaking? Is this the outlet's wording or a quotation?**
+  Anchor Anjana Om Kashyap challenging VHP spokesperson Pravesh Chaudhary (`[33:19–34:21]`).
+- **What does the wording imply, foreground, soften, or leave unstated?**
+  Anjana contrasts ordinary `"shraddhaluon"` [pilgrims], who face strict queues and barriers, against privileged insiders `"woh log jo thaat baat se wahan ghoomte hain"` [those who strut around in luxury/swagger]. When VHP tries to declare questioning the Trust `"invailid"` (`[34:13]`), her sharp question `"agar Trust ki jimmedari nahin thi toh kiski jimmedari?"` forces VHP to concede responsibility—though softened immediately to `"kuch avyavastha"` [some disarray] (`[34:21]`).
+- **What context or evidence supports or complicates this interpretation?**
+  Important complicating evidence against caricaturing all mainstream Hindi TV as 100% uncritical: unlike Republic TV, Anjana directly forces a VHP spokesperson to retract `"nyas par prashn... invailid hai"`.
+- **How does another outlet describe the same event or actor?**
+  Echoes **Sarthak Goswami**'s critique of VIP temple culture (`lb7gZnyZH0c`, `[02:29–02:38]`), though Anjana stops short of naming BJP/RSS patronage networks behind those insiders.
+- **My interpretation, with reasons:**
+  Because ordinary Hindu viewers resent VIP temple privileges (`"sare niyam toh shraddhaluon ke lie hain"`), Aaj Tak safely channels populist devotee frustration against local Trust arrogance without implicating CM Yogi or PM Modi.
+
+### Excerpt Record 4 (Event 2 — Reframing Student Protest as UP Electoral "Dangal")
+- **Outlet:** Aaj Tak (*AT2 LIVE*) | **Date:** `2026-07-21`
+- **Video title:** *AAJTAK 2 LIVE | NEET PROTEST| PM aavas ke bahar dharne par baithe Rahul Gandhi! | AT2 LIVE*
+- **Timestamp(s):** `[11:18–12:27]` & `[14:04–14:42]` | **Analyst:** Baani Solanki | **Language:** Hindi / Hinglish (Roman script)
+- **Exact transcript excerpt:**
+  > `[11:18] uttar pradesh ke muddon par bhi dilli mein rajniti ho rahi hai paper leak ko lekar chadhava chori tak ke mamlon ko lekar dilli [11:25] mein samajvadi parti jitni aakramak rajniti kar rahi hai utni Congress nahin kar pa rahi. jantaramantar se sansad bhavan tak chal rahi lakhanvi siyasat ki kuch chaliya dikhate hain... [12:01] ek taraph satta paksh ke UP vale bhagidar... Mangal milan kar rahe hain toh satta ke lie lad [12:10] raha vipaksh apne-apne hisab se dangal kar raha hai... [12:27] samajvadi parti apne hisse ki siyasat bakhoobi kar rahi hai... [14:33] ab dekhna hoga ki sansad satra ke baki 18 dinon tak dilli mein UP [14:42] ki chunavi rajniti ke muddon ki mashal kaun vipakshi dal kitni majbooti se thame rakhta hai.`
+- **Feature(s):** `[x]` Naming `[x]` Presupposition `[x]` Agency `[x]` Antagonisation `[ ]` Intensification / softening
+- **Who is speaking? Is this the outlet's wording or a quotation?**
+  Anchor Himanshu Dixit (`[11:18–11:25]`) and Aaj Tak Bureau VTR narrator (`[12:01–14:42]`).
+- **What does the wording imply, foreground, soften, or leave unstated?**
+  Translates both Event 1 (`chadhava chori`) and Event 2 (`NEET paper leak protest`) into strategic moves (`"kuch chaliya"`, `"dangal"`, `"chunavi rajniti ke muddon ki mashal"`) in the upcoming Uttar Pradesh election horse-race. Students and CJP become mere stage props (`"kokroch janta parti ke manch par dimpal yadav najar aaee"`, `[13:17]`) for grading opposition politicians' street performance!
+- **What context or evidence supports or complicates this interpretation?**
+  Supported by the visible presence of SP (`Dimple Yadav`), ASP (`Chandrashekhar Azad`), Congress (`Rahul/Priyanka`), AAP (`Kejriwal`), and NCP (`Sharad Pawar`, `Supriya Sule`) leaders on 20–21 July (`[12:37–16:48]`). Complicated by ground accounts in **Sarthak Goswami** (`EM1GeZufO6E`, `[02:29]`, `[08:08]`) and **Mohak Mangal** (`v-RikSqb0Vw`, `[05:47–09:18]`) showing that CJP ran for 30 days primarily as a student/citizen movement wary of partisan hijacking.
+- **How does another outlet describe the same event or actor?**
+  **Mohak Mangal** (`v-RikSqb0Vw`) mentions *zero* opposition politicians across 11 minutes, keeping 100% focus on citizens, whereas **Republic TV** (`HTvb6E_1Qdc`, `[00:00–02:56]`) similarly obsesses over Rahul Gandhi (`"Rahul The Biggest Loser"`) to erase genuine student agency.
+- **My interpretation, with reasons:**
+  "Horse-race politicization" is a classic mainstream TV discourse strategy: by treating a citizen protest as `"lakhanvi siyasat"` and `"chunavi rajniti"`, Aaj Tak subtly drains the protest of non-partisan moral urgency without needing to scream like Arnab Goswami.
+
+### Excerpt Record 5 (Event 2 — Ground Report Causal Sequencing & Passive Tear-Gas)
+- **Outlet:** Aaj Tak (*AT2 LIVE*) | **Date:** `2026-07-21`
+- **Video title:** *AAJTAK 2 LIVE | NEET PROTEST| PM aavas ke bahar dharne par baithe Rahul Gandhi! | AT2 LIVE*
+- **Timestamp(s):** `[15:43–16:01]` & `[17:50–19:18]` | **Analyst:** Baani Solanki | **Language:** Hindi / Hinglish (Roman script)
+- **Exact transcript excerpt:**
+  > `[15:43] [Reporter Sushant Mehra:] kal jis tarike se pradarshan huaa us pradarshan ne ugra roop liya ah pattharbaji huee aur uske baad tiyar gais chhode gae police par hamla huaa pradarshankariyon ke bich mein jis tarike se [15:52] jo asamajik tatva unhonne ne kis tarike se gadiyan todi, dukanon mein todphod kari...`
+  > `[17:50] tamam bairikeding ko todakar ke pradarshankari jo hai wo aage ki taraph badhte hue najar aae the... [18:09] 118 se zyada pulisakarmi jo hai wo ghayal hue the. unmen takriban agar kaha jae toh panch aaeepies adhikari hai jinke gambhir chot bhi aaee thi. in sabko lekar ke ismen 70 ke aaspas [18:20] pradarshankari bhi jo hai wo ghayal hue the... [19:09] [Anchor:] kanoon vyavastha ko durust karna ye police ka kaam hai.`
+- **Feature(s):** `[x]` Naming `[ ]` Presupposition `[x]` Agency `[ ]` Antagonisation `[x]` Intensification / softening
+- **Who is speaking? Is this the outlet's wording or a quotation?**
+  Aaj Tak ground correspondent Sushant Mehra live from Jantar Mantar (`[15:43–18:30]`) and studio anchor Himanshu Dixit (`[19:09]`).
+- **What does the wording imply, foreground, soften, or leave unstated?**
+  Notice the textbook **transitivity and ordering asymmetry**:
+  1. `"us pradarshan ne ugra roop liya"` -> active protest escalation;
+  2. `"pattharbaji huee"` -> stone-pelting placed *before* police action;
+  3. `"aur uske baad tiyar gais chhode gae"` -> passive voice (`chhode gae` = were released) deleting `"Delhi Police"` as agent and framing tear gas purely as a subsequent reaction (`uske baad`);
+  4. Casualty foregrounding: `118+` injured police (`5 IPS` with `"gambhir chot"`) receive detailed elaboration before `~70` injured protesters are tacked on in a single agentless clause (`"ghayal hue the"`, `[18:20]`) with zero mention of pellet guns or unbadged civil-clothes men.
+- **What context or evidence supports or complicates this interpretation?**
+  Police fracture/injury statistics are backed by named DCP interviews (`[19:43–23:50]`). Complicated by independent ground videos in **Dhruv Rathee** (`l-6Pm-112io`, `[07:43–08:43]`, `[11:05]`) showing police striking marching students at Mandi House *before* they reached Jantar Mantar and firing tear gas at calmly seated protesters, plus *The Hindu*'s pellet-gun surgery report cited on **The Wire** (`pYaTVvHeGoM`, `[10:07–10:38]`).
+- **How does another outlet describe the same event or actor?**
+  **Sarthak Goswami** (`EM1GeZufO6E`, `[03:39–04:53]`) reverses the exact causal chain—foregrounding active police lathi-charge, tear gas, and `"pelet gans ki bauchhar"` first, and describing police injuries as subsequent crowd `"ritalieshan"`.
+- **My interpretation, with reasons:**
+  Even in seemingly matter-of-fact live reporting, syntactic agency (active vs agentless passive) and chronological ordering (`"aur uske baad"`) quietly align viewer sympathy with state policing.
+
+### Excerpt Record 6 (Event 2 — Anchor Adopting "Upadraviyon" & Sympathetic DCP Interviews)
+- **Outlet:** Aaj Tak (*AT2 LIVE*) | **Date:** `2026-07-21`
+- **Video title:** *AAJTAK 2 LIVE | NEET PROTEST| PM aavas ke bahar dharne par baithe Rahul Gandhi! | AT2 LIVE*
+- **Timestamp(s):** `[21:12–22:55]` & `[23:30–23:50]` | **Analyst:** Baani Solanki | **Language:** Hindi / Hinglish (Roman script)
+- **Exact transcript excerpt:**
+  > `[21:12] [Anchor:] toh kal dilli mein hue CJP ke pradarshan mein edishanal disipi aanand mishra ko bhi chot lagi. unke haath mein phraikchar huaa. aaj tak se batchit mein aanand mishra ne bataya ki kaise [21:20] upadraviyon ne police valon ko nishana banaya... [21:49] [Addl. DCP Anand Mishra:] us samay kraud kuch aisa kraud tha ki jo ki ham log barabar unko samjha rahe the... kaphi unko parsuet kar rahe the ki bhaee [21:58] aap log jo hai aage na badhe kyunki ye march illigal hai...`
+  > `[22:38] [Anchor:] disipi sekand jagdev ne bataya ki upadravi unke chehre par hamla kar rahe the... [22:46] [Reporter:] sar kahan-kahan chot lagi? toh poora haath aapka laal pad gaya... [23:39] [Addl. DCP Jagdev:] police ka kaam 24 * 7 janta ki seva mein khade rahna hai.`
+- **Feature(s):** `[x]` Naming `[x]` Presupposition `[x]` Agency `[x]` Antagonisation `[x]` Intensification / softening
+- **Who is speaking? Is this the outlet's wording or a quotation?**
+  Studio anchor Himanshu Dixit (`[21:12–21:20]`, `[22:38]`), Aaj Tak correspondent (`[22:46]`), and injured Delhi Police Addl. DCPs Anand Mishra and Jagdev.
+- **What does the wording imply, foreground, soften, or leave unstated?**
+  The anchor replaces `"chhatra"` / `"pradarshankari"` with `"upadraviyon"` [rioters/hooligans] (`[21:20]`, `[22:38]`) as an unhedged fact. Police action is softened to patient persuasion (`"barabar unko samjha rahe the"`, `"parsuet kar rahe the"`, `"24 * 7 janta ki seva"`), while the reporter's empathetic close-up (`"poora haath aapka laal pad gaya"`, `[22:46]`) humanizes injured officers—a care never extended to any injured NEET student on the broadcast.
+- **What context or evidence supports or complicates this interpretation?**
+  Supported by the officers' real X-rayed fractures and swelling (`[22:55–23:23]`). Complicated by the complete absence of parallel hospital interviews with injured students at RML Hospital (even though Sushant Mehra mentions at `[15:25]` and `[18:40]` that detained/injured students were at RML Hospital right nearby!).
+- **How does another outlet describe the same event or actor?**
+  **Mohak Mangal** (`v-RikSqb0Vw`, `[01:12–02:06]`) asks the exact same empathetic question (`"kaise huaa?"`) exclusively to *injured young protesters*, whereas **Aaj Tak** asks `"yeh chot aapko kaise lagi?"` (`[21:20]`, `[22:46]`) exclusively to *senior IPS officers*.
+- **My interpretation, with reasons:**
+  Comparing Mohak Mangal and Aaj Tak side by side reveals how journalistic **source selection** (whose bandages get the microphone) shapes reality even before a single overtly partisan adjective is spoken.
+
+---
+
+## Common form: End-of-event summary
+
+### End-of-Event Summary — Event 1 (Ram Mandir Donation Controversy)
+- **The main way this outlet framed the event was:**
+  As a painful devotional scandal (`"karodon arbon bhakton ki aastha se chhal"`, `"paap"`, `[02:19]`, `[08:51]`) caused by lax local supervision and SBI/counting-room informality (per Nripendra Misra, `[04:35–06:05]`), which warrants management accountability (`[33:19–33:47]`) while trusting CM Yogi's 15-day SIT probe (`[00:38]`, `[02:53]`) and scrutinizing opposition critics for partisan opportunism (`[16:10–16:20]`, `[26:52–27:10]`).
+- **The strongest linguistic evidence was (quote + timestamp):**
+  Title `"Ram Mandir ko kisne 'loota'?"` (with scare-quotes), Nripendra Misra's `"SBI ne isko most non siriyas mainar mein impliment kiya"` (`[04:56–05:09]`), and Anchor Anjana's `"pran pratishtha ke taim... doori bana li thi. aaj chande ke mudde pe kyon bhaee aapko... Ram bhakton ki aastha ki duhaee dene lag gae"` (`[26:52–27:01]`).
+- **The shared feature(s) most clearly illustrated were:**
+  **Presupposition** (challenging SP/Congress standing to ask questions because they skipped Pran Pratishtha at `[16:20]`, `[26:52]`), **Agency** (separating Construction Chair Nripendra Misra from Trust management at `[10:57–11:24]` and blaming SBI/40 counting staff), and **Antagonisation** (allowing `"ramadrohi"` vs `"kaar sevkon par goli chalane vale"` binaries to dominate the studio floor).
+- **An alternative interpretation of the same evidence is:**
+  That long-standing lack of frisking, absence of an immediate FIR (`[22:09]`, `[23:18]`), and prior 2021 land-deal controversies (`[34:58–35:08]`) point not to mere SBI informality, but to systemic political impunity inside a BJP/RSS-nominated Trust requiring a Supreme Court-monitored investigation rather than a state-government SIT (`[06:32–07:02]`).
+- **What I cannot conclude from this transcript alone:**
+  Because this episode aired on `2026-06-19` (Day 5 of the SIT probe), the transcript alone cannot show who would eventually be arrested on 26 June, whether senior trustees would resign, or how much total cash/jewellery was stolen.
+
+### End-of-Event Summary — Event 2 (Students' Protest Regarding NEET Paper Leak)
+- **The main way this outlet framed the event was:**
+  Through a dual **electoral-spectacle + police-law-and-order frame**: foregrounding Parliament adjournments, Rahul Gandhi's handcuff dharna, and SP-vs-Congress `UP 2027` turf battles (`"lakhanvi siyasat"`, `"dangal"`, `[11:18–14:42]`), while portraying the 20 July street clashes through 5 police FIRs and sympathetic interviews with injured IPS officers attacked by `"upadraviyon"` (`[15:43–23:50]`).
+- **The strongest linguistic evidence was (quote + timestamp):**
+  `"us pradarshan ne ugra roop liya, pattharbaji huee aur uske baad tiyar gais chhode gae"` (`[15:43]`) and `"aanand mishra ne bataya ki kaise upadraviyon ne police valon ko nishana banaya... police ka kaam 24 * 7 janta ki seva mein khade rahna hai"` (`[21:20]` & `[23:39]`).
+- **The shared feature(s) most clearly illustrated were:**
+  **Naming** (evolving across the bulletin from `"pradarshankariyon"` `[00:14]` to `"asamajik tatva"` `[15:52]` to `"upadraviyon"` `[21:20]`), **Agency** (passivizing tear-gas and police force as `"karvaee ki gaee"` / `"tiyar gais chhode gae"` while giving active verbs and 3 interviews to injured police), and **Softening** (citing `"sootron"` that government dialogue doors remain open at `[09:56]`, `[17:07]`).
+- **An alternative interpretation of the same evidence is:**
+  That the protest was driven not by UP electoral calculations or `"upadraviyon"`, but by desperate NEET students ignored for a month by the Union Government (`[08:09–09:48]`, `[13:34]`), and that unbadged police/plainclothes squads triggered the escalation through excessive force including pellet guns and lathi-charges (`[06:19–07:08]`).
+- **What I cannot conclude from this transcript alone:**
+  What protesting students themselves experienced or thought on 20–21 July (since zero students were interviewed), whether police used pellet guns or unbadged civil-dress personnel (mentioned only in Akhilesh Yadav's clip at `[06:50–07:08]`), or who threw the first stone at the barricades.
+
+*Research reminder: interpret wording in context, distinguish allegations from established facts, and support claims with exact excerpts. Mixed or contradictory evidence is worth recording.*

@@ -1,0 +1,198 @@
+# LANGUAGE & SOCIETY PROJECT — TRANSCRIPT ANALYSIS WORKSHEET
+**Qualitative analysis of political news discourse**
+
+## Creator 3: Mohak Mangal (Independent Ground-Reportage & Documentary YouTuber)
+
+- **Analyst:** Baani Solanki (`2025114016`)
+- **Channel / Outlet:** Mohak Mangal (`@mohak_mangal`, YouTube)
+- **Ideological / Editorial Positioning:** Civic-constitutionalist, evidence-driven documentary journalism; foregrounds citizen testimonies, legal/police manuals, and historical irony over loud studio monologue, contrasting state/TV propaganda soundbites directly against lived ground realities.
+- **Transcript Files Referenced:**
+  - Event 1: **SKIPPED** (No video published by Mohak Mangal on Event 1; explicitly marked *Skip* in `lns_project_instructions.pdf`)
+  - Event 2: `transcripts/event2_neet_protest/03_mohak_mangal_v-RikSqb0Vw.txt`
+
+---
+
+## Guidelines: Five features to look for in every event
+
+| Feature | What to look for | Illustrative example | Questions to answer |
+| :--- | :--- | :--- | :--- |
+| **1. Naming** | What are people, groups, actions, or events called? | "Students", "protesters", "agitators"; "irregularity", "scam", "controversy". | What exact label is used? Who or what does it refer to? Who uses it? What alternative label could have been used? |
+| **2. Presupposition** | What is treated as already true or taken for granted? | "Why are students creating chaos again?" may presuppose earlier disruption. | What does the wording assume? Is that assumption supported, disputed, or left unexamined? Does it appear in a question or words such as "again", "still", or "finally"? |
+| **3. Agency** | Who is shown doing something? Who is acted upon? Who disappears? | "Police injured protesters" vs. "Protesters were injured." | Who is the actor? Who experiences the action? Is responsibility named, backgrounded, or omitted? |
+| **4. Antagonisation** | Who is positioned against whom? | "Ordinary citizens" vs. "political troublemakers". | Which groups are contrasted? Is one presented as more legitimate, moral, patriotic, dangerous, or disloyal? Is an "us vs. them" division implied? |
+| **5. Intensification / softening** | What is exaggerated, minimised, softened, or euphemised? | "Violent mob" vs. "peaceful demonstrators"; "incident" instead of a direct description. | Which words heighten emotion or seriousness? Which minimise it? Are metaphors, dramatic adjectives, hedges, or euphemisms used? Does the wording match the evidence? |
+
+*Reminder: A label or implication is not automatically false or manipulative. Examine the surrounding context and evidence.*
+
+---
+
+## Event1. Ram Mandir donation controversy
+
+**Focus:** How is the controversy framed—as financial accountability, religious sentiment, political motivation, or something else? Be precise about the specific allegation or episode covered.
+
+- **Outlet:** Mohak Mangal (YouTube)
+- **Date:** N/A (*Skipped per `lns_project_instructions.pdf`*)
+- **Video title:** *No video relevant to scam; there is video regarding history, so skipping* (`SKIPPED`)
+- **Timestamp(s):** N/A (*Skipped*)
+- **Analyst:** Baani Solanki (`2025114016`)
+- **Language:** N/A (*Skipped*)
+- **Analytical Note for Cross-Outlet Comparison:** Even this *silence / non-coverage* is sociolinguistically noteworthy when comparing Independent YouTube vs Mainstream TV: unlike studio debate shows (Aaj Tak, Republic TV) that cover daily partisan flashpoints, or weekly news-roundup/anti-BJP channels (Sarthak Goswami, Dhruv Rathee), Mohak Mangal selectively produces focused civic-policy and ground-reportage documentaries—intervening in Event 2 (`"We the people of India..."`) when constitutional rights (`Article 19`) and exam governance directly affected students on the streets of Delhi.
+
+---
+
+## Event2. Students' protest regarding NEET paper leak
+
+**Focus:** How does coverage construct the legitimacy of student protest and responsibility for the underlying problem?
+
+- **Outlet:** Mohak Mangal (YouTube)
+- **Date:** `2026-07-22` *(filmed on the ground on 20–21 July immediately after the "Black Monday" lathi-charge)*
+- **Video title:** *"We the people of India..."* (`https://youtu.be/v-RikSqb0Vw?si=T4KGrNSGutHG4YYO`)
+- **Timestamp(s):** Relevant Event 2 segment `[00:00–11:09]` (`100%` of video; total duration `11:09`; zero sponsor segments or unrelated topics).
+- **Analyst:** Baani Solanki (`2025114016`)
+- **Language:** Hindi / Hinglish & English (Native bilingual ground reportage, Romanized script; non-AI-dubbed)
+
+### Event-specific questions (Event 2)
+
+1. **Are participants called "students", "candidates", "protesters", "agitators", "mobs", or "political pawns"?**
+    - Mohak and his ground interviewees consistently identify participants as `"students"` (`[00:10]`, `[01:03]`, `[03:54]`), `"bachchon"` / `"10tha klas ka bachcha"` / `"16 se 22 saal ke ladkon"` [children / 10th-class child / 16-to-22-year-old boys] (`[01:57–02:06]`, `[04:30]`, `[04:46–05:04]`), `"ladakiyan"` / `"aantiyon"` / `"ledi"` [girls / aunties / lady] (`[01:57]`, `[02:51]`, `[04:56]`), `"net eksapiritent"` [NEET aspirant] (`[04:30]`), `"risentli grejueted"` youth (`[08:16]`), and `"sitijans"` / `"We the people of India"` (`[Title]`, `[09:10]`). Crucially, Mohak intercuts **uncommented audio clips of ruling-camp politicians, judges, and TV anchors** calling them `"tukde-tukde"`, `"dahashat gardon ka bi tim"` [B-team of terrorists] (`[00:44–00:53]`), `"goons [gsa] oph da CJP"` (`[01:03]`, `[10:56]`), `"yangastars laik kokroch"` [youngsters like cockroaches] (`[02:59]`), and `"not students... CJP sponsard gundaj"` (`[06:06]`)—letting the visual/verbal contrast expose those smears without shouting back.
+
+2. **Are their stated demands explained, summarised, mocked, questioned, or left out?**
+    - **Articulated directly by the protesters, parents, and teachers themselves:** fair, leak-free exams after repeated 2024–2026 leaks (`[03:27–04:12]`, `[05:14]`), accountability for `98` leaked papers over 10 years and student suicides (`[05:14]`, `[06:34]`), flawed CET/NEET score normalization (`630/800` reduced to `530` at `[08:44–09:05]`), and ministerial listening/accountability from Dharmendra Pradhan (`"Dharmendra Pradhan mast lisan too as end aavar gavarnament ij obligeted too lisan too its sitijans"`, `[09:10–09:18]`).
+
+3. **Does the presenter focus on the original grievance, disruption, political affiliations, or public inconvenience?**
+    - Focuses deeply on the **human and constitutional cost of the original grievance**—4-year repeaters losing seats (`[03:27–04:12]`), mothers fearing student suicides (`[06:14–07:01]`), schoolteachers unable to teach the NCERT `"demokresi chaiptar"` (`[07:14–07:58]`), brain drain abroad (`[07:32–07:40]`), and future patient safety from `"doktar aaj phek"` [fake doctors buying leaked papers] (`[07:40–07:58]`)—alongside **police breach of minimum-force guidelines** (`[02:06–02:59]`).
+
+4. **Who is represented as responsible: examination authorities, government, students, political parties, or others?**
+    - **Education Minister Dharmendra Pradhan and the Union Government** (for hypocrisy, denying leaks via `"deyar ij no evidens oph paper leak too last sevan iyars"` at `[05:04]`, monologue governance via `"man ki baat"` instead of listening to youth at `[05:14–05:47]`, and dividing citizens via `"Hindu muslim"` rhetoric at `[05:47–05:57]`), and **Delhi Police** (for removing nameplates and violating official lathi-charge guidelines by striking heads, eyes, and collarbones behind closed exit gates at `[01:38–02:59]`, `[04:38–05:04]`, `[09:56–10:06]`).
+
+5. **Are questions framed around whether students have legitimate grievances, or why they are causing disruption?**
+    - Framed entirely around **legitimate citizen grievances, state hypocrisy, and democratic accountability**: e.g., `"toh ye sarkar itna bachchon se darti kyon hai?"` [why is this government so afraid of children?] (`[04:30]`), `"main ej a tichar demokresi chaiptar padha rahe ho. so vhat aaee tich student?"` (`[07:14]`), and Supriya's pointed question `"agar wo gilt mein nahin hai toh kyon itne kaimre hain? kyon logon ko hataya ja raha hai?"` (`[10:17–10:27]`).
+
+6. **Are claims of violence, disorder, or political manipulation attributed to sources and substantiated?**
+    - **Police violence** is substantiated through **first-person injured eyewitnesses showing/describing wounds on camera** (leg blows from a `"thri star vala"` without a nameplate at `[01:38–01:57]`, a 20-year-old woman's torn shoulder at `[02:51]`, torn clothes of female protesters and an eye injury at `[04:56–05:04]`, beating behind closed exit doors at `[09:46–10:06]`) measured directly against verbatim **Indian Police Minimum-Force Guidelines** read out by Mohak at `[02:06–02:39]`. Meanwhile, state/media claims of `"tukde-tukde"`, `"dahashat gardon ka bi tim"` (`[00:44]`), `"brootal vaylens kairid aaut baay da [goons] oph da CJP"` (`[01:03]`, `[10:56]`), and `"CJP sponsard gundaj"` (`[06:06]`) are played verbatim as **ironic counter-clips** immediately refuted by the next speaker on screen (e.g., `[06:06]` `"diz aar not students... diz aar CJP sponsard gundaj"` cuts straight to `[06:14]` a mother of two 10th/4th-grade daughters explaining why she came to sit for all India's children!).
+
+7. **How are police and government actions described compared with protesters' actions? Are similar actions evaluated differently?**
+    - Mohak's opening masterstroke (`[00:00–01:03]`) compares **the exact same action across two eras**: in `1997`, when `1,500` students marched to the Bhubaneswar Secretariat over an Odisha paper leak and suffered brutal police lathi-charge fracturing young ABVP National Secretary `"mukkoo bhaee"` (Dharmendra Pradhan), he was a heroic student victim; in `2026`, `"dait da sem gaay jo 1997 mein paper leak ke khilaph protest kar rahe the. aaj unke khilaph protest ho rahi hai aur unki sarkar ab students par lathi charj kar rahi hai"` (`[00:53–01:03]`). Protesters in 2026 are consistently depicted as `"pisaphul"` / `"shantipoorn"` (`[00:10]`, `[04:38]`, `[05:57]`, `[10:36]`) following `"satya aur ahinsa ka marg"` (`[10:27–10:36]`), whereas police action is `"inahyooman"` (`[10:06]`) and unlawful (`[02:16–02:51]`).
+
+8. **Are students allowed to explain their demands in their own words, or does the presenter mainly speak for them?**
+    - **Students and ordinary citizens speak overwhelmingly in their own words!** Mohak himself speaks for **less than 2 minutes** of the entire `11:09` runtime (`[00:00–00:44]`, `[00:53–01:03]`, `[02:06–02:59]`, and brief interviewer prompts at `[01:12]`, `[04:21]`, `[08:44]`, `[09:10]`). Over **80% of the video** consists of uninterrupted, raw voices of an injured male protester (`[01:12–02:06]`), a female 4-year NEET repeater (`[03:18–04:21]`), a Hyderabad hospital worker whose brother is a NEET aspirant (`[04:21–05:04]`), an anguished citizen critiquing `"man ki baat"` and communal polarization (`[05:14–06:05]`), a mother of two schoolgirls (`[06:14–07:08]`), a civics teacher (`[07:14–07:58]`), recent graduates (`[08:16–09:18]`), and Supriya from Konkan, Maharashtra (`[09:29–10:56]`).
+
+9. **Does the outlet's framing differ between coverage of the NEET paper-leak issue before the protest and coverage once students begin protesting?**
+    - Rather than shifting from sympathy (on paper leaks) to alarmism (once street protests begin), Mohak treats the street protest as the **authentic embodiment of the Constitutional Preamble (`"We the people of India..."`)**, arguing through his interviewees that when 98 papers leak and institutional channels ignore youth for 25 days (`[05:14–05:38]`), peaceful street assembly is democracy's essential safeguard (`[04:46]`, `[09:10–09:18]`, `[10:27–10:56]`).
+
+### Apply the five shared features (Event 2)
+
+| Feature | Exact wording + timestamp | What it does in context |
+| :--- | :--- | :--- |
+| **1. Naming** | Title: `"We the people of India..."`<br>Clip `[06:06]`: `"diz aar not students... diz aar CJP end CJP sponsard gundaj"` -> Cut to `[06:14]`: `"meri beti hai do betiyan hain... ek 10tha mein ek phorth mein hai... bachche sabke hain"` | Frames protesters under the supreme constitutional self-designation (`"We the people of India..."`), and uses montage juxtaposition so the state/TV label `"gundaj"` [goons] collides head-on with a soft-spoken mother of two schoolgirls. |
+| **2. Presupposition** | `"toh ye sarkar itna bachchon se darti kyon hai?"` `[04:30]`<br>`"agar wo preshar mein nahin hai. agar wo shem mein nahin hai. agar wo gilt mein nahin hai toh kyon itne kaimre hain?"` `[10:17–10:27]` | The *why*-question (`darti kyon hai?`) presupposes that the government is afraid of young students; Supriya's conditional rhetorical questions (`kyon itne kaimre hain?`) presuppose state guilt and shame behind heavy surveillance. |
+| **3. Agency** | `"lathi blos shud bi emd et sopht porashan of da bodi end kantekt vith da hed aur kolar bon shud bi avoyded... yahan hamne dekha ke ladkon ke toh pair toot hi rahe hain... ledi ka kandha phaad diya"` `[02:27–02:51]` | Contrasts the deontic passive of official police restraint rules (`shud bi avoyded`) against active ergonomic/bodily destruction by unnamed officers (`unhonne chaar dande mere pair pe mare`, `[01:47]`; `kandha phaad diya`, `[02:51]`; `usne nem plet nikal rakhi thi`, `[01:38]`). |
+| **4. Antagonisation** | `"hamesha apne man ki baat karke aap chale jaoge... jab bachche bolna chahte hain aap unko nahin sun rahe... aap Hindu muslim Hindu muslim karke tab tak ladvaoge... yahan... na koi Hindu bol raha tha na koi musalman sab ek saath milke baithe hue the"` `[05:14–05:57]` | Pits a monologic, communally divisive political class (`apne man ki baat`, `Hindu muslim... aap log karvate ho`) against an inclusive, inter-faith civic solidarity of youth (`sab ek saath milke baithe hue the`). |
+| **5. Intensification / softening** | **Understated documentary irony:** Opening 1997 story (`"unke dost unko mukkoo bhaee bulate hain. hu ij dis gaay? mistar Dharmendra Pradhan"`, `[00:35–00:44]`) and closing hard-cut from `"wo jhukegi, sarkar jhukegi"` `[10:56]` to TV anchor screaming `"brootal vaylens kairid aaut baay da [goons] oph da CJP"` `[10:56]` | Instead of anchor shouting, Mohak uses **calm, understated narrative restraint** paired with jarring audio montage—making the state/TV hyperbole (`tukde-tukde`, `dahashat gard`, `kokroch`) sound absurd and cruel against quiet, injured citizens. |
+
+### Short summary (Event 2)
+- **What interpretation of the event does this video encourage?**
+  That the 20 July Jantar Mantar protest was a deeply legitimate, peaceful, pan-Indian constitutional gathering (`"We the people of India..."`) of wronged NEET aspirants, anxious parents, and educators, brutally assaulted in violation of police manuals by a government led by an Education Minister who had himself been lathi-charged protesting a paper leak in 1997 (`[00:00–01:03]`, `[02:06–02:59]`), while TV channels slandered ordinary mothers and teenagers as `"gundaj"` (`[06:06–06:34]`).
+- **Whose perspective is foregrounded, challenged, or missing?**
+  *Foregrounded:* First-person voices of injured students, repeat NEET candidates, out-of-state family members (Hyderabad, Konkan), mothers, and schoolteachers (`[01:12–10:56]`). *Challenged:* Dharmendra Pradhan's moral consistency (`[00:00–01:03]`, `[05:04]`), police claims of lawful minimum force (`[02:06–02:59]`), the `"cockroach"` slur against unemployed youth (`[02:59]`), and TV "goon/terrorist" labels (`[00:44]`, `[01:03]`, `[06:06]`, `[10:56]`). *Missing:* Any interview with Delhi Police officers injured at barricades or detailed discussion of CJP's organizational leadership/political visitors.
+- **What evidence supports your interpretation? What complicates it?**
+  *Supports:* Archival 1997 photograph/biography of Dharmendra Pradhan (`[00:00–00:44]`), verbatim Indian Police crowd-dispersal guidelines (`[02:06–02:39]`), concrete NEET/CET grievance details (`2024` & `2026` leaks at `[03:37]`, `630` normalized to `530` at `[08:54]`), and raw on-site interviews with visibly shaken/injured citizens (`[01:12–10:56]`). *Complicates:* By curating exclusively peaceful, articulate protesters and omitting scenes of barricade-breaking or stone-pelting that injured police officers (documented in Aaj Tak `JXLIs0WtJAM` `[18:09–23:14]`), the documentary constructs a pure moral contrast that leaves out the messy street dynamics at Parliament Street barricades.
+
+---
+
+## Common form: Blank excerpt record
+
+*Copy or print this page whenever you find a passage worth analysing. Keep the exact wording and enough context to interpret it.*
+
+### Excerpt Record 1 (Event 2 — Historical Irony Opening on Dharmendra Pradhan)
+- **Outlet:** Mohak Mangal | **Date:** `2026-07-22`
+- **Video title:** *"We the people of India..."*
+- **Timestamp(s):** `[00:00–01:03]` | **Analyst:** Baani Solanki | **Language:** Hindi / Hinglish & English (Roman script)
+- **Exact transcript excerpt:**
+  > `[00:00] aaee vant too start dis video baay teling a short stori. yeh kahani hai 1997 ki. is aadmi ki. 1997 mein udisa mein ek paper leak [00:10] huaa tha. 1500 students protest karne gae... protest pisaphul thi [00:18] par police ne lathi charj kar diya. is aadmi jiski mainne aapko photo dikhaee unko bahut pita gaya. phraikchar huaa... [00:35] hi vaas da neshanal sekretri oph ebivipi. unke dost unko mukkoo bhaee bulate hain. hu ij dis gaay? mistar Dharmendra Pradhan. India ke [00:44] ejukeshan ministar. [Clip: "jo log desh ko tukde-tukde karna chahte hain... ye toh dahashat gardon ka bi tim hai."] [00:53] aap aayaran hi dekho. dait da sem gaay jo 1997 mein paper leak ke khilaph protest kar rahe the. aaj unke khilaph protest ho rahi hai aur [01:03] unki sarkar ab students par lathi charj kar rahi hai.`
+- **Feature(s):** `[x]` Naming `[x]` Presupposition `[x]` Agency `[x]` Antagonisation `[x]` Intensification / softening
+- **Who is speaking? Is this the outlet's wording or a quotation?**
+  Mohak Mangal's scripted opening narration intercut at `[00:44–00:53]` with a verbatim ruling-party political soundbite smearing Jantar Mantar protesters.
+- **What does the wording imply, foreground, soften, or leave unstated?**
+  Deliberately withholds the protagonist's identity (`"is aadmi ki"`, `"mukkoo bhaee"`) for 40 seconds so even pro-BJP viewers naturally sympathize with a peaceful student beaten by police during a paper-leak march—before revealing `"mistar Dharmendra Pradhan"` (`[00:35–00:44]`). This narrative trap makes delegitimizing 2026 NEET protesters logically impossible without condemning Pradhan's own ABVP past.
+- **What context or evidence supports or complicates this interpretation?**
+  Supported by Dharmendra Pradhan's documented 1990s ABVP student-politics career in Odisha. Complicated only by the administrative distinction between being an opposition student leader and bearing executive cabinet responsibility for national security around Parliament.
+- **How does another outlet describe the same event or actor?**
+  **The Wire** (`pYaTVvHeGoM`, `[12:42–14:02]`) attacks Dharmendra Pradhan via Naseeruddin Shah calling him `"this idiot"` guilty of Orwellian `"classic double speak"`, whereas **Mohak Mangal** avoids personal insults entirely, letting biographical irony (`"aap aayaran hi dekho"`, `[00:53]`) do far more persuasive work.
+- **My interpretation, with reasons:**
+  This is arguably the most rhetorically effective opening across all 11 videos: by delaying Naming (`is aadmi` -> `Dharmendra Pradhan`), Mohak disarms partisan defensiveness before introducing a single 2026 clip.
+
+### Excerpt Record 2 (Event 2 — Police Minimum-Force Guidelines vs Ground Injuries)
+- **Outlet:** Mohak Mangal | **Date:** `2026-07-22`
+- **Video title:** *"We the people of India..."*
+- **Timestamp(s):** `[01:38–02:59]` | **Analyst:** Baani Solanki | **Language:** Hindi / Hinglish & English (Roman script)
+- **Exact transcript excerpt:**
+  > `[01:38] [Injured youth:] sar ek toh thri star vala tha sar usne nem plet nikal rakhi thi... main niche gir gaya toh unhonne chaar dande mere pair pe mare... ek ladki aaee mere [01:57] samne ki nahin mat maro gir gaya wo usko yahan pe mara unhonne aantiyon ko nahin chhoda ek 10tha klas ka bachcha tha usko mara hai... [02:06] [Mohak Mangal:] indiyan sarkar ki na kuch gaidlains hain. aaee jast vant too rid dem aaut too yoo. da eksatent of phors [02:16] yoojd mast bi sabjekt too da prinsipal of minimam yooz of phors... [02:27] lathi blos shud bi emd et sopht porashan of da bodi end kantekt vith da hed aur kolar [02:39] bon shud bi avoyded ez phaar es praiktikal. yahan hamne dekha ke ladkon ke toh pair toot hi rahe hain. [02:51] us aaee dont no kya aij thi uski 20 saal ki umra hogi uska kandha phaad diya batao ledi ka kandha phaad diya buri tarike se nange pair [02:59] behvas bhaag rahe hain log kya tarika hai`
+- **Feature(s):** `[x]` Naming `[ ]` Presupposition `[x]` Agency `[ ]` Antagonisation `[x]` Intensification / softening
+- **Who is speaking? Is this the outlet's wording or a quotation?**
+  First-person testimony of an injured protester (`[01:38–02:06]`), followed by Mohak Mangal reading verbatim from official Government of India policing guidelines (`[02:06–02:39]`) and adding his own observation (`[02:39–02:59]`).
+- **What does the wording imply, foreground, soften, or leave unstated?**
+  Instead of using hyperbolic labels like `"General Dyer"` or `"terrorists"` (as Dhruv Rathee does in `l-6Pm-112io` `[10:08]`, `[11:54]`), Mohak evaluates the state **by its own rulebook** (`"indiyan sarkar ki na kuch gaidlains hain"`). Contrasting bureaucratic legal English (`"kantekt vith da hed aur kolar bon shud bi avoyded"`) with raw Hindi bodily trauma (`"ledi ka kandha phaad diya"`, `"nange pair behvas bhaag rahe hain"`) foregrounds institutional lawlessness.
+- **What context or evidence supports or complicates this interpretation?**
+  Corroborated by hospital/surgical reports of head stitches, fractures, and neck pellets cited on **Aaj Tak** (`JXLIs0WtJAM`, `[06:30]`) and **The Wire** (`pYaTVvHeGoM`, `[10:07–10:38]`).
+- **How does another outlet describe the same event or actor?**
+  **Aaj Tak** (`JXLIs0WtJAM`, `[19:09]`, `[21:49–23:50]`) frames police action as `"kanoon vyavastha ko durust karna ye police ka kaam hai"` and interviews injured Addl. DCPs explaining they were merely persuading crowds at an `"illigal"` march.
+- **My interpretation, with reasons:**
+  Reading statutory guidelines aloud (`"aaee jast vant too rid dem aaut too yoo"`) softens the presenter's tone into calm legal objectivity, which paradoxically intensifies the indictment of police brutality.
+
+### Excerpt Record 3 (Event 2 — Juxtaposing "CJP Goons" Clip Against Mother & Teacher)
+- **Outlet:** Mohak Mangal | **Date:** `2026-07-22`
+- **Video title:** *"We the people of India..."*
+- **Timestamp(s):** `[06:06–07:40]` | **Analyst:** Baani Solanki | **Language:** Hindi / Hinglish & English (Roman script)
+- **Exact transcript excerpt:**
+  > `[06:06] [Clip:] diz aar not students. de aar not NEET espirents. diz aar CJP end CJP sponsard gundaj. [06:14] [Mother on ground:] vaise toh meri beti hai do betiyan hain. wo padh rahi hain. ek 10tha mein ek phorth mein hai... main [06:24] unke lie aaee hoon. ki jo mudda hai wo sabka hai. kisi ek ka nahin hai. bachche sabke hain. ejukeshan sabki hai [06:34] aur jo paper leak ho rahe hain usse jo bachchon ne susaid kiya hai wo hona nahin chahie... [07:14] [Schoolteacher:] main ej a tichar demokresi chaiptar padha rahe ho. so vhat aaee tich student? toh wo rilet hi nahin kar pa rahe hain. bikoz de phil ki demokresi hai hi nahin... [07:32] sam of maay student aalso thot ki India mein nahin rahna de vant too stadi in [07:40] abrod. so maay kveshchan iz iz ki agar sabhi aise jane lagenge toh phir vhaee India?`
+- **Feature(s):** `[x]` Naming `[x]` Presupposition `[x]` Agency `[x]` Antagonisation `[ ]` Intensification / softening
+- **Who is speaking? Is this the outlet's wording or a quotation?**
+  Editorial montage cutting directly from an external English soundbite (`[06:06]`) to two ordinary female citizens interviewed at Jantar Mantar—a mother (`[06:14–07:08]`) and a civics teacher (`[07:14–07:58]`).
+- **What does the wording imply, foreground, soften, or leave unstated?**
+  Directly answers the delegitimizing claim `"diz aar not students"` (which presupposes that non-NEET-aspirants at the protest must be `"sponsard gundaj"`): Mohak shows that non-candidates at Jantar Mantar are actually *mothers of 10th-graders and schoolteachers* exercising collective civic responsibility (`"bachche sabke hain. ejukeshan sabki hai"`).
+- **What context or evidence supports or complicates this interpretation?**
+  Directly refutes **Republic TV** (`HTvb6E_1Qdc`, `[04:58–05:26]`: `"these were not students... the students had evaporated"`) and Maharashtra CM Devendra Fadnavis on **Aaj Tak** (`JXLIs0WtJAM`, `[10:13–10:23]`: claiming attendees who aren't NEET examinees are pushing `"apna-apna ejenda"`).
+- **How does another outlet describe the same event or actor?**
+  While **Republic TV** treats the presence of non-examinees as proof of `"Deep State"` / `"goon"` infiltration (`HTvb6E_1Qdc`, `[00:23]`, `[04:19]`), **Mohak Mangal** and **Sarthak Goswami** (`EM1GeZufO6E`, `[07:58–08:16]`) frame broad citizen participation as the highest proof of civic solidarity.
+- **My interpretation, with reasons:**
+  This edit demonstrates how *montage structure itself* performs discourse analysis—dismantling elite political Naming (`"CJP sponsard gundaj"`) solely through ordinary citizens' self-presentation.
+
+### Excerpt Record 4 (Event 2 — Konkan Citizen Supriya & Closing Cut)
+- **Outlet:** Mohak Mangal | **Date:** `2026-07-22`
+- **Video title:** *"We the people of India..."*
+- **Timestamp(s):** `[09:46–10:56]` | **Analyst:** Baani Solanki | **Language:** Hindi / Hinglish & English (Roman script)
+- **Exact transcript excerpt:**
+  > `[09:46] [Supriya from Konkan:] jab lathi charj ho gaya hamne bola ki nahin ham udhar hi khade rahenge agar marna hai toh maro kyunki agar satya ka shabd bolte hain toh [09:56] bahut takat honi chahie usko nibhane ke lie aur ek baat ki agar aap jis darvaje se unko bhagana chahte hain wo darvaja kam se kam khula toh rahna chahie aise band karke marna toh bahut [10:06] hi inahyooman hai... [10:27] ant mein jit usi ki hai jisne satya aur ahinsa ka marg [10:36] pakda hai... [10:56] wo jhukegi, sarkar jhukegi. [Hard cut to Arnab Goswami clip:] deyar haiz bin brootal vaylens kairid aaut baay da gsa [goons] oph da CJP.`
+- **Feature(s):** `[x]` Naming `[x]` Presupposition `[x]` Agency `[x]` Antagonisation `[x]` Intensification / softening
+- **Who is speaking? Is this the outlet's wording or a quotation?**
+  Citizen protester Supriya from Konkan (`[09:29–10:56]`), followed by Mohak's final 3-second audio cut to a mainstream English TV anchor (`[10:56]`).
+- **What does the wording imply, foreground, soften, or leave unstated?**
+  Supriya invokes Gandhian moral vocabulary (`"satya aur ahinsa ka marg"`, `[10:27–10:36]`) and exposes the tactical cruelty of police closing exit doors while beating crowds (`"aise band karke marna toh bahut hi inahyooman hai"`, `[09:56–10:06]`). Ending the video on the abrupt smash-cut from her calm prophecy (`"sarkar jhukegi"` — fulfilled 3 days later when Pradhan resigned!) to `"brootal vaylens kairid aaut baay da [goons] oph da CJP"` indicts mainstream media's disconnect from reality without Mohak uttering a single closing word.
+- **What context or evidence supports or complicates this interpretation?**
+  Trapping protesters by shutting metro stations/gates while firing tear gas and lathis is corroborated by **Dhruv Rathee** (`l-6Pm-112io`, `[06:43–09:38]`).
+- **How does another outlet describe the same event or actor?**
+  The very voice sampled at `[01:03]` and `[10:56]`—**Republic TV's Arnab Goswami** (`HTvb6E_1Qdc`, `[04:19–05:26]`)—portrays the exact same Jantar Mantar crowd as `"drunken violence"`, `"sexual perversion"`, and `"lynch mob of Abhijit Dipke"`.
+- **My interpretation, with reasons:**
+  Ending on an adversary's quote (`[10:56]`) after 10 minutes of humanizing ground testimony turns the TV anchor's own words into self-incriminating evidence of media propaganda.
+
+---
+
+## Common form: End-of-event summary
+
+### End-of-Event Summary — Event 1 (Ram Mandir Donation Controversy)
+- **Status:** **Skipped per project instructions** (`lns_project_instructions.pdf` specifies *Skip* for Mohak Mangal under Event 1, as he did not publish a video on the Ram Mandir donation controversy).
+
+### End-of-Event Summary — Event 2 (Students' Protest Regarding NEET Paper Leak)
+- **The main way this outlet framed the event was:**
+  As a dignified, multi-generational constitutional struggle of `"We the people of India..."`—students, mothers, workers, and teachers peacefully demanding exam integrity and democratic accountability—who were subjected to unlawful, guideline-violating police lathi-charges by an Education Minister (Dharmendra Pradhan) ironically guilty of forgetting his own 1997 paper-leak protest injuries, and smeared as `"kokroch"` and `"gundaj"` by an out-of-touch establishment and TV media (`[00:00–02:59]`, `[06:06–10:56]`).
+- **The strongest linguistic evidence was (quote + timestamp):**
+  `"dait da sem gaay jo 1997 mein paper leak ke khilaph protest kar rahe the. aaj unke khilaph protest ho rahi hai aur unki sarkar ab students par lathi charj kar rahi hai."` (`[00:53–01:03]`), paired with the smash-cut from `"diz aar CJP sponsard gundaj"` (`[06:06]`) to `"bachche sabke hain. ejukeshan sabki hai"` (`[06:24]`).
+- **The shared feature(s) most clearly illustrated were:**
+  **Naming** (`"We the people of India..."` & `"bachche sabke hain"` vs `"tukde-tukde"`, `"kokroch"`, `"CJP sponsard gundaj"`), **Agency** (measuring unbadged officers' head/shoulder/leg blows against official Government of India minimum-force guidelines at `[01:38–02:59]`), and **Intensification / Softening via Documentary Restraint** (letting quiet citizen voices and biographical irony expose hyperbolic state/media smears).
+- **An alternative interpretation of the same evidence is:**
+  That while individual NEET aspirants, parents, and citizens interviewed on 20–21 July were sincere and peaceful, a massive unauthorized march toward Parliament during an active session inevitably drew in unruly/political elements who clashed with police at barricades (injuring `110+` officers per Aaj Tak `JXLIs0WtJAM`, `[19:43]`), which Mohak's selective ground curation leaves off-screen.
+- **What I cannot conclude from this transcript alone:**
+  Whether any protesters at other barricade points pelted stones or injured police officers, how CJP's core leadership coordinated negotiations with Union Ministers, or what happened on 25 July when Dharmendra Pradhan resigned (since this video was published earlier on `2026-07-22`).
+
+*Research reminder: interpret wording in context, distinguish allegations from established facts, and support claims with exact excerpts. Mixed or contradictory evidence is worth recording.*
