@@ -1,0 +1,5 @@
+*.o
+*.dSYM/
+.DS_Store
+concurrency/airport-troubles/airport-troubles
+concurrency/birthday-boy/birthday-boy
