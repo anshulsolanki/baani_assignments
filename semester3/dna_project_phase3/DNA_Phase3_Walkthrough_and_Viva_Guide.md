@@ -108,11 +108,9 @@ In **Phase 3**, we translate that EER diagram into **relational tables, columns,
   3. Click **File $\rightarrow$ Save as $\rightarrow$ Google Drive**, then click **Share** (top-right) $\rightarrow$ *Anyone with the link can view* if you ever want a short Google Drive URL.
 
 ### Quick Pointers When the TA Inspects Your Diagram
-- **Color Legend (top-right of diagram):**
-  - **Soft Blue (`Primary_Key`, bold + underlined):** Pure primary key column (e.g., `NATION.Nation_Code`, `RACE.Race_Code`).
-  - **Soft Green (`PK & FK (Both)`, bold + underlined + arrow out):** Column that is both part of the table's PK and a FK to another table (e.g., `COURSE.Race_Code`, `MEMBERSHIP.Athlete_ID`, `FINISHED.Person_ID`).
-  - **Soft Yellow (`Foreign_Key`, arrow out):** Non-key foreign key column (e.g., `PERSON.Nation_Code`, `SEASON.Final_Race_Code`, `FINISHED.Nation_Code`).
-- **Arrow Direction:** Every arrow starts with a dot at the **Foreign Key** cell and ends with a filled arrowhead pointing **into the Primary Key** cell it references (matching Elmasri & Navathe Figure 9.2, p. 291).
+- **Elmasri & Navathe Figure 9.2 Notation (Plain Black & White):**
+  - **Underlined attribute names:** Primary key columns (e.g., <u>`Nation_Code`</u> in `NATION`, <u>`Race_Code`</u> and <u>`Course_Name`</u> in `COURSE`).
+  - **Directed arrows ($\text{FK} \rightarrow \text{PK}$):** Every arrow starts at the bottom of a **Foreign Key** attribute box and ends with an arrowhead pointing into the bottom of the **Primary Key** attribute box it references (matching Figure 9.2 on page 291 of `ch9.pdf`).
 
 ---
 
