@@ -7,7 +7,17 @@ struct raw_line {
     int time;
     int is_officer;
     int id;
+    int input_order;
 };
+
+static int compare_raw_lines(const void *a, const void *b) {
+    const struct raw_line *la = (const struct raw_line *)a;
+    const struct raw_line *lb = (const struct raw_line *)b;
+    if (la->time != lb->time) {
+        return (la->time < lb->time) ? -1 : 1;
+    }
+    return (la->input_order < lb->input_order) ? -1 : 1;
+}
 
 /*
  * Parse N arrival events from stdin.
@@ -50,6 +60,7 @@ static int read_input(int *out_n, struct raw_line **out_lines,
             lines[i].time = t;
             lines[i].is_officer = 0;
             lines[i].id = id;
+            lines[i].input_order = i;
             student_count++;
         } else if (strcmp(word1, "Immigration") == 0) {
             if (scanf("%63s %d", word2, &id) != 2 || strcmp(word2, "officer") != 0) {
@@ -59,11 +70,16 @@ static int read_input(int *out_n, struct raw_line **out_lines,
             lines[i].time = t;
             lines[i].is_officer = 1;
             lines[i].id = id;
+            lines[i].input_order = i;
             visit_count++;
         } else {
             free(lines);
             return -1;
         }
+    }
+
+    if (n > 1) {
+        qsort(lines, n, sizeof(struct raw_line), compare_raw_lines);
     }
 
     *out_n = n;

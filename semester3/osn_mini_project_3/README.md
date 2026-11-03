@@ -63,12 +63,12 @@ Every person in Gotham Intergalactic Airport is modelled as an independent POSIX
 - `airport.h`: Constants (`NUM_SCANNERS = 3`, `NUM_HANDLERS = 2`, `BELT_CAPACITY = 2`, `ACTION_DURATION = 1`, `SCAN_DURATION = 2`), per-actor structs (`struct student`, `struct officer`, `struct handler_arg`), and `struct airport_sim`.
 - `clock.c`: Implements a discrete-event symbolic clock using `pthread_mutex_t`, `pthread_cond_t`, and simple `int` arrays (`slot_used[]`, `wake_time[]`, `wake_done[]`) **without any `sleep()` or `usleep()` calls**. Threads performing a symbolic-duration action reserve a slot with their `wake_time`. Once all active threads at `current_time` have either blocked on a future timestamp or verified against the current `state_version` that their next action's precondition does not hold (`timed_count + checked_count == active_threads`), `try_advance_clock()` scans `wake_time[]` with a `for` loop to jump `current_time` directly to the smallest pending `wake_time`. A two-phase wakeup (`finishing_phase_count`) ensures all actions completing at timestamp `t` release their resources (scanners, hall lockout, belt slots) before any thread starts a new action at `t`.
 - `actors.c`: Implements all eight constraints across `student_thread()`, `officer_thread()`, and `handler_thread()`.
-- `main.c`: Reads `N` and `<time> <actor> <id>` arrival lines from `stdin`, initializes shared simulation state, spawns all actor threads under `sim.lock`, waits with `pthread_join()`, and frees allocated memory.
+- `main.c`: Reads `N` and `<time> <actor> <id>` arrival lines from `stdin`, sorts them stably by `(timestamp, input_order)` so even unordered input timestamps are handled chronologically, initializes shared simulation state, spawns all actor threads under `sim.lock`, waits with `pthread_join()`, and frees allocated memory.
 
 ### Assumptions
 
 - Action logs (`<time> <actor> <id> <action>`) are printed at the timestamp when each action **starts**, after which the actor and resource remain occupied for the symbolic duration (`2` time units for `scans passport`, `1` time unit for all other actions), matching the official example trace.
-- Input arrival lines are given in non-decreasing timestamp order, and lines sharing the exact same timestamp are processed in the order they appear in the input (`sim_wait_arrival_turn()`).
+- Input arrival timestamps are non-negative integers; `main.c` stably sorts arrival lines by `(timestamp, input_order)` and `sim_wait_arrival_turn()` guarantees lines sharing the exact same timestamp are processed in the order they appeared in the input.
 - While the immigration officer is in the hall (from the start of `Immigration officer 1 enters` until the completion of `Immigration officer 1 leaves`), no student may start entering or leaving the hall; conversely, if a student is already mid-exit (`students_leaving_now > 0`), the officer waits for that exit to finish before entering.
 - As stated in the specification, every student eventually receives a stamp before the simulation ends, so baggage handlers terminate once all `num_students` bags have been collected.
 
@@ -144,7 +144,8 @@ make clean
 ### Assumptions
 
 - All edges are bidirectional and have unit weight `1`, with zero-indexed vertex identifiers in `[0, V - 1]`.
-- Unreachable vertices (if the input graph is disconnected) are output as `-1`.
+- Per the official specification (*"You may assume that the graph has no negative cycles"*), the input graph contains no negative-weight cycles, so `V - 1` relaxation iterations are necessary and sufficient without requiring a $V$-th negative-cycle detection pass.
+- Unreachable vertices (if the input graph is disconnected) are output as `-1` (per the Doubt Document Q5, evaluation test cases use connected graphs).
 - Standard Bellman-Ford runs all `V - 1` relaxation iterations so the parallel workload reflects the full $\Theta(V E)$ Bellman-Ford complexity.
 
 ### Known Bugs

@@ -48,7 +48,8 @@
 ## 2. "What to Show the TA" — Quick File & Line Pointers
 
 ### Part 1 (`concurrency/airport-troubles/`)
-- **Where each person's thread is spawned:** `main.c` lines `130–160` (`pthread_create` for 2 handlers, 1 officer, and `num_students` students while holding `sim.lock`).
+- **Where input events are parsed & stably sorted by `(time, input_order)`:** `main.c` lines `13–88` (`compare_raw_lines` + `qsort` so unordered timestamps work per Doubt Doc Q7).
+- **Where each person's thread is spawned:** `main.c` lines `145–175` (`pthread_create` for 2 handlers, 1 officer, and `num_students` students while holding `sim.lock`).
 - **How symbolic time jumps without `usleep`:** `clock.c` -> `try_advance_clock()` (lines `10–47`), checking `timed_count + checked_count == active_threads` and scanning `sim->wake_time[]` to jump `sim->current_time = min_time`.
 - **Same-timestamp input order rule:** `clock.c` -> `sim_wait_arrival_turn()` (lines `156–177`).
 - **Constraint 1 (No enter/leave while officer in hall):**
@@ -68,12 +69,12 @@
 ### Part 3 (`concurrency/birthday-boy/` & `README.md`)
 - **Reusable generation-counted barrier:** `barrier.c` lines `16–36` (`my_gen = b->generation`).
 - **Sorting edges by destination vertex (`qsort`) & vertex slicing:** `solver.c` -> `compare_edges_by_dst()` (lines `9–13`) and `solve_bellman_ford()` (lines `56–105`).
-- **Race-free parallel Bellman-Ford inner loop:** `solver.c` -> `bf_worker_thread()` (lines `19–47`).
-- **Fitted constant $k$ and benchmark plots:** `README.md` (`k = 3.27e-10` seconds, `plots/runtime_vs_v.png`, `plots/runtime_vs_t.png`).
+- **Race-free parallel Bellman-Ford inner loop (`V - 1` iterations, no negative cycles):** `solver.c` -> `bf_worker_thread()` (lines `19–47`).
+- **Fitted constant $k$ and `baani.solanki`-watermarked benchmark plots:** `README.md` (`k = 3.27e-10` seconds, `plots/runtime_vs_v.png`, `plots/runtime_vs_t.png`).
 
 ---
 
-## 3. Top 20 Likely TA Viva Questions & Model Answers
+## 3. Top 21 Likely TA Viva Questions & Model Answers
 
 ### Part 1: Airport Troubles Viva Questions
 
@@ -86,8 +87,8 @@
 **Q3. Why do you have `finishing_phase_count` (two-phase wakeup) at each timestamp?**  
 > **Answer:** At timestamp `t`, multiple actions might finish at `t` while other threads want to start actions at `t`. For example, at `t = 3` in the example, Students 1–3 finish `scans passport` (freeing the 3 scanners) and Student 4 wants to start `scans passport` at `t = 3`. `finishing_phase_count` forces all threads finishing at `t` to increment `free_scanners` / release resources first before Phase 2 threads evaluate `free_scanners > 0`.
 
-**Q4. How do you ensure `3 Student 10` before `3 Immigration officer 1` enters at `t = 3`, while `3 Student 20` after `3 Immigration officer 1` waits until the officer leaves?**  
-> **Answer:** `sim_wait_arrival_turn()` in `clock.c` checks all earlier input events `j < event_idx` with the same arrival timestamp `my_time` and waits until `events[j].processed == 1`. So `Student 10` runs first (`!officer_in_hall`, enters hall), then `Officer 1` runs (`officer_in_hall = 1`, enters hall), and then `Student 20` marks its arrival processed, sees `officer_in_hall == 1`, and waits until the officer finishes `leaves`.
+**Q4. How do you handle same-timestamp input events (`3 Student 10` vs `3 Immigration officer 1`) AND out-of-order input timestamps (Doubt Doc Q7)?**  
+> **Answer:** First, `read_input()` in `main.c` stores each line's `input_order = i` and sorts the input lines by `(time, input_order)` using `qsort()`, so out-of-order timestamps are placed in chronological order while ties keep their original input order. Then `sim_wait_arrival_turn()` in `clock.c` checks all earlier input events `j < event_idx` with the same arrival timestamp `my_time` and waits until `events[j].processed == 1`.
 
 **Q5. When exactly does `officer_in_hall` become `0` — when the officer starts `leaves` or when `leaves` finishes?**  
 > **Answer:** When `leaves` **finishes** (`t + 1`), after `sim_wait_action(sim, ACTION_DURATION)`! In the official example, the officer prints `6 Immigration officer 1 leaves` (`6 -> 7`), and waiting Student 5 enters at `7 Student 5 enters`, proving the hall remains locked during the 1 time unit the officer is leaving.
@@ -144,13 +145,16 @@
 **Q17. Why didn't you stop Bellman-Ford early as soon as no distance changed in an iteration?**  
 > **Answer:** On random connected graphs with `V = 3000, E = 120,000`, the diameter is only `~4–5` hops! With early termination, the loop would stop after ~5 rounds instead of `V - 1 = 2999` rounds, reducing complexity from $\Theta(VE)$ to $O(E \cdot \text{diameter})$ and masking the theoretical $O(VE)$ Bellman-Ford scaling required in the performance analysis plot ($k \cdot V \cdot E$). Running all `V - 1` iterations faithfully measures parallel Bellman-Ford's $\Theta(VE)$ work. *(If the TA asks how to add early exit live: add a shared `any_changed` flag set if any thread updates `dist_next[v]`, checked after the second barrier!)*
 
-**Q18. How did you find the constant $k$ for the theoretical curve $k \cdot V \cdot E$ in Plot 1?**  
+**Q18. Why does your Bellman-Ford loop run `V - 1` iterations without a `V`-th negative-cycle check?**  
+> **Answer:** Because the specification explicitly states *"You may assume that the graph has no negative cycles"* (and all input edges `S D` are bidirectional with positive unit weight `+1`). Any simple shortest path in a `V`-vertex graph without negative cycles contains at most `V - 1` edges, so `V - 1` relaxation rounds are both necessary and sufficient.
+
+**Q19. How did you find the constant $k$ for the theoretical curve $k \cdot V \cdot E$ in Plot 1?**  
 > **Answer:** Each data point gave an experimental runtime $t_i$ at $(V_i, E_i)$. Minimizing squared error $\sum_i (t_i - k (V_i E_i))^2$ gives the closed-form least-squares fit $k = \frac{\sum_i t_i (V_i E_i)}{\sum_i (V_i E_i)^2} = 3.27 \times 10^{-10}\text{ seconds}$ per $(V \cdot E)$ unit.
 
-**Q19. Why is the experimental runtime slightly above $k \cdot V \cdot E$ for small `V` (`500–1500`), and right on top of $k \cdot V \cdot E$ for large `V` (`2500–4000`)?**  
+**Q20. Why is the experimental runtime slightly above $k \cdot V \cdot E$ for small `V` (`500–1500`), and right on top of $k \cdot V \cdot E$ for large `V` (`2500–4000`)?**  
 > **Answer:** Because real runtime has lower-order overheads: $T(V, E) = c_{\text{spawn}} + c_{\text{barrier}} \cdot 2(V - 1) + k V E$. At `V = 500`, edge relaxation only takes `~3.3 ms`, so thread spawning and `998` barrier synchronizations (`~4 ms`) are a noticeable fraction. By `V = 3000–4000`, the quadratic $k V E$ term (`118–209 ms`) dominates completely.
 
-**Q20. Explain the shape of Plot 2 (Runtime vs. `T`): why does runtime drop from `T = 1` to `T = 3..4`, step up at `T = 6..8`, and become slower than `T = 1` at `T = 32`?**  
+**Q21. Explain the shape of Plot 2 (Runtime vs. `T`): why does runtime drop from `T = 1` to `T = 3..4`, step up at `T = 6..8`, and become slower than `T = 1` at `T = 32`?**  
 > **Answer:**
 > 1. **`T = 1 -> 3, 4` (`313 ms -> 138 ms`, `2.27x` speedup):** Work per thread drops as `2E / T` across the 4 high-frequency Performance cores; speedup is `< 4x` due to Amdahl's Law (sequential setup + `5,998` barriers + shared memory-bus bandwidth on random `dist_curr[u]` reads).
 > 2. **`T = 4 -> 6, 8` (`142 ms -> 185 ms`):** Our 8-core CPU has 4 Performance cores + 4 slower Efficiency cores. Because every iteration hits two global barriers (`5,998` barriers total), all fast P-core threads must wait for the slowest E-core thread in every single round!

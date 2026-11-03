@@ -151,7 +151,7 @@ Below is the exact chronological order in which to build, test, commit, and push
   - `concurrency/airport-troubles/main.c`
 - **Why This Change Is Made:**
   - Implements Constraints 1, 2, 3, and 4:
-    - `read_input()` in `main.c` parses both 3-token lines (`<time> Student <id>`) and 4-token lines (`<time> Immigration officer <id>`).
+    - `read_input()` in `main.c` parses both 3-token lines (`<time> Student <id>`) and 4-token lines (`<time> Immigration officer <id>`) and stably sorts them by `(time, input_order)` via `qsort()` so even unordered input timestamps (Doubt Doc Q7) are processed chronologically while preserving input order for ties.
     - `student_thread()` waits for arrival time + same-timestamp input order, blocks while `sim->officer_in_hall == 1`, enters (`1` unit, `in_hall = 1`, `unscanned_in_hall++`), acquires one of `3` scanners (`2` units, `free_scanners--`), waits for `st->approved == 1`, receives stamp (`1` unit), and leaves hall (`1` unit when `!officer_in_hall`).
     - `officer_thread()` waits for any mid-exit student (`students_leaving_now == 0`), locks the hall (`officer_in_hall = 1`), enters (`1` unit), waits until `unscanned_in_hall == 0` (every student in hall has finished scanning), approves everyone currently in the hall as one batch (`1` unit — even if empty!), and immediately leaves (`1` unit), clearing `officer_in_hall = 0` only when `leaves` finishes.
 - **How to Test at Commit 3:**
@@ -477,12 +477,13 @@ Below is the exact chronological order in which to build, test, commit, and push
   4. `ai-usage.md` *(add any chat links you used for understanding concepts/debugging, or `No AI tools were used.` as applicable)*
 - **Why This Change Is Made:**
   - Fulfills **Performance analysis [20 marks]**:
+    - Both `plots/runtime_vs_v.png` and `plots/runtime_vs_t.png` include the required **`baani.solanki` watermark** at `(0.95, 0.95)` in axes coordinates (`ha="right", va="top"`, `color="gray", alpha=0.7`).
     - Plot 1 shows average runtime vs. `V` (`E = 40V`, fixed `T = 4`, averaged over 5 random graphs per point) overlaid with the theoretical complexity curve $k \cdot V \cdot E$ tuned to $k = 3.27 \times 10^{-10}\text{ seconds}$, plus a fixed-`V` varying-`E` table verifying linear scaling with `E`.
-    - Plot 2 shows average runtime vs. `T` (`T = 1..32` for fixed `V = 3000, E = 120,000`, averaged over 5 random graphs) and explains the `2.27x` multi-core speedup up to `T = 3..4`, the heterogeneous P-core/E-core barrier straggler step at `T = 6..8`, and the OS context-switching + barrier contention slowdown at `T = 16..32`.
+    - Plot 2 shows average runtime vs. `T` (`T = 1..32` for fixed `V = 3000, E = 120,000`, averaged over 5 random graphs) and explains the `2.27x` multi-core speedup up to `T = 3..4`, the heterogeneous P-core/E-core synchronization straggler step at `T = 6..8`, and the OS context-switching slowdown at `T = 16..32`.
 - **Final Pre-Submission Checklist before Pushing Commit 14:**
   1. Run `git status` — ensure **zero** untracked `.o`, binaries, `.py` scripts, or `.DS_Store` files exist.
   2. Run `git branch -a` and `git log --oneline` — verify all 14 commits sit cleanly on `main` with clear, descriptive commit messages.
-  3. Open `code.iiit.ac.in` in your browser and verify `README.md` renders both PNG plots (`plots/runtime_vs_v.png` and `plots/runtime_vs_t.png`) and `ai-usage.md` is present.
+  3. Open `code.iiit.ac.in` in your browser and verify `README.md` renders both watermarked PNG plots (`plots/runtime_vs_v.png` and `plots/runtime_vs_t.png` with `baani.solanki` in the top-right corner) and `ai-usage.md` is present.
 - **Git Commands:**
   ```bash
   git add plots/runtime_vs_v.png plots/runtime_vs_t.png README.md ai-usage.md

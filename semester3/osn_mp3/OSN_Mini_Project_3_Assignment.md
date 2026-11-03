@@ -172,8 +172,8 @@ Implement symbolic links (soft links) to files in xv6 (symlinks to directories o
 **Directory:** `concurrency/birthday-boy/` + Performance Analysis in root `README.md`
 
 ### 3.1 The Parallel Bellman-Ford Algorithm [10 Marks]
-- Model the campus as an undirected (bidirectional), unweighted/unit-weight (or edge-list) graph with `V` vertices and `E` edges.
-  - Look at the input format and example in Screenshot 10 & 11:
+- Model the campus as an undirected (bidirectional), unit-weight graph with `V` vertices and `E` edges. **You may assume that the graph has no negative cycles.**
+  - Input & Output Format:
     - First line: `V E N T` (number of vertices `V`, number of edges `E`, source node `N`, number of threads `T` to spawn).
     - Next `E` lines: `S D` (two zero-indexed vertex IDs representing a bidirectional edge of weight 1).
     - Example Input:
@@ -191,7 +191,7 @@ Implement symbolic links (soft links) to files in xv6 (symlinks to directories o
       ```text
       0 1 1 2 3 4
       ```
-- Parallelize the **Bellman-Ford shortest-path algorithm** using `T` threads (`pthread_t` + barrier/synchronization across the `V - 1` relaxation iterations) to find the shortest path length from source node `N` to every vertex `0 .. V-1`.
+- Parallelize the **Bellman-Ford shortest-path algorithm** using `T` threads (`pthread_t` + synchronization across the `V - 1` relaxation iterations) to find the shortest path length from source node `N` to every vertex `0 .. V-1`.
 
 ### 3.2 Performance Analysis [20 Marks]
 In the root `README.md`, include a performance analysis report with:
@@ -200,5 +200,8 @@ In the root `README.md`, include a performance analysis report with:
    - On the same plot, overlay the theoretical complexity curve $k V E$, tuning constant $k$ to fit the experimental curve, and state the value of $k$.
 2. **Plot 2 (Runtime vs. `T` for fixed `V` and `E`):**
    - Runtime on the y-axis and thread count `T` on the x-axis (with `V` and `E` fixed), averaged over different edge sets.
-3. **Observations & Analysis:**
-   - Explain why the plots look the way they do (e.g., speedup saturation, thread creation and barrier synchronization overhead when `T` exceeds physical cores or when `E` per thread is small, cache contention / false sharing).
+3. **Plot Watermark Requirement (`baani.solanki`):**
+   - All plots created for the analysis must be watermarked with the IIIT email username (`baani.solanki`) at the top-right (`(0.95, 0.95)` in axes coordinates, `ha="right", va="top"`, `fontsize=10, color="gray", alpha=0.7`).
+4. **Observations & Analysis:**
+   - Explain why the plots look the way they do (e.g., speedup saturation, thread creation and synchronization overhead when `T` exceeds physical cores or when `E` per thread is small, cache contention / false sharing).
+
