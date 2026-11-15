@@ -119,6 +119,22 @@ static int worker_fits_job(const struct worker_node *w, const struct job_entry *
     return 1;
 }
 
+/*
+ * Returns 1 if worker `worker_id` still has victims exiting for another Priority 1 job,
+ * preventing lower-priority jobs from stealing partially freed cores mid-preemption.
+ */
+static int worker_busy_preempting_for_other(const struct scheduler_ctx *ctx,
+                                            int worker_id, int job_id) {
+    for (int i = 0; i < MAX_JOBS_TOTAL; i++) {
+        const struct job_entry *v = &ctx->jobs[i];
+        if (v->used && v->state == JOB_RUNNING && v->worker_id == worker_id &&
+            v->preempt_pending && v->hold_for_job_id != job_id) {
+            return 1;
+        }
+    }
+    return 0;
+}
+
 static int send_binary_to_worker(struct worker_node *w, const struct job_entry *j) {
     FILE *fp = fopen(j->binary, "rb");
     if (fp == NULL) {
@@ -275,6 +291,9 @@ static void try_preempt_for_job(struct scheduler_ctx *ctx, struct job_entry *pri
     for (int wi = 0; wi < MAX_WORKERS; wi++) {
         struct worker_node *w = &ctx->workers[wi];
         if (!w->used || w->state != WORKER_ALIVE || w->sock_fd < 0) {
+            continue;
+        }
+        if (worker_busy_preempting_for_other(ctx, w->id, prio1_job->id)) {
             continue;
         }
         if (w->total_cores < prio1_job->cores ||
@@ -439,6 +458,7 @@ void schedule_jobs(struct scheduler_ctx *ctx) {
             for (int k = 0; k < qcount; k++) {
                 struct job_entry *other = queued[k];
                 if (other->state == JOB_QUEUED &&
+                    other->hold_for_job_id == 0 &&
                     strcmp(other->user, j->user) != 0 &&
                     !is_user_over_quota(ctx, other->user)) {
                     favored = other;
@@ -464,6 +484,9 @@ void schedule_jobs(struct scheduler_ctx *ctx) {
             if (!worker_fits_job(w, j)) {
                 continue;
             }
+            if (worker_busy_preempting_for_other(ctx, w->id, j->id)) {
+                continue;
+            }
             if (j->avoid_worker_id > 0 && w->id == j->avoid_worker_id) {
                 continue;
             }
@@ -485,7 +508,8 @@ void schedule_jobs(struct scheduler_ctx *ctx) {
         /* Section 14 fallback: if only avoid_worker_id fits, allow it */
         if (best_w == NULL && j->avoid_worker_id > 0) {
             struct worker_node *aw = find_worker_by_id(ctx, j->avoid_worker_id);
-            if (aw != NULL && worker_fits_job(aw, j)) {
+            if (aw != NULL && worker_fits_job(aw, j) &&
+                !worker_busy_preempting_for_other(ctx, aw->id, j->id)) {
                 best_w = aw;
             }
         }

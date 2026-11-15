@@ -196,41 +196,56 @@ int discover_scheduler_udp(int discovery_port, char *out_ip, size_t ip_len, int 
     size_t req_len = strlen(req);
 
     for (int attempt = 0; attempt < DISCOVERY_RETRIES; attempt++) {
-        ssize_t s1 = sendto(fd, req, req_len, 0,
-                            (struct sockaddr *)&bcast_addr, sizeof(bcast_addr));
-        if (s1 < 0) {
-            /* If broadcast interface is offline, also try loopback */
-            sendto(fd, req, req_len, 0,
-                   (struct sockaddr *)&lo_addr, sizeof(lo_addr));
-        }
+        sendto(fd, req, req_len, 0,
+               (struct sockaddr *)&bcast_addr, sizeof(bcast_addr));
+        sendto(fd, req, req_len, 0,
+               (struct sockaddr *)&lo_addr, sizeof(lo_addr));
 
-        fd_set rfds;
-        FD_ZERO(&rfds);
-        FD_SET(fd, &rfds);
-        struct timeval tv;
-        tv.tv_sec = DISCOVERY_TIMEOUT_SEC;
-        tv.tv_usec = 0;
+        time_t deadline = time(NULL) + DISCOVERY_TIMEOUT_SEC;
+        while (1) {
+            time_t now = time(NULL);
+            long rem = (long)(deadline - now);
+            if (rem <= 0) {
+                break;
+            }
 
-        int ready = select(fd + 1, &rfds, NULL, NULL, &tv);
-        if (ready > 0 && FD_ISSET(fd, &rfds)) {
-            char buf[256];
-            struct sockaddr_in from;
-            socklen_t from_len = sizeof(from);
-            ssize_t n = recvfrom(fd, buf, sizeof(buf) - 1, 0,
-                                 (struct sockaddr *)&from, &from_len);
-            if (n > 0) {
-                buf[n] = '\0';
-                size_t prefix_len = strlen(DISCOVERY_MAGIC_RESP);
-                if (strncmp(buf, DISCOVERY_MAGIC_RESP, prefix_len) == 0) {
-                    int port = atoi(buf + prefix_len);
-                    if (port > 0) {
-                        inet_ntop(AF_INET, &from.sin_addr, out_ip, (socklen_t)ip_len);
-                        if (strcmp(out_ip, "0.0.0.0") == 0) {
-                            snprintf(out_ip, ip_len, "127.0.0.1");
+            fd_set rfds;
+            FD_ZERO(&rfds);
+            FD_SET(fd, &rfds);
+            struct timeval tv;
+            tv.tv_sec = rem;
+            tv.tv_usec = 0;
+
+            int ready = select(fd + 1, &rfds, NULL, NULL, &tv);
+            if (ready < 0) {
+                if (errno == EINTR) {
+                    continue;
+                }
+                break;
+            }
+            if (ready == 0) {
+                break;
+            }
+            if (FD_ISSET(fd, &rfds)) {
+                char buf[256];
+                struct sockaddr_in from;
+                socklen_t from_len = sizeof(from);
+                ssize_t n = recvfrom(fd, buf, sizeof(buf) - 1, 0,
+                                     (struct sockaddr *)&from, &from_len);
+                if (n > 0) {
+                    buf[n] = '\0';
+                    size_t prefix_len = strlen(DISCOVERY_MAGIC_RESP);
+                    if (strncmp(buf, DISCOVERY_MAGIC_RESP, prefix_len) == 0) {
+                        int port = atoi(buf + prefix_len);
+                        if (port > 0) {
+                            inet_ntop(AF_INET, &from.sin_addr, out_ip, (socklen_t)ip_len);
+                            if (strcmp(out_ip, "0.0.0.0") == 0) {
+                                snprintf(out_ip, ip_len, "127.0.0.1");
+                            }
+                            *out_port = port;
+                            close(fd);
+                            return 0;
                         }
-                        *out_port = port;
-                        close(fd);
-                        return 0;
                     }
                 }
             }

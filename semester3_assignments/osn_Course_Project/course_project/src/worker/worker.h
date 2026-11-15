@@ -24,7 +24,7 @@ struct active_job {
     int ram_mb;
     int gpu;
     int time_limit_sec;
-    time_t start_time;
+    int64_t start_ms;
 
     int log_read_fd;
     char job_dir[MAX_PATH_STR];
@@ -39,7 +39,7 @@ struct active_job {
     double cpu_time_sec;
 
     int kill_reason;
-    time_t migrate_sigterm_time;
+    int64_t migrate_sigterm_ms;
 };
 
 struct pending_ckpt {

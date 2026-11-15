@@ -322,6 +322,11 @@ int launch_job_process(struct worker_ctx *wctx, const struct msg_assign_job *ass
             rl_nproc.rlim_cur = RLIMIT_NPROC_DEFAULT;
             rl_nproc.rlim_max = RLIMIT_NPROC_DEFAULT;
             setrlimit(RLIMIT_NPROC, &rl_nproc);
+        } else if (getrlimit(RLIMIT_NPROC, &rl_nproc) == 0) {
+            if (rl_nproc.rlim_cur == RLIM_INFINITY || rl_nproc.rlim_cur > 1024) {
+                rl_nproc.rlim_cur = 1024;
+                setrlimit(RLIMIT_NPROC, &rl_nproc);
+            }
         }
 
         char *args[64];
@@ -353,9 +358,11 @@ int launch_job_process(struct worker_ctx *wctx, const struct msg_assign_job *ass
     }
 
     close(out_fd);
+    struct timeval tv_now;
+    gettimeofday(&tv_now, NULL);
     slot->used = 1;
     slot->pid = pid;
-    slot->start_time = time(NULL);
+    slot->start_ms = (int64_t)tv_now.tv_sec * 1000LL + (int64_t)(tv_now.tv_usec / 1000);
     slot->kill_reason = KILL_NONE;
 
     wctx->free_cores -= assign->cores;

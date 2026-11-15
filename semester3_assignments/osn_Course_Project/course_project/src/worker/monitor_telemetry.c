@@ -4,12 +4,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/time.h>
 #include <sys/wait.h>
 #include <unistd.h>
 
 #ifdef __APPLE__
 #include <libproc.h>
 #endif
+
+static int64_t now_millis(void) {
+    struct timeval tv;
+    gettimeofday(&tv, NULL);
+    return (int64_t)tv.tv_sec * 1000LL + (int64_t)(tv.tv_usec / 1000);
+}
 
 static void read_process_telemetry(pid_t pid, int *out_rss_mb,
                                    int *out_faults, double *out_cpu_sec) {
@@ -213,7 +220,7 @@ void stop_active_job(struct worker_ctx *wctx, int job_id, int stop_reason) {
         } else if (stop_reason == STOP_MIGRATE) {
             /* Section 14: Send SIGTERM first so job can save one last checkpoint, then SIGKILL after 2s */
             aj->kill_reason = KILL_MIGRATE;
-            aj->migrate_sigterm_time = time(NULL);
+            aj->migrate_sigterm_ms = now_millis();
             kill(-aj->pid, SIGTERM);
             kill(aj->pid, SIGTERM);
             log_line("[WORKER %d] Sent SIGTERM to Job %d for live migration", wctx->worker_id, job_id);
@@ -223,7 +230,7 @@ void stop_active_job(struct worker_ctx *wctx, int job_id, int stop_reason) {
 }
 
 void poll_active_jobs(struct worker_ctx *wctx) {
-    time_t now = time(NULL);
+    int64_t now_ms = now_millis();
 
     for (int i = 0; i < MAX_WORKER_JOBS; i++) {
         struct active_job *aj = &wctx->jobs[i];
@@ -250,31 +257,35 @@ void poll_active_jobs(struct worker_ctx *wctx) {
             aj->cpu_time_sec = cpu_sec;
         }
 
-        /* 4. Enforce memory limit, wall-clock timeout, or 2s migration SIGKILL escalation */
-        if (aj->kill_reason == KILL_MIGRATE && aj->migrate_sigterm_time > 0) {
-            if (now - aj->migrate_sigterm_time >= 2) {
-                kill(-aj->pid, SIGKILL);
-                kill(aj->pid, SIGKILL);
-            }
-        } else if (aj->kill_reason == KILL_NONE) {
-            if (aj->current_ram_mb > aj->ram_mb) {
-                aj->kill_reason = KILL_MEMORY;
-                kill(-aj->pid, SIGKILL);
-                kill(aj->pid, SIGKILL);
-                log_line("[WORKER %d] Job %d exceeded RAM limit (%dMB > %dMB), sending SIGKILL",
-                         wctx->worker_id, aj->job_id, aj->current_ram_mb, aj->ram_mb);
-            } else if (now - aj->start_time >= aj->time_limit_sec) {
-                aj->kill_reason = KILL_TIMEOUT;
-                kill(-aj->pid, SIGKILL);
-                kill(aj->pid, SIGKILL);
-                log_line("[WORKER %d] Job %d exceeded wall-clock timeout (%ds), sending SIGKILL",
-                         wctx->worker_id, aj->job_id, aj->time_limit_sec);
-            }
-        }
-
-        /* 5. Reap exited child process without blocking */
+        /* 4. Check if child has already exited before enforcing wall-clock/RSS kill */
         int status = 0;
         pid_t wpid = waitpid(aj->pid, &status, WNOHANG);
+
+        /* 5. If still running, enforce memory limit, wall-clock timeout, or 2s migration SIGKILL */
+        if (wpid == 0) {
+            if (aj->kill_reason == KILL_MIGRATE && aj->migrate_sigterm_ms > 0) {
+                if (now_ms - aj->migrate_sigterm_ms >= 2000LL) {
+                    kill(-aj->pid, SIGKILL);
+                    kill(aj->pid, SIGKILL);
+                }
+            } else if (aj->kill_reason == KILL_NONE) {
+                if (aj->current_ram_mb > aj->ram_mb) {
+                    aj->kill_reason = KILL_MEMORY;
+                    kill(-aj->pid, SIGKILL);
+                    kill(aj->pid, SIGKILL);
+                    log_line("[WORKER %d] Job %d exceeded RAM limit (%dMB > %dMB), sending SIGKILL",
+                             wctx->worker_id, aj->job_id, aj->current_ram_mb, aj->ram_mb);
+                } else if (now_ms - aj->start_ms >= (int64_t)aj->time_limit_sec * 1000LL) {
+                    aj->kill_reason = KILL_TIMEOUT;
+                    kill(-aj->pid, SIGKILL);
+                    kill(aj->pid, SIGKILL);
+                    log_line("[WORKER %d] Job %d exceeded wall-clock timeout (%ds), sending SIGKILL",
+                             wctx->worker_id, aj->job_id, aj->time_limit_sec);
+                }
+            }
+            wpid = waitpid(aj->pid, &status, WNOHANG);
+        }
+
         if (wpid == aj->pid) {
             kill(-aj->pid, SIGKILL);
 
