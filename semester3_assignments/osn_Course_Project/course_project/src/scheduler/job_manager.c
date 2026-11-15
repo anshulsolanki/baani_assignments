@@ -74,7 +74,13 @@ void append_job_log(struct scheduler_ctx *ctx, struct job_entry *j,
     }
     j->log_buf[j->log_len] = '\0';
 
-    (void)ctx;
+    /* Stream chunk live to any client following this job (logs <id> -f) */
+    for (int i = 0; i < MAX_CLIENTS; i++) {
+        struct client_session *cs = &ctx->clients[i];
+        if (cs->used && cs->sock_fd >= 0 && cs->follow_job_id == j->id) {
+            send_packet(cs->sock_fd, MSG_SCHED_LOG_CHUNK, data, len);
+        }
+    }
 }
 
 void notify_job_followers_eof(struct scheduler_ctx *ctx, int job_id) {

@@ -140,8 +140,18 @@ int main(int argc, char **argv) {
     while (1) {
         if (g_client_sigint) {
             g_client_sigint = 0;
-            printf("\n");
-            break;
+            if (cctx.in_follow_mode) {
+                /* Section 3 & 6: Ctrl+C during logs -f returns to prompt without exiting client */
+                send_packet(cctx.sock_fd, MSG_CLIENT_LOGS_UNSUB, NULL, 0);
+                cctx.in_follow_mode = 0;
+                cctx.waiting_for_logs = 0;
+                cctx.prompt_shown = 0;
+                printf("\n");
+                fflush(stdout);
+            } else {
+                printf("\n");
+                break;
+            }
         }
 
         if (!cctx.waiting_for_reply && !cctx.waiting_for_logs &&
