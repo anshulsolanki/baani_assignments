@@ -1,0 +1,11 @@
+Classifier,Model,5-Fold Mean Accuracy,5-Fold Std Accuracy,5-Fold Mean F1,5-Fold Std F1
+Logistic Regression,M0,0.8415,0.0119,0.839,0.0123
+Naive Bayes,M0,0.8335,0.0215,0.8366,0.0204
+Logistic Regression,M1,0.8425,0.0129,0.84,0.0134
+Naive Bayes,M1,0.836,0.0214,0.8381,0.0203
+Logistic Regression,M2,0.8425,0.0129,0.84,0.0134
+Naive Bayes,M2,0.841,0.0193,0.8421,0.0184
+Logistic Regression,M3,0.85,0.0134,0.848,0.0151
+Naive Bayes,M3,0.841,0.0189,0.8418,0.0185
+Logistic Regression,M4,0.857,0.0195,0.8544,0.0227
+Naive Bayes,M4,0.85,0.0172,0.8499,0.0165

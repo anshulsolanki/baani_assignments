@@ -1,0 +1,8 @@
+T1	Predicate 17 21	sees
+T2	ARG0 0 16	The good teacher
+T3	ARG1 22 26	what
+E1	Predicate:T1 ARG0:T2 ARG1:T3
+T4	Predicate 27 29	is
+T5	ARG1 22 26	what
+T6	ARG2 30 38	possible
+E2	Predicate:T4 ARG1:T5 ARG2:T6

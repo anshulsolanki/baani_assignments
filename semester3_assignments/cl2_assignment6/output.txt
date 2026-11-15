@@ -1,0 +1,100 @@
+=== PART 1: WORD EMBEDDINGS ===
+Loaded and tokenized 19999 sentences from train.csv
+
+--- Task 2.1: Constructing the Co-occurrence Matrix (window_size=5) ---
+Vocabulary size: 5000
+Co-occurrence matrix shape: (5000, 5000), Non-zero entries: 1247192
+
+--- Task 2.2: Dimensionality Reduction Using SVD (k=100) ---
+Word embeddings matrix U shape: (5000, 100)
+Top 5 singular values: [43369.36, 9356.6, 4073.58, 3071.69, 2987.26]
+
+--- Task 2.3: Evaluating Word Embeddings on 5 Word Pairs ---
+(company, firm) [Synonyms] -> Cosine Similarity: 0.4707
+(win, lose) [Antonyms] -> Cosine Similarity: 0.1209
+(computer, software) [Topical / Domain Related] -> Cosine Similarity: 0.1493
+(president, government) [Political / Institutional] -> Cosine Similarity: 0.0033
+(market, football) [Unrelated] -> Cosine Similarity: -0.0562
+
+--- Task 2.4: Comparing Context Window Sizes (w=2 vs w=5) ---
+(company, firm) [Synonyms] -> w=2: 0.4346 | w=5: 0.4707
+(win, lose) [Antonyms] -> w=2: 0.1494 | w=5: 0.1209
+(computer, software) [Topical / Domain Related] -> w=2: 0.2220 | w=5: 0.1493
+(president, government) [Political / Institutional] -> w=2: 0.0288 | w=5: 0.0033
+(market, football) [Unrelated] -> w=2: 0.0930 | w=5: -0.0562
+
+=== PART 2: WORD SENSE DISAMBIGUATION (WSD) ===
+
+--- Problem 1: Preprocessing and POS Tagging ---
+Preprocessed 2000 training sentences and 500 test sentences.
+Sample POS tags (Sentence 1): [('Action', 'NN'), ('by', 'IN'), ('the', 'DT'), ('Committee', 'NNP'), ('In', 'IN'), ('pursuance', 'NN'), ('of', 'IN'), ('its', 'PRP$'), ('mandate', 'NN'), (',', ',')]
+
+--- Problem 2: Listing Possible Senses (First 10 Sentences) ---
+Saved WordNet senses for first 10 sentences to /Users/baanisolanki/Documents/sem2_1/CL2/assignments/assignment6/first_10_sentences_senses.json
+
+--- Problem 3: Most Frequent Sense (MFS) Baseline ---
+MFS Baseline -> Precision: 15.90%, Recall: 15.90%, F1: 15.90%
+
+--- Problem 4: Simplified Lesk Algorithm ---
+Simplified Lesk -> Precision: 9.20%, Recall: 9.20%, F1: 9.20%
+
+Illustrative Example for word 'keep':
+Sentence: Action by the Committee In pursuance of its mandate , the Committee will continue to keep under review the situation relating to the question of Palestine and participate in relevant meetings of the General Assembly and the Security Council . The Committee will also continue to monitor the situation on the ground and draw the attention of the international community to urgent developments in the Occupied Palestinian Territory , including East Jerusalem , requiring international action .
+Gold Sense: continue.v.01 | Predicted Sense: retain.v.02
+  support.n.06 (Overlap = 2: ['the', 'to']) -> Gloss: the financial means whereby one lives
+  keep.n.02 (Overlap = 2: ['of', 'the']) -> Gloss: the main tower within the walls of a medieval castle or fortress
+  hold.n.07 (Overlap = 1: ['in']) -> Gloss: a cell in a jail or prison
+  keep.v.01 (Overlap = 2: ['in', 'the']) -> Gloss: keep in a certain state, position, or activity; e.g.,
+  continue.v.01 (Overlap = 3: ['continue', 'the', 'to']) -> Gloss: continue a certain state, condition, or activity
+  keep.v.03 (Overlap = 1: ['of']) -> Gloss: retain possession of
+
+--- Problem 5: Improved Lesk Algorithm ---
+Improved Lesk -> Precision: 18.60%, Recall: 18.60%, F1: 18.60%
+
+--- Problem 6: Evaluation of 10 Ambiguous Words ---
+1. Word: 'keep'
+   Gold Sense    : continue.v.01 (continue a certain state, condition, or activity)
+   Basic Lesk    : retain.v.02 (allow to remain in a place or position or maintain a property or feature)
+   Improved Lesk : keep.v.01 (keep in a certain state, position, or activity; e.g.,)
+2. Word: 'national'
+   Gold Sense    : national.a.01 (of or relating to or belonging to a nation or country)
+   Basic Lesk    : home.s.01 (inside the country)
+   Improved Lesk : national.a.01 (of or relating to or belonging to a nation or country)
+3. Word: 'built'
+   Gold Sense    : build.v.08 (found or ground)
+   Basic Lesk    : built.s.01 ((used of soaps or cleaning agents) having a substance (an abrasive or filler) added to increase effectiveness)
+   Improved Lesk : build_up.v.02 (form or accumulate steadily)
+4. Word: 'place'
+   Gold Sense    : position.n.06 (a job in an organization)
+   Basic Lesk    : place.n.03 (an abstract mental location)
+   Improved Lesk : topographic_point.n.01 (a point located with respect to surface features of some region)
+5. Word: 'positions'
+   Gold Sense    : position.n.06 (a job in an organization)
+   Basic Lesk    : place.n.15 (an item on a list or in a sequence)
+   Improved Lesk : status.n.01 (the relative position or standing of things or especially persons in a society)
+6. Word: 'serve'
+   Gold Sense    : serve.v.07 (devote (part of) one's life or efforts to, as of countries, institutions, or ideas)
+   Basic Lesk    : serve.v.02 (do duty or hold offices; serve in a specific function)
+   Improved Lesk : suffice.v.01 (be sufficient; be adequate, either in quality or quantity)
+7. Word: 'holds'
+   Gold Sense    : deem.v.01 (keep in mind or convey as a conviction or view)
+   Basic Lesk    : hold.v.10 (be the physical support of; carry the weight of)
+   Improved Lesk : keep.v.01 (keep in a certain state, position, or activity; e.g.,)
+8. Word: 'line'
+   Gold Sense    : line.n.16 (acting in conformity)
+   Basic Lesk    : line.n.01 (a formation of people or things one beside another)
+   Improved Lesk : occupation.n.01 (the principal activity in your life that you do to earn money)
+9. Word: 'see'
+   Gold Sense    : see.v.05 (deem to be)
+   Basic Lesk    : witness.v.02 (perceive or be contemporaneous with)
+   Improved Lesk : understand.v.02 (perceive (an idea or situation) mentally)
+10. Word: 'time'
+   Gold Sense    : time.n.03 (an indefinite period (usually marked by specific attributes or activities))
+   Basic Lesk    : time.n.03 (an indefinite period (usually marked by specific attributes or activities))
+   Improved Lesk : time.n.03 (an indefinite period (usually marked by specific attributes or activities))
+
+--- Problem 7 (Extra Credit): Naive Bayes WSD on Test Set ---
+MFS_Baseline_Test -> Precision: 16.60%, Recall: 16.60%, F1: 16.60%
+Simplified_Lesk_Test -> Precision: 12.20%, Recall: 12.20%, F1: 12.20%
+Improved_Lesk_Test -> Precision: 18.60%, Recall: 18.60%, F1: 18.60%
+Naive_Bayes_Test -> Precision: 51.00%, Recall: 51.00%, F1: 51.00%

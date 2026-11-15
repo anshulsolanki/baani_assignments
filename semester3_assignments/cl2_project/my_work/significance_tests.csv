@@ -1,0 +1,8 @@
+Comparison,BaselineRight_NewWrong (b),BaselineWrong_NewRight (c),Accuracy Gain,McNemar Chi2,McNemar p-value,Bootstrap p-value
+Logistic Regression: M0 vs M4 (Full Test),4,5,0.005,0.0,1.0,0.424
+Logistic Regression: M2 vs M4 (Full Test),3,6,0.015,0.4444,0.505,0.206
+Naive Bayes: M0 vs M4 (Full Test),5,7,0.01,0.0833,0.7728,0.359
+Naive Bayes: M1 vs M2 (Full Test),2,1,-0.005,0.0,1.0,0.811
+SO-CAL: M2 vs M4 Discourse (Full Test),6,7,0.005,0.0,1.0,0.457
+Logistic Regression: M0 vs M4 (Hard Subset),2,3,0.0167,0.0,1.0,0.426
+Naive Bayes: M0 vs M4 (Hard Subset),3,2,-0.0167,0.0,1.0,0.779

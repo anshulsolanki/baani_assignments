@@ -1,0 +1,12 @@
+The file containing the training data consists of tab-separated columns and one training example per line. For instance, the examples above would be formatted as follows:
+
+line%1:10:02::   line.n   8   Yesterday , Walter procrastinated and wrote just two lines of code .
+line%1:14:01::   line.n   10  I had to spend more than two hours waiting in line .
+line%1:06:03::   line.n   8   In terms of total passengers , the Central line is the second busiest on the Underground .
+
+The columns in the training data correspond to
+
+the WordNet sense key identifying the sense, as discussed above;
+a WordNet entry identifier, which we will refer to as the "lemma", in this case line as a noun;
+the position of the word that should be disambiguated;
+the tokenized text containing the word to disambiguate and its context.

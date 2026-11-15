@@ -1,0 +1,5 @@
+T1	Predicate 11 21	responding
+T2	ARG0 0 6	People
+T3	ARGM-LOC 39 57	at the local level
+T4	ARG1 22 38	to the challenge
+E1	Predicate:T1 ARG0:T2 ARGM-LOC:T3 ARG1:T4

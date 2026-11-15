@@ -1,0 +1,13 @@
+T1	Predicate 31 37	assess
+T2	ARG0 19 25	states
+T3	ARGM-MOD 26 30	will
+T4	ARG1 38 50	the programs
+E1	Predicate:T1 ARG0:T2 ARGM-MOD:T3 ARG1:T4
+T5	Predicate 56 62	expect
+T6	ARG0 51 55	they
+T7	ARG1 63 99	to make by 2005 and 2006 school year
+E2	Predicate:T5 ARG0:T6 ARG1:T7
+T8	Predicate 66 70	make
+T9	ARG0 51 55	they
+T10	ARGM-TMP 71 99	by 2005 and 2006 school year
+E3	Predicate:T8 ARG0:T9 ARGM-TMP:T10

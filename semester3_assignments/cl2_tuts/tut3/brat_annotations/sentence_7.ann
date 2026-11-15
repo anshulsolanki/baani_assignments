@@ -1,0 +1,5 @@
+T1	Predicate 13 16	put
+T2	ARG0 0 12	All of which
+T3	ARG1 17 51	the education decisions of America
+T4	ARG2 52 111	in the hands of teachers and principals and local officials
+E1	Predicate:T1 ARG0:T2 ARG1:T3 ARG2:T4

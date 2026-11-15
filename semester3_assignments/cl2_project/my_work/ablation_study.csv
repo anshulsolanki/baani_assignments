@@ -1,0 +1,7 @@
+Ablation Configuration,LR Val Accuracy,LR Test Accuracy,LR Test F1,NB Test Accuracy,NB Test F1
+Full M4 (All Linguistic Modules),0.91,0.885,0.8832,0.87,0.8673
+M4 minus RST Features (-rst_*),0.925,0.87,0.8673,0.87,0.8673
+M4 minus Anaphora Features (-ana_*),0.915,0.885,0.8832,0.865,0.8615
+M4 minus Shifter Features (-shift_*),0.91,0.88,0.8788,0.875,0.8731
+M4 minus Prior Lexicon Features (-lex_*),0.91,0.885,0.8832,0.875,0.8731
+Dense Linguistic Features Only (No BoW UNI_/BI_),0.725,0.705,0.6974,0.695,0.6738

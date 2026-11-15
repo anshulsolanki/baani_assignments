@@ -1,0 +1,1792 @@
+# NLTK PropBank Activity Report
+
+text
+================================================================================
+SENTENCE 1: Senators and a good teacher believes in the possibilities of every boy and girl.
+================================================================================
+1. POS Tags (NLTK Tagger):
+   [('Senators', 'NNS'), ('and', 'CC'), ('a', 'DT'), ('good', 'JJ'), ('teacher', 'NN'), ('believes', 'VBZ'), ('in', 'IN'), ('the', 'DT'), ('possibilities', 'NNS'), ('of', 'IN'), ('every', 'DT'), ('boy', 'NN'), ('and', 'CC'), ('girl', 'NN'), ('.', '.')]
+
+2. Parse Tree & Visualization:
+                                                               S                                                                     
+  _____________________________________________________________|_____________________________________                                 
+ |                       |                           |               |                               PP                              
+ |                       |                           |               |                          _____|_______                         
+ |                       NP                          |               PP                        |             NP                      
+ |     __________________|______                     |          _____|_____                    |      _______|___________________     
+ |    |         NP              NP                   VP        |           NP                  |     |              NP           NP  
+ |    |         |         ______|________            |         |      _____|________           |     |        ______|____        |    
+./. and/CC Senators/NNS a/DT good/JJ teacher/NN believes/VBZ in/IN the/DT     possibilities/ of/IN and/CC every/DT     boy/NN girl/NN
+                                                                                   NNS                                               
+
+
+3. Extracted Verbs / Predicates:
+   Token: 'believes' (POS: VBZ) -> Lemma: 'believe'
+
+4. PropBank Roles Assigned to Main Verbs / Predicates:
+   PropBank Frameset for 'believe' (1 roleset(s)):
+     Roleset [believe.01] (believe):
+       ARG0: believer
+       ARG1: belief
+
+   Assigned PropBank Roles in Sentence:
+     Predicate: 'believes' (Roleset: believe.01)
+       ARG0      : Senators and a good teacher
+       ARG1      : in the possibilities of every boy and girl
+
+5. VerbNet Frames and Semantic Representations:
+   Verb Lemma: 'believe' -> VerbNet Classes: ['admire-31.2', 'consider-29.9-2']
+     --- VerbNet Class: admire-31.2 ---
+       Basic Transitive
+         Example: The tourists admired the paintings.
+         Syntax: NP[Experiencer] VERB NP[Theme]
+         Semantics:
+           * emotional_state(E, Emotion, Experiencer)
+           * in_reaction_to(E, Theme)
+       NP-PP (Possessor Object, Predicate-PP)
+         Example: I admired him for his honesty.
+         Syntax: NP[Experiencer] VERB NP[Theme] PREP[for] NP[Predicate]
+         Semantics:
+           * emotional_state(E, Emotion, Experiencer)
+           * in_reaction_to(E, Theme)
+       NP-PP (Predicate Object, Possessor-PP)
+         Example: I admired the honesty in him.
+         Syntax: NP[Experiencer] VERB NP[Predicate] PREP[in] NP[Theme]
+         Semantics:
+           * emotional_state(E, Emotion, Experiencer)
+           * in_reaction_to(E, Theme)
+       S
+         Example: The children liked that the clown had a red nose.
+         Syntax: NP[Experiencer] VERB NP[Theme +that_comp]
+         Semantics:
+           * emotional_state(E, Emotion, Experiencer)
+           * in_reaction_to(E, Theme)
+       ING-SC/BE-ING
+         Example: I loved writing.
+         Syntax: NP[Experiencer] VERB NP[Theme +be_sc_ing]
+         Semantics:
+           * emotional_state(E, Emotion, Experiencer)
+           * in_reaction_to(E, Theme)
+       POSSING
+         Example: I loved him writing novels.
+         Syntax: NP[Experiencer] VERB NP[Theme +poss_ing]
+         Semantics:
+           * emotional_state(E, Emotion, Experiencer)
+           * in_reaction_to(E, Theme)
+     --- VerbNet Class: consider-29.9-2 ---
+       NP-ADJP-PRED
+         Example: They considered him stupid.
+         Syntax: NP[Agent] VERB NP[Theme] ADJ
+         Semantics:
+           * consider(during(E), Agent, Theme)
+       NP-NP-PRED
+         Example: They considered him professor.
+         Syntax: NP[Agent] VERB NP[Theme] NP[Predicate -sentential]
+         Semantics:
+           * consider(during(E), Agent, Theme)
+       NP-TOBE
+         Example: They considered him to be the professor.
+         Syntax: NP[Agent] VERB NP[Theme +to_be]
+         Semantics:
+           * consider(during(E), Agent, Theme)
+       NP-VEN-NP-OMIT
+         Example: They considered the children found.
+         Syntax: NP[Agent] VERB NP[Theme +np_ppart]
+         Semantics:
+           * consider(during(E), Agent, Theme)
+       S
+         Example: They considered that he was the professor.
+         Syntax: NP[Agent] VERB NP[Theme +that_comp]
+         Semantics:
+           * consider(during(E), Agent, Theme)
+
+6. BRAT Semantic Role Annotations (saved to /Users/baanisolanki/baani_assignments/baani_assignments/semester3_assignments/cl2_tuts/tut3/brat_annotations/sentence_1.ann):
+   T1	Predicate 28 36	believes
+   T2	ARG0 0 27	Senators and a good teacher
+   T3	ARG1 37 79	in the possibilities of every boy and girl
+   E1	Predicate:T1 ARG0:T2 ARG1:T3
+
+================================================================================
+SENTENCE 2: The good teacher sees what is possible.
+================================================================================
+1. POS Tags (NLTK Tagger):
+   [('The', 'DT'), ('good', 'JJ'), ('teacher', 'NN'), ('sees', 'NNS'), ('what', 'WP'), ('is', 'VBZ'), ('possible', 'JJ'), ('.', '.')]
+
+2. Parse Tree & Visualization:
+                          S                                      
+      ____________________|__________________________________     
+     |       |            NP                 VP       NP     VP  
+     |       |     _______|________          |        |      |    
+possible/JJ ./. The/DT good/JJ teacher/NN sees/VBZ what/WP is/VBZ
+
+
+3. Extracted Verbs / Predicates:
+   Token: 'sees' (POS: VBZ) -> Lemma: 'see'
+   Token: 'is' (POS: VBZ) -> Lemma: 'be'
+
+4. PropBank Roles Assigned to Main Verbs / Predicates:
+   PropBank Frameset for 'see' (4 roleset(s)):
+     Roleset [see.01] (view):
+       ARG0: viewer
+       ARG1: thing viewed
+     Roleset [see.02] (verb of motion: accompany):
+       ARG0: accompanier
+       ARG1: entity in motion
+       ARG2: destination
+     Roleset [see.03] (discourse function):
+       ARG0: you
+     Roleset [see.04] (ensure):
+       ARG0: ensurer
+       ARG1: fixed: 'to it'
+       ARG2: proposition, event
+   PropBank Frameset for 'be' (3 roleset(s)):
+     Roleset [be.01] (copula):
+       ARG1: topic
+       ARG2: comment
+     Roleset [be.02] (existential):
+       ARG1: thing that is
+     Roleset [be.03] (auxiliary):
+
+   Assigned PropBank Roles in Sentence:
+     Predicate: 'sees' (Roleset: see.01)
+       ARG0      : The good teacher
+       ARG1      : what
+     Predicate: 'is' (Roleset: be.01)
+       ARG1      : what
+       ARG2      : possible
+
+5. VerbNet Frames and Semantic Representations:
+   Verb Lemma: 'see' -> VerbNet Classes: ['characterize-29.2-1', 'consider-29.9-1-1', 'see-30.1-1']
+     --- VerbNet Class: characterize-29.2-1 ---
+       HOW-S
+         Example: He described how he could rise to high office.
+         Syntax: NP[Agent] VERB NP[Theme +how_extract]
+         Semantics:
+           * describe(during(E), Agent, Theme)
+           * cause(Agent, E)
+       HOW-TO-INF
+         Example: He described how to do it.
+         Syntax: NP[Agent] VERB NP[Theme +wh_inf]
+         Semantics:
+           * describe(during(E), Agent, Theme)
+           * cause(Agent, E)
+     --- VerbNet Class: consider-29.9-1-1 ---
+       NP-VEN-NP-OMIT
+         Example: I considered the matter closed.
+         Syntax: NP[Agent] VERB NP[Theme +np_ppart]
+         Semantics:
+           * consider(during(E), Agent, Theme)
+       WH-S
+         Example: He considered whether he should come.
+         Syntax: NP[Agent] VERB NP[Theme +wh_comp]
+         Semantics:
+           * consider(during(E), Agent, Theme)
+       WHAT-S
+         Example: He considered what he should do.
+         Syntax: NP[Agent] VERB NP[Theme +what_extract]
+         Semantics:
+           * consider(during(E), Agent, Theme)
+       WHAT-TO-INF
+         Example: He considered what to do.
+         Syntax: NP[Agent] VERB NP[Theme +what_inf]
+         Semantics:
+           * consider(during(E), Agent, Theme)
+     --- VerbNet Class: see-30.1-1 ---
+       NP-INF-OC
+         Example: I saw her bake the cake.
+         Syntax: NP[Experiencer] VERB NP[Stimulus] NP[Predicate +oc_bare_inf]
+         Semantics:
+           * perceive(during(E), Experiencer, Stimulus)
+           * in_reaction_to(E, Stimulus)
+       NP-ING-OC
+         Example: I saw him laughing.
+         Syntax: NP[Experiencer] VERB NP[Stimulus] NP[Predicate +oc_ing]
+         Semantics:
+           * perceive(during(E), Experiencer, Stimulus)
+           * in_reaction_to(E, Stimulus)
+       POSSING
+         Example: I saw their laughing and joking.
+         Syntax: NP[Experiencer] VERB NP[Stimulus +pos_ing]
+         Semantics:
+           * perceive(during(E), Experiencer, Stimulus)
+           * in_reaction_to(E, Stimulus)
+   Verb Lemma: 'be' -> No VerbNet classes found.
+
+6. BRAT Semantic Role Annotations (saved to /Users/baanisolanki/baani_assignments/baani_assignments/semester3_assignments/cl2_tuts/tut3/brat_annotations/sentence_2.ann):
+   T1	Predicate 17 21	sees
+   T2	ARG0 0 16	The good teacher
+   T3	ARG1 22 26	what
+   E1	Predicate:T1 ARG0:T2 ARG1:T3
+   T4	Predicate 27 29	is
+   T5	ARG1 22 26	what
+   T6	ARG2 30 38	possible
+   E2	Predicate:T4 ARG1:T5 ARG2:T6
+
+================================================================================
+SENTENCE 3: A good teacher believes in the responsibility of every school to bring out the best in every student, and 2001, we passed what’s called the No Child Left Behind legislation.
+================================================================================
+1. POS Tags (NLTK Tagger):
+   [('A', 'DT'), ('good', 'JJ'), ('teacher', 'NN'), ('believes', 'VBZ'), ('in', 'IN'), ('the', 'DT'), ('responsibility', 'NN'), ('of', 'IN'), ('every', 'DT'), ('school', 'NN'), ('to', 'TO'), ('bring', 'VB'), ('out', 'RP'), ('the', 'DT'), ('best', 'JJS'), ('in', 'IN'), ('every', 'DT'), ('student', 'NN'), (',', ','), ('and', 'CC'), ('2001', 'CD'), (',', ','), ('we', 'PRP'), ('passed', 'VBD'), ('what', 'WP'), ("'s", 'VBZ'), ('called', 'VBN'), ('the', 'DT'), ('No', 'NNP'), ('Child', 'NNP'), ('Left', 'NNP'), ('Behind', 'NNP'), ('legislation', 'NN'), ('.', '.')]
+
+2. Parse Tree & Visualization:
+                                                                                                                                       S                                                                                                                                                                            
+   ____________________________________________________________________________________________________________________________________|____________________________________________________________________________________________________________________________________                                         
+  |    |    |       |     |   |          |                    |               PP                                PP                            |                 |                    PP                     |        |         |            |                               |                                       
+  |    |    |       |     |   |          |                    |          _____|_____                      ______|______                       |                 |              ______|______                |        |         |            |                               |                                        
+  |    |    |       |     |   |          NP                   VP        |           NP                   |             NP                     VP                NP            |             NP              NP       VP        NP           VP                              NP                                      
+  |    |    |       |     |   |    ______|________            |         |      _____|_________           |       ______|______          ______|____        _____|_____        |       ______|______         |        |         |       _____|______          _______________|_______________________________         
+to/TO ,/, and/CC 2001/CD ,/, ./. A/DT good/JJ teacher/NN believes/VBZ in/IN the/DT     responsibility/ of/IN every/DT     school/NN bring/VB     out/RP the/DT     best/JJS in/IN every/DT     student/NN we/PRP passed/VBD what/WP 's/VBZ     called/VBN the/DT No/NNP Child/NNP Left/NNP Behind/NNP legislation/NN
+                                                                                              NN                                                                                                                                                                                                                    
+
+
+3. Extracted Verbs / Predicates:
+   Token: 'believes' (POS: VBZ) -> Lemma: 'believe'
+   Token: 'bring' (POS: VB) -> Lemma: 'bring'
+   Token: 'passed' (POS: VBD) -> Lemma: 'pass'
+   Token: ''s' (POS: VBZ) -> Lemma: 'be'
+   Token: 'called' (POS: VBN) -> Lemma: 'call'
+
+4. PropBank Roles Assigned to Main Verbs / Predicates:
+   PropBank Frameset for 'believe' (1 roleset(s)):
+     Roleset [believe.01] (believe):
+       ARG0: believer
+       ARG1: belief
+   PropBank Frameset for 'bring' (5 roleset(s)):
+     Roleset [bring.01] (carry along with):
+       ARG0: bringer
+       ARG1: thing brought
+       ARG2: benefactive, brought-for, brought-to
+       ARG3: attribute
+       ARG4: ablative, brought-from
+     Roleset [bring.02] (bring up: raise):
+       ARG0: causer of rising, Agent
+       ARG1: Logical subject, patient, thing rising
+       ARG2: EXT, amount risen
+       ARG3: Start point
+       ARG4: End point
+       ARGM: Medium
+     Roleset [bring.03] (bring down: make fall):
+       ARG0: causer of fall, Agent
+       ARG1: Logical subject, patient, thing falling
+       ARG2: EXT, amount fallen
+       ARG3: Start point
+       ARG4: End point
+       ARGM: Medium
+     Roleset [bring.04] (bring along: accompany):
+       ARG0: bringer
+       ARG1: thing brought
+       ARG2: benefactive, brought-for, brought-to
+       ARG3: attribute
+       ARG4: ablative, brought-from
+     Roleset [bring.05] (bring about: cause to be):
+       ARG0: causer
+       ARG1: thing coming to be
+   PropBank Frameset for 'pass' (15 roleset(s)):
+     Roleset [pass.01] (bill becomes law):
+       ARG0: legislative body
+       ARG1: bill, state prior to passing
+       ARG2: law, state after passing
+     Roleset [pass.02] (overtake):
+       ARG0: entity moving ahead
+       ARG1: entity falling behind
+     Roleset [pass.03] (go by):
+       ARG1: thing passing
+     Roleset [pass.04] (allow to go by):
+       ARG0: allower
+       ARG1: thing let go by
+     Roleset [pass.05] (give):
+       ARG0: giver
+       ARG1: thing changing hands
+       ARG2: getter
+     Roleset [pass.06] (suffice, get away (with)):
+       ARG1: thing passing
+       ARG2: attributive
+     Roleset [pass.07] (pass a class, pass a test):
+       ARG1: student
+       ARG2: test
+     Roleset [pass.08] (variety of idioms):
+       ARG0: passer
+       ARG1: thing passed
+     Roleset [pass.09] (give):
+       ARG0: giver
+       ARG1: thing changing hands
+       ARG2: getter
+     Roleset [pass.10] (distribute):
+       ARG0: distributor
+       ARG1: thing distributed
+       ARG2: distributed to
+     Roleset [pass.11] (faint):
+       ARG0: fainter
+     Roleset [pass.12] (ignore, leave behind):
+       ARG0: ignorer
+       ARG1: thing ignored
+     Roleset [pass.13] (relinquish):
+       ARG0: entity relinquishing one item
+       ARG1: item relinquished
+       ARG2: in favor of another
+     Roleset [pass.14] (transmit):
+       ARG0: transmitter
+       ARG1: thing transmitted
+       ARG2: transmitted to
+     Roleset [pass.15] (die):
+       ARG1: thing dying
+   PropBank Frameset for 'be' (3 roleset(s)):
+     Roleset [be.01] (copula):
+       ARG1: topic
+       ARG2: comment
+     Roleset [be.02] (existential):
+       ARG1: thing that is
+     Roleset [be.03] (auxiliary):
+   PropBank Frameset for 'call' (11 roleset(s)):
+     Roleset [call.01] (label):
+       ARG0: caller
+       ARG1: item being labelled
+       ARG2: attribute of arg1
+     Roleset [call.02] (summon):
+       ARG0: caller
+       ARG1: thing being summoned
+       ARG2: benefactive
+     Roleset [call.03] (demand):
+       ARG0: demander
+       ARG1: thing being demanded
+     Roleset [call.07] (say across a distance):
+       ARG0: speaker
+       ARG1: utterance
+       ARG2: distant listener
+     Roleset [call.10] (predict):
+       ARG0: predictor
+       ARG1: prediction
+     Roleset [call.11] (idiomatic: call the shots):
+       ARG0: entity in charge
+       ARG1: 'the shots'
+     Roleset [call.08] (summon, phrasal 1):
+       ARG0: caller
+       ARG1: thing being summoned
+       ARG2: benefactive
+     Roleset [call.09] (call into question, doubt):
+       ARG0: doubter
+       ARG1: thing doubted
+       ARG2: fixed: 'into question'
+     Roleset [call.04] (summon, phrasal 2):
+       ARG0: caller
+       ARG1: thing being summoned
+       ARG2: benefactive
+     Roleset [call.05] (visit, make use of):
+       ARG0: caller
+       ARG1: thing being visited, used
+       ARG2: purpose, attribute of arg1
+     Roleset [call.06] (terminate before hand):
+       ARG0: the Terminator
+       ARG1: the Terminated
+
+   Assigned PropBank Roles in Sentence:
+     Predicate: 'believes' (Roleset: believe.01)
+       ARG0      : A good teacher
+       ARG1      : in the responsibility of every school
+     Predicate: 'bring' (Roleset: bring.01)
+       ARG0      : every school
+       ARG1      : the best
+       ARG2      : in every student
+     Predicate: 'passed' (Roleset: pass.01)
+       ARG0      : we
+       ARG1      : what
+     Predicate: 'called' (Roleset: call.01)
+       ARG1      : what
+       ARG2      : the No Child Left Behind legislation
+
+5. VerbNet Frames and Semantic Representations:
+   Verb Lemma: 'believe' -> VerbNet Classes: ['admire-31.2', 'consider-29.9-2']
+     --- VerbNet Class: admire-31.2 ---
+       Basic Transitive
+         Example: The tourists admired the paintings.
+         Syntax: NP[Experiencer] VERB NP[Theme]
+         Semantics:
+           * emotional_state(E, Emotion, Experiencer)
+           * in_reaction_to(E, Theme)
+       NP-PP (Possessor Object, Predicate-PP)
+         Example: I admired him for his honesty.
+         Syntax: NP[Experiencer] VERB NP[Theme] PREP[for] NP[Predicate]
+         Semantics:
+           * emotional_state(E, Emotion, Experiencer)
+           * in_reaction_to(E, Theme)
+       NP-PP (Predicate Object, Possessor-PP)
+         Example: I admired the honesty in him.
+         Syntax: NP[Experiencer] VERB NP[Predicate] PREP[in] NP[Theme]
+         Semantics:
+           * emotional_state(E, Emotion, Experiencer)
+           * in_reaction_to(E, Theme)
+       S
+         Example: The children liked that the clown had a red nose.
+         Syntax: NP[Experiencer] VERB NP[Theme +that_comp]
+         Semantics:
+           * emotional_state(E, Emotion, Experiencer)
+           * in_reaction_to(E, Theme)
+       ING-SC/BE-ING
+         Example: I loved writing.
+         Syntax: NP[Experiencer] VERB NP[Theme +be_sc_ing]
+         Semantics:
+           * emotional_state(E, Emotion, Experiencer)
+           * in_reaction_to(E, Theme)
+       POSSING
+         Example: I loved him writing novels.
+         Syntax: NP[Experiencer] VERB NP[Theme +poss_ing]
+         Semantics:
+           * emotional_state(E, Emotion, Experiencer)
+           * in_reaction_to(E, Theme)
+     --- VerbNet Class: consider-29.9-2 ---
+       NP-ADJP-PRED
+         Example: They considered him stupid.
+         Syntax: NP[Agent] VERB NP[Theme] ADJ
+         Semantics:
+           * consider(during(E), Agent, Theme)
+       NP-NP-PRED
+         Example: They considered him professor.
+         Syntax: NP[Agent] VERB NP[Theme] NP[Predicate -sentential]
+         Semantics:
+           * consider(during(E), Agent, Theme)
+       NP-TOBE
+         Example: They considered him to be the professor.
+         Syntax: NP[Agent] VERB NP[Theme +to_be]
+         Semantics:
+           * consider(during(E), Agent, Theme)
+       NP-VEN-NP-OMIT
+         Example: They considered the children found.
+         Syntax: NP[Agent] VERB NP[Theme +np_ppart]
+         Semantics:
+           * consider(during(E), Agent, Theme)
+       S
+         Example: They considered that he was the professor.
+         Syntax: NP[Agent] VERB NP[Theme +that_comp]
+         Semantics:
+           * consider(during(E), Agent, Theme)
+   Verb Lemma: 'bring' -> VerbNet Classes: ['bring-11.3-1']
+     --- VerbNet Class: bring-11.3-1 ---
+       Dative
+         Example: Nora brought Pamela the book.
+         Syntax: NP[Agent] VERB NP[Destination] NP[Theme]
+         Semantics:
+           * motion(during(E), Theme)
+           * direction(during(E), toward, Theme, Destination)
+           * location(end(E), Theme, Destination)
+           * cause(Agent, E)
+       Together Reciprocal Alternation Transitive
+         Example: Nora brought us together.
+         Syntax: NP[Agent] VERB NP[Theme +plural] LEX[together]
+         Semantics:
+           * motion(during(E), Theme)
+           * cause(Agent, E)
+           * ¬together(start(E), abstract/physical, Theme_i, Theme_j)
+           * together(end(E), abstract/physical, Theme_i, Theme_j)
+   Verb Lemma: 'pass' -> VerbNet Classes: ['consume-66', 'give-13.1', 'occurrence-48.3', 'send-11.1-1', 'throw-17.1-1']
+     --- VerbNet Class: consume-66 ---
+       Basic Transitive
+         Example: I spent all that time.
+         Syntax: NP[Agent] VERB NP[Theme]
+         Semantics:
+           * exist(start(E), Theme)
+           * ¬exist(end(E), Theme)
+           * spend(during(E), Agent, Theme, ?Recipient)
+       NP-ING-SC
+         Example: I spent the time worrying about the future.
+         Syntax: NP[Agent] VERB NP[Theme] NP[Recipient +sc_ing]
+         Semantics:
+           * exist(start(E), Theme)
+           * ¬exist(end(E), Theme)
+           * spend(during(E), Agent, Theme, Recipient)
+     --- VerbNet Class: give-13.1 ---
+       NP-PP (Recipient-PP)
+         Example: They lent a bicycle to me.
+         Syntax: NP[Agent] VERB NP[Theme] PREP[to] NP[Recipient]
+         Semantics:
+           * has_possession(start(E), Agent, Theme)
+           * has_possession(end(E), Recipient, Theme)
+           * transfer(during(E), Theme)
+           * cause(Agent, E)
+       Dative
+         Example: They lent me a bicycle.
+         Syntax: NP[Agent] VERB NP[Recipient] NP[Theme]
+         Semantics:
+           * has_possession(start(E), Agent, Theme)
+           * has_possession(end(E), Recipient, Theme)
+           * transfer(during(E), Theme)
+           * cause(Agent, E)
+       Basic Transitive
+         Example: I leased my house (to somebody).
+         Syntax: NP[Agent] VERB NP[Theme]
+         Semantics:
+           * has_possession(start(E), Agent, Theme)
+           * has_possession(end(E), ?Recipient, Theme)
+           * transfer(during(E), Theme)
+           * cause(Agent, E)
+       PP (Recipient-PP)
+         Example: The bank lent to fewer customers.
+         Syntax: NP[Agent] VERB PREP[to] NP[Recipient]
+         Semantics:
+           * has_possession(start(E), Agent, ?Theme)
+           * has_possession(end(E), Recipient, ?Theme)
+           * transfer(during(E), ?Theme)
+           * cause(Agent, E)
+     --- VerbNet Class: occurrence-48.3 ---
+       Basic Intransitive
+         Example: A serious accident happened.
+         Syntax: NP[Theme] VERB
+         Semantics:
+           * occur(during(E), Theme)
+       NP (Expletive-there Subject)
+         Example: There happened a serious accident.
+         Syntax: LEX[there] VERB NP[Theme]
+         Semantics:
+           * occur(during(E), Theme)
+       PP (Location-PP)
+         Example: A serious accident happened in front of them.
+         Syntax: NP[Theme] VERB PREP[+loc] NP[Location]
+         Semantics:
+           * occur(during(E), Theme)
+           * Prep(during(E), Theme, Location)
+       Locative Inversion
+         Example: In front of them happened a serious accident.
+         Syntax: PREP[+loc] NP[Location] VERB NP[Theme]
+         Semantics:
+           * occur(during(E), Theme)
+           * Prep(during(E), Theme, Location)
+       SEEM-S
+         Example: It occurred that they left.
+         Syntax: LEX[it] VERB NP[Theme +that_comp]
+         Semantics:
+           * occur(during(E), Theme)
+     --- VerbNet Class: send-11.1-1 ---
+       Dative
+         Example: Nora sent me the book.
+         Syntax: NP[Agent] VERB NP[Destination] NP[Theme]
+         Semantics:
+           * motion(during(E), Theme)
+           * direction(during(E), toward, Theme, Destination)
+           * location(end(E), Theme, Destination)
+           * cause(Agent, E)
+     --- VerbNet Class: throw-17.1-1 ---
+       Dative
+         Example: Steve tossed John the ball.
+         Syntax: NP[Agent] VERB NP[Destination] NP[Theme]
+         Semantics:
+           * exert_force(during(E0), Agent, Theme)
+           * contact(end(E0), Agent, Theme)
+           * motion(during(E1), Theme)
+           * ¬contact(during(E1), Agent, Theme)
+           * ¬location(start(E1), Theme, Destination)
+           * location(end(E1), Theme, Destination)
+           * cause(Agent, E1)
+           * meets(E0, E1)
+   Verb Lemma: 'be' -> No VerbNet classes found.
+   Verb Lemma: 'call' -> VerbNet Classes: ['animal_sounds-38', 'dub-29.3', 'get-13.5.1', 'manner_speaking-37.3']
+     --- VerbNet Class: animal_sounds-38 ---
+       Basic Intransitive
+         Example: The dog barked.
+         Syntax: NP[Agent] VERB
+         Semantics:
+           * emit(during(E), Agent, Sound)
+       PP (Recipient-PP)
+         Example: The dog barked at the cat.
+         Syntax: NP[Agent] VERB PREP[+dest_dir] NP[Recipient]
+         Semantics:
+           * emit(during(E), Agent, Sound)
+           * Prep(during(E), Sound, Recipient)
+       PP (Cause-PP)
+         Example: The dog barked at the commotion.
+         Syntax: NP[Agent] VERB PREP[at] NP[Cause]
+         Semantics:
+           * emit(during(E), Agent, Sound)
+           * cause(Cause, E)
+       NP (Theme Object)
+         Example: The dog barked a warning.
+         Syntax: NP[Agent] VERB NP[Theme]
+         Semantics:
+           * emit(during(E), Agent, Theme)
+       NP-ADJP (Resultative)
+         Example: The rooster crowed everyone awake.
+         Syntax: NP[Agent] VERB NP[Recipient] ADJ
+         Semantics:
+           * emit(during(E), Agent, Sound)
+           * Pred(result(E), Recipient)
+       PP (Location-PP)
+         Example: Birds sang in the trees.
+         Syntax: NP[Agent] VERB NP[Location]
+         Semantics:
+           * emit(during(E), Agent, Sound)
+           * location(during(E), Agent, Location)
+       PP (Location Subject, with-PP)
+         Example: The tree sang with birds.
+         Syntax: NP[Location] VERB PREP[with] NP[Agent]
+         Semantics:
+           * emit(during(E), Agent, Sound)
+           * location(during(E), Sound, Location)
+     --- VerbNet Class: dub-29.3 ---
+       NP-NP
+         Example: The captain named the ship Seafarer.
+         Syntax: NP[Agent] VERB NP[Theme] NP[Predicate]
+         Semantics:
+           * designated(result(E), Theme, Predicate)
+           * cause(Agent, E)
+       Basic Transitive
+         Example: The captain baptized the ship.
+         Syntax: NP[Agent] VERB NP[Theme]
+         Semantics:
+           * cause(Agent, E)
+           * designated(result(E), Theme, ?Predicate)
+     --- VerbNet Class: get-13.5.1 ---
+       Basic Transitive
+         Example: Carmen bought a dress.
+         Syntax: NP[Agent] VERB NP[Theme]
+         Semantics:
+           * has_possession(start(E), ?Source, Theme)
+           * transfer(during(E), Theme)
+           * has_possession(end(E), Agent, Theme)
+           * cause(Agent, E)
+       NP-PP (from-PP)
+         Example: Carmen bought a dress from Diana.
+         Syntax: NP[Agent] VERB NP[Theme] PREP[from] NP[Source]
+         Semantics:
+           * has_possession(start(E), Source, Theme)
+           * transfer(during(E), Theme)
+           * has_possession(end(E), Agent, Theme)
+           * cause(Agent, E)
+       NP-PP (Beneficiary Object)
+         Example: Carmen bought a dress for Mary.
+         Syntax: NP[Agent] VERB NP[Theme] PREP[for] NP[Beneficiary]
+         Semantics:
+           * has_possession(start(E), ?Source, Theme)
+           * transfer(during(E), Theme)
+           * has_possession(end(E), Agent, Theme)
+           * cause(Agent, E)
+           * benefit(E, Beneficiary)
+       Benefactive Alternation (double object)
+         Example: Carmen bought Mary a dress.
+         Syntax: NP[Agent] VERB NP[Beneficiary] NP[Theme]
+         Semantics:
+           * has_possession(start(E), ?Source, Theme)
+           * transfer(during(E), Theme)
+           * has_possession(end(E), Agent, Theme)
+           * cause(Agent, E)
+           * benefit(E, Beneficiary)
+       NP-PP (Asset Subject)
+         Example: Carmen bought a dress for $50.
+         Syntax: NP[Agent] VERB NP[Theme] PREP[for] NP[Asset]
+         Semantics:
+           * has_possession(start(E), ?Source, Theme)
+           * transfer(during(E), Theme)
+           * has_possession(end(E), Agent, Theme)
+           * cause(Agent, E)
+           * cost(E, Asset)
+       NP (Asset Subject)
+         Example: $50 won't even buy a dress.
+         Syntax: NP[Asset] VERB NP[Theme]
+         Semantics:
+           * has_possession(start(E), ?Source, Theme)
+           * transfer(during(E), Theme)
+           * has_possession(end(E), ?Agent, Theme)
+           * cause(?Agent, E)
+           * cost(E, Asset)
+       NP-PP-PP (Source-PP, Asset-PP)
+         Example: FMC has bought 565,000 shares from Nortek Inc. at $23.50 a share.
+         Syntax: NP[Agent] VERB NP[Theme] PREP[from] NP[Source] PREP[at for] NP[Asset]
+         Semantics:
+           * has_possession(start(E), Source, Theme)
+           * has_possession(end(E), Agent, Theme)
+           * transfer(during(E), Theme)
+           * cost(E, Asset)
+     --- VerbNet Class: manner_speaking-37.3 ---
+       Basic Intransitive
+         Example: Susan whispered.
+         Syntax: NP[Agent] VERB
+         Semantics:
+           * cause(Agent, E)
+       PP (Recipient-PP)
+         Example: Susan whispered to/at Rachel.
+         Syntax: NP[Agent] VERB PREP[+dest_dir] NP[Recipient]
+         Semantics:
+           * transfer_info(during(E), Agent, Recipient, ?Topic)
+           * cause(Agent, E)
+       PP (Topic-PP)
+         Example: Susan whispered about the party.
+         Syntax: NP[Agent] VERB PREP[about] NP[Topic]
+         Semantics:
+           * transfer_info(during(E), Agent, ?Recipient, Topic)
+           * cause(Agent, E)
+       Basic Transitive
+         Example: Susan whispered the news/a few words.
+         Syntax: NP[Agent] VERB NP[Topic]
+         Semantics:
+           * transfer_info(during(E), Agent, ?Recipient, Topic)
+           * cause(Agent, E)
+       QUOT
+         Example: Susan whispered, 'Leave the room.'
+         Syntax: NP[Agent] VERB NP[Topic]
+         Semantics:
+           * transfer_info(during(E), Agent, ?Recipient, Topic)
+           * cause(Agent, E)
+       NP-PP (Recipient-PP)
+         Example: Susan whispered the news/a few words to/at Rachel.
+         Syntax: NP[Agent] VERB NP[Topic] PREP[+dest_dir] NP[Recipient]
+         Semantics:
+           * transfer_info(during(E), Agent, Recipient, Topic)
+           * cause(Agent, E)
+       S
+         Example: Susan whispered that the party would be tonight.
+         Syntax: NP[Agent] VERB NP[Topic +that_comp]
+         Semantics:
+           * transfer_info(during(E), Agent, ?Recipient, Topic)
+           * cause(Agent, E)
+       HOW-TO-INF
+         Example: Susan whispered how to avoid the crowd.
+         Syntax: NP[Agent] VERB NP[Topic +wh_inf]
+         Semantics:
+           * transfer_info(during(E), Agent, ?Recipient, Topic)
+           * cause(Agent, E)
+       TO-INF-AC
+         Example: Susan whispered to come.
+         Syntax: NP[Agent] VERB NP[Topic +ac_to_inf]
+         Semantics:
+           * transfer_info(during(E), Agent, ?Recipient, Topic)
+           * cause(Agent, E)
+       PP-S (Recipient-PP)
+         Example: Susan whispered to Rachel that the party would be tonight.
+         Syntax: NP[Agent] VERB PREP[+dest_dir] NP[Recipient] NP[Topic +that_comp]
+         Semantics:
+           * transfer_info(during(E), Agent, Recipient, Topic)
+           * cause(Agent, E)
+       PP-HOW-TO-INF (Recipient-PP)
+         Example: Susan whispered to Rachel how to avoid the crowd.
+         Syntax: NP[Agent] VERB PREP[+dest_dir] NP[Recipient] NP[Topic +wh_inf]
+         Semantics:
+           * transfer_info(during(E), Agent, Recipient, Topic)
+           * cause(Agent, E)
+       PP-TO-INF-OC (Recipient-PP)
+         Example: Susan whispered to Rachel to come.
+         Syntax: NP[Agent] VERB PREP[+dest_dir] NP[Recipient] NP[Topic +oc_to_inf]
+         Semantics:
+           * transfer_info(during(E), Agent, Recipient, Topic)
+           * cause(Agent, E)
+       PP-TO-INF-OC (Recipient-PP)
+         Example: Susan whispered for me to come.
+         Syntax: NP[Agent] VERB PREP[for] NP[Recipient] NP[Topic +oc_to_inf]
+         Semantics:
+           * transfer_info(during(E), Agent, Recipient, Topic)
+           * cause(Agent, E)
+       PP-QUOT (Recipient-PP)
+         Example: Susan whispered to Rachel, 'Leave the room.'
+         Syntax: NP[Agent] VERB PREP[+dest_dir] NP[Recipient] NP[Topic]
+         Semantics:
+           * transfer_info(during(E), Agent, Recipient, Topic)
+           * cause(Agent, E)
+
+6. BRAT Semantic Role Annotations (saved to /Users/baanisolanki/baani_assignments/baani_assignments/semester3_assignments/cl2_tuts/tut3/brat_annotations/sentence_3.ann):
+   T1	Predicate 15 23	believes
+   T2	ARG0 0 14	A good teacher
+   T3	ARG1 24 61	in the responsibility of every school
+   E1	Predicate:T1 ARG0:T2 ARG1:T3
+   T4	Predicate 65 70	bring
+   T5	ARG0 49 61	every school
+   T6	ARG1 75 83	the best
+   T7	ARG2 84 100	in every student
+   E2	Predicate:T4 ARG0:T5 ARG1:T6 ARG2:T7
+   T8	Predicate 115 121	passed
+   T9	ARG0 112 114	we
+   T10	ARG1 122 126	what
+   E3	Predicate:T8 ARG0:T9 ARG1:T10
+   T11	Predicate 129 135	called
+   T12	ARG1 122 126	what
+   T13	ARG2 136 172	the No Child Left Behind legislation
+   E4	Predicate:T11 ARG1:T12 ARG2:T13
+
+================================================================================
+SENTENCE 4: Education reform depends on good laws and good plans but you and I know it ultimately depends on good teachers.
+================================================================================
+1. POS Tags (NLTK Tagger):
+   [('Education', 'NN'), ('reform', 'NN'), ('depends', 'VBZ'), ('on', 'IN'), ('good', 'JJ'), ('laws', 'NNS'), ('and', 'CC'), ('good', 'JJ'), ('plans', 'NNS'), ('but', 'CC'), ('you', 'PRP'), ('and', 'CC'), ('I', 'PRP'), ('know', 'VBP'), ('it', 'PRP'), ('ultimately', 'RB'), ('depends', 'VBZ'), ('on', 'IN'), ('good', 'JJ'), ('teachers', 'NNS'), ('.', '.')]
+
+2. Parse Tree & Visualization:
+                                                                                                    S                                                                                                      
+  __________________________________________________________________________________________________|_________________________________________________________________________________                      
+ |                |                 |                                         PP                                                  |       |                   |                       |                    
+ |                |                 |         ________________________________|________                                           |       |                   |                       |                     
+ |                |                 |        |                                         NP                                         |       |                   |                       |                    
+ |                |                 |        |      ___________________________________|____________________________              |       |                   |                       |                     
+ |                |                 |        |     |                          NP                                    NP            |       |                   |                       PP                   
+ |                |                 |        |     |       ___________________|______________                _______|______       |       |                   |                 ______|_____                
+ |                NP                VP       |     |      |             NP                   NP             |       NP     NP     VP      NP                  VP               |            NP             
+ |        ________|______           |        |     |      |        _____|_____          _____|______        |       |      |      |       |           ________|_______         |       _____|_______        
+./. Education/NN     reform/NN depends/VBZ on/IN but/CC and/CC good/JJ     laws/NNS good/JJ     plans/NNS and/CC you/PRP I/PRP know/VBP it/PRP ultimately/RB     depends/VBZ on/IN good/JJ     teachers/NNS
+
+
+3. Extracted Verbs / Predicates:
+   Token: 'depends' (POS: VBZ) -> Lemma: 'depend'
+   Token: 'know' (POS: VBP) -> Lemma: 'know'
+   Token: 'depends' (POS: VBZ) -> Lemma: 'depend'
+
+4. PropBank Roles Assigned to Main Verbs / Predicates:
+   PropBank Frameset for 'depend' (1 roleset(s)):
+     Roleset [depend.01] (rely):
+       ARG0: depender
+       ARG1: depended on
+   PropBank Frameset for 'know' (1 roleset(s)):
+     Roleset [know.01] (understand):
+       ARG0: knower
+       ARG1: thing known or thought
+       ARG2: attribute of arg1
+
+   Assigned PropBank Roles in Sentence:
+     Predicate: 'depends' (Roleset: depend.01)
+       ARG0      : Education reform
+       ARG1      : on good laws and good plans
+     Predicate: 'know' (Roleset: know.01)
+       ARG0      : you and I
+       ARG1      : it
+     Predicate: 'depends' (Roleset: depend.01)
+       ARG0      : it
+       ARGM-ADV  : ultimately
+       ARG1      : on good teachers
+
+5. VerbNet Frames and Semantic Representations:
+   Verb Lemma: 'depend' -> VerbNet Classes: ['exist-47.1-1', 'rely-70']
+     --- VerbNet Class: exist-47.1-1 ---
+       Basic Intransitive
+         Example: Unicorns don't exist.
+         Syntax: NP[Theme] VERB
+         Semantics:
+           * exist(during(E), Theme)
+     --- VerbNet Class: rely-70 ---
+       P-ING-SC (on-PP)
+         Example: She relies on coming back in time.
+         Syntax: NP[Agent] VERB PREP[on] NP[Theme +sc_ing]
+         Semantics:
+           * depend(during(E), Agent, Theme)
+       P-NP-ING (on-PP)
+         Example: She relies on him coming back in time.
+         Syntax: NP[Agent] VERB PREP[on] NP[Theme +np_ing]
+         Semantics:
+           * depend(during(E), Agent, Theme)
+       P-NP-TO-INF (on-PP)
+         Example: She relies on him to help.
+         Syntax: NP[Agent] VERB PREP[on] NP[Theme +np_to_inf]
+         Semantics:
+           * depend(during(E), Agent, Theme)
+       P-POSSING (on-PP)
+         Example: She relies on his helping.
+         Syntax: NP[Agent] VERB PREP[on] NP[Theme +poss_ing]
+         Semantics:
+           * depend(during(E), Agent, Theme)
+       PP (on-PP)
+         Example: She relies on it.
+         Syntax: NP[Agent] VERB PREP[on] NP[Theme -sentential]
+         Semantics:
+           * depend(during(E), Agent, Theme)
+   Verb Lemma: 'know' -> VerbNet Classes: ['characterize-29.2-1', 'conjecture-29.5-1', 'consider-29.9-1-1']
+     --- VerbNet Class: characterize-29.2-1 ---
+       HOW-S
+         Example: He described how he could rise to high office.
+         Syntax: NP[Agent] VERB NP[Theme +how_extract]
+         Semantics:
+           * describe(during(E), Agent, Theme)
+           * cause(Agent, E)
+       HOW-TO-INF
+         Example: He described how to do it.
+         Syntax: NP[Agent] VERB NP[Theme +wh_inf]
+         Semantics:
+           * describe(during(E), Agent, Theme)
+           * cause(Agent, E)
+     --- VerbNet Class: conjecture-29.5-1 ---
+       Infinitival Copular Clause
+         Example: He felt the choice to be a bad one.
+         Syntax: NP[Agent] VERB NP[Theme] LEX[to] LEX[be] NP[Predicate]
+         Semantics:
+           * believe(during(E), Agent, Theme, Predicate)
+       S
+         Example: The populace feel that the RIAA has too much power.
+         Syntax: NP[Agent] VERB NP[Theme +that_comp]
+         Semantics:
+           * believe(during(E), Agent, Theme, ?Predicate)
+       Basic Transitive
+         Example: He denied the horrid woman's statement.
+         Syntax: NP[Agent] VERB NP[Theme -sentential]
+         Semantics:
+           * believe(during(E), Agent, Theme, ?Predicate)
+     --- VerbNet Class: consider-29.9-1-1 ---
+       NP-VEN-NP-OMIT
+         Example: I considered the matter closed.
+         Syntax: NP[Agent] VERB NP[Theme +np_ppart]
+         Semantics:
+           * consider(during(E), Agent, Theme)
+       WH-S
+         Example: He considered whether he should come.
+         Syntax: NP[Agent] VERB NP[Theme +wh_comp]
+         Semantics:
+           * consider(during(E), Agent, Theme)
+       WHAT-S
+         Example: He considered what he should do.
+         Syntax: NP[Agent] VERB NP[Theme +what_extract]
+         Semantics:
+           * consider(during(E), Agent, Theme)
+       WHAT-TO-INF
+         Example: He considered what to do.
+         Syntax: NP[Agent] VERB NP[Theme +what_inf]
+         Semantics:
+           * consider(during(E), Agent, Theme)
+
+6. BRAT Semantic Role Annotations (saved to /Users/baanisolanki/baani_assignments/baani_assignments/semester3_assignments/cl2_tuts/tut3/brat_annotations/sentence_4.ann):
+   T1	Predicate 17 24	depends
+   T2	ARG0 0 16	Education reform
+   T3	ARG1 25 52	on good laws and good plans
+   E1	Predicate:T1 ARG0:T2 ARG1:T3
+   T4	Predicate 67 71	know
+   T5	ARG0 57 66	you and I
+   T6	ARG1 72 74	it
+   E2	Predicate:T4 ARG0:T5 ARG1:T6
+   T7	Predicate 86 93	depends
+   T8	ARG0 72 74	it
+   T9	ARGM-ADV 75 85	ultimately
+   T10	ARG1 94 110	on good teachers
+   E3	Predicate:T7 ARG0:T8 ARGM-ADV:T9 ARG1:T10
+
+================================================================================
+SENTENCE 5: Last June states submitted to the department of education strategies for ensuring that all teachers are highly qualified.
+================================================================================
+1. POS Tags (NLTK Tagger):
+   [('Last', 'JJ'), ('June', 'NNP'), ('states', 'NNS'), ('submitted', 'VBD'), ('to', 'TO'), ('the', 'DT'), ('department', 'NN'), ('of', 'IN'), ('education', 'NN'), ('strategies', 'NNS'), ('for', 'IN'), ('ensuring', 'VBG'), ('that', 'IN'), ('all', 'DT'), ('teachers', 'NNS'), ('are', 'VBP'), ('highly', 'RB'), ('qualified', 'VBN'), ('.', '.')]
+
+2. Parse Tree & Visualization:
+                                                                                      S                                                                                                               
+   ___________________________________________________________________________________|____________________________________________________________________________________________                    
+  |     |             |                      |               PP                                PP                              |                 PP                                |                  
+  |     |             |                      |          _____|_____                    ________|________                       |           ______|_____                            |                   
+  |     |             NP                     VP        |           NP                 |                 NP                     VP         |            NP                          VP                 
+  |     |      _______|_________             |         |      _____|________          |         ________|________              |          |       _____|_______            ________|___________        
+for/IN ./. Last/JJ June/NNP states/NNS submitted/VBD to/TO the/DT     department/NN of/IN education/NN     strategies/NNS ensuring/VBG that/IN all/DT     teachers/NNS are/VBP highly/RB qualified/VBN
+
+
+3. Extracted Verbs / Predicates:
+   Token: 'submitted' (POS: VBD) -> Lemma: 'submit'
+   Token: 'ensuring' (POS: VBG) -> Lemma: 'ensure'
+   Token: 'are' (POS: VBP) -> Lemma: 'be'
+   Token: 'qualified' (POS: VBN) -> Lemma: 'qualify'
+
+4. PropBank Roles Assigned to Main Verbs / Predicates:
+   PropBank Frameset for 'submit' (1 roleset(s)):
+     Roleset [submit.01] (give):
+       ARG0: giver
+       ARG1: given
+       ARG2: given-to
+       ARG3: purpose
+   PropBank Frameset for 'ensure' (1 roleset(s)):
+     Roleset [ensure.01] (promise):
+       ARG0: entity making guarantee
+       ARG1: guarantee
+       ARG2: benefactive, guaranteed-to
+   PropBank Frameset for 'be' (3 roleset(s)):
+     Roleset [be.01] (copula):
+       ARG1: topic
+       ARG2: comment
+     Roleset [be.02] (existential):
+       ARG1: thing that is
+     Roleset [be.03] (auxiliary):
+   PropBank Frameset for 'qualify' (2 roleset(s)):
+     Roleset [qualify.01] (define (further)):
+       ARG0: speaker
+       ARG1: thing being described
+       ARG2: secondary predication
+     Roleset [qualify.02] (measure up to):
+       ARG1: entity being tested
+       ARG2: for what?
+
+   Assigned PropBank Roles in Sentence:
+     Predicate: 'submitted' (Roleset: submit.01)
+       ARGM-TMP  : Last June
+       ARG0      : states
+       ARG1      : to the department of education strategies
+     Predicate: 'ensuring' (Roleset: ensure.01)
+       ARGM-TMP  : Last June
+       ARG0      : education strategies
+       ARG1      : that all teachers are highly qualified
+     Predicate: 'qualified' (Roleset: qualify.01)
+       ARG1      : all teachers
+       ARGM-ADV  : highly
+
+5. VerbNet Frames and Semantic Representations:
+   Verb Lemma: 'submit' -> VerbNet Classes: ['contribute-13.2-1-1']
+     --- VerbNet Class: contribute-13.2-1-1 ---
+       Basic Intransitive
+         Example: Some of the members may donate privately.
+         Syntax: NP[Agent] VERB
+         Semantics:
+           * has_possession(start(E), Agent, ?Theme)
+           * has_possession(end(E), ?Recipient, ?Theme)
+           * transfer(during(E), ?Theme)
+           * cause(Agent, E)
+   Verb Lemma: 'ensure' -> No VerbNet classes found.
+   Verb Lemma: 'be' -> No VerbNet classes found.
+   Verb Lemma: 'qualify' -> VerbNet Classes: ['masquerade-29.6']
+     --- VerbNet Class: masquerade-29.6 ---
+       PP (as-PP)
+         Example: Dina masqueraded as a lawyer.
+         Syntax: NP[Agent] VERB LEX[as] NP[Predicate]
+         Semantics:
+           * masquerade(during(E), Agent, Predicate)
+
+6. BRAT Semantic Role Annotations (saved to /Users/baanisolanki/baani_assignments/baani_assignments/semester3_assignments/cl2_tuts/tut3/brat_annotations/sentence_5.ann):
+   T1	Predicate 17 26	submitted
+   T2	ARGM-TMP 0 9	Last June
+   T3	ARG0 10 16	states
+   T4	ARG1 27 68	to the department of education strategies
+   E1	Predicate:T1 ARGM-TMP:T2 ARG0:T3 ARG1:T4
+   T5	Predicate 73 81	ensuring
+   T6	ARGM-TMP 0 9	Last June
+   T7	ARG0 48 68	education strategies
+   T8	ARG1 82 120	that all teachers are highly qualified
+   E2	Predicate:T5 ARGM-TMP:T6 ARG0:T7 ARG1:T8
+   T9	Predicate 111 120	qualified
+   T10	ARG1 87 99	all teachers
+   T11	ARGM-ADV 104 110	highly
+   E3	Predicate:T9 ARG1:T10 ARGM-ADV:T11
+
+================================================================================
+SENTENCE 6: Inherent in the law is the vision of high standards, and money to meet the standards.
+================================================================================
+1. POS Tags (NLTK Tagger):
+   [('Inherent', 'NN'), ('in', 'IN'), ('the', 'DT'), ('law', 'NN'), ('is', 'VBZ'), ('the', 'DT'), ('vision', 'NN'), ('of', 'IN'), ('high', 'JJ'), ('standards', 'NNS'), (',', ','), ('and', 'CC'), ('money', 'NN'), ('to', 'TO'), ('meet', 'VB'), ('the', 'DT'), ('standards', 'NNS'), ('.', '.')]
+
+2. Parse Tree & Visualization:
+                                                           S                                                                                                  
+  _________________________________________________________|__________________________________________________________________________________                 
+ |    |      |    |       |              PP                |            |                     PP                        |        |            |               
+ |    |      |    |       |         _____|_____            |            |               ______|_____                    |        |            |                
+ |    |      |    |       NP       |           NP          VP           NP             |            NP                  NP       VP           NP              
+ |    |      |    |       |        |      _____|____       |       _____|______        |       _____|________           |        |       _____|________        
+,/, and/CC to/TO ./. Inherent/NN in/IN the/DT     law/NN is/VBZ the/DT     vision/NN of/IN high/JJ     standards/NNS money/NN meet/VB the/DT     standards/NNS
+
+
+3. Extracted Verbs / Predicates:
+   Token: 'is' (POS: VBZ) -> Lemma: 'be'
+   Token: 'meet' (POS: VB) -> Lemma: 'meet'
+
+4. PropBank Roles Assigned to Main Verbs / Predicates:
+   PropBank Frameset for 'be' (3 roleset(s)):
+     Roleset [be.01] (copula):
+       ARG1: topic
+       ARG2: comment
+     Roleset [be.02] (existential):
+       ARG1: thing that is
+     Roleset [be.03] (auxiliary):
+   PropBank Frameset for 'meet' (3 roleset(s)):
+     Roleset [meet.01] (arrive at, achieve):
+       ARG0: achiever, agent
+       ARG1: goal
+     Roleset [meet.02] (kennenlernen):
+       ARG0: meeter
+       ARG1: person / entity / object being met
+     Roleset [meet.03] (get together (with)):
+       ARG0: one party
+       ARG1: other party
+
+   Assigned PropBank Roles in Sentence:
+     Predicate: 'is' (Roleset: be.01)
+       ARG1      : in the law
+       ARG2      : the vision of high standards
+     Predicate: 'meet' (Roleset: meet.01)
+       ARG0      : money
+       ARG1      : the standards
+
+5. VerbNet Frames and Semantic Representations:
+   Verb Lemma: 'be' -> No VerbNet classes found.
+   Verb Lemma: 'meet' -> VerbNet Classes: ['contiguous_location-47.8-1', 'meet-36.3-1']
+     --- VerbNet Class: contiguous_location-47.8-1 ---
+       Understood Reciprocal Object
+         Example: Italy and France touch.
+         Syntax: NP[Theme1] LEX[and] NP[Theme2] VERB
+         Semantics:
+           * contact(during(E), Theme1, Theme2)
+           * exist(during(E), Theme1)
+           * exist(during(E), Theme2)
+     --- VerbNet Class: meet-36.3-1 ---
+       PP (with-PP)
+         Example: Brenda met with Molly.
+         Syntax: NP[Actor1] VERB PREP[with] NP[Actor2]
+         Semantics:
+           * social_interaction(during(E), Actor1, Actor2)
+       Simple Reciprocal Intransitive
+         Example: Brenda and Molly met.
+         Syntax: NP[Actor1] LEX[and] NP[Actor2] VERB
+         Semantics:
+           * social_interaction(during(E), Actor1, Actor2)
+       With Preposition Drop
+         Example: Anne met Cathy.
+         Syntax: NP[Actor1] VERB NP[Actor2]
+         Semantics:
+           * social_interaction(during(E), Actor1, Actor2)
+       Intransitive (Plural Subject)
+         Example: The committee met.
+         Syntax: NP[Actor +plural] VERB
+         Semantics:
+           * social_interaction(during(E), Actor_i, Actor_j)
+
+6. BRAT Semantic Role Annotations (saved to /Users/baanisolanki/baani_assignments/baani_assignments/semester3_assignments/cl2_tuts/tut3/brat_annotations/sentence_6.ann):
+   T1	Predicate 20 22	is
+   T2	ARG1 9 19	in the law
+   T3	ARG2 23 51	the vision of high standards
+   E1	Predicate:T1 ARG1:T2 ARG2:T3
+   T4	Predicate 66 70	meet
+   T5	ARG0 57 62	money
+   T6	ARG1 71 84	the standards
+   E2	Predicate:T4 ARG0:T5 ARG1:T6
+
+================================================================================
+SENTENCE 7: All of which put the education decisions of America in the hands of teachers and principals and local officials.
+================================================================================
+1. POS Tags (NLTK Tagger):
+   [('All', 'DT'), ('of', 'IN'), ('which', 'WDT'), ('put', 'VBD'), ('the', 'DT'), ('education', 'NN'), ('decisions', 'NNS'), ('of', 'IN'), ('America', 'NNP'), ('in', 'IN'), ('the', 'DT'), ('hands', 'NNS'), ('of', 'IN'), ('teachers', 'NNS'), ('and', 'CC'), ('principals', 'NNS'), ('and', 'CC'), ('local', 'JJ'), ('officials', 'NNS'), ('.', '.')]
+
+2. Parse Tree & Visualization:
+                                                                                    S                                                                                                           
+  __________________________________________________________________________________|_________________________________________                                                                   
+ |           |                |                |                            |                      |                          PP                                                                
+ |           |                |                |                            |                      |                     _____|________________                                                  
+ |           |                |                |                            |                      |                    |                      NP                                               
+ |           |                |                |                            |                      |                    |      ________________|________________________________                 
+ |           |                |                |                            PP                     PP                   |     |                NP                               |               
+ |           |                |                |                        ____|_______          _____|_____               |     |       _________|_____________                   |                
+ |           NP               VP               NP                      |            NP       |           NP             |     |      |         NP            NP                 NP              
+ |     ______|_______         |       _________|_____________          |            |        |      _____|______        |     |      |         |             |            ______|________        
+./. All/DT of/IN which/WDT put/VBD the/DT education/NN decisions/NNS of/IN     America/NNP in/IN the/DT     hands/NNS of/IN and/CC and/CC teachers/NNS principals/NNS local/JJ     officials/NNS
+
+
+3. Extracted Verbs / Predicates:
+   Token: 'put' (POS: VBD) -> Lemma: 'put'
+
+4. PropBank Roles Assigned to Main Verbs / Predicates:
+   PropBank Frameset for 'put' (12 roleset(s)):
+     Roleset [put.01] (location):
+       ARG0: putter
+       ARG1: thing put
+       ARG2: where put
+     Roleset [put.02] (say):
+       ARG0: speaker
+       ARG1: thing said
+     Roleset [put.03] (result, attributive):
+       ARG0: putter
+       ARG1: thing put
+       ARG2: attribute of arg1
+     Roleset [put.05] (contribute, submit):
+       ARG0: contributor
+       ARG1: contribution
+     Roleset [put.06] (delay):
+       ARG0: delayer
+       ARG1: delayed
+       ARG2: delay itself, EXT, time period
+     Roleset [put.07] (offended):
+       ARG0: offender
+       ARG1: offended
+     Roleset [put.08] (assume, acquire, wear):
+       ARG0: wearer
+       ARG1: clothing
+     Roleset [put.09] (extinguish):
+       ARG0: extinguisher
+       ARG1: fire
+     Roleset [put.10] (disseminate):
+       ARG0: distributor
+       ARG1: distributed
+     Roleset [put.11] (furnish, supply):
+       ARG0: supplier
+       ARG1: supply, equipment
+       ARG2: recipient
+     Roleset [put.12] (tolerate, put up with):
+       ARG0: tolerater
+       ARG1: thing tolerated
+     Roleset [put.04] (idiomatic: hard put):
+       ARG0: causer, usually infinitival
+       ARG1: experiencer
+
+   Assigned PropBank Roles in Sentence:
+     Predicate: 'put' (Roleset: put.01)
+       ARG0      : All of which
+       ARG1      : the education decisions of America
+       ARG2      : in the hands of teachers and principals and local officials
+
+5. VerbNet Frames and Semantic Representations:
+   Verb Lemma: 'put' -> VerbNet Classes: ['put-9.1-2']
+     --- VerbNet Class: put-9.1-2 ---
+       PP-NP (upon/on-PP)
+         Example: They put upon me a brilliant, red helm.
+         Syntax: NP[Agent] VERB PREP[on upon] NP[Destination] NP[Theme]
+         Semantics:
+           * motion(during(E), Theme)
+           * ¬Prep(start(E), Theme, Destination)
+           * Prep(end(E), Theme, Destination)
+           * cause(Agent, E)
+
+6. BRAT Semantic Role Annotations (saved to /Users/baanisolanki/baani_assignments/baani_assignments/semester3_assignments/cl2_tuts/tut3/brat_annotations/sentence_7.ann):
+   T1	Predicate 13 16	put
+   T2	ARG0 0 12	All of which
+   T3	ARG1 17 51	the education decisions of America
+   T4	ARG2 52 111	in the hands of teachers and principals and local officials
+   E1	Predicate:T1 ARG0:T2 ARG1:T3 ARG2:T4
+
+================================================================================
+SENTENCE 8: But we also said that as we seek excellence for every child, we must design accountability systems at the state level to determine whether or not each child is learning.
+================================================================================
+1. POS Tags (NLTK Tagger):
+   [('But', 'CC'), ('we', 'PRP'), ('also', 'RB'), ('said', 'VBD'), ('that', 'IN'), ('as', 'IN'), ('we', 'PRP'), ('seek', 'VBP'), ('excellence', 'NN'), ('for', 'IN'), ('every', 'DT'), ('child', 'NN'), (',', ','), ('we', 'PRP'), ('must', 'MD'), ('design', 'VB'), ('accountability', 'NN'), ('systems', 'NNS'), ('at', 'IN'), ('the', 'DT'), ('state', 'NN'), ('level', 'NN'), ('to', 'TO'), ('determine', 'VB'), ('whether', 'IN'), ('or', 'CC'), ('not', 'RB'), ('each', 'DT'), ('child', 'NN'), ('is', 'VBZ'), ('learning', 'VBG'), ('.', '.')]
+
+2. Parse Tree & Visualization:
+                                                                                                                           S                                                                                                                                                                                   
+   ________________________________________________________________________________________________________________________|____________________________________________________________________________________________________________________________________________________________________                
+  |       |     |    |       |        |     |     |    |             |                  PP           |           |                 PP                   |             |                             |                            PP                        |                |                   |              
+  |       |     |    |       |        |     |     |    |             |              ____|____        |           |          _______|______              |             |                             |                 ___________|_____                    |                |                   |               
+  |       |     |    |       |        |     |     |    NP            VP            |         NP      VP          NP        |              NP            NP            VP                            NP               |                 NP                  VP               NP                  VP             
+  |       |     |    |       |        |     |     |    |        _____|_____        |         |       |           |         |        ______|_____        |        _____|______              _________|_______         |      ___________|________           |           _____|_____         _____|_______        
+But/CC that/IN ,/, to/TO whether/IN or/CC not/RB ./. we/PRP also/RB     said/VBD as/IN     we/PRP seek/VBP excellence/NN for/IN every/DT     child/NN we/PRP must/MD     design/VB accountability/     systems/NNS at/IN the/DT     state/NN level/NN determine/VB each/DT     child/NN is/VBZ     learning/VBG
+                                                                                                                                                                                          NN                                                                                                                   
+
+
+3. Extracted Verbs / Predicates:
+   Token: 'said' (POS: VBD) -> Lemma: 'say'
+   Token: 'seek' (POS: VBP) -> Lemma: 'seek'
+   Token: 'design' (POS: VB) -> Lemma: 'design'
+   Token: 'determine' (POS: VB) -> Lemma: 'determine'
+   Token: 'is' (POS: VBZ) -> Lemma: 'be'
+   Token: 'learning' (POS: VBG) -> Lemma: 'learn'
+
+4. PropBank Roles Assigned to Main Verbs / Predicates:
+   PropBank Frameset for 'say' (1 roleset(s)):
+     Roleset [say.01] (say):
+       ARG0: Sayer
+       ARG1: Utterance
+       ARG2: Hearer
+       ARG3: Attributive
+   PropBank Frameset for 'seek' (2 roleset(s)):
+     Roleset [seek.01] (look for):
+       ARG0: Agent / entity seeking
+       ARG1: thing sought, attempted action
+       ARG2: sought-from
+     Roleset [seek.02] (search diligently for):
+       ARG0: Agent / entity seeking
+       ARG1: thing sought
+       ARG2: sought-from
+   PropBank Frameset for 'design' (1 roleset(s)):
+     Roleset [design.01] (design):
+       ARG0: designer
+       ARG1: thing designed
+       ARG2: benefactive
+       ARG3: purpose
+   PropBank Frameset for 'determine' (1 roleset(s)):
+     Roleset [determine.01] (set, establish, decide):
+       ARG0: decider
+       ARG1: thing determined
+       ARG2: grounds
+       ARG3: attribute of arg1
+   PropBank Frameset for 'be' (3 roleset(s)):
+     Roleset [be.01] (copula):
+       ARG1: topic
+       ARG2: comment
+     Roleset [be.02] (existential):
+       ARG1: thing that is
+     Roleset [be.03] (auxiliary):
+   PropBank Frameset for 'learn' (1 roleset(s)):
+     Roleset [learn.01] (learn):
+       ARG0: student
+       ARG1: subject
+       ARG2: teacher
+
+   Assigned PropBank Roles in Sentence:
+     Predicate: 'said' (Roleset: say.01)
+       ARG0      : we
+       ARGM-ADV  : also
+       ARG1      : that as we seek excellence for every child
+     Predicate: 'seek' (Roleset: seek.01)
+       ARG0      : we
+       ARG1      : excellence
+       ARG2      : for every child
+     Predicate: 'design' (Roleset: design.01)
+       ARG0      : we
+       ARGM-MOD  : must
+       ARGM-LOC  : at the state level
+       ARG1      : accountability systems
+     Predicate: 'determine' (Roleset: determine.01)
+       ARG0      : the state level
+       ARG1      : whether or not each child is learning
+     Predicate: 'learning' (Roleset: learn.01)
+       ARG0      : each child
+
+5. VerbNet Frames and Semantic Representations:
+   Verb Lemma: 'say' -> VerbNet Classes: ['indicate-78-1', 'say-37.7-1']
+     --- VerbNet Class: indicate-78-1 ---
+       PP-THAT-S-SUBJUNCT (to-PP)
+         Example: This indicates to us that they had stolen money.
+         Syntax: NP[Cause] VERB PREP[to] NP[Recipient] NP[Topic +that_comp -tensed_that]
+         Semantics:
+           * indicate(during(E), Cause, Recipient, Topic)
+       PP-WH-S (to-PP)
+         Example: This indicates to me whether they did it.
+         Syntax: NP[Cause] VERB PREP[to] NP[Recipient] NP[Topic +wh_comp]
+         Semantics:
+           * indicate(during(E), Cause, Recipient, Topic)
+       PP-WHAT-S (to-PP)
+         Example: This indicates to me what he is.
+         Syntax: NP[Cause] VERB PREP[to] NP[Recipient] NP[Topic +what_extract]
+         Semantics:
+           * indicate(during(E), Cause, Recipient, Topic)
+       PP-HOW-S (to-PP)
+         Example: This indicates to us how it happended.
+         Syntax: NP[Cause] VERB PREP[to] NP[Recipient] NP[Topic +how_extract]
+         Semantics:
+           * indicate(during(E), Agent, Recipient, Topic)
+     --- VerbNet Class: say-37.7-1 ---
+       S
+         Example: He ordered that he go.
+         Syntax: NP[Agent] VERB NP[Topic +that_comp]
+         Semantics:
+           * transfer_info(during(E), Agent, ?Recipient, Topic)
+           * cause(Agent, E)
+       S-SUBJUNCT
+         Example: John suggested that he should go.
+         Syntax: NP[Agent] VERB NP[Topic +that_comp -tensed_that]
+         Semantics:
+           * transfer_info(during(E), Agent, ?Recipient, Topic)
+           * cause(Agent, E)
+   Verb Lemma: 'seek' -> VerbNet Classes: ['ferret-35.6']
+     --- VerbNet Class: ferret-35.6 ---
+       NP-PP (Location-PP)
+         Example: I ferreted the secret out of him.
+         Syntax: NP[Agent] VERB NP[Theme] PREP[+dir] NP[Location]
+         Semantics:
+           * search(during(E), Agent, Location, Theme)
+   Verb Lemma: 'design' -> VerbNet Classes: ['create-26.4-1']
+     --- VerbNet Class: create-26.4-1 ---
+       NP-NP (Beneficiary Object)
+         Example: David dug me a hole.
+         Syntax: NP[Agent] VERB NP[Beneficiary] NP[Product]
+         Semantics:
+           * ¬exist(start(E), Product)
+           * exist(result(E), Product)
+           * cause(Agent, E)
+           * benefit(E, Beneficiary)
+   Verb Lemma: 'determine' -> No VerbNet classes found.
+   Verb Lemma: 'be' -> No VerbNet classes found.
+   Verb Lemma: 'learn' -> VerbNet Classes: ['discover-84-1-1', 'learn-14-1', 'learn-14-2-1']
+     --- VerbNet Class: discover-84-1-1 ---
+       Basic Intransitive
+         Example: I learned.
+         Syntax: NP[Agent] VERB
+         Semantics:
+           * discover(during(E), Agent, ?Theme, ?Source)
+       P-POSSING (about-PP)
+         Example: I learned about his drinking.
+         Syntax: NP[Agent] VERB PREP[about] NP[Theme +poss_ing]
+         Semantics:
+           * discover(during(E), Agent, Theme, ?Source)
+       P-WHAT-S (about-PP)
+         Example: I learned about what he drank.
+         Syntax: NP[Agent] VERB PREP[about] NP[Theme +what_extract]
+         Semantics:
+           * discover(during(E), Agent, Theme, ?Source)
+       PP (about-PP)
+         Example: I learned about the drinking.
+         Syntax: NP[Agent] VERB PREP[about] NP[Theme -sentential]
+         Semantics:
+           * discover(during(E), Agent, Theme, ?Source)
+       PP-PP (about-PP from-PP)
+         Example: I learned about it from a book.
+         Syntax: NP[Agent] VERB PREP[about] NP[Theme -sentential] PREP[from] NP[Source]
+         Semantics:
+           * discover(during(E), Agent, Theme, Source)
+     --- VerbNet Class: learn-14-1 ---
+       Basic Intransitive
+         Example: She studied.
+         Syntax: NP[Agent] VERB
+         Semantics:
+           * transfer_info(during(E), ?Source, Agent, ?Topic)
+     --- VerbNet Class: learn-14-2-1 ---
+       PP (of-PP)
+         Example: The president learned of a coup plot that might endanger his life.
+         Syntax: NP[Agent] VERB PREP[of about] NP[Topic]
+         Semantics:
+           * transfer_info(during(E), ?Source, Agent, Topic)
+
+6. BRAT Semantic Role Annotations (saved to /Users/baanisolanki/baani_assignments/baani_assignments/semester3_assignments/cl2_tuts/tut3/brat_annotations/sentence_8.ann):
+   T1	Predicate 12 16	said
+   T2	ARG0 4 6	we
+   T3	ARGM-ADV 7 11	also
+   T4	ARG1 17 59	that as we seek excellence for every child
+   E1	Predicate:T1 ARG0:T2 ARGM-ADV:T3 ARG1:T4
+   T5	Predicate 28 32	seek
+   T6	ARG0 4 6	we
+   T7	ARG1 33 43	excellence
+   T8	ARG2 44 59	for every child
+   E2	Predicate:T5 ARG0:T6 ARG1:T7 ARG2:T8
+   T9	Predicate 69 75	design
+   T10	ARG0 4 6	we
+   T11	ARGM-MOD 64 68	must
+   T12	ARGM-LOC 99 117	at the state level
+   T13	ARG1 76 98	accountability systems
+   E3	Predicate:T9 ARG0:T10 ARGM-MOD:T11 ARGM-LOC:T12 ARG1:T13
+   T14	Predicate 121 130	determine
+   T15	ARG0 102 117	the state level
+   T16	ARG1 131 168	whether or not each child is learning
+   E4	Predicate:T14 ARG0:T15 ARG1:T16
+   T17	Predicate 160 168	learning
+   T18	ARG0 146 156	each child
+   E5	Predicate:T17 ARG0:T18
+
+================================================================================
+SENTENCE 9: By this September, states will assess the programs they expect to make by 2005 and 2006 school year.
+================================================================================
+1. POS Tags (NLTK Tagger):
+   [('By', 'IN'), ('this', 'DT'), ('September', 'NNP'), (',', ','), ('states', 'NNS'), ('will', 'MD'), ('assess', 'VB'), ('the', 'DT'), ('programs', 'NNS'), ('they', 'PRP'), ('expect', 'VBP'), ('to', 'TO'), ('make', 'VB'), ('by', 'IN'), ('2005', 'CD'), ('and', 'CC'), ('2006', 'CD'), ('school', 'NN'), ('year', 'NN'), ('.', '.')]
+
+2. Parse Tree & Visualization:
+                                                                   S                                                                                                                 
+  _________________________________________________________________|_______________________________________________________________________________________________________           
+ |    |     |      |      |       |     |           PP                         |               |                    |                  |         |         |               |         
+ |    |     |      |      |       |     |     ______|_____                     |               |                    |                  |         |         |               |          
+ |    |     |      |      |       |     |    |            NP                   NP              VP                   NP                 NP        VP        VP              NP        
+ |    |     |      |      |       |     |    |       _____|________            |          _____|______         _____|_______           |         |         |         ______|_____     
+,/, to/TO by/IN 2005/CD and/CC 2006/CD ./. By/IN this/DT     September/NNP states/NNS will/MD     assess/VB the/DT     programs/NNS they/PRP expect/VBP make/VB school/NN     year/NN
+
+
+3. Extracted Verbs / Predicates:
+   Token: 'assess' (POS: VB) -> Lemma: 'assess'
+   Token: 'expect' (POS: VBP) -> Lemma: 'expect'
+   Token: 'make' (POS: VB) -> Lemma: 'make'
+
+4. PropBank Roles Assigned to Main Verbs / Predicates:
+   PropBank Frameset for 'assess' (1 roleset(s)):
+     Roleset [assess.01] (to evaluate, appraise):
+       ARG0: assessor, agent
+       ARG1: entity assessed
+       ARG2: value or attribute
+   PropBank Frameset for 'expect' (1 roleset(s)):
+     Roleset [expect.01] (look forward to, anticipate):
+       ARG0: expecter
+       ARG1: thing expected
+   PropBank Frameset for 'make' (17 roleset(s)):
+     Roleset [make.01] (create):
+       ARG0: creator
+       ARG1: creation
+       ARG2: created-from, thing changed
+       ARG3: benefactive
+     Roleset [make.02] (cause (to be)):
+       ARG0: impeller to action
+       ARG1: impelled agent
+       ARG2: impelled action
+     Roleset [make.03] (bid or purchase or whatever):
+       ARG0: maker
+       ARG1: bid or purchase or whatever
+       ARG2: benefactive
+     Roleset [make.04] (true light verb):
+       ARG0: agentive subject
+       ARG1: true predicate
+       ARG2: object of true predicate
+       ARG3: additional args of true predicate
+     Roleset [make.05] (earn cash or wages):
+       ARG0: earner
+       ARG1: wages
+       ARG2: job
+     Roleset [make.06] (be, seem):
+       ARG1: thing
+       ARG2: attribute of arg1
+     Roleset [make.07] (comprise):
+       ARG0: components
+       ARG1: whole
+     Roleset [make.08] (compose, set into place):
+       ARG0: composer
+       ARG1: thing composed
+     Roleset [make.09] (reconcile):
+       ARG0: one person
+       ARG1: the other
+     Roleset [make.10] (create):
+       ARG0: creator
+       ARG1: creation
+       ARG2: created-from, thing changed
+       ARG3: benefactive
+     Roleset [make.11] (catch up):
+       ARG1: entity which is behind in something (eg payments)
+       ARG2: the something
+     Roleset [make.16] (compensate (for)):
+       ARG0: compensator, agent
+       ARG1: shortcoming
+       ARG2: means of repairing shortcoming
+     Roleset [make.12] (discern):
+       ARG0: discerner, viewer, agent
+       ARG1: patient, thing discerned
+     Roleset [make.13] (write):
+       ARG0: writer
+       ARG1: thing written
+       ARG2: written to
+     Roleset [make.15] (proceed, meet with (success)):
+       ARG1: topic
+     Roleset [make.14] (achieve or arrive at):
+       ARG0: traveller
+       ARG1: destination
+     Roleset [make.17] (escape (with)):
+       ARG0: escaper
+       ARG1: luggage
+
+   Assigned PropBank Roles in Sentence:
+     Predicate: 'assess' (Roleset: assess.01)
+       ARG0      : states
+       ARGM-MOD  : will
+       ARG1      : the programs
+     Predicate: 'expect' (Roleset: expect.01)
+       ARG0      : they
+       ARG1      : to make by 2005 and 2006 school year
+     Predicate: 'make' (Roleset: make.01)
+       ARG0      : they
+       ARGM-TMP  : by 2005 and 2006 school year
+
+5. VerbNet Frames and Semantic Representations:
+   Verb Lemma: 'assess' -> VerbNet Classes: ['assessment-34', 'price-54.4']
+     --- VerbNet Class: assessment-34 ---
+       Basic Transitive
+         Example: The inspector analyzed the building.
+         Syntax: NP[Agent] VERB NP[Theme]
+         Semantics:
+           * assess(during(E), Agent, Theme, ?Attribute)
+       NP-PP (Attribute-PP)
+         Example: The inspector analyzed the building for its soundness.
+         Syntax: NP[Agent] VERB NP[Theme] PREP[for] NP[Attribute]
+         Semantics:
+           * assess(during(E), Agent, Theme, Attribute)
+       NP (Attribute Object)
+         Example: The inspector analyzed the building's soundness.
+         Syntax: NP[Agent] VERB NP[Theme +genitive] LEX['s] NP[Attribute]
+         Semantics:
+           * assess(during(E), Agent, Theme, Attribute)
+     --- VerbNet Class: price-54.4 ---
+       Basic Transitive
+         Example: The dealer valued the book.
+         Syntax: NP[Agent] VERB NP[Theme]
+         Semantics:
+           * value(result(E), Theme, ?Value)
+           * cause(Agent, E)
+       NP-PP (at-PP)
+         Example: The dealer valued the book at $200.
+         Syntax: NP[Agent] VERB NP[Theme] PREP[at] NP[Value]
+         Semantics:
+           * value(result(E), Theme, Value)
+           * cause(Agent, E)
+   Verb Lemma: 'expect' -> VerbNet Classes: ['wish-62']
+     --- VerbNet Class: wish-62 ---
+       FOR-TO-INF
+         Example: I wished for her to do it.
+         Syntax: NP[Experiencer] VERB NP[Theme +for_comp]
+         Semantics:
+           * desire(E, Experiencer, Theme)
+       NP
+         Example: I wished it.
+         Syntax: NP[Experiencer] VERB NP[Theme -sentential]
+         Semantics:
+           * desire(E, Experiencer, Theme)
+       Infinitival Copular Clause
+         Example: I wished him to be nice.
+         Syntax: NP[Experiencer] VERB NP[Theme +to_be]
+         Semantics:
+           * desire(E, Experiencer, Theme)
+       NP-VEN-NP-OMIT
+         Example: I wished the children found.
+         Syntax: NP[Experiencer] VERB NP[Theme +np_ppart]
+         Semantics:
+           * desire(E, Experiencer, Theme)
+       S
+         Example: He wished that she would come immediately.
+         Syntax: NP[Experiencer] VERB NP[Theme +that_comp]
+         Semantics:
+           * desire(E, Experiencer, Theme)
+       TO-INF-SC
+         Example: He wished to come.
+         Syntax: NP[Experiencer] VERB NP[Theme +sc_to_inf]
+         Semantics:
+           * desire(E, Experiencer, Theme)
+   Verb Lemma: 'make' -> VerbNet Classes: ['build-26.1-1', 'dub-29.3', 'reach-51.8']
+     --- VerbNet Class: build-26.1-1 ---
+       NP-PP (Asset-PP)
+         Example: The contractor builds houses for $100,000.
+         Syntax: NP[Agent] VERB NP[Product] PREP[for] NP[Asset]
+         Semantics:
+           * ¬exist(start(E), Product)
+           * exist(result(E), Product)
+           * made_of(result(E), Product, ?Material)
+           * cause(Agent, E)
+           * cost(E, Asset)
+       NP (Asset Subject)
+         Example: $100,000 builds a house.
+         Syntax: NP[Asset] VERB NP[Product]
+         Semantics:
+           * ¬exist(start(E), Product)
+           * exist(result(E), Product)
+           * made_of(result(E), Product, ?Material)
+           * cause(?Agent, E)
+           * cost(E, Asset)
+       NP-NP (Asset Subject)
+         Example: $100,000 will build you a house.
+         Syntax: NP[Asset] VERB NP[Beneficiary] NP[Product]
+         Semantics:
+           * ¬exist(start(E), Product)
+           * exist(result(E), Product)
+           * made_of(result(E), Product, ?Material)
+           * cause(?Agent, E)
+           * benefit(E, Beneficiary)
+           * cost(E, Asset)
+       NP-PP (Asset Subject)
+         Example: $100,000 builds a house out of sticks.
+         Syntax: NP[Asset] VERB NP[Product] PREP[from out_of] NP[Material]
+         Semantics:
+           * ¬exist(start(E), Product)
+           * exist(result(E), Product)
+           * made_of(result(E), Product, Material)
+           * cause(?Agent, E)
+           * cost(E, Asset)
+       NP-NP-PP (Asset Subject)
+         Example: $100,000 builds you a house out of sticks.
+         Syntax: NP[Asset] VERB NP[Beneficiary] NP[Product] PREP[from out_of] NP[Material]
+         Semantics:
+           * ¬exist(start(E), Product)
+           * exist(result(E), Product)
+           * made_of(result(E), Product, Material)
+           * cause(?Agent, E)
+           * benefit(E, Beneficiary)
+           * cost(E, Asset)
+     --- VerbNet Class: dub-29.3 ---
+       NP-NP
+         Example: The captain named the ship Seafarer.
+         Syntax: NP[Agent] VERB NP[Theme] NP[Predicate]
+         Semantics:
+           * designated(result(E), Theme, Predicate)
+           * cause(Agent, E)
+       Basic Transitive
+         Example: The captain baptized the ship.
+         Syntax: NP[Agent] VERB NP[Theme]
+         Semantics:
+           * cause(Agent, E)
+           * designated(result(E), Theme, ?Predicate)
+     --- VerbNet Class: reach-51.8 ---
+       Basic Transitive
+         Example: They reached the hill.
+         Syntax: NP[Agent] VERB NP[Destination]
+         Semantics:
+           * motion(during(E), Agent)
+           * ¬location(start(E), Agent, Destination)
+           * location(end(E), Agent, Destination)
+
+6. BRAT Semantic Role Annotations (saved to /Users/baanisolanki/baani_assignments/baani_assignments/semester3_assignments/cl2_tuts/tut3/brat_annotations/sentence_9.ann):
+   T1	Predicate 31 37	assess
+   T2	ARG0 19 25	states
+   T3	ARGM-MOD 26 30	will
+   T4	ARG1 38 50	the programs
+   E1	Predicate:T1 ARG0:T2 ARGM-MOD:T3 ARG1:T4
+   T5	Predicate 56 62	expect
+   T6	ARG0 51 55	they
+   T7	ARG1 63 99	to make by 2005 and 2006 school year
+   E2	Predicate:T5 ARG0:T6 ARG1:T7
+   T8	Predicate 66 70	make
+   T9	ARG0 51 55	they
+   T10	ARGM-TMP 71 99	by 2005 and 2006 school year
+   E3	Predicate:T8 ARG0:T9 ARGM-TMP:T10
+
+================================================================================
+SENTENCE 10: People are responding to the challenge at the local level.
+================================================================================
+1. POS Tags (NLTK Tagger):
+   [('People', 'NNS'), ('are', 'VBP'), ('responding', 'VBG'), ('to', 'TO'), ('the', 'DT'), ('challenge', 'NN'), ('at', 'IN'), ('the', 'DT'), ('local', 'JJ'), ('level', 'NN'), ('.', '.')]
+
+2. Parse Tree & Visualization:
+                                                  S                                                       
+  ________________________________________________|___________________________________                     
+ |      |               |                         PP                                  PP                  
+ |      |               |                    _____|_____                   ___________|_____               
+ |      NP              VP                  |           NP                |                 NP            
+ |      |          _____|________           |      _____|_______          |      ___________|________      
+./. People/NNS are/VBP     responding/VBG to/TO the/DT     challenge/NN at/IN the/DT     local/JJ level/NN
+
+
+3. Extracted Verbs / Predicates:
+   Token: 'are' (POS: VBP) -> Lemma: 'be'
+   Token: 'responding' (POS: VBG) -> Lemma: 'respond'
+
+4. PropBank Roles Assigned to Main Verbs / Predicates:
+   PropBank Frameset for 'be' (3 roleset(s)):
+     Roleset [be.01] (copula):
+       ARG1: topic
+       ARG2: comment
+     Roleset [be.02] (existential):
+       ARG1: thing that is
+     Roleset [be.03] (auxiliary):
+   PropBank Frameset for 'respond' (1 roleset(s)):
+     Roleset [respond.01] (give an answer, reply):
+       ARG0: replier
+       ARG1: in response to
+       ARG2: answer
+
+   Assigned PropBank Roles in Sentence:
+     Predicate: 'responding' (Roleset: respond.01)
+       ARG0      : People
+       ARGM-LOC  : at the local level
+       ARG1      : to the challenge
+
+5. VerbNet Frames and Semantic Representations:
+   Verb Lemma: 'be' -> No VerbNet classes found.
+   Verb Lemma: 'respond' -> VerbNet Classes: ['say-37.7']
+     --- VerbNet Class: say-37.7 ---
+       Basic Transitive (Topic Object)
+         Example: Ellen said a few words.
+         Syntax: NP[Agent] VERB NP[Topic]
+         Semantics:
+           * transfer_info(during(E), Agent, ?Recipient, Topic)
+           * cause(Agent, E)
+       NP-PP (to-PP)
+         Example: Ellen said a few words to Helen.
+         Syntax: NP[Agent] VERB NP[Topic] PREP[to] NP[Recipient]
+         Semantics:
+           * transfer_info(during(E), Agent, Recipient, Topic)
+           * cause(Agent, E)
+       PP-S (to-PP)
+         Example: Mr. Jacobson announced to the trading mob: 'We're going to trade on the bell.'
+         Syntax: NP[Agent] VERB PREP[to] NP[Recipient] NP[Topic +quotation]
+         Semantics:
+           * transfer_info(during(E), Agent, Recipient, Topic)
+           * cause(Agent, E)
+       QUOT
+         Example: He says, 'It has to go.'
+         Syntax: NP[Agent] VERB NP[Topic +quotation]
+         Semantics:
+           * transfer_info(during(E), Agent, ?Recipient, Topic)
+           * cause(Agent, E)
+       HOW-S
+         Example: John suggested how she could do it.
+         Syntax: NP[Agent] VERB NP[Topic +how_extract]
+         Semantics:
+           * transfer_info(during(E), Agent, ?Recipient, Topic)
+           * cause(Agent, E)
+       HOW-TO-INF
+         Example: John suggested how to do it.
+         Syntax: NP[Agent] VERB NP[Topic +wh_inf]
+         Semantics:
+           * transfer_info(during(E), Agent, ?Recipient, Topic)
+           * cause(Agent, E)
+       WHAT-TO-INF
+         Example: John suggested what to do.
+         Syntax: NP[Agent] VERB NP[Topic +what_inf]
+         Semantics:
+           * transfer_info(during(E), Agent, ?Recipient, Topic)
+           * cause(Agent, E)
+       WHAT-S
+         Example: John suggested what we should eat.
+         Syntax: NP[Agent] VERB NP[Topic +what_extract]
+         Semantics:
+           * transfer_info(during(E), Agent, ?Recipient, Topic)
+           * cause(Agent, E)
+
+6. BRAT Semantic Role Annotations (saved to /Users/baanisolanki/baani_assignments/baani_assignments/semester3_assignments/cl2_tuts/tut3/brat_annotations/sentence_10.ann):
+   T1	Predicate 11 21	responding
+   T2	ARG0 0 6	People
+   T3	ARGM-LOC 39 57	at the local level
+   T4	ARG1 22 38	to the challenge
+   E1	Predicate:T1 ARG0:T2 ARGM-LOC:T3 ARG1:T4
+
+
+

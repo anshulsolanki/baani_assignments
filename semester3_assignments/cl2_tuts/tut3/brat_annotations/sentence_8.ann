@@ -1,0 +1,23 @@
+T1	Predicate 12 16	said
+T2	ARG0 4 6	we
+T3	ARGM-ADV 7 11	also
+T4	ARG1 17 59	that as we seek excellence for every child
+E1	Predicate:T1 ARG0:T2 ARGM-ADV:T3 ARG1:T4
+T5	Predicate 28 32	seek
+T6	ARG0 4 6	we
+T7	ARG1 33 43	excellence
+T8	ARG2 44 59	for every child
+E2	Predicate:T5 ARG0:T6 ARG1:T7 ARG2:T8
+T9	Predicate 69 75	design
+T10	ARG0 4 6	we
+T11	ARGM-MOD 64 68	must
+T12	ARGM-LOC 99 117	at the state level
+T13	ARG1 76 98	accountability systems
+E3	Predicate:T9 ARG0:T10 ARGM-MOD:T11 ARGM-LOC:T12 ARG1:T13
+T14	Predicate 121 130	determine
+T15	ARG0 102 117	the state level
+T16	ARG1 131 168	whether or not each child is learning
+E4	Predicate:T14 ARG0:T15 ARG1:T16
+T17	Predicate 160 168	learning
+T18	ARG0 146 156	each child
+E5	Predicate:T17 ARG0:T18

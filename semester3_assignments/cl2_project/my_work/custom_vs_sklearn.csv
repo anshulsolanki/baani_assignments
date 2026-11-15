@@ -1,0 +1,7 @@
+Implementation,Model,Test Accuracy,Precision,Recall,F1
+Custom Naive Bayes (From Scratch),M0,0.86,0.8462,0.88,0.8627
+Custom Logistic Regression (From Scratch),M0,0.835,0.9136,0.74,0.8177
+Custom Naive Bayes (From Scratch),M2,0.87,0.8854,0.85,0.8673
+Custom Logistic Regression (From Scratch),M2,0.86,0.8273,0.91,0.8667
+Custom Naive Bayes (From Scratch),M4,0.87,0.8854,0.85,0.8673
+Custom Logistic Regression (From Scratch),M4,0.85,0.8723,0.82,0.8454

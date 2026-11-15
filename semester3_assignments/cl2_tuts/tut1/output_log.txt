@@ -1,0 +1,27 @@
+============================================================
+CL-2 Tutorial 1: WordNet Activity
+============================================================
+
+=== Procedure Test: nltk_get_synonyms('dog', 'n') ===
+['dog', 'domestic dog', 'Canis familiaris', 'frump', 'cad', 'bounder', 'blackguard', 'hound', 'heel', 'frank', 'frankfurter', 'hotdog', 'hot dog', 'wiener', 'wienerwurst', 'weenie', 'pawl', 'detent', 'click', 'andiron', 'firedog', 'dog-iron']
+Total unique synonyms returned for ('dog', 'n'): 22
+Matches expected handout set (no duplicates, exact strings): True
+
+Computing all WordNet noun forms...
+Done.
+
+=== Question 1: How many nouns are there in WordNet? ===
+Number of unique noun forms (via handout snippet / synset lemmas): 119034
+Number of unique lowercase noun lemmas (via wn.all_lemma_names('n')): 117798
+
+=== Question 2: How many noun synsets are there? ===
+Number of noun synsets: 82115
+
+=== Question 3: What noun has the largest number of senses? ===
+Noun(s) with largest total senses (across all POS): ['break']
+Total number of senses (synsets): 75
+
+=== Question 4: What noun has the largest number of noun senses? ===
+Noun(s) with largest number of noun senses (POS='n'): ['head']
+Number of noun senses (noun synsets): 33
+

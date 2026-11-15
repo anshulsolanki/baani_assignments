@@ -1,0 +1,13 @@
+Classifier,Features,Version,Validation Accuracy,Test Accuracy,Precision,Recall,F1
+Logistic Regression,M0,Raw,0.9,0.88,0.8958,0.86,0.8776
+Naive Bayes,M0,Raw,0.815,0.86,0.8462,0.88,0.8627
+Logistic Regression,M1,Normalized,0.905,0.87,0.8854,0.85,0.8673
+Naive Bayes,M1,Normalized,0.81,0.875,0.8788,0.87,0.8744
+Logistic Regression,M2,Normalized,0.905,0.87,0.8854,0.85,0.8673
+Naive Bayes,M2,Normalized,0.815,0.87,0.8854,0.85,0.8673
+Logistic Regression,M3,Normalized,0.925,0.87,0.8854,0.85,0.8673
+Naive Bayes,M3,Normalized,0.835,0.87,0.8854,0.85,0.8673
+Logistic Regression,M4,Normalized,0.91,0.885,0.8969,0.87,0.8832
+Naive Bayes,M4,Normalized,0.845,0.87,0.8854,0.85,0.8673
+SO-CAL (M2 Baseline),M2 Lexicon+Shifters,Threshold = -0.08,0.72,0.695,0.6822,0.73,0.7053
+SO-CAL (M4 Anaphora+RST),M4 Discourse-Weighted,Threshold = -0.09,0.74,0.7,0.6818,0.75,0.7143

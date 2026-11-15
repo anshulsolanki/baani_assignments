@@ -1,0 +1,13 @@
+T1	Predicate 17 24	depends
+T2	ARG0 0 16	Education reform
+T3	ARG1 25 52	on good laws and good plans
+E1	Predicate:T1 ARG0:T2 ARG1:T3
+T4	Predicate 67 71	know
+T5	ARG0 57 66	you and I
+T6	ARG1 72 74	it
+E2	Predicate:T4 ARG0:T5 ARG1:T6
+T7	Predicate 86 93	depends
+T8	ARG0 72 74	it
+T9	ARGM-ADV 75 85	ultimately
+T10	ARG1 94 110	on good teachers
+E3	Predicate:T7 ARG0:T8 ARGM-ADV:T9 ARG1:T10

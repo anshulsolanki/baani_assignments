@@ -1,0 +1,14 @@
+T1	Predicate 17 26	submitted
+T2	ARGM-TMP 0 9	Last June
+T3	ARG0 10 16	states
+T4	ARG1 27 68	to the department of education strategies
+E1	Predicate:T1 ARGM-TMP:T2 ARG0:T3 ARG1:T4
+T5	Predicate 73 81	ensuring
+T6	ARGM-TMP 0 9	Last June
+T7	ARG0 48 68	education strategies
+T8	ARG1 82 120	that all teachers are highly qualified
+E2	Predicate:T5 ARGM-TMP:T6 ARG0:T7 ARG1:T8
+T9	Predicate 111 120	qualified
+T10	ARG1 87 99	all teachers
+T11	ARGM-ADV 104 110	highly
+E3	Predicate:T9 ARG1:T10 ARGM-ADV:T11

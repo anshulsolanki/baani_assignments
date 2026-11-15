@@ -1,0 +1,62 @@
+Category,Feature,Weight
+Linguistic Feature,rst_weighted_polarity_density,0.6803
+Linguistic Feature,rst_weighted_neg_density,-0.4992
+Linguistic Feature,rst_weighted_neg_excess_density,-0.4094
+Linguistic Feature,ana_salient_neg_density,-0.3201
+Linguistic Feature,ana_salient_net_density,0.3072
+Linguistic Feature,rst_weighted_pos_excess_density,0.2709
+Linguistic Feature,ana_salient_neg_excess_density,-0.1875
+Linguistic Feature,rst_weighted_pos_density,0.1812
+Linguistic Feature,ana_salient_pos_excess_density,0.1197
+Linguistic Feature,ana_resolved_pronoun_density,-0.0958
+Linguistic Feature,rst_nucleus_pos_density,0.0723
+Linguistic Feature,rst_nucleus_pos_excess_density,0.0595
+Linguistic Feature,rst_satellite_pos_density,-0.0497
+Linguistic Feature,rst_nucleus_neg_excess_density,-0.0373
+Linguistic Feature,lex_polarity_density,0.0255
+Linguistic Feature,rst_satellite_neg_density,0.0248
+Linguistic Feature,rst_nucleus_neg_density,-0.0246
+Linguistic Feature,shift_density,0.0203
+Linguistic Feature,lex_neg_count_density,-0.0198
+Linguistic Feature,lex_neg_density,-0.0198
+Linguistic Feature,lex_neg_excess_density,-0.0162
+Linguistic Feature,shift_neg_density,-0.0157
+Linguistic Feature,lex_total_density,-0.0142
+Linguistic Feature,ana_salient_pos_density,-0.0129
+Linguistic Feature,shift_neg_excess_density,-0.0129
+Linguistic Feature,shift_abs_density,-0.011
+Linguistic Feature,lex_pos_excess_density,0.0093
+Linguistic Feature,shift_pos_excess_density,0.0074
+Linguistic Feature,lex_pos_count_density,0.0057
+Linguistic Feature,lex_pos_density,0.0057
+Linguistic Feature,shift_pos_density,0.0047
+Top Positive Lexical,UNI_see,0.284
+Top Positive Lexical,UNI_performance,0.2399
+Top Positive Lexical,UNI_job,0.2329
+Top Positive Lexical,UNI_yet,0.2262
+Top Positive Lexical,UNI_very,0.2182
+Top Positive Lexical,UNI_as,0.2143
+Top Positive Lexical,UNI_back,0.2122
+Top Positive Lexical,UNI_great,0.2028
+Top Positive Lexical,UNI_also,0.1989
+Top Positive Lexical,UNI_fun,0.1959
+Top Positive Lexical,UNI_overall,0.182
+Top Positive Lexical,UNI_take,0.1803
+Top Positive Lexical,UNI_war,0.1783
+Top Positive Lexical,UNI_excellent,0.1729
+Top Positive Lexical,UNI_fine,0.1728
+Top Negative Lexical,UNI_should,-0.198
+Top Negative Lexical,UNI_script,-0.203
+Top Negative Lexical,UNI_here,-0.206
+Top Negative Lexical,UNI_on,-0.2064
+Top Negative Lexical,BI_to_be,-0.2125
+Top Negative Lexical,UNI_boring,-0.2151
+Top Negative Lexical,UNI_unfortunately,-0.2198
+Top Negative Lexical,BI_a_a,-0.2233
+Top Negative Lexical,UNI_look,-0.2632
+Top Negative Lexical,UNI_attempt,-0.2637
+Top Negative Lexical,UNI_any,-0.2674
+Top Negative Lexical,UNI_nothing,-0.3026
+Top Negative Lexical,UNI_only,-0.3128
+Top Negative Lexical,UNI_waste,-0.3179
+Top Negative Lexical,UNI_bad,-0.6176

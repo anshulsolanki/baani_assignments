@@ -1,0 +1,8 @@
+T1	Predicate 20 22	is
+T2	ARG1 9 19	in the law
+T3	ARG2 23 51	the vision of high standards
+E1	Predicate:T1 ARG1:T2 ARG2:T3
+T4	Predicate 66 70	meet
+T5	ARG0 57 62	money
+T6	ARG1 71 84	the standards
+E2	Predicate:T4 ARG0:T5 ARG1:T6

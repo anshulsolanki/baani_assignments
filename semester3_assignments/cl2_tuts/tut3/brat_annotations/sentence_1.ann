@@ -1,0 +1,4 @@
+T1	Predicate 28 36	believes
+T2	ARG0 0 27	Senators and a good teacher
+T3	ARG1 37 79	in the possibilities of every boy and girl
+E1	Predicate:T1 ARG0:T2 ARG1:T3
