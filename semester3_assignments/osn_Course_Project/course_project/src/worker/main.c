@@ -260,8 +260,9 @@ int main(int argc, char **argv) {
                     if (nl != NULL) {
                         *nl = '\0';
                     }
-                    /* Section 9 drain command added in Milestone 2 */
-                    (void)line;
+                    if (strcmp(line, "drain") == 0) {
+                        initiate_worker_drain(wctx);
+                    }
                 }
             }
 

@@ -129,6 +129,12 @@ void handle_worker_disconnect(struct scheduler_ctx *ctx, struct worker_node *w) 
         w->sock_fd = -1;
     }
 
+    /* Section 9: A drained worker with 0 active jobs exits gracefully */
+    if (w->state == WORKER_DRAINING && w->running_jobs == 0) {
+        log_line("[SCHEDULER] Worker %d drain complete and disconnected.", w->id);
+        w->used = 0;
+        return;
+    }
 
     /*
      * Leave w->state as ALIVE/SUSPECTED with sock_fd = -1 so check_worker_heartbeats
