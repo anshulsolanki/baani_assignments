@@ -1,0 +1,16 @@
+*.o
+*.dSYM/
+*.dylib
+.DS_Store
+./scheduler
+./worker
+./client
+cache/
+worker_cache_*/
+tests/hello_job
+tests/sleeper_job
+tests/cpu_burner
+tests/mem_hog
+tests/crash_segv
+tests/crash_fpe
+tests/counter_ckpt
