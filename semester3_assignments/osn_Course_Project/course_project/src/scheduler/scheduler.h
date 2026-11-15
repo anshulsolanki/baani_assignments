@@ -164,4 +164,20 @@ void handle_client_message(struct scheduler_ctx *ctx, struct client_session *cs,
 void handle_client_disconnect(struct scheduler_ctx *ctx, struct client_session *cs);
 void handle_initial_connection_packet(struct scheduler_ctx *ctx, int fd);
 
+/* client_queries.c */
+void handle_client_nodes(struct scheduler_ctx *ctx, struct client_session *cs);
+void handle_client_status(struct scheduler_ctx *ctx, struct client_session *cs,
+                          const struct packet_header *hdr);
+void handle_client_logs(struct scheduler_ctx *ctx, struct client_session *cs,
+                        const struct packet_header *hdr);
+void handle_client_logs_unsub(struct client_session *cs,
+                              const struct packet_header *hdr);
+void handle_client_cancel(struct scheduler_ctx *ctx, struct client_session *cs,
+                          const struct packet_header *hdr);
+void handle_client_migrate(struct scheduler_ctx *ctx, struct client_session *cs,
+                           const struct packet_header *hdr);
+void handle_client_crons(struct scheduler_ctx *ctx, struct client_session *cs);
+void handle_client_cancel_cron(struct scheduler_ctx *ctx, struct client_session *cs,
+                               const struct packet_header *hdr);
+
 #endif /* SCHEDULER_H */

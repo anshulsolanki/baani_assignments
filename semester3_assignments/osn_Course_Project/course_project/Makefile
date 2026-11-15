@@ -3,7 +3,7 @@ CFLAGS = -std=c11 -D_DEFAULT_SOURCE -D_BSD_SOURCE -Wall -Wextra -Werror -pthread
 LDFLAGS = -pthread
 
 SHARED_SRCS = src/shared/log_utils.c src/shared/net_utils.c src/shared/sha1.c
-SCHED_SRCS = src/scheduler/main.c src/scheduler/worker_registry.c src/scheduler/job_manager.c src/scheduler/scheduler_pass.c src/scheduler/client_handler.c
+SCHED_SRCS = src/scheduler/main.c src/scheduler/worker_registry.c src/scheduler/job_manager.c src/scheduler/scheduler_pass.c src/scheduler/client_handler.c src/scheduler/client_queries.c
 WORKER_SRCS = src/worker/main.c src/worker/sandbox_exec.c src/worker/monitor_telemetry.c src/worker/cache_ckpt.c
 CLIENT_SRCS = src/client/main.c src/client/commands.c
 
