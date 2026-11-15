@@ -138,6 +138,12 @@ static void diagnose_job_exit(const struct active_job *aj, int status,
         if (sig == SIGXCPU) {
             snprintf(done->diagnosis, sizeof(done->diagnosis),
                      "Wall-clock timeout exceeded (%ds limit).", aj->time_limit_sec);
+        } else if (sig == SIGSEGV) {
+            snprintf(done->diagnosis, sizeof(done->diagnosis),
+                     "Terminated by signal %d (SIGSEGV - Segmentation Fault).", sig);
+        } else if (sig == SIGFPE) {
+            snprintf(done->diagnosis, sizeof(done->diagnosis),
+                     "Terminated by signal %d (SIGFPE - Floating Point Exception).", sig);
         } else if (sig == SIGABRT) {
             snprintf(done->diagnosis, sizeof(done->diagnosis),
                      "Terminated by signal %d (SIGABRT - Aborted).", sig);
