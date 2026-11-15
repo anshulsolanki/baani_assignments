@@ -16,6 +16,7 @@ struct client_ctx {
     int waiting_for_logs;
     int in_follow_mode;
     int prompt_shown;
+    char last_log_char;
 };
 
 int is_valid_username(const char *name);

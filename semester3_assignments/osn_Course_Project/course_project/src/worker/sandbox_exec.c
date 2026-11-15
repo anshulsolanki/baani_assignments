@@ -14,6 +14,40 @@
 #include <sys/wait.h>
 #include <unistd.h>
 
+static void append_tokens(char *buf, char **args, int *argc_out, int max_args) {
+    char *p = buf;
+    while (*p != '\0' && *argc_out < max_args - 1) {
+        while (*p == ' ' || *p == '\t') {
+            p++;
+        }
+        if (*p == '\0') {
+            break;
+        }
+        if (*p == '"' || *p == '\'') {
+            char q = *p++;
+            args[(*argc_out)++] = p;
+            while (*p != '\0' && *p != q) {
+                p++;
+            }
+            if (*p == q) {
+                *p++ = '\0';
+            }
+        } else {
+            args[(*argc_out)++] = p;
+            while (*p != '\0' && *p != ' ' && *p != '\t') {
+                p++;
+            }
+            if (*p != '\0') {
+                *p++ = '\0';
+            }
+        }
+    }
+    args[*argc_out] = NULL;
+}
+
+/*
+ * Copy src to dst with explicit file permissions.
+ */
 static int copy_file_With_mode(const char *src, const char *dst, mode_t mode) {
     FILE *in = fopen(src, "rb");
     if (in == NULL) {
@@ -290,27 +324,29 @@ int launch_job_process(struct worker_ctx *wctx, const struct msg_assign_job *ass
             setrlimit(RLIMIT_NPROC, &rl_nproc);
         }
 
+        char *args[64];
+        int argc_job = 0;
+        char prog[MAX_NAME_STR + 4];
+        char cmd_copy[MAX_PATH_STR];
+        char args_copy[MAX_PATH_STR];
+
         if (assign->exec_transferred) {
-            char prog[MAX_NAME_STR + 4];
             snprintf(prog, sizeof(prog), "./%s",
                      assign->exec_name[0] ? assign->exec_name : "job_exec");
-            char *args[] = { prog, NULL };
-            execvp(args[0], args);
-        } else {
-            char cmd_copy[MAX_PATH_STR];
-            snprintf(cmd_copy, sizeof(cmd_copy), "%s", assign->binary_path);
-            char *args[32];
-            int argc_job = 0;
-            char *saveptr = NULL;
-            char *tok = strtok_r(cmd_copy, " \t", &saveptr);
-            while (tok != NULL && argc_job < 31) {
-                args[argc_job++] = tok;
-                tok = strtok_r(NULL, " \t", &saveptr);
-            }
+            args[argc_job++] = prog;
             args[argc_job] = NULL;
-            if (argc_job > 0) {
-                execvp(args[0], args);
-            }
+        } else {
+            snprintf(cmd_copy, sizeof(cmd_copy), "%s", assign->binary_path);
+            append_tokens(cmd_copy, args, &argc_job, 64);
+        }
+
+        if (assign->job_args[0] != '\0') {
+            snprintf(args_copy, sizeof(args_copy), "%s", assign->job_args);
+            append_tokens(args_copy, args, &argc_job, 64);
+        }
+
+        if (argc_job > 0) {
+            execvp(args[0], args);
         }
 
         _exit(127);

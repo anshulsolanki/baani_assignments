@@ -11,6 +11,7 @@ struct job_entry {
     int id;
     char user[MAX_USERNAME_LEN];
     char binary[MAX_PATH_STR];
+    char job_args[MAX_PATH_STR];
     char exec_name[MAX_NAME_STR];
     char sha1_hash[SHA1_HEX_LEN];
     int32_t binary_size;
@@ -94,6 +95,7 @@ struct cron_template {
     int active;
     char user[MAX_USERNAME_LEN];
     char binary[MAX_PATH_STR];
+    char job_args[MAX_PATH_STR];
     int cores;
     int ram_mb;
     int gpu;

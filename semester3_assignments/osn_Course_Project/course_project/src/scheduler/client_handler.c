@@ -257,6 +257,7 @@ void handle_client_message(struct scheduler_ctx *ctx, struct client_session *cs,
                 t->active = 1;
                 snprintf(t->user, sizeof(t->user), "%s", cs->username);
                 snprintf(t->binary, sizeof(t->binary), "%s", req.binary);
+                snprintf(t->job_args, sizeof(t->job_args), "%s", req.job_args);
                 t->cores = req.cores;
                 t->ram_mb = req.ram_mb;
                 t->gpu = req.gpu;
@@ -589,10 +590,11 @@ void handle_client_message(struct scheduler_ctx *ctx, struct client_session *cs,
                 char iv_s[24];
                 snprintf(iv_s, sizeof(iv_s), "%ds", t->every_sec);
                 off += snprintf(buf + off, sizeof(buf) - (size_t)off,
-                                "%-4d %-10s %-6d %-10s %-12s %s\n",
+                                "%-4d %-10s %-6d %-10s %-12s %s%s%s\n",
                                 t->id, iv_s, t->runs,
                                 t->active ? "ACTIVE" : "CANCELLED",
-                                t->user, t->binary);
+                                t->user, t->binary,
+                                t->job_args[0] ? " " : "", t->job_args);
             }
             if (!any) {
                 off += snprintf(buf + off, sizeof(buf) - (size_t)off,

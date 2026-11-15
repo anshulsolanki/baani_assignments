@@ -105,24 +105,24 @@ int main(int argc, char **argv) {
     cctx.sock_fd = -1;
     cctx.discovery_port = DEFAULT_DISCOVERY_PORT;
 
-    int arg_idx = 1;
-    if (argc >= 3 && argv[1][0] != '-' && argv[2][0] != '-') {
-        cctx.has_fallback = 1;
-        snprintf(cctx.fallback_ip, sizeof(cctx.fallback_ip), "%s", argv[1]);
-        cctx.fallback_port = atoi(argv[2]);
-        arg_idx = 3;
-    }
-
-    for (int i = arg_idx; i < argc; i++) {
-        if (strcmp(argv[i], "-user") == 0 && i + 1 < argc) {
+    for (int i = 1; i < argc; i++) {
+        const char *f = (argv[i][0] == '-' && argv[i][1] == '-' && argv[i][2] != '\0')
+                            ? (argv[i] + 1)
+                            : argv[i];
+        if (strcmp(f, "-user") == 0 && i + 1 < argc) {
             const char *u = argv[++i];
             if (is_valid_username(u)) {
                 snprintf(cctx.username, sizeof(cctx.username), "%s", u);
             } else {
                 fprintf(stderr, "[Client] Warning: invalid -user '%s', will prompt interactively.\n", u);
             }
-        } else if (strcmp(argv[i], "-discovery-port") == 0 && i + 1 < argc) {
+        } else if (strcmp(f, "-discovery-port") == 0 && i + 1 < argc) {
             cctx.discovery_port = atoi(argv[++i]);
+        } else if (!cctx.has_fallback && argv[i][0] != '-' &&
+                   i + 1 < argc && argv[i + 1][0] != '-') {
+            cctx.has_fallback = 1;
+            snprintf(cctx.fallback_ip, sizeof(cctx.fallback_ip), "%s", argv[i]);
+            cctx.fallback_port = atoi(argv[++i]);
         } else {
             fprintf(stderr,
                     "Usage: %s [<scheduler_ip> <scheduler_port>] [-user <username>] [-discovery-port <port>]\n",
@@ -145,6 +145,7 @@ int main(int argc, char **argv) {
                 send_packet(cctx.sock_fd, MSG_CLIENT_LOGS_UNSUB, NULL, 0);
                 cctx.in_follow_mode = 0;
                 cctx.waiting_for_logs = 0;
+                cctx.last_log_char = '\0';
                 cctx.prompt_shown = 0;
                 printf("\n");
                 fflush(stdout);
@@ -204,6 +205,7 @@ int main(int argc, char **argv) {
                 cctx.waiting_for_reply = 0;
                 cctx.waiting_for_logs = 0;
                 cctx.in_follow_mode = 0;
+                cctx.last_log_char = '\0';
                 cctx.prompt_shown = 0;
                 continue;
             }
@@ -238,12 +240,18 @@ int main(int argc, char **argv) {
                 if (payload != NULL && hdr.length > 0) {
                     fwrite(payload, 1, (size_t)hdr.length, stdout);
                     fflush(stdout);
+                    cctx.last_log_char = payload[hdr.length - 1];
                 }
             } else if (hdr.type == MSG_SCHED_LOG_EOF) {
+                if (cctx.last_log_char != '\0' && cctx.last_log_char != '\n') {
+                    printf("\n");
+                    fflush(stdout);
+                }
                 if (payload != NULL && payload[0] != '\0') {
                     printf("%s\n", payload);
                     fflush(stdout);
                 }
+                cctx.last_log_char = '\0';
                 cctx.waiting_for_logs = 0;
                 cctx.in_follow_mode = 0;
                 cctx.prompt_shown = 0;

@@ -174,6 +174,7 @@ struct job_entry *create_job_record(struct scheduler_ctx *ctx,
     j->id = jid;
     snprintf(j->user, sizeof(j->user), "%s", username);
     snprintf(j->binary, sizeof(j->binary), "%s", req->binary);
+    snprintf(j->job_args, sizeof(j->job_args), "%s", req->job_args);
     snprintf(j->exec_name, sizeof(j->exec_name), "%s", path_basename_ptr(req->binary));
 
     if (sha1_file(req->binary, j->sha1_hash, &j->binary_size) == 0) {
@@ -233,6 +234,7 @@ void cron_tick(struct scheduler_ctx *ctx) {
         struct msg_submit_req req;
         memset(&req, 0, sizeof(req));
         snprintf(req.binary, sizeof(req.binary), "%s", t->binary);
+        snprintf(req.job_args, sizeof(req.job_args), "%s", t->job_args);
         req.cores = t->cores;
         req.ram_mb = t->ram_mb;
         req.gpu = t->gpu;

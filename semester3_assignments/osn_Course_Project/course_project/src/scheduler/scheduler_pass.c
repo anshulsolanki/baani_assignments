@@ -213,6 +213,7 @@ int dispatch_job_to_worker(struct scheduler_ctx *ctx, struct job_entry *j,
     assign.exec_transferred = exec_transferred;
     assign.has_checkpoint = has_ckpt;
     snprintf(assign.binary_path, sizeof(assign.binary_path), "%s", j->binary);
+    snprintf(assign.job_args, sizeof(assign.job_args), "%s", j->job_args);
     snprintf(assign.exec_name, sizeof(assign.exec_name), "%s", j->exec_name);
     snprintf(assign.sha1_hash, sizeof(assign.sha1_hash), "%s", j->sha1_hash);
 

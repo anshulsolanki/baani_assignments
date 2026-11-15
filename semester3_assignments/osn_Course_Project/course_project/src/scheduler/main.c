@@ -19,35 +19,41 @@ static void print_usage(const char *prog) {
 int main(int argc, char **argv) {
     signal(SIGPIPE, SIG_IGN);
 
-    if (argc < 3) {
-        print_usage(argv[0]);
-        return 1;
-    }
-
-    int tcp_port = atoi(argv[1]);
-    if (tcp_port <= 0 || tcp_port > 65535) {
-        fprintf(stderr, "Invalid TCP port: %s\n", argv[1]);
-        return 1;
-    }
-
+    int tcp_port = -1;
     int algo = -1;
-    if (strcmp(argv[2], "FIFO") == 0) {
-        algo = ALGO_FIFO;
-    } else if (strcmp(argv[2], "PRIORITY") == 0) {
-        algo = ALGO_PRIORITY;
-    } else {
-        fprintf(stderr, "Invalid scheduling algorithm '%s' (expected FIFO or PRIORITY)\n", argv[2]);
-        return 1;
-    }
-
     int discovery_port = DEFAULT_DISCOVERY_PORT;
-    for (int i = 3; i < argc; i++) {
-        if (strcmp(argv[i], "-discovery-port") == 0 && i + 1 < argc) {
+
+    for (int i = 1; i < argc; i++) {
+        const char *f = (argv[i][0] == '-' && argv[i][1] == '-' && argv[i][2] != '\0')
+                            ? (argv[i] + 1)
+                            : argv[i];
+        if (strcmp(f, "-discovery-port") == 0 && i + 1 < argc) {
             discovery_port = atoi(argv[++i]);
+        } else if (argv[i][0] != '-' && tcp_port < 0) {
+            tcp_port = atoi(argv[i]);
+            if (tcp_port <= 0 || tcp_port > 65535) {
+                fprintf(stderr, "Invalid TCP port: %s\n", argv[i]);
+                return 1;
+            }
+        } else if (argv[i][0] != '-' && algo < 0) {
+            if (strcmp(argv[i], "FIFO") == 0) {
+                algo = ALGO_FIFO;
+            } else if (strcmp(argv[i], "PRIORITY") == 0) {
+                algo = ALGO_PRIORITY;
+            } else {
+                fprintf(stderr, "Invalid scheduling algorithm '%s' (expected FIFO or PRIORITY)\n",
+                        argv[i]);
+                return 1;
+            }
         } else {
             print_usage(argv[0]);
             return 1;
         }
+    }
+
+    if (tcp_port <= 0 || algo < 0) {
+        print_usage(argv[0]);
+        return 1;
     }
 
     struct scheduler_ctx *ctx = calloc(1, sizeof(struct scheduler_ctx));

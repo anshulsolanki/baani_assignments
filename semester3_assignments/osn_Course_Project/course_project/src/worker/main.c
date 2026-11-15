@@ -136,27 +136,27 @@ int main(int argc, char **argv) {
     wctx->sock_fd = -1;
     wctx->discovery_port = DEFAULT_DISCOVERY_PORT;
 
-    int arg_idx = 1;
-    if (argc >= 3 && argv[1][0] != '-' && argv[2][0] != '-') {
-        wctx->has_fallback = 1;
-        snprintf(wctx->fallback_ip, sizeof(wctx->fallback_ip), "%s", argv[1]);
-        wctx->fallback_port = atoi(argv[2]);
-        arg_idx = 3;
-    }
-
     int req_cores = -1;
     int req_ram_mb = -1;
     int req_gpu = 0;
 
-    for (int i = arg_idx; i < argc; i++) {
-        if (strcmp(argv[i], "-cores") == 0 && i + 1 < argc) {
+    for (int i = 1; i < argc; i++) {
+        const char *f = (argv[i][0] == '-' && argv[i][1] == '-' && argv[i][2] != '\0')
+                            ? (argv[i] + 1)
+                            : argv[i];
+        if (strcmp(f, "-cores") == 0 && i + 1 < argc) {
             req_cores = atoi(argv[++i]);
-        } else if (strcmp(argv[i], "-ram") == 0 && i + 1 < argc) {
+        } else if (strcmp(f, "-ram") == 0 && i + 1 < argc) {
             req_ram_mb = atoi(argv[++i]);
-        } else if (strcmp(argv[i], "-gpu") == 0 && i + 1 < argc) {
+        } else if (strcmp(f, "-gpu") == 0 && i + 1 < argc) {
             req_gpu = atoi(argv[++i]);
-        } else if (strcmp(argv[i], "-discovery-port") == 0 && i + 1 < argc) {
+        } else if (strcmp(f, "-discovery-port") == 0 && i + 1 < argc) {
             wctx->discovery_port = atoi(argv[++i]);
+        } else if (!wctx->has_fallback && argv[i][0] != '-' &&
+                   i + 1 < argc && argv[i + 1][0] != '-') {
+            wctx->has_fallback = 1;
+            snprintf(wctx->fallback_ip, sizeof(wctx->fallback_ip), "%s", argv[i]);
+            wctx->fallback_port = atoi(argv[++i]);
         } else {
             fprintf(stderr,
                     "Usage: %s [<scheduler_ip> <scheduler_port>] -cores <num> -ram <MB> [-gpu <num>] [-discovery-port <port>]\n",

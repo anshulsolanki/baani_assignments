@@ -185,6 +185,7 @@ struct msg_assign_job {
     int32_t exec_transferred;
     int32_t has_checkpoint;
     char binary_path[MAX_PATH_STR];
+    char job_args[MAX_PATH_STR];
     char exec_name[MAX_NAME_STR];
     char sha1_hash[SHA1_HEX_LEN];
 };
@@ -221,6 +222,7 @@ struct msg_client_login {
 
 struct msg_submit_req {
     char binary[MAX_PATH_STR];
+    char job_args[MAX_PATH_STR];
     int32_t cores;
     int32_t ram_mb;
     int32_t time_sec;
