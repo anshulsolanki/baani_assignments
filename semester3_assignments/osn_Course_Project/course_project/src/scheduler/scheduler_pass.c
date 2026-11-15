@@ -426,8 +426,26 @@ void schedule_jobs(struct scheduler_ctx *ctx) {
             j->hold_for_job_id = 0;
         }
 
-        (void)is_user_over_quota;
-        (void)was_quota_pair_logged;
+        /* Step 5: Fair-share user quota check (Section 11) */
+        if (is_user_over_quota(ctx, j->user)) {
+            struct job_entry *favored = NULL;
+            for (int k = 0; k < qcount; k++) {
+                struct job_entry *other = queued[k];
+                if (other->state == JOB_QUEUED &&
+                    strcmp(other->user, j->user) != 0 &&
+                    !is_user_over_quota(ctx, other->user)) {
+                    favored = other;
+                    break;
+                }
+            }
+            if (favored != NULL) {
+                if (!was_quota_pair_logged(j->id, favored->id)) {
+                    log_line("[SCHEDULER] Skipping Job %d (user %s, quota exceeded) in favor of Job %d (user %s)",
+                             j->id, j->user, favored->id, favored->user);
+                }
+                continue;
+            }
+        }
 
         /* Step 6 & 7: Resource match + Choose one worker using 4-level tiebreaker */
         struct worker_node *best_w = NULL;
