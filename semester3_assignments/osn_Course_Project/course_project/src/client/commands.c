@@ -165,6 +165,19 @@ int execute_client_command(struct client_ctx *cctx, const char *line) {
         return 0;
     }
 
+    if (strcmp(argv[0], "migrate") == 0) {
+        if (argc < 2) {
+            printf("[Client] Usage: migrate <job_id>\n");
+            return 0;
+        }
+        int32_t job_id = atoi(argv[1]);
+        if (send_packet(cctx->sock_fd, MSG_CLIENT_MIGRATE_REQ, &job_id, sizeof(job_id)) < 0) {
+            return -1;
+        }
+        cctx->waiting_for_reply = 1;
+        return 0;
+    }
+
     if (strcmp(argv[0], "crons") == 0) {
         if (send_packet(cctx->sock_fd, MSG_CLIENT_CRONS_REQ, NULL, 0) < 0) {
             return -1;

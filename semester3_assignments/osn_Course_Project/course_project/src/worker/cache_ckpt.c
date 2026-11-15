@@ -317,6 +317,9 @@ void check_job_checkpoint_file(struct worker_ctx *wctx, struct active_job *aj) {
     size_t n = fread(buf + sizeof(ch), 1, (size_t)dlen, fp);
     fclose(fp);
 
-    (void)n;
+    if ((int32_t)n == dlen) {
+        send_packet(wctx->sock_fd, MSG_WORKER_CHECKPOINT, buf, pkt_len);
+        aj->last_ckpt_sig = sig;
+    }
     free(buf);
 }
