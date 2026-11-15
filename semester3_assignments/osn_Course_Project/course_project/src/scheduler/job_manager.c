@@ -15,8 +15,7 @@ struct job_entry *find_job_by_id(struct scheduler_ctx *ctx, int job_id) {
 int count_queued_jobs(const struct scheduler_ctx *ctx) {
     int count = 0;
     for (int i = 0; i < MAX_JOBS_TOTAL; i++) {
-        if (ctx->jobs[i].used &&
-            (ctx->jobs[i].state == JOB_QUEUED || ctx->jobs[i].state == JOB_WAITING)) {
+        if (ctx->jobs[i].used && ctx->jobs[i].state == JOB_QUEUED) {
             count++;
         }
     }

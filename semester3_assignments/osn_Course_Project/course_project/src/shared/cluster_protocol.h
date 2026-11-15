@@ -12,13 +12,13 @@
 #define DISCOVERY_TIMEOUT_SEC  2
 
 #define MAX_QUEUE_LEN          1024
-#define MAX_JOBS_TOTAL         2048
+#define MAX_JOBS_TOTAL         8192
 #define MAX_WORKERS            64
 #define MAX_CLIENTS            128
 #define MAX_CRON_TEMPLATES     64
-#define MAX_DEPS_PER_JOB       32
+#define MAX_DEPS_PER_JOB       64
 #define MAX_WORKER_JOBS        64
-#define MAX_WORKER_CACHE       64
+#define MAX_WORKER_CACHE       256
 #define MAX_RETRY_ATTEMPTS     3
 
 #define HEARTBEAT_INTERVAL_SEC 2

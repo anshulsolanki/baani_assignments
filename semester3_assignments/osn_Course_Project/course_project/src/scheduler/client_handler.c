@@ -114,6 +114,22 @@ void handle_initial_connection_packet(struct scheduler_ctx *ctx, int fd) {
  * Expands group references g<id> into the job IDs currently in group <id>.
  * Rejects unknown job IDs or empty/unknown group IDs.
  */
+static int add_unique_dep(int *out_deps, int *out_count, int jid,
+                          char *err_buf, size_t err_len) {
+    for (int i = 0; i < *out_count; i++) {
+        if (out_deps[i] == jid) {
+            return 0;
+        }
+    }
+    if (*out_count >= MAX_DEPS_PER_JOB) {
+        snprintf(err_buf, err_len,
+                 "[Client] Error: too many dependencies (max %d).", MAX_DEPS_PER_JOB);
+        return -1;
+    }
+    out_deps[(*out_count)++] = jid;
+    return 0;
+}
+
 static int resolve_dependencies(struct scheduler_ctx *ctx, const char *dep_str,
                                 int *out_deps, int *out_count,
                                 char *err_buf, size_t err_len) {
@@ -146,8 +162,9 @@ static int resolve_dependencies(struct scheduler_ctx *ctx, const char *dep_str,
             int matched = 0;
             for (int i = 0; i < MAX_JOBS_TOTAL; i++) {
                 if (ctx->jobs[i].used && ctx->jobs[i].group_id == gid) {
-                    if (*out_count < MAX_DEPS_PER_JOB) {
-                        out_deps[(*out_count)++] = ctx->jobs[i].id;
+                    if (add_unique_dep(out_deps, out_count, ctx->jobs[i].id,
+                                       err_buf, err_len) < 0) {
+                        return -1;
                     }
                     matched++;
                 }
@@ -172,8 +189,8 @@ static int resolve_dependencies(struct scheduler_ctx *ctx, const char *dep_str,
                          "[Client] Error: dependency Job %d does not exist.", djid);
                 return -1;
             }
-            if (*out_count < MAX_DEPS_PER_JOB) {
-                out_deps[(*out_count)++] = djid;
+            if (add_unique_dep(out_deps, out_count, djid, err_buf, err_len) < 0) {
+                return -1;
             }
         }
 
@@ -285,20 +302,35 @@ void handle_client_message(struct scheduler_ctx *ctx, struct client_session *cs,
                 break;
             }
 
-            /* Section 4A: Bounded job queue (1024 entries max) */
-            if (count_queued_jobs(ctx) >= MAX_QUEUE_LEN) {
-                log_line("[SCHEDULER] Rejecting submit from %s: QUEUE_FULL", cs->username);
-                send_text_packet(cs->sock_fd, MSG_SCHED_REPLY,
-                                 "[Client] QUEUE_FULL: The job queue is full (1024 entries).");
-                break;
-            }
-
             int deps[MAX_DEPS_PER_JOB];
             int num_deps = 0;
             char err_msg[256] = "";
             if (resolve_dependencies(ctx, req.depends_on, deps, &num_deps,
                                      err_msg, sizeof(err_msg)) < 0) {
                 send_text_packet(cs->sock_fd, MSG_SCHED_REPLY, err_msg);
+                break;
+            }
+
+            int enters_queue_now = (num_deps == 0) ? 1 : 0;
+            if (num_deps > 0) {
+                int all_done = 1;
+                for (int d = 0; d < num_deps; d++) {
+                    struct job_entry *dep = find_job_by_id(ctx, deps[d]);
+                    if (dep == NULL || dep->state != JOB_COMPLETED) {
+                        all_done = 0;
+                        break;
+                    }
+                }
+                if (all_done) {
+                    enters_queue_now = 1;
+                }
+            }
+
+            /* Section 4A: Bounded job queue (1024 QUEUED entries max) */
+            if (enters_queue_now && count_queued_jobs(ctx) >= MAX_QUEUE_LEN) {
+                log_line("[SCHEDULER] Rejecting submit from %s: QUEUE_FULL", cs->username);
+                send_text_packet(cs->sock_fd, MSG_SCHED_REPLY,
+                                 "[Client] QUEUE_FULL: The job queue is full (1024 entries).");
                 break;
             }
 
@@ -496,6 +528,8 @@ void handle_client_message(struct scheduler_ctx *ctx, struct client_session *cs,
             }
 
             j->state = JOB_CANCELLED;
+            j->preempt_pending = 0;
+            j->migrate_pending = 0;
             j->current_ram_mb = 0;
             snprintf(j->diagnosis, sizeof(j->diagnosis),
                      "Cancelled by %s", cs->username);

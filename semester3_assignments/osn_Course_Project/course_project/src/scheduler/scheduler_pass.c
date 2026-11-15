@@ -4,12 +4,13 @@
 #include <string.h>
 
 /* Track already-logged (skipped_job, favored_job) quota pairs to avoid log spam */
-#define MAX_QUOTA_LOG_PAIRS 256
+#define MAX_QUOTA_LOG_PAIRS 2048
 static struct {
     int skipped_id;
     int favored_id;
 } quota_logged_pairs[MAX_QUOTA_LOG_PAIRS];
 static int num_quota_logged = 0;
+static int quota_write_idx = 0;
 
 static int was_quota_pair_logged(int skipped_id, int favored_id) {
     for (int i = 0; i < num_quota_logged; i++) {
@@ -18,9 +19,10 @@ static int was_quota_pair_logged(int skipped_id, int favored_id) {
             return 1;
         }
     }
+    quota_logged_pairs[quota_write_idx].skipped_id = skipped_id;
+    quota_logged_pairs[quota_write_idx].favored_id = favored_id;
+    quota_write_idx = (quota_write_idx + 1) % MAX_QUOTA_LOG_PAIRS;
     if (num_quota_logged < MAX_QUOTA_LOG_PAIRS) {
-        quota_logged_pairs[num_quota_logged].skipped_id = skipped_id;
-        quota_logged_pairs[num_quota_logged].favored_id = favored_id;
         num_quota_logged++;
     }
     return 0;
@@ -131,7 +133,11 @@ static int send_binary_to_worker(struct worker_node *w, const struct job_entry *
 
     int32_t offset = 0;
     size_t n = 0;
-    while ((n = fread(payload + sizeof(struct msg_binary_meta), 1, BIN_CHUNK_MAX, fp)) > 0) {
+    do {
+        n = fread(payload + sizeof(struct msg_binary_meta), 1, BIN_CHUNK_MAX, fp);
+        if (n == 0 && offset > 0) {
+            break;
+        }
         struct msg_binary_meta meta;
         memset(&meta, 0, sizeof(meta));
         meta.job_id = j->id;
@@ -149,7 +155,7 @@ static int send_binary_to_worker(struct worker_node *w, const struct job_entry *
             return -1;
         }
         offset += (int32_t)n;
-    }
+    } while (n > 0);
 
     free(payload);
     fclose(fp);

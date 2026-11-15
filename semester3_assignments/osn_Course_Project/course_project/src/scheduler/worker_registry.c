@@ -110,6 +110,7 @@ static void mark_worker_dead_and_rescue(struct scheduler_ctx *ctx,
             release_preempt_holds_for(ctx, j->id);
         } else {
             j->state = JOB_QUEUED;
+            j->worker_id = 0;
             j->queued_since = time(NULL);
             log_line("[SCHEDULER] Job %d RUNNING -> LOST -> QUEUED", j->id);
             notify_user_event(ctx, j->user,
@@ -346,6 +347,7 @@ void handle_worker_message(struct scheduler_ctx *ctx, struct worker_node *w,
                 notify_job_followers_eof(ctx, j->id);
             } else if (done.outcome == OUTCOME_PREEMPTED || j->preempt_pending) {
                 j->state = JOB_QUEUED;
+                j->worker_id = 0;
                 j->queued_since = time(NULL);
                 j->preempt_pending = 0;
                 if (j->attempts > 0) {
@@ -360,6 +362,7 @@ void handle_worker_message(struct scheduler_ctx *ctx, struct worker_node *w,
                 j->queued_since = time(NULL);
                 j->migrate_pending = 0;
                 j->avoid_worker_id = w->id;
+                j->worker_id = 0;
                 if (j->attempts > 0) {
                     j->attempts--;
                 }
