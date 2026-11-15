@@ -217,7 +217,6 @@ struct job_entry *create_job_record(struct scheduler_ctx *ctx,
  * Section 12: 1-second timer firing recurring (cron) job templates.
  */
 void cron_tick(struct scheduler_ctx *ctx) {
-    (void)ctx; return;
     time_t now = time(NULL);
 
     for (int i = 0; i < MAX_CRON_TEMPLATES; i++) {

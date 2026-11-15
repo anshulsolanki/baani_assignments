@@ -165,6 +165,27 @@ int execute_client_command(struct client_ctx *cctx, const char *line) {
         return 0;
     }
 
+    if (strcmp(argv[0], "crons") == 0) {
+        if (send_packet(cctx->sock_fd, MSG_CLIENT_CRONS_REQ, NULL, 0) < 0) {
+            return -1;
+        }
+        cctx->waiting_for_reply = 1;
+        return 0;
+    }
+
+    if (strcmp(argv[0], "cancel-cron") == 0) {
+        if (argc < 2) {
+            printf("[Client] Usage: cancel-cron <template_id>\n");
+            return 0;
+        }
+        int32_t tid = atoi(argv[1]);
+        if (send_packet(cctx->sock_fd, MSG_CLIENT_CANCEL_CRON, &tid, sizeof(tid)) < 0) {
+            return -1;
+        }
+        cctx->waiting_for_reply = 1;
+        return 0;
+    }
+
     printf("[Client] Unknown command '%s'. Available: nodes, submit, status, logs, cancel, migrate, crons, cancel-cron\n",
            argv[0]);
     return 0;
