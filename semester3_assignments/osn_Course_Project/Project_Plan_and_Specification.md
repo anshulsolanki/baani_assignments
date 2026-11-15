@@ -231,29 +231,31 @@ osn_Course_Project/
 └── course_project/                 # Clean submission repository root
     ├── Makefile                    # Builds ./scheduler, ./worker, ./client, and tests
     ├── README.md                   # Complete build, run, design & assumptions documentation
-    ├── shared/
-    │   ├── cluster_protocol.h      # Message types, wire structs, constants (MAX_QUEUE=1024, etc.)
-    │   ├── net_utils.h             # Declarations for framing, UDP discovery, logging, SHA-1
-    │   ├── net_utils.c             # send_packet(), recv_packet(), UDP broadcast & reply helpers
-    │   ├── log_utils.c             # Central log_line() with [HH:MM:SS] 24-hour timestamp
-    │   └── sha1.c                  # Self-contained standard SHA-1 (no OpenSSL dependency)
-    ├── scheduler/
-    │   ├── scheduler.h             # Job, WorkerNode, ClientSession, CronTemplate structs
-    │   ├── main.c                  # CLI args, UDP+TCP sockets, 1s select() event loop
-    │   ├── worker_registry.c       # Worker registration, heartbeats (ALIVE/SUSPECTED/DEAD), rescue
-    │   ├── job_manager.c           # Job creation, 64KB log ring buffer, dependencies/groups, crons
-    │   ├── scheduler_pass.c        # Canonical 10-step scheduling pass (FIFO/PRIORITY, aging, quota, cache)
-    │   └── client_handler.c        # Client login, nodes, status, logs/-f, cancel, preempt, migrate
-    ├── worker/
-    │   ├── worker.h                # ActiveJob, CacheItem, WorkerContext structs & prototypes
-    │   ├── main.c                  # CLI args, sysconf/sysctl clamping, UDP discovery, 500ms select() loop
-    │   ├── sandbox_exec.c          # /tmp/osn_job_<id>, nobody privilege drop, rlimits, fork+execvp
-    │   ├── monitor_telemetry.c     # 500ms output.log tailing, proc_pidinfo / /proc RSS & CPU, crash diag
-    │   └── cache_ckpt.c            # LRU cache/ manager (OSN_CACHE_SIZE_MB) & checkpoint polling/migrate
-    ├── client/
-    │   ├── client.h                # ClientContext struct & prototypes
-    │   ├── main.c                  # CLI args, UDP discovery + fallback, login validation, select() loop
-    │   └── commands.c              # Interactive command parser & output printers
+    ├── src/
+    │   ├── shared/
+    │   │   ├── cluster_protocol.h  # Message types, wire structs, constants (MAX_QUEUE=1024, etc.)
+    │   │   ├── net_utils.h         # Declarations for framing, UDP discovery, logging, SHA-1
+    │   │   ├── net_utils.c         # send_packet(), recv_packet(), UDP broadcast + loopback helpers
+    │   │   ├── log_utils.c         # Central log_line() with [HH:MM:SS] 24-hour timestamp
+    │   │   └── sha1.c              # Self-contained standard SHA-1 (no OpenSSL dependency)
+    │   ├── scheduler/
+    │   │   ├── scheduler.h         # Job, WorkerNode, ClientSession, CronTemplate structs
+    │   │   ├── main.c              # CLI args, UDP+TCP sockets, 1s select() event loop
+    │   │   ├── worker_registry.c   # Worker registration, heartbeats (ALIVE/SUSPECTED/DEAD), rescue
+    │   │   ├── job_manager.c       # Job creation, 64KB log ring buffer, dependencies/groups, crons
+    │   │   ├── scheduler_pass.c    # Canonical 10-step scheduling pass (FIFO/PRIORITY, aging, quota, cache)
+    │   │   ├── client_handler.c    # Handshake, dependency resolution, and submit handler
+    │   │   └── client_queries.c    # nodes, status, logs/-f, cancel, migrate, crons, cancel-cron
+    │   ├── worker/
+    │   │   ├── worker.h            # ActiveJob, PendingCkpt, WorkerContext structs & prototypes
+    │   │   ├── main.c              # CLI args, sysconf/sysctl clamping, UDP discovery, 300ms select() loop
+    │   │   ├── sandbox_exec.c      # /tmp/osn_job_<id>, nobody privilege drop, rlimits, fork+execvp
+    │   │   ├── monitor_telemetry.c # 500ms output.log tailing, proc_pidinfo / /proc RSS & CPU, crash diag
+    │   │   └── cache_ckpt.c        # LRU cache/ manager (OSN_CACHE_SIZE_MB) & checkpoint polling/migrate
+    │   └── client/
+    │       ├── client.h            # ClientContext struct & prototypes
+    │       ├── main.c              # CLI args, UDP discovery + fallback, login validation, select() loop
+    │       └── commands.c          # Quote-aware interactive command parser & job argument support
     └── tests/                      # Tiny C test jobs from Section 5 & Section 14
         ├── Makefile
         ├── hello_job.c             # Basic stdout & exit 0 test
@@ -262,6 +264,9 @@ osn_Course_Project/
         ├── mem_hog.c               # Memory limit (RLIMIT_AS / macOS RSS) test
         ├── crash_segv.c            # Signal 11 (SIGSEGV) crash diagnosis test
         ├── crash_fpe.c             # Signal 8 (SIGFPE) crash diagnosis test
+        ├── exit_code3.c            # Non-zero exit code 3 diagnosis test
+        ├── write_home.c            # Privilege-drop write permission-denied test
+        ├── fork_bomb.c             # RLIMIT_NPROC fork-bomb protection test
         └── counter_ckpt.c          # Section 14 cooperative checkpoint & live migration test
 ```
 
@@ -289,6 +294,15 @@ osn_Course_Project/
 | **16** | M3 | `shared/sha1.c`, `worker/cache_ckpt.c`, `scheduler/scheduler_pass.c` | Section 13: SHA-1 executable hashing, `cache/` transfer & `EXEC_CACHED`, full 4-level tiebreaker (`idle > cached > CPU% > jobs`), LRU eviction (`OSN_CACHE_SIZE_MB`), and `CACHE_MISS` recovery |
 | **17** | M4 | `worker/cache_ckpt.c`, `scheduler/client_handler.c`, `client/commands.c` | Section 14: `$OSN_CHECKPOINT_DIR/state` 500ms polling, checkpoint restoration on restart, and live `migrate <id>` (`SIGTERM` $\rightarrow$ 2s $\rightarrow$ `SIGKILL`, `avoid_worker`) |
 | **18** | All | `tests/*`, `README.md` | Section 5 & 14 test suite (`hello_job`, `sleeper_job`, `cpu_burner`, `mem_hog`, `crash_segv`, `crash_fpe`, `counter_ckpt`) and complete documentation |
+
+### Post-Implementation Audit & Incremental Bug-Fix Commits (`Commits 19–23`)
+| Commit # | Type | Files Modified | Edge Case / Bug Uncovered & Fixed |
+| :-: | :-: | :--- | :--- |
+| **19** | `fix` | `src/client/*`, `src/worker/sandbox_exec.c`, `src/*/main.c`, `src/scheduler/*` | Support job CLI arguments (`submit ./counter 30 ...` & quoted `"./counter 30"`), flexible fallback `<ip> <port>` flag order, `--flag` aliases, and clean trailing newline on `logs <id>` |
+| **20** | `fix` | `src/shared/cluster_protocol.h`, `src/scheduler/{job_manager,worker_registry,client_handler,scheduler_pass}.c` | Clear stale `worker_id` when requeued (`Assigned to: None`), refine `QUEUE_FULL` to count strictly `JOB_QUEUED` (`1024`), deduplicate `-depends-on 1,g3`, expand job table to `8192`, and handle `0`-byte executable transfers |
+| **21** | `fix` | `src/scheduler/scheduler_pass.c`, `src/worker/{worker.h,sandbox_exec.c,monitor_telemetry.c}`, `src/shared/net_utils.c` | Reserve worker during multi-victim Priority 1 preemption, use millisecond `gettimeofday()` job timers + reap exited jobs before timeout check, safe non-root `RLIMIT_NPROC` cap, and loopback + broadcast UDP discovery |
+| **22** | `refactor` | `Makefile`, `src/scheduler/{scheduler.h,client_handler.c,client_queries.c}` | Split client query/control handlers (`nodes`, `status`, `logs`, `cancel`, `migrate`, `crons`, `cancel-cron`) into `client_queries.c` so every file stays concise (~100–535 lines) |
+| **23** | `test,docs` | `tests/{Makefile,exit_code3.c,write_home.c,fork_bomb.c}`, `.gitignore`, `README.md`, `*.md` | Complete all Section 5 sandbox/limit test programs and synchronize project documentation |
 
 ---
 

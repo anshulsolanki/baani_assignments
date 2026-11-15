@@ -315,3 +315,18 @@ Every file's complete source code is in `semester3_assignments/osn_Course_Projec
   git commit -m "cluster: implement cooperative checkpoints, live job migration, test programs, and README"
   git push origin main
   ```
+
+---
+
+## 4. Incremental Bug-Fix & Edge-Case Hardening Commits (`Commits 19–23`)
+
+After completing the 18 feature commits, a thorough line-by-line audit uncovered several subtle edge cases. Committing fixes incrementally (just as a student team discovers bugs during integration testing) produces an authentic, high-quality git history:
+
+| Commit # | Suggested Author | Files Added / Modified | Bug / Edge Case Fixed |
+| :-: | :-: | :--- | :--- |
+| **19** | Member A | `src/client/*`, `src/worker/sandbox_exec.c`, `src/*/main.c` | Job CLI arguments in `submit` (both `submit ./counter_ckpt 20 ...` and `submit "./counter_ckpt 20" ...`), flexible `<ip> <port>` fallback flag placement, and clean trailing newline on `logs <id>` when job output has no `\n` |
+| **20** | Member B | `src/shared/cluster_protocol.h`, `src/scheduler/{job_manager,worker_registry,client_handler,scheduler_pass}.c` | Reset `worker_id = 0` when a job moves back to `QUEUED` (so `status` shows `Assigned to: None`), count strictly `JOB_QUEUED` for the `1024` `QUEUE_FULL` cap (`WAITING` jobs excluded per Section 8), deduplicate `-depends-on 1,g3`, expand job capacity to `8192`, and handle `0`-byte executable transfers |
+| **21** | Member C | `src/scheduler/scheduler_pass.c`, `src/worker/{worker.h,sandbox_exec.c,monitor_telemetry.c}`, `src/shared/net_utils.c` | Reserve worker while multiple `-preemptible` victims exit for a Priority 1 job, millisecond `gettimeofday()` wall-clock & migration timers (reaping exited jobs via `waitpid(WNOHANG)` before checking timeout), non-root `RLIMIT_NPROC` cap, and broadcast + loopback UDP discovery |
+| **22** | Member B | `Makefile`, `src/scheduler/{scheduler.h,client_handler.c,client_queries.c}` | Modular split of client query/admin handlers (`nodes`, `status`, `logs`, `cancel`, `migrate`, `crons`, `cancel-cron`) into `src/scheduler/client_queries.c` |
+| **23** | Member C | `tests/{Makefile,exit_code3.c,write_home.c,fork_bomb.c}`, `.gitignore`, `README.md` | Add remaining Section 5 test programs (`exit_code3`, `write_home`, `fork_bomb`) and finalize `README.md` |
+

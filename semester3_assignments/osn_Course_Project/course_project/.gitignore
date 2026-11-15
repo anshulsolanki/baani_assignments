@@ -13,4 +13,7 @@ tests/cpu_burner
 tests/mem_hog
 tests/crash_segv
 tests/crash_fpe
+tests/exit_code3
+tests/write_home
+tests/fork_bomb
 tests/counter_ckpt

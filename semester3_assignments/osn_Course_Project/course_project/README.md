@@ -26,7 +26,8 @@ course_project/
 │   │   ├── worker_registry.c       # Worker registration, heartbeats (ALIVE/SUSPECTED/DEAD), rescue
 │   │   ├── job_manager.c           # Job records, 64 KB log tail buffer, dependencies/groups, crons
 │   │   ├── scheduler_pass.c        # Canonical 10-step scheduling pass (FIFO/PRIORITY, aging, quota, cache)
-│   │   └── client_handler.c        # Client login and command handlers
+│   │   ├── client_handler.c        # Client/worker initial handshake, dependency resolution, and submit
+│   │   └── client_queries.c        # Client query & control handlers (nodes, status, logs, cancel, migrate, crons)
 │   ├── worker/
 │   │   ├── worker.h                # ActiveJob, PendingCkpt, WorkerContext structs
 │   │   ├── main.c                  # CLI parser, sysconf/sysctl clamping, UDP discovery, select() loop
@@ -37,7 +38,7 @@ course_project/
 │       ├── client.h                # ClientContext struct & prototypes
 │       ├── main.c                  # CLI parser, UDP discovery + fallback, login, select() loop
 │       └── commands.c              # Command parser (nodes, submit, status, logs, cancel, migrate, crons)
-└── tests/                          # Test programs for resource limits, signals, and checkpoints
+└── tests/                          # Test programs for resource limits, signals, sandbox, and checkpoints
     ├── Makefile
     ├── hello_job.c
     ├── sleeper_job.c
@@ -45,6 +46,9 @@ course_project/
     ├── mem_hog.c
     ├── crash_segv.c
     ├── crash_fpe.c
+    ├── exit_code3.c
+    ├── write_home.c
+    ├── fork_bomb.c
     └── counter_ckpt.c
 ```
 
@@ -90,7 +94,7 @@ sudo ./worker -cores 4 -ram 2048 -gpu 1
 
 ### Supported Client Commands
 - `nodes` — Lists every worker (`ID`, `Status`, `Cores (Free/Total)`, `RAM (Free/Total)`, `GPU (Free/Total)`, `Jobs`).
-- `submit <binary> -cores <c> -ram <MB> -time <sec> -prio <1-3> [-gpu <g>] [-depends-on 1,2,g3] [-group <id>] [-preemptible] [-every <sec>]` — Submits a job or recurring cron template.
+- `submit <binary> [args...] -cores <c> -ram <MB> -time <sec> -prio <1-3> [-gpu <g>] [-depends-on 1,2,g3] [-group <id>] [-preemptible] [-every <sec>]` — Submits a job (with optional command-line arguments, e.g. `submit ./tests/counter_ckpt 20 ...` or `submit "./tests/counter_ckpt 20" ...`) or recurring cron template.
 - `status <job_id>` — Displays job state, owner, assigned worker, live/peak RAM, page faults, CPU time, failure reason, and latest checkpoint (`#n, size, age`).
 - `logs <job_id>` — Prints up to the last 64 KB of output captured from the job.
 - `logs <job_id> -f` — Streams live output as the job runs until completion (`-- Job <id> finished --`) or `Ctrl+C` (which returns to `client> ` without exiting).
