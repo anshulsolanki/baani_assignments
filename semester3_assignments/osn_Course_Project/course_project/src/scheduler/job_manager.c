@@ -103,7 +103,6 @@ void notify_job_followers_eof(struct scheduler_ctx *ctx, int job_id) {
  *   and cascade down the dependency chain.
  */
 void check_job_dependencies(struct scheduler_ctx *ctx) {
-    (void)ctx; return;
     int changed = 0;
     do {
         changed = 0;
