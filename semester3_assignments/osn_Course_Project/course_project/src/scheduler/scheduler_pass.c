@@ -416,6 +416,16 @@ void schedule_jobs(struct scheduler_ctx *ctx) {
     for (int i = 0; i < qcount; i++) {
         struct job_entry *j = queued[i];
 
+        /* Step 4: Preempted-job hold check (Section 10) */
+        if (j->hold_for_job_id > 0) {
+            struct job_entry *holder = find_job_by_id(ctx, j->hold_for_job_id);
+            if (holder != NULL &&
+                (holder->state == JOB_QUEUED || holder->state == JOB_WAITING)) {
+                continue;
+            }
+            j->hold_for_job_id = 0;
+        }
+
         (void)is_user_over_quota;
         (void)was_quota_pair_logged;
 
@@ -465,7 +475,9 @@ void schedule_jobs(struct scheduler_ctx *ctx) {
             dispatch_job_to_worker(ctx, j, best_w);
         } else {
             /* Step 8: No match -> Priority 1 job tries preemption, then FIFO stops or PRIORITY continues */
-            (void)try_preempt_for_job;
+            if (j->eff_prio == 1) {
+                try_preempt_for_job(ctx, j);
+            }
             if (ctx->algo == ALGO_FIFO) {
                 break;
             }
